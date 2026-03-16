@@ -1,4 +1,4 @@
-"""Main runner — orchestrates analysis across all dimensions."""
+"""Main runner - orchestrates analysis across all dimensions."""
 
 import json
 from dataclasses import asdict
@@ -29,13 +29,15 @@ def discover_services(
     for svc in raw_services:
         metadata = svc.get("metadata", {})
         status = svc.get("status", {})
-        results.append({
-            "name": metadata.get("name", ""),
-            "region": metadata.get("labels", {}).get(
-                "cloud.googleapis.com/location", ""
-            ),
-            "url": status.get("url", ""),
-        })
+        results.append(
+            {
+                "name": metadata.get("name", ""),
+                "region": metadata.get("labels", {}).get(
+                    "cloud.googleapis.com/location", ""
+                ),
+                "url": status.get("url", ""),
+            }
+        )
     return results
 
 
@@ -115,10 +117,12 @@ def analyze_all_services(
             )
             results.append(result)
         except Exception as e:
-            results.append({
-                "service": {"name": svc["name"], "region": svc["region"]},
-                "error": str(e),
-            })
+            results.append(
+                {
+                    "service": {"name": svc["name"], "region": svc["region"]},
+                    "error": str(e),
+                }
+            )
     return results
 
 

@@ -1,6 +1,6 @@
 # Engineering Team
 
-Your engineering team on call — [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents that work as specialized engineers.
+Your engineering team on call - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents that work as specialized engineers.
 
 Each agent is a senior specialist who audits, analyzes, and recommends. They integrate directly into Claude Code as agents and slash commands.
 
@@ -16,6 +16,7 @@ cloudrun-agent install
 ```
 
 Then in Claude Code:
+
 ```
 > analyze my cloud run services
 ```
@@ -32,20 +33,21 @@ engteam install cloud-run-specialist
 
 ### Cloud Architecture
 
-| Agent | What it does | Install |
-|-------|-------------|---------|
+| Agent                                                                | What it does                                                          | Install                      |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------------------- |
 | **[cloud-run-specialist](cloud-architecture/cloud-run-specialist/)** | Audit Cloud Run fleet: waste, performance, pricing, traffic, security | `pip install cloudrun-agent` |
 
 ### Coming Soon
 
-- **gke-specialist** — GKE cluster auditing
-- **cloud-sql-specialist** — Cloud SQL performance and cost
-- **iam-auditor** — IAM policy analysis and least-privilege recommendations
-- **ci-cd-engineer** — Pipeline optimization and reliability
+- **gke-specialist** - GKE cluster auditing
+- **cloud-sql-specialist** - Cloud SQL performance and cost
+- **iam-auditor** - IAM policy analysis and least-privilege recommendations
+- **ci-cd-engineer** - Pipeline optimization and reliability
 
 ## How It Works
 
 Each agent:
+
 1. Connects to your infrastructure using your existing CLI credentials
 2. Fetches configuration and live metrics
 3. Runs specialized analyzers against best practices

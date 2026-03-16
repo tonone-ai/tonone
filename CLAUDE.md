@@ -1,6 +1,6 @@
 # Engineering Team
 
-Monorepo for the Engineering Team agent marketplace — Claude Code agents that act as specialized engineers.
+Monorepo for the Engineering Team agent marketplace - Claude Code agents that act as specialized engineers.
 
 ## Structure
 

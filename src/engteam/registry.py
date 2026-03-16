@@ -1,4 +1,4 @@
-"""Agent registry — the catalog of all Engineering Team agents."""
+"""Agent registry - the catalog of all Engineering Team agents."""
 
 from dataclasses import dataclass
 
@@ -26,7 +26,7 @@ AGENTS: tuple[AgentEntry, ...] = (
             "/cloudrun-history",
         ),
     ),
-    # Future agents — add entries here as they're built
+    # Future agents - add entries here as they're built
     # AgentEntry(
     #     name="gke-specialist",
     #     team="cloud-architecture",

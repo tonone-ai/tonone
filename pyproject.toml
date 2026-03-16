@@ -1,23 +1,30 @@
 [project]
 name = "engteam"
 version = "0.1.0"
-description = "Your engineering team on call — Claude Code agents for infrastructure, security, and DevOps"
+description = "Your engineering team on call - Claude Code agents for infrastructure, security, and DevOps"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
 dependencies = []
-keywords = ["claude-code", "agents", "devops", "cloud", "infrastructure", "eng-team"]
+keywords = [
+  "claude-code",
+  "agents",
+  "devops",
+  "cloud",
+  "infrastructure",
+  "eng-team",
+]
 classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Intended Audience :: System Administrators",
-    "Topic :: System :: Systems Administration",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "Topic :: System :: Systems Administration",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
 ]
 
 [project.urls]
@@ -38,7 +45,8 @@ packages = ["src/engteam"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 
+[tool.isort]
+profile = "black"
+
 [dependency-groups]
-dev = [
-    "pytest>=7.0.0",
-]
+dev = ["pytest>=7.0.0"]
