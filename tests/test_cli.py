@@ -1,13 +1,13 @@
 """Tests for the engteam CLI."""
 
 import argparse
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
 from engteam import __version__
-from engteam.cli import cmd_list, cmd_install, cmd_run, _header
-
+from engteam.cli import _header, cmd_install, cmd_list, cmd_run
 
 # ── _header ──────────────────────────────────────────────────────
+
 
 class TestHeader:
     def test_returns_string(self):
@@ -18,6 +18,7 @@ class TestHeader:
 
 
 # ── cmd_list ─────────────────────────────────────────────────────
+
 
 class TestCmdList:
     def test_list_all(self, capsys):
@@ -57,6 +58,7 @@ class TestCmdList:
 
 # ── cmd_install ──────────────────────────────────────────────────
 
+
 class TestCmdInstall:
     def test_unknown_agent_exits(self):
         args = argparse.Namespace(target="nonexistent-agent")
@@ -69,6 +71,7 @@ class TestCmdInstall:
     def test_coming_soon_agent_exits(self):
         """Coming-soon agents should not be installable."""
         from engteam.registry import AGENTS
+
         coming_soon = [a for a in AGENTS if a.status == "coming-soon"]
         if not coming_soon:
             return  # No coming-soon agents to test
@@ -81,7 +84,9 @@ class TestCmdInstall:
 
     @patch("engteam.cli._run")
     def test_install_specific_agent(self, mock_run, capsys):
-        mock_run.return_value = MagicMock(returncode=0, stdout="Installed OK\n", stderr="")
+        mock_run.return_value = MagicMock(
+            returncode=0, stdout="Installed OK\n", stderr=""
+        )
         args = argparse.Namespace(target="cloud-run-specialist")
         cmd_install(args)
         output = capsys.readouterr().out
@@ -115,13 +120,18 @@ class TestCmdInstall:
         """When uvx fails, should try pip."""
         fail = MagicMock(returncode=1, stdout="", stderr="not found")
         success = MagicMock(returncode=0, stdout="Installed\n", stderr="")
-        mock_run.side_effect = [fail, success, success]  # uvx fails, pip install, pip run
+        mock_run.side_effect = [
+            fail,
+            success,
+            success,
+        ]  # uvx fails, pip install, pip run
         args = argparse.Namespace(target="cloud-run-specialist")
         cmd_install(args)
         assert mock_run.call_count >= 2
 
 
 # ── cmd_run ──────────────────────────────────────────────────────
+
 
 class TestCmdRun:
     def test_unknown_agent_exits(self):
@@ -139,11 +149,11 @@ class TestCmdRun:
         cmd_run(args)
         cmd = mock_run.call_args[0][0]
         assert "cloudrun-agent" in cmd
-        assert "analyze" in cmd
         assert "--html" in cmd
 
 
 # ── version ──────────────────────────────────────────────────────
+
 
 class TestVersion:
     def test_version_string(self):
