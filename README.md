@@ -8,11 +8,11 @@ Everything runs locally. No data leaves your machine.
 
 ## Quick Start
 
-Install the Cloud Run Specialist directly:
+Install the Cloud Run Specialist directly in Claude Code:
 
-```bash
-pip install cloudrun-agent
-cloudrun-agent install
+```
+/plugin marketplace add thisisfatih/eng-team
+/plugin install cloud-run-specialist@thisisfatih
 ```
 
 Then in Claude Code:
@@ -21,7 +21,15 @@ Then in Claude Code:
 > analyze my cloud run services
 ```
 
-Or install via the marketplace to browse all agents:
+<details>
+<summary>Alternative: install via pip</summary>
+
+```bash
+pip install cloudrun-agent
+cloudrun-agent install
+```
+
+Or browse all agents:
 
 ```bash
 pip install engteam
@@ -29,13 +37,15 @@ engteam list
 engteam install cloud-run-specialist
 ```
 
+</details>
+
 ## Available Agents
 
 ### Cloud Architecture
 
-| Agent                                                                | What it does                                                          | Install                      |
-| -------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------------------- |
-| **[cloud-run-specialist](cloud-architecture/cloud-run-specialist/)** | Audit Cloud Run fleet: waste, performance, pricing, traffic, security | `pip install cloudrun-agent` |
+| Agent                                                                | What it does                                                          | Plugin                                             | Pip                          |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------- |
+| **[cloud-run-specialist](cloud-architecture/cloud-run-specialist/)** | Audit Cloud Run fleet: waste, performance, pricing, traffic, security | `/plugin install cloud-run-specialist@thisisfatih` | `pip install cloudrun-agent` |
 
 ### Coming Soon
 
@@ -56,6 +66,16 @@ Each agent:
 
 ## Marketplace Commands
 
+```
+/plugin marketplace add thisisfatih/eng-team     # add the marketplace
+/plugin install cloud-run-specialist@thisisfatih  # install one agent
+/plugin list                                      # see installed plugins
+/plugin update cloud-run-specialist@thisisfatih   # update an agent
+```
+
+<details>
+<summary>Alternative: engteam CLI</summary>
+
 ```bash
 engteam list                              # browse all agents
 engteam list --team cloud-architecture    # filter by team
@@ -65,6 +85,8 @@ engteam install --all                     # install everything
 engteam run cloud-run-specialist -- --html  # run an agent directly
 engteam update                            # update all agents
 ```
+
+</details>
 
 ## For Contributors
 
