@@ -1,35 +1,29 @@
 # AGENT_NAME
 
-Part of [Engineering Team](../../README.md) › TEAM_LABEL
-
 AGENT_DESCRIPTION
 
-## Quick Start
+## Install
+
+In Claude Code (recommended):
+
+```
+/plugin marketplace add thisisfatih/eng-team
+/plugin install AGENT_SLUG@thisisfatih
+```
+
+Or via pip:
 
 ```bash
-engteam install AGENT_SLUG
-# or
-uvx AGENT_PYPI_NAME install
-```
-
-Then in Claude Code:
-```
-> EXAMPLE_PROMPT
+pip install AGENT_PYPI_NAME
 ```
 
 ## Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
 - PREREQS_HERE
-- Python 3.13+ and [uv](https://docs.astral.sh/uv/)
 
 ## Skills
 
-| Skill | Description |
-|-------|-------------|
-| `/SKILL_1` | SKILL_1_DESC |
-| `/SKILL_2` | SKILL_2_DESC |
+After install, these slash commands are available in Claude Code:
 
-## License
-
-MIT
+- `/SKILL_NAME` - SKILL_DESCRIPTION
