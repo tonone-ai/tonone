@@ -4,7 +4,6 @@ import html
 import json
 from typing import Any
 
-
 # SVG severity indicators (inline, 14x14)
 _SEVERITY_ICONS = {
     "critical": '<svg class="sev-icon sev-crit" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="currentColor"/></svg>',
@@ -23,11 +22,36 @@ _GROUP_SVGS = {
 }
 
 _GROUP_META = {
-    "security": {"icon": _GROUP_SVGS["security"], "label": "Security", "color": "#ef4444", "desc": "Access control, secrets, IAM policies"},
-    "resources": {"icon": _GROUP_SVGS["resources"], "label": "Resource Efficiency", "color": "#eab308", "desc": "CPU, memory allocation and utilization"},
-    "performance": {"icon": _GROUP_SVGS["performance"], "label": "Performance", "color": "#14b8a6", "desc": "Latency, cold starts, error rates"},
-    "traffic": {"icon": _GROUP_SVGS["traffic"], "label": "Traffic & Scaling", "color": "#3b82f6", "desc": "Request patterns, instance scaling"},
-    "pricing": {"icon": _GROUP_SVGS["pricing"], "label": "Cost Optimization", "color": "#22c55e", "desc": "Spend breakdown and savings"},
+    "security": {
+        "icon": _GROUP_SVGS["security"],
+        "label": "Security",
+        "color": "#ef4444",
+        "desc": "Access control, secrets, IAM policies",
+    },
+    "resources": {
+        "icon": _GROUP_SVGS["resources"],
+        "label": "Resource Efficiency",
+        "color": "#eab308",
+        "desc": "CPU, memory allocation and utilization",
+    },
+    "performance": {
+        "icon": _GROUP_SVGS["performance"],
+        "label": "Performance",
+        "color": "#14b8a6",
+        "desc": "Latency, cold starts, error rates",
+    },
+    "traffic": {
+        "icon": _GROUP_SVGS["traffic"],
+        "label": "Traffic & Scaling",
+        "color": "#3b82f6",
+        "desc": "Request patterns, instance scaling",
+    },
+    "pricing": {
+        "icon": _GROUP_SVGS["pricing"],
+        "label": "Cost Optimization",
+        "color": "#22c55e",
+        "desc": "Spend breakdown and savings",
+    },
 }
 
 
@@ -60,7 +84,12 @@ def _reqs(val: int) -> str:
 def _health_score(svc: dict[str, Any]) -> tuple[int, str]:
     """Compute 0-100 health score and letter grade."""
     fc = svc.get("findings_count", {})
-    score = 100 - fc.get("critical", 0) * 20 - fc.get("warning", 0) * 5 - fc.get("info", 0) * 1
+    score = (
+        100
+        - fc.get("critical", 0) * 20
+        - fc.get("warning", 0) * 5
+        - fc.get("info", 0) * 1
+    )
     score = max(0, min(100, score))
     if score >= 90:
         return score, "A"
@@ -132,7 +161,11 @@ def _build_svc_rows(services: list[dict[str, Any]]) -> str:
             continue
 
         score, grade = _health_score(svc)
-        grade_class = "grade-a" if grade in ("A", "B") else ("grade-c" if grade == "C" else "grade-f")
+        grade_class = (
+            "grade-a"
+            if grade in ("A", "B")
+            else ("grade-c" if grade == "C" else "grade-f")
+        )
 
         err_cell = ""
         er = svc.get("error_rate")
@@ -177,7 +210,9 @@ def _build_findings_sections(
 
     for gk in group_order:
         findings = findings_by_group.get(gk, [])
-        meta = _GROUP_META.get(gk, {"icon": "", "label": gk.title(), "color": "#a1a1aa", "desc": ""})
+        meta = _GROUP_META.get(
+            gk, {"icon": "", "label": gk.title(), "color": "#a1a1aa", "desc": ""}
+        )
 
         crit = sum(1 for f in findings if f["severity"] == "critical")
         warn = sum(1 for f in findings if f["severity"] == "warning")
@@ -200,7 +235,11 @@ def _build_findings_sections(
             count = len(affected)
             scope_text = f"all {total}" if count >= total else f"{count}/{total}"
             scope_pct = count / max(total, 1) * 100
-            bar_class = "bar-crit" if sev == "critical" else ("bar-warn" if sev == "warning" else "bar-info")
+            bar_class = (
+                "bar-crit"
+                if sev == "critical"
+                else ("bar-warn" if sev == "warning" else "bar-info")
+            )
 
             rows += f"""<div class="finding-row">
                 <div class="finding-sev">{_SEVERITY_ICONS.get(sev, '')}</div>
@@ -234,7 +273,9 @@ def _build_findings_sections(
     return sections
 
 
-def _delta(cur: float | int, prev: float | int, fmt: str = "num", invert: bool = False) -> str:
+def _delta(
+    cur: float | int, prev: float | int, fmt: str = "num", invert: bool = False
+) -> str:
     """Format a delta between current and previous values."""
     diff = cur - prev
     if diff == 0 or prev == 0:
@@ -248,7 +289,9 @@ def _delta(cur: float | int, prev: float | int, fmt: str = "num", invert: bool =
     if fmt == "cost":
         return f'<span class="delta" style="color:{color}">{arrow} ${abs(diff):.2f} ({abs(pct):.0f}%)</span>'
     if fmt == "pct":
-        return f'<span class="delta" style="color:{color}">{arrow} {abs(pct):.0f}%</span>'
+        return (
+            f'<span class="delta" style="color:{color}">{arrow} {abs(pct):.0f}%</span>'
+        )
     return f'<span class="delta" style="color:{color}">{arrow} {abs(diff):.0f} ({abs(pct):.0f}%)</span>'
 
 
@@ -276,7 +319,9 @@ def _build_comparison_banner(comparison: dict[str, Any]) -> str:
     if added:
         changes_html += f'<span class="delta-tag new">+{len(added)} new</span>'
     if removed:
-        changes_html += f'<span class="delta-tag removed">-{len(removed)} removed</span>'
+        changes_html += (
+            f'<span class="delta-tag removed">-{len(removed)} removed</span>'
+        )
     if changed:
         changes_html += f'<span class="delta-tag changed">{len(changed)} changed</span>'
 
@@ -321,16 +366,25 @@ def generate_dashboard(
     infra_html = _build_infra_cards(fleet)
     comparison_html = _build_comparison_banner(comparison) if comparison else ""
 
-    chart_data = json.dumps({
-        svc["name"]: svc.get("time_series", {})
-        for svc in services if svc.get("status") != "error"
-    })
+    chart_data = json.dumps(
+        {
+            svc["name"]: svc.get("time_series", {})
+            for svc in services
+            if svc.get("status") != "error"
+        }
+    )
 
     total_findings = fc.get("critical", 0) * 3 + fc.get("warning", 0)
     max_expected = fleet["total_services"] * 6
-    health_pct = max(0, min(100, int(100 - (total_findings / max(max_expected, 1)) * 100)))
+    health_pct = max(
+        0, min(100, int(100 - (total_findings / max(max_expected, 1)) * 100))
+    )
 
-    health_color = "var(--ok)" if health_pct >= 75 else ("var(--warn)" if health_pct >= 50 else "var(--crit)")
+    health_color = (
+        "var(--ok)"
+        if health_pct >= 75
+        else ("var(--warn)" if health_pct >= 50 else "var(--crit)")
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en"><head>

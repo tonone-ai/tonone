@@ -150,9 +150,13 @@ def list_revisions(
 ) -> list[dict[str, Any]]:
     """List revisions for a Cloud Run service."""
     args = [
-        "run", "revisions", "list",
-        "--service", service,
-        "--region", region,
+        "run",
+        "revisions",
+        "list",
+        "--service",
+        service,
+        "--region",
+        region,
     ]
     if project:
         args.extend(["--project", project])
@@ -187,8 +191,12 @@ def get_iam_policy(
 ) -> dict[str, Any]:
     """Get IAM policy for a Cloud Run service."""
     args = [
-        "run", "services", "get-iam-policy", service,
-        "--region", region,
+        "run",
+        "services",
+        "get-iam-policy",
+        service,
+        "--region",
+        region,
     ]
     if project:
         args.extend(["--project", project])
@@ -205,7 +213,9 @@ def _get_access_token() -> str:
         timeout=10,
     )
     if result.returncode != 0:
-        raise GcloudError("gcloud auth print-access-token", result.stderr.strip(), result.returncode)
+        raise GcloudError(
+            "gcloud auth print-access-token", result.stderr.strip(), result.returncode
+        )
     return result.stdout.strip()
 
 
@@ -235,7 +245,7 @@ def get_metrics(
     Uses the monitoring.timeSeries.list API with gcloud auth token.
     """
     import urllib.parse
-    from datetime import datetime, timezone, timedelta
+    from datetime import datetime, timedelta, timezone
 
     project_id = project or _get_project_id()
     token = _get_access_token()
@@ -250,27 +260,35 @@ def get_metrics(
         f'resource.labels.location="{region}"'
     )
 
-    params = urllib.parse.urlencode({
-        "filter": filter_str,
-        "interval.startTime": start.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "interval.endTime": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "aggregation.alignmentPeriod": alignment_period,
-        "aggregation.perSeriesAligner": per_series_aligner,
-    })
+    params = urllib.parse.urlencode(
+        {
+            "filter": filter_str,
+            "interval.startTime": start.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "interval.endTime": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "aggregation.alignmentPeriod": alignment_period,
+            "aggregation.perSeriesAligner": per_series_aligner,
+        }
+    )
 
     url = f"https://monitoring.googleapis.com/v3/projects/{project_id}/timeSeries?{params}"
 
     cmd = [
-        "curl", "-s", "-f",
-        "-H", f"Authorization: Bearer {token}",
-        "-H", "Content-Type: application/json",
+        "curl",
+        "-s",
+        "-f",
+        "-H",
+        f"Authorization: Bearer {token}",
+        "-H",
+        "Content-Type: application/json",
         url,
     ]
 
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
 
     if result.returncode != 0:
-        raise GcloudError("curl monitoring API", result.stderr.strip(), result.returncode)
+        raise GcloudError(
+            "curl monitoring API", result.stderr.strip(), result.returncode
+        )
 
     if not result.stdout.strip():
         return []

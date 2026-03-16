@@ -5,7 +5,6 @@ from typing import Any
 from cloudrun_agent.models.service import MetricPoint, ServiceMetrics
 from cloudrun_agent.tools.gcloud import get_metrics
 
-
 # Metric type constants
 REQUEST_COUNT = "run.googleapis.com/request_count"
 CPU_UTILIZATION = "run.googleapis.com/container/cpu/utilizations"
@@ -122,7 +121,7 @@ def _extract_distribution_percentile(
                     # Bucket i lower boundary = scale * growth^(i-1)
                     # Bucket i upper boundary = scale * growth^i
                     lower = scale * (growth ** (i - 1))
-                    upper = scale * (growth ** i)
+                    upper = scale * (growth**i)
                     # Linear interpolation within bucket
                     bucket_start_count = cumulative - count
                     fraction = (target - bucket_start_count) / max(count, 1)
@@ -132,10 +131,12 @@ def _extract_distribution_percentile(
             # Fallback to mean
             value_ms = entry["mean_sum"] / max(entry["count"], 1)
 
-        points.append(MetricPoint(
-            timestamp=timestamp,
-            value=round(value_ms / unit_divisor, 4),
-        ))
+        points.append(
+            MetricPoint(
+                timestamp=timestamp,
+                value=round(value_ms / unit_divisor, 4),
+            )
+        )
 
     return tuple(points)
 
@@ -163,37 +164,68 @@ def fetch_service_metrics(
     raw_billable: list[dict[str, Any]] = []
 
     try:
-        raw_requests = get_metrics(service, metric_type=REQUEST_COUNT, per_series_aligner="ALIGN_SUM", **kwargs)
+        raw_requests = get_metrics(
+            service, metric_type=REQUEST_COUNT, per_series_aligner="ALIGN_SUM", **kwargs
+        )
     except Exception:
         pass
 
     try:
-        raw_cpu = get_metrics(service, metric_type=CPU_UTILIZATION, per_series_aligner="ALIGN_PERCENTILE_99", **kwargs)
+        raw_cpu = get_metrics(
+            service,
+            metric_type=CPU_UTILIZATION,
+            per_series_aligner="ALIGN_PERCENTILE_99",
+            **kwargs,
+        )
     except Exception:
         pass
 
     try:
-        raw_memory = get_metrics(service, metric_type=MEMORY_UTILIZATION, per_series_aligner="ALIGN_PERCENTILE_99", **kwargs)
+        raw_memory = get_metrics(
+            service,
+            metric_type=MEMORY_UTILIZATION,
+            per_series_aligner="ALIGN_PERCENTILE_99",
+            **kwargs,
+        )
     except Exception:
         pass
 
     try:
-        raw_latency = get_metrics(service, metric_type=REQUEST_LATENCIES, per_series_aligner="ALIGN_DELTA", **kwargs)
+        raw_latency = get_metrics(
+            service,
+            metric_type=REQUEST_LATENCIES,
+            per_series_aligner="ALIGN_DELTA",
+            **kwargs,
+        )
     except Exception:
         pass
 
     try:
-        raw_instances = get_metrics(service, metric_type=INSTANCE_COUNT, per_series_aligner="ALIGN_MEAN", **kwargs)
+        raw_instances = get_metrics(
+            service,
+            metric_type=INSTANCE_COUNT,
+            per_series_aligner="ALIGN_MEAN",
+            **kwargs,
+        )
     except Exception:
         pass
 
     try:
-        raw_billable = get_metrics(service, metric_type=BILLABLE_INSTANCE_TIME, per_series_aligner="ALIGN_RATE", **kwargs)
+        raw_billable = get_metrics(
+            service,
+            metric_type=BILLABLE_INSTANCE_TIME,
+            per_series_aligner="ALIGN_RATE",
+            **kwargs,
+        )
     except Exception:
         pass
 
     # Separate request counts into total vs errors (5xx)
-    error_series = [s for s in raw_requests if s.get("metric", {}).get("labels", {}).get("response_code_class") == "5xx"]
+    error_series = [
+        s
+        for s in raw_requests
+        if s.get("metric", {}).get("labels", {}).get("response_code_class") == "5xx"
+    ]
     all_request_series = raw_requests
 
     return ServiceMetrics(

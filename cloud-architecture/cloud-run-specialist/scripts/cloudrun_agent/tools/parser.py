@@ -1,7 +1,7 @@
 """Parse gcloud JSON output into typed data models."""
 
-from typing import Any
 import json
+from typing import Any
 
 from cloudrun_agent.models.service import (
     NetworkConfig,
@@ -48,9 +48,7 @@ def parse_service(data: dict[str, Any]) -> ServiceConfig:
     )
 
     scaling = ScalingConfig(
-        min_instances=_safe_int(
-            annotations.get("autoscaling.knative.dev/minScale", 0)
-        ),
+        min_instances=_safe_int(annotations.get("autoscaling.knative.dev/minScale", 0)),
         max_instances=_safe_int(
             annotations.get("autoscaling.knative.dev/maxScale", 100)
         ),
@@ -67,8 +65,14 @@ def parse_service(data: dict[str, Any]) -> ServiceConfig:
         vpc_network=vpc_network,
         vpc_subnet=vpc_subnet,
         vpc_connector=annotations.get("run.googleapis.com/vpc-access-connector", ""),
-        default_url_disabled=meta_annotations.get("run.googleapis.com/default-url-disabled", "false") == "true",
-        invoker_iam_disabled=meta_annotations.get("run.googleapis.com/invoker-iam-disabled", "false") == "true",
+        default_url_disabled=meta_annotations.get(
+            "run.googleapis.com/default-url-disabled", "false"
+        )
+        == "true",
+        invoker_iam_disabled=meta_annotations.get(
+            "run.googleapis.com/invoker-iam-disabled", "false"
+        )
+        == "true",
     )
 
     env_list = container.get("env", [])
@@ -95,8 +99,14 @@ def parse_service(data: dict[str, Any]) -> ServiceConfig:
         revisions=revisions,
         labels=metadata.get("labels", {}),
         env_vars=env_vars,
-        startup_cpu_boost=annotations.get("run.googleapis.com/startup-cpu-boost", "false") == "true",
-        threat_detection=meta_annotations.get("run.googleapis.com/threat-detection", "false") == "true",
+        startup_cpu_boost=annotations.get(
+            "run.googleapis.com/startup-cpu-boost", "false"
+        )
+        == "true",
+        threat_detection=meta_annotations.get(
+            "run.googleapis.com/threat-detection", "false"
+        )
+        == "true",
         created_by=meta_annotations.get("serving.knative.dev/creator", ""),
         last_modified_by=meta_annotations.get("serving.knative.dev/lastModifier", ""),
         generation=_safe_int(metadata.get("generation", 0)),
@@ -111,8 +121,7 @@ def parse_revision(data: dict[str, Any]) -> ServiceRevision:
     status = data.get("status", {})
     conditions = status.get("conditions", [])
     is_active = any(
-        c.get("type") == "Ready" and c.get("status") == "True"
-        for c in conditions
+        c.get("type") == "Ready" and c.get("status") == "True" for c in conditions
     )
 
     return ServiceRevision(

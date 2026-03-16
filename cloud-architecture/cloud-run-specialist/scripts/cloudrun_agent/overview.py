@@ -6,9 +6,14 @@ from typing import Any
 
 from cloudrun_agent.analyzers.performance import analyze_performance
 from cloudrun_agent.analyzers.pricing import estimate_pricing
-from cloudrun_agent.analyzers.resources import analyze_resource_waste, _parse_cpu_cores, _parse_memory_mi
+from cloudrun_agent.analyzers.resources import (
+    _parse_cpu_cores,
+    _parse_memory_mi,
+    analyze_resource_waste,
+)
 from cloudrun_agent.analyzers.security import analyze_security
 from cloudrun_agent.analyzers.traffic import analyze_traffic
+from cloudrun_agent.models.service import ServiceConfig
 from cloudrun_agent.tools.gcloud import (
     describe_service,
     get_iam_policy,
@@ -16,7 +21,6 @@ from cloudrun_agent.tools.gcloud import (
 )
 from cloudrun_agent.tools.metrics import fetch_service_metrics
 from cloudrun_agent.tools.parser import parse_service
-from cloudrun_agent.models.service import ServiceConfig
 
 
 def _progress(message: str) -> None:
@@ -148,9 +152,7 @@ def build_overview(
     for idx, raw_svc in enumerate(raw_services, 1):
         metadata = raw_svc.get("metadata", {})
         name = metadata.get("name", "")
-        svc_region = metadata.get("labels", {}).get(
-            "cloud.googleapis.com/location", ""
-        )
+        svc_region = metadata.get("labels", {}).get("cloud.googleapis.com/location", "")
 
         _progress(f"  [{idx}/{total}] {name} ({svc_region})")
 
@@ -159,10 +161,14 @@ def build_overview(
             config = parse_service(raw)
             configs.append(config)
         except Exception as e:
-            services_summary.append({
-                "name": name, "region": svc_region,
-                "status": "error", "error": str(e),
-            })
+            services_summary.append(
+                {
+                    "name": name,
+                    "region": svc_region,
+                    "status": "error",
+                    "error": str(e),
+                }
+            )
             continue
 
         # Fetch IAM
@@ -176,7 +182,9 @@ def build_overview(
         metrics = None
         try:
             metrics = fetch_service_metrics(
-                name, region=svc_region, project=project,
+                name,
+                region=svc_region,
+                project=project,
             )
         except Exception:
             pass
@@ -198,7 +206,9 @@ def build_overview(
         for f in traffic_findings:
             f["group"] = "traffic"
 
-        all_svc_findings = resource_findings + perf_findings + security_findings + traffic_findings
+        all_svc_findings = (
+            resource_findings + perf_findings + security_findings + traffic_findings
+        )
         for f in all_svc_findings:
             f["service"] = name
 
@@ -214,16 +224,24 @@ def build_overview(
         avg_cpu = None
         avg_mem = None
         if metrics and metrics.cpu_utilization:
-            avg_cpu = sum(p.value for p in metrics.cpu_utilization) / len(metrics.cpu_utilization)
+            avg_cpu = sum(p.value for p in metrics.cpu_utilization) / len(
+                metrics.cpu_utilization
+            )
         if metrics and metrics.memory_utilization:
-            avg_mem = sum(p.value for p in metrics.memory_utilization) / len(metrics.memory_utilization)
+            avg_mem = sum(p.value for p in metrics.memory_utilization) / len(
+                metrics.memory_utilization
+            )
 
         p50 = None
         p99 = None
         if metrics and metrics.request_latency_p50:
-            p50 = sum(p.value for p in metrics.request_latency_p50) / len(metrics.request_latency_p50)
+            p50 = sum(p.value for p in metrics.request_latency_p50) / len(
+                metrics.request_latency_p50
+            )
         if metrics and metrics.request_latency_p99:
-            p99 = sum(p.value for p in metrics.request_latency_p99) / len(metrics.request_latency_p99)
+            p99 = sum(p.value for p in metrics.request_latency_p99) / len(
+                metrics.request_latency_p99
+            )
 
         # Error rate
         error_rate = None
@@ -246,35 +264,38 @@ def build_overview(
             ]:
                 if points:
                     time_series[key] = [
-                        {"t": p.timestamp, "v": round(p.value, 4)}
-                        for p in points
+                        {"t": p.timestamp, "v": round(p.value, 4)} for p in points
                     ]
 
-        services_summary.append({
-            "name": name,
-            "region": svc_region,
-            "cpu": config.resources.cpu,
-            "memory": config.resources.memory,
-            "min_instances": config.scaling.min_instances,
-            "max_instances": config.scaling.max_instances,
-            "concurrency": config.scaling.concurrency,
-            "ingress": config.network.ingress,
-            "egress": config.network.egress,
-            "vpc_connected": bool(config.network.vpc_connector or config.network.vpc_network),
-            "startup_boost": config.startup_cpu_boost,
-            "service_account": config.service_account,
-            "generation": config.generation,
-            "daily_requests": round(daily_requests),
-            "avg_cpu_util": round(avg_cpu, 3) if avg_cpu is not None else None,
-            "avg_mem_util": round(avg_mem, 3) if avg_mem is not None else None,
-            "latency_p50_s": round(p50, 3) if p50 is not None else None,
-            "latency_p99_s": round(p99, 3) if p99 is not None else None,
-            "error_rate": error_rate,
-            "monthly_cost": pricing.monthly_estimate,
-            "findings_count": _count_by_severity(all_svc_findings),
-            "worst_severity": _worst_severity(all_svc_findings),
-            "time_series": time_series,
-        })
+        services_summary.append(
+            {
+                "name": name,
+                "region": svc_region,
+                "cpu": config.resources.cpu,
+                "memory": config.resources.memory,
+                "min_instances": config.scaling.min_instances,
+                "max_instances": config.scaling.max_instances,
+                "concurrency": config.scaling.concurrency,
+                "ingress": config.network.ingress,
+                "egress": config.network.egress,
+                "vpc_connected": bool(
+                    config.network.vpc_connector or config.network.vpc_network
+                ),
+                "startup_boost": config.startup_cpu_boost,
+                "service_account": config.service_account,
+                "generation": config.generation,
+                "daily_requests": round(daily_requests),
+                "avg_cpu_util": round(avg_cpu, 3) if avg_cpu is not None else None,
+                "avg_mem_util": round(avg_mem, 3) if avg_mem is not None else None,
+                "latency_p50_s": round(p50, 3) if p50 is not None else None,
+                "latency_p99_s": round(p99, 3) if p99 is not None else None,
+                "error_rate": error_rate,
+                "monthly_cost": pricing.monthly_estimate,
+                "findings_count": _count_by_severity(all_svc_findings),
+                "worst_severity": _worst_severity(all_svc_findings),
+                "time_series": time_series,
+            }
+        )
 
     # Sort findings by severity
     all_findings.sort(key=lambda f: _severity_rank(f["severity"]))
@@ -327,5 +348,7 @@ def _group_findings(findings: list[dict[str, Any]]) -> list[dict[str, Any]]:
             groups[key]["group"] = f.get("group", "other")
 
     result = list(groups.values())
-    result.sort(key=lambda g: (_severity_rank(g["severity"]), -len(g["affected_services"])))
+    result.sort(
+        key=lambda g: (_severity_rank(g["severity"]), -len(g["affected_services"]))
+    )
     return result
