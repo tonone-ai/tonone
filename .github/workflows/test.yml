@@ -45,7 +45,7 @@ jobs:
         uses: astral-sh/setup-uv@v4
 
       - name: Install and test
-        working-directory: cloud-architecture/cloud-run-specialist
+        working-directory: cloud-architecture/cloud-run-specialist/scripts
         run: |
           uv sync
-          uv run pytest -v --tb=short
+          uv run pytest ../tests/ -v --tb=short
