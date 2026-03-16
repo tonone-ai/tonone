@@ -7,5 +7,6 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #1574 | 2:55 AM | ✅ | Created plugin.json metadata for eng-team marketplace | ~297 |
+| #1577 | 2:57 AM | 🔴 | Fixed marketplace plugin discovery by adding .claude-plugin directory structure | ~432 |
+| #1573 | 2:55 AM | ✅ | Created marketplace.json configuration for thisisfatih eng-team marketplace | ~359 |
 </claude-mem-context>
