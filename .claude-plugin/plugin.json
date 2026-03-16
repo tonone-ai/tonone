@@ -1,0 +1,12 @@
+{
+  "name": "eng-team",
+  "description": "Engineering Team - Claude Code agents that work as specialized engineers",
+  "version": "0.1.0",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": ["agents", "cloud-run", "infrastructure", "marketplace"]
+}
