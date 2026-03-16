@@ -8,6 +8,8 @@ class AgentEntry:
     name: str
     team: str
     pypi_package: str
+    plugin_name: str
+    marketplace: str
     description: str
     skills: tuple[str, ...]
     status: str = "available"  # available, coming-soon
@@ -18,6 +20,8 @@ AGENTS: tuple[AgentEntry, ...] = (
         name="cloud-run-specialist",
         team="cloud-architecture",
         pypi_package="cloudrun-agent",
+        plugin_name="cloud-run-specialist",
+        marketplace="thisisfatih/eng-team",
         description="Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
         skills=(
             "/cloudrun-dashboard",

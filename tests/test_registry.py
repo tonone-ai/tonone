@@ -9,45 +9,67 @@ from engteam.registry import (
     get_all_teams,
 )
 
-
 # ── AgentEntry dataclass ────────────────────────────────────────
+
 
 class TestAgentEntry:
     def test_frozen(self):
         entry = AgentEntry(
-            name="test", team="t", pypi_package="p",
-            description="d", skills=(),
+            name="test",
+            team="t",
+            pypi_package="p",
+            plugin_name="test-plugin",
+            marketplace="test/repo",
+            description="d",
+            skills=(),
         )
         try:
             entry.name = "changed"
-            assert False, "Should be frozen"
+            raise AssertionError("Should be frozen")
         except AttributeError:
             pass
 
     def test_default_status(self):
         entry = AgentEntry(
-            name="test", team="t", pypi_package="p",
-            description="d", skills=(),
+            name="test",
+            team="t",
+            pypi_package="p",
+            plugin_name="test-plugin",
+            marketplace="test/repo",
+            description="d",
+            skills=(),
         )
         assert entry.status == "available"
 
     def test_custom_status(self):
         entry = AgentEntry(
-            name="test", team="t", pypi_package="p",
-            description="d", skills=(), status="coming-soon",
+            name="test",
+            team="t",
+            pypi_package="p",
+            plugin_name="test-plugin",
+            marketplace="test/repo",
+            description="d",
+            skills=(),
+            status="coming-soon",
         )
         assert entry.status == "coming-soon"
 
     def test_skills_is_tuple(self):
         entry = AgentEntry(
-            name="test", team="t", pypi_package="p",
-            description="d", skills=("/a", "/b"),
+            name="test",
+            team="t",
+            pypi_package="p",
+            plugin_name="test-plugin",
+            marketplace="test/repo",
+            description="d",
+            skills=("/a", "/b"),
         )
         assert isinstance(entry.skills, tuple)
         assert len(entry.skills) == 2
 
 
 # ── AGENTS registry ─────────────────────────────────────────────
+
 
 class TestAgentsRegistry:
     def test_agents_is_tuple(self):
@@ -87,6 +109,7 @@ class TestAgentsRegistry:
 
 # ── TEAMS dict ───────────────────────────────────────────────────
 
+
 class TestTeams:
     def test_teams_is_dict(self):
         assert isinstance(TEAMS, dict)
@@ -96,10 +119,13 @@ class TestTeams:
 
     def test_all_agent_teams_in_teams_dict(self):
         for agent in AGENTS:
-            assert agent.team in TEAMS, f"Agent '{agent.name}' has team '{agent.team}' not in TEAMS"
+            assert (
+                agent.team in TEAMS
+            ), f"Agent '{agent.name}' has team '{agent.team}' not in TEAMS"
 
 
 # ── get_agent ────────────────────────────────────────────────────
+
 
 class TestGetAgent:
     def test_found(self):
@@ -118,6 +144,7 @@ class TestGetAgent:
 
 
 # ── get_agents_by_team ───────────────────────────────────────────
+
 
 class TestGetAgentsByTeam:
     def test_cloud_architecture(self):
@@ -139,6 +166,7 @@ class TestGetAgentsByTeam:
 
 # ── get_all_teams ────────────────────────────────────────────────
 
+
 class TestGetAllTeams:
     def test_returns_tuple(self):
         teams = get_all_teams()
@@ -157,3 +185,14 @@ class TestGetAllTeams:
         for team in teams:
             agents = get_agents_by_team(team)
             assert len(agents) > 0, f"Team '{team}' has no agents"
+
+
+def test_agent_entry_has_plugin_fields():
+    """AgentEntry includes plugin_name and marketplace fields."""
+    from engteam.registry import AGENTS
+
+    agent = AGENTS[0]
+    assert hasattr(agent, "plugin_name")
+    assert hasattr(agent, "marketplace")
+    assert agent.plugin_name == "cloud-run-specialist"
+    assert agent.marketplace == "thisisfatih/eng-team"

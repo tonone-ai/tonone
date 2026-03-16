@@ -1,0 +1,12 @@
+{
+  "name": "AGENT_SLUG",
+  "version": "0.1.0",
+  "description": "AGENT_DESCRIPTION",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": []
+}

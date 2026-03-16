@@ -1,0 +1,12 @@
+{
+  "name": "cloud-run-specialist",
+  "version": "0.1.0",
+  "description": "Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": ["gcp", "cloud-run", "audit", "infrastructure"]
+}

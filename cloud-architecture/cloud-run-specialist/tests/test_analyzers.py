@@ -1,34 +1,27 @@
 """Tests for all 5 analyzers: resources, performance, pricing, security, traffic."""
 
 import pytest
-
+from cloudrun_agent.analyzers.performance import (
+    analyze_performance,
+)
+from cloudrun_agent.analyzers.pricing import (
+    REQUEST_PER_MILLION,
+    PricingEstimate,
+)
+from cloudrun_agent.analyzers.pricing import _parse_cpu_cores as pricing_parse_cpu
+from cloudrun_agent.analyzers.pricing import (
+    _parse_memory_gib,
+    estimate_pricing,
+)
 from cloudrun_agent.analyzers.resources import (
-    ResourceFinding,
     _parse_cpu_cores,
     _parse_memory_mi,
     analyze_resource_waste,
 )
-from cloudrun_agent.analyzers.performance import (
-    PerformanceFinding,
-    analyze_performance,
-)
-from cloudrun_agent.analyzers.pricing import (
-    PricingEstimate,
-    _parse_cpu_cores as pricing_parse_cpu,
-    _parse_memory_gib,
-    estimate_pricing,
-    VCPU_PER_SEC,
-    MEMORY_GIB_PER_SEC,
-    REQUEST_PER_MILLION,
-    MIN_INSTANCE_VCPU_PER_SEC,
-    MIN_INSTANCE_MEM_GIB_PER_SEC,
-)
 from cloudrun_agent.analyzers.security import (
-    SecurityFinding,
     analyze_security,
 )
 from cloudrun_agent.analyzers.traffic import (
-    TrafficFinding,
     analyze_traffic,
 )
 from cloudrun_agent.models.service import (
@@ -41,10 +34,10 @@ from cloudrun_agent.models.service import (
     ServiceRevision,
 )
 
-
 # =============================================================================
 # Resources Analyzer
 # =============================================================================
+
 
 class TestParseCpuCores:
     def test_millicores(self):
@@ -142,12 +135,16 @@ class TestAnalyzeResourceWaste:
         categories = [f.category for f in findings]
         assert "idle_cpu_cost" not in categories
 
-    def test_cpu_underutilized_with_metrics(self, overprovisioned_config, underutilized_metrics):
+    def test_cpu_underutilized_with_metrics(
+        self, overprovisioned_config, underutilized_metrics
+    ):
         findings = analyze_resource_waste(overprovisioned_config, underutilized_metrics)
         categories = [f.category for f in findings]
         assert "cpu_underutilized" in categories
 
-    def test_memory_underutilized_with_metrics(self, overprovisioned_config, underutilized_metrics):
+    def test_memory_underutilized_with_metrics(
+        self, overprovisioned_config, underutilized_metrics
+    ):
         findings = analyze_resource_waste(overprovisioned_config, underutilized_metrics)
         categories = [f.category for f in findings]
         assert "memory_underutilized" in categories
@@ -183,6 +180,7 @@ class TestAnalyzeResourceWaste:
 # =============================================================================
 # Performance Analyzer
 # =============================================================================
+
 
 class TestAnalyzePerformance:
     def test_cold_start_risk(self):
@@ -234,7 +232,9 @@ class TestAnalyzePerformance:
         assert "low_max_instances" not in categories
 
     def test_high_latency_critical(self):
-        config = ServiceConfig(scaling=ScalingConfig(min_instances=1, max_instances=100))
+        config = ServiceConfig(
+            scaling=ScalingConfig(min_instances=1, max_instances=100)
+        )
         metrics = ServiceMetrics(
             request_latency_p99=(
                 MetricPoint(timestamp="t1", value=2.5),
@@ -248,7 +248,9 @@ class TestAnalyzePerformance:
         assert critical[0].severity == "critical"
 
     def test_elevated_latency_warning(self):
-        config = ServiceConfig(scaling=ScalingConfig(min_instances=1, max_instances=100))
+        config = ServiceConfig(
+            scaling=ScalingConfig(min_instances=1, max_instances=100)
+        )
         metrics = ServiceMetrics(
             request_latency_p99=(
                 MetricPoint(timestamp="t1", value=0.6),
@@ -260,7 +262,9 @@ class TestAnalyzePerformance:
         assert "elevated_latency" in categories
 
     def test_no_latency_finding_for_fast_service(self):
-        config = ServiceConfig(scaling=ScalingConfig(min_instances=1, max_instances=100))
+        config = ServiceConfig(
+            scaling=ScalingConfig(min_instances=1, max_instances=100)
+        )
         metrics = ServiceMetrics(
             request_latency_p99=(
                 MetricPoint(timestamp="t1", value=0.1),
@@ -273,7 +277,9 @@ class TestAnalyzePerformance:
         assert "elevated_latency" not in categories
 
     def test_high_error_rate_critical(self):
-        config = ServiceConfig(scaling=ScalingConfig(min_instances=1, max_instances=100))
+        config = ServiceConfig(
+            scaling=ScalingConfig(min_instances=1, max_instances=100)
+        )
         metrics = ServiceMetrics(
             request_count=(MetricPoint(timestamp="t1", value=1000),),
             error_count=(MetricPoint(timestamp="t1", value=100),),
@@ -283,7 +289,9 @@ class TestAnalyzePerformance:
         assert "high_error_rate" in categories
 
     def test_elevated_error_rate_warning(self):
-        config = ServiceConfig(scaling=ScalingConfig(min_instances=1, max_instances=100))
+        config = ServiceConfig(
+            scaling=ScalingConfig(min_instances=1, max_instances=100)
+        )
         metrics = ServiceMetrics(
             request_count=(MetricPoint(timestamp="t1", value=1000),),
             error_count=(MetricPoint(timestamp="t1", value=20),),
@@ -293,7 +301,9 @@ class TestAnalyzePerformance:
         assert "elevated_error_rate" in categories
 
     def test_no_error_findings_without_errors(self):
-        config = ServiceConfig(scaling=ScalingConfig(min_instances=1, max_instances=100))
+        config = ServiceConfig(
+            scaling=ScalingConfig(min_instances=1, max_instances=100)
+        )
         metrics = ServiceMetrics(
             request_count=(MetricPoint(timestamp="t1", value=1000),),
             error_count=(MetricPoint(timestamp="t1", value=1),),
@@ -304,7 +314,9 @@ class TestAnalyzePerformance:
         assert "elevated_error_rate" not in categories
 
     def test_no_error_findings_zero_requests(self):
-        config = ServiceConfig(scaling=ScalingConfig(min_instances=1, max_instances=100))
+        config = ServiceConfig(
+            scaling=ScalingConfig(min_instances=1, max_instances=100)
+        )
         metrics = ServiceMetrics(
             request_count=(MetricPoint(timestamp="t1", value=0),),
             error_count=(MetricPoint(timestamp="t1", value=0),),
@@ -314,7 +326,9 @@ class TestAnalyzePerformance:
         assert "high_error_rate" not in categories
 
     def test_no_metrics(self):
-        config = ServiceConfig(scaling=ScalingConfig(min_instances=1, max_instances=100))
+        config = ServiceConfig(
+            scaling=ScalingConfig(min_instances=1, max_instances=100)
+        )
         findings = analyze_performance(config, None)
         categories = [f.category for f in findings]
         assert "high_latency" not in categories
@@ -328,6 +342,7 @@ class TestAnalyzePerformance:
 # =============================================================================
 # Pricing Analyzer
 # =============================================================================
+
 
 class TestPricingParseCpu:
     def test_empty_defaults_to_1(self):
@@ -359,7 +374,9 @@ class TestEstimatePricing:
         pricing = estimate_pricing(basic_config, daily_requests=100_000)
         assert isinstance(pricing, PricingEstimate)
         assert pricing.daily_total > 0
-        assert pricing.monthly_estimate == pytest.approx(pricing.daily_total * 30, rel=1e-3)
+        assert pricing.monthly_estimate == pytest.approx(
+            pricing.daily_total * 30, rel=1e-3
+        )
 
     def test_default_requests_without_metrics(self, basic_config):
         pricing = estimate_pricing(basic_config)
@@ -435,6 +452,7 @@ class TestEstimatePricing:
 # =============================================================================
 # Security Analyzer
 # =============================================================================
+
 
 class TestAnalyzeSecurity:
     def test_public_ingress_warning(self):
@@ -617,6 +635,7 @@ class TestAnalyzeSecurity:
 # Traffic Analyzer
 # =============================================================================
 
+
 class TestAnalyzeTraffic:
     def test_traffic_split(self):
         config = ServiceConfig(
@@ -631,9 +650,7 @@ class TestAnalyzeTraffic:
 
     def test_no_traffic_split_single_revision(self):
         config = ServiceConfig(
-            revisions=(
-                ServiceRevision(name="rev-1", traffic_percent=100),
-            ),
+            revisions=(ServiceRevision(name="rev-1", traffic_percent=100),),
         )
         findings = analyze_traffic(config)
         categories = [f.category for f in findings]
@@ -745,12 +762,8 @@ class TestAnalyzeTraffic:
         config = ServiceConfig()
         metrics = ServiceMetrics(
             request_count=(MetricPoint(timestamp="t1", value=1000),),
-            request_latency_p50=(
-                MetricPoint(timestamp="t1", value=0.01),
-            ),
-            request_latency_p99=(
-                MetricPoint(timestamp="t1", value=0.5),  # 50x p50
-            ),
+            request_latency_p50=(MetricPoint(timestamp="t1", value=0.01),),
+            request_latency_p99=(MetricPoint(timestamp="t1", value=0.5),),  # 50x p50
         )
         findings = analyze_traffic(config, metrics)
         categories = [f.category for f in findings]
@@ -760,9 +773,7 @@ class TestAnalyzeTraffic:
         config = ServiceConfig()
         metrics = ServiceMetrics(
             request_count=(MetricPoint(timestamp="t1", value=1000),),
-            request_latency_p50=(
-                MetricPoint(timestamp="t1", value=0.1),
-            ),
+            request_latency_p50=(MetricPoint(timestamp="t1", value=0.1),),
             request_latency_p99=(
                 MetricPoint(timestamp="t1", value=0.3),  # 3x, < 10x threshold
             ),

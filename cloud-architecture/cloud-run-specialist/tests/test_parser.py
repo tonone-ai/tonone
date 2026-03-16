@@ -1,7 +1,5 @@
 """Tests for gcloud JSON parser."""
 
-import pytest
-
 from cloudrun_agent.tools.parser import (
     _parse_network_interfaces,
     _safe_int,
@@ -79,7 +77,9 @@ class TestParseService:
         assert config.region == "us-central1"
         assert config.project == "my-project-123"
         assert config.url == "https://my-api-abc123-uc.a.run.app"
-        assert config.service_account == "my-api-sa@my-project-123.iam.gserviceaccount.com"
+        assert (
+            config.service_account == "my-api-sa@my-project-123.iam.gserviceaccount.com"
+        )
 
         # Resources
         assert config.resources.cpu == "2"
@@ -95,7 +95,10 @@ class TestParseService:
         assert config.network.egress == "all-traffic"
         assert config.network.vpc_network == "my-vpc"
         assert config.network.vpc_subnet == "my-subnet"
-        assert config.network.vpc_connector == "projects/my-project-123/locations/us-central1/connectors/my-vpc-conn"
+        assert (
+            config.network.vpc_connector
+            == "projects/my-project-123/locations/us-central1/connectors/my-vpc-conn"
+        )
         assert config.network.default_url_disabled is True
         assert config.network.invoker_iam_disabled is False
 
@@ -201,7 +204,10 @@ class TestParseRevision:
 
     def test_inactive_revision(self):
         data = {
-            "metadata": {"name": "rev-old", "creationTimestamp": "2025-01-01T00:00:00Z"},
+            "metadata": {
+                "name": "rev-old",
+                "creationTimestamp": "2025-01-01T00:00:00Z",
+            },
             "status": {
                 "conditions": [
                     {"type": "Ready", "status": "False"},

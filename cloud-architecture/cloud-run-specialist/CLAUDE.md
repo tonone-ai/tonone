@@ -1,53 +1,57 @@
 # Cloud Run Analyzer Agent
 
-Claude Code agent that analyzes Google Cloud Run instances across 6 dimensions:
+Claude Code plugin that analyzes Google Cloud Run instances across 6 dimensions:
 resource waste, performance, pricing, traffic/latency, security, and recommendations.
 
 ## Quick Start
 
 ```bash
+# In Claude Code:
+/plugin marketplace add thisisfatih/eng-team
+/plugin install cloud-run-specialist@thisisfatih
+
 # Prerequisites: gcloud CLI authenticated
 gcloud auth login && gcloud config set project YOUR_PROJECT
 
-# Visual dashboard (opens in browser)
-uv run python -m cloudrun_agent.cli --html
-
-# JSON output
-uv run python -m cloudrun_agent.cli
-
-# Single service deep dive
-uv run python -m cloudrun_agent.cli --service NAME --region REGION
-
-# In Claude Code: use the cloudrun-analyzer agent
+# Then ask: "analyze my cloud run services"
 ```
 
 ## Project Structure
 
 ```
-src/cloudrun_agent/
-  models/service.py    - Immutable dataclasses for service config and metrics
-  tools/gcloud.py      - gcloud CLI wrapper + Cloud Monitoring REST API
-  tools/parser.py      - Parse gcloud JSON into typed models
-  tools/metrics.py     - Fetch and aggregate Cloud Monitoring time-series
-  analyzers/
-    resources.py       - Hardware waste detection
-    performance.py     - Bottleneck analysis
-    pricing.py         - Cost estimation
-    security.py        - Security posture
-    traffic.py         - Traffic and latency patterns
-  overview.py          - Fleet-level overview with time-series
-  dashboard.py         - Self-contained HTML dashboard generator
-  runner.py            - Single-service analysis orchestrator
-  cli.py               - CLI entry point
+cloud-run-specialist/
+  .claude-plugin/plugin.json   - Plugin manifest
+  agents/cloudrun-analyzer.md  - Agent definition
+  skills/                      - Slash commands (dashboard, check, inspect, history)
+  hooks/hooks.json             - Post-install venv setup
+  scripts/
+    setup.sh                   - Venv creation script
+    pyproject.toml             - Python package config
+    cloudrun_agent/
+      models/service.py        - Immutable dataclasses for service config and metrics
+      tools/gcloud.py          - gcloud CLI wrapper + Cloud Monitoring REST API
+      tools/parser.py          - Parse gcloud JSON into typed models
+      tools/metrics.py         - Fetch and aggregate Cloud Monitoring time-series
+      analyzers/               - 5 independent analysis modules
+      overview.py              - Fleet-level overview with time-series
+      dashboard.py             - Self-contained HTML dashboard generator
+      runner.py                - Single-service analysis orchestrator
+      cli.py                   - CLI entry point
+  tests/                       - Test suite
 ```
 
 ## Development
 
-- Python 3.13+ with uv
+- Python 3.10+ with uv
 - All data models are frozen dataclasses (immutable)
 - No external Python dependencies - uses gcloud CLI + curl for GCP APIs
 - Chart.js loaded from CDN for dashboard charts
-- Tests: `uv run pytest`
+
+```bash
+cd scripts
+bash setup.sh
+.venv/bin/python -m pytest ../tests/
+```
 
 
 <claude-mem-context>

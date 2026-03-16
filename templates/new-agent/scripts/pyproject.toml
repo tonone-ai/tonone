@@ -1,0 +1,22 @@
+[project]
+name = "AGENT_PYPI_NAME"
+version = "0.1.0"
+description = "AGENT_DESCRIPTION"
+readme = "../README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+AGENT_PYPI_NAME = "AGENT_MODULE.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["AGENT_MODULE"]
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]

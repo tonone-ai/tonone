@@ -1,11 +1,9 @@
 """Tests for snapshot history: save, load, list, compare."""
 
 import json
-from pathlib import Path
 from unittest.mock import patch
 
 import pytest
-
 from cloudrun_agent.history import (
     compare_snapshots,
     list_snapshots,
@@ -110,11 +108,19 @@ class TestListSnapshots:
 
         snap1 = {
             "timestamp": "2025-01-01T00:00:00Z",
-            "fleet": {"total_services": 1, "total_monthly_cost": 50, "findings_summary": {}},
+            "fleet": {
+                "total_services": 1,
+                "total_monthly_cost": 50,
+                "findings_summary": {},
+            },
         }
         snap2 = {
             "timestamp": "2025-01-02T00:00:00Z",
-            "fleet": {"total_services": 2, "total_monthly_cost": 100, "findings_summary": {}},
+            "fleet": {
+                "total_services": 2,
+                "total_monthly_cost": 100,
+                "findings_summary": {},
+            },
         }
 
         p1.write_text(json.dumps(snap1))
@@ -305,7 +311,9 @@ class TestCompareSnapshots:
         assert changes["monthly_cost"]["from"] == 60.0
         assert changes["monthly_cost"]["to"] == 80.0
 
-    def test_no_changes_for_unchanged_service(self, current_snapshot, previous_snapshot):
+    def test_no_changes_for_unchanged_service(
+        self, current_snapshot, previous_snapshot
+    ):
         diff = compare_snapshots(current_snapshot, previous_snapshot)
         svc_b_changes = [c for c in diff["service_changes"] if c["name"] == "svc-b"]
         assert len(svc_b_changes) == 0

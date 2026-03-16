@@ -1,19 +1,18 @@
 """Tests for overview.py helper functions."""
 
 import pytest
-
+from cloudrun_agent.models.service import (
+    NetworkConfig,
+    ResourceLimits,
+    ScalingConfig,
+    ServiceConfig,
+)
 from cloudrun_agent.overview import (
     _compute_fleet_infra,
     _count_by_severity,
     _group_findings,
     _severity_rank,
     _worst_severity,
-)
-from cloudrun_agent.models.service import (
-    NetworkConfig,
-    ResourceLimits,
-    ScalingConfig,
-    ServiceConfig,
 )
 
 
@@ -252,7 +251,9 @@ class TestComputeFleetInfra:
                 region="us-central1",
                 service_account="sa@proj.iam.gserviceaccount.com",
                 resources=ResourceLimits(cpu="2", memory="1Gi"),
-                scaling=ScalingConfig(min_instances=1, max_instances=50, concurrency=80),
+                scaling=ScalingConfig(
+                    min_instances=1, max_instances=50, concurrency=80
+                ),
                 network=NetworkConfig(
                     ingress="internal",
                     vpc_connector="projects/p/locations/r/connectors/c",
@@ -282,7 +283,9 @@ class TestComputeFleetInfra:
                 region="us-central1",
                 service_account="sa-a@proj.iam.gserviceaccount.com",
                 resources=ResourceLimits(cpu="1", memory="512Mi"),
-                scaling=ScalingConfig(min_instances=0, max_instances=100, concurrency=1),
+                scaling=ScalingConfig(
+                    min_instances=0, max_instances=100, concurrency=1
+                ),
                 network=NetworkConfig(ingress="all"),
             ),
             ServiceConfig(
@@ -290,7 +293,9 @@ class TestComputeFleetInfra:
                 region="us-central1",
                 service_account="sa-b@proj.iam.gserviceaccount.com",
                 resources=ResourceLimits(cpu="2", memory="1Gi"),
-                scaling=ScalingConfig(min_instances=2, max_instances=50, concurrency=80),
+                scaling=ScalingConfig(
+                    min_instances=2, max_instances=50, concurrency=80
+                ),
                 network=NetworkConfig(ingress="internal", vpc_network="my-vpc"),
             ),
             ServiceConfig(
@@ -298,7 +303,9 @@ class TestComputeFleetInfra:
                 region="europe-west1",
                 service_account="",
                 resources=ResourceLimits(cpu="500m", memory="256Mi"),
-                scaling=ScalingConfig(min_instances=0, max_instances=10, concurrency=80),
+                scaling=ScalingConfig(
+                    min_instances=0, max_instances=10, concurrency=80
+                ),
                 network=NetworkConfig(ingress="all"),
             ),
         ]

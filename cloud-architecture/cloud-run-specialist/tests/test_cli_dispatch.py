@@ -1,17 +1,15 @@
 """Tests for CLI argument parsing and dispatch."""
 
 import json
-import sys
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 import pytest
-
 from cloudrun_agent import __version__
 from cloudrun_agent.cli import main as cli_main
 from cloudrun_agent.tools.gcloud import GcloudError, _remediation_hint
 
-
 # ── cli.py argument parsing ──────────────────────────────────────
+
 
 class TestCliArgParsing:
     def test_version_flag(self, capsys):
@@ -59,10 +57,13 @@ class TestCliArgParsing:
 
 # ── Error handling ───────────────────────────────────────────────
 
+
 class TestCliErrorHandling:
     @patch("cloudrun_agent.cli.discover_services")
     def test_gcloud_error_shows_message(self, mock_discover, capsys):
-        mock_discover.side_effect = GcloudError("gcloud run services list", "not authenticated", 1)
+        mock_discover.side_effect = GcloudError(
+            "gcloud run services list", "not authenticated", 1
+        )
         with pytest.raises(SystemExit) as exc_info:
             cli_main(["--list"])
         assert exc_info.value.code == 1
@@ -102,49 +103,8 @@ class TestCliErrorHandling:
         assert exc_info.value.code == 130
 
 
-# ── install.py main() dispatch ───────────────────────────────────
-
-class TestInstallMain:
-    def test_version_flag(self, capsys):
-        from cloudrun_agent.install import main as install_main
-        with pytest.raises(SystemExit) as exc_info:
-            sys.argv = ["cloudrun-agent", "--version"]
-            install_main()
-        assert exc_info.value.code == 0
-        output = capsys.readouterr().out
-        assert __version__ in output
-
-    @patch("cloudrun_agent.install.install_agent")
-    def test_install_dispatch(self, mock_install):
-        from cloudrun_agent.install import main as install_main
-        sys.argv = ["cloudrun-agent", "install"]
-        install_main()
-        mock_install.assert_called_once()
-
-    @patch("cloudrun_agent.install.uninstall_agent")
-    def test_uninstall_dispatch(self, mock_uninstall):
-        from cloudrun_agent.install import main as install_main
-        sys.argv = ["cloudrun-agent", "uninstall"]
-        install_main()
-        mock_uninstall.assert_called_once()
-
-    @patch("cloudrun_agent.cli.main")
-    def test_analyze_passes_remaining_args(self, mock_cli_main):
-        from cloudrun_agent.install import main as install_main
-        sys.argv = ["cloudrun-agent", "analyze", "--html", "--project", "my-proj"]
-        install_main()
-        mock_cli_main.assert_called_once_with(["--html", "--project", "my-proj"])
-
-    def test_no_command_shows_help(self, capsys):
-        from cloudrun_agent.install import main as install_main
-        sys.argv = ["cloudrun-agent"]
-        install_main()
-        output = capsys.readouterr().out
-        assert "install" in output
-        assert "analyze" in output
-
-
 # ── _remediation_hint ────────────────────────────────────────────
+
 
 class TestRemediationHint:
     def test_not_authenticated(self):
@@ -185,6 +145,7 @@ class TestRemediationHint:
 
 
 # ── GcloudError with hints ───────────────────────────────────────
+
 
 class TestGcloudErrorWithHint:
     def test_includes_hint_in_message(self):

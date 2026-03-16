@@ -45,11 +45,11 @@ jobs:
         run: pip install build
 
       - name: Build
-        working-directory: cloud-architecture/cloud-run-specialist
+        working-directory: cloud-architecture/cloud-run-specialist/scripts
         run: python -m build
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: cloud-architecture/cloud-run-specialist/dist/
+          packages-dir: cloud-architecture/cloud-run-specialist/scripts/dist/
           skip-existing: true

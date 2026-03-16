@@ -45,6 +45,9 @@ def cmd_list(args: argparse.Namespace) -> None:
 
             if args.verbose:
                 print(f"      package: {a.pypi_package}")
+                print(
+                    f"      plugin:  /plugin install {a.plugin_name}@{a.marketplace.split('/')[0]}"
+                )
                 for skill in a.skills:
                     print(f"      skill:   {skill}")
         print()
@@ -80,7 +83,7 @@ def cmd_install(args: argparse.Namespace) -> None:
     agent = get_agent(target)
     if not agent:
         print(f"Unknown agent: '{target}'")
-        print(f"Run 'engteam list' to see available agents.")
+        print("Run 'engteam list' to see available agents.")
         sys.exit(1)
 
     if agent.status != "available":
@@ -127,8 +130,8 @@ def cmd_run(args: argparse.Namespace) -> None:
         print(f"Unknown agent: '{args.agent}'")
         sys.exit(1)
 
-    # Pass remaining args to the agent's analyze command
-    cmd = [agent.pypi_package, "analyze", *args.agent_args]
+    # Pass remaining args to the agent
+    cmd = [agent.pypi_package, *args.agent_args]
 
     # Try direct command first
     result = _run(cmd)
@@ -196,7 +199,11 @@ def main() -> None:
         cmd_update(args)
     else:
         print(_header())
-        print("Commands:")
+        print("Install (plugin - recommended):")
+        print("  /plugin marketplace add thisisfatih/eng-team")
+        print("  /plugin install cloud-run-specialist@thisisfatih")
+        print()
+        print("Install (pip):")
         print("  engteam list                    Browse available agents")
         print("  engteam install <agent|team>    Install an agent or team")
         print("  engteam run <agent> [args]      Run an agent directly")
@@ -204,4 +211,3 @@ def main() -> None:
         print()
         print("Get started:")
         print("  engteam list")
-        print("  engteam install cloud-run-specialist")
