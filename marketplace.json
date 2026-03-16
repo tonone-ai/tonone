@@ -1,0 +1,11 @@
+{
+  "name": "thisisfatih",
+  "description": "Engineering Team - Claude Code agents that work as specialized engineers",
+  "plugins": {
+    "cloud-run-specialist": {
+      "path": "cloud-architecture/cloud-run-specialist",
+      "description": "Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
+      "team": "cloud-architecture"
+    }
+  }
+}
