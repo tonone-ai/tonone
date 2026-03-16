@@ -1,0 +1,20 @@
+{
+  "name": "thisisfatih",
+  "description": "Engineering Team - Claude Code agents that work as specialized engineers",
+  "owner": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "plugins": [
+    {
+      "name": "cloud-run-specialist",
+      "description": "Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
+      "version": "0.1.0",
+      "source": "./cloud-architecture/cloud-run-specialist",
+      "author": {
+        "name": "thisisfatih",
+        "url": "https://github.com/thisisfatih"
+      }
+    }
+  ]
+}
