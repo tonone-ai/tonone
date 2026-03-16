@@ -8,12 +8,22 @@ Part of [Engineering Team](https://github.com/thisisfatih/eng-team) - your engin
 
 ## Quick Start
 
+In Claude Code:
+
+```
+/plugin marketplace add thisisfatih/eng-team
+/plugin install cloud-run-specialist@thisisfatih
+```
+
+<details>
+<summary>Alternative: install via pip</summary>
+
 ```bash
 pip install cloudrun-agent
 cloudrun-agent install
 ```
 
-This installs the agent definition and skills into `~/.claude/` so they're available in every Claude Code session.
+</details>
 
 ### Prerequisites
 
@@ -122,14 +132,14 @@ No data leaves your machine. All analysis runs locally using your `gcloud` crede
 
 ```bash
 git clone https://github.com/thisisfatih/eng-team
-cd eng-team/cloud-architecture/cloud-run-specialist
-uv sync
+cd eng-team/cloud-architecture/cloud-run-specialist/scripts
+bash setup.sh
 
 # Run tests
-uv run pytest
+.venv/bin/python -m pytest ../tests/
 
 # Run directly
-uv run python -m cloudrun_agent.cli --html
+.venv/bin/python -m cloudrun_agent.cli --html
 ```
 
 ## License
