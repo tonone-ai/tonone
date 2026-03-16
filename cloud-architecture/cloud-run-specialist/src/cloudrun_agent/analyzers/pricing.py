@@ -4,7 +4,6 @@ from dataclasses import dataclass
 
 from cloudrun_agent.models.service import ServiceConfig, ServiceMetrics
 
-
 # Cloud Run pricing (Tier 1 regions, as of 2025)
 # See: https://cloud.google.com/run/pricing
 VCPU_PER_SEC = 0.00002400
@@ -60,7 +59,9 @@ def estimate_pricing(
         daily_requests = int(sum(p.value for p in metrics.request_count))
     if daily_requests is None:
         daily_requests = 10_000
-        findings.append("Using estimated 10k daily requests — provide metrics for accuracy.")
+        findings.append(
+            "Using estimated 10k daily requests - provide metrics for accuracy."
+        )
 
     # Active CPU/memory cost (request-processing time)
     active_seconds = daily_requests * avg_request_duration_sec
@@ -76,7 +77,9 @@ def estimate_pricing(
     daily_min_instance_cost = 0.0
     if min_inst > 0:
         daily_min_instance_cost = (
-            min_inst * idle_seconds_per_day * (
+            min_inst
+            * idle_seconds_per_day
+            * (
                 cpu_cores * MIN_INSTANCE_VCPU_PER_SEC
                 + memory_gib * MIN_INSTANCE_MEM_GIB_PER_SEC
             )
@@ -85,23 +88,28 @@ def estimate_pricing(
             f"Min instances ({min_inst}) idle cost: ${daily_min_instance_cost:.2f}/day"
         )
 
-    daily_total = daily_cpu_cost + daily_memory_cost + daily_request_cost + daily_min_instance_cost
+    daily_total = (
+        daily_cpu_cost
+        + daily_memory_cost
+        + daily_request_cost
+        + daily_min_instance_cost
+    )
     monthly_estimate = daily_total * 30
 
     # Cost optimization findings
     if daily_min_instance_cost > daily_cpu_cost + daily_memory_cost:
         findings.append(
-            "Idle min-instance cost exceeds active processing cost — consider reducing min instances."
+            "Idle min-instance cost exceeds active processing cost - consider reducing min instances."
         )
 
     if cpu_cores >= 2 and daily_requests < 50_000:
         findings.append(
-            f"{cpu_cores} vCPUs with only ~{daily_requests:,} daily requests — likely over-provisioned."
+            f"{cpu_cores} vCPUs with only ~{daily_requests:,} daily requests - likely over-provisioned."
         )
 
     if monthly_estimate > 100 and config.scaling.concurrency == 1:
         findings.append(
-            "Concurrency=1 multiplies instance count — increasing concurrency could cut cost significantly."
+            "Concurrency=1 multiplies instance count - increasing concurrency could cut cost significantly."
         )
 
     return PricingEstimate(

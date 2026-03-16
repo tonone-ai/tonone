@@ -4,7 +4,7 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agent that analy
 
 Analyzes **6 dimensions**: resource waste, performance bottlenecks, pricing, traffic & latency, security posture, and recommendations.
 
-Part of [Engineering Team](https://github.com/thisisfatih/eng-team) — your engineering team on call.
+Part of [Engineering Team](https://github.com/thisisfatih/eng-team) - your engineering team on call.
 
 ## Quick Start
 
@@ -46,12 +46,12 @@ Claude will use the `cloudrun-analyzer` agent automatically.
 
 After install, these slash commands are available in Claude Code:
 
-| Command | What it does |
-|---------|-------------|
-| `/cloudrun-dashboard` | Visual fleet report in browser |
-| `/cloudrun-check` | Quick health check in terminal |
-| `/cloudrun-inspect` | Deep dive into a specific service |
-| `/cloudrun-history` | Compare changes over time |
+| Command               | What it does                      |
+| --------------------- | --------------------------------- |
+| `/cloudrun-dashboard` | Visual fleet report in browser    |
+| `/cloudrun-check`     | Quick health check in terminal    |
+| `/cloudrun-inspect`   | Deep dive into a specific service |
+| `/cloudrun-history`   | Compare changes over time         |
 
 ### Standalone CLI
 
@@ -84,37 +84,37 @@ cloudrun-agent analyze --verbose
 
 The HTML dashboard includes:
 
-- **Health score** — weighted 0-100 score based on finding severity
-- **KPI cards** — service count, estimated monthly cost, daily requests, finding counts
-- **Services table** — per-service CPU, memory, utilization, latency, cost, health status
-- **Findings by category** — collapsible groups for Security, Resources, Performance, Traffic, Pricing
-- **Historical charts** — time-series for request count, CPU utilization, latency (P50/P99), instance count
-- **Interactive filtering** — click any service row to filter all charts
-- **Snapshot comparison** — delta banner showing changes since last analysis
+- **Health score** - weighted 0-100 score based on finding severity
+- **KPI cards** - service count, estimated monthly cost, daily requests, finding counts
+- **Services table** - per-service CPU, memory, utilization, latency, cost, health status
+- **Findings by category** - collapsible groups for Security, Resources, Performance, Traffic, Pricing
+- **Historical charts** - time-series for request count, CPU utilization, latency (P50/P99), instance count
+- **Interactive filtering** - click any service row to filter all charts
+- **Snapshot comparison** - delta banner showing changes since last analysis
 
 ### Finding Categories
 
-| Category | What it checks |
-|----------|----------------|
-| **Security** | Plaintext secrets in env vars, default service accounts, public ingress, IAM policies, VPC connectors |
-| **Resources** | CPU/memory over-provisioning, utilization rates, min-instance idle costs |
-| **Performance** | Cold start risk, concurrency settings, latency percentiles, error rates |
-| **Traffic** | Request volume patterns, scaling behavior, billable instance time, traffic splits |
-| **Pricing** | Cost breakdown (CPU, memory, requests, idle), optimization opportunities |
+| Category        | What it checks                                                                                        |
+| --------------- | ----------------------------------------------------------------------------------------------------- |
+| **Security**    | Plaintext secrets in env vars, default service accounts, public ingress, IAM policies, VPC connectors |
+| **Resources**   | CPU/memory over-provisioning, utilization rates, min-instance idle costs                              |
+| **Performance** | Cold start risk, concurrency settings, latency percentiles, error rates                               |
+| **Traffic**     | Request volume patterns, scaling behavior, billable instance time, traffic splits                     |
+| **Pricing**     | Cost breakdown (CPU, memory, requests, idle), optimization opportunities                              |
 
 ### Severity Levels
 
-- **Critical** — security risks or significant waste requiring immediate action
-- **Warning** — optimization opportunities or potential issues
-- **Info** — informational findings, architectural observations
+- **Critical** - security risks or significant waste requiring immediate action
+- **Warning** - optimization opportunities or potential issues
+- **Info** - informational findings, architectural observations
 
 ## How It Works
 
-1. **Discovery** — lists all Cloud Run services via `gcloud run services list`
-2. **Configuration** — fetches detailed config for each service (CPU, memory, scaling, IAM, env vars)
-3. **Metrics** — queries Cloud Monitoring API for the last 24h (requests, CPU, memory, latency, instances)
-4. **Analysis** — runs 5 analyzers against config + metrics to produce findings
-5. **Dashboard** — generates a self-contained HTML file with Chart.js visualizations
+1. **Discovery** - lists all Cloud Run services via `gcloud run services list`
+2. **Configuration** - fetches detailed config for each service (CPU, memory, scaling, IAM, env vars)
+3. **Metrics** - queries Cloud Monitoring API for the last 24h (requests, CPU, memory, latency, instances)
+4. **Analysis** - runs 5 analyzers against config + metrics to produce findings
+5. **Dashboard** - generates a self-contained HTML file with Chart.js visualizations
 
 No data leaves your machine. All analysis runs locally using your `gcloud` credentials.
 

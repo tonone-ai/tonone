@@ -1,4 +1,4 @@
-"""Engineering Team CLI — discover, install, and run agents."""
+"""Engineering Team CLI - discover, install, and run agents."""
 
 import argparse
 import subprocess
@@ -6,11 +6,11 @@ import sys
 
 from engteam import __version__
 from engteam.registry import (
+    AGENTS,
     TEAMS,
     get_agent,
     get_agents_by_team,
     get_all_teams,
-    AGENTS,
 )
 
 
@@ -19,10 +19,11 @@ def _run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
 
 
 def _header() -> str:
-    return "Engineering Team — your engineering team on call\n"
+    return "Engineering Team - your engineering team on call\n"
 
 
 # ── list ─────────────────────────────────────────────────────────
+
 
 def cmd_list(args: argparse.Namespace) -> None:
     print(_header())
@@ -50,6 +51,7 @@ def cmd_list(args: argparse.Namespace) -> None:
 
 
 # ── install ──────────────────────────────────────────────────────
+
 
 def cmd_install(args: argparse.Namespace) -> None:
     target = args.target
@@ -82,7 +84,7 @@ def cmd_install(args: argparse.Namespace) -> None:
         sys.exit(1)
 
     if agent.status != "available":
-        print(f"'{agent.name}' is coming soon — not available yet.")
+        print(f"'{agent.name}' is coming soon - not available yet.")
         sys.exit(1)
 
     _install_agent(agent.pypi_package)
@@ -118,6 +120,7 @@ def _install_agent(package: str) -> None:
 
 # ── run ──────────────────────────────────────────────────────────
 
+
 def cmd_run(args: argparse.Namespace) -> None:
     agent = get_agent(args.agent)
     if not agent:
@@ -136,6 +139,7 @@ def cmd_run(args: argparse.Namespace) -> None:
 
 # ── update ───────────────────────────────────────────────────────
 
+
 def cmd_update(args: argparse.Namespace) -> None:
     available = [a for a in AGENTS if a.status == "available"]
     print(f"Updating {len(available)} agent(s)...\n")
@@ -152,10 +156,11 @@ def cmd_update(args: argparse.Namespace) -> None:
 
 # ── main ─────────────────────────────────────────────────────────
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="engteam",
-        description="Engineering Team — your engineering team on call",
+        description="Engineering Team - your engineering team on call",
     )
     parser.add_argument("--version", action="version", version=f"engteam {__version__}")
     sub = parser.add_subparsers(dest="command")
@@ -163,7 +168,9 @@ def main() -> None:
     # list
     ls = sub.add_parser("list", help="Browse available agents")
     ls.add_argument("--team", help="Filter by team")
-    ls.add_argument("-v", "--verbose", action="store_true", help="Show packages and skills")
+    ls.add_argument(
+        "-v", "--verbose", action="store_true", help="Show packages and skills"
+    )
 
     # install
     inst = sub.add_parser("install", help="Install an agent or team")

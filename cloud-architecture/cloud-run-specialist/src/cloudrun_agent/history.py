@@ -1,4 +1,4 @@
-"""Snapshot history — stores and compares analysis results over time."""
+"""Snapshot history - stores and compares analysis results over time."""
 
 import json
 from datetime import datetime, timezone
@@ -41,13 +41,15 @@ def list_snapshots() -> list[dict[str, Any]]:
     for path in sorted(history_dir.glob("snapshot-*.json"), reverse=True):
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-            snapshots.append({
-                "path": str(path),
-                "timestamp": data.get("timestamp", ""),
-                "total_services": data.get("fleet", {}).get("total_services", 0),
-                "monthly_cost": data.get("fleet", {}).get("total_monthly_cost", 0),
-                "findings": data.get("fleet", {}).get("findings_summary", {}),
-            })
+            snapshots.append(
+                {
+                    "path": str(path),
+                    "timestamp": data.get("timestamp", ""),
+                    "total_services": data.get("fleet", {}).get("total_services", 0),
+                    "monthly_cost": data.get("fleet", {}).get("total_monthly_cost", 0),
+                    "findings": data.get("fleet", {}).get("findings_summary", {}),
+                }
+            )
         except Exception:
             continue
     return snapshots
@@ -84,20 +86,34 @@ def compare_snapshots(
         changes: dict[str, Any] = {"name": name}
         changed = False
 
-        for key in ("cpu", "memory", "min_instances", "max_instances", "concurrency", "ingress"):
+        for key in (
+            "cpu",
+            "memory",
+            "min_instances",
+            "max_instances",
+            "concurrency",
+            "ingress",
+        ):
             if cur.get(key) != prev.get(key):
                 changes[key] = {"from": prev.get(key), "to": cur.get(key)}
                 changed = True
 
         # Metric changes
-        for key in ("daily_requests", "avg_cpu_util", "avg_mem_util", "latency_p99_s", "monthly_cost"):
+        for key in (
+            "daily_requests",
+            "avg_cpu_util",
+            "avg_mem_util",
+            "latency_p99_s",
+            "monthly_cost",
+        ):
             cur_val = cur.get(key)
             prev_val = prev.get(key)
             if cur_val is not None and prev_val is not None and prev_val != 0:
                 pct_change = (cur_val - prev_val) / abs(prev_val)
                 if abs(pct_change) > 0.1:  # >10% change
                     changes[key] = {
-                        "from": prev_val, "to": cur_val,
+                        "from": prev_val,
+                        "to": cur_val,
                         "change_pct": round(pct_change * 100, 1),
                     }
                     changed = True
@@ -114,7 +130,9 @@ def compare_snapshots(
 
     return {
         "previous_timestamp": previous.get("timestamp", ""),
-        "current_timestamp": current.get("timestamp", datetime.now(timezone.utc).isoformat()),
+        "current_timestamp": current.get(
+            "timestamp", datetime.now(timezone.utc).isoformat()
+        ),
         "fleet_delta": {
             "services": {
                 "from": prev_fleet.get("total_services", 0),
@@ -151,7 +169,9 @@ def get_latest_snapshot() -> dict[str, Any] | None:
     return load_snapshot(snapshots[0]["path"])
 
 
-def build_comparison_from_current(current_data: dict[str, Any]) -> dict[str, Any] | None:
+def build_comparison_from_current(
+    current_data: dict[str, Any],
+) -> dict[str, Any] | None:
     """Compare current analysis against the most recent snapshot.
 
     Returns None if no previous snapshot exists.

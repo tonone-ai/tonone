@@ -3,8 +3,8 @@
 import argparse
 import json
 import sys
-import traceback
 import tempfile
+import traceback
 import webbrowser
 from pathlib import Path
 
@@ -22,17 +22,31 @@ from cloudrun_agent.tools.gcloud import GcloudError
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Analyze Cloud Run services")
-    parser.add_argument("--version", action="version", version=f"cloudrun-agent {__version__}")
-    parser.add_argument("--verbose", action="store_true", help="Show detailed output and full tracebacks on error")
+    parser.add_argument(
+        "--version", action="version", version=f"cloudrun-agent {__version__}"
+    )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show detailed output and full tracebacks on error",
+    )
     parser.add_argument("--project", help="GCP project ID")
     parser.add_argument("--region", help="GCP region filter")
     parser.add_argument("--service", help="Analyze a specific service")
     parser.add_argument("--list", action="store_true", help="List services only")
     parser.add_argument("--no-metrics", action="store_true", help="Skip metrics fetch")
-    parser.add_argument("--html", action="store_true", help="Generate HTML dashboard and open in browser")
-    parser.add_argument("--output", help="Write HTML to this path instead of a temp file")
+    parser.add_argument(
+        "--html",
+        action="store_true",
+        help="Generate HTML dashboard and open in browser",
+    )
+    parser.add_argument(
+        "--output", help="Write HTML to this path instead of a temp file"
+    )
     parser.add_argument("--history", action="store_true", help="Show snapshot history")
-    parser.add_argument("--no-save", action="store_true", help="Don't save snapshot after analysis")
+    parser.add_argument(
+        "--no-save", action="store_true", help="Don't save snapshot after analysis"
+    )
 
     args = parser.parse_args(argv)
 
@@ -52,7 +66,10 @@ def main(argv: list[str] | None = None) -> None:
 
         if args.service:
             if not args.region:
-                print("Error: --region is required when analyzing a specific service", file=sys.stderr)
+                print(
+                    "Error: --region is required when analyzing a specific service",
+                    file=sys.stderr,
+                )
                 sys.exit(1)
             result = analyze_service(
                 args.service,
@@ -84,7 +101,8 @@ def main(argv: list[str] | None = None) -> None:
                 out_path = Path(args.output)
             else:
                 tmp = tempfile.NamedTemporaryFile(
-                    suffix=".html", prefix="cloudrun-dashboard-",
+                    suffix=".html",
+                    prefix="cloudrun-dashboard-",
                     delete=False,
                 )
                 out_path = Path(tmp.name)
@@ -105,16 +123,19 @@ def main(argv: list[str] | None = None) -> None:
             traceback.print_exc(file=sys.stderr)
         sys.exit(1)
     except json.JSONDecodeError as e:
-        print(f"Error: Failed to parse response — {e}", file=sys.stderr)
+        print(f"Error: Failed to parse response - {e}", file=sys.stderr)
         if args.verbose:
             traceback.print_exc(file=sys.stderr)
         sys.exit(1)
     except FileNotFoundError as e:
         print(f"Error: {e}", file=sys.stderr)
-        print("  Is gcloud installed? https://cloud.google.com/sdk/docs/install", file=sys.stderr)
+        print(
+            "  Is gcloud installed? https://cloud.google.com/sdk/docs/install",
+            file=sys.stderr,
+        )
         sys.exit(1)
     except PermissionError as e:
-        print(f"Error: Permission denied — {e}", file=sys.stderr)
+        print(f"Error: Permission denied - {e}", file=sys.stderr)
         sys.exit(1)
     except KeyboardInterrupt:
         print("\nInterrupted.", file=sys.stderr)

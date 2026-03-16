@@ -5,7 +5,6 @@ from pathlib import Path
 from unittest.mock import patch
 
 import pytest
-
 from cloudrun_agent.install import (
     AGENT_FILENAME,
     SKILL_FILES,
@@ -41,6 +40,7 @@ def fake_home_with_agent(fake_home):
 
 # ── _backup_if_exists ────────────────────────────────────────────
 
+
 class TestBackupIfExists:
     def test_no_backup_when_missing(self, tmp_path):
         target = tmp_path / "nonexistent.md"
@@ -66,6 +66,7 @@ class TestBackupIfExists:
 
 # ── _find_source_dir ─────────────────────────────────────────────
 
+
 class TestFindSourceDir:
     def test_finds_bundled_file(self, tmp_path):
         pkg_dir = tmp_path / "pkg"
@@ -88,6 +89,7 @@ class TestFindSourceDir:
 
 # ── install_agent ────────────────────────────────────────────────
 
+
 class TestInstallAgent:
     def test_creates_directories(self, fake_home):
         """Install should create ~/.claude/agents/ and ~/.claude/skills/."""
@@ -96,7 +98,7 @@ class TestInstallAgent:
         try:
             install_agent()
         except SystemExit:
-            pass  # Expected — source file not found
+            pass  # Expected - source file not found
         # The function exits before mkdir when source is not found
         # This is correct behavior
 
@@ -119,6 +121,7 @@ class TestInstallAgent:
 
 
 # ── uninstall_agent ──────────────────────────────────────────────
+
 
 class TestUninstallAgent:
     def test_uninstall_removes_files(self, fake_home_with_agent, capsys):
@@ -168,6 +171,7 @@ class TestUninstallAgent:
 
 
 # ── SKILL_FILES / AGENT_FILENAME constants ───────────────────────
+
 
 class TestConstants:
     def test_agent_filename_is_md(self):

@@ -27,6 +27,8 @@ jobs:
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
 
   publish-cloudrun-agent:
     name: Publish cloudrun-agent
@@ -50,3 +52,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: cloud-architecture/cloud-run-specialist/dist/
+          skip-existing: true

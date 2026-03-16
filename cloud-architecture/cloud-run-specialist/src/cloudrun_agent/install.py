@@ -4,7 +4,6 @@ import shutil
 import sys
 from pathlib import Path
 
-
 AGENT_FILENAME = "cloudrun-analyzer.md"
 
 SKILL_FILES = [
@@ -72,17 +71,22 @@ def install_agent() -> None:
             skill_target = skills_dir / skill_file
             _backup_if_exists(skill_target)
             shutil.copy2(skill_src, skill_target)
-            print(f"  + skill: /cloudrun-{skill_file.replace('cloudrun-', '').replace('.md', '')}")
+            print(
+                f"  + skill: /cloudrun-{skill_file.replace('cloudrun-', '').replace('.md', '')}"
+            )
         else:
-            print(f"  Warning: could not find {skill_file} — skill not installed", file=sys.stderr)
+            print(
+                f"  Warning: could not find {skill_file} - skill not installed",
+                file=sys.stderr,
+            )
 
     print()
     print("Done! Engineering Team Cloud Run Specialist is ready.")
     print()
-    print("  /cloudrun-dashboard  — visual fleet report in browser")
-    print("  /cloudrun-check      — quick health check in terminal")
-    print("  /cloudrun-inspect    — deep dive into a specific service")
-    print("  /cloudrun-history    — compare changes over time")
+    print("  /cloudrun-dashboard  - visual fleet report in browser")
+    print("  /cloudrun-check      - quick health check in terminal")
+    print("  /cloudrun-inspect    - deep dive into a specific service")
+    print("  /cloudrun-history    - compare changes over time")
     print()
     print("Or just ask: 'analyze my cloud run services'")
     print()
@@ -122,9 +126,11 @@ def main() -> None:
 
     parser = argparse.ArgumentParser(
         prog="cloudrun-agent",
-        description="Engineering Team — Cloud Run Specialist",
+        description="Engineering Team - Cloud Run Specialist",
     )
-    parser.add_argument("--version", action="version", version=f"cloudrun-agent {__version__}")
+    parser.add_argument(
+        "--version", action="version", version=f"cloudrun-agent {__version__}"
+    )
     sub = parser.add_subparsers(dest="command")
 
     sub.add_parser("install", help="Install agent + skills to ~/.claude/")
@@ -139,6 +145,7 @@ def main() -> None:
         uninstall_agent()
     elif args.command == "analyze":
         from cloudrun_agent.cli import main as cli_main
+
         cli_main(remaining)
     else:
         parser.print_help()
