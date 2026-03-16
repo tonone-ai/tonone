@@ -25,7 +25,7 @@ class TestAgentEntry:
         )
         try:
             entry.name = "changed"
-            assert False, "Should be frozen"
+            raise AssertionError("Should be frozen")
         except AttributeError:
             pass
 

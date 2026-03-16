@@ -1,13 +1,11 @@
 """Tests for Cloud Monitoring metric extraction functions."""
 
 import pytest
-
 from cloudrun_agent.tools.metrics import (
     _extract_distribution_percentile,
     _extract_points,
     _extract_value,
 )
-from cloudrun_agent.models.service import MetricPoint
 
 
 class TestExtractValue:
@@ -161,16 +159,16 @@ class TestExtractDistributionPercentile:
                                 # Buckets: [0, 10), [10, 20), [20, 40), [40, 80), [80, 160), ...
                                 # underflow, 10, 20, 40, 80, 160, 320, 640, 1280, overflow
                                 "bucketCounts": [
-                                    "0",   # underflow
+                                    "0",  # underflow
                                     "10",  # [10, 20)
                                     "30",  # [20, 40)
                                     "40",  # [40, 80)
                                     "15",  # [80, 160)
-                                    "5",   # [160, 320)
-                                    "0",   # [320, 640)
-                                    "0",   # [640, 1280)
-                                    "0",   # [1280, 2560)
-                                    "0",   # overflow
+                                    "5",  # [160, 320)
+                                    "0",  # [320, 640)
+                                    "0",  # [640, 1280)
+                                    "0",  # [1280, 2560)
+                                    "0",  # overflow
                                 ],
                             },
                         },

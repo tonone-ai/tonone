@@ -1,8 +1,7 @@
 """Tests for CLI argument parsing and dispatch."""
 
 import json
-import sys
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
 import pytest
 from cloudrun_agent import __version__

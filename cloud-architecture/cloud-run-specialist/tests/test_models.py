@@ -1,8 +1,8 @@
 """Tests for frozen dataclass models."""
 
-import pytest
 from dataclasses import FrozenInstanceError
 
+import pytest
 from cloudrun_agent.models.service import (
     MetricPoint,
     NetworkConfig,

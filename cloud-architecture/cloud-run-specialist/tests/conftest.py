@@ -1,7 +1,6 @@
 """Shared fixtures for cloudrun-agent tests."""
 
 import pytest
-
 from cloudrun_agent.models.service import (
     MetricPoint,
     NetworkConfig,

@@ -83,7 +83,7 @@ def cmd_install(args: argparse.Namespace) -> None:
     agent = get_agent(target)
     if not agent:
         print(f"Unknown agent: '{target}'")
-        print(f"Run 'engteam list' to see available agents.")
+        print("Run 'engteam list' to see available agents.")
         sys.exit(1)
 
     if agent.status != "available":

@@ -64,7 +64,7 @@ class TestCmdInstall:
         args = argparse.Namespace(target="nonexistent-agent")
         try:
             cmd_install(args)
-            assert False, "Should have called sys.exit"
+            raise AssertionError("Should have called sys.exit")
         except SystemExit as e:
             assert e.code == 1
 
@@ -78,7 +78,7 @@ class TestCmdInstall:
         args = argparse.Namespace(target=coming_soon[0].name)
         try:
             cmd_install(args)
-            assert False, "Should have called sys.exit"
+            raise AssertionError("Should have called sys.exit")
         except SystemExit as e:
             assert e.code == 1
 
@@ -138,7 +138,7 @@ class TestCmdRun:
         args = argparse.Namespace(agent="nonexistent", agent_args=[])
         try:
             cmd_run(args)
-            assert False, "Should have called sys.exit"
+            raise AssertionError("Should have called sys.exit")
         except SystemExit as e:
             assert e.code == 1
 
