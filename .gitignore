@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+.env
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+uv.lock
+.python-version
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Claude Code personal config (project .claude/ dirs are committed)
+.claude/settings.json
+.claude/settings.local.json
+.claude/agents/code-reviewer.md
+.claude/agents/frontend-developer.md
+.claude/commands/
+.claude/skills/
+
+# External tools
+.superpowers/
