@@ -7,14 +7,129 @@
   },
   "plugins": [
     {
-      "name": "cloud-run-specialist",
-      "description": "Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
+      "name": "engineering-team",
+      "description": "Install all 13 Engineering Team agents at once",
       "version": "0.1.0",
-      "source": "./cloud-architecture/cloud-run-specialist",
-      "author": {
-        "name": "tonone-ai",
-        "url": "https://tonone.ai"
-      }
+      "source": "./bundle/engineering-team",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "tags": ["bundle", "installer"]
+    },
+    {
+      "name": "apex-lead",
+      "description": "Engineering lead — orchestrates the team, scopes work, controls depth and budget",
+      "version": "0.1.0",
+      "source": "./team/apex",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "lead",
+      "tags": ["lead", "orchestrator"]
+    },
+    {
+      "name": "forge-infra",
+      "description": "Infrastructure engineer — cloud services, networking, IaC, cost optimization",
+      "version": "0.1.0",
+      "source": "./team/forge",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "infrastructure",
+      "tags": ["cloud", "networking", "iac"]
+    },
+    {
+      "name": "relay-devops",
+      "description": "DevOps engineer — CI/CD, deployments, GitOps, developer experience",
+      "version": "0.1.0",
+      "source": "./team/relay",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "devops",
+      "tags": ["cicd", "deployments", "gitops"]
+    },
+    {
+      "name": "spine-backend",
+      "description": "Backend engineer — APIs, system design, performance, distributed systems",
+      "version": "0.1.0",
+      "source": "./team/spine",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "backend",
+      "tags": ["apis", "system-design", "performance"]
+    },
+    {
+      "name": "flux-data",
+      "description": "Data engineer — databases, migrations, pipelines, data modeling",
+      "version": "0.1.0",
+      "source": "./team/flux",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "data",
+      "tags": ["databases", "migrations", "pipelines"]
+    },
+    {
+      "name": "warden-security",
+      "description": "Security engineer — IAM, secrets, compliance, threat modeling",
+      "version": "0.1.0",
+      "source": "./team/warden",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "security",
+      "tags": ["iam", "secrets", "compliance"]
+    },
+    {
+      "name": "vigil-sre",
+      "description": "Observability & reliability engineer — monitoring, alerting, SRE, incident response, SLOs",
+      "version": "0.1.0",
+      "source": "./team/vigil",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "observability",
+      "tags": ["monitoring", "alerting", "sre"]
+    },
+    {
+      "name": "prism-frontend",
+      "description": "Frontend & DX engineer — UI, internal tools, developer portals",
+      "version": "0.1.0",
+      "source": "./team/prism",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "frontend",
+      "tags": ["ui", "internal-tools", "dx"]
+    },
+    {
+      "name": "cortex-ml",
+      "description": "ML/AI engineer — model training, MLOps, feature engineering, LLM integration",
+      "version": "0.1.0",
+      "source": "./team/cortex",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "ml",
+      "tags": ["ml", "mlops", "llm"]
+    },
+    {
+      "name": "touch-mobile",
+      "description": "Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance",
+      "version": "0.1.0",
+      "source": "./team/touch",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "mobile",
+      "tags": ["ios", "android", "cross-platform"]
+    },
+    {
+      "name": "volt-embedded",
+      "description": "Embedded & IoT engineer — firmware, microcontrollers, edge computing, device protocols",
+      "version": "0.1.0",
+      "source": "./team/volt",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "embedded",
+      "tags": ["firmware", "iot", "edge"]
+    },
+    {
+      "name": "atlas-docs",
+      "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding",
+      "version": "0.1.0",
+      "source": "./team/atlas",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "knowledge",
+      "tags": ["docs", "adrs", "diagrams"]
+    },
+    {
+      "name": "lens-analytics",
+      "description": "Data analytics & BI engineer — dashboards, metrics design, reporting, data storytelling",
+      "version": "0.1.0",
+      "source": "./team/lens",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "analytics",
+      "tags": ["dashboards", "metrics", "reporting"]
     }
   ]
 }
