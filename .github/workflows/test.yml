@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  test-engteam:
-    name: engteam (Python ${{ matrix.python-version }})
+  test-tonone:
+    name: tonone (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
       matrix:

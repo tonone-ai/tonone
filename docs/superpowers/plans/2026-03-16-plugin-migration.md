@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED: Use superpowers:subagent-driven-development (if subagents available) or superpowers:executing-plans to implement this plan. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Migrate eng-team from pip-based distribution to Claude Code's native plugin system, keeping pip as a secondary path.
+**Goal:** Migrate tonone from pip-based distribution to Claude Code's native plugin system, keeping pip as a secondary path.
 
-**Architecture:** Restructure each agent as a Claude Code plugin with standard dirs (`.claude-plugin/`, `agents/`, `skills/`, `hooks/`). Python analyzer code moves into `scripts/` with a self-contained venv created by a post-install hook. The `engteam` pip CLI is updated to show both install paths.
+**Architecture:** Restructure each agent as a Claude Code plugin with standard dirs (`.claude-plugin/`, `agents/`, `skills/`, `hooks/`). Python analyzer code moves into `scripts/` with a self-contained venv created by a post-install hook. The `tonone` pip CLI is updated to show both install paths.
 
 **Tech Stack:** Claude Code Plugin System, Python 3.10+, Hatchling, uv, GitHub Actions
 
@@ -30,8 +30,8 @@
 
 ### Files to modify:
 
-- `src/engteam/registry.py` - add plugin_name and marketplace fields
-- `src/engteam/cli.py` - show plugin install path in list/help output
+- `src/tonone/registry.py` - add plugin_name and marketplace fields
+- `src/tonone/cli.py` - show plugin install path in list/help output
 - `.gitignore` - add `**/scripts/.venv/` and `**/scripts/dist/`
 - `.github/workflows/publish.yml` - update working-directory for cloudrun-agent
 - `.github/workflows/test.yml` - update working-directory for cloudrun-agent
@@ -79,7 +79,7 @@
 }
 ```
 
-Write this to `/Users/f/repos/eng-team/marketplace.json`.
+Write this to `/Users/f/repos/tn/tonone/marketplace.json`.
 
 - [ ] **Step 2: Create plugin manifest**
 
@@ -125,7 +125,7 @@ git commit -m "feat: add plugin manifest and marketplace registry"
 - [ ] **Step 1: Create scripts directory and move Python source**
 
 ```bash
-cd /Users/f/repos/eng-team/cloud-architecture/cloud-run-specialist
+cd /Users/f/repos/tn/tonone/cloud-architecture/cloud-run-specialist
 mkdir -p scripts
 cp -r src/cloudrun_agent scripts/cloudrun_agent
 ```
@@ -208,7 +208,7 @@ dev = ["pytest-cov>=7.0.0"]
 - [ ] **Step 6: Delete old source and package files**
 
 ```bash
-cd /Users/f/repos/eng-team/cloud-architecture/cloud-run-specialist
+cd /Users/f/repos/tn/tonone/cloud-architecture/cloud-run-specialist
 rm -rf src
 rm -f pyproject.toml
 rm -f uv.lock
@@ -221,7 +221,7 @@ rm -rf .claude
 Remove `tests/test_install.py` entirely (it tests the deleted `install.py`):
 
 ```bash
-rm /Users/f/repos/eng-team/cloud-architecture/cloud-run-specialist/tests/test_install.py
+rm /Users/f/repos/tn/tonone/cloud-architecture/cloud-run-specialist/tests/test_install.py
 ```
 
 Edit `tests/test_cli_dispatch.py` to remove the `TestInstallMain` class (lines 105-145). This class imports `cloudrun_agent.install` which no longer exists. Keep everything else in the file (TestCliArgParsing, TestCliErrorHandling, TestRemediationHint, TestGcloudErrorWithHint).
@@ -229,7 +229,7 @@ Edit `tests/test_cli_dispatch.py` to remove the `TestInstallMain` class (lines 1
 - [ ] **Step 8: Verify Python source is intact**
 
 ```bash
-cd /Users/f/repos/eng-team/cloud-architecture/cloud-run-specialist/scripts
+cd /Users/f/repos/tn/tonone/cloud-architecture/cloud-run-specialist/scripts
 ls cloudrun_agent/__init__.py cloudrun_agent/cli.py cloudrun_agent/runner.py cloudrun_agent/overview.py cloudrun_agent/dashboard.py cloudrun_agent/history.py
 ls cloudrun_agent/models/__init__.py cloudrun_agent/models/service.py
 ls cloudrun_agent/tools/__init__.py cloudrun_agent/tools/gcloud.py cloudrun_agent/tools/parser.py cloudrun_agent/tools/metrics.py
@@ -309,7 +309,7 @@ Write to `cloud-architecture/cloud-run-specialist/hooks/hooks.json`:
 - [ ] **Step 4: Test setup.sh works**
 
 ```bash
-cd /Users/f/repos/eng-team/cloud-architecture/cloud-run-specialist
+cd /Users/f/repos/tn/tonone/cloud-architecture/cloud-run-specialist
 bash scripts/setup.sh
 scripts/.venv/bin/python -c "import cloudrun_agent; print(cloudrun_agent.__version__)"
 ```
@@ -414,14 +414,14 @@ git commit -m "feat: move agent def and skills to plugin-standard directories"
 - [ ] **Step 1: Set up the venv if not already done**
 
 ```bash
-cd /Users/f/repos/eng-team/cloud-architecture/cloud-run-specialist
+cd /Users/f/repos/tn/tonone/cloud-architecture/cloud-run-specialist
 bash scripts/setup.sh
 ```
 
 - [ ] **Step 2: Run the full test suite**
 
 ```bash
-cd /Users/f/repos/eng-team/cloud-architecture/cloud-run-specialist/scripts
+cd /Users/f/repos/tn/tonone/cloud-architecture/cloud-run-specialist/scripts
 .venv/bin/python -m pytest ../tests/ -v --tb=short
 ```
 
@@ -429,13 +429,13 @@ Expected: All tests pass. `test_install.py` and `TestInstallMain` were already r
 
 ---
 
-## Chunk 2: Engteam CLI Updates & CI/CD
+## Chunk 2: tonone CLI Updates & CI/CD
 
-### Task 6: Update engteam registry with plugin metadata
+### Task 6: Update tonone registry with plugin metadata
 
 **Files:**
 
-- Modify: `src/engteam/registry.py`
+- Modify: `src/tonone/registry.py`
 
 - [ ] **Step 1: Write the failing test**
 
@@ -444,7 +444,7 @@ Add to `tests/test_registry.py`:
 ```python
 def test_agent_entry_has_plugin_fields():
     """AgentEntry includes plugin_name and marketplace fields."""
-    from engteam.registry import AGENTS
+    from tonone.registry import AGENTS
     agent = AGENTS[0]
     assert hasattr(agent, "plugin_name")
     assert hasattr(agent, "marketplace")
@@ -455,14 +455,14 @@ def test_agent_entry_has_plugin_fields():
 - [ ] **Step 2: Run test to verify it fails**
 
 ```bash
-cd /Users/f/repos/eng-team && uv run pytest tests/test_registry.py::test_agent_entry_has_plugin_fields -v
+cd /Users/f/repos/tn/tonone && uv run pytest tests/test_registry.py::test_agent_entry_has_plugin_fields -v
 ```
 
 Expected: FAIL - `AgentEntry` has no `plugin_name` attribute.
 
 - [ ] **Step 3: Update registry.py**
 
-Edit `src/engteam/registry.py`. Add two new fields to `AgentEntry`:
+Edit `src/tonone/registry.py`. Add two new fields to `AgentEntry`:
 
 ```python
 @dataclass(frozen=True)
@@ -516,7 +516,7 @@ Update lines 17-19, 28-30, 35-37, and 42-44 in `tests/test_registry.py`.
 - [ ] **Step 5: Run tests to verify they pass**
 
 ```bash
-cd /Users/f/repos/eng-team && uv run pytest tests/test_registry.py -v
+cd /Users/f/repos/tn/tonone && uv run pytest tests/test_registry.py -v
 ```
 
 Expected: All registry tests pass (both old and new).
@@ -524,21 +524,21 @@ Expected: All registry tests pass (both old and new).
 - [ ] **Step 6: Commit**
 
 ```bash
-git add src/engteam/registry.py tests/test_registry.py
+git add src/tonone/registry.py tests/test_registry.py
 git commit -m "feat: add plugin_name and marketplace fields to AgentEntry"
 ```
 
 ---
 
-### Task 7: Update engteam CLI to show plugin install path
+### Task 7: Update tonone CLI to show plugin install path
 
 **Files:**
 
-- Modify: `src/engteam/cli.py`
+- Modify: `src/tonone/cli.py`
 
 - [ ] **Step 1: Update cmd_list to show plugin install info**
 
-Edit `src/engteam/cli.py`. In the `cmd_list` function, after the verbose block that prints package/skills (around line 49), add:
+Edit `src/tonone/cli.py`. In the `cmd_list` function, after the verbose block that prints package/skills (around line 49), add:
 
 ```python
             if args.verbose:
@@ -550,7 +550,7 @@ Edit `src/engteam/cli.py`. In the `cmd_list` function, after the verbose block t
 
 - [ ] **Step 2: Update cmd_run to drop the `analyze` subcommand**
 
-The entry point changed from `cloudrun_agent.install:main` (which had `analyze` subcommand routing) to `cloudrun_agent.cli:main` (which accepts flags directly). Update `cmd_run` in `src/engteam/cli.py` (around line 131):
+The entry point changed from `cloudrun_agent.install:main` (which had `analyze` subcommand routing) to `cloudrun_agent.cli:main` (which accepts flags directly). Update `cmd_run` in `src/tonone/cli.py` (around line 131):
 
 From:
 
@@ -564,7 +564,7 @@ To:
     cmd = [agent.pypi_package, *args.agent_args]
 ```
 
-This means `engteam run cloud-run-specialist -- --html` now runs `cloudrun-agent --html` instead of `cloudrun-agent analyze --html`.
+This means `tonone run cloud-run-specialist -- --html` now runs `cloudrun-agent --html` instead of `cloudrun-agent analyze --html`.
 
 - [ ] **Step 3: Update help text in main()**
 
@@ -578,19 +578,19 @@ Edit the else block at the bottom of `main()` (around line 197) to show both ins
         print(f"  /plugin install cloud-run-specialist@tonone-ai")
         print()
         print("Install (pip):")
-        print("  engteam list                    Browse available agents")
-        print("  engteam install <agent|team>    Install an agent or team")
-        print("  engteam run <agent> [args]      Run an agent directly")
-        print("  engteam update                  Update all installed agents")
+        print("  tonone list                    Browse available agents")
+        print("  tonone install <agent|team>    Install an agent or team")
+        print("  tonone run <agent> [args]      Run an agent directly")
+        print("  tonone update                  Update all installed agents")
         print()
         print("Get started:")
-        print("  engteam list")
+        print("  tonone list")
 ```
 
-- [ ] **Step 4: Run engteam CLI tests**
+- [ ] **Step 4: Run tonone CLI tests**
 
 ```bash
-cd /Users/f/repos/eng-team && uv run pytest tests/test_cli.py -v
+cd /Users/f/repos/tn/tonone && uv run pytest tests/test_cli.py -v
 ```
 
 Expected: All CLI tests pass. If any fail due to the new fields in `AgentEntry`, update the test fixtures to include `plugin_name` and `marketplace`.
@@ -602,8 +602,8 @@ If `test_cli.py` creates `AgentEntry` objects, add the new required fields to th
 - [ ] **Step 6: Commit**
 
 ```bash
-git add src/engteam/cli.py tests/test_cli.py
-git commit -m "feat: show plugin install path in engteam CLI"
+git add src/tonone/cli.py tests/test_cli.py
+git commit -m "feat: show plugin install path in tonone CLI"
 ```
 
 ---
@@ -714,13 +714,13 @@ git commit -m "chore: add plugin venv and build artifacts to gitignore"
 - [ ] **Step 1: Remove old template files**
 
 ```bash
-rm -rf /Users/f/repos/eng-team/templates/new-agent/
+rm -rf /Users/f/repos/tn/tonone/templates/new-agent/
 ```
 
 - [ ] **Step 2: Create new template directory structure**
 
 ```bash
-cd /Users/f/repos/eng-team
+cd /Users/f/repos/tonone
 mkdir -p templates/new-agent/.claude-plugin
 mkdir -p templates/new-agent/agents
 mkdir -p templates/new-agent/skills/SKILL_NAME
@@ -976,9 +976,9 @@ cloudrun-agent install
 Or browse all agents:
 
 ```bash
-pip install engteam
-engteam list
-engteam install cloud-run-specialist
+pip install tonone
+tonone list
+tonone install cloud-run-specialist
 ```
 
 </details>
@@ -992,7 +992,7 @@ engteam install cloud-run-specialist
 | **[cloud-run-specialist](cloud-architecture/cloud-run-specialist/)** | Audit Cloud Run fleet: waste, performance, pricing, traffic, security | `/plugin install cloud-run-specialist@tonone-ai` | `pip install cloudrun-agent` |
 ```
 
-**Marketplace Commands section** - show plugin commands first, then engteam CLI as alternative.
+**Marketplace Commands section** - show plugin commands first, then tonone CLI as alternative.
 
 - [ ] **Step 2: Commit**
 
@@ -1018,7 +1018,7 @@ Update the Structure section to show plugin layout:
 ## Structure
 ```
 
-eng-team/
+tonone/
 ├── marketplace.json <- plugin marketplace registry
 ├── cloud-architecture/ <- team: Cloud Architecture
 │ └── cloud-run-specialist/ <- plugin (self-contained)
@@ -1028,7 +1028,7 @@ eng-team/
 │ ├── hooks/ <- lifecycle hooks
 │ ├── scripts/ <- Python source + venv
 │ └── tests/
-├── src/engteam/ <- marketplace CLI (pip path)
+├── src/tonone/ <- marketplace CLI (pip path)
 └── templates/new-agent/ <- scaffolding for new agents
 
 ```
@@ -1044,7 +1044,7 @@ Update the "Adding a New Agent" section:
 2. Replace placeholders in plugin.json, agent def, skills
 3. Implement analyzers in `scripts/<module>/`
 4. Add entry to `marketplace.json`
-5. Add entry to `src/engteam/registry.py` (for pip path)
+5. Add entry to `src/tonone/registry.py` (for pip path)
 6. Agent must expose: `<package> analyze` CLI command
 ```
 
@@ -1055,7 +1055,7 @@ Update the Development section:
 
 ```bash
 # Marketplace CLI
-cd eng-team && uv sync && uv run engteam list
+cd tonone && uv sync && uv run tonone list
 
 # Individual agent (plugin layout)
 cd cloud-architecture/cloud-run-specialist/scripts && bash setup.sh
@@ -1186,7 +1186,7 @@ git commit -m "docs: update cloud-run-specialist README for plugin install"
 - [ ] **Step 1: Verify the plugin directory structure is correct**
 
 ```bash
-cd /Users/f/repos/eng-team
+cd /Users/f/repos/tonone
 ls cloud-architecture/cloud-run-specialist/.claude-plugin/plugin.json
 ls cloud-architecture/cloud-run-specialist/agents/cloudrun-analyzer.md
 ls cloud-architecture/cloud-run-specialist/skills/cloudrun-dashboard/SKILL.md
@@ -1213,11 +1213,11 @@ test ! -d cloud-architecture/cloud-run-specialist/.claude && echo "OK: .claude/ 
 - [ ] **Step 3: Run all tests**
 
 ```bash
-# Engteam marketplace CLI tests
-cd /Users/f/repos/eng-team && uv run pytest tests/ -v --tb=short
+# tonone marketplace CLI tests
+cd /Users/f/repos/tn/tonone && uv run pytest tests/ -v --tb=short
 
 # Cloud Run agent tests
-cd /Users/f/repos/eng-team/cloud-architecture/cloud-run-specialist/scripts
+cd /Users/f/repos/tn/tonone/cloud-architecture/cloud-run-specialist/scripts
 bash setup.sh
 .venv/bin/python -m pytest ../tests/ -v --tb=short
 ```
@@ -1239,7 +1239,7 @@ python3 -c "import json; json.load(open('cloud-architecture/cloud-run-specialist
 - [ ] **Step 6: Verify the CLI still works**
 
 ```bash
-cd /Users/f/repos/eng-team && uv run engteam list -v
+cd /Users/f/repos/tn/tonone && uv run tonone list -v
 ```
 
 Expected: Shows cloud-run-specialist with plugin install info.

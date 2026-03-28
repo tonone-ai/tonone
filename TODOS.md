@@ -4,7 +4,7 @@ Deferred items from the v0.1.0 launch review (2026-03-16).
 
 ## P2 - Next Release (v0.2.0)
 
-### `engteam doctor` - prerequisite checker
+### `tonone doctor` - prerequisite checker
 
 - **What:** CLI command that verifies gcloud installed, authenticated, project set, Python version compatible.
 - **Why:** Prevents wasted time when users hit "gcloud not found" on first run.
@@ -38,4 +38,4 @@ Deferred items from the v0.1.0 launch review (2026-03-16).
 - **What:** After `cloudrun-agent install`, optionally verify gcloud works and print service count.
 - **Why:** Turns "hope it works" into "confirmed working" on first install.
 - **Effort:** S
-- **Depends on:** `engteam doctor` (shared prerequisite logic)
+- **Depends on:** `tonone doctor` (shared prerequisite logic)

@@ -30,7 +30,7 @@ Simplicity is king. Scalability is best friend.
 
 ```
 /plugin marketplace add tonone-ai/tonone
-/plugin install eng-team@tonone-ai
+/plugin install tonone@tonone-ai
 ```
 
 ### Or install individual agents

@@ -23,7 +23,7 @@ Elite engineering team as Claude Code agents. 1 lead + 12 specialists. Simplicit
 ## Structure
 
 ```
-eng-team/
+tonone/
 ├── .claude-plugin/         ← root plugin (installs Apex as entry point)
 ├── agents/                 ← root-level Apex agent definition
 │   └── apex.md
@@ -53,7 +53,7 @@ eng-team/
 │   ├── atlas/
 │   └── lens/
 ├── docs/                   ← naming guide, design docs
-├── src/engteam/            ← marketplace CLI (pip path)
+├── src/tonone/             ← marketplace CLI (pip path)
 └── templates/new-agent/    ← scaffolding for new agents
 ```
 
@@ -77,7 +77,7 @@ eng-team/
 
 ```bash
 # Marketplace CLI
-cd eng-team && uv sync && uv run engteam list
+cd tonone && uv sync && uv run tonone list
 
 # Individual agent (plugin layout)
 cd team/forge/scripts && bash setup.sh
