@@ -1,0 +1,12 @@
+{
+  "name": "apex",
+  "version": "0.1.0",
+  "description": "Engineering lead — orchestrates the team, scopes work, controls depth and budget",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": ["lead", "orchestrator", "tech-lead", "engineering-management"]
+}

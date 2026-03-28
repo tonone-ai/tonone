@@ -1,0 +1,19 @@
+{
+  "name": "atlas",
+  "version": "0.1.0",
+  "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "architecture",
+    "adrs",
+    "api-specs",
+    "diagrams",
+    "knowledge"
+  ]
+}

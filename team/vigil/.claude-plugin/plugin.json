@@ -1,0 +1,19 @@
+{
+  "name": "vigil",
+  "version": "0.1.0",
+  "description": "Observability & reliability engineer — monitoring, alerting, SRE, incident response, SLOs",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": [
+    "observability",
+    "reliability",
+    "monitoring",
+    "sre",
+    "incidents",
+    "slos"
+  ]
+}

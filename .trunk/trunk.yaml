@@ -12,6 +12,7 @@ plugins:
 # Many linters and tools depend on runtimes - configure them here. (https://docs.trunk.io/runtimes)
 runtimes:
   enabled:
+    - go@1.21.0
     - node@22.16.0
     - python@3.10.8
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
@@ -21,15 +22,17 @@ lint:
       paths:
         - "**/CLAUDE.md"
   enabled:
+    - shellcheck@0.11.0
+    - shfmt@3.6.0
     - actionlint@1.7.11
     - bandit@1.9.4
     - black@26.3.1
-    - checkov@3.2.508
+    - checkov@3.2.513
     - git-diff-check
     - isort@8.0.1
     - markdownlint@0.48.0
     - prettier@3.8.1
-    - ruff@0.15.6
+    - ruff@0.15.8
     - taplo@0.10.0
     - trufflehog@3.93.8
     - yamllint@1.38.0

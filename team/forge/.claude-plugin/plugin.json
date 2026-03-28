@@ -1,0 +1,12 @@
+{
+  "name": "forge",
+  "version": "0.1.0",
+  "description": "Infrastructure engineer — cloud services, networking, IaC, cost optimization",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": ["infrastructure", "cloud", "iac", "networking", "cost"]
+}

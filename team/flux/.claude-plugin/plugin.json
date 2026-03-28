@@ -1,0 +1,12 @@
+{
+  "name": "flux",
+  "version": "0.1.0",
+  "description": "Data engineer — databases, migrations, pipelines, data modeling",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": ["data", "databases", "migrations", "pipelines", "modeling"]
+}

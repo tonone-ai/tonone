@@ -1,0 +1,12 @@
+{
+  "name": "warden",
+  "version": "0.1.0",
+  "description": "Security engineer — IAM, secrets, compliance, threat modeling",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": ["security", "iam", "secrets", "compliance", "threat-modeling"]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "volt",
+  "version": "0.1.0",
+  "description": "Embedded & IoT engineer — firmware, microcontrollers, edge computing, device protocols",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": [
+    "embedded",
+    "iot",
+    "firmware",
+    "microcontrollers",
+    "edge",
+    "protocols"
+  ]
+}

@@ -2,10 +2,70 @@
   "name": "thisisfatih",
   "description": "Engineering Team - Claude Code agents that work as specialized engineers",
   "plugins": {
-    "cloud-run-specialist": {
-      "path": "cloud-architecture/cloud-run-specialist",
-      "description": "Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
-      "team": "cloud-architecture"
+    "apex": {
+      "path": "team/apex",
+      "description": "Engineering lead — orchestrates the team, scopes work, controls depth and budget",
+      "team": "lead"
+    },
+    "forge": {
+      "path": "team/forge",
+      "description": "Infrastructure engineer — cloud services, networking, IaC, cost optimization",
+      "team": "infrastructure"
+    },
+    "relay": {
+      "path": "team/relay",
+      "description": "DevOps engineer — CI/CD, deployments, GitOps, developer experience",
+      "team": "devops"
+    },
+    "spine": {
+      "path": "team/spine",
+      "description": "Backend engineer — APIs, system design, performance, distributed systems",
+      "team": "backend"
+    },
+    "flux": {
+      "path": "team/flux",
+      "description": "Data engineer — databases, migrations, pipelines, data modeling",
+      "team": "data"
+    },
+    "warden": {
+      "path": "team/warden",
+      "description": "Security engineer — IAM, secrets, compliance, threat modeling",
+      "team": "security"
+    },
+    "vigil": {
+      "path": "team/vigil",
+      "description": "Observability & reliability engineer — monitoring, alerting, SRE, incident response, SLOs",
+      "team": "observability-reliability"
+    },
+    "prism": {
+      "path": "team/prism",
+      "description": "Frontend & DX engineer — UI, internal tools, developer portals",
+      "team": "frontend"
+    },
+    "cortex": {
+      "path": "team/cortex",
+      "description": "ML/AI engineer — model training, MLOps, feature engineering, LLM integration",
+      "team": "ml"
+    },
+    "touch": {
+      "path": "team/touch",
+      "description": "Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance",
+      "team": "mobile"
+    },
+    "volt": {
+      "path": "team/volt",
+      "description": "Embedded & IoT engineer — firmware, microcontrollers, edge computing, device protocols",
+      "team": "embedded"
+    },
+    "atlas": {
+      "path": "team/atlas",
+      "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding",
+      "team": "knowledge"
+    },
+    "lens": {
+      "path": "team/lens",
+      "description": "Data analytics & BI engineer — dashboards, metrics design, reporting, data storytelling",
+      "team": "analytics"
     }
   }
 }
