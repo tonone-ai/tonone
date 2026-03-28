@@ -11,20 +11,7 @@ Audited 2026-03-28. Original items from v0.1.0 launch review (2026-03-16), updat
 - **Effort:** S
 - **Depends on:** Nothing
 
-### Parallel fleet analysis
-
-- **What:** Use `concurrent.futures.ThreadPoolExecutor` (5-10 workers) in `team/forge/scripts/cloudrun_agent/overview.py` for service analysis.
-- **Why:** 50-service fleet = ~500 sequential API calls = 10+ min. Parallel = ~2 min.
-- **Effort:** M
-- **Depends on:** Progress indicator (shipped in v0.1.0)
-
 ## P3 - Future
-
-### Snapshot retention / pruning
-
-- **What:** Auto-prune old snapshots (keep last 30) in `team/forge/scripts/cloudrun_agent/history.py`. Add `prune_old_snapshots()` and expose via CLI flag.
-- **Why:** `~/.cloudrun-agent/history/` grows unbounded over months.
-- **Effort:** S
 
 ### Post-install smoke test
 
