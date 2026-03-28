@@ -4,17 +4,11 @@ AGENT_DESCRIPTION
 
 ## Install
 
-In Claude Code (recommended):
+In Claude Code:
 
 ```
 /plugin marketplace add tonone-ai/tonone
 /plugin install AGENT_SLUG@tonone-ai
-```
-
-Or via pip:
-
-```bash
-pip install AGENT_PYPI_NAME
 ```
 
 ## Prerequisites

@@ -24,36 +24,29 @@ Elite engineering team as Claude Code agents. 1 lead + 12 specialists. Simplicit
 
 ```
 tonone/
-├── .claude-plugin/         ← root plugin (installs Apex as entry point)
-├── agents/                 ← root-level Apex agent definition
-│   └── apex.md
+├── .claude-plugin/         ← root plugin (installs full team)
+├── agents/                 ← all agent definitions (Apex + 12 specialists)
+│   ├── apex.md
+│   ├── forge.md
+│   ├── relay.md
+│   └── ...
 ├── skills/                 ← root-level Apex skills
 │   ├── apex-plan/
 │   ├── apex-review/
 │   ├── apex-status/
 │   └── apex-takeover/
-├── marketplace.json        ← plugin marketplace registry
-├── team/                   ← all specialists (each is a self-contained plugin)
+├── team/                   ← specialist source (scripts, skills, hooks, tests)
 │   ├── forge/
 │   │   ├── .claude-plugin/ ← plugin manifest
-│   │   ├── agents/         ← agent definition
+│   │   ├── agents/         ← agent definition (canonical copy)
 │   │   ├── skills/         ← slash commands
 │   │   ├── hooks/          ← lifecycle hooks
 │   │   ├── scripts/        ← Python source + venv
 │   │   └── tests/
 │   ├── relay/
 │   ├── spine/
-│   ├── flux/
-│   ├── warden/
-│   ├── vigil/
-│   ├── prism/
-│   ├── cortex/
-│   ├── touch/
-│   ├── volt/
-│   ├── atlas/
-│   └── lens/
+│   └── ...
 ├── docs/                   ← naming guide, design docs
-├── src/tonone/             ← marketplace CLI (pip path)
 └── templates/new-agent/    ← scaffolding for new agents
 ```
 
@@ -62,23 +55,19 @@ tonone/
 1. Copy `templates/new-agent/` to `team/<agent-name>/`
 2. Replace placeholders in plugin.json, agent def, skills
 3. Implement analyzers in `scripts/<module>/`
-4. Add entry to `marketplace.json`
+4. Copy agent def to root `agents/` directory
 5. See `docs/naming-guide.md` for naming conventions
-6. Agent must expose: `<package>` CLI command
+6. Agent must expose skills via its plugin manifest
 
 ## Conventions
 
 - Agent names: single word, 1-2 syllables, evocative of the domain (see `docs/naming-guide.md`)
 - Skills: `/{agentname}-{action}` (e.g., `/cloudrun-dashboard`)
-- PyPI: `{agentname}-agent` (e.g., `forge-agent`)
 - Each agent is self-contained with own pyproject.toml, tests, hooks
 
 ## Development
 
 ```bash
-# Marketplace CLI
-cd tonone && uv sync && uv run tonone list
-
 # Individual agent (plugin layout)
 cd team/forge/scripts && bash setup.sh
 .venv/bin/python -m pytest ../tests/
