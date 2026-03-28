@@ -2,67 +2,71 @@
   "name": "tonone-ai",
   "description": "Engineering Team - Claude Code agents that work as specialized engineers",
   "plugins": {
-    "apex": {
+    "engineering-team": {
+      "path": "bundle/engineering-team",
+      "description": "Install all 13 Engineering Team agents at once"
+    },
+    "apex-lead": {
       "path": "team/apex",
       "description": "Engineering lead — orchestrates the team, scopes work, controls depth and budget",
       "team": "lead"
     },
-    "forge": {
+    "forge-infra": {
       "path": "team/forge",
       "description": "Infrastructure engineer — cloud services, networking, IaC, cost optimization",
       "team": "infrastructure"
     },
-    "relay": {
+    "relay-devops": {
       "path": "team/relay",
       "description": "DevOps engineer — CI/CD, deployments, GitOps, developer experience",
       "team": "devops"
     },
-    "spine": {
+    "spine-backend": {
       "path": "team/spine",
       "description": "Backend engineer — APIs, system design, performance, distributed systems",
       "team": "backend"
     },
-    "flux": {
+    "flux-data": {
       "path": "team/flux",
       "description": "Data engineer — databases, migrations, pipelines, data modeling",
       "team": "data"
     },
-    "warden": {
+    "warden-security": {
       "path": "team/warden",
       "description": "Security engineer — IAM, secrets, compliance, threat modeling",
       "team": "security"
     },
-    "vigil": {
+    "vigil-sre": {
       "path": "team/vigil",
       "description": "Observability & reliability engineer — monitoring, alerting, SRE, incident response, SLOs",
       "team": "observability-reliability"
     },
-    "prism": {
+    "prism-frontend": {
       "path": "team/prism",
       "description": "Frontend & DX engineer — UI, internal tools, developer portals",
       "team": "frontend"
     },
-    "cortex": {
+    "cortex-ml": {
       "path": "team/cortex",
       "description": "ML/AI engineer — model training, MLOps, feature engineering, LLM integration",
       "team": "ml"
     },
-    "touch": {
+    "touch-mobile": {
       "path": "team/touch",
       "description": "Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance",
       "team": "mobile"
     },
-    "volt": {
+    "volt-embedded": {
       "path": "team/volt",
       "description": "Embedded & IoT engineer — firmware, microcontrollers, edge computing, device protocols",
       "team": "embedded"
     },
-    "atlas": {
+    "atlas-docs": {
       "path": "team/atlas",
       "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding",
       "team": "knowledge"
     },
-    "lens": {
+    "lens-analytics": {
       "path": "team/lens",
       "description": "Data analytics & BI engineer — dashboards, metrics design, reporting, data storytelling",
       "team": "analytics"
