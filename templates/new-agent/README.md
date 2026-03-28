@@ -7,8 +7,8 @@ AGENT_DESCRIPTION
 In Claude Code (recommended):
 
 ```
-/plugin marketplace add thisisfatih/eng-team
-/plugin install AGENT_SLUG@thisisfatih
+/plugin marketplace add tonone-ai/tonone
+/plugin install AGENT_SLUG@tonone-ai
 ```
 
 Or via pip:

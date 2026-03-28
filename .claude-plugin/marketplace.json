@@ -1,9 +1,9 @@
 {
-  "name": "thisisfatih",
+  "name": "tonone-ai",
   "description": "Engineering Team - Claude Code agents that work as specialized engineers",
   "owner": {
-    "name": "thisisfatih",
-    "url": "https://github.com/thisisfatih"
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
   },
   "plugins": [
     {
@@ -12,8 +12,8 @@
       "version": "0.1.0",
       "source": "./cloud-architecture/cloud-run-specialist",
       "author": {
-        "name": "thisisfatih",
-        "url": "https://github.com/thisisfatih"
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
       }
     }
   ]

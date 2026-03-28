@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "Frontend & DX engineer — UI, internal tools, developer portals",
   "author": {
-    "name": "thisisfatih",
-    "url": "https://github.com/thisisfatih"
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
   },
-  "repository": "https://github.com/thisisfatih/eng-team",
+  "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "keywords": ["frontend", "dx", "ui", "developer-tools", "portals"]
 }

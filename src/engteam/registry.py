@@ -21,7 +21,7 @@ AGENTS: tuple[AgentEntry, ...] = (
         team="cloud-architecture",
         pypi_package="cloudrun-agent",
         plugin_name="cloud-run-specialist",
-        marketplace="thisisfatih/eng-team",
+        marketplace="tonone-ai/tonone",
         description="Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
         skills=(
             "/cloudrun-dashboard",

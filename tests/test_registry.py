@@ -195,4 +195,4 @@ def test_agent_entry_has_plugin_fields():
     assert hasattr(agent, "plugin_name")
     assert hasattr(agent, "marketplace")
     assert agent.plugin_name == "cloud-run-specialist"
-    assert agent.marketplace == "thisisfatih/eng-team"
+    assert agent.marketplace == "tonone-ai/tonone"

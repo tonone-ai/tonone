@@ -82,10 +82,10 @@ eng-team/
   "version": "0.1.0",
   "description": "Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
   "author": {
-    "name": "thisisfatih",
-    "url": "https://github.com/thisisfatih"
+    "name": "tonone-ai",
+    "url": "https://github.com/tonone-ai"
   },
-  "repository": "https://github.com/thisisfatih/eng-team",
+  "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "keywords": ["gcp", "cloud-run", "audit", "infrastructure"]
 }
@@ -97,7 +97,7 @@ eng-team/
 
 ```json
 {
-  "name": "thisisfatih",
+  "name": "tonone-ai",
   "description": "Engineering Team - Claude Code agents that work as specialized engineers",
   "plugins": {
     "cloud-run-specialist": {
@@ -115,8 +115,8 @@ New agents add an entry to `plugins` and create their directory under the approp
 
 ```bash
 # Plugin path (primary)
-/plugin marketplace add thisisfatih/eng-team
-/plugin install cloud-run-specialist@thisisfatih
+/plugin marketplace add tonone-ai/tonone
+/plugin install cloud-run-specialist@tonone-ai
 
 # Pip path (secondary, still works)
 pip install cloudrun-agent
@@ -231,7 +231,7 @@ class AgentEntry:
     team: str
     pypi_package: str
     plugin_name: str          # "cloud-run-specialist"
-    marketplace: str          # "thisisfatih/eng-team"
+    marketplace: str          # "tonone-ai/tonone"
     description: str
     skills: tuple[str, ...]
     status: str = "available"
