@@ -2,20 +2,34 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 0.2.x   | :white_check_mark: |
+| < 0.2   | :x:                |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security vulnerability in Tonone, please report it responsibly.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+**Do not open a public issue.**
+
+Email: **<security@tonone.ai>**
+
+Include:
+
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
+
+We will acknowledge receipt within 48 hours and aim to provide a fix or mitigation within 7 days for critical issues.
+
+## Scope
+
+Tonone is a prompt-based agent system — agents execute through Claude Code, not through arbitrary code execution. The primary security surface is:
+
+- **Skill definitions** — prompts that instruct Claude Code behavior
+- **Hook scripts** — shell scripts that run on install (`setup.sh`)
+- **Plugin manifests** — JSON configuration files
+
+If you find a way that a skill prompt could be manipulated to produce harmful Claude Code behavior, that's in scope.

@@ -42,6 +42,10 @@ No boilerplate generators. No tutorial-grade scaffolds. Production-ready output 
 
 ## Quick Start
 
+### Prerequisites
+
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed (v1.0+)
+
 ### Install
 
 ```
@@ -236,12 +240,17 @@ Phase 3 — Takeover report:
 
 </details>
 
-## For Contributors
+## Contributing
 
-See [CLAUDE.md](CLAUDE.md) for development setup and conventions.
+See [CONTRIBUTING.md](CONTRIBUTING.md) to get started — improve skills, propose agents, or fix bugs.
 
-See [docs/naming-guide.md](docs/naming-guide.md) for how to name new agents.
+| Doc                                  | Covers                       |
+| ------------------------------------ | ---------------------------- |
+| [Architecture](docs/architecture.md) | How the plugin system works  |
+| [Skill Guide](docs/skill-guide.md)   | Writing and improving skills |
+| [Agent Guide](docs/agent-guide.md)   | Creating new agents          |
+| [Naming Guide](docs/naming-guide.md) | Agent naming conventions     |
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE)
