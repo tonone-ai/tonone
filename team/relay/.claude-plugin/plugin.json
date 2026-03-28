@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "DevOps engineer — CI/CD, deployments, GitOps, developer experience",
   "author": {
-    "name": "thisisfatih",
-    "url": "https://github.com/thisisfatih"
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
   },
-  "repository": "https://github.com/thisisfatih/eng-team",
+  "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "keywords": ["devops", "cicd", "deployments", "gitops", "dx"]
 }

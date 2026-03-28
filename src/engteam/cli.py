@@ -200,8 +200,8 @@ def main() -> None:
     else:
         print(_header())
         print("Install (plugin - recommended):")
-        print("  /plugin marketplace add thisisfatih/eng-team")
-        print("  /plugin install cloud-run-specialist@thisisfatih")
+        print("  /plugin marketplace add tonone-ai/tonone")
+        print("  /plugin install cloud-run-specialist@tonone-ai")
         print()
         print("Install (pip):")
         print("  engteam list                    Browse available agents")

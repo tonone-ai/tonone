@@ -67,7 +67,7 @@
 
 ```json
 {
-  "name": "thisisfatih",
+  "name": "tonone-ai",
   "description": "Engineering Team - Claude Code agents that work as specialized engineers",
   "plugins": {
     "cloud-run-specialist": {
@@ -95,10 +95,10 @@ Write to `cloud-architecture/cloud-run-specialist/.claude-plugin/plugin.json`:
   "version": "0.1.0",
   "description": "Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
   "author": {
-    "name": "thisisfatih",
-    "url": "https://github.com/thisisfatih"
+    "name": "tonone-ai",
+    "url": "https://github.com/tonone-ai"
   },
-  "repository": "https://github.com/thisisfatih/eng-team",
+  "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "keywords": ["gcp", "cloud-run", "audit", "infrastructure"]
 }
@@ -184,8 +184,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/thisisfatih/eng-team"
-Issues = "https://github.com/thisisfatih/eng-team/issues"
+Homepage = "https://github.com/tonone-ai/tonone"
+Issues = "https://github.com/tonone-ai/tonone/issues"
 
 [project.scripts]
 cloudrun-agent = "cloudrun_agent.cli:main"
@@ -449,7 +449,7 @@ def test_agent_entry_has_plugin_fields():
     assert hasattr(agent, "plugin_name")
     assert hasattr(agent, "marketplace")
     assert agent.plugin_name == "cloud-run-specialist"
-    assert agent.marketplace == "thisisfatih/eng-team"
+    assert agent.marketplace == "tonone-ai/tonone"
 ```
 
 - [ ] **Step 2: Run test to verify it fails**
@@ -486,7 +486,7 @@ AGENTS: tuple[AgentEntry, ...] = (
         team="cloud-architecture",
         pypi_package="cloudrun-agent",
         plugin_name="cloud-run-specialist",
-        marketplace="thisisfatih/eng-team",
+        marketplace="tonone-ai/tonone",
         description="Audit Cloud Run fleet: resource waste, performance, pricing, traffic, security",
         skills=(
             "/cloudrun-dashboard",
@@ -574,8 +574,8 @@ Edit the else block at the bottom of `main()` (around line 197) to show both ins
     else:
         print(_header())
         print("Install (plugin - recommended):")
-        print(f"  /plugin marketplace add thisisfatih/eng-team")
-        print(f"  /plugin install cloud-run-specialist@thisisfatih")
+        print(f"  /plugin marketplace add tonone-ai/tonone")
+        print(f"  /plugin install cloud-run-specialist@tonone-ai")
         print()
         print("Install (pip):")
         print("  engteam list                    Browse available agents")
@@ -738,10 +738,10 @@ Write to `templates/new-agent/.claude-plugin/plugin.json`:
   "version": "0.1.0",
   "description": "AGENT_DESCRIPTION",
   "author": {
-    "name": "thisisfatih",
-    "url": "https://github.com/thisisfatih"
+    "name": "tonone-ai",
+    "url": "https://github.com/tonone-ai"
   },
-  "repository": "https://github.com/thisisfatih/eng-team",
+  "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "keywords": []
 }
@@ -903,8 +903,8 @@ AGENT_DESCRIPTION
 
 ```bash
 # In Claude Code (recommended):
-/plugin marketplace add thisisfatih/eng-team
-/plugin install AGENT_SLUG@thisisfatih
+/plugin marketplace add tonone-ai/tonone
+/plugin install AGENT_SLUG@tonone-ai
 
 # Or via pip:
 pip install AGENT_PYPI_NAME
@@ -952,8 +952,8 @@ Update the root `README.md` to show plugin install as primary. Key changes:
 Install the Cloud Run Specialist directly in Claude Code:
 ```
 
-/plugin marketplace add thisisfatih/eng-team
-/plugin install cloud-run-specialist@thisisfatih
+/plugin marketplace add tonone-ai/tonone
+/plugin install cloud-run-specialist@tonone-ai
 
 ```
 
@@ -987,9 +987,9 @@ engteam install cloud-run-specialist
 **Available Agents table** - add plugin install column:
 
 ```markdown
-| Agent                                                                | What it does                                                          | Plugin                                             | Pip                          |
-| -------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------- |
-| **[cloud-run-specialist](cloud-architecture/cloud-run-specialist/)** | Audit Cloud Run fleet: waste, performance, pricing, traffic, security | `/plugin install cloud-run-specialist@thisisfatih` | `pip install cloudrun-agent` |
+| Agent                                                                | What it does                                                          | Plugin                                           | Pip                          |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------ | ---------------------------- |
+| **[cloud-run-specialist](cloud-architecture/cloud-run-specialist/)** | Audit Cloud Run fleet: waste, performance, pricing, traffic, security | `/plugin install cloud-run-specialist@tonone-ai` | `pip install cloudrun-agent` |
 ```
 
 **Marketplace Commands section** - show plugin commands first, then engteam CLI as alternative.
@@ -1079,8 +1079,8 @@ resource waste, performance, pricing, traffic/latency, security, and recommendat
 
 ```bash
 # In Claude Code:
-/plugin marketplace add thisisfatih/eng-team
-/plugin install cloud-run-specialist@thisisfatih
+/plugin marketplace add tonone-ai/tonone
+/plugin install cloud-run-specialist@tonone-ai
 
 # Prerequisites: gcloud CLI authenticated
 gcloud auth login && gcloud config set project YOUR_PROJECT
@@ -1154,8 +1154,8 @@ The Quick Start section becomes:
 In Claude Code:
 ```
 
-/plugin marketplace add thisisfatih/eng-team
-/plugin install cloud-run-specialist@thisisfatih
+/plugin marketplace add tonone-ai/tonone
+/plugin install cloud-run-specialist@tonone-ai
 
 ````
 

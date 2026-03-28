@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding",
   "author": {
-    "name": "thisisfatih",
-    "url": "https://github.com/thisisfatih"
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
   },
-  "repository": "https://github.com/thisisfatih/eng-team",
+  "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "keywords": [
     "documentation",
