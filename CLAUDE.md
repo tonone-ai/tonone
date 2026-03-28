@@ -1,6 +1,6 @@
 # Engineering Team
 
-Elite engineering team as Claude Code agents. 1 lead + 12 specialists. Simplicity is king. Scalability is best friend.
+Elite engineering team as Claude Code agents. 1 lead + 12 specialists. Simple by default. Scalable by design.
 
 ## The Team
 

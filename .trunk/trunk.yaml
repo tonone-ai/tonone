@@ -34,7 +34,7 @@ lint:
     - prettier@3.8.1
     - ruff@0.15.8
     - taplo@0.10.0
-    - trufflehog@3.93.8
+    - trufflehog@3.94.1
     - yamllint@1.38.0
 actions:
   enabled:

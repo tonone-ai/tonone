@@ -4,7 +4,23 @@
 
 Your elite engineering team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 1 lead + 12 specialists. 64 skills. Every major engineering discipline covered.
 
-Simplicity is king. Scalability is best friend.
+Simple by default. Scalable by design.
+
+## Why This Exists
+
+Right now, every engineer gets a generalized AI assistant. Everyone prompts separately, gets separate outputs, then copies results into Slack threads for the next person to feed back into AI. It's a relay race where every handoff loses context.
+
+**That's the wrong unit of automation.** Instead of giving each person an AI assistant, give the whole department an AI team. Specialists that talk to each other, share context, and run the show end to end — infrastructure to deployment to monitoring — without the copy-paste relay.
+
+That's Tonone. Not thirteen copies of the same generalist. Thirteen specialists, each owning one domain, coordinated by a lead who knows when to call who and at what depth.
+
+### The Mindset
+
+**Complexity is debt.** Every unnecessary abstraction, every over-engineered solution, every "just in case" feature — it all accrues interest. It slows you down today and buries you tomorrow.
+
+**Scalability compounds.** When you build simple, correct foundations, they carry more weight over time without breaking. Simple systems are easier to debug, easier to extend, and easier to hand off.
+
+No boilerplate generators. No tutorial-grade scaffolds. Production-ready output that respects your codebase, your stack, and your time.
 
 ## The Team
 
