@@ -1,0 +1,19 @@
+{
+  "name": "lens",
+  "version": "0.1.0",
+  "description": "Data analytics & BI engineer — dashboards, metrics design, reporting, data storytelling",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "bi",
+    "dashboards",
+    "metrics",
+    "visualization",
+    "reporting"
+  ]
+}

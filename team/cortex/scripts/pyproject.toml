@@ -1,0 +1,22 @@
+[project]
+name = "cortex-agent"
+version = "0.1.0"
+description = "ML/AI engineer — model training, MLOps, feature engineering, LLM integration"
+readme = "../README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+cortex-agent = "cortex_agent.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["cortex_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]

@@ -1,0 +1,12 @@
+{
+  "name": "relay",
+  "version": "0.1.0",
+  "description": "DevOps engineer — CI/CD, deployments, GitOps, developer experience",
+  "author": {
+    "name": "thisisfatih",
+    "url": "https://github.com/thisisfatih"
+  },
+  "repository": "https://github.com/thisisfatih/eng-team",
+  "license": "MIT",
+  "keywords": ["devops", "cicd", "deployments", "gitops", "dx"]
+}
