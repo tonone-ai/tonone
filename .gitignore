@@ -66,6 +66,7 @@ pip-wheel-metadata/
 
 # External tools
 .superpowers/
+.planning/
 
 # Misc
 .trunk/
