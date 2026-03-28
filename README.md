@@ -30,7 +30,7 @@ Simplicity is king. Scalability is best friend.
 
 ```
 /plugin marketplace add tonone-ai/tonone
-/plugin install tonone@tonone-ai
+/plugin install engineering-team@tonone-ai
 ```
 
 ### Or install individual agents
@@ -138,10 +138,6 @@ Phase 3 — Takeover report:
 - `/forge-cost` — Estimate and optimize infrastructure cost
 - `/forge-diagnose` — Diagnose runtime infra issues
 - `/forge-recon` — Infrastructure reconnaissance
-- `/cloudrun-dashboard` — Cloud Run fleet dashboard
-- `/cloudrun-check` — Quick Cloud Run health check
-- `/cloudrun-inspect` — Deep dive into a Cloud Run service
-- `/cloudrun-history` — Cloud Run revision history
 
 ### Relay (DevOps)
 
