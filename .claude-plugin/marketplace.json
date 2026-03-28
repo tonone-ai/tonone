@@ -7,10 +7,18 @@
   },
   "plugins": [
     {
+      "name": "tonone",
+      "description": "Elite engineering team — 1 lead + 12 specialists, 64 skills. All agents and skills in one install.",
+      "version": "0.2.0",
+      "source": "./",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "tags": ["bundle", "full-team"]
+    },
+    {
       "name": "engineering-team",
-      "description": "Install all 13 Engineering Team agents at once",
-      "version": "0.1.0",
-      "source": "./bundle/engineering-team",
+      "description": "Alias for tonone — installs all 13 agents at once",
+      "version": "0.2.0",
+      "source": "./",
       "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
       "tags": ["bundle", "installer"]
     },
