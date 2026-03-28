@@ -1,5 +1,5 @@
 {
-  "name": "atlas",
+  "name": "atlas-docs",
   "version": "0.1.0",
   "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding",
   "author": {

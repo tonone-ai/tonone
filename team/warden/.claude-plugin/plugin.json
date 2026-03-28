@@ -1,5 +1,5 @@
 {
-  "name": "warden",
+  "name": "warden-security",
   "version": "0.1.0",
   "description": "Security engineer — IAM, secrets, compliance, threat modeling",
   "author": {
