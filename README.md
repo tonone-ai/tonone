@@ -2,7 +2,7 @@
 
 **Engineering second to none.**
 
-Your elite engineering team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 1 lead + 12 specialists. 68 skills. Every major engineering discipline covered.
+Your elite engineering team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 1 lead + 12 specialists. 64 skills. Every major engineering discipline covered.
 
 Simplicity is king. Scalability is best friend.
 
@@ -26,19 +26,11 @@ Simplicity is king. Scalability is best friend.
 
 ## Quick Start
 
-### Install the whole team
+### Install
 
 ```
 /plugin marketplace add tonone-ai/tonone
-/plugin install engineering-team@tonone-ai
-```
-
-### Or install individual agents
-
-```
-/plugin install forge@tonone-ai
-/plugin install spine@tonone-ai
-/plugin install warden@tonone-ai
+/plugin install tonone@tonone-ai
 ```
 
 ### Then just talk to them
@@ -118,7 +110,7 @@ Phase 3 — Takeover report:
   System map, risk assessment, quick wins, roadmap
 ```
 
-## All 68 Skills
+## All 64 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
