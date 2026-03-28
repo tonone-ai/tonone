@@ -1,5 +1,5 @@
 {
-  "name": "cortex",
+  "name": "cortex-ml",
   "version": "0.1.0",
   "description": "ML/AI engineer — model training, MLOps, feature engineering, LLM integration",
   "author": {

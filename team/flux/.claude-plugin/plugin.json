@@ -1,5 +1,5 @@
 {
-  "name": "flux",
+  "name": "flux-data",
   "version": "0.1.0",
   "description": "Data engineer — databases, migrations, pipelines, data modeling",
   "author": {

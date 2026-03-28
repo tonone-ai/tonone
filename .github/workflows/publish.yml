@@ -8,8 +8,8 @@ permissions:
   id-token: write
 
 jobs:
-  publish-engteam:
-    name: Publish engteam
+  publish-tonone:
+    name: Publish tonone
     runs-on: ubuntu-latest
     environment: pypi
 

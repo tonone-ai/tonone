@@ -1,23 +1,23 @@
 # Plugin Migration Design
 
-Migrate eng-team from pip-based distribution to Claude Code's native plugin system while keeping pip as a secondary install path.
+Migrate tonone from pip-based distribution to Claude Code's native plugin system while keeping pip as a secondary install path.
 
 ## Context
 
-The eng-team repo currently distributes agents as PyPI packages (`pip install cloudrun-agent` + `cloudrun-agent install`). The Claude Code ecosystem uses a native plugin system (`/plugin marketplace add` + `/plugin install`). This migration aligns eng-team with that convention.
+The tonone repo currently distributes agents as PyPI packages (`pip install cloudrun-agent` + `cloudrun-agent install`). The Claude Code ecosystem uses a native plugin system (`/plugin marketplace add` + `/plugin install`). This migration aligns tonone with that convention.
 
 ## Decisions
 
 - **Flat plugin per agent** inside team directories (preserves team grouping)
 - **Python code in `scripts/`** with auto-venv via post-install hook
-- **Pip path maintained** as secondary via `engteam` CLI and PyPI
+- **Pip path maintained** as secondary via `tonone` CLI and PyPI
 - **Template updated** for plugin format
 - **Team grouping** preserved in filesystem and as metadata in `marketplace.json`
 
 ## Repository Structure
 
 ```
-eng-team/
+tonone/
 ├── marketplace.json                         # marketplace registry
 │
 ├── cloud-architecture/                      # team directory (kept)
@@ -66,10 +66,10 @@ eng-team/
 ├── devops/                                  # future team
 │   └── ci-cd-engineer/
 │
-├── src/engteam/                             # pip marketplace CLI (kept)
+├── src/tonone/                             # pip marketplace CLI (kept)
 ├── templates/new-agent/                     # updated for plugin format
 ├── tests/                                   # marketplace CLI tests
-└── pyproject.toml                           # engteam PyPI package (kept)
+└── pyproject.toml                           # tonone PyPI package (kept)
 ```
 
 ## Plugin Manifest
@@ -222,7 +222,7 @@ The venv lives at `scripts/.venv/` inside the plugin directory. Self-contained, 
 
 ## Pip Path (Secondary)
 
-The `engteam` CLI stays published on PyPI. The registry gains plugin metadata:
+The `tonone` CLI stays published on PyPI. The registry gains plugin metadata:
 
 ```python
 @dataclass(frozen=True)
@@ -237,7 +237,7 @@ class AgentEntry:
     status: str = "available"
 ```
 
-`engteam list` shows both install methods. `engteam install` continues to work via pip. The `cloudrun-agent` PyPI package stays published - its `install.py` reads agent defs and skills from the plugin-standard directories (single source of truth, no duplication).
+`tonone list` shows both install methods. `tonone install` continues to work via pip. The `cloudrun-agent` PyPI package stays published - its `install.py` reads agent defs and skills from the plugin-standard directories (single source of truth, no duplication).
 
 ## Template
 
@@ -269,7 +269,7 @@ Workflow to add a new agent:
 2. Replace placeholders in plugin.json, agent def, skills
 3. Implement analyzers in `scripts/<module>/`
 4. Add entry to `marketplace.json`
-5. Add entry to `src/engteam/registry.py` (for pip path)
+5. Add entry to `src/tonone/registry.py` (for pip path)
 
 ## Test Migration
 
@@ -325,7 +325,7 @@ publish-cloudrun-agent:
         skip-existing: true
 ```
 
-The `publish-engteam` job stays unchanged (root `pyproject.toml` is not moving).
+The `publish-tonone` job stays unchanged (root `pyproject.toml` is not moving).
 
 The test workflow (`.github/workflows/test.yml`) also updates:
 
@@ -353,7 +353,7 @@ test-cloudrun-agent:
         uv run pytest ../tests/ -v --tb=short
 ```
 
-The `test-engteam` job stays unchanged.
+The `test-tonone` job stays unchanged.
 
 ## What Gets Deleted
 
@@ -389,7 +389,7 @@ Both README.md and CLAUDE.md update to reflect the migration:
 
 - Quick Start changes to show plugin install as primary, pip as secondary
 - Available Agents table adds plugin install column
-- Marketplace Commands section shows `/plugin` commands alongside `engteam` CLI
+- Marketplace Commands section shows `/plugin` commands alongside `tonone` CLI
 
 **CLAUDE.md** (repo root):
 

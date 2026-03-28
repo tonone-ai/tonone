@@ -12,7 +12,7 @@
 - [x] **8. `--version` and `--verbose` flags** → all three CLIs
 - [x] **9. Progress indicator** → `[1/12] my-api (us-central1)` + zero-services early return
 - [x] **10. Actionable error remediation** → `_remediation_hint()` maps 6 gcloud errors to fixes
-- [x] **11. Tests** → 42 engteam tests + 43 new cloudrun-agent tests = 315 total (all passing)
+- [x] **11. Tests** → 42 tonone tests + 43 new cloudrun-agent tests = 315 total (all passing)
 - [x] **12. GitHub Actions CI** → test.yml (matrix 3.10-3.13) + publish.yml (PyPI on tag)
 - [x] **13. READMEs updated** → standalone cloudrun-agent as primary path, correct URLs, Python 3.10+
 - [x] **14. TODOS.md** → 5 deferred items
@@ -22,7 +22,7 @@
 ## Pre-Publish Checklist
 
 - [x] All 16 items complete
-- [x] All 315 tests pass (42 engteam + 273 cloudrun-agent)
+- [x] All 315 tests pass (42 tonone + 273 cloudrun-agent)
 - [ ] `hatch build` succeeds for both packages
 - [ ] Test upload to TestPyPI
 - [ ] `pip install` from TestPyPI works
@@ -32,4 +32,4 @@
 - [ ] Push to GitHub
 - [ ] Publish to PyPI
 - [ ] Verify: `pip install cloudrun-agent && cloudrun-agent install` works
-- [ ] Verify: `pip install engteam && engteam list` works
+- [ ] Verify: `pip install tonone && tonone list` works

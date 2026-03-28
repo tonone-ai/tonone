@@ -1,6 +1,6 @@
-"""Tests for the engteam agent registry."""
+"""Tests for the tonone agent registry."""
 
-from engteam.registry import (
+from tonone.registry import (
     AGENTS,
     TEAMS,
     AgentEntry,
@@ -189,7 +189,7 @@ class TestGetAllTeams:
 
 def test_agent_entry_has_plugin_fields():
     """AgentEntry includes plugin_name and marketplace fields."""
-    from engteam.registry import AGENTS
+    from tonone.registry import AGENTS
 
     agent = AGENTS[0]
     assert hasattr(agent, "plugin_name")

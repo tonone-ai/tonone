@@ -1,4 +1,4 @@
-"""Agent registry - the catalog of all Engineering Team agents."""
+"""Agent registry - the catalog of all tonone agents."""
 
 from dataclasses import dataclass
 

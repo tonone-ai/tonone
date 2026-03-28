@@ -1,10 +1,10 @@
-"""Tests for the engteam CLI."""
+"""Tests for the tonone CLI."""
 
 import argparse
 from unittest.mock import MagicMock, patch
 
-from engteam import __version__
-from engteam.cli import _header, cmd_install, cmd_list, cmd_run
+from tonone import __version__
+from tonone.cli import _header, cmd_install, cmd_list, cmd_run
 
 # ── _header ──────────────────────────────────────────────────────
 
@@ -14,7 +14,7 @@ class TestHeader:
         assert isinstance(_header(), str)
 
     def test_contains_name(self):
-        assert "Engineering Team" in _header()
+        assert "tonone" in _header()
 
 
 # ── cmd_list ─────────────────────────────────────────────────────
@@ -70,7 +70,7 @@ class TestCmdInstall:
 
     def test_coming_soon_agent_exits(self):
         """Coming-soon agents should not be installable."""
-        from engteam.registry import AGENTS
+        from tonone.registry import AGENTS
 
         coming_soon = [a for a in AGENTS if a.status == "coming-soon"]
         if not coming_soon:
@@ -82,7 +82,7 @@ class TestCmdInstall:
         except SystemExit as e:
             assert e.code == 1
 
-    @patch("engteam.cli._run")
+    @patch("tonone.cli._run")
     def test_install_specific_agent(self, mock_run, capsys):
         mock_run.return_value = MagicMock(
             returncode=0, stdout="Installed OK\n", stderr=""
@@ -92,7 +92,7 @@ class TestCmdInstall:
         output = capsys.readouterr().out
         assert "Installing" in output
 
-    @patch("engteam.cli._run")
+    @patch("tonone.cli._run")
     def test_install_team(self, mock_run, capsys):
         mock_run.return_value = MagicMock(returncode=0, stdout="OK\n", stderr="")
         args = argparse.Namespace(target="cloud-architecture")
@@ -101,7 +101,7 @@ class TestCmdInstall:
         assert "Installing" in output
         assert "agent(s)" in output
 
-    @patch("engteam.cli._run")
+    @patch("tonone.cli._run")
     def test_install_all(self, mock_run, capsys):
         mock_run.return_value = MagicMock(returncode=0, stdout="OK\n", stderr="")
         args = argparse.Namespace(target="--all")
@@ -115,7 +115,7 @@ class TestCmdInstall:
         output = capsys.readouterr().out
         assert "No available agents" in output
 
-    @patch("engteam.cli._run")
+    @patch("tonone.cli._run")
     def test_install_fallback_to_pip(self, mock_run, capsys):
         """When uvx fails, should try pip."""
         fail = MagicMock(returncode=1, stdout="", stderr="not found")
@@ -142,7 +142,7 @@ class TestCmdRun:
         except SystemExit as e:
             assert e.code == 1
 
-    @patch("engteam.cli._run")
+    @patch("tonone.cli._run")
     def test_run_known_agent(self, mock_run):
         mock_run.return_value = MagicMock(returncode=0)
         args = argparse.Namespace(agent="cloud-run-specialist", agent_args=["--html"])

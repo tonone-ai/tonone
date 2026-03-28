@@ -1,11 +1,11 @@
-"""Engineering Team CLI - discover, install, and run agents."""
+"""tonone CLI - discover, install, and run agents."""
 
 import argparse
 import subprocess
 import sys
 
-from engteam import __version__
-from engteam.registry import (
+from tonone import __version__
+from tonone.registry import (
     AGENTS,
     TEAMS,
     get_agent,
@@ -19,7 +19,7 @@ def _run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
 
 
 def _header() -> str:
-    return "Engineering Team - your engineering team on call\n"
+    return "tonone - engineering second to none\n"
 
 
 # ── list ─────────────────────────────────────────────────────────
@@ -83,7 +83,7 @@ def cmd_install(args: argparse.Namespace) -> None:
     agent = get_agent(target)
     if not agent:
         print(f"Unknown agent: '{target}'")
-        print("Run 'engteam list' to see available agents.")
+        print("Run 'tonone list' to see available agents.")
         sys.exit(1)
 
     if agent.status != "available":
@@ -162,10 +162,10 @@ def cmd_update(args: argparse.Namespace) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        prog="engteam",
-        description="Engineering Team - your engineering team on call",
+        prog="tonone",
+        description="tonone - engineering second to none",
     )
-    parser.add_argument("--version", action="version", version=f"engteam {__version__}")
+    parser.add_argument("--version", action="version", version=f"tonone {__version__}")
     sub = parser.add_subparsers(dest="command")
 
     # list
@@ -204,10 +204,10 @@ def main() -> None:
         print("  /plugin install cloud-run-specialist@tonone-ai")
         print()
         print("Install (pip):")
-        print("  engteam list                    Browse available agents")
-        print("  engteam install <agent|team>    Install an agent or team")
-        print("  engteam run <agent> [args]      Run an agent directly")
-        print("  engteam update                  Update all installed agents")
+        print("  tonone list                    Browse available agents")
+        print("  tonone install <agent|team>    Install an agent or team")
+        print("  tonone run <agent> [args]      Run an agent directly")
+        print("  tonone update                  Update all installed agents")
         print()
         print("Get started:")
-        print("  engteam list")
+        print("  tonone list")

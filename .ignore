@@ -1,0 +1,41 @@
+# Virtual environments & Python artifacts
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Trunk (linter/formatter toolchain)
+.trunk/out/
+.trunk/logs/
+.trunk/plugins/
+.trunk/tools/
+.trunk/notifications/
+.trunk/actions/
+
+# Test / coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS junk
+.DS_Store
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Lock files (noisy in search)
+uv.lock
+
+# Logs
+*.log
+
+# Claude Code personal config
+.claude/settings.json
+.claude/settings.local.json
+.superpowers/
+
+# Planning docs (not code)
+docs/plans/
