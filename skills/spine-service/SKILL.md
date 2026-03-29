@@ -57,6 +57,8 @@ Set up:
 
 ### Step 5: Present the Service
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Show the generated project structure and explain:
 
 - How to run locally (`make dev` or equivalent)

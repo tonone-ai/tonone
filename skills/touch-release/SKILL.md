@@ -165,6 +165,8 @@ Automate version management:
 
 ### Step 7: Changelog Generation
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Automate changelog from git history:
 
 - Generate from conventional commits or PR titles since last tag

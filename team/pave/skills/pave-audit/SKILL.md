@@ -71,6 +71,8 @@ Flag any of these:
 
 ### Step 5: Deliver Report
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Output a DX health report:
 
 | Dimension           | Score (1-10) | Notes |

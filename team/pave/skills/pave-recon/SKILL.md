@@ -78,6 +78,8 @@ For each step, note friction, manual steps, and tribal knowledge.
 
 ### Step 6: Deliver Assessment
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Output a platform maturity report:
 
 | Dimension          | Score (1-5) | Notes |

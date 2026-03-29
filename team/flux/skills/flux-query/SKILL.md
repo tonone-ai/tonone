@@ -55,6 +55,8 @@ For each issue found:
 
 ### Step 4: Explain the Execution Plan
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Present findings in plain English:
 
 ```

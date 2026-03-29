@@ -34,3 +34,4 @@ ls -la README* CLAUDE* TODO* CHANGELOG* PLAN* ROADMAP* 2>/dev/null
    - What needs attention next (the obvious next step)
 
 5. **Keep it to 10-15 lines max.** This is a standup, not a report. Lead with the most important thing. Skip anything that doesn't matter right now.
+   Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.

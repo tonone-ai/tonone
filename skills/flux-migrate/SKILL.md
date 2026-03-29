@@ -53,6 +53,8 @@ Generate a separate rollback migration that reverses the change. For multi-step 
 
 ### Step 4: Explain Deployment Order
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Present the deployment plan:
 
 ```

@@ -12,23 +12,23 @@ How to name a new agent for the Tonone team.
 
 ## Current Roster
 
-| Name   | Hat                         | Syllables |
-| ------ | --------------------------- | --------- |
-| Apex   | Engineering Lead            | 2         |
-| Forge  | Infrastructure              | 1         |
-| Relay  | DevOps                      | 2         |
-| Spine  | Backend                     | 1         |
-| Flux   | Data                        | 1         |
-| Warden | Security                    | 2         |
-| Vigil  | Observability + Reliability | 2         |
-| Prism  | Frontend/DX                 | 1         |
-| Cortex | ML/AI                       | 2         |
-| Touch  | Mobile                      | 1         |
-| Volt   | Embedded/IoT                | 1         |
-| Atlas  | Knowledge Engineering       | 2         |
-| Lens   | Data Analytics & BI         | 1         |
-| Proof  | QA & Testing                | 1         |
-| Pave   | Platform Engineering        | 1         |
+| Name   | Hat                            | Syllables |
+| ------ | ------------------------------ | --------- |
+| Apex   | Engineering Lead               | 2         |
+| Forge  | Infrastructure                 | 1         |
+| Relay  | DevOps                         | 2         |
+| Spine  | Backend                        | 1         |
+| Flux   | Data                           | 1         |
+| Warden | Security                       | 2         |
+| Vigil  | Observability + Reliability    | 2         |
+| Prism  | Frontend/DX                    | 1         |
+| Cortex | ML/AI                          | 2         |
+| Touch  | Mobile                         | 1         |
+| Volt   | Embedded/IoT                   | 1         |
+| Atlas  | Knowledge + Output Engineering | 2         |
+| Lens   | Data Analytics & BI            | 1         |
+| Proof  | QA & Testing                   | 1         |
+| Pave   | Platform Engineering           | 1         |
 
 ## Available Names
 

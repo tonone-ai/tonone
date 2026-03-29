@@ -61,6 +61,8 @@ For each pipeline or scheduled job:
 
 ### Step 5: Report
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Present findings by severity:
 
 ```

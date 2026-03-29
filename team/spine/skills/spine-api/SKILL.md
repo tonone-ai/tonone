@@ -75,6 +75,8 @@ Use the project's existing test framework and patterns.
 
 ### Step 6: Present the API
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Show the implemented routes and explain:
 
 - The full endpoint list with methods and paths

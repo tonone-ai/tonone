@@ -152,6 +152,8 @@ Wire up push notifications:
 
 ### Step 7: Project Configuration
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Include essential project files:
 
 - **.gitignore** — comprehensive for the platform (no Pods/, no build/, no .gradle/)

@@ -102,6 +102,8 @@ Prompts live in the repository, not in someone's head:
 
 ### Step 6: Measure Cost
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Calculate and report cost per call:
 
 - Input tokens x price per token

@@ -63,6 +63,8 @@ For each service, catalog what exists:
 
 ### Step 3: Present Coverage Map
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Present findings as a structured assessment:
 
 ```

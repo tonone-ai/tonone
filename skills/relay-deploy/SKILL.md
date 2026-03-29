@@ -59,6 +59,8 @@ Create a rollback procedure that:
 
 ### Step 5: Present the Strategy
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Show all generated configs and explain:
 
 - The deployment flow from trigger to fully rolled out

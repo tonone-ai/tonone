@@ -123,6 +123,8 @@ Mark resources with risk flags:
 
 ### Step 4: Present Inventory
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Present as a structured inventory document. End with:
 
 - Total resource count by category

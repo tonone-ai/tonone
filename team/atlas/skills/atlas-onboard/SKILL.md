@@ -106,6 +106,8 @@ Do not guess setup steps — verify them from project files.
 
 ### Step 4: Save and Present
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Save to `docs/onboarding.md` or `CONTRIBUTING.md` based on project conventions.
 
 ```

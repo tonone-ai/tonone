@@ -121,6 +121,8 @@ Evaluate code health:
 
 ### Step 8: Dependency Freshness
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Check dependency health:
 
 - **Major version behind:** any dependencies 2+ major versions behind?

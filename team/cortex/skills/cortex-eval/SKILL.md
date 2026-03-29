@@ -93,6 +93,8 @@ Based on the evidence from Steps 1-4, determine the root cause:
 
 ### Step 6: Recommend Fix
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Based on root cause, recommend the appropriate fix:
 
 - **Bad data:** fix the data pipeline, backfill, retrain on clean data

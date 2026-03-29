@@ -87,6 +87,8 @@ Present the results as a coverage matrix:
 
 ### Step 3: Prioritize by Blast Radius
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Order recommendations by impact:
 
 1. **Customer-facing services first** — if the user can see it, it must be monitored

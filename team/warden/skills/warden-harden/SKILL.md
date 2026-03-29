@@ -87,6 +87,8 @@ For any secrets found in code or `.env`:
 
 ### Step 8: Summary
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 ```
 ## Hardening Applied
 

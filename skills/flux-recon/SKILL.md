@@ -62,6 +62,8 @@ Read through the application code to understand how the database is used:
 
 ### Step 5: Present Inventory
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 ```
 ## Database Reconnaissance
 
