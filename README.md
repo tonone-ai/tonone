@@ -2,7 +2,7 @@
 
 **Engineering second to none.**
 
-Your elite engineering team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 1 lead + 14 specialists. 74 skills. Every major engineering discipline covered.
+Your elite engineering team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 1 lead + 14 specialists. 77 skills. Every major engineering discipline covered.
 
 Simple by default. Scalable by design.
 
@@ -132,7 +132,7 @@ Phase 3 — Takeover report:
   System map, risk assessment, quick wins, roadmap
 ```
 
-## All 74 Skills
+## All 77 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
@@ -230,6 +230,9 @@ Phase 3 — Takeover report:
 - `/atlas-map` — Map the system architecture
 - `/atlas-adr` — Write an Architecture Decision Record
 - `/atlas-onboard` — Generate onboarding documentation
+- `/atlas-report` — Render findings as styled HTML reports in browser
+- `/atlas-changelog` — Three-layer changelog management (per-repo, cross-repo, per-agent)
+- `/atlas-present` — Release presentations as HTML + Obsidian Canvas
 - `/atlas-recon` — Documentation reconnaissance
 
 ### Lens (Analytics/BI)

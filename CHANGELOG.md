@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] — 2026-03-29
+
+### Added
+
+- **Output Kit** — shared CLI design system for all agents (`docs/output-kit.md`)
+- **`atlas-report`** — render agent findings as styled HTML reports in the browser
+- **`atlas-changelog`** — three-layer changelog management (per-repo, cross-repo, per-agent)
+- **`atlas-present`** — release presentations as HTML pages + Obsidian Canvas
+- **Changelog hook** — automatic changelog entries when agents complete work
+- **Workspace model** — documentation for multi-repo workspace layout
+
+### Changed
+
+- All agent skills now reference the output kit for consistent CLI formatting
+- Atlas agent scope expanded to include output architecture
+- Atlas plugin version bumped to 0.2.0
+
 ## [0.3.0] - 2026-03-29
 
 ### Added
