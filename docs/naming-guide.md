@@ -27,6 +27,8 @@ How to name a new agent for the Tonone team.
 | Volt   | Embedded/IoT                | 1         |
 | Atlas  | Knowledge Engineering       | 2         |
 | Lens   | Data Analytics & BI         | 1         |
+| Proof  | QA & Testing                | 1         |
+| Pave   | Platform Engineering        | 1         |
 
 ## Available Names
 

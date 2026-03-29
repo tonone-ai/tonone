@@ -1,6 +1,6 @@
 # Engineering Team
 
-Elite engineering team as Claude Code agents. 1 lead + 12 specialists. Simple by default. Scalable by design.
+Elite engineering team as Claude Code agents. 1 lead + 14 specialists. Simple by default. Scalable by design.
 
 ## The Team
 
@@ -19,6 +19,8 @@ Elite engineering team as Claude Code agents. 1 lead + 12 specialists. Simple by
 | **Volt** | Embedded/IoT | Firmware, microcontrollers, edge computing, protocols |
 | **Atlas** | Knowledge Engineering | Architecture docs, ADRs, API specs, system diagrams |
 | **Lens** | Data Analytics & BI | Dashboards, metrics design, reporting, data storytelling |
+| **Proof** | QA & Testing | Test strategy, E2E suites, integration testing, flaky triage |
+| **Pave** | Platform Engineering | Developer experience, golden paths, service catalogs |
 
 ## Structure
 

@@ -8,16 +8,16 @@
   "plugins": [
     {
       "name": "tonone",
-      "description": "Elite engineering team — 1 lead + 12 specialists, 64 skills. All agents and skills in one install.",
-      "version": "0.2.0",
+      "description": "Elite engineering team — 1 lead + 14 specialists, 74 skills. All agents and skills in one install.",
+      "version": "0.3.0",
       "source": "./",
       "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
       "tags": ["bundle", "full-team"]
     },
     {
       "name": "engineering-team",
-      "description": "Alias for tonone — installs all 13 agents at once",
-      "version": "0.2.0",
+      "description": "Alias for tonone — installs all 15 agents at once",
+      "version": "0.3.0",
       "source": "./",
       "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
       "tags": ["bundle", "installer"]
@@ -138,6 +138,24 @@
       "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
       "category": "analytics",
       "tags": ["dashboards", "metrics", "reporting"]
+    },
+    {
+      "name": "proof-qa",
+      "description": "QA & testing engineer — test strategy, E2E suites, integration testing, test infrastructure, flaky test triage",
+      "version": "0.1.0",
+      "source": "./team/proof",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "testing",
+      "tags": ["testing", "qa", "e2e", "playwright"]
+    },
+    {
+      "name": "pave-platform",
+      "description": "Platform engineer — developer experience, service catalogs, internal CLIs, golden paths, environment management",
+      "version": "0.1.0",
+      "source": "./team/pave",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "platform",
+      "tags": ["platform", "dx", "golden-paths", "service-catalog"]
     }
   ]
 }
