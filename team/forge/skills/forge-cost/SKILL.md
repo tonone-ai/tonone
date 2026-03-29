@@ -84,6 +84,8 @@ Examples of things to look for:
 
 ### Step 4: Summary
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 End with:
 
 - Total estimated monthly spend

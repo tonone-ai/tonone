@@ -62,6 +62,12 @@ For each critical journey, write tests that:
 - Configure screenshot/video artifacts for failed tests
 - Set up test reporting (Allure, HTML report, or built-in)
 
+### Step 5: Present Summary
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
+Summarize what was built or configured in the CLI skeleton format with key findings and next steps.
+
 ## Key Rules
 
 - E2E tests test user journeys, not individual components

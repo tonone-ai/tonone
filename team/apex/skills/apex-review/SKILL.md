@@ -43,3 +43,4 @@ Read the key changed files to understand the shape of the work.
    - Risk level (critical / moderate / minor)
 
 5. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
+   Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.

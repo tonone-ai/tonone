@@ -107,6 +107,8 @@ Parse LLM output reliably:
 
 ### Step 8: Wire It Up
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Connect the LLM integration to the service:
 
 - Add the endpoint/handler to the existing framework

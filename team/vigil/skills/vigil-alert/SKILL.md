@@ -99,6 +99,8 @@ No alert without a runbook. If you can't write a runbook for an alert, the alert
 
 ### Step 4: Summarize
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Present the alerting strategy:
 
 ```

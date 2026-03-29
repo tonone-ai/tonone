@@ -83,6 +83,12 @@ Write a guide that explains:
 - Where to escape hatch when needed
 - How to update existing services to match the template
 
+### Step 5: Present Summary
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
+Summarize what was built or configured in the CLI skeleton format with key findings and next steps.
+
 ## Key Rules
 
 - Golden paths are opinionated defaults, not mandates — always allow escape hatches

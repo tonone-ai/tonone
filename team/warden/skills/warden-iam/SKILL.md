@@ -66,6 +66,8 @@ Use the project's IaC tool (Terraform, Pulumi, gcloud commands, CloudFormation).
 
 ### Step 5: Present the IAM Design
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 ```
 ## IAM Design
 

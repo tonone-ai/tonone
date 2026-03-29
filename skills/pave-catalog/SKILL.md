@@ -76,6 +76,8 @@ Ensure every service has:
 
 ### Step 5: Deliver Catalog
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Output the complete service catalog with:
 
 1. Service inventory table

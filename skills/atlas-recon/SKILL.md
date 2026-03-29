@@ -57,6 +57,8 @@ Flag:
 
 ### Step 4: Present Coverage Map
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 ```
 ## Documentation Reconnaissance
 

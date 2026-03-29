@@ -58,6 +58,8 @@ Ensure the migration is **reversible** — include both up and down.
 
 ### Step 4: Explain Key Decisions
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Present a summary:
 
 ```

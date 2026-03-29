@@ -77,6 +77,8 @@ The setup command should:
 
 ### Step 4: Document and Verify
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 - Update README with setup instructions (3 steps max)
 - Test from a clean clone on a fresh machine
 - Verify that `make dev` gets from clone to running app

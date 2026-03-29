@@ -90,6 +90,8 @@ Assess production monitoring:
 
 ### Step 6: ML Infrastructure Cost
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Estimate the cost of ML infrastructure:
 
 - **GPU/TPU instances** — are they running 24/7 or on-demand?

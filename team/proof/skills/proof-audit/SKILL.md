@@ -71,6 +71,8 @@ For each issue:
 
 ### Step 4: Deliver Report
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Output a test health report:
 
 1. **Health score** (0-100) based on speed, reliability, coverage, quality

@@ -116,6 +116,8 @@ For critical metrics, add separate alerts (not just in the report):
 
 ### Step 6: Present Summary
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 ```
 ## Reporting Pipeline Built
 

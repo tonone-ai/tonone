@@ -85,6 +85,8 @@ Generate IaC for the full networking stack:
 
 ### Step 3: Explain Security Rationale
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 For every firewall rule and network boundary, explain:
 
 - What it allows and why

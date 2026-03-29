@@ -63,6 +63,8 @@ For each recommendation, specify:
 
 ### Step 4: Deliver Test Plan
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Output a structured test plan document with:
 
 - Current state summary

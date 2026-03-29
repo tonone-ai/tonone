@@ -69,6 +69,8 @@ Instrument the service with Rate, Errors, Duration metrics per endpoint:
 
 ### Step 6: Summarize
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Present a summary of what was instrumented:
 
 ```

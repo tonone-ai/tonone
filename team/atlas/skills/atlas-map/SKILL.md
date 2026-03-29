@@ -81,6 +81,8 @@ For each component in the diagram, write:
 
 ### Step 5: Save and Present
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Save diagrams and descriptions to `docs/architecture/` (or the project's existing docs location):
 
 - `docs/architecture/system-context.md` — Level 1 diagram + description

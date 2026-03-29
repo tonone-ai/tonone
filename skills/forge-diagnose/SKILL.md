@@ -100,6 +100,8 @@ Check for common root causes:
 
 ### Step 4: Propose Fix
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 For each identified issue:
 
 1. **What's wrong** — specific misconfiguration or bottleneck
