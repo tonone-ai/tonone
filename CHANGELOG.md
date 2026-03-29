@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2026-03-29
+
+### Added
+
+- **Proof** agent — QA & testing engineer (test strategy, E2E suites, API testing, test audits, testing recon)
+- **Pave** agent — platform engineer (golden path templates, dev environments, service catalogs, DX audits, platform recon)
+- 10 new skills: proof-strategy, proof-e2e, proof-api, proof-audit, proof-recon, pave-golden, pave-env, pave-catalog, pave-audit, pave-recon
+- Contributor documentation: architecture overview, skill authoring guide, agent authoring guide
+- CONTRIBUTING.md, CHANGELOG.md, GitHub issue/PR templates
+- Real SECURITY.md replacing placeholder
+
+### Changed
+
+- Team roster: 1 lead + 14 specialists (was 12), 74 skills (was 64)
+- TODOS.md rewritten as full project roadmap
+
 ## [0.2.0] - 2026-03-28
 
 ### Changed

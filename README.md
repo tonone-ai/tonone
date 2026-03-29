@@ -2,7 +2,7 @@
 
 **Engineering second to none.**
 
-Your elite engineering team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 1 lead + 12 specialists. 64 skills. Every major engineering discipline covered.
+Your elite engineering team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 1 lead + 14 specialists. 74 skills. Every major engineering discipline covered.
 
 Simple by default. Scalable by design.
 
@@ -12,7 +12,7 @@ Right now, every engineer gets a generalized AI assistant. Everyone prompts sepa
 
 **That's the wrong unit of automation.** Instead of giving each person an AI assistant, give the whole department an AI team. Specialists that talk to each other, share context, and run the show end to end — infrastructure to deployment to monitoring — without the copy-paste relay.
 
-That's Tonone. Not thirteen copies of the same generalist. Thirteen specialists, each owning one domain, coordinated by a lead who knows when to call who and at what depth.
+That's Tonone. Not fifteen copies of the same generalist. Fifteen specialists, each owning one domain, coordinated by a lead who knows when to call who and at what depth.
 
 ### The Mindset
 
@@ -39,6 +39,8 @@ No boilerplate generators. No tutorial-grade scaffolds. Production-ready output 
 | **Volt**   | Embedded/IoT                | Firmware, microcontrollers, edge computing, protocols         |
 | **Atlas**  | Knowledge Engineering       | Architecture docs, ADRs, API specs, system diagrams           |
 | **Lens**   | Data Analytics & BI         | Dashboards, metrics design, reporting, data storytelling      |
+| **Proof**  | QA & Testing                | Test strategy, E2E suites, integration testing, flaky triage  |
+| **Pave**   | Platform Engineering        | Developer experience, golden paths, service catalogs          |
 
 ## Quick Start
 
@@ -130,7 +132,7 @@ Phase 3 — Takeover report:
   System map, risk assessment, quick wins, roadmap
 ```
 
-## All 64 Skills
+## All 74 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
@@ -237,6 +239,22 @@ Phase 3 — Takeover report:
 - `/lens-report` — Build a reporting pipeline
 - `/lens-audit` — Review existing analytics
 - `/lens-recon` — Analytics reconnaissance
+
+### Proof (QA & Testing)
+
+- `/proof-strategy` — Design a test strategy for a project
+- `/proof-e2e` — Build E2E test suites with Playwright/Cypress
+- `/proof-api` — Build API test suites
+- `/proof-audit` — Audit test suite health
+- `/proof-recon` — Testing reconnaissance
+
+### Pave (Platform Engineering)
+
+- `/pave-golden` — Build golden path templates
+- `/pave-env` — Set up local development environments
+- `/pave-catalog` — Build a service catalog
+- `/pave-audit` — Audit developer experience
+- `/pave-recon` — Platform reconnaissance
 
 </details>
 

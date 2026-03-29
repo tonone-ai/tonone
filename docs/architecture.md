@@ -4,7 +4,7 @@ How Tonone is structured and why.
 
 ## Overview
 
-Tonone is a Claude Code plugin that installs 13 agents and 64 skills. Everything is prompt-based — agents are Markdown system prompts, skills are Markdown workflow definitions. No runtime code is required.
+Tonone is a Claude Code plugin that installs 15 agents and 74 skills. Everything is prompt-based — agents are Markdown system prompts, skills are Markdown workflow definitions. No runtime code is required.
 
 ```
 User runs /forge-audit
@@ -24,12 +24,12 @@ tonone/
 ├── agents/                   ← Agent definitions (loaded by Claude Code)
 │   ├── apex.md
 │   ├── forge.md
-│   └── ...                   (13 files)
+│   └── ...                   (15 files)
 │
 ├── skills/                   ← Skill definitions (loaded by Claude Code)
 │   ├── apex-plan/SKILL.md
 │   ├── forge-audit/SKILL.md
-│   └── ...                   (64 directories)
+│   └── ...                   (74 directories)
 │
 ├── team/                     ← Source of truth for each agent
 │   ├── forge/
@@ -40,7 +40,7 @@ tonone/
 │   │   ├── scripts/          ← Python package + venv setup
 │   │   └── tests/            ← Test directory
 │   ├── relay/
-│   └── ...                   (13 directories)
+│   └── ...                   (15 directories)
 │
 ├── templates/new-agent/      ← Scaffolding for new agents
 ├── docs/                     ← Contributor documentation
@@ -118,7 +118,7 @@ The `source` field points to the directory containing the plugin's `.claude-plug
 
 ```
 /plugin marketplace add tonone-ai/tonone     ← registers the marketplace
-/plugin install tonone@tonone-ai              ← installs root bundle (all 13 agents)
+/plugin install tonone@tonone-ai              ← installs root bundle (all 15 agents)
 /plugin install forge-infra@tonone-ai         ← or install one agent
 ```
 
@@ -136,7 +136,7 @@ The `source` field points to the directory containing the plugin's `.claude-plug
     │ Forge ││ Spine ││ Flux ││Warden ││ ...  │  model: sonnet
     │       ││       ││      ││       ││      │  tools: standard
     └───────┘└───────┘└──────┘└───────┘└──────┘
-       12 specialists
+       14 specialists
 ```
 
 - **Apex** uses `opus` and the `Agent` tool to coordinate specialists

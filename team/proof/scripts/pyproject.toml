@@ -1,0 +1,11 @@
+[project]
+name = "proof"
+version = "0.1.0"
+description = "QA & testing engineer — test strategy, E2E suites, integration testing, test infrastructure"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]
