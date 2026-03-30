@@ -134,6 +134,8 @@ Test offline scenarios:
 
 ### Step 8: Push Notification Setup
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Check push notification implementation:
 
 - **Permission request timing** — asked at the right moment with context, not on first launch?

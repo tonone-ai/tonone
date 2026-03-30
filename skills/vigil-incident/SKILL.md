@@ -87,6 +87,8 @@ Provide a concrete fix:
 
 ### Step 7: Generate Postmortem Template
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Create a postmortem document:
 
 ```markdown

@@ -91,6 +91,8 @@ Use the project's existing test framework. If none exists, default to Vitest + T
 
 ### Step 6: Summarize
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 ```
 ## Component Summary
 

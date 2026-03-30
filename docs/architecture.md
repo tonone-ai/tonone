@@ -4,7 +4,7 @@ How Tonone is structured and why.
 
 ## Overview
 
-Tonone is a Claude Code plugin that installs 15 agents and 74 skills. Everything is prompt-based — agents are Markdown system prompts, skills are Markdown workflow definitions. No runtime code is required.
+Tonone is a Claude Code plugin that installs 15 agents and 77 skills. Everything is prompt-based — agents are Markdown system prompts, skills are Markdown workflow definitions. No runtime code is required.
 
 ```
 User runs /forge-audit
@@ -29,7 +29,7 @@ tonone/
 ├── skills/                   ← Skill definitions (loaded by Claude Code)
 │   ├── apex-plan/SKILL.md
 │   ├── forge-audit/SKILL.md
-│   └── ...                   (74 directories)
+│   └── ...                   (77 directories)
 │
 ├── team/                     ← Source of truth for each agent
 │   ├── forge/
@@ -76,7 +76,7 @@ Every plugin level has a `plugin.json`:
 ```json
 {
   "name": "tonone",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "...",
   "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
   "repository": "https://github.com/tonone-ai/tonone",
@@ -174,3 +174,27 @@ scripts/
 ```
 
 This is scaffolding for future backing implementations. If an agent needs local computation (e.g., parsing ASTs, running static analysis, processing large datasets), the Python package is where that logic would live. Today, all agents work purely through prompts.
+
+## Output System
+
+All agent CLI output follows a shared design system defined in `docs/output-kit.md`. The Output Kit enforces:
+
+- **40-line max** per skill output (fits one terminal screen)
+- **Box-drawing skeleton** for structured sections
+- **Unified severity indicators** (CRIT / WARN / INFO / OK)
+
+### Atlas Output Skills
+
+Atlas owns three skills for rendering agent work into shareable formats:
+
+- **`/atlas-report`** — renders findings as styled HTML reports and opens them in the browser
+- **`/atlas-changelog`** — three-layer changelog management: per-repo, cross-repo, and per-agent changelogs
+- **`/atlas-present`** — generates release presentations as HTML pages and Obsidian Canvas files
+
+### Changelog Automation
+
+A `PostToolUse` hook in the Atlas agent automatically appends changelog entries when agents complete work. This ensures changelogs stay current without manual effort.
+
+### Workspace Model
+
+The output system supports a multi-repo workspace layout where a main folder contains sub-repos. The workspace model is documented alongside the output kit and enables cross-repo changelog aggregation via `/atlas-changelog`.

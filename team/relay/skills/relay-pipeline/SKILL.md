@@ -62,6 +62,8 @@ Use the CI platform's native caching mechanism.
 
 ### Step 5: Present the Pipeline
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Show the generated config and explain:
 
 - What triggers the pipeline (push, PR, manual)

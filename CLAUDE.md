@@ -66,6 +66,7 @@ tonone/
 - Agent names: single word, 1-2 syllables, evocative of the domain (see `docs/naming-guide.md`)
 - Skills: `/{agentname}-{action}` (e.g., `/forge-audit`)
 - Each agent is self-contained with own pyproject.toml, tests, hooks
+- All agent CLI output follows the output kit (`docs/output-kit.md`): 40-line max, box-drawing skeleton, unified severity indicators
 
 ## Development
 

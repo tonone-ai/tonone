@@ -4,6 +4,12 @@
       "event": "post_install",
       "command": "bash scripts/setup.sh",
       "description": "Set up Python environment for analyzers"
+    },
+    {
+      "event": "PostToolUse",
+      "tool": "Agent",
+      "description": "Auto-update changelogs when an agent skill completes work",
+      "prompt": "Check if the agent output contains a CLI skeleton header (╭─ AGENT NAME ── skill-name). If it does, run /atlas-changelog to log the change. If it doesn't match, do nothing."
     }
   ]
 }

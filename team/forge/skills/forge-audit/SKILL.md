@@ -100,6 +100,8 @@ Each finding MUST include:
 
 ### Step 3: Summary
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 End with:
 
 - Overall health score (Healthy / Needs Work / Critical)

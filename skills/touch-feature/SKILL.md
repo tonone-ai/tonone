@@ -116,6 +116,8 @@ If the feature needs to work offline:
 
 ### Step 7: Tests
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Write tests for the feature:
 
 - **Unit tests** for view model / business logic

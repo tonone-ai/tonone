@@ -83,6 +83,8 @@ Evaluate:
 
 ### Step 7: Present the Assessment
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Format as:
 
 ```

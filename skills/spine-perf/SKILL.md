@@ -80,6 +80,8 @@ Flag:
 
 ### Step 7: Present the Report
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Format as:
 
 ```

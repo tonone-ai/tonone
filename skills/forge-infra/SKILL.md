@@ -71,6 +71,8 @@ Production-ready defaults:
 
 ### Step 3: Explain Key Decisions
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 After writing the files, explain:
 
 - Why you chose each resource type and size

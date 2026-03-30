@@ -55,6 +55,8 @@ Create a `docker-compose.yml` with:
 
 ### Step 4: Present the Config
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 Show all generated files and explain:
 
 - Final image size estimate

@@ -43,6 +43,8 @@ Lead with your recommendation and why.
 
 7. **Deliver unified result + usage receipt:**
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 ```
 Usage:
   [Specialist]: [X]K tokens

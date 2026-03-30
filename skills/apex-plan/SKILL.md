@@ -45,6 +45,8 @@ Lead with your recommendation and why.
 
    After the browser opens, print only the usage receipt in CLI:
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
 ```
 Usage:
   [Specialist]: [X]K tokens

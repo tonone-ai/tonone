@@ -42,6 +42,5 @@ Read the key changed files to understand the shape of the work.
    - Estimated effort (quick fix / medium / significant)
    - Risk level (critical / moderate / minor)
 
-   Do not print the full findings list to CLI.
-
-5. **Print verdict to CLI only** — one line per critical issue, then the overall call. Be direct — "ready to ship with N caveats" or "blocked until X is fixed." Point to the report for details.
+5. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
+   Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
