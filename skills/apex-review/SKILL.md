@@ -36,10 +36,12 @@ Read the key changed files to understand the shape of the work.
    - Gaps in the request/response flow
    - Configuration that exists in one environment but not others
 
-4. **Present findings prioritized by risk.** For each issue:
+4. **Invoke `atlas-report`** with all findings to generate an HTML report and open it in the browser. For each issue the report must include:
    - What's wrong (one sentence)
    - Which specialist should fix it
    - Estimated effort (quick fix / medium / significant)
    - Risk level (critical / moderate / minor)
 
-5. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
+   Do not print the full findings list to CLI.
+
+5. **Print verdict to CLI only** — one line per critical issue, then the overall call. Be direct — "ready to ship with N caveats" or "blocked until X is fixed." Point to the report for details.
