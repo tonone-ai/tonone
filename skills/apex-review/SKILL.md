@@ -36,7 +36,7 @@ Read the key changed files to understand the shape of the work.
    - Gaps in the request/response flow
    - Configuration that exists in one environment but not others
 
-4. **Present findings prioritized by risk.** For each issue:
+4. **Invoke `atlas-report`** with all findings to generate an HTML report and open it in the browser. For each issue the report must include:
    - What's wrong (one sentence)
    - Which specialist should fix it
    - Estimated effort (quick fix / medium / significant)
