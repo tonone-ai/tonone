@@ -41,19 +41,27 @@ Lead with your recommendation and why.
 
 6. **Review all specialist output before delivering.** Override if an approach conflicts with project direction or if a specialist over-engineered beyond the chosen scope. If two specialists conflict, you resolve it. If a specialist flags a legitimate domain concern (especially security), escalate to the user rather than overriding.
 
-7. **Deliver via `atlas-report`.** Invoke `atlas-report` with the unified specialist findings to generate an HTML report and open it in the browser. Do not print the full specialist output to CLI.
+7. **Deliver via `atlas-report`.** Invoke `atlas-report` with the unified specialist findings to generate the HTML report. Do not print the full specialist output to CLI.
 
-   After the browser opens, print only the usage receipt in CLI:
+   `atlas-report` saves the HTML to `.agent-logs/reports/` and asks the user for permission to open it in the browser.
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+   After the user responds, print only the usage receipt in CLI:
 
-```
-Usage:
-  [Specialist]: [X]K tokens
-  [Specialist]: [X]K tokens
-  Apex: [X]K tokens
-  Total: [X]K tokens | $[X] | [X]min
-  ([Over/Under] [S/M/L] estimate by [X]%)
+   Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
-  → Full plan at .reports/apex-apex-plan-{timestamp}.html
-```
+   ```
+   ╭─ APEX ── apex-plan ────────────────────────────╮
+
+     Plan complete.
+
+     Usage:
+       [Specialist]: [X]K tokens
+       [Specialist]: [X]K tokens
+       Apex: [X]K tokens
+       Total: [X]K tokens | $[X] | [X]min
+       ([Over/Under] [S/M/L] estimate by [X]%)
+
+     → Report: .agent-logs/reports/apex-apex-plan-{timestamp}.html
+
+   ╰────────────────────────────────────────────────╯
+   ```

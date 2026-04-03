@@ -117,26 +117,33 @@ Generate a single self-contained HTML file with the following requirements:
 </html>
 ```
 
-### Step 3: Save and Open
+### Step 3: Save and Ask Permission
 
-1. Save the HTML file to `{repo}/.reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html`
-2. Create the `.reports/` directory if it does not exist
-3. Open the report in the default browser:
+1. Save the HTML file to `{repo}/.agent-logs/reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html`
+2. Create the `.agent-logs/reports/` directory if it does not exist
+3. Print the CLI summary (Step 4 format) then ask:
+
+```
+  Open in browser? (y/n)
+```
+
+4. Wait for the user's response. If yes, open with:
    - macOS: `open {path}`
    - Linux: `xdg-open {path}`
+     If no, confirm the file path so the user can open it manually.
 
-### Step 4: Present CLI Summary
+**Never open the browser automatically without confirmation.**
+
+### Step 4: CLI Summary
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 ```
 ╭─ ATLAS ── atlas-report ───────────────────────╮
 
-  ## Report generated
-
   **Source:** {agent} / {skill}
   **Target:** {repo or service name}
-  **Saved:** .reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html
+  **Saved:** .agent-logs/reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html
 
   ### Contents
   - Executive Summary ({N} bullets)
@@ -145,7 +152,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
   - Diagrams ({N} charts)
   - Actions ({N} next steps)
 
-  → Opened in browser
+  Open in browser? (y/n)
 
 ╰────────────────────────────────────────────────╯
 ```
