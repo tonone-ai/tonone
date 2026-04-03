@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.1] — 2026-04-03
+
+### Fixed
+
+- **Browser-first reporting** — all substantial agent reports (takeover, plan, review) now open as HTML in the browser automatically; no analysis is dumped to CLI
+- **`atlas-report`** — opens browser immediately without prompting for confirmation
+- **`apex-takeover`** — Phase 3 CLI output reduced to a 6-line receipt; all findings route to HTML report
+- **`apex-plan`** — report path updated to `.agent-logs/reports/`; CLI receipt format tightened
+- **`apex-review`** — CLI verdict only (READY TO SHIP / DO NOT SHIP + risk counts); full findings in HTML
+- **`output-kit`** — added Browser-First Reporting section as canonical team rule; report storage path standardized to `.agent-logs/reports/`
+
 ## [0.4.0] — 2026-03-29
 
 ### Added

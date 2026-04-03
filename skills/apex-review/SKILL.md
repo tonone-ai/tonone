@@ -42,7 +42,7 @@ Read the key changed files to understand the shape of the work.
    - Estimated effort (quick fix / medium / significant)
    - Risk level (critical / moderate / minor)
 
-   `atlas-report` saves the HTML to `.agent-logs/reports/` and asks the user for permission to open it in the browser.
+   `atlas-report` saves the HTML to `.agent-logs/reports/` and opens it in the browser immediately.
 
 5. **After the user responds, give the CLI verdict only** — no findings, no analysis:
 
