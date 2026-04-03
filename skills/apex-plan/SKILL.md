@@ -43,7 +43,7 @@ Lead with your recommendation and why.
 
 7. **Deliver via `atlas-report`.** Invoke `atlas-report` with the unified specialist findings to generate the HTML report. Do not print the full specialist output to CLI.
 
-   `atlas-report` saves the HTML to `.agent-logs/reports/` and asks the user for permission to open it in the browser.
+   `atlas-report` saves the HTML to `.agent-logs/reports/` and opens it in the browser immediately.
 
    After the user responds, print only the usage receipt in CLI:
 
