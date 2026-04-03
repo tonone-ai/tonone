@@ -36,11 +36,26 @@ Read the key changed files to understand the shape of the work.
    - Gaps in the request/response flow
    - Configuration that exists in one environment but not others
 
-4. **Invoke `atlas-report`** with all findings to generate an HTML report and open it in the browser. For each issue the report must include:
+4. **Invoke `atlas-report`** with all findings. Do not print findings to CLI. The HTML report is the deliverable. For each issue the report must include:
    - What's wrong (one sentence)
    - Which specialist should fix it
    - Estimated effort (quick fix / medium / significant)
    - Risk level (critical / moderate / minor)
 
-5. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
+   `atlas-report` saves the HTML to `.agent-logs/reports/` and opens it in the browser immediately.
+
+5. **After the user responds, give the CLI verdict only** — no findings, no analysis:
+
    Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
+   ```
+   ╭─ APEX ── apex-review ──────────────────────────╮
+
+     {READY TO SHIP | DO NOT SHIP — {N} critical issues}
+
+     Risks:  ■ {N} critical  ▲ {N} high  ● {N} medium
+
+     → Report: .agent-logs/reports/apex-apex-review-{timestamp}.html
+
+   ╰────────────────────────────────────────────────╯
+   ```
