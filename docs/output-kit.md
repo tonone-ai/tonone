@@ -98,8 +98,8 @@ Flow:
 
 1. Skill gathers all findings.
 2. Skill invokes `atlas-report` with the full data.
-3. `atlas-report` generates the HTML, saves it, then **asks the user for permission** to open it: `Open in browser? (y/n)`
-4. After the user responds, the skill prints a brief CLI receipt (path, counts) — nothing else.
+3. `atlas-report` generates the HTML, saves it, and opens it in the browser immediately.
+4. The skill prints a brief CLI receipt (path, counts) — nothing else.
 
 **Never print analysis to CLI and then also generate a report. The report is the output. CLI is the receipt.**
 

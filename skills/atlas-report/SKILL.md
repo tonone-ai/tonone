@@ -117,22 +117,13 @@ Generate a single self-contained HTML file with the following requirements:
 </html>
 ```
 
-### Step 3: Save and Ask Permission
+### Step 3: Save and Open
 
 1. Save the HTML file to `{repo}/.agent-logs/reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html`
 2. Create the `.agent-logs/reports/` directory if it does not exist
-3. Print the CLI summary (Step 4 format) then ask:
-
-```
-  Open in browser? (y/n)
-```
-
-4. Wait for the user's response. If yes, open with:
+3. Open immediately — no prompt, no confirmation:
    - macOS: `open {path}`
    - Linux: `xdg-open {path}`
-     If no, confirm the file path so the user can open it manually.
-
-**Never open the browser automatically without confirmation.**
 
 ### Step 4: CLI Summary
 
@@ -152,7 +143,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
   - Diagrams ({N} charts)
   - Actions ({N} next steps)
 
-  Open in browser? (y/n)
+  → Opened in browser
 
 ╰────────────────────────────────────────────────╯
 ```
