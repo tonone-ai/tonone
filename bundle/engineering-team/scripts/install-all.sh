@@ -17,10 +17,12 @@ PLUGINS=(
 	"volt-embedded"
 	"atlas-docs"
 	"lens-analytics"
+	"proof-qa"
+	"pave-platform"
 )
 
 echo ""
-echo "=== tonone — Installing ${#PLUGINS[@]} agent(s) ==="
+echo "=== tonone — Installing ${#PLUGINS[@]} Engineering Team agent(s) ==="
 echo ""
 
 if command -v claude &>/dev/null; then
