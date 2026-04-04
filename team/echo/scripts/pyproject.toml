@@ -1,0 +1,11 @@
+[project]
+name = "echo"
+version = "0.1.0"
+description = "User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]

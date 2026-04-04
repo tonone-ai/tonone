@@ -1,0 +1,19 @@
+{
+  "name": "echo-research",
+  "version": "0.1.0",
+  "description": "User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "ux",
+    "personas",
+    "jtbd",
+    "interviews",
+    "product-team"
+  ]
+}

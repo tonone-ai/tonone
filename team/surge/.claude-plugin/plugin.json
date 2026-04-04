@@ -1,0 +1,19 @@
+{
+  "name": "surge-growth",
+  "version": "0.1.0",
+  "description": "Growth engineer — acquisition channels, activation funnels, retention playbooks, and PLG strategy",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "growth",
+    "acquisition",
+    "activation",
+    "retention",
+    "plg",
+    "product-team"
+  ]
+}
