@@ -1,0 +1,11 @@
+[project]
+name = "form"
+version = "0.1.0"
+description = "Visual designer — brand identity, color systems, typography, UI design, and design systems"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]

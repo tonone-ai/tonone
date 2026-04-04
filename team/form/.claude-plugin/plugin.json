@@ -1,0 +1,19 @@
+{
+  "name": "form-design",
+  "version": "0.1.0",
+  "description": "Visual designer — brand identity, color systems, typography, UI design, and design systems",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "design",
+    "brand",
+    "visual",
+    "ui",
+    "design-system",
+    "product-team"
+  ]
+}
