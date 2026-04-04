@@ -1,6 +1,6 @@
 {
   "name": "tonone-ai",
-  "description": "Engineering Team - Claude Code agents that work as specialized engineers",
+  "description": "Engineering + Product Teams — 23 Claude Code agents covering engineering and product functions",
   "owner": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "tonone",
-      "description": "Elite engineering team — 1 lead + 14 specialists, 74 skills. All agents and skills in one install.",
+      "description": "Engineering + Product team — 23 agents, 2 teams. All agents and skills in one install.",
       "version": "0.4.1",
       "source": "./",
       "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
