@@ -1,9 +1,9 @@
 # Tonone Roadmap
 
-Tonone is an open source Claude Code plugin that gives you a team of specialized AI agents. This roadmap covers agent capabilities, plugin quality, and community growth.
+Tonone is an open source Claude Code plugin that gives you a full company of specialized AI agents. Each department is a self-contained expansion — install only what you need.
 
 Current version: **v0.4.1**
-Agents: **15** (Apex orchestrator + 14 specialists)
+Agents: **23** (Engineering + Product teams)
 Skills: **77**
 
 ---
@@ -34,50 +34,153 @@ The foundation is built. Next focus is making it solid enough for contributors t
 
 ---
 
-## Next — Extended Agent Coverage (v0.6 → v1.0)
+## Next — Complete Product Team (v1.0)
 
-Expand the specialist roster and deepen existing agents.
+Finish the product team expansion (Sprint 3) and stabilize both teams as the v1.0 baseline.
 
-**New Agent Domains**
+**Product Team — Sprint 3**
 
-- [ ] Evaluate: data privacy / compliance agent (GDPR, CCPA review)
-- [ ] Evaluate: incident postmortem agent (structured RCA + timeline)
-- [ ] Evaluate: cost optimization agent (cloud spend analysis)
+- [ ] Crest agent — product strategy, roadmap planning, competitive analysis
+- [ ] Pitch agent — positioning, messaging, GTM, launch copy
+- [ ] `/helm-handoff` skill — end-to-end Helm → Apex brief delivery
+- [ ] `bundle/product-team/` install script
+- [ ] `bundle/full-team/` — engineering + product in one install
 
-**Deeper Existing Agents**
-
-- [ ] Warden: expand beyond IAM — S3 policies, network security groups, secrets detection
-- [ ] Vigil: add SLO burn rate analysis and multi-window alerting patterns
-- [ ] Flux: add migration plan generation with rollback steps
-- [ ] Cortex: add evaluation framework generation (not just prompt writing)
-
-**Skills API**
-
-- [ ] Document the skill format so external contributors can add skills
-- [ ] Skill validation tool — run locally before submitting a PR
-
-**Release: v1.0.0** — Stable, documented, community-ready.
+**Release: v1.0.0** — Two teams. 23 agents. Stable, documented, community-ready.
 
 ---
 
-## Later — Community and Ecosystem
+## Expansion Phases
 
-**Community**
+Each phase adds one department as an installable bundle. Teams are independent — install Revenue without Finance, or everything at once.
 
-- [ ] Skills marketplace — community-submitted skills, rated by usage
-- [ ] "Specialist of the month" highlight in README
-- [ ] Discord server for agent discussions and support
+---
 
-**Integrations**
+### Phase 1 — Revenue (v1.1)
 
-- [ ] GitHub Actions skill — run agents as part of CI pipelines
-- [ ] VS Code extension (if Anthropic supports it)
-- [ ] MCP server mode — expose agents via Model Context Protocol
+_Turn product into money. The loop that matters most after product-market fit._
 
-**Plugin Distribution**
+| Agent      | Role                                                    |
+| ---------- | ------------------------------------------------------- |
+| **Arc**    | Revenue lead — orchestrates the team, owns pipeline     |
+| **Scout**  | BizDev — prospects, qualifies, sources deals            |
+| **Close**  | Sales — pipeline management, negotiations, deal closing |
+| **Keep**   | Customer Success — retention, expansion, NPS            |
+| **Bridge** | Partnerships — ISV integrations, resellers, ecosystem   |
 
-- [ ] Anthropic Claude Code marketplace listing (when available)
-- [ ] `npm install -g tonone` for non-Claude Code environments
+**Adds:** 5 agents → 28 total
+**Bundle:** `bundle/revenue-team/`
+
+---
+
+### Phase 2 — Marketing (v1.2)
+
+_Build the audience, tell the story, generate demand._
+
+| Agent      | Role                                                                   |
+| ---------- | ---------------------------------------------------------------------- |
+| **Signal** | PR & Comms — press, media, brand voice, analyst briefings              |
+| **Quill**  | Content — blog, SEO, docs, thought leadership                          |
+| **Grove**  | Community & DevRel — OSS community, Discord, contributors, conferences |
+| **Spark**  | Demand Gen — paid acquisition, campaigns, ABM, lead nurturing          |
+
+**Adds:** 4 agents → 32 total
+**Bundle:** `bundle/marketing-team/`
+
+---
+
+### Phase 3 — Finance & Legal (v1.3)
+
+_Keep the lights on. Stay solvent. Don't go to jail._
+
+| Agent      | Role                                                      |
+| ---------- | --------------------------------------------------------- |
+| **Vault**  | Finance — modeling, runway, budgeting, investor reporting |
+| **Tally**  | Accounting — books, invoices, expense tracking, tax prep  |
+| **Clause** | Legal — contracts, IP, entity management, compliance      |
+
+**Adds:** 3 agents → 35 total
+**Bundle:** `bundle/finance-legal-team/`
+
+---
+
+### Phase 4 — People (v1.4)
+
+_Hire well. Keep people. Build culture._
+
+| Agent    | Role                                                 |
+| -------- | ---------------------------------------------------- |
+| **Crew** | Recruiting — sourcing, screening, offers, onboarding |
+| **Mesh** | People Ops — culture, performance, policies, comp    |
+
+**Adds:** 2 agents → 37 total
+**Bundle:** `bundle/people-team/`
+
+---
+
+### Phase 5 — Operations (v1.5)
+
+_Make the trains run. Remove friction from how work moves._
+
+| Agent    | Role                                                              |
+| -------- | ----------------------------------------------------------------- |
+| **Keel** | Ops lead — cross-team execution, OKR tracking, program management |
+| **Grid** | Systems — SaaS stack, integrations, tools, vendor management      |
+| **Flow** | Process — SOPs, workflow automation, operational efficiency       |
+
+**Adds:** 3 agents → 40 total
+**Bundle:** `bundle/operations-team/`
+
+---
+
+### Phase 6 — Support (v1.6)
+
+_Handle what happens after the sale._
+
+| Agent    | Role                                                                      |
+| -------- | ------------------------------------------------------------------------- |
+| **Port** | Customer Support — inbound tickets, escalations, knowledge base, Tier 1/2 |
+
+**Adds:** 1 agent → 41 total
+**Bundle:** `bundle/support-team/`
+
+---
+
+### Phase 7 — Strategy & Board (v1.7)
+
+_Set company direction. Pressure-test major decisions._
+
+| Agent     | Role                                                                                                         |
+| --------- | ------------------------------------------------------------------------------------------------------------ |
+| **North** | Company orchestrator — direction, OKRs, stakeholder comms, coordinates all team leads                        |
+| **Bench** | Board simulator — adversarial review of major decisions from financial, strategic, customer, and risk lenses |
+
+**Adds:** 2 agents → 43 total
+**Bundle:** `bundle/strategy-board/`
+
+---
+
+## Full Company
+
+When all phases are complete:
+
+```
+Bench (Board)
+│
+North (Strategy)
+├── Apex     Engineering  →  14 specialists
+├── Helm     Product      →   7 specialists
+├── Arc      Revenue      →   4 specialists
+├── Signal   Marketing    →   3 specialists
+├── Vault    Finance      →   2 specialists
+├── Crew     People       →   1 specialist
+├── Keel     Operations   →   2 specialists
+├── Port     Support
+└── (Clause, Grove, Spark as cross-team)
+```
+
+**43 agents. One install.**
+`claude mcp add tonone` — full company in your terminal.
 
 ---
 
@@ -88,12 +191,13 @@ To stay focused:
 - No web UI in this repo (that's tonone.ai — separate)
 - No database, auth, or payment logic (plugin stays stateless)
 - No agent that requires proprietary APIs — everything runs with a Claude API key
+- No management titles (COO, CFO, CMO) — agents represent functions, not org chart positions
 
 ---
 
 ## Contributing
 
-See [CLAUDE.md](CLAUDE.md) for how skills are structured.
-Each agent lives in `agents/`. Each skill is a Markdown file in `skills/`.
+See [CLAUDE.md](CLAUDE.md) for how agents and skills are structured.
+Each agent lives in `agents/`. Each skill is a Markdown file in `team/<agent>/skills/`.
 
 Open an issue before building a new agent — we want to make sure it fits the system.
