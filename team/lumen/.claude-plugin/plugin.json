@@ -1,0 +1,19 @@
+{
+  "name": "lumen-analytics",
+  "version": "0.1.0",
+  "description": "Product analyst — metrics frameworks, funnel analysis, OKRs, A/B test design, and retention analysis",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "metrics",
+    "okr",
+    "funnel",
+    "retention",
+    "product-team"
+  ]
+}

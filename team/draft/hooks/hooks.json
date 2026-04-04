@@ -1,0 +1,9 @@
+{
+  "hooks": [
+    {
+      "event": "post_install",
+      "command": "bash scripts/setup.sh",
+      "description": "Set up Python environment for Draft analyzers"
+    }
+  ]
+}

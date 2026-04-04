@@ -1,0 +1,11 @@
+[project]
+name = "lumen"
+version = "0.1.0"
+description = "Product analyst — metrics frameworks, funnel analysis, OKRs, A/B test design, and retention analysis"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]

@@ -1,0 +1,11 @@
+[project]
+name = "draft"
+version = "0.1.0"
+description = "UX designer — user flows, information architecture, wireframes, and interaction design"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]

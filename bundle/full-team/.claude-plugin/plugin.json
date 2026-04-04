@@ -1,0 +1,19 @@
+{
+  "name": "full-team",
+  "version": "0.1.0",
+  "description": "Install all 23 tonone agents at once — Engineering Team + Product Team",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "bundle",
+    "installer",
+    "full-team",
+    "all-agents",
+    "engineering-team",
+    "product-team"
+  ]
+}

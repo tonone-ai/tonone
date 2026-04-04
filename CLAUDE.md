@@ -1,8 +1,8 @@
-# Engineering Team
+# tonone — Engineering + Product Team
 
-Elite engineering team as Claude Code agents. 1 lead + 14 specialists. Simple by default. Scalable by design.
+Two AI teams. 23 agents total. Engineering executes. Product decides what to build and why.
 
-## The Team
+## Engineering Team — 15 agents
 
 | Agent | Hat | Owns |
 |-------|-----|------|
@@ -22,12 +22,29 @@ Elite engineering team as Claude Code agents. 1 lead + 14 specialists. Simple by
 | **Proof** | QA & Testing | Test strategy, E2E suites, integration testing, flaky triage |
 | **Pave** | Platform Engineering | Developer experience, golden paths, service catalogs |
 
+## Product Team — 8 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Helm** | Head of Product | Orchestrates the product team, writes briefs, hands off to Apex |
+| **Echo** | User Research | User interviews, personas, Jobs-to-Be-Done, feedback synthesis |
+| **Lumen** | Product Analytics | Metrics frameworks, funnel analysis, OKRs, A/B test design |
+| **Draft** | UX Design | User flows, information architecture, wireframes |
+| **Form** | Visual Design | Brand identity, color systems, typography, design system |
+| **Crest** | Product Strategy | Roadmap planning, prioritization, competitive analysis |
+| **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy |
+| **Surge** | Growth | Acquisition channels, activation funnels, retention playbooks |
+
+## Helm↔Apex Interface
+
+Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
+
 ## Structure
 
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (Apex + 12 specialists)
+├── agents/                 ← all agent definitions (23 total: 15 engineering + 8 product)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

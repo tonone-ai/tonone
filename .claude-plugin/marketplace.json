@@ -9,18 +9,34 @@
     {
       "name": "tonone",
       "description": "Elite engineering team — 1 lead + 14 specialists, 74 skills. All agents and skills in one install.",
-      "version": "0.3.0",
+      "version": "0.4.1",
       "source": "./",
       "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
       "tags": ["bundle", "full-team"]
     },
     {
       "name": "engineering-team",
-      "description": "Alias for tonone — installs all 15 agents at once",
-      "version": "0.3.0",
-      "source": "./",
+      "description": "Install all 15 Engineering Team agents at once",
+      "version": "0.4.1",
+      "source": "./bundle/engineering-team",
       "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
-      "tags": ["bundle", "installer"]
+      "tags": ["bundle", "installer", "engineering-team"]
+    },
+    {
+      "name": "product-team",
+      "description": "Install all 8 Product Team agents at once",
+      "version": "0.1.0",
+      "source": "./bundle/product-team",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "tags": ["bundle", "installer", "product-team"]
+    },
+    {
+      "name": "full-team",
+      "description": "Install all 23 tonone agents at once — Engineering Team + Product Team",
+      "version": "0.1.0",
+      "source": "./bundle/full-team",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "tags": ["bundle", "installer", "full-team"]
     },
     {
       "name": "apex-lead",
@@ -156,6 +172,119 @@
       "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
       "category": "platform",
       "tags": ["platform", "dx", "golden-paths", "service-catalog"]
+    },
+    {
+      "name": "helm-product",
+      "description": "Head of Product — product strategy, requirements, and engineering handoff via the Helm↔Apex interface",
+      "version": "0.1.0",
+      "source": "./team/helm",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "product",
+      "tags": ["product", "strategy", "requirements", "cpo", "product-team"]
+    },
+    {
+      "name": "draft-ux",
+      "description": "UX designer — user flows, information architecture, wireframes, and interaction design",
+      "version": "0.1.0",
+      "source": "./team/draft",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "product",
+      "tags": ["ux", "design", "user-flows", "wireframes", "product-team"]
+    },
+    {
+      "name": "form-design",
+      "description": "Visual designer — brand identity, color systems, typography, UI design, and design systems",
+      "version": "0.1.0",
+      "source": "./team/form",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "product",
+      "tags": [
+        "design",
+        "brand",
+        "visual",
+        "ui",
+        "design-system",
+        "product-team"
+      ]
+    },
+    {
+      "name": "echo-research",
+      "description": "User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis",
+      "version": "0.1.0",
+      "source": "./team/echo",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "product",
+      "tags": [
+        "research",
+        "ux",
+        "personas",
+        "jtbd",
+        "interviews",
+        "product-team"
+      ]
+    },
+    {
+      "name": "lumen-analytics",
+      "description": "Product analyst — metrics frameworks, funnel analysis, OKRs, A/B test design, and retention analysis",
+      "version": "0.1.0",
+      "source": "./team/lumen",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "product",
+      "tags": [
+        "analytics",
+        "metrics",
+        "okr",
+        "funnel",
+        "retention",
+        "product-team"
+      ]
+    },
+    {
+      "name": "surge-growth",
+      "description": "Growth engineer — acquisition channels, activation funnels, retention playbooks, and PLG strategy",
+      "version": "0.1.0",
+      "source": "./team/surge",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "product",
+      "tags": [
+        "growth",
+        "acquisition",
+        "activation",
+        "retention",
+        "plg",
+        "product-team"
+      ]
+    },
+    {
+      "name": "crest-strategy",
+      "description": "Product strategist — roadmap planning, prioritization frameworks, competitive analysis, and market positioning",
+      "version": "0.1.0",
+      "source": "./team/crest",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "product",
+      "tags": [
+        "strategy",
+        "roadmap",
+        "prioritization",
+        "competitive",
+        "product-team"
+      ]
+    },
+    {
+      "name": "pitch-marketing",
+      "description": "Product marketer — positioning, messaging, value proposition, GTM strategy, and launch copy",
+      "version": "0.1.0",
+      "source": "./team/pitch",
+      "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+      "category": "product",
+      "tags": [
+        "marketing",
+        "positioning",
+        "messaging",
+        "gtm",
+        "launch",
+        "product-team"
+      ]
     }
   ]
 }

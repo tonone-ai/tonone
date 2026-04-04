@@ -12,6 +12,8 @@ How to name a new agent for the Tonone team.
 
 ## Current Roster
 
+### Engineering Team
+
 | Name   | Hat                            | Syllables |
 | ------ | ------------------------------ | --------- |
 | Apex   | Engineering Lead               | 2         |
@@ -29,6 +31,19 @@ How to name a new agent for the Tonone team.
 | Lens   | Data Analytics & BI            | 1         |
 | Proof  | QA & Testing                   | 1         |
 | Pave   | Platform Engineering           | 1         |
+
+### Product Team (Sprint 1–3)
+
+| Name  | Hat               | Syllables |
+| ----- | ----------------- | --------- |
+| Helm  | Head of Product   | 1         |
+| Echo  | User Research     | 2         |
+| Lumen | Product Analytics | 2         |
+| Draft | UX Design         | 1         |
+| Form  | Visual Design     | 1         |
+| Crest | Product Strategy  | 1         |
+| Pitch | Product Marketing | 1         |
+| Surge | Growth            | 1         |
 
 ## Available Names
 
