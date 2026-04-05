@@ -13,7 +13,18 @@
     "brand",
     "visual",
     "ui",
+    "logo",
     "design-system",
     "product-team"
+  ],
+  "skills": [
+    {
+      "name": "form-brand",
+      "path": "skills/form-brand/skill.md"
+    },
+    {
+      "name": "form-logo",
+      "path": "skills/form-logo/skill.md"
+    }
   ]
 }

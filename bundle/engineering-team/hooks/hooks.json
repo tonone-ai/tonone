@@ -1,9 +1,3 @@
 {
-  "hooks": [
-    {
-      "event": "post_install",
-      "command": "bash scripts/install-all.sh",
-      "description": "Install all Engineering Team agent plugins"
-    }
-  ]
+  "hooks": {}
 }

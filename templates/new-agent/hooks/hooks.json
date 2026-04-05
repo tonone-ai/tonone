@@ -1,9 +1,14 @@
 {
-  "hooks": [
-    {
-      "event": "post_install",
-      "command": "bash scripts/setup.sh",
-      "description": "Set up Python environment for analyzers"
-    }
-  ]
+  "hooks": {
+    "Setup": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/setup.sh\""
+          }
+        ]
+      }
+    ]
+  }
 }
