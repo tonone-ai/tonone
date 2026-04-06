@@ -4,14 +4,14 @@ set -euo pipefail
 MARKETPLACE="tonone-ai"
 
 PLUGINS=(
-	"helm-product"
-	"echo-research"
-	"lumen-analytics"
-	"draft-ux"
-	"form-design"
-	"crest-strategy"
-	"pitch-marketing"
-	"surge-growth"
+	"tonone-helm"
+	"tonone-echo"
+	"tonone-lumen"
+	"tonone-draft"
+	"tonone-form"
+	"tonone-crest"
+	"tonone-pitch"
+	"tonone-surge"
 )
 
 echo ""

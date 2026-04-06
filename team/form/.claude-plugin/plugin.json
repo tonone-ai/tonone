@@ -1,7 +1,7 @@
 {
-  "name": "form-design",
+  "name": "tonone-form",
   "version": "0.1.0",
-  "description": "Visual designer — brand identity, color systems, typography, UI design, and design systems",
+  "description": "Visual designer \u2014 brand identity, color systems, typography, UI design, and design systems",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
@@ -18,15 +18,45 @@
     "product-team"
   ],
   "skills": [
-    { "name": "form-brand", "path": "skills/form-brand/skill.md" },
-    { "name": "form-logo", "path": "skills/form-logo/skill.md" },
-    { "name": "form-web", "path": "skills/form-web/skill.md" },
-    { "name": "form-mobile", "path": "skills/form-mobile/skill.md" },
-    { "name": "form-deck", "path": "skills/form-deck/skill.md" },
-    { "name": "form-social", "path": "skills/form-social/skill.md" },
-    { "name": "form-email", "path": "skills/form-email/skill.md" },
-    { "name": "form-component", "path": "skills/form-component/skill.md" },
-    { "name": "form-audit", "path": "skills/form-audit/skill.md" },
-    { "name": "form-tokens", "path": "skills/form-tokens/skill.md" }
+    {
+      "name": "form-brand",
+      "path": "skills/form-brand/skill.md"
+    },
+    {
+      "name": "form-logo",
+      "path": "skills/form-logo/skill.md"
+    },
+    {
+      "name": "form-web",
+      "path": "skills/form-web/skill.md"
+    },
+    {
+      "name": "form-mobile",
+      "path": "skills/form-mobile/skill.md"
+    },
+    {
+      "name": "form-deck",
+      "path": "skills/form-deck/skill.md"
+    },
+    {
+      "name": "form-social",
+      "path": "skills/form-social/skill.md"
+    },
+    {
+      "name": "form-email",
+      "path": "skills/form-email/skill.md"
+    },
+    {
+      "name": "form-component",
+      "path": "skills/form-component/skill.md"
+    },
+    {
+      "name": "form-audit",
+      "path": "skills/form-audit/skill.md"
+    },
+    {
+      "name": "form-tokens",
+      "path": "skills/form-tokens/skill.md"
+    }
   ]
 }

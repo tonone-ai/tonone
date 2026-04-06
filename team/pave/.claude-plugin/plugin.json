@@ -1,7 +1,7 @@
 {
-  "name": "pave-platform",
+  "name": "tonone-pave",
   "version": "0.1.0",
-  "description": "Platform engineer — developer experience, service catalogs, internal CLIs, golden paths, environment management",
+  "description": "Platform engineer \u2014 developer experience, service catalogs, internal CLIs, golden paths, environment management",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

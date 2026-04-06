@@ -1,7 +1,7 @@
 {
-  "name": "flux-data",
+  "name": "tonone-flux",
   "version": "0.1.0",
-  "description": "Data engineer — databases, migrations, pipelines, data modeling",
+  "description": "Data engineer \u2014 databases, migrations, pipelines, data modeling",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

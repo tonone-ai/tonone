@@ -1,7 +1,7 @@
 {
-  "name": "warden-security",
+  "name": "tonone-warden",
   "version": "0.1.0",
-  "description": "Security engineer — IAM, secrets, compliance, threat modeling",
+  "description": "Security engineer \u2014 IAM, secrets, compliance, threat modeling",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

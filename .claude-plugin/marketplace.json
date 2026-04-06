@@ -51,7 +51,7 @@
       "tags": ["bundle", "installer", "full-team"]
     },
     {
-      "name": "apex-lead",
+      "name": "tonone-apex",
       "description": "Engineering lead \u2014 orchestrates the team, scopes work, controls depth and budget",
       "version": "0.1.0",
       "source": "./team/apex",
@@ -63,7 +63,7 @@
       "tags": ["lead", "orchestrator"]
     },
     {
-      "name": "forge-infra",
+      "name": "tonone-forge",
       "description": "Infrastructure engineer \u2014 cloud services, networking, IaC, cost optimization",
       "version": "0.1.0",
       "source": "./team/forge",
@@ -75,7 +75,7 @@
       "tags": ["cloud", "networking", "iac"]
     },
     {
-      "name": "relay-devops",
+      "name": "tonone-relay",
       "description": "DevOps engineer \u2014 CI/CD, deployments, GitOps, developer experience",
       "version": "0.1.0",
       "source": "./team/relay",
@@ -87,7 +87,7 @@
       "tags": ["cicd", "deployments", "gitops"]
     },
     {
-      "name": "spine-backend",
+      "name": "tonone-spine",
       "description": "Backend engineer \u2014 APIs, system design, performance, distributed systems",
       "version": "0.1.0",
       "source": "./team/spine",
@@ -99,7 +99,7 @@
       "tags": ["apis", "system-design", "performance"]
     },
     {
-      "name": "flux-data",
+      "name": "tonone-flux",
       "description": "Data engineer \u2014 databases, migrations, pipelines, data modeling",
       "version": "0.1.0",
       "source": "./team/flux",
@@ -111,7 +111,7 @@
       "tags": ["databases", "migrations", "pipelines"]
     },
     {
-      "name": "warden-security",
+      "name": "tonone-warden",
       "description": "Security engineer \u2014 IAM, secrets, compliance, threat modeling",
       "version": "0.1.0",
       "source": "./team/warden",
@@ -123,7 +123,7 @@
       "tags": ["iam", "secrets", "compliance"]
     },
     {
-      "name": "vigil-sre",
+      "name": "tonone-vigil",
       "description": "Observability & reliability engineer \u2014 monitoring, alerting, SRE, incident response, SLOs",
       "version": "0.1.0",
       "source": "./team/vigil",
@@ -135,7 +135,7 @@
       "tags": ["monitoring", "alerting", "sre"]
     },
     {
-      "name": "prism-frontend",
+      "name": "tonone-prism",
       "description": "Frontend & DX engineer \u2014 UI, internal tools, developer portals",
       "version": "0.1.0",
       "source": "./team/prism",
@@ -147,7 +147,7 @@
       "tags": ["ui", "internal-tools", "dx"]
     },
     {
-      "name": "cortex-ml",
+      "name": "tonone-cortex",
       "description": "ML/AI engineer \u2014 model training, MLOps, feature engineering, LLM integration",
       "version": "0.1.0",
       "source": "./team/cortex",
@@ -159,7 +159,7 @@
       "tags": ["ml", "mlops", "llm"]
     },
     {
-      "name": "touch-mobile",
+      "name": "tonone-touch",
       "description": "Mobile engineer \u2014 native iOS/Android, cross-platform, app stores, mobile performance",
       "version": "0.1.0",
       "source": "./team/touch",
@@ -171,7 +171,7 @@
       "tags": ["ios", "android", "cross-platform"]
     },
     {
-      "name": "volt-embedded",
+      "name": "tonone-volt",
       "description": "Embedded & IoT engineer \u2014 firmware, microcontrollers, edge computing, device protocols",
       "version": "0.1.0",
       "source": "./team/volt",
@@ -183,7 +183,7 @@
       "tags": ["firmware", "iot", "edge"]
     },
     {
-      "name": "atlas-docs",
+      "name": "tonone-atlas",
       "description": "Knowledge engineer \u2014 architecture docs, ADRs, API specs, system diagrams, onboarding",
       "version": "0.1.0",
       "source": "./team/atlas",
@@ -195,7 +195,7 @@
       "tags": ["docs", "adrs", "diagrams"]
     },
     {
-      "name": "lens-analytics",
+      "name": "tonone-lens",
       "description": "Data analytics & BI engineer \u2014 dashboards, metrics design, reporting, data storytelling",
       "version": "0.1.0",
       "source": "./team/lens",
@@ -207,7 +207,7 @@
       "tags": ["dashboards", "metrics", "reporting"]
     },
     {
-      "name": "proof-qa",
+      "name": "tonone-proof",
       "description": "QA & testing engineer \u2014 test strategy, E2E suites, integration testing, test infrastructure, flaky test triage",
       "version": "0.1.0",
       "source": "./team/proof",
@@ -219,7 +219,7 @@
       "tags": ["testing", "qa", "e2e", "playwright"]
     },
     {
-      "name": "pave-platform",
+      "name": "tonone-pave",
       "description": "Platform engineer \u2014 developer experience, service catalogs, internal CLIs, golden paths, environment management",
       "version": "0.1.0",
       "source": "./team/pave",
@@ -231,7 +231,7 @@
       "tags": ["platform", "dx", "golden-paths", "service-catalog"]
     },
     {
-      "name": "helm-product",
+      "name": "tonone-helm",
       "description": "Head of Product \u2014 product strategy, requirements, and engineering handoff via the Helm\u2194Apex interface",
       "version": "0.1.0",
       "source": "./team/helm",
@@ -243,7 +243,7 @@
       "tags": ["product", "strategy", "requirements", "cpo", "product-team"]
     },
     {
-      "name": "draft-ux",
+      "name": "tonone-draft",
       "description": "UX designer \u2014 user flows, information architecture, wireframes, and interaction design",
       "version": "0.1.0",
       "source": "./team/draft",
@@ -255,7 +255,7 @@
       "tags": ["ux", "design", "user-flows", "wireframes", "product-team"]
     },
     {
-      "name": "form-design",
+      "name": "tonone-form",
       "description": "Visual designer \u2014 brand identity, color systems, typography, UI design, and design systems",
       "version": "0.1.0",
       "source": "./team/form",
@@ -274,7 +274,7 @@
       ]
     },
     {
-      "name": "echo-research",
+      "name": "tonone-echo",
       "description": "User researcher \u2014 interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis",
       "version": "0.1.0",
       "source": "./team/echo",
@@ -293,7 +293,7 @@
       ]
     },
     {
-      "name": "lumen-analytics",
+      "name": "tonone-lumen",
       "description": "Product analyst \u2014 metrics frameworks, funnel analysis, OKRs, A/B test design, and retention analysis",
       "version": "0.1.0",
       "source": "./team/lumen",
@@ -312,7 +312,7 @@
       ]
     },
     {
-      "name": "surge-growth",
+      "name": "tonone-surge",
       "description": "Growth engineer \u2014 acquisition channels, activation funnels, retention playbooks, and PLG strategy",
       "version": "0.1.0",
       "source": "./team/surge",
@@ -331,7 +331,7 @@
       ]
     },
     {
-      "name": "crest-strategy",
+      "name": "tonone-crest",
       "description": "Product strategist \u2014 roadmap planning, prioritization frameworks, competitive analysis, and market positioning",
       "version": "0.1.0",
       "source": "./team/crest",
@@ -349,7 +349,7 @@
       ]
     },
     {
-      "name": "pitch-marketing",
+      "name": "tonone-pitch",
       "description": "Product marketer \u2014 positioning, messaging, value proposition, GTM strategy, and launch copy",
       "version": "0.1.0",
       "source": "./team/pitch",
