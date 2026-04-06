@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.3] — 2026-04-06
+
+### Fixed
+
+- **plugin.json** — all four plugin manifests (root + 3 bundles) now declare `"agents"` and `"skills"` paths so agents like `/apex`, `/forge`, etc. are discoverable after installation
+
 ## [0.6.2] — 2026-04-06
 
 ### Added

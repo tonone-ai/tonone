@@ -1,6 +1,6 @@
 {
   "name": "tonone-full-team",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "description": "Full tonone team — all 23 agents (Engineering + Product) with all 125 skills",
   "author": {
     "name": "tonone-ai",
@@ -14,5 +14,7 @@
     "engineering-team",
     "product-team",
     "bundle"
-  ]
+  ],
+  "agents": "../agents/",
+  "skills": "../skills/"
 }
