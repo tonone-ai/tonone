@@ -23,7 +23,5 @@
     "analytics",
     "testing",
     "platform"
-  ],
-  "agents": "../agents/",
-  "skills": "../skills/"
+  ]
 }
