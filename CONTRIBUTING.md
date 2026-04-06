@@ -1,6 +1,8 @@
 # Contributing to Tonone
 
-Thanks for your interest in contributing. This guide covers the main ways to help.
+Everything is Markdown. Fork it, improve it, open a PR.
+
+Tonone is pure Markdown -- agents are system prompts, skills are workflow docs. No build step, no venv to activate, no framework to learn. If you can edit text, you can ship an improvement.
 
 ## Getting Started
 
@@ -8,8 +10,6 @@ Thanks for your interest in contributing. This guide covers the main ways to hel
 git clone https://github.com/tonone-ai/tonone.git
 cd tonone
 ```
-
-No build step required — Tonone is a Claude Code plugin made of Markdown agent definitions and skill prompts.
 
 To test your changes, install your local clone in Claude Code:
 
