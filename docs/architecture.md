@@ -4,7 +4,7 @@ How Tonone is structured and why.
 
 ## Overview
 
-Tonone is a Claude Code plugin that installs 15 agents and 77 skills. Everything is prompt-based — agents are Markdown system prompts, skills are Markdown workflow definitions. No runtime code is required.
+Tonone is a Claude Code plugin that installs 23 agents and 125 skills across two teams: Engineering (15 agents) and Product (8 agents). Everything is prompt-based — agents are Markdown system prompts, skills are Markdown workflow definitions. No runtime code is required.
 
 ```
 User runs /forge-audit
@@ -24,12 +24,12 @@ tonone/
 ├── agents/                   ← Agent definitions (loaded by Claude Code)
 │   ├── apex.md
 │   ├── forge.md
-│   └── ...                   (15 files)
+│   └── ...                   (23 files)
 │
 ├── skills/                   ← Skill definitions (loaded by Claude Code)
 │   ├── apex-plan/SKILL.md
 │   ├── forge-audit/SKILL.md
-│   └── ...                   (77 directories)
+│   └── ...                   (125 directories)
 │
 ├── team/                     ← Source of truth for each agent
 │   ├── forge/
@@ -40,7 +40,7 @@ tonone/
 │   │   ├── scripts/          ← Python package + venv setup
 │   │   └── tests/            ← Test directory
 │   ├── relay/
-│   └── ...                   (15 directories)
+│   └── ...                   (23 directories)
 │
 ├── templates/new-agent/      ← Scaffolding for new agents
 ├── docs/                     ← Contributor documentation
@@ -118,7 +118,7 @@ The `source` field points to the directory containing the plugin's `.claude-plug
 
 ```
 /plugin marketplace add tonone-ai/tonone     ← registers the marketplace
-/plugin install tonone@tonone-ai              ← installs root bundle (all 15 agents)
+/plugin install tonone@tonone-ai              ← installs root bundle (all 23 agents)
 /plugin install forge-infra@tonone-ai         ← or install one agent
 ```
 

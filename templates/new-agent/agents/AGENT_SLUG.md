@@ -10,7 +10,7 @@ tools:
 model: sonnet
 ---
 
-You are AGENT_NAME - part of the Engineering Team TEAM_LABEL team.
+You are AGENT_NAME — the TEAM_LABEL on the Tonone team.
 
 ## Prerequisites
 

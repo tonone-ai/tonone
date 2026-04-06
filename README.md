@@ -1,18 +1,18 @@
 # Tonone
 
-**Engineering second to none.**
+**Engineering + product, second to none.**
 
-Your elite engineering team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 1 lead + 14 specialists. 77 skills. Every major engineering discipline covered.
+Your elite AI team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 2 leads + 21 specialists. 125 skills. Every major engineering and product discipline covered.
 
 Simple by default. Scalable by design.
 
 ## Why This Exists
 
-Right now, every engineer gets a generalized AI assistant. Everyone prompts separately, gets separate outputs, then copies results into Slack threads for the next person to feed back into AI. It's a relay race where every handoff loses context.
+Right now, everyone gets a generalized AI assistant. Engineers, product managers, designers, strategists — all prompting separately, getting separate outputs, then copying results into Slack threads for the next person to feed back into AI. It's a relay race where every handoff loses context.
 
-**That's the wrong unit of automation.** Instead of giving each person an AI assistant, give the whole department an AI team. Specialists that talk to each other, share context, and run the show end to end — infrastructure to deployment to monitoring — without the copy-paste relay.
+**That's the wrong unit of automation.** Instead of giving each person an AI assistant, give the whole company an AI team. Specialists that talk to each other, share context, and run the show end to end — from user research to infrastructure to deployment — without the copy-paste relay.
 
-That's Tonone. Not fifteen copies of the same generalist. Fifteen specialists, each owning one domain, coordinated by a lead who knows when to call who and at what depth.
+That's Tonone. Not twenty-three copies of the same generalist. Twenty-three specialists, each owning one domain, coordinated by leads who know when to call who and at what depth.
 
 ### The Mindset
 
@@ -23,6 +23,8 @@ That's Tonone. Not fifteen copies of the same generalist. Fifteen specialists, e
 No boilerplate generators. No tutorial-grade scaffolds. Production-ready output that respects your codebase, your stack, and your time.
 
 ## The Team
+
+### Engineering — 15 agents
 
 | Agent      | Hat                         | What They Do                                                  |
 | ---------- | --------------------------- | ------------------------------------------------------------- |
@@ -42,6 +44,19 @@ No boilerplate generators. No tutorial-grade scaffolds. Production-ready output 
 | **Proof**  | QA & Testing                | Test strategy, E2E suites, integration testing, flaky triage  |
 | **Pave**   | Platform Engineering        | Developer experience, golden paths, service catalogs          |
 
+### Product — 8 agents
+
+| Agent     | Hat               | What They Do                                                    |
+| --------- | ----------------- | --------------------------------------------------------------- |
+| **Helm**  | Head of Product   | Orchestrates the product team, writes briefs, hands off to Apex |
+| **Echo**  | User Research     | User interviews, personas, Jobs-to-Be-Done, feedback synthesis  |
+| **Lumen** | Product Analytics | Metrics frameworks, funnel analysis, OKRs, A/B test design      |
+| **Draft** | UX Design         | User flows, information architecture, wireframes                |
+| **Form**  | Visual Design     | Brand identity, color systems, typography, design system        |
+| **Crest** | Product Strategy  | Roadmap planning, prioritization, competitive analysis          |
+| **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy            |
+| **Surge** | Growth            | Acquisition channels, activation funnels, retention playbooks   |
+
 ## Quick Start
 
 ### Prerequisites
@@ -59,11 +74,12 @@ No boilerplate generators. No tutorial-grade scaffolds. Production-ready output 
 
 ```
 > /apex-plan Build a real-time analytics platform for our IoT fleet
+> /helm-brief Define the next product sprint
 > /forge-infra Set up cloud infrastructure for a new SaaS product
 > /spine-api Design a REST API for user management
 > /warden-audit Run a full security audit on this codebase
-> /vigil-instrument Add monitoring to this service
-> /flux-schema Design the database schema for this feature
+> /echo-interview Run a user research session
+> /crest-roadmap Build a product roadmap
 ```
 
 ## What You Get
@@ -78,7 +94,7 @@ Every agent can **build**, **review**, and **recon**:
 
 ### Platform-Aware
 
-Every agent detects your stack and adapts:
+Every engineering agent detects your stack and adapts:
 
 - **Cloud:** GCP, AWS, Azure, Cloudflare, Vercel, Fly.io, Hetzner, DigitalOcean
 - **CI/CD:** GitHub Actions, GitLab CI, Cloud Build, CircleCI, Bitbucket Pipelines
@@ -88,9 +104,9 @@ Every agent detects your stack and adapts:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-### The Lead: Apex
+### The Leads
 
-Apex is the engineering lead. Give it a task, it figures out who to involve and at what depth:
+**Apex** is the engineering lead. Give it a task, it figures out who to involve and at what depth:
 
 ```
 You: "Build user authentication for our SaaS"
@@ -108,6 +124,8 @@ Apex: I see 3 ways to approach this:
 
   My recommendation: M. Which level?
 ```
+
+**Helm** is the head of product. It orchestrates research, strategy, design, and marketing — then hands off a structured brief to Apex when it's time to build.
 
 ### System Takeover
 
@@ -132,16 +150,17 @@ Phase 3 — Takeover report:
   System map, risk assessment, quick wins, roadmap
 ```
 
-## All 77 Skills
+## All 125 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
 
-### Apex (Lead)
+### Apex (Engineering Lead)
 
 - `/apex-plan` — Plan and scope a project with S/M/L options
 - `/apex-review` — Cross-cutting review of recent work
 - `/apex-status` — CTO-level project status
+- `/apex-recon` — Engineering reconnaissance
 - `/apex-takeover` — System takeover with parallel recon
 
 ### Forge (Infrastructure)
@@ -184,6 +203,7 @@ Phase 3 — Takeover report:
 - `/warden-audit` — Full security audit
 - `/warden-harden` — Harden a service
 - `/warden-iam` — Build IAM from scratch
+- `/warden-threat` — Threat model a system
 - `/warden-recon` — Security reconnaissance
 
 ### Vigil (Observability + Reliability)
@@ -223,6 +243,7 @@ Phase 3 — Takeover report:
 - `/volt-firmware` — Build firmware from scratch
 - `/volt-driver` — Build device driver or protocol handler
 - `/volt-ota` — Build OTA update system
+- `/volt-power` — Power management and optimization
 - `/volt-recon` — Firmware reconnaissance
 
 ### Atlas (Knowledge)
@@ -258,6 +279,75 @@ Phase 3 — Takeover report:
 - `/pave-catalog` — Build a service catalog
 - `/pave-audit` — Audit developer experience
 - `/pave-recon` — Platform reconnaissance
+
+### Helm (Head of Product)
+
+- `/helm-plan` — Plan a product sprint or initiative
+- `/helm-brief` — Write a structured product brief for Apex
+- `/helm-handoff` — End-to-end Helm → Apex delivery
+- `/helm-arbiter` — Resolve product vs. engineering tension
+- `/helm-recon` — Product reconnaissance
+
+### Echo (User Research)
+
+- `/echo-interview` — Run a structured user interview
+- `/echo-feedback` — Synthesize user feedback
+- `/echo-segment` — Define user segments and personas
+- `/echo-jobs` — Map Jobs-to-Be-Done
+- `/echo-recon` — Research reconnaissance
+
+### Lumen (Product Analytics)
+
+- `/lumen-metrics` — Define a metrics framework
+- `/lumen-funnel` — Analyze and improve a funnel
+- `/lumen-abtest` — Design an A/B test
+- `/lumen-instrument` — Instrument product analytics
+- `/lumen-recon` — Analytics reconnaissance
+
+### Draft (UX Design)
+
+- `/draft-wireframe` — Wireframe a flow or screen
+- `/draft-flow` — Map a user flow end to end
+- `/draft-ia` — Design information architecture
+- `/draft-review` — Review a design for UX quality
+- `/draft-recon` — UX reconnaissance
+
+### Form (Visual Design)
+
+- `/form-brand` — Define or audit brand identity
+- `/form-logo` — Design a logo system
+- `/form-tokens` — Build a design token system
+- `/form-component` — Specify UI components
+- `/form-web` — Design a web interface
+- `/form-mobile` — Design a mobile screen
+- `/form-email` — Design an email template
+- `/form-social` — Design social and ad creatives
+- `/form-audit` — Audit visual quality and consistency
+- `/form-deck` — Design a presentation deck
+
+### Crest (Product Strategy)
+
+- `/crest-roadmap` — Build a product roadmap
+- `/crest-okr` — Define OKRs for a team or product
+- `/crest-compete` — Competitive analysis
+- `/crest-narrative` — Write a strategic narrative
+- `/crest-recon` — Strategy reconnaissance
+
+### Pitch (Product Marketing)
+
+- `/pitch-position` — Define positioning and value prop
+- `/pitch-message` — Write core messaging
+- `/pitch-copy` — Write launch copy
+- `/pitch-launch` — Plan a product launch
+- `/pitch-recon` — Marketing reconnaissance
+
+### Surge (Growth)
+
+- `/surge-activation` — Design an activation funnel
+- `/surge-plg` — Build a PLG strategy
+- `/surge-experiment` — Design a growth experiment
+- `/surge-retention` — Build a retention playbook
+- `/surge-recon` — Growth reconnaissance
 
 </details>
 
