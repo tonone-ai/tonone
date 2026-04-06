@@ -1,8 +1,8 @@
 {
-  "name": "tonone-ai",
+  "name": "ai",
   "description": "Engineering + Product Teams \u2014 23 Claude Code agents covering engineering and product functions",
   "owner": {
-    "name": "tonone-ai",
+    "name": "ai",
     "url": "https://tonone.ai"
   },
   "plugins": [
@@ -12,7 +12,7 @@
       "version": "0.6.1",
       "source": "./",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "tags": ["bundle", "full-team"]
@@ -23,7 +23,7 @@
       "version": "0.6.1",
       "source": "./bundle/engineering-team",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "tags": ["bundle", "installer", "engineering-team"]
@@ -34,7 +34,7 @@
       "version": "0.6.1",
       "source": "./bundle/product-team",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "tags": ["bundle", "installer", "product-team"]
@@ -45,222 +45,222 @@
       "version": "0.6.1",
       "source": "./bundle/full-team",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "tags": ["bundle", "installer", "full-team"]
     },
     {
-      "name": "tonone-apex",
+      "name": "apex",
       "description": "Engineering lead \u2014 orchestrates the team, scopes work, controls depth and budget",
       "version": "0.1.0",
       "source": "./team/apex",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "lead",
       "tags": ["lead", "orchestrator"]
     },
     {
-      "name": "tonone-forge",
+      "name": "forge",
       "description": "Infrastructure engineer \u2014 cloud services, networking, IaC, cost optimization",
       "version": "0.1.0",
       "source": "./team/forge",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "infrastructure",
       "tags": ["cloud", "networking", "iac"]
     },
     {
-      "name": "tonone-relay",
+      "name": "relay",
       "description": "DevOps engineer \u2014 CI/CD, deployments, GitOps, developer experience",
       "version": "0.1.0",
       "source": "./team/relay",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "devops",
       "tags": ["cicd", "deployments", "gitops"]
     },
     {
-      "name": "tonone-spine",
+      "name": "spine",
       "description": "Backend engineer \u2014 APIs, system design, performance, distributed systems",
       "version": "0.1.0",
       "source": "./team/spine",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "backend",
       "tags": ["apis", "system-design", "performance"]
     },
     {
-      "name": "tonone-flux",
+      "name": "flux",
       "description": "Data engineer \u2014 databases, migrations, pipelines, data modeling",
       "version": "0.1.0",
       "source": "./team/flux",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "data",
       "tags": ["databases", "migrations", "pipelines"]
     },
     {
-      "name": "tonone-warden",
+      "name": "warden",
       "description": "Security engineer \u2014 IAM, secrets, compliance, threat modeling",
       "version": "0.1.0",
       "source": "./team/warden",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "security",
       "tags": ["iam", "secrets", "compliance"]
     },
     {
-      "name": "tonone-vigil",
+      "name": "vigil",
       "description": "Observability & reliability engineer \u2014 monitoring, alerting, SRE, incident response, SLOs",
       "version": "0.1.0",
       "source": "./team/vigil",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "observability",
       "tags": ["monitoring", "alerting", "sre"]
     },
     {
-      "name": "tonone-prism",
+      "name": "prism",
       "description": "Frontend & DX engineer \u2014 UI, internal tools, developer portals",
       "version": "0.1.0",
       "source": "./team/prism",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "frontend",
       "tags": ["ui", "internal-tools", "dx"]
     },
     {
-      "name": "tonone-cortex",
+      "name": "cortex",
       "description": "ML/AI engineer \u2014 model training, MLOps, feature engineering, LLM integration",
       "version": "0.1.0",
       "source": "./team/cortex",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "ml",
       "tags": ["ml", "mlops", "llm"]
     },
     {
-      "name": "tonone-touch",
+      "name": "touch",
       "description": "Mobile engineer \u2014 native iOS/Android, cross-platform, app stores, mobile performance",
       "version": "0.1.0",
       "source": "./team/touch",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "mobile",
       "tags": ["ios", "android", "cross-platform"]
     },
     {
-      "name": "tonone-volt",
+      "name": "volt",
       "description": "Embedded & IoT engineer \u2014 firmware, microcontrollers, edge computing, device protocols",
       "version": "0.1.0",
       "source": "./team/volt",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "embedded",
       "tags": ["firmware", "iot", "edge"]
     },
     {
-      "name": "tonone-atlas",
+      "name": "atlas",
       "description": "Knowledge engineer \u2014 architecture docs, ADRs, API specs, system diagrams, onboarding",
       "version": "0.1.0",
       "source": "./team/atlas",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "knowledge",
       "tags": ["docs", "adrs", "diagrams"]
     },
     {
-      "name": "tonone-lens",
+      "name": "lens",
       "description": "Data analytics & BI engineer \u2014 dashboards, metrics design, reporting, data storytelling",
       "version": "0.1.0",
       "source": "./team/lens",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "analytics",
       "tags": ["dashboards", "metrics", "reporting"]
     },
     {
-      "name": "tonone-proof",
+      "name": "proof",
       "description": "QA & testing engineer \u2014 test strategy, E2E suites, integration testing, test infrastructure, flaky test triage",
       "version": "0.1.0",
       "source": "./team/proof",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "testing",
       "tags": ["testing", "qa", "e2e", "playwright"]
     },
     {
-      "name": "tonone-pave",
+      "name": "pave",
       "description": "Platform engineer \u2014 developer experience, service catalogs, internal CLIs, golden paths, environment management",
       "version": "0.1.0",
       "source": "./team/pave",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "platform",
       "tags": ["platform", "dx", "golden-paths", "service-catalog"]
     },
     {
-      "name": "tonone-helm",
+      "name": "helm",
       "description": "Head of Product \u2014 product strategy, requirements, and engineering handoff via the Helm\u2194Apex interface",
       "version": "0.1.0",
       "source": "./team/helm",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "product",
       "tags": ["product", "strategy", "requirements", "cpo", "product-team"]
     },
     {
-      "name": "tonone-draft",
+      "name": "draft",
       "description": "UX designer \u2014 user flows, information architecture, wireframes, and interaction design",
       "version": "0.1.0",
       "source": "./team/draft",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "product",
       "tags": ["ux", "design", "user-flows", "wireframes", "product-team"]
     },
     {
-      "name": "tonone-form",
+      "name": "form",
       "description": "Visual designer \u2014 brand identity, color systems, typography, UI design, and design systems",
       "version": "0.1.0",
       "source": "./team/form",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "product",
@@ -274,12 +274,12 @@
       ]
     },
     {
-      "name": "tonone-echo",
+      "name": "echo",
       "description": "User researcher \u2014 interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis",
       "version": "0.1.0",
       "source": "./team/echo",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "product",
@@ -293,12 +293,12 @@
       ]
     },
     {
-      "name": "tonone-lumen",
+      "name": "lumen",
       "description": "Product analyst \u2014 metrics frameworks, funnel analysis, OKRs, A/B test design, and retention analysis",
       "version": "0.1.0",
       "source": "./team/lumen",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "product",
@@ -312,12 +312,12 @@
       ]
     },
     {
-      "name": "tonone-surge",
+      "name": "surge",
       "description": "Growth engineer \u2014 acquisition channels, activation funnels, retention playbooks, and PLG strategy",
       "version": "0.1.0",
       "source": "./team/surge",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "product",
@@ -331,12 +331,12 @@
       ]
     },
     {
-      "name": "tonone-crest",
+      "name": "crest",
       "description": "Product strategist \u2014 roadmap planning, prioritization frameworks, competitive analysis, and market positioning",
       "version": "0.1.0",
       "source": "./team/crest",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "product",
@@ -349,12 +349,12 @@
       ]
     },
     {
-      "name": "tonone-pitch",
+      "name": "pitch",
       "description": "Product marketer \u2014 positioning, messaging, value proposition, GTM strategy, and launch copy",
       "version": "0.1.0",
       "source": "./team/pitch",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "category": "product",
@@ -373,7 +373,7 @@
       "version": "0.1.0",
       "source": "./skills/apex-plan",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -386,7 +386,7 @@
       "version": "0.1.0",
       "source": "./skills/apex-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -399,7 +399,7 @@
       "version": "0.1.0",
       "source": "./skills/apex-review",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -412,7 +412,7 @@
       "version": "0.1.0",
       "source": "./skills/apex-status",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -425,7 +425,7 @@
       "version": "0.1.0",
       "source": "./skills/apex-takeover",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -438,7 +438,7 @@
       "version": "0.1.0",
       "source": "./skills/atlas-adr",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -451,7 +451,7 @@
       "version": "0.1.0",
       "source": "./skills/atlas-changelog",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -464,7 +464,7 @@
       "version": "0.1.0",
       "source": "./skills/atlas-map",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -477,7 +477,7 @@
       "version": "0.1.0",
       "source": "./skills/atlas-onboard",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -490,7 +490,7 @@
       "version": "0.1.0",
       "source": "./skills/atlas-present",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -503,7 +503,7 @@
       "version": "0.1.0",
       "source": "./skills/atlas-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -516,7 +516,7 @@
       "version": "0.1.0",
       "source": "./skills/atlas-report",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -529,7 +529,7 @@
       "version": "0.1.0",
       "source": "./skills/cortex-eval",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -542,7 +542,7 @@
       "version": "0.1.0",
       "source": "./skills/cortex-integrate",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -555,7 +555,7 @@
       "version": "0.1.0",
       "source": "./skills/cortex-model",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -568,7 +568,7 @@
       "version": "0.1.0",
       "source": "./skills/cortex-prompt",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -581,7 +581,7 @@
       "version": "0.1.0",
       "source": "./skills/cortex-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -594,7 +594,7 @@
       "version": "0.1.0",
       "source": "./skills/crest-compete",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -607,7 +607,7 @@
       "version": "0.1.0",
       "source": "./skills/crest-narrative",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -620,7 +620,7 @@
       "version": "0.1.0",
       "source": "./skills/crest-okr",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -633,7 +633,7 @@
       "version": "0.1.0",
       "source": "./skills/crest-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -646,7 +646,7 @@
       "version": "0.1.0",
       "source": "./skills/crest-roadmap",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -659,7 +659,7 @@
       "version": "0.1.0",
       "source": "./skills/draft-flow",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -672,7 +672,7 @@
       "version": "0.1.0",
       "source": "./skills/draft-ia",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -685,7 +685,7 @@
       "version": "0.1.0",
       "source": "./skills/draft-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -698,7 +698,7 @@
       "version": "0.1.0",
       "source": "./skills/draft-review",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -711,7 +711,7 @@
       "version": "0.1.0",
       "source": "./skills/draft-wireframe",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -724,7 +724,7 @@
       "version": "0.1.0",
       "source": "./skills/echo-feedback",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -737,7 +737,7 @@
       "version": "0.1.0",
       "source": "./skills/echo-interview",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -750,7 +750,7 @@
       "version": "0.1.0",
       "source": "./skills/echo-jobs",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -763,7 +763,7 @@
       "version": "0.1.0",
       "source": "./skills/echo-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -776,7 +776,7 @@
       "version": "0.1.0",
       "source": "./skills/echo-segment",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -789,7 +789,7 @@
       "version": "0.1.0",
       "source": "./skills/flux-health",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -802,7 +802,7 @@
       "version": "0.1.0",
       "source": "./skills/flux-migrate",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -815,7 +815,7 @@
       "version": "0.1.0",
       "source": "./skills/flux-pipeline",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -828,7 +828,7 @@
       "version": "0.1.0",
       "source": "./skills/flux-query",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -841,7 +841,7 @@
       "version": "0.1.0",
       "source": "./skills/flux-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -854,7 +854,7 @@
       "version": "0.1.0",
       "source": "./skills/flux-schema",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -867,7 +867,7 @@
       "version": "0.1.0",
       "source": "./skills/forge-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -880,7 +880,7 @@
       "version": "0.1.0",
       "source": "./skills/forge-cost",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -893,7 +893,7 @@
       "version": "0.1.0",
       "source": "./skills/forge-diagnose",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -906,7 +906,7 @@
       "version": "0.1.0",
       "source": "./skills/forge-infra",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -919,7 +919,7 @@
       "version": "0.1.0",
       "source": "./skills/forge-network",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -932,7 +932,7 @@
       "version": "0.1.0",
       "source": "./skills/forge-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -945,7 +945,7 @@
       "version": "0.1.0",
       "source": "./skills/form-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -958,7 +958,7 @@
       "version": "0.1.0",
       "source": "./skills/form-brand",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -971,7 +971,7 @@
       "version": "0.1.0",
       "source": "./skills/form-component",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -984,7 +984,7 @@
       "version": "0.1.0",
       "source": "./skills/form-deck",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -997,7 +997,7 @@
       "version": "0.1.0",
       "source": "./skills/form-email",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1010,7 +1010,7 @@
       "version": "0.1.0",
       "source": "./skills/form-logo",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1023,7 +1023,7 @@
       "version": "0.1.0",
       "source": "./skills/form-mobile",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1036,7 +1036,7 @@
       "version": "0.1.0",
       "source": "./skills/form-social",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1049,7 +1049,7 @@
       "version": "0.1.0",
       "source": "./skills/form-tokens",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1062,7 +1062,7 @@
       "version": "0.1.0",
       "source": "./skills/form-web",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1075,7 +1075,7 @@
       "version": "0.1.0",
       "source": "./skills/helm-arbiter",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1088,7 +1088,7 @@
       "version": "0.1.0",
       "source": "./skills/helm-brief",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1101,7 +1101,7 @@
       "version": "0.1.0",
       "source": "./skills/helm-handoff",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1114,7 +1114,7 @@
       "version": "0.1.0",
       "source": "./skills/helm-plan",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1127,7 +1127,7 @@
       "version": "0.1.0",
       "source": "./skills/helm-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1140,7 +1140,7 @@
       "version": "0.1.0",
       "source": "./skills/lens-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1153,7 +1153,7 @@
       "version": "0.1.0",
       "source": "./skills/lens-dashboard",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1166,7 +1166,7 @@
       "version": "0.1.0",
       "source": "./skills/lens-metrics",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1179,7 +1179,7 @@
       "version": "0.1.0",
       "source": "./skills/lens-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1192,7 +1192,7 @@
       "version": "0.1.0",
       "source": "./skills/lens-report",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1205,7 +1205,7 @@
       "version": "0.1.0",
       "source": "./skills/lumen-abtest",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1218,7 +1218,7 @@
       "version": "0.1.0",
       "source": "./skills/lumen-funnel",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1231,7 +1231,7 @@
       "version": "0.1.0",
       "source": "./skills/lumen-instrument",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1244,7 +1244,7 @@
       "version": "0.1.0",
       "source": "./skills/lumen-metrics",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1257,7 +1257,7 @@
       "version": "0.1.0",
       "source": "./skills/lumen-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1270,7 +1270,7 @@
       "version": "0.1.0",
       "source": "./skills/pave-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1283,7 +1283,7 @@
       "version": "0.1.0",
       "source": "./skills/pave-catalog",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1296,7 +1296,7 @@
       "version": "0.1.0",
       "source": "./skills/pave-env",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1309,7 +1309,7 @@
       "version": "0.1.0",
       "source": "./skills/pave-golden",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1322,7 +1322,7 @@
       "version": "0.1.0",
       "source": "./skills/pave-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1335,7 +1335,7 @@
       "version": "0.1.0",
       "source": "./skills/pitch-copy",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1348,7 +1348,7 @@
       "version": "0.1.0",
       "source": "./skills/pitch-launch",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1361,7 +1361,7 @@
       "version": "0.1.0",
       "source": "./skills/pitch-message",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1374,7 +1374,7 @@
       "version": "0.1.0",
       "source": "./skills/pitch-position",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1387,7 +1387,7 @@
       "version": "0.1.0",
       "source": "./skills/pitch-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1400,7 +1400,7 @@
       "version": "0.1.0",
       "source": "./skills/prism-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1413,7 +1413,7 @@
       "version": "0.1.0",
       "source": "./skills/prism-component",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1426,7 +1426,7 @@
       "version": "0.1.0",
       "source": "./skills/prism-dashboard",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1439,7 +1439,7 @@
       "version": "0.1.0",
       "source": "./skills/prism-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1452,7 +1452,7 @@
       "version": "0.1.0",
       "source": "./skills/prism-ui",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1465,7 +1465,7 @@
       "version": "0.1.0",
       "source": "./skills/proof-api",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1478,7 +1478,7 @@
       "version": "0.1.0",
       "source": "./skills/proof-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1491,7 +1491,7 @@
       "version": "0.1.0",
       "source": "./skills/proof-e2e",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1504,7 +1504,7 @@
       "version": "0.1.0",
       "source": "./skills/proof-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1517,7 +1517,7 @@
       "version": "0.1.0",
       "source": "./skills/proof-strategy",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1530,7 +1530,7 @@
       "version": "0.1.0",
       "source": "./skills/relay-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1543,7 +1543,7 @@
       "version": "0.1.0",
       "source": "./skills/relay-deploy",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1556,7 +1556,7 @@
       "version": "0.1.0",
       "source": "./skills/relay-docker",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1569,7 +1569,7 @@
       "version": "0.1.0",
       "source": "./skills/relay-pipeline",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1582,7 +1582,7 @@
       "version": "0.1.0",
       "source": "./skills/relay-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1595,7 +1595,7 @@
       "version": "0.1.0",
       "source": "./skills/spine-api",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1608,7 +1608,7 @@
       "version": "0.1.0",
       "source": "./skills/spine-design",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1621,7 +1621,7 @@
       "version": "0.1.0",
       "source": "./skills/spine-perf",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1634,7 +1634,7 @@
       "version": "0.1.0",
       "source": "./skills/spine-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1647,7 +1647,7 @@
       "version": "0.1.0",
       "source": "./skills/spine-review",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1660,7 +1660,7 @@
       "version": "0.1.0",
       "source": "./skills/spine-service",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1673,7 +1673,7 @@
       "version": "0.1.0",
       "source": "./skills/surge-activation",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1686,7 +1686,7 @@
       "version": "0.1.0",
       "source": "./skills/surge-experiment",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1699,7 +1699,7 @@
       "version": "0.1.0",
       "source": "./skills/surge-plg",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1712,7 +1712,7 @@
       "version": "0.1.0",
       "source": "./skills/surge-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1725,7 +1725,7 @@
       "version": "0.1.0",
       "source": "./skills/surge-retention",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1738,7 +1738,7 @@
       "version": "0.1.0",
       "source": "./skills/touch-app",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1751,7 +1751,7 @@
       "version": "0.1.0",
       "source": "./skills/touch-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1764,7 +1764,7 @@
       "version": "0.1.0",
       "source": "./skills/touch-feature",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1777,7 +1777,7 @@
       "version": "0.1.0",
       "source": "./skills/touch-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1790,7 +1790,7 @@
       "version": "0.1.0",
       "source": "./skills/touch-release",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1803,7 +1803,7 @@
       "version": "0.1.0",
       "source": "./skills/vigil-alert",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1816,7 +1816,7 @@
       "version": "0.1.0",
       "source": "./skills/vigil-check",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1829,7 +1829,7 @@
       "version": "0.1.0",
       "source": "./skills/vigil-incident",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1842,7 +1842,7 @@
       "version": "0.1.0",
       "source": "./skills/vigil-instrument",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1855,7 +1855,7 @@
       "version": "0.1.0",
       "source": "./skills/vigil-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1868,7 +1868,7 @@
       "version": "0.1.0",
       "source": "./skills/volt-driver",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1881,7 +1881,7 @@
       "version": "0.1.0",
       "source": "./skills/volt-firmware",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1894,7 +1894,7 @@
       "version": "0.1.0",
       "source": "./skills/volt-ota",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1907,7 +1907,7 @@
       "version": "0.1.0",
       "source": "./skills/volt-power",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1920,7 +1920,7 @@
       "version": "0.1.0",
       "source": "./skills/volt-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1933,7 +1933,7 @@
       "version": "0.1.0",
       "source": "./skills/warden-audit",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1946,7 +1946,7 @@
       "version": "0.1.0",
       "source": "./skills/warden-harden",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1959,7 +1959,7 @@
       "version": "0.1.0",
       "source": "./skills/warden-iam",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1972,7 +1972,7 @@
       "version": "0.1.0",
       "source": "./skills/warden-recon",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1985,7 +1985,7 @@
       "version": "0.1.0",
       "source": "./skills/warden-threat",
       "author": {
-        "name": "tonone-ai",
+        "name": "ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
