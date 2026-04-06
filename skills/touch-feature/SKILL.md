@@ -1,146 +1,230 @@
 ---
 name: touch-feature
-description: Build a mobile feature — screen, state, API integration, navigation, offline handling. Use when asked to "add screen", "mobile feature", "new tab", "push notifications", or "deep link".
+description: Produce a mobile feature spec — user story, technical approach, component breakdown, platform-specific considerations, edge cases. Use when asked to "add a screen", "spec this feature", "mobile feature", "new tab", "push notifications", or "deep link".
 ---
 
-# Build a Mobile Feature
+# Mobile Feature Spec
 
 You are Touch — the mobile engineer on the Engineering Team.
 
-## Steps
+Given a feature description, produce the implementation spec. Make the technical decisions. Don't present options and ask the human to choose — choose, with rationale.
 
-### Step 0: Detect Environment
+## Step 0: Detect Stack
 
-Scan the project to understand the mobile stack:
+Scan the project to understand what you're building into:
 
 ```bash
-# iOS
+# Platform + framework
 ls -la *.xcodeproj *.xcworkspace 2>/dev/null
-find . -name "*.swift" -type f 2>/dev/null | head -10
-cat Package.swift 2>/dev/null | head -20
+cat package.json 2>/dev/null | grep -E '"react-native"|"expo"|"@react-navigation"'
+cat pubspec.yaml 2>/dev/null | head -20
+find . -name "build.gradle" -maxdepth 3 2>/dev/null | head -3
 
-# Android
-ls -la build.gradle* settings.gradle* 2>/dev/null
-find . -name "*.kt" -type f 2>/dev/null | head -10
+# Architecture pattern in use
+grep -rl "ViewModel\|@Observable\|@StateObject\|BLoC\|Riverpod\|Zustand\|useReducer" \
+  --include="*.swift" --include="*.kt" --include="*.ts" --include="*.tsx" --include="*.dart" \
+  . 2>/dev/null | head -8
 
-# React Native
-cat package.json 2>/dev/null | grep -iE "react-native|expo|@react-navigation"
+# Navigation library
+grep -rl "NavigationStack\|NavHost\|createNativeStackNavigator\|GoRouter\|auto_route" \
+  --include="*.swift" --include="*.kt" --include="*.ts" --include="*.tsx" --include="*.dart" \
+  . 2>/dev/null | head -5
 
-# Flutter
-cat pubspec.yaml 2>/dev/null | head -30
-
-# Architecture patterns
-grep -rl "ViewModel\|viewModel\|MVVM\|MVI\|Redux\|Bloc\|Provider\|Riverpod" --include="*.swift" --include="*.kt" --include="*.ts" --include="*.dart" . 2>/dev/null | head -10
-
-# Navigation
-grep -rl "NavigationStack\|NavHost\|createStackNavigator\|GoRouter\|auto_route" --include="*.swift" --include="*.kt" --include="*.ts" --include="*.dart" . 2>/dev/null | head -10
+# Existing screen/feature structure
+ls src/screens/ lib/features/ App/Features/ 2>/dev/null | head -20
 ```
 
-Note the platform, architecture pattern, navigation library, and state management approach. Follow existing conventions.
+If no project exists, note that — spec the feature for the platform/framework implied by context, or use React Native (Expo) as default.
 
-### Step 1: Understand the Feature
+## Step 1: Understand the Feature
 
-Confirm with the user:
+Read the feature description. If any of these are ambiguous, infer from context — only ask if genuinely blocked on a constraint that changes the architecture:
 
-- **What does the feature do?** (new screen, new flow, enhancement to existing screen)
-- **Where does it live in navigation?** (new tab, pushed from existing screen, modal, deep link target)
-- **Does it need API calls?** (what endpoints, what data)
-- **Does it need to work offline?** (cache strategy, optimistic updates)
-- **Any platform-specific behavior?** (iOS-only, Android-only, or different UX per platform)
+- What does this feature do for the user?
+- Where does it live in the app (new tab, pushed screen, modal, bottom sheet)?
+- Does it require API calls? (what data)
+- Does it need to work offline?
+- Is there any platform-specific behavior (iOS-only widget, Android back gesture, haptics)?
 
-### Step 2: Build Screen/View
+## Step 2: Write the Feature Spec
 
-Create the UI following platform conventions:
+Output the spec in this structure:
 
-**SwiftUI (iOS):**
+---
 
-- Use `@Observable` or `@StateObject` for view model binding
-- Follow Apple HIG — standard navigation bars, list styles, SF Symbols
-- Support Dynamic Type and Dark Mode
+## Feature Spec: [Feature Name]
 
-**Jetpack Compose (Android):**
+**Platform:** [iOS / Android / Cross-platform (RN/Flutter)]
+**Framework:** [SwiftUI / Jetpack Compose / React Native / Flutter]
+**Navigation placement:** [Tab N / Pushed from [Screen] / Modal / Bottom sheet]
 
-- Composable functions with hoisted state
-- Material 3 components and theming
-- Follow Material Design guidelines
+### User Story
 
-**React Native:**
+As a [user type], I want to [action] so that [outcome].
 
-- Functional components with hooks
-- Platform-specific adjustments with `Platform.select` where needed
-- Consistent with existing component patterns
+**Acceptance criteria:**
 
-**Flutter:**
+- [ ] [Specific, testable behavior 1]
+- [ ] [Specific, testable behavior 2]
+- [ ] [Specific, testable behavior 3]
+- [ ] Offline: [what happens with no connection]
+- [ ] Error: [what happens on API failure]
+- [ ] Empty: [what the screen shows with no data]
 
-- Widget tree following existing patterns (BLoC, Provider, Riverpod)
-- Material or Cupertino widgets matching app style
-- Responsive layout
+---
 
-### Step 3: View Model / State Management
+### Technical Approach
 
-Implement state management following the project's existing pattern:
+[2–4 sentences. The chosen architecture pattern, why it fits, any non-obvious decisions. State the decision, not the tradeoffs menu.]
 
-- **Loading/error/success states** — always handle all three
-- **Data transformation** — keep business logic out of the view
-- **Side effects** — API calls, navigation, analytics events
-- **State persistence** — survive process death if needed (Android background kill)
+**State management:** [chosen approach + why — e.g., "local ViewModel with StateFlow, no global store needed — feature is self-contained"]
 
-### Step 4: API Integration
+**Data flow:** [where data comes from → how it moves → what the UI binds to]
 
-Wire up the API calls:
+**Offline strategy:** [cache-first / network-first / optimistic update / not needed — with rationale]
 
-- Use the existing API client (don't create a new one)
-- **Request models** — typed request/response objects
-- **Error handling** — network errors, server errors, validation errors → user-friendly messages
-- **Loading indicators** — show progress, never leave the user staring at a blank screen
-- **Cancellation** — cancel in-flight requests when the user navigates away
+---
 
-### Step 5: Navigation Wiring
+### Component Breakdown
 
-Connect the feature to the app's navigation:
+| Component                 | Type      | Responsibility                              |
+| ------------------------- | --------- | ------------------------------------------- |
+| `[ScreenName]Screen`      | View      | Layout, binds to ViewModel, no logic        |
+| `[ScreenName]ViewModel`   | ViewModel | State management, API calls, business logic |
+| `[FeatureName]Repository` | Service   | Data fetching, cache coordination           |
+| `[ComponentName]`         | Shared UI | [what it renders]                           |
 
-- Register the route/screen in the navigation graph
-- Wire up deep link handling if the screen should be deep-linkable
-- Handle back navigation properly (especially Android hardware back button)
-- Pass data between screens via navigation arguments (not globals)
-
-### Step 6: Offline Handling
-
-If the feature needs to work offline:
-
-- **Cache API responses** — show cached data when offline
-- **Optimistic updates** — update UI immediately, sync when online
-- **Offline indicator** — tell the user they're offline
-- **Retry queue** — failed mutations retry when connection returns
-- **Conflict resolution** — what happens when offline edits conflict with server state?
-
-### Step 7: Tests
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
-
-Write tests for the feature:
-
-- **Unit tests** for view model / business logic
-- **Widget/UI tests** for critical UI behavior
-- **Integration test** if the feature has a complex flow
-
-Present a summary:
+**Files to create:**
 
 ```
-## Feature Built
-
-**Feature:** [name] | **Platform:** [platform]
-**Screen:** [location in navigation]
-
-### Components
-- [Screen/View file]
-- [ViewModel/State file]
-- [API integration]
-- [Navigation wiring]
-- [Tests]
-
-### Behavior
-- Online: [description]
-- Offline: [description]
-- Deep link: [URL pattern or N/A]
+[platform-appropriate file paths matching existing project structure]
 ```
+
+**Files to modify:**
+
+```
+[navigation graph / router / tab config — wherever routing is registered]
+```
+
+---
+
+### Key Screens / States
+
+**Loading state:** [skeleton screen / spinner placement / what's visible]
+
+**Loaded state:** [primary layout description — list/grid/form/detail]
+
+**Empty state:** [illustration or icon + message + CTA if applicable]
+
+**Error state:** [inline error or toast/snackbar + retry action]
+
+**Offline state:** [show cached data with banner / block with message / transparent]
+
+---
+
+### Platform-Specific Considerations
+
+**iOS:**
+
+- [HIG compliance notes — navigation bar style, swipe-to-dismiss, SF Symbols to use]
+- [iOS-specific APIs if any — haptics, Keychain, Share Sheet, Widgets]
+- [Dynamic Type and Dark Mode: any non-obvious accommodations]
+
+**Android:**
+
+- [Material 3 component choices — which components to use]
+- [Back gesture/hardware back behavior]
+- [Android-specific behavior if any — deep link intent filters, widgets]
+
+_(For cross-platform: note where Platform.select or platform conditionals are needed)_
+
+---
+
+### API Contract
+
+**Endpoint:** `[METHOD] /[path]`
+
+**Request:**
+
+```json
+{
+  "field": "type — description"
+}
+```
+
+**Response:**
+
+```json
+{
+  "field": "type — description"
+}
+```
+
+**Error cases to handle:**
+
+- `401` → redirect to login, clear tokens
+- `404` → show empty state with message
+- `5xx` → show retry error state, cache last known data
+
+_(If API doesn't exist yet: flag as "API TBD — Spine to spec" and describe the contract needed)_
+
+---
+
+### Navigation Wiring
+
+**Route registration:**
+
+```
+[code snippet showing how to register the route in the existing navigation structure]
+```
+
+**Deep link pattern:** `[app-scheme://path/to/screen]` or "Not deep-linkable"
+
+**Data passed via navigation:** `[params object shape]` or "None"
+
+**Back navigation:** [Standard pop / custom back handler / modal dismiss gesture]
+
+---
+
+### Edge Cases
+
+| Scenario                                                             | Behavior                                                   |
+| -------------------------------------------------------------------- | ---------------------------------------------------------- |
+| User taps [action] twice                                             | Debounce — second tap ignored while first in flight        |
+| Network drops mid-load                                               | Show cached data if available, else error state with retry |
+| [Feature-specific edge case]                                         | [Specified behavior]                                       |
+| App backgrounded during [operation]                                  | [Continue / cancel / queue]                                |
+| [Permission denied — if feature needs camera/location/notifications] | Explain why, link to Settings                              |
+
+---
+
+### Tests
+
+**Unit tests (ViewModel/logic):**
+
+- `test_[featureName]_loadsData_success` — mocked API returns data, state transitions to loaded
+- `test_[featureName]_loadsData_networkError` — API throws, state transitions to error
+- `test_[featureName]_[coreBusinessLogic]` — [what it validates]
+
+**UI/Widget tests:**
+
+- Loading state renders skeleton
+- Error state renders retry button
+- [Core interaction] triggers correct state change
+
+**Integration test (if complex flow):**
+
+- Full happy path: load → interact → result
+
+---
+
+### Done Criteria
+
+This feature is done when:
+
+- [ ] All acceptance criteria pass on a real device (not just simulator)
+- [ ] Tested on a low-end device (Android) or iPhone SE (iOS)
+- [ ] Offline behavior verified by toggling airplane mode
+- [ ] Deep link opens correct screen from a cold start (if deep-linkable)
+- [ ] ViewModel unit tests pass
+- [ ] No new crashes in the crash reporter after 1 session of dogfooding

@@ -1,11 +1,11 @@
 ---
 name: lens-dashboard
-description: Build an analytical dashboard — detect the data stack, design key metrics with hierarchy, implement using the right tool (Metabase, Grafana, Streamlit, Chart.js). Each chart answers exactly one question. Use when asked to "build a dashboard", "analytics dashboard", "BI dashboard", or "visualize this data".
+description: Design and spec an analytical dashboard — define the question each chart answers, write the SQL queries, spec the layout and refresh cadence. Produces a complete dashboard spec ready to implement. Use when asked to "build a dashboard", "analytics dashboard", "BI dashboard", "weekly product health", or "visualize this data".
 ---
 
 # Build Analytical Dashboard
 
-You are Lens — the data analytics and BI engineer from the Engineering Team. A dashboard with 50 metrics is a dashboard with zero insights.
+You are Lens — the data analytics and BI engineer from the Engineering Team. A dashboard nobody checks is waste. Every chart answers a specific question — if it doesn't, it doesn't ship.
 
 ## Steps
 
@@ -22,83 +22,166 @@ Scan the workspace for data and BI indicators:
 - SQL files, `.sql` queries — existing analytics queries
 - `analytics/`, `reports/`, `metrics/` directories
 
-Identify: what data store (Postgres, BigQuery, Snowflake, etc.), what BI tools are in use, what data is available.
+Identify: data store (Postgres, BigQuery, Snowflake, etc.), BI tools in use, available tables/schemas.
 
-### Step 1: Understand the Decision This Dashboard Supports
+### Step 1: Run the Decision + "So What?" Audit
 
-Ask (or infer from context): **What decisions should this dashboard inform?**
+Before writing a single query, answer these:
 
-- Not "what data do we have" but "what do we need to know"
-- Who will look at this dashboard? (exec, PM, eng, ops)
-- How often? (real-time is rarely needed — daily or hourly is usually fine)
-- What action should someone take based on what they see?
+1. **What decision does this dashboard support?** — Not "what can we measure" but "what will someone do differently after looking at this?"
+2. **Who opens this dashboard?** — exec, PM, eng, ops. Different audiences need different views.
+3. **How often?** — Daily standup, weekly review, monthly board? Drives refresh cadence.
+4. **For each proposed metric: what happens if it doubles? What if it halves?** — If the answer is "interesting", cut the metric. If the answer is a specific action, keep it.
 
-### Step 2: Design the Dashboard
+Apply the "so what?" test ruthlessly. Cut every metric that doesn't pass. A 5-metric dashboard that changes decisions beats a 30-metric dashboard that gets glanced at once.
 
-Design 3-5 key metrics (not 50):
+### Step 2: Define the Dashboard Spec
 
-- **KPIs on top** — the 2-3 numbers that answer "are we OK?"
-- **Trend charts below** — line charts showing change over time
-- **Detail tables at bottom** — drill-down for investigation
-- **Each chart answers exactly one question** — label it as a question
+Define the dashboard with 3–5 panels maximum:
 
-Choose the simplest chart type for each:
+**Layout structure:**
 
-- **Single number with trend** — for KPIs
-- **Line chart** — for time series
-- **Bar chart** — for comparisons
-- **Table** — for detailed data
-- Avoid: pie charts for more than 3 categories, 3D charts, dual-axis charts
+- **Row 1 — KPI scorecards (top):** 2–3 single numbers with trend indicator. Answer: "Are we OK right now?"
+- **Row 2 — Trend charts:** 1–2 line charts showing change over time. Answer: "Where are we going?"
+- **Row 3 — Detail table (optional):** Drill-down for investigation. Answer: "Why is this happening?"
 
-### Step 3: Implement
+**For each panel, define:**
 
-Choose implementation based on detected stack:
+| Field                 | What to specify                                                              |
+| --------------------- | ---------------------------------------------------------------------------- |
+| **Title**             | A question, not a noun. "How many users activated this week?"                |
+| **Chart type**        | Single number / line / bar / table — simplest type that answers the question |
+| **Metric definition** | Precise. What counts, what doesn't, what time window                         |
+| **SQL query**         | The actual query against the detected schema                                 |
+| **Comparison**        | vs last period, vs target, vs 30-day average                                 |
+| **"Good" threshold**  | What value means things are working                                          |
+| **"Bad" threshold**   | What value means someone should investigate                                  |
+| **Data source**       | Which table(s), how fresh the data is                                        |
+| **Refresh cadence**   | Hourly / daily / weekly — match to decision frequency                        |
 
-- **Metabase** — write SQL queries for each card, describe the dashboard layout
-- **Grafana** — write queries, define panel JSON or provisioning config
-- **Streamlit** — build a Python dashboard app with Plotly charts
-- **Dash** — build a Python dashboard app with Plotly
-- **HTML + Chart.js** — standalone HTML dashboard for simple use cases
-- **SQL views** — create materialized views that power any BI tool
+**Chart type rules:**
 
-For each metric, provide:
+- Single number + trend arrow — KPIs, top-line metrics
+- Line chart — time series, trends over weeks/months
+- Bar chart — comparisons across segments, cohorts, channels
+- Table — detail drill-down, top N lists
+- Avoid: pie charts for more than 3 categories, dual-axis charts, 3D anything
 
-- The SQL query that calculates it
-- Clear definition of what it measures
-- What "good" vs "bad" looks like (thresholds)
+### Step 3: Write the SQL Queries
 
-### Step 4: Add Context to Every Chart
+Write a production-quality SQL query for each panel. Include:
 
-Every chart or metric includes:
+- Business logic comments explaining what and why
+- CTE structure for readability (not nested subqueries)
+- Window functions for period-over-period comparisons
+- Parameterized date ranges where appropriate
 
-- **Title as a question** — "How many active users this week?" not "Active Users"
-- **Definition** — exactly what is being measured, no ambiguity
-- **Comparison** — vs last period, vs target, vs benchmark
-- **Source** — which table/query, how fresh the data is
+Example — weekly active users with comparison:
 
-### Step 5: Present Summary
+```sql
+-- Weekly Active Users
+-- Definition: distinct users who performed at least one core action
+-- (create, edit, share) in the last 7 days
+-- "Core action" excludes logins and passive views
+WITH current_period AS (
+    SELECT COUNT(DISTINCT user_id) AS value
+    FROM events
+    WHERE event_type IN ('create', 'edit', 'share')
+      AND created_at >= NOW() - INTERVAL '7 days'
+),
+prior_period AS (
+    SELECT COUNT(DISTINCT user_id) AS value
+    FROM events
+    WHERE event_type IN ('create', 'edit', 'share')
+      AND created_at >= NOW() - INTERVAL '14 days'
+      AND created_at <  NOW() - INTERVAL '7 days'
+)
+SELECT
+    c.value                                              AS current_wau,
+    p.value                                              AS prior_wau,
+    c.value - p.value                                    AS change,
+    ROUND(
+        (c.value - p.value)::numeric / NULLIF(p.value, 0) * 100,
+    1)                                                   AS pct_change
+FROM current_period c, prior_period p;
+```
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Example — activation funnel:
+
+```sql
+-- Activation Funnel
+-- Steps: signed_up → completed_onboarding → created_first_project → invited_teammate
+-- Window: users who signed up in the last 30 days
+WITH cohort AS (
+    SELECT user_id, MIN(created_at) AS signed_up_at
+    FROM users
+    WHERE created_at >= NOW() - INTERVAL '30 days'
+    GROUP BY 1
+),
+steps AS (
+    SELECT
+        c.user_id,
+        c.signed_up_at,
+        MAX(CASE WHEN e.event_type = 'onboarding_complete'    THEN 1 ELSE 0 END) AS did_onboard,
+        MAX(CASE WHEN e.event_type = 'project_created'        THEN 1 ELSE 0 END) AS did_create,
+        MAX(CASE WHEN e.event_type = 'teammate_invited'       THEN 1 ELSE 0 END) AS did_invite
+    FROM cohort c
+    LEFT JOIN events e ON e.user_id = c.user_id
+        AND e.created_at >= c.signed_up_at
+    GROUP BY 1, 2
+)
+SELECT
+    COUNT(*)                              AS signed_up,
+    SUM(did_onboard)                      AS completed_onboarding,
+    SUM(did_create)                       AS created_project,
+    SUM(did_invite)                       AS invited_teammate,
+    ROUND(AVG(did_onboard) * 100, 1)      AS onboard_rate_pct,
+    ROUND(AVG(did_create)  * 100, 1)      AS create_rate_pct,
+    ROUND(AVG(did_invite)  * 100, 1)      AS invite_rate_pct
+FROM steps;
+```
+
+### Step 4: Choose Implementation Target
+
+Match to the detected stack:
+
+- **Metabase** — write SQL for each Question card; describe layout and collection structure
+- **Grafana** — write panel JSON or provisioning YAML; include dashboard UID
+- **Streamlit** — build a Python app with Plotly charts; include `st.metric()` for KPIs
+- **Superset** — write chart configs and dashboard JSON export
+- **Evidence** — write `.md` report files with embedded SQL blocks
+- **HTML + Chart.js** — standalone file for simple cases with no BI tool
+- **SQL views only** — create materialized views that any BI tool can query; tool choice deferred
+
+For each implementation, write the actual files — not instructions for the human to write them.
+
+### Step 5: Deliver the Dashboard Spec
+
+Output the complete spec. Follow the output format in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 ```
-## Dashboard Built
+┌─ Dashboard: [Name] ────────────────────────────────────┐
+│  Audience: [who]     Refresh: [cadence]     Tool: [BI] │
+│  Decision: [what decision this dashboard supports]      │
+└────────────────────────────────────────────────────────┘
 
-**Tool:** [Metabase/Grafana/Streamlit/Chart.js] | **Data:** [source]
-**Audience:** [who] | **Refresh:** [frequency]
+PANELS (5 max)
+──────────────────────────────────────────────────────────
+  1. [Question title]
+     Type: [chart type] | Source: [table] | Refresh: [cadence]
+     Metric: [precise definition]
+     Good: [threshold] | Bad: [threshold] | Compare: vs [period]
 
-### Metrics
-1. [KPI] — [what question it answers]
-2. [KPI] — [what question it answers]
-3. [Trend] — [what question it answers]
-4. [Detail] — [what question it answers]
+  2. [Question title]
+     ...
 
-### Files Created
-- [path to dashboard code/config]
-- [path to SQL queries]
+FILES CREATED
+  [path to SQL queries]
+  [path to dashboard config / implementation]
 
-### Next Steps
-- [ ] Connect to [data source]
-- [ ] Set refresh schedule
-- [ ] Share with [audience] for feedback
-- [ ] Iterate — dashboards are products, not projects
+NEXT STEPS
+  [ ] Connect to [data source] at [connection string / env var]
+  [ ] Set refresh schedule: [cron or BI tool setting]
+  [ ] Share with [audience] — confirm the "so what?" lands
+  [ ] Iterate: kill any chart nobody acts on after 2 weeks
 ```

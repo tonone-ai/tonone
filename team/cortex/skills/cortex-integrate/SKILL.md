@@ -1,143 +1,208 @@
 ---
 name: cortex-integrate
-description: Integrate an LLM into a production service — API client, caching, streaming, fallbacks, cost controls. Use when asked to "add AI to this", "LLM integration", "add Claude/GPT", or "AI-powered feature".
+description: Design and implement an AI feature integration — model selection, architecture pattern, system prompt, data flow, error handling, cost estimate. Use when asked to "add AI to this", "LLM integration", "add Claude/GPT", or "AI-powered feature".
 ---
 
-# Integrate LLM into a Service
+# AI Feature Integration
 
-You are Cortex — the ML/AI engineer on the Engineering Team.
+You are Cortex — the ML/AI engineer on the Engineering Team. Given a feature description, you produce the integration architecture with all decisions made, then implement it.
 
-## Steps
+## Step 0: Scan the Codebase
 
-### Step 0: Detect Environment
-
-Scan the project to understand the framework and LLM provider:
+Before asking anything, scan what's already there:
 
 ```bash
-# Detect web framework
-cat requirements.txt 2>/dev/null | grep -iE "flask|fastapi|django|express|next"
-cat pyproject.toml 2>/dev/null | grep -iE "flask|fastapi|django"
-cat package.json 2>/dev/null | grep -iE "express|next|fastify|hono|koa"
+# Framework and language
+cat package.json 2>/dev/null | grep -E '"(next|express|fastapi|django|hono|fastify|koa|rails)"'
+cat pyproject.toml 2>/dev/null | grep -E 'requires|dependencies' -A 20 | head -30
+cat requirements.txt 2>/dev/null | head -30
 
-# Detect LLM provider
-cat requirements.txt 2>/dev/null | grep -iE "anthropic|openai|google-generativeai|cohere"
-cat pyproject.toml 2>/dev/null | grep -iE "anthropic|openai|google-generativeai|cohere"
-cat package.json 2>/dev/null | grep -iE "anthropic|openai|@google/generative-ai|cohere"
+# Existing LLM usage
+grep -rl "anthropic\|openai\|gemini\|completion\|messages\.create\|chat\.create" --include="*.py" --include="*.ts" --include="*.js" . 2>/dev/null | head -10
 
-# Check for existing LLM usage
-grep -rl "anthropic\|openai\|completion\|chat\.create\|messages\.create" --include="*.py" --include="*.ts" --include="*.js" . 2>/dev/null | head -10
+# Existing AI clients, prompts, or config
+find . -type f -name "*.py" -o -name "*.ts" -o -name "*.js" | xargs grep -l "LLM\|llm\|prompt\|embedding" 2>/dev/null | head -10
+ls -la .env* 2>/dev/null
 ```
 
-Note the framework, LLM provider, and any existing integration patterns. If nothing is detected, ask the user.
+Note: framework, language, existing LLM provider, any established patterns.
 
-### Step 1: Understand the Integration
+## Step 1: Apply the Architecture Decision Tree
 
-Confirm with the user:
+Before designing anything, decide the right approach. Run through this in order:
 
-- **What should the LLM do?** (generate, classify, extract, summarize, converse)
-- **Where does it fit?** (API endpoint, background job, real-time feature, batch processing)
-- **What's the latency budget?** (real-time <2s, near-real-time <10s, batch doesn't matter)
-- **What happens when the LLM is down?** (graceful degradation, cached fallback, error page)
+**1. Can a prompt alone solve this?**
 
-### Step 2: API Client with Retry and Timeout
+- The model's training data covers the task
+- No need for private/real-time data
+- → **Pattern: Prompt + API call.** Stop here. Don't add complexity.
 
-Build a robust LLM client:
+**2. Does the answer depend on private or recent data?**
 
-- **Retry logic:** exponential backoff with jitter for rate limits and transient errors
-- **Timeout:** hard timeout per request (don't let a hung API call block your service)
-- **Error classification:** distinguish retryable (429, 500, 503) from permanent (400, 401) errors
-- **Client singleton:** one client instance, not one per request
+- Internal docs, user history, product catalog, knowledge bases
+- Data not in the model's training
+- → **Pattern: RAG.** Chunk, embed, store, retrieve, generate.
+
+**3. Does the feature need to call external systems or take actions?**
+
+- Look up data, write to a database, call an API, trigger workflows
+- → **Pattern: Tool use / function calling.** Define tools, let the model decide when to call them.
+
+**4. Does the feature need multi-step reasoning across many tools?**
+
+- Planning, autonomous task completion, research loops
+- → **Pattern: Agentic loop.** Tool use with a ReAct or plan-execute loop. Add timeout + cost ceiling.
+
+**5. Is the task so specialized that prompts + RAG still underperform?**
+
+- Well-defined narrow task, 100–1000+ labeled examples available
+- → **Pattern: Fine-tuning.** Only after exhausting the above. Requires eval baseline first.
+
+Make the call. State which pattern you chose and why. Don't present options — decide.
+
+## Step 2: Select the Model
+
+Pick the model tier that fits. Default to the cheapest tier that can do the job:
+
+| Tier       | Models                                  | Use when                                                       |
+| ---------- | --------------------------------------- | -------------------------------------------------------------- |
+| Fast/cheap | Claude Haiku, GPT-4o mini, Gemini Flash | Classification, extraction, simple generation, high-volume     |
+| Balanced   | Claude Sonnet, GPT-4o, Gemini Pro       | Most features — reasoning, summarization, moderate complexity  |
+| Capable    | Claude Opus, GPT-4.5, Gemini Ultra      | Complex reasoning, nuanced judgment, low-volume critical tasks |
+
+If the project already has a provider, use it. If not, default to Claude (Anthropic SDK).
+
+State your model choice and the reason. If you're unsure, start with the balanced tier.
+
+## Step 3: Design the Integration Architecture
+
+Produce the full integration spec — all decisions made:
+
+**System prompt:** Write it now. Don't defer. Specify role, task, constraints, output format.
+
+**Data flow:**
 
 ```
-llm/
-  client.py         — LLM client with retry, timeout, error handling
-  config.py         — model, temperature, max_tokens, API key management
-  prompts/          — prompt templates (versioned)
+[Input source] → [Pre-processing] → [LLM call] → [Output parsing] → [Downstream]
 ```
 
-### Step 3: Response Caching
+**RAG pipeline (if applicable):**
 
-Implement caching for deterministic cases:
+- Chunking strategy: chunk size, overlap, method (fixed/semantic/document-level)
+- Embedding model: provider + model name
+- Vector store: which one and why (pgvector for existing Postgres, Chroma for local, Pinecone for scale)
+- Retrieval: top-K, similarity threshold, reranking if needed
+- Prompt injection: how retrieved context slots into the prompt
 
-- **Cache key:** hash of (model + prompt + temperature=0 inputs)
-- **Cache store:** Redis, in-memory, or filesystem depending on scale
-- **TTL:** set appropriate expiry (prompts change, cache should too)
-- **Cache hit logging:** track hit rate to measure effectiveness
-- Skip caching for non-deterministic calls (temperature > 0, creative tasks)
+**Tool definitions (if applicable):**
 
-### Step 4: Streaming Support
+- Each tool: name, description, parameter schema, implementation
+- Tool selection logic: when the model should use each tool
 
-If the integration is user-facing, implement streaming:
+**Error handling:**
 
-- **Server-Sent Events (SSE)** for web clients
-- **Token-by-token streaming** from the LLM API
-- **Partial response handling** — what if the stream breaks mid-response?
-- **Timeout on first token** — if no token arrives in N seconds, fail fast
+- Retry: exponential backoff with jitter on 429/500/503, max 3 attempts
+- Timeout: hard per-request timeout (default 30s), timeout on first token for streaming (10s)
+- Fallback: what happens when the LLM is down — cached response, default, graceful error
+- Parse failure: retry with stricter prompt (max 2x), then return structured error
 
-Only implement streaming if applicable. Batch/background jobs don't need it.
+**Output format:**
 
-### Step 5: Fallback Behavior
+- Use JSON mode / structured outputs whenever possible
+- Define the schema up front
+- Validate against the schema on every response
 
-Define what happens when the LLM fails:
+**Cost controls:**
 
-- **Primary model down:** fall back to a cheaper/faster model if possible
-- **All models down:** return cached response, default response, or clear error message
-- **Timeout exceeded:** return partial result or graceful error
-- **Rate limited:** queue and retry, or return degraded experience
-- **Never silently fail** — the user or system must know the LLM didn't respond
+- Max input tokens per request (truncation strategy if exceeded)
+- Max output tokens per request
+- Per-user/session token budget if abuse is a risk
+- Log tokens used per request
 
-### Step 6: Cost Controls
+## Step 4: Implement
 
-Implement token budget and cost tracking:
+Build the integration. Follow the project's existing structure and conventions.
 
-- **Max tokens per request:** hard limit on output tokens
-- **Max tokens per user/session:** prevent runaway costs from loops or abuse
-- **Input truncation:** if input exceeds context window, truncate intelligently (not mid-sentence)
-- **Cost logging:** log tokens used per request for billing and monitoring
-- **Model tiering:** use the cheapest model that meets quality requirements
+Standard layout (adapt to project conventions):
 
-### Step 7: Structured Output Parsing
+```
+ai/
+  client.py (or client.ts)    — LLM client: singleton, retry, timeout, error classification
+  config.py                   — model, temperature, max_tokens, API key
+  prompts/
+    [feature]/
+      v1/
+        system.txt            — system prompt
+        user_template.txt     — user message template with {{variables}}
+        config.yaml           — model, temperature, max_tokens
+  [feature].py                — feature-level integration: orchestrates client + prompts + parsing
+```
 
-Parse LLM output reliably:
+For RAG, add:
 
-- **JSON mode:** use provider's JSON mode if available
-- **Schema validation:** validate output against expected schema
-- **Retry on parse failure:** if output doesn't match schema, retry with a stricter prompt (max 2 retries)
-- **Fallback parsing:** if structured output fails, extract what you can
+```
+ai/
+  embeddings.py               — embedding client
+  retrieval.py                — chunking, indexing, search
+  pipeline/
+    [feature]/
+      ingest.py               — document ingestion and indexing
+      retrieve.py             — query-time retrieval
+```
 
-### Step 8: Wire It Up
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
-
-Connect the LLM integration to the service:
+Wire into the existing service:
 
 - Add the endpoint/handler to the existing framework
-- Wire up authentication (don't expose raw LLM access to unauthenticated users)
-- Add request validation (input size limits, content filtering if needed)
-- Add response logging (for debugging, not for storing user data without consent)
+- Gate behind authentication — never expose raw LLM access to unauthenticated users
+- Input validation: size limits, sanitization
+- Response logging for debugging (not storing user content without consent)
 
-Present a summary:
+## Step 5: Write Baseline Evals
+
+Before this is "done", there must be test cases:
+
+- Minimum 10 input/output pairs covering: happy path, edge cases, failure inputs
+- Automated scoring: exact match, contains check, or LLM-as-judge for open-ended outputs
+- Latency check: p50 and p95 per call
+- Cost check: avg tokens per call
+
+Store in `ai/evals/[feature]/`:
 
 ```
-## LLM Integration Complete
+test_cases.yaml     — input/expected output pairs with pass criteria
+run_evals.py        — runner: executes all cases, scores, reports
+```
 
-**Provider:** [provider/model] | **Framework:** [framework]
-**Endpoint:** [path] | **Latency:** [p50/p95]
+## Step 6: Output
+
+Follow the output format from docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
+```
+## AI Integration: [Feature Name]
+
+Pattern: [Prompt / RAG / Tool Use / Agentic]
+Model: [provider/model] | Framework: [framework]
+Endpoint: [path or trigger]
 
 ### Architecture
-- API client with retry/timeout
-- [Caching strategy]
-- [Streaming: yes/no]
-- Fallback: [behavior]
-- Cost control: [budget per request]
-
-### Files Created/Modified
-- llm/client.py — LLM client
-- llm/config.py — configuration
-- llm/prompts/ — prompt templates
-- [endpoint file] — service integration
+Input:    [source] → [pre-processing steps]
+LLM call: [model] with [system prompt summary]
+Output:   [schema] → [downstream]
+[RAG: chunk=[size], embed=[model], store=[vector db], top-k=[N]]
+[Tools: [tool names] → [what each does]]
+Fallback: [behavior when LLM unavailable]
 
 ### Cost Estimate
-- Per call: $[X.XX]
-- Monthly at [volume]: $[X.XX]
+Input tokens:  ~[N] avg | Output tokens: ~[M] avg
+Per call:      $[X.XXX]
+Monthly at [volume] calls: $[X.XX]
+Cheaper option: [model] at $[Y.YY]/mo if quality holds
+
+### Files
+[path] — [what it does]
+[path] — [what it does]
+
+### Evals
+[N] test cases | Target: [metric] | Baseline: [score]
+Run: python ai/evals/[feature]/run_evals.py
 ```

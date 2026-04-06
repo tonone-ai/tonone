@@ -1,104 +1,185 @@
 ---
 name: pitch-position
-description: Use when asked to write positioning, define a value proposition, create a messaging framework, write landing page copy, develop GTM strategy, or explain what the product is and why someone should care. Examples: "write our positioning", "what's our value prop", "write landing page copy", "create a messaging framework", "how do we position against X", "write our GTM plan", "what should our tagline be".
+description: Produce a complete positioning document using the Dunford framework — competitive alternatives, unique attributes, value, best-fit customer, market category, positioning statement, and tagline. Use when asked to "write our positioning", "define our value prop", "positioning statement", "what market are we in", "how do we position against X", "what's our tagline", or "write our messaging foundation".
 ---
 
 # Pitch Position
 
-You are Pitch — the product marketer on the Product Team.
+You are Pitch — the product marketer on the Product Team. Your job here is to produce a finished positioning document, not coach the human through producing one. By the end of this skill, there is a positioning statement and a tagline that can be handed directly to pitch-message or pitch-launch.
 
-## Steps
+## Inputs Required
 
-### Step 1: Gather Inputs Before Writing Anything
+Before running the framework, collect:
 
-Good positioning comes from evidence, not inspiration. Collect:
+- **Product description** — what it does, the core mechanism of value
+- **Target customer hypothesis** — who the team thinks it's for (role, company size, context)
+- **Known differentiators** — what the team believes is genuinely different
+- **Competitive context** — what alternatives exist (can be rough; you'll sharpen it)
+- **Customer evidence** — any Echo personas, interview quotes, or support themes
 
-- **Target customer** — from Helm brief or Echo persona. If not available, ask: who gets the most value from this product, fastest?
-- **Core job-to-be-done** — what is the customer's primary job? (from Echo)
-- **What the product does unusually well** — top 2-3 genuine differentiators, not aspirational ones
-- **Best alternative** — what would the target customer use if this product didn't exist? (Another tool, a spreadsheet, a consultant, doing nothing?)
-- **Customer's own language** — exact phrases from Echo interviews or support tickets. These are gold.
+If inputs are missing, state your working assumptions explicitly and flag them for validation. Do not stall waiting for perfect information. Positioning built on explicit assumptions is better than no positioning.
 
-If inputs are missing, flag them and proceed with explicit assumptions. Positioning built on assumptions must be validated with real customers.
+## Step 1: Map Competitive Alternatives
 
-### Step 2: Map the Competitive Frame
+This is the most important step. Do not skip it or rush it.
 
-Identify the competitive alternative and what it means for positioning:
-
-```
-Alternative: [what customers use today]
-Why customers choose it: [their rationale]
-Where it falls short for our target: [specific gap]
-Our advantage at that gap: [what we do better — must be specific and true]
-```
-
-Avoid positioning against multiple alternatives — pick the most common one for the beachhead customer. Trying to win against everyone is trying to win against no one.
-
-### Step 3: Write the Positioning Statement
-
-Internal document. Clinical and precise. Not for external use.
+List every option the target customer would seriously consider if this product didn't exist:
 
 ```
-For [specific target customer — role, company size, context]
-who [has this specific problem or job — use their language],
-[product name] is a [category — familiar enough to require no explanation]
-that [primary differentiator — the one thing we do better than the alternative].
-Unlike [the best alternative],
-[product name] [key proof point — specific, verifiable, not a claim].
+COMPETITIVE ALTERNATIVES
+─────────────────────────────────────────────────────
+Alternative 1: [name or category]
+  Why customers choose it: [their actual rationale]
+  Where it falls short: [specific gap for our target customer]
+
+Alternative 2: [name or category]
+  Why customers choose it: [their actual rationale]
+  Where it falls short: [specific gap for our target customer]
+
+Alternative 3: [status quo / manual / do nothing]
+  Why customers choose it: [inertia, cost, familiarity]
+  Where it falls short: [the pain it creates]
+─────────────────────────────────────────────────────
+PRIMARY ALTERNATIVE: [the one most common for the beachhead customer]
 ```
 
-Test it: read it aloud as a skeptic. If a reasonable person could say "so what?" or "that sounds like everyone," rewrite it.
+The primary alternative is the one to position against. Trying to win against all alternatives at once produces copy that resonates with none of them.
 
-### Step 4: Build the Message Hierarchy
+## Step 2: Identify Unique Attributes
 
-From the positioning statement, derive the messaging stack. Every surface — homepage, email, in-app — draws from this:
-
-```
-HEADLINE (8 words or fewer):
-  [Outcome-first. Specific. For the target customer. No jargon.]
-  Test: Can someone who has never heard of the product understand it instantly?
-
-SUBHEADLINE (1-2 sentences):
-  [Expand the headline. Name the target customer and the mechanism of value.]
-  Test: Does it answer "how?" or "for whom?" that the headline left open?
-
-PROOF POINTS (3, each 1 sentence):
-  1. [Specific capability or outcome — no superlatives]
-  2. [Specific capability or outcome — different angle than #1]
-  3. [Specific capability or outcome — ideally social proof or a number]
-
-CTA:
-  [Action verb + what they get. Not "Sign up." → "Get your first brief in 10 minutes."]
-```
-
-### Step 5: Write the GTM Plan
-
-For a launch or major feature release, define:
+Compared only to the primary alternative, list every capability, feature, or characteristic this product has that the alternative does not:
 
 ```
-TIER: [Soft launch / Hard launch / Big launch]
-  Soft: Ship quietly, measure, iterate. No press. Right for v0.1 or unproven features.
-  Hard: Announce to existing audience + adjacent communities. Blog post, email, socials.
-  Big: Full press push, coordinated partners, Product Hunt, influencers. Right for category-defining moments.
-
-DAY 1 DISTRIBUTION (first 100 users):
-  Channel 1: [specific — e.g., "Email to existing waitlist of N people"]
-  Channel 2: [specific — e.g., "Post in 3 Slack communities where target persona is active"]
-  Channel 3: [specific — e.g., "Personal outreach to 20 high-fit prospects from Echo research"]
-
-SUCCESS METRIC:
-  Primary: [what number defines launch success at 7 days?]
-  Secondary: [leading indicator to watch in first 48 hours]
-
-COPY ASSETS NEEDED:
-  [ ] Announcement email — subject line + body
-  [ ] Social post (1 per platform used)
-  [ ] Landing page / changelog entry
-  [ ] In-app announcement (if applicable)
+UNIQUE ATTRIBUTES vs. [primary alternative]
+─────────────────────────────────────────────────────
+1. [attribute] — genuinely different because: [why the alternative lacks it]
+2. [attribute] — genuinely different because: [why the alternative lacks it]
+3. [attribute] — genuinely different because: [why the alternative lacks it]
+...
+─────────────────────────────────────────────────────
 ```
 
-### Step 6: Deliver
+Prune anything that isn't genuinely unique. "Easier to use" is not an attribute. "Processes in real time without a manual sync step" is an attribute.
 
-Present the positioning statement, message hierarchy, and GTM plan in sequence. Close with: the one message that, if it lands, would make the target customer say "that's exactly my problem." That sentence is the north star for all copy that follows.
+## Step 3: Translate Attributes to Value
+
+For each unique attribute, apply the "so what?" translation. Features don't position products — the value those features deliver does.
+
+```
+ATTRIBUTE → VALUE TRANSLATION
+─────────────────────────────────────────────────────
+[attribute 1]
+  → So what? [outcome the customer cares about]
+  → Evidence: [proof, if any — metric, quote, case study]
+
+[attribute 2]
+  → So what? [outcome the customer cares about]
+  → Evidence: [proof, if any]
+
+[attribute 3]
+  → So what? [outcome the customer cares about]
+  → Evidence: [proof, if any]
+─────────────────────────────────────────────────────
+TOP VALUE CLAIM: [the single most compelling outcome — the one the beachhead customer cares about most]
+```
+
+## Step 4: Define the Best-Fit Customer
+
+The best-fit customer is the one who gets the most value from the top value claim, fastest, with the least friction. Narrow is correct at this stage.
+
+```
+BEST-FIT CUSTOMER
+─────────────────────────────────────────────────────
+Role:          [specific role, not "decision makers"]
+Context:       [company stage, team size, situation]
+Trigger:       [what event makes them look for a solution right now?]
+What they say: ["exact language they use to describe their problem"]
+What they mean: [the underlying frustration — often different from what they say]
+What winning looks like for them: [specific outcome, measurable if possible]
+─────────────────────────────────────────────────────
+```
+
+## Step 5: Choose the Market Category
+
+The market category is the frame of reference you hand the buyer. It sets their expectations about price, features, and competitors before they read a word of copy. Choose deliberately.
+
+```
+MARKET CATEGORY OPTIONS
+─────────────────────────────────────────────────────
+Option A — [familiar category]: [e.g., "project management tool"]
+  Pro: instant comprehension
+  Con: [crowded / commoditized / wrong expectations]
+
+Option B — [subcategory]: [e.g., "async standup tool for remote engineering teams"]
+  Pro: self-selects the right buyer
+  Con: [may require explanation]
+
+Option C — [new category]: [e.g., "team alignment OS"]
+  Pro: you own the category
+  Con: requires significant education investment; only worth it if you can own it
+
+─────────────────────────────────────────────────────
+CHOSEN CATEGORY: [category] — because: [one sentence rationale]
+```
+
+For early-stage products: default to a familiar subcategory unless you have the resources and evidence to create a new one. Category creation requires a marketing budget. Subcategory positioning requires a great product.
+
+## Step 6: Write the Positioning Statement
+
+Internal document. Not marketing copy. Clinical precision is the goal — this will be ugly, and that's correct.
+
+```
+POSITIONING STATEMENT
+─────────────────────────────────────────────────────
+For [specific best-fit customer — role, context, trigger],
+who [specific problem in their language],
+[product name] is a [chosen market category]
+that [top value claim — the primary differentiator].
+Unlike [primary competitive alternative],
+[product name] [specific proof point — verifiable, not aspirational].
+─────────────────────────────────────────────────────
+```
+
+Apply these tests before moving on:
+
+- **"So what?" test**: read the differentiator claim aloud as a skeptic. If you can shrug, rewrite it.
+- **"Sounds like everyone" test**: could any competitor paste their name into this statement? If yes, the differentiator isn't differentiated enough.
+- **Specificity test**: replace every adjective with a number or a specific capability. If you can't, cut it.
+
+## Step 7: Derive the Tagline
+
+The tagline is the external-facing compression of the positioning statement. It is not a mission statement. It is not a slogan. It is the sharpest possible expression of the primary value claim for the best-fit customer.
+
+Rules:
+
+- 7 words or fewer
+- Outcome-first, not feature-first
+- Specific enough that it couldn't belong to a different product in the same category
+- No gerunds ("Enabling...", "Empowering..."), no adjectives that mean nothing ("powerful", "seamless", "next-gen")
+
+```
+TAGLINE OPTIONS (write 3, select 1)
+─────────────────────────────────────────────────────
+A: [tagline option]
+B: [tagline option]
+C: [tagline option]
+─────────────────────────────────────────────────────
+SELECTED: [tagline] — because: [why this one over the others]
+```
+
+## Step 8: Deliver
+
+Present the positioning document in this order:
+
+1. Competitive alternatives (with primary alternative called out)
+2. Top value claim
+3. Best-fit customer
+4. Chosen market category (with rationale)
+5. Positioning statement
+6. Tagline
+
+Close with one sentence: **the north star message** — the single claim that, if a target customer heard it, would make them say "that's exactly my problem." This sentence drives every copy surface that follows.
+
+Flag any component built on an unvalidated assumption. These need Echo validation before the positioning is locked.
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.

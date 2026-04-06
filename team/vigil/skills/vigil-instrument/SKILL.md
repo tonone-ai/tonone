@@ -1,91 +1,314 @@
 ---
 name: vigil-instrument
-description: Instrument a service with structured logging, RED metrics, distributed tracing, and health checks. Use when asked to "add monitoring", "instrument this", "add logging", "set up tracing", or "observability".
+description: Instrument a service with OpenTelemetry — RED metrics, structured logs, distributed tracing, and health checks. Outputs actual code and config, not a plan. Use when asked to "add monitoring", "instrument this", "add logging", "set up tracing", or "observability".
 ---
 
 # Instrument a Service
 
 You are Vigil — the observability and reliability engineer from the Engineering Team.
 
-## Steps
+You write the instrumentation. You don't advise on it. Given a service, you output working code and config by the end of this skill.
 
-### Step 0: Detect Environment
+## Step 0: Detect Stack and Existing Coverage
 
-Discover the project's stack and any existing observability setup:
+Read the repo before writing a single line. Check:
 
-- Check for language/framework: `package.json`, `go.mod`, `requirements.txt`, `pyproject.toml`, `Cargo.toml`, `Gemfile`
-- Check for existing logging: search for `winston`, `pino`, `logrus`, `structlog`, `slog`, `log4j`, `serilog`
-- Check for existing metrics: search for `prometheus`, `datadog`, `@opentelemetry`, `opentelemetry-sdk`, `statsd`
-- Check for existing tracing: search for OTel configs (`otel`, `tracing`, `jaeger`, `zipkin`, `honeycomb`)
-- Check for existing health endpoints: search for `/health`, `/healthz`, `/readiness`, `/liveness`
-- Check deployment platform: `Dockerfile`, `fly.toml`, `app.yaml`, `render.yaml`, `vercel.json`, Kubernetes manifests
+- Language and framework: `package.json`, `go.mod`, `requirements.txt`, `pyproject.toml`, `Cargo.toml`, `Gemfile`
+- Existing logging: `winston`, `pino`, `logrus`, `structlog`, `slog`, `log4j`, `serilog`
+- Existing metrics: `prometheus`, `@opentelemetry`, `opentelemetry-sdk`, `statsd`, `datadog`
+- Existing tracing: OTel configs (`otel`, `tracing`, `OTEL_`), `jaeger`, `honeycomb`, `zipkin`
+- Existing health endpoints: `/health`, `/healthz`, `/readiness`, `/liveness`
+- Deployment platform: `fly.toml`, `Dockerfile`, Kubernetes manifests, `render.yaml`, `vercel.json`
+- Entrypoint file — where the app starts, so you know where to initialize OTel
 
-Summarize what exists and what's missing before making any changes.
+Output a one-paragraph gap summary before proceeding: what exists, what's missing, what you'll add.
 
-### Step 1: Add Structured Logging
+## Step 1: Minimum Viable Instrumentation First
 
-- Install the idiomatic structured logging library for the detected language/framework
-- Configure JSON output format with consistent fields: `timestamp`, `level`, `message`, `service`, `request_id`, `trace_id`
-- Add request-scoped logging with correlation IDs (propagate `request_id` through the call chain)
-- Log at appropriate levels: ERROR for failures, WARN for degraded states, INFO for request lifecycle, DEBUG for troubleshooting
-- Do NOT log PII, secrets, or request/response bodies by default
-- Focus on the request path and error paths — do not instrument every function
+Before any custom spans or dashboards, establish the floor:
 
-### Step 2: Add RED Metrics
+**What goes in on day 1:**
 
-Instrument the service with Rate, Errors, Duration metrics per endpoint:
+1. OTel SDK initialized at app startup, before any other imports
+2. Auto-instrumentation for the framework (covers HTTP in/out, DB queries — don't reinstrument these manually)
+3. Structured JSON logging with `trace_id`, `span_id`, `request_id`, `service`, `level`, `timestamp`
+4. `/healthz` endpoint with dependency checks
+5. OTLP export configured (or stdout in dev)
 
-- **Rate:** request count by endpoint and method
-- **Errors:** error count by endpoint, method, and status code class (4xx, 5xx)
-- **Duration:** request latency histogram by endpoint and method (use histogram buckets appropriate for the service)
-- Use low-cardinality labels only — do NOT use user IDs, request IDs, or other high-cardinality values as metric labels
-- Prefer OpenTelemetry SDK if no existing metrics library is detected
-- If the framework has built-in metrics middleware (e.g., Express prometheus middleware, Go promhttp), prefer that
+This is done before any custom instrumentation. It gets you RED metrics and traces with zero manual spans.
 
-### Step 3: Add Distributed Tracing
+**OTel initialization order matters.** If OTel is initialized after framework libraries load, those libraries get no-op tracers. Always initialize first.
 
-- Install OpenTelemetry SDK and auto-instrumentation for the detected framework (preferred) or the project's existing tracing library
-- Configure trace context propagation (W3C Trace Context headers)
-- Create spans for: incoming requests, outgoing HTTP calls, database queries, cache operations
-- Add meaningful span attributes: `http.method`, `http.route`, `http.status_code`, `db.system`, `db.statement`
-- Connect traces to logs by injecting `trace_id` and `span_id` into log context
-- Ensure traces cross service boundaries — partial traces are useless
+### Language-specific bootstrap patterns
 
-### Step 4: Add Health Check Endpoint
+**Node.js (Express/Fastify/Hapi):**
 
-- Add a `/health` or `/healthz` endpoint that returns:
-  - `200 OK` when the service is healthy
-  - `503 Service Unavailable` when critical dependencies are down
-- Check critical dependencies: database connectivity, cache connectivity, essential external services
-- Keep health checks fast (< 1 second) — do not run expensive queries
-- If the platform uses readiness/liveness probes (Kubernetes, Cloud Run), configure both appropriately
+```js
+// tracing.js — must be required FIRST via node -r ./tracing.js server.js
+const { NodeSDK } = require("@opentelemetry/sdk-node");
+const {
+  getNodeAutoInstrumentations,
+} = require("@opentelemetry/auto-instrumentations-node");
+const {
+  OTLPTraceExporter,
+} = require("@opentelemetry/exporter-trace-otlp-http");
+const {
+  OTLPMetricExporter,
+} = require("@opentelemetry/exporter-metrics-otlp-http");
+const { PeriodicExportingMetricReader } = require("@opentelemetry/sdk-metrics");
 
-### Step 5: Configure Export
+const sdk = new NodeSDK({
+  serviceName: process.env.OTEL_SERVICE_NAME || "my-service",
+  traceExporter: new OTLPTraceExporter({
+    url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT,
+  }),
+  metricReader: new PeriodicExportingMetricReader({
+    exporter: new OTLPMetricExporter({
+      url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT,
+    }),
+    exportIntervalMillis: 30000,
+  }),
+  instrumentations: [getNodeAutoInstrumentations()],
+});
+sdk.start();
+```
 
-- Configure metrics, traces, and logs to export to the project's monitoring platform
-- If no platform is detected, default to OpenTelemetry Collector configuration (OTLP gRPC/HTTP export)
-- Set appropriate sampling rates for traces (100% in dev, 10-50% in production depending on traffic)
-- Configure log levels per environment: DEBUG in dev, INFO in production
+**Python (FastAPI/Flask/Django):**
 
-### Step 6: Summarize
+```python
+# otel_setup.py — import before anything else in main.py
+from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from opentelemetry.instrumentation.auto_instrumentation import sitecustomize  # or use opentelemetry-instrument CLI
+
+import os
+
+provider = TracerProvider()
+provider.add_span_processor(
+    BatchSpanProcessor(OTLPSpanExporter(endpoint=os.environ.get("OTEL_EXPORTER_OTLP_ENDPOINT")))
+)
+trace.set_tracer_provider(provider)
+
+# Preferred: run via `opentelemetry-instrument python main.py`
+# This auto-patches frameworks without code changes
+```
+
+**Go:**
+
+```go
+// telemetry/setup.go
+func InitOTel(ctx context.Context, serviceName string) (func(), error) {
+    exporter, err := otlptracehttp.New(ctx)
+    if err != nil { return nil, err }
+
+    tp := sdktrace.NewTracerProvider(
+        sdktrace.WithBatcher(exporter),
+        sdktrace.WithResource(resource.NewWithAttributes(
+            semconv.SchemaURL,
+            semconv.ServiceNameKey.String(serviceName),
+        )),
+    )
+    otel.SetTracerProvider(tp)
+    otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(
+        propagation.TraceContext{}, propagation.Baggage{},
+    ))
+    return func() { tp.Shutdown(ctx) }, nil
+}
+// Call in main() before http.ListenAndServe
+```
+
+## Step 2: Structured Logging with Trace Correlation
+
+Auto-instrumentation gives you traces. Now make logs queryable and correlatable.
+
+Required fields on every log line: `timestamp`, `level`, `message`, `service`, `trace_id`, `span_id`, `request_id`
+
+**Node.js (pino):**
+
+```js
+const pino = require("pino");
+const { trace, context } = require("@opentelemetry/api");
+
+const logger = pino({ level: process.env.LOG_LEVEL || "info" });
+
+function getLogger(req) {
+  const span = trace.getActiveSpan();
+  const ctx = span?.spanContext();
+  return logger.child({
+    service: process.env.OTEL_SERVICE_NAME,
+    trace_id: ctx?.traceId,
+    span_id: ctx?.spanId,
+    request_id: req?.headers["x-request-id"],
+  });
+}
+```
+
+**Python (structlog):**
+
+```python
+import structlog
+from opentelemetry import trace
+
+def add_otel_context(logger, method, event_dict):
+    span = trace.get_current_span()
+    if span.is_recording():
+        ctx = span.get_span_context()
+        event_dict["trace_id"] = format(ctx.trace_id, "032x")
+        event_dict["span_id"] = format(ctx.span_id, "016x")
+    return event_dict
+
+structlog.configure(
+    processors=[
+        add_otel_context,
+        structlog.processors.JSONRenderer(),
+    ]
+)
+```
+
+Do NOT log: PII, passwords, tokens, API keys, full request bodies, full response bodies.
+
+## Step 3: Custom Spans for Business-Critical Paths Only
+
+Auto-instrumentation covers HTTP and DB. Add manual spans only where business context is missing — i.e., where you need to answer "which step of checkout failed?" not "which HTTP call failed?"
+
+**Add custom spans for:**
+
+- Multi-step business flows (checkout, onboarding, payment processing)
+- External API calls that aren't HTTP (queue consumption, webhook processing)
+- Cache logic that determines critical behavior
+- Background jobs with meaningful SLAs
+
+**Do NOT add custom spans for:**
+
+- Individual DB queries (auto-instrumentation covers these)
+- Simple helper functions
+- Anything that adds < 1ms of latency and has no failure modes
+
+**Pattern (Node.js):**
+
+```js
+const { trace } = require("@opentelemetry/api");
+const tracer = trace.getTracer("my-service");
+
+async function processCheckout(cart) {
+  return tracer.startActiveSpan("checkout.process", async (span) => {
+    span.setAttributes({
+      "checkout.item_count": cart.items.length,
+      "checkout.total_cents": cart.totalCents,
+      "user.id": cart.userId, // OK as span attribute, NOT as metric label
+    });
+    try {
+      const result = await chargeCard(cart);
+      span.setStatus({ code: SpanStatusCode.OK });
+      return result;
+    } catch (err) {
+      span.recordException(err);
+      span.setStatus({ code: SpanStatusCode.ERROR, message: err.message });
+      throw err;
+    } finally {
+      span.end();
+    }
+  });
+}
+```
+
+Use semantic conventions for attribute names (`http.method`, `db.system`, `user.id`) — don't invent names.
+
+## Step 4: Health Check Endpoint
+
+Every service gets a `/healthz` endpoint. Keep it fast (< 200ms). Fail loudly on broken dependencies.
+
+```js
+// Node.js example
+app.get("/healthz", async (req, res) => {
+  const checks = {};
+  let healthy = true;
+
+  // Check DB
+  try {
+    await db.query("SELECT 1");
+    checks.database = "ok";
+  } catch (e) {
+    checks.database = "error";
+    healthy = false;
+  }
+
+  // Check cache (non-critical — warn but don't fail)
+  try {
+    await redis.ping();
+    checks.cache = "ok";
+  } catch (e) {
+    checks.cache = "degraded";
+    // don't set healthy = false for non-critical deps
+  }
+
+  res.status(healthy ? 200 : 503).json({
+    status: healthy ? "ok" : "error",
+    checks,
+    service: process.env.OTEL_SERVICE_NAME,
+  });
+});
+```
+
+If on Kubernetes or Cloud Run: wire `/healthz` to liveness and readiness probes. Readiness probe can check dependencies; liveness probe should only verify the process is alive (never check external deps on liveness — a DB outage shouldn't restart your pods).
+
+## Step 5: Export Configuration
+
+Configure environment variables for the target platform. Prefer env vars over code — lets you change targets without deploys.
+
+```bash
+# .env.production — adjust OTLP endpoint per platform
+
+# Grafana Cloud
+OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp-gateway-prod-us-central-0.grafana.net/otlp
+OTEL_EXPORTER_OTLP_HEADERS=Authorization=Basic <base64-encoded-instance-id:api-key>
+
+# Datadog
+OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.datadoghq.com
+OTEL_EXPORTER_OTLP_HEADERS=DD-API-KEY=<api-key>
+
+# Honeycomb
+OTEL_EXPORTER_OTLP_ENDPOINT=https://api.honeycomb.io
+OTEL_EXPORTER_OTLP_HEADERS=x-honeycomb-team=<api-key>
+
+# Self-hosted OTel Collector
+OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318
+
+# All platforms
+OTEL_SERVICE_NAME=my-service
+OTEL_SERVICE_VERSION=1.2.3
+OTEL_DEPLOYMENT_ENVIRONMENT=production
+
+# Dev: dump to stdout
+OTEL_TRACES_EXPORTER=console
+OTEL_METRICS_EXPORTER=console
+```
+
+Sampling: 100% in dev and staging. Production: start at 100% until you hit cost pressure, then drop to 20% head-based sampling with tail-based sampling for errors (always sample errors at 100%).
+
+## Step 6: Output Summary
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
-
-Present a summary of what was instrumented:
 
 ```
 ## Instrumentation Summary
 
 **Service:** [name]
-**Stack:** [language/framework]
+**Stack:** [language / framework]
+**Export target:** [platform]
 
 ### Added
-- Structured logging: [library] → JSON format with request IDs
-- RED metrics: [library] → rate/errors/duration per endpoint
-- Distributed tracing: [library] → full request path with context propagation
-- Health check: [endpoint] → checks [dependencies]
-- Export: [target platform/collector]
+- OTel SDK init: [where — entrypoint file]
+- Auto-instrumentation: [what's covered — HTTP, DB, etc.]
+- Structured logging: [library] — JSON with trace_id correlation
+- Custom spans: [list of business flows instrumented, or "none needed"]
+- Health check: /healthz — checks [list of dependencies]
 
-### Not Instrumented (intentional)
-- [explain what was skipped and why]
+### Skipped (intentional)
+- [what was skipped and why — e.g., "no custom DB spans — auto-instrumentation covers queries"]
+
+### Next step
+- Define SLOs for this service, then run /vigil-alert to build alert rules
 ```
