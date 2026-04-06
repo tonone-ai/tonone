@@ -32,7 +32,7 @@ How to name a new agent for the Tonone team.
 | Proof  | QA & Testing                   | 1         |
 | Pave   | Platform Engineering           | 1         |
 
-### Product Team (Sprint 1–3)
+### Product Team
 
 | Name  | Hat               | Syllables |
 | ----- | ----------------- | --------- |

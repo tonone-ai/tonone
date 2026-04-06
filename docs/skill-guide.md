@@ -85,7 +85,7 @@ description: Helps with infrastructure tasks.
 Always start the body with who the agent is:
 
 ```markdown
-You are Forge — the infrastructure engineer on the Engineering Team.
+You are Forge — the infrastructure engineer on the Tonone team.
 ```
 
 This anchors the agent's persona and expertise.

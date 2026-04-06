@@ -2,9 +2,9 @@
 
 Tonone is an open source Claude Code plugin that gives you a full company of specialized AI agents. Each department is a self-contained expansion — install only what you need.
 
-Current version: **v0.4.1**
+Current version: **v0.6.0**
 Agents: **23** (Engineering + Product teams)
-Skills: **77**
+Skills: **125**
 
 ---
 
@@ -34,19 +34,25 @@ The foundation is built. Next focus is making it solid enough for contributors t
 
 ---
 
-## Next — Complete Product Team (v1.0)
+## Next — Stability and Community (v1.0)
 
-Finish the product team expansion (Sprint 3) and stabilize both teams as the v1.0 baseline.
+Both teams are shipped. Next focus is making the foundation solid enough for contributors to extend confidently.
 
-**Product Team — Sprint 3**
+**Quality**
 
-- [ ] Crest agent — product strategy, roadmap planning, competitive analysis
-- [ ] Pitch agent — positioning, messaging, GTM, launch copy
-- [ ] `/helm-handoff` skill — end-to-end Helm → Apex brief delivery
+- [ ] Audit all 125 skill definitions for accuracy and completeness
+- [ ] Standardize skill frontmatter (name, description, trigger conditions)
+- [ ] Remove redundant or overlapping skills between agents
+
+**Plugin Reliability**
+
+- [ ] Add CI — smoke test that all skills load and parse correctly
+- [ ] Lint skill YAML/Markdown on every push
+- [ ] Fix any remaining agent routing gaps (wrong agent gets invoked)
 - [ ] `bundle/product-team/` install script
 - [ ] `bundle/full-team/` — engineering + product in one install
 
-**Release: v1.0.0** — Two teams. 23 agents. Stable, documented, community-ready.
+**Release: v1.0.0** — Two teams. 23 agents. 125 skills. Stable, documented, community-ready.
 
 ---
 

@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.1] — 2026-04-06
+
+### Changed
+
+- **README** — updated tagline from "Engineering second to none" to "Engineering + product, second to none"; added full Product team table (8 agents); expanded skill list from 77 to all 125; updated intro copy to reflect both teams
+- **ROADMAP** — bumped version to v0.6.0, skills count to 125; replaced "Complete Product Team" section (already shipped) with stability and community goals for v1.0
+- **docs/architecture.md** — corrected agent and skill counts from 15/77 to 23/125
+- **docs/agent-guide.md, docs/skill-guide.md** — updated identity line examples from "Engineering Team" to "Tonone team"
+- **docs/naming-guide.md** — removed "(Sprint 1–3)" label from Product Team section
+- **templates/new-agent** — updated agent and skill templates to use "Tonone team" instead of "Engineering Team TEAM_LABEL team"
+
 ## [0.6.0] — 2026-04-06
 
 ### Changed

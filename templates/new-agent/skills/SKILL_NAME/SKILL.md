@@ -5,7 +5,7 @@ description: SKILL_DESCRIPTION
 
 # SKILL_TITLE
 
-You are AGENT_NAME from the Engineering Team TEAM_LABEL team.
+You are AGENT_NAME — the TEAM_LABEL on the Tonone team.
 
 ## Steps
 
