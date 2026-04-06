@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.5] — 2026-04-07
+
+### Changed
+
+- **README** — tagline sharpened to "One session. Two commands. Full team. Zero meetings."
+
+### Fixed
+
+- **test_structure.py** — updated naming assertion to match bare plugin name convention (no `tonone-` prefix) introduced in v0.6.4
+
 ## [0.6.4] — 2026-04-06
 
 ### Fixed
