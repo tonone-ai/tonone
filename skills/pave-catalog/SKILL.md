@@ -1,95 +1,194 @@
 ---
 name: pave-catalog
-description: Build a service catalog — inventory all services, owners, dependencies, health status, and documentation links. Use when asked to "service catalog", "what services do we have", "Backstage setup", "service inventory", or "developer portal".
+description: Build a service catalog — schema, starter entries, and governance model. Produces what information to capture per service, how it's maintained, and where it lives. Use when asked to "service catalog", "what services do we have", "catalog our services", "service inventory", or "who owns what".
 ---
 
 # Service Catalog
 
 You are Pave — the platform engineer on the Engineering Team.
 
-## Steps
+A service catalog is useful when developers need to find things without asking people. It fails when it becomes a stale spreadsheet nobody trusts. The right catalog is the simplest one that answers the questions developers actually ask — and has a governance model that keeps it current.
 
-### Step 0: Detect Environment
+Start with the questions, not the schema.
 
-Understand the service landscape:
+## Step 0: Identify the Actual Pain
 
-- Check for existing catalog: Backstage, Port, Cortex, OpsLevel configs
-- Check for service definitions: `catalog-info.yaml`, `backstage/` directory
-- Check for monorepo or polyrepo structure
-- Check for deployment configs that reveal service names
-- Check for API specs: OpenAPI, GraphQL schemas, gRPC proto files
-- Check for infrastructure configs: Terraform, Kubernetes manifests
+Before designing the catalog, establish what problem it's solving:
 
-### Step 1: Inventory All Services
+- Are developers asking "who owns X?" during incidents?
+- Are new engineers unable to find service dependencies?
+- Are runbooks scattered or missing?
+- Is there no single source of truth for what's running in production?
 
-Discover and catalog every service:
+If the answer to all of these is "not really a problem yet," the catalog is premature. Document it as a lightweight table in the root README instead.
 
-| Service       | Type        | Language | Owner        | Repo               | Status     |
-| ------------- | ----------- | -------- | ------------ | ------------------ | ---------- |
-| user-api      | Backend API | Node.js  | Team Auth    | /services/user-api | Production |
-| web-app       | Frontend    | React    | Team Product | /apps/web          | Production |
-| worker-emails | Worker      | Python   | Team Comms   | /workers/emails    | Production |
+If the pain is real, continue.
 
-Include:
+Also check:
 
-- APIs, frontends, workers, cron jobs, lambdas
-- Shared libraries and packages
-- Infrastructure components (databases, queues, caches)
+- Existing catalog attempts: `catalog-info.yaml`, Backstage configs, Port/Cortex/OpsLevel setup, any wiki pages
+- Where service definitions currently live (deployment configs, Terraform, CI files)
+- How many services exist — under 10 is a Markdown table, 10–50 is YAML-in-repo, 50+ consider a tool
 
-### Step 2: Map Dependencies
+## Step 1: Define the Schema
 
-For each service, identify:
+Write down only the fields developers actually need. Every field you add is a field someone has to keep updated.
 
-- Upstream dependencies (what it calls)
-- Downstream dependents (what calls it)
-- Data stores it uses
-- External services it depends on
-- Shared libraries it imports
+**Minimum viable schema (every service must have these):**
 
-Produce a dependency graph in Mermaid format.
+```yaml
+# catalog-info.yaml — lives in the root of each service repo
+name: user-api
+description: Handles authentication, user profiles, and session management
+type: service          # service | library | worker | cron | data-store
+status: production     # production | beta | deprecated | internal
+owner: platform-team   # team name, not individual
+oncall: @platform-team # who gets paged (Slack handle or PagerDuty rotation)
+repo: https://github.com/org/user-api
+docs: https://notion.so/org/user-api-runbook
+dashboard: https://grafana.org/d/user-api
+```
 
-### Step 3: Set Up Catalog (if requested)
+**Extended schema (add only when the pain exists):**
 
-If the team wants a service catalog tool:
+```yaml
+# Add these when they answer a question that comes up repeatedly
+language: python
+framework: fastapi
+deploy_target: fly.io
+port: 8000
+healthcheck: /health
+dependencies:
+  - postgres-primary # data stores this service owns or uses
+  - redis-cache
+  - payments-api # other services this calls
+exposes:
+  - POST /users
+  - GET /users/:id
+  - POST /auth/login
+slo:
+  availability: 99.9%
+  latency_p99: 200ms
+```
 
-**Backstage:**
+Do not add fields speculatively. Add them when a developer has had to ask a human for that information more than twice.
 
-- Create `catalog-info.yaml` for each service
-- Set up `app-config.yaml` with org integrations
-- Configure GitHub discovery for auto-registration
-- Add API specs and documentation links
+## Step 2: Inventory All Services
 
-**Lightweight (Markdown-based):**
+Discover what exists. Check deployment configs, CI files, Terraform, Kubernetes manifests, docker-compose files, and any existing documentation.
 
-- Create `SERVICE_CATALOG.md` in the root repo
-- Include service table, dependency graph, owner contacts
-- Add links to runbooks, dashboards, and API docs
+For each service, produce one catalog entry using the schema from Step 1. Write the actual entries — don't produce a template and ask the human to fill it in.
 
-### Step 4: Define Ownership
+**Starter inventory table** (produce this as a cross-reference, not a replacement for the YAML):
 
-Ensure every service has:
+| Service      | Type    | Owner         | Status     | Repo | Runbook | Dashboard |
+| ------------ | ------- | ------------- | ---------- | ---- | ------- | --------- |
+| user-api     | service | platform-team | production | link | link    | link      |
+| web-app      | service | product-team  | production | link | link    | —         |
+| email-worker | worker  | comms-team    | production | link | —       | —         |
 
-- A team owner (not an individual)
-- A primary contact for incidents
-- Documentation links (README, API docs, runbook)
-- Health check URL and dashboard link
+Flag every missing field. A catalog with gaps is expected — the gaps are the backlog.
 
-### Step 5: Deliver Catalog
+**Dependency map** (Mermaid, only if dependencies are unclear and causing problems):
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+```mermaid
+graph LR
+  web-app --> user-api
+  web-app --> content-api
+  user-api --> postgres-primary
+  user-api --> redis-cache
+  email-worker --> user-api
+```
 
-Output the complete service catalog with:
+## Step 3: Choose Where It Lives
 
-1. Service inventory table
-2. Dependency graph (Mermaid)
-3. Ownership matrix
-4. Health and documentation coverage gaps
-5. Recommendations for unmaintained or undocumented services
+Match the tooling to the team size and complexity:
+
+**Under 10 services — Markdown table in root README:**
+
+- Fastest to create, zero tooling overhead
+- Update it the same way you'd update any README
+- Acceptable until it becomes genuinely painful to maintain
+
+**10–50 services — `catalog-info.yaml` in each repo + generated index:**
+
+- Each service owns its own metadata (keeps it close to the code)
+- A script or CI job generates the central index from all the YAML files
+- No external tool dependency, no portal to maintain
+
+**50+ services or multi-team — Backstage, Port, or Cortex:**
+
+- Only justify this when the Markdown approach is visibly breaking
+- Backstage: open-source, highly customizable, high maintenance cost
+- Port: faster to set up, good API, lower maintenance than Backstage
+- Cortex: strongest for scorecards and maturity tracking
+- Start with Port if you're evaluating now — lower time-to-value
+
+Do not adopt a catalog tool to look mature. Adopt it when the simpler approach has failed.
+
+## Step 4: Governance Model
+
+A catalog without a governance model is a catalog that will be stale in 90 days.
+
+Write the governance model as a short policy, not a process diagram:
+
+```markdown
+## Service Catalog Governance
+
+**Who updates it:** The team that owns the service updates their own catalog-info.yaml.
+No central team owns catalog entries — ownership is distributed.
+
+**When it's updated:**
+
+- When a service is created (catalog entry is part of the new-service golden path)
+- When ownership changes
+- When a service is deprecated or decommissioned
+- During quarterly engineering retros (30-minute sweep for stale entries)
+
+**What "stale" means:** A catalog entry is stale if the oncall contact,
+dashboard link, or runbook link is broken or more than 6 months unreviewed.
+
+**How staleness is caught:**
+
+- CI check on catalog-info.yaml schema validity (auto)
+- Quarterly link-rot sweep (manual, 30 min, owned by Pave)
+- Incident retrospectives flag missing runbook links
+
+**What happens with orphaned services:**
+
+- No owner listed → Pave pings the last committer in Slack
+- No response in 1 week → escalates to Apex for ownership assignment
+```
+
+The governance model must name a specific owner for the quarterly sweep. "The team" owns nothing.
+
+## Step 5: Deliver the Catalog
+
+Write all of the following — don't describe what to write, write it:
+
+1. `catalog-info.yaml` for each service discovered (or a starter set if the full inventory isn't available yet)
+2. The central index (Markdown table or generated YAML index)
+3. The dependency map in Mermaid (if dependencies are unclear)
+4. The governance policy (as above)
+5. A `make catalog-check` target or CI step that validates schema and checks for required fields
+
+## Output Format
+
+Follow the output-kit: 40-line CLI max, box-drawing skeleton, unified severity indicators.
+
+Summarize:
+
+- Services cataloged (count and coverage %)
+- Gaps found (missing runbooks, dashboards, owners)
+- Governance model (one line: who updates, when, how staleness is caught)
+- Recommended next action (usually: fix the gaps with highest incident risk first)
 
 ## Key Rules
 
+- Write the entries, don't template them — real metadata, not `YOUR_SERVICE_NAME`
 - Every service must have an owner — orphaned services are ticking time bombs
-- Catalog must be machine-readable — YAML or JSON, not just a wiki page
-- Keep it close to code — `catalog-info.yaml` in each repo, not a separate spreadsheet
-- Auto-discover when possible — manual catalogs always go stale
-- Include health status — a catalog without status is just a phone book
+- Catalog lives close to code — `catalog-info.yaml` in each repo, not a spreadsheet
+- Simpler is more maintainable — don't adopt a portal tool before the Markdown approach fails
+- Governance is required — a catalog without an update model decays to useless
+- Gaps are backlog, not blockers — ship an incomplete catalog and close the gaps
+- Stale metadata is worse than no metadata — it actively misleads during incidents

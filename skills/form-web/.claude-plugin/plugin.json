@@ -1,0 +1,13 @@
+{
+  "name": "form-web",
+  "version": "0.1.0",
+  "description": "Use when asked to design a landing page, marketing website, or any web presence intended to convert or inform. Examples: \"design a landing page for X\", \"create a marketing site\", \"we need a homepage\", \"design our website\", \"build a page for our launch\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["form", "skill"]
+}

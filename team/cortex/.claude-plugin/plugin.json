@@ -1,7 +1,7 @@
 {
-  "name": "cortex-ml",
+  "name": "tonone-cortex",
   "version": "0.1.0",
-  "description": "ML/AI engineer — model training, MLOps, feature engineering, LLM integration",
+  "description": "ML/AI engineer \u2014 model training, MLOps, feature engineering, LLM integration",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

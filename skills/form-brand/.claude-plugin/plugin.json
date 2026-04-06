@@ -1,0 +1,13 @@
+{
+  "name": "form-brand",
+  "version": "0.1.0",
+  "description": "Use when asked to create a brand identity, define visual design direction, generate a color palette or type system, build a style guide, or establish the look and feel for a product. Examples: \"create a brand for X\", \"define the visual identity\", \"what colors should we use\", \"build a style guide\", \"design system foundations\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["form", "skill"]
+}

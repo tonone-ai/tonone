@@ -1,0 +1,13 @@
+{
+  "name": "crest-compete",
+  "version": "0.1.0",
+  "description": "Competitive analysis \u2014 map the competitive landscape with a feature parity grid, positioning 2x2, and table stakes vs differentiator classification. Use when asked to \"analyze competitors\", \"competitive landscape\", \"how do we compare to X\", \"competitive positioning\", \"feature comparison\", or \"who else does this\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["crest", "skill"]
+}

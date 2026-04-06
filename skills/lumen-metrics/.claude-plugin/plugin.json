@@ -1,0 +1,13 @@
+{
+  "name": "lumen-metrics",
+  "version": "0.1.0",
+  "description": "Metrics framework design \u2014 create a North Star metric, input metrics tree, define ownership, cadence, and action triggers. Use when asked to \"design a metrics framework\", \"what should we measure\", \"build a metrics system\", \"define our KPIs\", \"what are our success metrics\", or \"metrics strategy\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["lumen", "skill"]
+}

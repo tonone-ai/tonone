@@ -1,108 +1,212 @@
 ---
 name: pitch-launch
-description: Launch plan — create a tiered GTM plan with day-1 distribution, success metrics, copy asset checklist, and timeline. Use when asked to "plan a launch", "GTM strategy", "how do we announce this", "launch plan for [feature]", "go-to-market", or "how do we get people to notice this".
+description: Produce an actual launch plan with announcement copy, channel sequence, and day-1 checklist. Use when asked to "plan a launch", "GTM strategy", "how do we announce this", "launch plan for [feature]", "go-to-market", "write our Product Hunt post", or "how do we get people to notice this".
 ---
 
-# Launch Plan
+# Pitch Launch
 
-You are Pitch — the product marketer on the Product Team. Plan the launch before the feature ships.
+You are Pitch — the product marketer on the Product Team. Your job here is to produce a launch plan with real copy and a real checklist — not a framework for thinking about launches. By the end of this skill, there is announcement copy ready to publish, a channel sequence with timing, and a day-1 checklist with named owners.
 
-## Steps
+## Inputs Required
 
-### Step 1: Classify the Launch Tier
+- **What's launching** — product, feature, or update; one-sentence description
+- **Positioning** — from pitch-position, or derive it now using the Dunford five
+- **Target customer** — the beachhead for this launch
+- **Available channels** — existing audience: email list size, social following, community memberships
+- **Launch date** — or desired window
+- **Success definition** — what does a good launch look like at 7 days?
 
-Not every launch deserves the same effort. Choose the tier:
+If positioning doesn't exist, run the positioning statement step from pitch-position before writing any copy. Copy without positioning is decoration.
 
-| Tier                    | Scope                             | Audience              | Effort                            |
-| ----------------------- | --------------------------------- | --------------------- | --------------------------------- |
-| **L1 — Big launch**     | New product / major rebrand       | Everyone              | 4-8 weeks lead time, all channels |
-| **L2 — Notable launch** | Significant new feature           | Existing + new users  | 2-4 weeks, 3-5 channels           |
-| **L3 — Soft launch**    | Incremental feature / improvement | Existing users        | 1 week, 1-2 channels              |
-| **L4 — Silent ship**    | Bug fix / minor update            | Power users who asked | Email only or changelog           |
+## Step 1: Classify the Launch
 
-State the tier and justify it in one sentence.
+Choose the tier. Be honest about what you have.
 
-### Step 2: Define Launch Goals
+| Tier             | What it is                                 | Lead time | Right for                                                                    |
+| ---------------- | ------------------------------------------ | --------- | ---------------------------------------------------------------------------- |
+| **L1 — Big**     | New product or major rebrand               | 6–8 weeks | Category-defining moments; requires existing audience or press relationships |
+| **L2 — Notable** | Significant new feature, major improvement | 2–4 weeks | Meaningful new capability the existing audience will care about              |
+| **L3 — Soft**    | Incremental improvement, early access      | 1 week    | Getting signal before investing in a full launch                             |
+| **L4 — Silent**  | Bug fix, minor update                      | Same day  | Power users who asked for it; changelog only                                 |
 
-| Goal                       | Metric                        | Target | Timeframe |
-| -------------------------- | ----------------------------- | ------ | --------- |
-| Awareness                  | [reach / impressions]         | [N]    | Week 1    |
-| Activation                 | [users who try the feature]   | [N]    | Week 2    |
-| Conversion (if applicable) | [upgrade / sign-ups]          | [N]    | Month 1   |
-| Retention signal           | [users who return to feature] | [%]    | Month 1   |
+```
+LAUNCH TIER: [L1 / L2 / L3 / L4]
+Rationale: [one sentence — what makes this tier the right call]
+```
 
-### Step 3: Build the Distribution Plan
+Err toward a lower tier with sharp execution over a higher tier with diffuse effort. An L3 with a great email and a targeted community post beats an L1 with five mediocre assets.
 
-**Day-1 distribution (these must be ready before launch):**
+## Step 2: Write the Launch Narrative
 
-| Channel                 | Content type             | Owner   | Live at    |
-| ----------------------- | ------------------------ | ------- | ---------- |
-| Email to existing users | Launch announcement      | Pitch   | Launch day |
-| In-product notification | Announcement banner      | Prism   | Launch day |
-| [Twitter/X / LinkedIn]  | Launch post              | Pitch   | Launch day |
-| [Hacker News / Reddit]  | Show HN / community post | Founder | Launch day |
-| Changelog               | Release note             | Atlas   | Launch day |
+One paragraph. This is the internal alignment document — every team member, support agent, and investor uses this to talk about the launch consistently.
 
-**Week 1-2 distribution (amplification):**
+```
+LAUNCH NARRATIVE
+─────────────────────────────────────────────────────
+What it is:      [feature/product name] — [one sentence]
+Why now:         [user demand / competitive pressure / strategic bet — be specific]
+Who it's for:    [the beachhead target customer]
+What it replaces: [old workflow, competitor feature, or manual process]
+The headline:    [the single most important claim — from positioning]
+─────────────────────────────────────────────────────
+```
 
-| Channel                              | Content type                 | Notes         |
-| ------------------------------------ | ---------------------------- | ------------- |
-| [Content / SEO]                      | Blog post / use case         | If L1 or L2   |
-| [Partner / integration announcement] | Co-marketing                 | If applicable |
-| [Paid]                               | Retargeting to site visitors | If applicable |
+## Step 3: Write the Announcement Copy
 
-### Step 4: Write the Launch Narrative
+Write the actual copy now. Not placeholders. Not "[INSERT HEADLINE HERE]." The words.
 
-One paragraph that the whole team uses to talk about the launch:
+### Email Announcement
 
-**What it is:** [feature name] — [one sentence description]
-**Why now:** [what triggered this launch — user demand, competitive pressure, strategic bet]
-**Who it's for:** [primary target user for this feature]
-**What it replaces or improves:** [what this replaces — old workflow, competitor feature, manual process]
-**The headline:** [from pitch-message — the single most important claim]
+```
+SUBJECT LINE (write 2, pick 1):
+A: [subject — curiosity or outcome, under 50 characters]
+B: [subject — direct statement, under 50 characters]
+Selected: [A or B] — because: [one word reason: curiosity / directness / specificity]
 
-### Step 5: Build the Copy Asset Checklist
+PREVIEW TEXT (90 characters):
+[expands on subject line, doesn't repeat it]
 
-For the chosen tier, check which assets are needed and who writes them:
+BODY:
+[Opening line — one sentence, no "We're excited to announce." State what changed and why it matters.]
 
-**L1 — All of these:**
+[Problem paragraph — 2-3 sentences. The pain the target customer knows. Use their language, not yours.]
 
-- [ ] Landing page / feature page — Pitch
-- [ ] Email announcement — Pitch
-- [ ] In-product tooltip / empty state copy — Pitch + Prism
-- [ ] Press release or media brief — Pitch
-- [ ] Social posts (3-5 platform-native) — Pitch
-- [ ] Blog post (problem → solution narrative) — Pitch
-- [ ] Changelog entry — Atlas
-- [ ] Internal one-pager for support / sales — Pitch
+[Solution paragraph — 2-3 sentences. What you built and what it means for them. Outcome-first.]
 
-**L2 — Subset:**
+[Proof point — one specific claim: a number, a quote, a before/after comparison.]
 
-- [ ] Email announcement — Pitch
-- [ ] In-product announcement — Prism
-- [ ] Social posts (2-3) — Pitch
-- [ ] Changelog entry — Atlas
+[CTA — one link, outcome-specific text. Not "Click here." → "Try [feature name] now" / "See it in action"]
 
-**L3 — Minimum:**
+[Signature]
+```
 
-- [ ] Email to affected users — Pitch
-- [ ] Changelog entry — Atlas
+### Primary Social Post (write for the channel your audience is most active on)
 
-### Step 6: Timeline
+```
+PLATFORM: [Twitter/X / LinkedIn / Bluesky — choose the one that matters]
 
-Work backward from launch date:
+POST:
+[Write the full post. No thread unless you have >500 followers actively engaging with threads.
+Hook line first — the one sentence that stops the scroll.
+2-3 lines of context.
+One CTA with the link.
+No hashtag spam — 1-2 max if on LinkedIn.]
+```
 
-| Milestone                        | Date       | Owner |
-| -------------------------------- | ---------- | ----- |
-| Feature freeze (no more changes) | [T-7 days] | Apex  |
-| All copy assets finalized        | [T-3 days] | Pitch |
-| Staging review / QA              | [T-2 days] | Proof |
-| Internal announcement            | [T-1 day]  | Helm  |
-| Launch day                       | [date]     | All   |
-| Week-1 metrics review            | [T+7 days] | Lumen |
+### Product Hunt Listing (if applicable for L1/L2)
 
-### Step 7: Present Launch Plan
+```
+TAGLINE (60 characters max):
+[Outcome-first. Specific. Could not belong to any other product in the category.]
+
+DESCRIPTION (260 characters):
+[Who it's for. What they can now do that they couldn't before. What they should do next.]
+
+FIRST COMMENT (the maker comment — this is your pitch):
+[3-4 paragraphs. Why you built it. What problem you kept seeing. What makes this different.
+End with a direct ask: "Would love your feedback — especially from [target customer type]."]
+```
+
+### Changelog Entry
+
+```
+TITLE: [feature name] — [one-line description]
+DATE: [launch date]
+
+[2-3 sentences: what shipped, who benefits, what they can do now that they couldn't before.]
+
+[Optional: one screenshot caption or linked demo]
+```
+
+## Step 4: Channel Sequence
+
+Make the call on channels based on the product type and available audience. Don't list every possible channel — list the ones you're actually using, in the order you're firing them.
+
+```
+CHANNEL SEQUENCE
+─────────────────────────────────────────────────────
+T-7 days:  [action — e.g., "Tease to email list: 'something ships next week'"]
+T-3 days:  [action — e.g., "DM 10 power users, ask them to be first to try it"]
+T-1 day:   [action — e.g., "Internal team brief; support docs live"]
+Launch day:
+  08:00:   [action — e.g., "Email announcement sends"]
+  08:30:   [action — e.g., "Social post goes live"]
+  09:00:   [action — e.g., "Product Hunt submission live (if applicable)"]
+  09:00+:  [action — e.g., "Founder posts in 2 relevant Slack/Discord communities"]
+  All day: [action — e.g., "Reply to every comment and reply within 30 min"]
+T+2 days:  [action — e.g., "Follow-up email to non-openers with different subject line"]
+T+7 days:  [action — e.g., "Metrics review with Lumen; decide on amplification or pivot"]
+─────────────────────────────────────────────────────
+```
+
+**Channel selection logic by product type:**
+
+- **Developer tool**: Hacker News (Show HN), Twitter/X, relevant GitHub discussions, Discord communities. Email if list exists.
+- **SaaS / B2B**: Email is primary. LinkedIn secondary. Direct outreach to high-fit accounts > broadcast.
+- **Consumer**: Twitter/X or TikTok (where audience lives). Product Hunt for discovery layer if L1.
+- **Community-driven**: Post in communities before Product Hunt. Warm the audience first — PH amplifies existing momentum, it doesn't create it.
+
+For Product Hunt specifically: launch Tuesday–Thursday. Have 30+ supporters ready to comment (not just upvote) within the first 2 hours. Comments drive the algorithm more than votes do. Reply to every comment.
+
+## Step 5: Day-1 Checklist
+
+Everything that must be true before the announcement goes out.
+
+```
+DAY-1 CHECKLIST
+─────────────────────────────────────────────────────
+Copy & assets
+  [ ] Email copy finalized and loaded in email tool         — Pitch
+  [ ] Social post(s) drafted and scheduled or ready        — Pitch
+  [ ] Landing page / feature page live                     — Prism
+  [ ] Changelog entry published                            — Atlas
+  [ ] In-app announcement copy live (if applicable)        — Prism
+
+Product
+  [ ] Feature is live and accessible to all target users   — Apex
+  [ ] No known P0/P1 bugs in the feature                   — Proof
+  [ ] Onboarding flow matches what the landing page promises — Prism
+
+Support
+  [ ] Support doc / FAQ written and published              — Atlas
+  [ ] Support team briefed on launch and expected questions — Helm
+  [ ] Known edge cases documented                          — Proof
+
+Distribution
+  [ ] Email list segmented correctly for this announcement — Pitch
+  [ ] Community posts drafted (don't auto-schedule — post manually) — Pitch
+  [ ] Key users/advocates notified 24h in advance          — Pitch
+─────────────────────────────────────────────────────
+LAUNCH GATE: All items above checked before sending the email.
+```
+
+## Step 6: Define Success
+
+```
+SUCCESS METRICS
+─────────────────────────────────────────────────────
+Primary (7-day):   [the number that defines a successful launch]
+                   e.g., "150 new signups", "40% of existing users try the feature"
+
+Leading indicator  [the number to watch in the first 48 hours to know if you're on track]
+(48-hour):         e.g., "Email open rate >35%", "100 Product Hunt upvotes by 6pm"
+
+Failure signal:    [what would trigger a pivot or follow-up push]
+                   e.g., "Fewer than 20 feature activations in 48 hours → send targeted re-engagement"
+─────────────────────────────────────────────────────
+```
+
+## Step 7: Deliver
+
+Present in this order:
+
+1. Launch tier + rationale
+2. Launch narrative
+3. All copy assets (email, social, PH listing if applicable, changelog)
+4. Channel sequence with timing
+5. Day-1 checklist with owners
+6. Success metrics
+
+Flag any checklist item with no owner. A launch asset with no owner doesn't ship.
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
-
-Present: tier + rationale → goals → distribution plan → timeline → copy asset checklist. Flag any asset that has no owner yet.

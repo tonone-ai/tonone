@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] — 2026-04-06
+
+### Changed
+
+- **All 23 agents upgraded with industry best practices** — every agent definition rebuilt with a founder mindset, execution-first workflows, and domain-specific professional standards. Agents now GET SHIT DONE instead of advising.
+- **44 skills rewritten** across all agents — each skill now includes operating principles, competitive audits, minimum viable output gates, and explicit "done enough" criteria. No more consulting theater.
+- **Form** — operating principle "positioning before pixels"; resource allocation (60-70% UI, 20-30% web, 10% other); MVB checklist; explicit skip/never-skip lists
+- **form-brand** — 3-question positioning gate; competitive audit; shipability gate with 6-item checklist
+- **form-logo** — ONE THING anchor; brief extraction gate; ship decision (recommendation, not options)
+- **Echo** — Mom Test built into echo-interview; Four Forces + switch threshold in echo-jobs
+- **Draft** — pattern audit before wireframes; done-enough gate in draft-wireframe; IA-before-jobs in draft-ia
+- **Helm** — Infer/Ask/Decide protocol with labeled assumptions in helm-brief; 6-field handoff schema
+- **Crest** — strategic anchor before roadmap; mandatory positioning call in crest-compete
+- **Pitch** — Dunford positioning framework in pitch-position; writes actual copy in pitch-launch
+- **Lumen** — North Star validity test in lumen-metrics; Step 0 "when NOT to test" in lumen-abtest
+- **Surge** — single-diagnosis verdict in surge-retention; readiness check gate in surge-plg
+- **Spine** — Stripe-quality API spec in spine-api; decision log required in spine-design
+- **Flux** — normalization decision by stage in flux-schema; CONCURRENTLY caveat + SQL templates in flux-migrate
+- **Prism** — real TypeScript + Tailwind in prism-component; spec-driven implementation in prism-ui
+- **Cortex** — decision tree (prompt→RAG→tool→agent→fine-tune) in cortex-integrate; complete prompt package in cortex-prompt
+- **Atlas** — real Mermaid C4 diagrams in atlas-map; minimum 2 alternatives + 1 acknowledged downside in atlas-adr
+- **Proof** — risk map + "what NOT to test" in proof-strategy; Playwright config + auth fixture in proof-e2e
+- **Relay** — ready-to-commit YAML + SHA-pinned actions in relay-pipeline; strategy decision table in relay-deploy
+- **Forge** — stage fork (managed vs Terraform) in forge-infra; per-opportunity change blocks in forge-cost
+- **Warden** — crown jewels first + accepted risks required in warden-threat; exact header values in warden-harden
+- **Vigil** — OTel auto-instrumentation in vigil-instrument; "What NOT to alert on" step in vigil-alert
+- **Pave** — friction audit first in pave-golden; size-based decision tree in pave-catalog
+- **Apex** — reversible/irreversible lens in apex-plan; ship/no-ship verdict with file+line in apex-review
+- **Lens** — decision + "so what?" audit in lens-dashboard; MISSING DATA section in lens-metrics
+- **Touch** — platform decision in spec for touch-feature; full architecture + EAS Update OTA in touch-app
+- **Volt** — HAL interfaces + RTOS decision in volt-firmware; A/B partitions + failure mode table in volt-ota
+
 ## [0.5.0] — 2026-04-06
 
 ### Added

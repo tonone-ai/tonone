@@ -1,0 +1,13 @@
+{
+  "name": "surge-activation",
+  "version": "0.1.0",
+  "description": "Use when asked to improve activation, map the growth funnel, identify growth levers, design a referral program, build a retention playbook, develop a PLG strategy, or find where to invest in growth. Examples: \"how do we grow faster\", \"improve our activation rate\", \"design a referral program\", \"build a retention playbook\", \"what are our best growth levers\", \"map our growth funnel\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["surge", "skill"]
+}

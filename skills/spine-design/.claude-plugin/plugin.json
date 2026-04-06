@@ -1,0 +1,13 @@
+{
+  "name": "spine-design",
+  "version": "0.1.0",
+  "description": "System design \u2014 components, data flow, API contracts, failure modes, scaling strategy. Use when asked for \"system design for\", \"architect this\", \"how should we build\", or \"design the backend\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["spine", "skill"]
+}

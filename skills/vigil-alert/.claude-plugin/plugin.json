@@ -1,0 +1,13 @@
+{
+  "name": "vigil-alert",
+  "version": "0.1.0",
+  "description": "Build alerting rules with SLOs and paired runbooks. Use when asked to \"set up alerts\", \"create runbooks\", \"define SLOs\", or \"alerting strategy\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["vigil", "skill"]
+}

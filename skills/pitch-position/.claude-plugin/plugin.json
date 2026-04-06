@@ -1,0 +1,13 @@
+{
+  "name": "pitch-position",
+  "version": "0.1.0",
+  "description": "Use when asked to write positioning, define a value proposition, create a messaging framework, write landing page copy, develop GTM strategy, or explain what the product is and why someone should care. Examples: \"write our positioning\", \"what's our value prop\", \"write landing page copy\", \"create a messaging framework\", \"how do we position against X\", \"write our GTM plan\", \"what should our tagline be\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["pitch", "skill"]
+}

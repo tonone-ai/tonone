@@ -1,0 +1,13 @@
+{
+  "name": "pitch-launch",
+  "version": "0.1.0",
+  "description": "Launch plan \u2014 create a tiered GTM plan with day-1 distribution, success metrics, copy asset checklist, and timeline. Use when asked to \"plan a launch\", \"GTM strategy\", \"how do we announce this\", \"launch plan for [feature]\", \"go-to-market\", or \"how do we get people to notice this\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["pitch", "skill"]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "flux-schema",
+  "version": "0.1.0",
+  "description": "Design and build database schema \u2014 proper normalization, indexes, constraints, and migration files. Use when asked to \"design schema\", \"database design\", \"create tables\", or \"data model\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["flux", "skill"]
+}

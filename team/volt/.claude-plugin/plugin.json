@@ -1,7 +1,7 @@
 {
-  "name": "volt-embedded",
+  "name": "tonone-volt",
   "version": "0.1.0",
-  "description": "Embedded & IoT engineer — firmware, microcontrollers, edge computing, device protocols",
+  "description": "Embedded & IoT engineer \u2014 firmware, microcontrollers, edge computing, device protocols",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -1,7 +1,7 @@
 {
-  "name": "atlas-docs",
+  "name": "tonone-atlas",
   "version": "0.2.0",
-  "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding, output formatting, browser reports, changelogs, release presentations",
+  "description": "Knowledge engineer \u2014 architecture docs, ADRs, API specs, system diagrams, onboarding, output formatting, browser reports, changelogs, release presentations",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

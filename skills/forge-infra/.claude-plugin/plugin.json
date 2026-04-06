@@ -1,0 +1,13 @@
+{
+  "name": "forge-infra",
+  "version": "0.1.0",
+  "description": "Build production-grade infrastructure from scratch using IaC. Use when asked to \"set up infra\", \"provision infrastructure\", \"create cloud resources\", \"IaC for this project\", or \"terraform for this\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["forge", "skill"]
+}

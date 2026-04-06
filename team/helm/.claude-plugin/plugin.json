@@ -1,7 +1,7 @@
 {
-  "name": "helm-product",
+  "name": "tonone-helm",
   "version": "0.1.0",
-  "description": "Head of Product — product strategy, requirements, and engineering handoff via the Helm↔Apex interface",
+  "description": "Head of Product \u2014 product strategy, requirements, and engineering handoff via the Helm\u2194Apex interface",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -119,22 +119,24 @@ Generate a single self-contained HTML file with the following requirements:
 
 ### Step 3: Save and Open
 
-1. Save the HTML file to `{repo}/.agent-logs/reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html`
-2. Create the `.agent-logs/reports/` directory if it does not exist
-3. Open immediately — no prompt, no confirmation:
+1. Save the HTML file to `{repo}/.reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html`
+2. Create the `.reports/` directory if it does not exist
+3. Open the report in the default browser:
    - macOS: `open {path}`
    - Linux: `xdg-open {path}`
 
-### Step 4: CLI Summary
+### Step 4: Present CLI Summary
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 ```
 ╭─ ATLAS ── atlas-report ───────────────────────╮
 
+  ## Report generated
+
   **Source:** {agent} / {skill}
   **Target:** {repo or service name}
-  **Saved:** .agent-logs/reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html
+  **Saved:** .reports/{agent}-{skill}-{YYYY-MM-DD-HHmm}.html
 
   ### Contents
   - Executive Summary ({N} bullets)

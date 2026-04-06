@@ -1,0 +1,13 @@
+{
+  "name": "form-audit",
+  "version": "0.1.0",
+  "description": "Use when asked to audit UI for visual quality, check design consistency, review brand alignment, evaluate design system compliance, or find visual issues before a launch. Examples: \"audit our UI\", \"check visual consistency\", \"review the design for issues\", \"is our UI on-brand\", \"find visual bugs\", \"design QA before launch\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["form", "skill"]
+}

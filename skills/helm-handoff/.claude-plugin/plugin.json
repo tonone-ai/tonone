@@ -1,0 +1,13 @@
+{
+  "name": "helm-handoff",
+  "version": "0.1.0",
+  "description": "Use when a product brief is finalized and ready to hand off to the engineering team, or when asked to send a brief to Apex, kick off engineering work, or start development on a product spec. Examples: \"hand this off to engineering\", \"send brief to Apex\", \"start building this\", \"kick off dev on this spec\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["helm", "skill"]
+}

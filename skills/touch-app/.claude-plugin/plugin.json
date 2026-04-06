@@ -1,0 +1,13 @@
+{
+  "name": "touch-app",
+  "version": "0.1.0",
+  "description": "Build a mobile app from scratch \u2014 scaffold a production-ready project with navigation, API client, auth, and push notifications. Use when asked to \"build a mobile app\", \"new app\", \"create iOS/Android app\", or \"cross-platform app\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["touch", "skill"]
+}

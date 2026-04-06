@@ -1,0 +1,13 @@
+{
+  "name": "surge-retention",
+  "version": "0.1.0",
+  "description": "Retention playbook \u2014 analyze retention curves, identify churn drivers, and design re-engagement triggers and win-back sequences. Use when asked to \"improve retention\", \"why are users churning\", \"build a retention playbook\", \"reduce churn\", \"win-back campaign\", or \"users aren't coming back\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["surge", "skill"]
+}

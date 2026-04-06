@@ -1,0 +1,13 @@
+{
+  "name": "volt-firmware",
+  "version": "0.1.0",
+  "description": "Build firmware from scratch for any MCU platform \u2014 scaffolds a complete embedded project with RTOS tasks, peripherals, power management, comms, and OTA from day one. Use when asked to \"firmware project\", \"new embedded project\", \"set up ESP32/STM32\", or \"IoT device firmware\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["volt", "skill"]
+}

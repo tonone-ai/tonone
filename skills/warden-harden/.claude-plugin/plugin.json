@@ -1,0 +1,13 @@
+{
+  "name": "warden-harden",
+  "version": "0.1.0",
+  "description": "Harden a service \u2014 implement auth, input validation, rate limiting, security headers, CORS, secrets management. Use when asked to \"harden this\", \"add security\", \"secure this service\", or \"security headers\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["warden", "skill"]
+}

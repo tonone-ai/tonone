@@ -1,0 +1,13 @@
+{
+  "name": "crest-roadmap",
+  "version": "0.1.0",
+  "description": "Use when asked to build a product roadmap, prioritize a feature backlog with strategic rationale, do a competitive analysis, set OKRs, or decide what to focus on next quarter. Examples: \"build a roadmap for next quarter\", \"prioritize this backlog strategically\", \"competitive analysis vs X\", \"set our OKRs\", \"what's our product strategy\", \"should we build X or Y first and why\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["crest", "skill"]
+}
