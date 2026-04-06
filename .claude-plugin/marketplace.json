@@ -9,7 +9,7 @@
     {
       "name": "tonone",
       "description": "Engineering + Product team \u2014 23 agents, 2 teams. All agents and skills in one install.",
-      "version": "0.5.1",
+      "version": "0.6.1",
       "source": "./",
       "author": {
         "name": "tonone-ai",
@@ -20,7 +20,7 @@
     {
       "name": "engineering-team",
       "description": "Install all 15 Engineering Team agents at once",
-      "version": "0.4.1",
+      "version": "0.6.1",
       "source": "./bundle/engineering-team",
       "author": {
         "name": "tonone-ai",
@@ -31,7 +31,7 @@
     {
       "name": "product-team",
       "description": "Install all 8 Product Team agents at once",
-      "version": "0.1.0",
+      "version": "0.6.1",
       "source": "./bundle/product-team",
       "author": {
         "name": "tonone-ai",
@@ -41,8 +41,8 @@
     },
     {
       "name": "full-team",
-      "description": "Install all 23 tonone agents at once \u2014 Engineering Team + Product Team",
-      "version": "0.1.0",
+      "description": "Install all 23 tonone agents at once — Engineering Team + Product Team",
+      "version": "0.6.1",
       "source": "./bundle/full-team",
       "author": {
         "name": "tonone-ai",
