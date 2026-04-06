@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.4] — 2026-04-06
+
+### Fixed
+
+- **bundle manifests** — removed invalid `"agents"` and `"skills"` string fields from all three bundle plugin.json files; Claude Code auto-discovers these directories and the string format caused a validation error on install
+- **README** — Quick Start now shows both CLI (`claude plugin`) and in-session (`/plugin`) installation pathways; code fences labelled with language identifiers
+
 ## [0.6.3] — 2026-04-06
 
 ### Fixed

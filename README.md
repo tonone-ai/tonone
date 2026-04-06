@@ -53,14 +53,23 @@ That's Tonone. Not twenty-three copies of the same generalist. Twenty-three spec
 
 **Prerequisites:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) v1.0+
 
+From your terminal:
+
+```bash
+claude plugin marketplace add tonone-ai/tonone
+claude plugin install tonone@tonone-ai
 ```
+
+Or inside an active Claude Code session:
+
+```text
 /plugin marketplace add tonone-ai/tonone
 /plugin install tonone@tonone-ai
 ```
 
 Your team is ready:
 
-```
+```text
 > /apex-plan Build a real-time analytics platform for our IoT fleet
 > /helm-brief Define the next product sprint
 > /forge-infra Set up cloud infrastructure for a new SaaS product
@@ -82,7 +91,7 @@ codex
 
 Codex reads `AGENTS.md` automatically. Invoke agents and skills by describing what you want:
 
-```
+```text
 > Read agents/forge.md and act as Forge — audit this infrastructure
 > Read agents/apex.md — plan this project with S/M/L options
 > Follow the workflow in skills/warden-audit/SKILL.md
@@ -116,7 +125,7 @@ Every engineering agent adapts to what you're already using:
 
 **Apex** leads the engineering team. Tell it what you're building:
 
-```
+```text
 You: "Build user authentication for our SaaS"
 
 Apex: I see 3 ways to approach this:
@@ -139,7 +148,7 @@ Apex: I see 3 ways to approach this:
 
 Inherited a codebase? Apex runs parallel reconnaissance across all specialists:
 
-```
+```text
 > /apex-takeover
 
 Phase 1 — Recon (parallel):

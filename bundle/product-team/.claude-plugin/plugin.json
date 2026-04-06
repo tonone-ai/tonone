@@ -1,6 +1,6 @@
 {
   "name": "tonone-product-team",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Product team — 8 agents: Helm, Echo, Lumen, Draft, Form, Crest, Pitch, Surge",
   "author": {
     "name": "tonone-ai",
@@ -8,7 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": ["agents", "product-team", "bundle"],
-  "agents": "../agents/",
-  "skills": "../skills/"
+  "keywords": ["agents", "product-team", "bundle"]
 }
