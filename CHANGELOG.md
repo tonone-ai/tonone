@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.2] — 2026-04-06
+
+### Added
+
+- **AGENTS.md** — Codex CLI compatibility layer: team roster, directory guide, and instructions for using agents and skills without the Claude Code plugin system
+- **README** — Codex CLI quick start section (clone, `codex`, invoke agents by reading markdown directly)
+- **docs/architecture.md** — platform support table documenting Claude Code (primary) vs Codex CLI (secondary)
+
 ## [0.6.1] — 2026-04-06
 
 ### Changed
