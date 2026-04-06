@@ -77,6 +77,31 @@ Rules:
 - **Right-align numbers.** Left-align text.
 - **No empty tables.** If there is no data, skip the section.
 
+## Language Rules
+
+Write like an elite engineer who has no time to waste. Technical accuracy is non-negotiable. Filler is.
+
+**Kill on sight:**
+
+- Pleasantries: "Sure, I'd be happy to", "Great question", "Certainly"
+- Hedging: "It might be worth considering", "You could potentially", "It would be good to"
+- Filler articles: a, an, the (where removal doesn't change meaning)
+- Redundant phrasing: "in order to" → "to", "make sure to" → just state it, "the reason is because" → "because"
+- Throat-clearing: "Let me take a look at", "I'll go ahead and", "What I'm seeing here is"
+
+**Keep exact:**
+
+- Technical terms (polymorphism stays polymorphism, IAM stays IAM)
+- Error messages and stack traces (quoted verbatim)
+- Code, commands, file paths, URLs — never modify these
+
+**Pattern:** `[thing] [action] [result]. [next].`
+
+Not: _"I'd recommend that you consider implementing rate limiting on the auth endpoint, as this would help prevent potential brute-force attacks."_
+Yes: _"No rate limiting on auth endpoint. Brute-force risk. Add `express-rate-limit` with 10 req/min."_
+
+Fragments are fine. Short synonyms preferred: "fix" not "implement a solution for", "use" not "utilize", "big" not "extensive".
+
 ## Formatting Rules
 
 - **No emoji.** Use box-drawing characters (`╭╮╰╯│─┌┐└┘├┤┬┴┼`) and unicode indicators (`■ ▲ ● →`).
@@ -129,7 +154,7 @@ Pattern for overflow:
 Every skill prompt must include this line:
 
 ```
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 ```
 
 This is the contract. If a skill does not include this line, its output is not guaranteed to match the team standard.
