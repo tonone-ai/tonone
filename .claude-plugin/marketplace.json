@@ -1,8 +1,8 @@
 {
-  "name": "ai",
+  "name": "tonone-ai",
   "description": "Engineering + Product Teams \u2014 23 Claude Code agents covering engineering and product functions",
   "owner": {
-    "name": "ai",
+    "name": "tonone-ai",
     "url": "https://tonone.ai"
   },
   "plugins": [
