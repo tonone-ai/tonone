@@ -1,26 +1,16 @@
 # Tonone
 
-**Engineering + product, second to none.**
+**Two commands. Full team.**
 
-Your elite AI team as [Claude Code](https://docs.anthropic.com/en/docs/claude-code) agents. 2 leads + 21 specialists. 125 skills. Every major engineering and product discipline covered.
-
-Simple by default. Scalable by design.
+23 specialists just showed up. Engineering executes. Product decides. 125 skills across every discipline. MIT licensed, two commands to install.
 
 ## Why This Exists
 
 Right now, everyone gets a generalized AI assistant. Engineers, product managers, designers, strategists — all prompting separately, getting separate outputs, then copying results into Slack threads for the next person to feed back into AI. It's a relay race where every handoff loses context.
 
-**That's the wrong unit of automation.** Instead of giving each person an AI assistant, give the whole company an AI team. Specialists that talk to each other, share context, and run the show end to end — from user research to infrastructure to deployment — without the copy-paste relay.
+**The team is the unit. Not the assistant.** Instead of giving each person an AI assistant, give the whole company an AI team. Specialists that talk to each other, share context, and run the show end to end — from user research to infrastructure to deployment — without the copy-paste relay.
 
-That's Tonone. Not twenty-three copies of the same generalist. Twenty-three specialists, each owning one domain, coordinated by leads who know when to call who and at what depth.
-
-### The Mindset
-
-**Complexity is debt.** Every unnecessary abstraction, every over-engineered solution, every "just in case" feature — it all accrues interest. It slows you down today and buries you tomorrow.
-
-**Scalability compounds.** When you build simple, correct foundations, they carry more weight over time without breaking. Simple systems are easier to debug, easier to extend, and easier to hand off.
-
-No boilerplate generators. No tutorial-grade scaffolds. Production-ready output that respects your codebase, your stack, and your time.
+That's Tonone. Not twenty-three copies of the same generalist. Twenty-three specialists, each owning one domain, coordinated by leads who know when to call who and at what depth. Production-ready output. No tutorials. No boilerplate.
 
 ## The Team
 
@@ -68,7 +58,7 @@ No boilerplate generators. No tutorial-grade scaffolds. Production-ready output 
 /plugin install tonone@tonone-ai
 ```
 
-Then just talk to them:
+Your team is ready:
 
 ```
 > /apex-plan Build a real-time analytics platform for our IoT fleet
@@ -80,7 +70,7 @@ Then just talk to them:
 > /crest-roadmap Build a product roadmap
 ```
 
-### Codex CLI (secondary)
+### Codex CLI
 
 **Prerequisites:** [Codex CLI](https://github.com/openai/codex) installed
 
@@ -102,7 +92,7 @@ Skills are markdown workflow documents in `skills/<name>/SKILL.md`. Read them an
 
 ## What You Get
 
-Every agent can **build**, **review**, and **recon**:
+Every specialist ships in three modes:
 
 | Mode       | What It Means                                         | Example Skills                                                  |
 | ---------- | ----------------------------------------------------- | --------------------------------------------------------------- |
@@ -110,9 +100,9 @@ Every agent can **build**, **review**, and **recon**:
 | **Review** | Audit and fix existing systems                        | `/warden-audit`, `/relay-audit`, `/prism-audit`, `/vigil-check` |
 | **Recon**  | Survey a domain for system takeover                   | `/forge-recon`, `/spine-recon`, `/flux-recon`, `/apex-takeover` |
 
-### Platform-Aware
+### They detect your stack
 
-Every engineering agent detects your stack and adapts:
+Every engineering agent adapts to what you're already using:
 
 - **Cloud:** GCP, AWS, Azure, Cloudflare, Vercel, Fly.io, Hetzner, DigitalOcean
 - **CI/CD:** GitHub Actions, GitLab CI, Cloud Build, CircleCI, Bitbucket Pipelines
@@ -124,7 +114,7 @@ Every engineering agent detects your stack and adapts:
 
 ### The Leads
 
-**Apex** is the engineering lead. Give it a task, it figures out who to involve and at what depth:
+**Apex** leads the engineering team. Tell it what you're building:
 
 ```
 You: "Build user authentication for our SaaS"
@@ -382,4 +372,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) to get started — improve skills, propos
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+MIT. Fork it. Ship it. Use it anywhere. [LICENSE](LICENSE)

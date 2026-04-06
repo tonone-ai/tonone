@@ -1,9 +1,8 @@
 # tonone — Engineering + Product Team
 
-> **Primary platform:** Claude Code. This file provides Codex CLI compatibility.
-> For Claude Code setup, see `CLAUDE.md`.
+> Codex users: start here. Claude Code users: see `CLAUDE.md`.
 
-Two AI teams. 23 agents total. Engineering executes. Product decides what to build and why.
+23 specialists just showed up. Engineering executes. Product decides.
 
 ## Engineering Team — 15 agents
 
