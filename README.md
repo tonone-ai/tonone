@@ -1,6 +1,6 @@
 # Tonone
 
-**Two commands. Full team.**
+**One session. Two commands. Full team. Zero meetings.**
 
 23 specialists just showed up. Engineering executes. Product decides. 125 skills across every discipline. MIT licensed, two commands to install.
 
