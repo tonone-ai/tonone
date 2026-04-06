@@ -8,7 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": ["agents", "engineering-team", "bundle"],
-  "agents": "../agents/",
-  "skills": "../skills/"
+  "keywords": ["agents", "engineering-team", "bundle"]
 }
