@@ -59,18 +59,16 @@ No boilerplate generators. No tutorial-grade scaffolds. Production-ready output 
 
 ## Quick Start
 
-### Prerequisites
+### Claude Code (primary)
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed (v1.0+)
-
-### Install
+**Prerequisites:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) v1.0+
 
 ```
 /plugin marketplace add tonone-ai/tonone
 /plugin install tonone@tonone-ai
 ```
 
-### Then just talk to them
+Then just talk to them:
 
 ```
 > /apex-plan Build a real-time analytics platform for our IoT fleet
@@ -81,6 +79,26 @@ No boilerplate generators. No tutorial-grade scaffolds. Production-ready output 
 > /echo-interview Run a user research session
 > /crest-roadmap Build a product roadmap
 ```
+
+### Codex CLI (secondary)
+
+**Prerequisites:** [Codex CLI](https://github.com/openai/codex) installed
+
+```bash
+git clone https://github.com/tonone-ai/tonone
+cd tonone
+codex
+```
+
+Codex reads `AGENTS.md` automatically. Invoke agents and skills by describing what you want:
+
+```
+> Read agents/forge.md and act as Forge — audit this infrastructure
+> Read agents/apex.md — plan this project with S/M/L options
+> Follow the workflow in skills/warden-audit/SKILL.md
+```
+
+Skills are markdown workflow documents in `skills/<name>/SKILL.md`. Read them and follow the steps — no slash commands needed.
 
 ## What You Get
 

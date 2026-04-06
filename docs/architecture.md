@@ -6,6 +6,15 @@ How Tonone is structured and why.
 
 Tonone is a Claude Code plugin that installs 23 agents and 125 skills across two teams: Engineering (15 agents) and Product (8 agents). Everything is prompt-based — agents are Markdown system prompts, skills are Markdown workflow definitions. No runtime code is required.
 
+## Platform Support
+
+| Platform    | Support   | Config file | Skills                                 |
+| ----------- | --------- | ----------- | -------------------------------------- |
+| Claude Code | Primary   | `CLAUDE.md` | Slash commands via plugin system       |
+| Codex CLI   | Secondary | `AGENTS.md` | Read `skills/<name>/SKILL.md` directly |
+
+Claude Code is the intended platform. Codex users read `AGENTS.md` for team context, then manually read agent definitions (`agents/<name>.md`) and skill workflows (`skills/<name>/SKILL.md`) — the content is identical, only the invocation mechanism differs.
+
 ```
 User runs /forge-audit
   → Claude Code loads the skill prompt from skills/forge-audit/SKILL.md
