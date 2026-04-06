@@ -141,7 +141,7 @@ def test_team_agents_match_agents_directory():
 
 def test_plugin_json_name_matches_agent_directory():
     """
-    plugin.json 'name' must follow the pattern 'tonone-<agentname>'.
+    plugin.json 'name' must match the agent directory name (bare, no prefix).
     Mismatches break the registry lookup by name.
     """
     for agent in AGENTS:
@@ -151,7 +151,7 @@ def test_plugin_json_name_matches_agent_directory():
         data = json.loads(p.read_text())
         if "name" not in data:
             continue
-        expected = f"tonone-{agent}"
+        expected = agent
         assert (
             data["name"] == expected
         ), f"{agent}/plugin.json: 'name' is '{data['name']}', expected '{expected}'"
