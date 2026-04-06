@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Job 1: Structure tests
+  # Validates that every agent and skill has all required files in the right
+  # places. This is the highest-value gate: a missing plugin.json or SKILL.md
+  # silently breaks install for every user who pulls that agent or skill.
+  # ---------------------------------------------------------------------------
+  validate-structure:
+    name: Validate structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pytest
+        run: pip install pytest
+      - name: Run structure tests
+        run: python -m pytest tests/test_structure.py -v
+
+  # ---------------------------------------------------------------------------
+  # Job 2: Shell script linting
+  # All setup.sh files are linted at WARNING severity. Errors in setup scripts
+  # silently fail for end users who run them — shellcheck catches the common
+  # pitfalls (unquoted vars, pipefail gaps) before they reach anyone.
+  # ---------------------------------------------------------------------------
+  lint-shell:
+    name: Lint shell scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install shellcheck
+        run: sudo apt-get install -y shellcheck
+      - name: Run shellcheck
+        run: find . -name "setup.sh" -not -path "./.git/*" | xargs shellcheck -S warning
+
+  # ---------------------------------------------------------------------------
+  # Job 3: Agent tests (matrix) — DISABLED
+  #
+  # All 23 agent test directories currently contain only an empty __init__.py
+  # stub. Running a matrix job over them would produce 23 green "0 tests
+  # collected" runs — misleading signal that wastes CI minutes.
+  #
+  # Activate this job when an agent gains real Python functionality:
+  # 1. Add the agent name to the matrix list below.
+  # 2. Ensure team/<agent>/scripts/ has a pyproject.toml with test deps and at
+  #    least one test_*.py file with substantive tests.
+  #
+  # Template (uncomment and populate matrix.agent when ready):
+  #
+  # agent-tests:
+  #   name: "Agent tests"
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       agent: []  # e.g. [forge, relay, spine]
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-python@v5
+  #       with:
+  #         python-version: "3.11"
+  #     - name: Install uv
+  #       run: pip install uv
+  #     - name: Run agent tests
+  #       working-directory: team/${{ matrix.agent }}/scripts
+  #       run: |
+  #         uv sync --quiet
+  #         uv run pytest ../tests/ -v
+  # ---------------------------------------------------------------------------

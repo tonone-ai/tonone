@@ -1,12 +1,12 @@
 {
-  "name": "product-team",
-  "version": "0.1.0",
-  "description": "Install all 8 Product Team agents at once",
+  "name": "tonone-product-team",
+  "version": "0.6.1",
+  "description": "Product team — 8 agents: Helm, Echo, Lumen, Draft, Form, Crest, Pitch, Surge",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": ["bundle", "installer", "product-team", "all-agents"]
+  "keywords": ["agents", "product-team", "bundle"]
 }

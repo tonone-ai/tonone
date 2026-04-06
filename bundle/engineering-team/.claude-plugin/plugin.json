@@ -1,12 +1,12 @@
 {
-  "name": "engineering-team",
-  "version": "0.1.0",
-  "description": "Install all 15 Engineering Team agents at once",
+  "name": "tonone-engineering-team",
+  "version": "0.6.1",
+  "description": "Engineering team — 15 agents: Apex, Forge, Relay, Spine, Flux, Warden, Vigil, Prism, Cortex, Touch, Volt, Atlas, Lens, Proof, Pave",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": ["bundle", "installer", "engineering-team", "all-agents"]
+  "keywords": ["agents", "engineering-team", "bundle"]
 }
