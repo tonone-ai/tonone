@@ -1,0 +1,13 @@
+{
+  "name": "proof-strategy",
+  "version": "0.1.0",
+  "description": "Design a test strategy for a project \u2014 analyze what exists, identify gaps, recommend the right mix of unit/integration/E2E tests. Use when asked to \"create test strategy\", \"what should we test\", \"testing plan\", or \"improve test coverage\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["proof", "skill"]
+}

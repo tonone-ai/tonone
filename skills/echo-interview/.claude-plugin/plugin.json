@@ -1,0 +1,13 @@
+{
+  "name": "echo-interview",
+  "version": "0.1.0",
+  "description": "Use when asked to synthesize user interview notes, analyze customer feedback, build a persona, identify Jobs-to-Be-Done, or extract insights from user research. Examples: \"synthesize these interview notes\", \"what do users actually want\", \"build a persona from this feedback\", \"find the JTBD in these transcripts\", \"analyze this support ticket data\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["echo", "skill"]
+}

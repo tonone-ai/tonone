@@ -1,0 +1,13 @@
+{
+  "name": "lens-metrics",
+  "version": "0.1.0",
+  "description": "Define and implement a metrics framework \u2014 north star metric, supporting KPIs, operational metrics, with precise definitions and SQL queries. A metric without a definition is a lie. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", or \"north star metric\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["lens", "skill"]
+}

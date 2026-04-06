@@ -1,0 +1,13 @@
+{
+  "name": "touch-feature",
+  "version": "0.1.0",
+  "description": "Build a mobile feature \u2014 screen, state, API integration, navigation, offline handling. Use when asked to \"add screen\", \"mobile feature\", \"new tab\", \"push notifications\", or \"deep link\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["touch", "skill"]
+}

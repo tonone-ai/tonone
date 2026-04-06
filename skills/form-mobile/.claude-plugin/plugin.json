@@ -1,0 +1,13 @@
+{
+  "name": "form-mobile",
+  "version": "0.1.0",
+  "description": "Use when asked to design iOS or Android mobile app screens, create mobile UI, spec mobile flows, or produce screen designs for a native app. Examples: \"design the onboarding screens\", \"spec the checkout flow for iOS\", \"design a home screen for Android\", \"create mobile UI for this feature\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["form", "skill"]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "lens-dashboard",
+  "version": "0.1.0",
+  "description": "Build an analytical dashboard \u2014 detect the data stack, design key metrics with hierarchy, implement using the right tool (Metabase, Grafana, Streamlit, Chart.js). Each chart answers exactly one question. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", or \"visualize this data\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["lens", "skill"]
+}

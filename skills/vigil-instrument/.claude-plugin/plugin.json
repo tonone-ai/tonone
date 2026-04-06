@@ -1,0 +1,13 @@
+{
+  "name": "vigil-instrument",
+  "version": "0.1.0",
+  "description": "Instrument a service with structured logging, RED metrics, distributed tracing, and health checks. Use when asked to \"add monitoring\", \"instrument this\", \"add logging\", \"set up tracing\", or \"observability\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["vigil", "skill"]
+}

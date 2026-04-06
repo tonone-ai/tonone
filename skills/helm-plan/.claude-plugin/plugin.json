@@ -1,0 +1,13 @@
+{
+  "name": "helm-plan",
+  "version": "0.1.0",
+  "description": "Use when asked to build a product roadmap, prioritize a backlog, decide what to build next, or sequence a list of feature ideas. Examples: \"what should we build next\", \"prioritize this backlog\", \"make a roadmap\", \"RICE score these features\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["helm", "skill"]
+}

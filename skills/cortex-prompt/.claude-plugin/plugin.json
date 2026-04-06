@@ -1,0 +1,13 @@
+{
+  "name": "cortex-prompt",
+  "version": "0.1.0",
+  "description": "Build and test prompts with versioning and evaluation. Use when asked to do \"prompt engineering\", \"build a prompt\", \"test prompts\", or \"prompt evaluation\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["cortex", "skill"]
+}

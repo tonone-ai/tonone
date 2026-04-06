@@ -1,0 +1,13 @@
+{
+  "name": "pave-golden",
+  "version": "0.1.0",
+  "description": "Build golden path templates \u2014 opinionated project scaffolding with local dev, CI, deploy, and monitoring baked in. Use when asked to \"create project template\", \"golden path\", \"scaffold a new service\", \"project generator\", or \"service template\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["pave", "skill"]
+}

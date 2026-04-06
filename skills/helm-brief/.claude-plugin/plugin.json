@@ -1,0 +1,13 @@
+{
+  "name": "helm-brief",
+  "version": "0.1.0",
+  "description": "Use when asked to write a product brief, turn a feature idea into a spec, define requirements for something to build, or clarify what a product should do and why. Examples: \"write a brief for X\", \"turn this idea into a spec\", \"what should we build here\", \"help me define requirements\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["helm", "skill"]
+}

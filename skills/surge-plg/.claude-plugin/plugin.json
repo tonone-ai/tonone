@@ -1,0 +1,13 @@
+{
+  "name": "surge-plg",
+  "version": "0.1.0",
+  "description": "PLG strategy \u2014 design product-led growth motion including self-serve onboarding, freemium tier, upgrade triggers, and viral mechanics. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", \"how do we add a free tier\", \"upgrade triggers\", or \"viral loop design\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["surge", "skill"]
+}
