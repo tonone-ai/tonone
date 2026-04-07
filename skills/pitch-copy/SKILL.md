@@ -1,6 +1,10 @@
 ---
 name: pitch-copy
 description: Landing page and marketing copy — write hero section, problem/solution blocks, proof points, and CTAs. Use when asked to "write landing page copy", "write the homepage", "marketing copy for this feature", "product page copy", "write the hero section", or "write copy for [surface]".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Marketing Copy

@@ -1,6 +1,11 @@
 ---
 name: form-deck
-description: Use when asked to design a pitch deck, presentation, or slide set. Examples: "design a pitch deck", "create a sales deck", "make a conference presentation", "build an investor deck", "help me present this to the board", "create slides for X".
+description: |
+  Use when asked to design a pitch deck, presentation, or slide set. Examples: "design a pitch deck", "create a sales deck", "make a conference presentation", "build an investor deck", "help me present this to the board", "create slides for X".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Form Deck

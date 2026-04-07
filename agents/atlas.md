@@ -1,12 +1,6 @@
 ---
 name: atlas
 description: Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

@@ -1,12 +1,6 @@
 ---
 name: flux
 description: Data engineer — databases, migrations, pipelines, data modeling
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

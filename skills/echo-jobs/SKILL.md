@@ -1,6 +1,10 @@
 ---
 name: echo-jobs
 description: Jobs-to-Be-Done analysis — given a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces analysis and opportunity ranking. Use when asked to "find the JTBD", "what jobs are users hiring us for", "job mapping", "what are users really trying to do", "JTBD framework", or "why are users switching".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Jobs-to-Be-Done Analysis

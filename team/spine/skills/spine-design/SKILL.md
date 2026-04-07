@@ -1,6 +1,10 @@
 ---
 name: spine-design
 description: Produce a system design doc — components, data flow, decisions made, tradeoffs, failure modes. Not a list of options. An actual design with calls made. Use when asked for "system design for", "architect this", "how should we build", or "design the backend".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # System Design

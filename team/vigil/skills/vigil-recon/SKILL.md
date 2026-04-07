@@ -1,6 +1,10 @@
 ---
 name: vigil-recon
 description: Observability reconnaissance — inventory what monitoring exists, map coverage, highlight blind spots. Use when asked "what monitoring exists", "observability assessment", or "what can we see".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Observability Reconnaissance

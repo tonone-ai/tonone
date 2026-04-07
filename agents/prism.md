@@ -1,12 +1,6 @@
 ---
 name: prism
 description: Frontend & DX engineer — translates Form's design system into production UI components, pages, and internal tools
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

@@ -1,6 +1,10 @@
 ---
 name: draft-review
 description: Usability review — evaluate an existing flow or UI against usability heuristics, flag friction points, and recommend fixes. Use when asked to "review the UX", "usability audit", "what's wrong with this flow", "UX feedback", "critique this design", or "why are users dropping off here".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Usability Review

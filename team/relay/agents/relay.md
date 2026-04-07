@@ -1,12 +1,6 @@
 ---
 name: relay
 description: DevOps engineer — CI/CD, deployments, GitOps, developer experience
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

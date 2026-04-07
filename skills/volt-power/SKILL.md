@@ -1,6 +1,10 @@
 ---
 name: volt-power
 description: Power management audit — analyze sleep modes, wake sources, power state machines, radio duty cycles, and battery life estimates. Use when asked to "audit power usage", "optimize battery life", "review power management", "why is my battery draining", "power budget analysis", or "sleep mode review".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Power Management Audit

@@ -1,6 +1,10 @@
 ---
 name: prism-ui
 description: Implement a complete UI screen or feature from a Form visual spec. Use when asked to "build a page", "implement this screen", "build the frontend for this feature", or "create this UI".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Implement a UI Screen or Feature

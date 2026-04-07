@@ -1,6 +1,10 @@
 ---
 name: proof-strategy
 description: Produce a test strategy for a project or feature — risk map, test type decisions, coverage targets, CI config. Use when asked to "create test strategy", "what should we test", "testing plan", or "improve test coverage".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Test Strategy

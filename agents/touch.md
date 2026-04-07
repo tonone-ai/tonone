@@ -1,12 +1,6 @@
 ---
 name: touch
 description: Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

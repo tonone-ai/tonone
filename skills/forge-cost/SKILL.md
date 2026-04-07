@@ -1,6 +1,10 @@
 ---
 name: forge-cost
 description: Audit cloud infrastructure costs and produce a concrete optimization plan with specific changes and estimated savings. Use when asked to "how much is this costing", "reduce cloud spend", "cost optimization", "are we overpaying", "cloud bill", or "budget for this infra".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Cost Audit and Optimization Plan

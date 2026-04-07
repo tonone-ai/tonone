@@ -1,6 +1,10 @@
 ---
 name: atlas-changelog
 description: Maintain per-repo and cross-repo changelogs — append structured entries after agent work. Use when asked to "log this change", "update changelog", "what changed", "change history".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Maintain Changelog

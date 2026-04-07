@@ -1,6 +1,10 @@
 ---
 name: spine-service
 description: Build a new production-ready service from scratch — config management, health checks, graceful shutdown, structured logging. Use when asked to "new service", "scaffold a backend", "bootstrap service", or "create microservice".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build a New Service

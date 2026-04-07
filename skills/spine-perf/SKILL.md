@@ -1,6 +1,10 @@
 ---
 name: spine-perf
 description: Find and fix performance bottlenecks — N+1 queries, missing indexes, sync bottlenecks, caching gaps. Use when asked "why is this slow", "performance issue", "optimize this endpoint", or "N+1 queries".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Find and Fix Performance Bottlenecks

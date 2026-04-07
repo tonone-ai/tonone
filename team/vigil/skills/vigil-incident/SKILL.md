@@ -1,6 +1,10 @@
 ---
 name: vigil-incident
 description: Incident response — diagnose production issues, find root cause, propose fix with rollback. Use when asked about "something is broken", "production issue", "why is this down", "incident", or "debug production".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Incident Response

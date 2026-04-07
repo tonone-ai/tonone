@@ -1,6 +1,10 @@
 ---
 name: lens-recon
 description: Analytics reconnaissance for takeover — find all analytics tools, inventory what's tracked and dashboarded, assess data freshness and metric definitions, and present a coverage map. Use when asked "what analytics exist", "BI assessment", or "what do we track".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Analytics Reconnaissance

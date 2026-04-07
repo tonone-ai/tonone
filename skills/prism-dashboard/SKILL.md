@@ -1,6 +1,10 @@
 ---
 name: prism-dashboard
 description: Build an internal dashboard with data tables, filters, detail views, and CRUD. Use when asked to build an "admin panel", "internal dashboard", "back office", or "data dashboard UI".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build an Internal Dashboard

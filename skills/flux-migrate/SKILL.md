@@ -1,6 +1,10 @@
 ---
 name: flux-migrate
 description: Build zero-downtime database migrations — forward SQL, rollback SQL, deployment sequence. Use when asked to "write migration", "schema change", "add column", "rename table", "drop column", or "migrate safely".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build Zero-Downtime Migration

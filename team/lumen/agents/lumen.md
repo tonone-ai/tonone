@@ -1,12 +1,6 @@
 ---
 name: lumen
 description: Product analyst — metrics architecture, funnel analysis, A/B test design, retention, and growth measurement
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

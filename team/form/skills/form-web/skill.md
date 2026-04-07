@@ -1,6 +1,11 @@
 ---
 name: form-web
-description: Use when asked to design a landing page, marketing website, or any web presence intended to convert or inform. Examples: "design a landing page for X", "create a marketing site", "we need a homepage", "design our website", "build a page for our launch".
+description: |
+  Use when asked to design a landing page, marketing website, or any web presence intended to convert or inform. Examples: "design a landing page for X", "create a marketing site", "we need a homepage", "design our website", "build a page for our launch".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Form Web

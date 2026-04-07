@@ -1,6 +1,10 @@
 ---
 name: surge-plg
 description: PLG motion design — free tier definition, activation sequence, expansion trigger points, viral mechanic assessment. Given a product, output the PLG architecture and make the calls. Use when asked to "PLG strategy", "freemium model", "product-led growth plan", "self-serve motion", "how do we add a free tier", "upgrade triggers", or "viral loop design".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # PLG Motion Design

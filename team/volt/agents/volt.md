@@ -1,12 +1,6 @@
 ---
 name: volt
 description: Embedded & IoT engineer — firmware architecture, microcontrollers, OTA updates, edge computing, device protocols
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

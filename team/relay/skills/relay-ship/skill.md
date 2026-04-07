@@ -1,6 +1,10 @@
 ---
 name: relay-ship
 description: End-to-end ship workflow — merge base, run tests, review diff, bump version, commit, push, create PR. Use when asked to "ship", "push to main", "create a PR", "get this merged", or "deploy this branch".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Ship a Branch

@@ -1,6 +1,11 @@
 ---
 name: helm-handoff
-description: Use when a product brief is finalized and ready to hand off to the engineering team, or when asked to send a brief to Apex, kick off engineering work, or start development on a product spec. Examples: "hand this off to engineering", "send brief to Apex", "start building this", "kick off dev on this spec".
+description: |
+  Use when a product brief is finalized and ready to hand off to the engineering team, or when asked to send a brief to Apex, kick off engineering work, or start development on a product spec. Examples: "hand this off to engineering", "send brief to Apex", "start building this", "kick off dev on this spec".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Helm Handoff

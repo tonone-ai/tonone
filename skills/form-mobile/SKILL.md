@@ -1,6 +1,11 @@
 ---
 name: form-mobile
-description: Use when asked to design iOS or Android mobile app screens, create mobile UI, spec mobile flows, or produce screen designs for a native app. Examples: "design the onboarding screens", "spec the checkout flow for iOS", "design a home screen for Android", "create mobile UI for this feature".
+description: |
+  Use when asked to design iOS or Android mobile app screens, create mobile UI, spec mobile flows, or produce screen designs for a native app. Examples: "design the onboarding screens", "spec the checkout flow for iOS", "design a home screen for Android", "create mobile UI for this feature".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Form Mobile

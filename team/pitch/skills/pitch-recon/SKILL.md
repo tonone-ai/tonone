@@ -1,6 +1,10 @@
 ---
 name: pitch-recon
 description: Marketing and messaging reconnaissance — read existing landing pages, copy, positioning docs, and marketing materials to understand the current messaging state. Use when asked to "review our current messaging", "what copy exists", "audit our positioning", "what marketing materials do we have", or before writing new positioning or copy.
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Marketing Reconnaissance

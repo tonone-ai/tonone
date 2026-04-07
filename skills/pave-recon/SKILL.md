@@ -1,6 +1,10 @@
 ---
 name: pave-recon
 description: Platform reconnaissance — inventory all developer tooling, environments, build systems, and developer workflows for project takeover. Use when asked to "understand the dev setup", "developer tooling assessment", "platform assessment", or "how do developers work here".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Platform Reconnaissance

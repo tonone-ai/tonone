@@ -1,6 +1,10 @@
 ---
 name: touch-app
 description: Produce a complete mobile app architecture design — platform choice, navigation structure, state management, data layer, key screens. Use when asked to "build a mobile app", "new app", "create iOS/Android app", "app architecture", or "cross-platform app".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Mobile App Architecture Design

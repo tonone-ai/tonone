@@ -1,12 +1,6 @@
 ---
 name: echo
 description: User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

@@ -1,6 +1,10 @@
 ---
 name: forge-diagnose
 description: Diagnose runtime infrastructure issues — cold starts, timeouts, scaling problems, network failures. Use when asked about "infra is slow", "cold starts", "network issues", "why is this timing out", "scaling problem", "latency spikes", or "service is down".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Diagnose Runtime Infrastructure Issues

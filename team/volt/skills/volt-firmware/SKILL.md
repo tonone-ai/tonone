@@ -1,6 +1,10 @@
 ---
 name: volt-firmware
 description: Produce a complete firmware architecture spec for a described device — layer diagram, module responsibilities, HAL interface definitions, key state machines, RTOS decision. Use when asked to "design firmware architecture", "plan embedded firmware", "architect an IoT device", "how should I structure this firmware", or given a device description and asked what the firmware should look like.
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Firmware Architecture Spec

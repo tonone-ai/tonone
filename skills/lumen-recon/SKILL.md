@@ -1,6 +1,10 @@
 ---
 name: lumen-recon
 description: Analytics reconnaissance — scan existing event tracking, metric definitions, dashboards, and analytics configuration to understand what is currently being measured. Use when asked to "what are we tracking", "audit our analytics", "what metrics exist", "analytics inventory", or before designing new metrics or instrumentation.
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Analytics Reconnaissance

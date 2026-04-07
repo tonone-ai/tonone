@@ -1,6 +1,11 @@
 ---
 name: draft-flow
-description: Use when asked to design a user flow, map how a user moves through a feature, create a wireframe or flow diagram, or document interaction design for a product brief. Examples: "design the flow for X", "map out the user journey", "create a wireframe for this feature", "how should the UX work for this".
+description: |
+  Use when asked to design a user flow, map how a user moves through a feature, create a wireframe or flow diagram, or document interaction design for a product brief. Examples: "design the flow for X", "map out the user journey", "create a wireframe for this feature", "how should the UX work for this".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Draft Flow

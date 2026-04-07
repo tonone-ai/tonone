@@ -1,6 +1,10 @@
 ---
 name: lens-dashboard
 description: Design and spec an analytical dashboard — define the question each chart answers, write the SQL queries, spec the layout and refresh cadence. Produces a complete dashboard spec ready to implement. Use when asked to "build a dashboard", "analytics dashboard", "BI dashboard", "weekly product health", or "visualize this data".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build Analytical Dashboard

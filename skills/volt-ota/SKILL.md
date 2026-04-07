@@ -1,6 +1,10 @@
 ---
 name: volt-ota
 description: Produce a complete OTA update system design — partition layout, update flow, rollback conditions, validation checks, fleet management approach, failure modes and recovery. Use when asked about "OTA updates", "firmware updates over the air", "how do I update devices in the field", "OTA strategy", or "remote firmware update design".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # OTA Update System Design

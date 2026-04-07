@@ -1,6 +1,10 @@
 ---
 name: prism-recon
 description: Frontend reconnaissance — map the component tree, routing, state management, build config, and assess quality. Use when asked to "understand this frontend", "frontend assessment", or "what's the UI built with".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Frontend Reconnaissance

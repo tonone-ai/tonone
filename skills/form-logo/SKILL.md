@@ -1,6 +1,11 @@
 ---
 name: form-logo
-description: Use when asked to create a logo, design a brand mark, generate a logo concept, or produce any logo asset. Examples: "create a logo for X", "design a brand mark", "make me a logo", "generate logo concepts", "logo for our product".
+description: |
+  Use when asked to create a logo, design a brand mark, generate a logo concept, or produce any logo asset. Examples: "create a logo for X", "design a brand mark", "make me a logo", "generate logo concepts", "logo for our product".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Form Logo

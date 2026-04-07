@@ -1,6 +1,10 @@
 ---
 name: spine-review
 description: API and backend code review — REST conventions, auth, validation, error handling, pagination, rate limiting, test coverage. Use when asked to "review this API", "code review", "review backend", or "pre-launch backend check".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # API and Code Review

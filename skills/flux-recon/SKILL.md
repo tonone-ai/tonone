@@ -1,6 +1,10 @@
 ---
 name: flux-recon
 description: Database reconnaissance — full inventory of schema, migrations, data volume, backups, connection pooling, and query patterns. Use when asked to "assess this database", "understand the schema", or "database health check".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Database Reconnaissance

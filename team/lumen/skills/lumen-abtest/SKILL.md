@@ -1,6 +1,10 @@
 ---
 name: lumen-abtest
 description: A/B test design — produce an experiment spec with hypothesis, primary metric, MDE, sample size, run time, and decision rule. Also determines when NOT to A/B test and what to do instead. Use when asked to "design an A/B test", "should we test this", "experiment design", "how do we know if this works", "what's the sample size", or "set up an experiment".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Lumen A/B Test

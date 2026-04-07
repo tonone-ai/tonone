@@ -1,6 +1,10 @@
 ---
 name: proof-e2e
 description: Build E2E test specs for critical user journeys — Playwright or Cypress, page objects, setup/teardown, CI config. Use when asked to "write E2E tests", "end-to-end testing", "browser tests", "UI tests", or "Playwright tests".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # E2E Test Suite

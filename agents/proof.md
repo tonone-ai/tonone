@@ -1,12 +1,6 @@
 ---
 name: proof
 description: QA & testing engineer — test strategy, E2E suites, integration testing, test infrastructure, flaky test triage
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

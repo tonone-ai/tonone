@@ -1,6 +1,10 @@
 ---
 name: volt-recon
 description: Firmware reconnaissance for takeover — inventory the MCU, peripherals, RTOS, protocols, OTA, power management, and assess code quality with risk flags. Use when asked to "understand this firmware", "device inventory", or "embedded assessment".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Firmware Reconnaissance

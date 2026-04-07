@@ -1,6 +1,10 @@
 ---
 name: relay-docker
 description: Build production-ready Dockerfiles with multi-stage builds, security hardening, and docker-compose for local dev. Use when asked to "create Dockerfile", "optimize container", or "dockerize this".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build Production Dockerfiles

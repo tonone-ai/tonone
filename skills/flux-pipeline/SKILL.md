@@ -1,6 +1,10 @@
 ---
 name: flux-pipeline
 description: Build a data pipeline — ETL/ELT with extraction, transformation, loading, error handling, and scheduling. Use when asked to "build ETL", "data pipeline", "move data from X to Y", or "sync data".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build a Data Pipeline

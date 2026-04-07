@@ -1,6 +1,10 @@
 ---
 name: draft-wireframe
 description: Text and Mermaid wireframes — produce screen-level layouts with content hierarchy, component placement, and interaction annotations. Use when asked to "wireframe this", "sketch the UI", "layout for this screen", "lo-fi mockup", "screen design", or "what should this page look like".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Wireframe

@@ -1,6 +1,10 @@
 ---
 name: apex-review
 description: Cross-cutting review of recent work — catches gaps between specialists. Use when asked to "review what we built", "check the work", "pre-launch review", or after completing a significant chunk of work.
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Apex Review

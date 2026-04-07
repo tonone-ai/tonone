@@ -1,12 +1,6 @@
 ---
 name: forge
 description: Infrastructure engineer — cloud services, networking, IaC, cost optimization
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

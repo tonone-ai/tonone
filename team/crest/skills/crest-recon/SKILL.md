@@ -1,6 +1,10 @@
 ---
 name: crest-recon
 description: Strategic context reconnaissance — read existing roadmaps, OKRs, competitive docs, and briefs to establish context before planning. Use when asked to "understand our strategy", "what's the current roadmap", "what OKRs do we have", "strategic context", or before starting any prioritization or roadmap work.
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Strategic Reconnaissance

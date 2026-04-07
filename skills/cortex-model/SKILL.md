@@ -1,6 +1,10 @@
 ---
 name: cortex-model
 description: Build an ML pipeline — from data to trained model to serving endpoint. Use when asked to "build ML model", "train a model", "prediction pipeline", "classification", or "regression".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build an ML Pipeline

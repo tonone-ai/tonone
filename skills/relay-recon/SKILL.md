@@ -1,6 +1,10 @@
 ---
 name: relay-recon
 description: Map the full CI/CD pipeline — triggers, build, test, deploy flow — with risk assessment. Use when asked "how does this deploy", "map the pipeline", or "understand CI/CD".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Pipeline Reconnaissance

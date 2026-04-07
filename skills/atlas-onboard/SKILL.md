@@ -1,6 +1,10 @@
 ---
 name: atlas-onboard
 description: Generate onboarding documentation — what this project does, how to set up locally, where things live, key decisions, how to deploy. Written for day-one engineers who know nothing. Use when asked for "onboarding docs", "new engineer guide", "how to get started", or "developer setup".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Generate Onboarding Documentation

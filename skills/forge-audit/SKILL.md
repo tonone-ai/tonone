@@ -1,6 +1,10 @@
 ---
 name: forge-audit
 description: Audit existing infrastructure for security issues, waste, and misconfigurations. Use when asked to "audit my infra", "check cloud setup", "infra review", "are we wasting money", "security check on infra", or "review my terraform".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Audit Existing Infrastructure

@@ -1,12 +1,6 @@
 ---
 name: cortex
 description: ML/AI engineer — LLM integration, prompt engineering, RAG, evals, and AI feature design for production
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

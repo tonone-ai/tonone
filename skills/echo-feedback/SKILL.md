@@ -1,6 +1,10 @@
 ---
 name: echo-feedback
 description: Feedback synthesis — cluster support tickets, NPS verbatims, app store reviews, and churn surveys by theme, separate signal from noise, and produce an actionable insight report. Use when asked to "synthesize this feedback", "analyze support tickets", "what are users complaining about", "NPS analysis", "churn feedback synthesis", or "what's the feedback telling us".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Feedback Synthesis

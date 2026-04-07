@@ -1,6 +1,10 @@
 ---
 name: spine-api
 description: Design and spec an API — endpoints, request/response shapes, error codes, auth pattern, pagination. Applies Stripe's consistency principles. Use when asked to "design an API", "build API endpoints", "create REST API", or "API for this feature".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Design and Build an API

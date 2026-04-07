@@ -1,6 +1,10 @@
 ---
 name: pave-audit
 description: Audit developer experience — measure onboarding time, build speed, deployment friction, and developer satisfaction. Use when asked to "DX audit", "developer experience review", "why is development slow", "onboarding assessment", or "DORA metrics".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Developer Experience Audit

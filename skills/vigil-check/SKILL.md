@@ -1,6 +1,10 @@
 ---
 name: vigil-check
 description: Verify observability posture — audit monitoring coverage, find blind spots, prioritize gaps. Use when asked "is monitoring sufficient", "observability review", "are we covered", or "pre-launch monitoring check".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Verify Observability Posture

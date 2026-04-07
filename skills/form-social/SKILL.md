@@ -1,6 +1,11 @@
 ---
 name: form-social
-description: Use when asked to design social media graphics, ad creatives, or marketing assets. Examples: "design a LinkedIn post for our launch", "create ad creatives for our campaign", "make an Instagram story", "design a Twitter card", "create a banner ad", "social assets for the product announcement".
+description: |
+  Use when asked to design social media graphics, ad creatives, or marketing assets. Examples: "design a LinkedIn post for our launch", "create ad creatives for our campaign", "make an Instagram story", "design a Twitter card", "create a banner ad", "social assets for the product announcement".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Form Social

@@ -1,6 +1,10 @@
 ---
 name: warden-threat
 description: Produce a threat model — assets, ranked threats, mitigations, accepted risks. Use when asked to "threat model this", "what could go wrong security-wise", "map our attack surface", or before designing any security-sensitive feature.
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Threat Model

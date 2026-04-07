@@ -1,6 +1,10 @@
 ---
 name: cortex-prompt
 description: Build a production-ready prompt package — system prompt, few-shot examples, output format, edge case handling, eval criteria. Use when asked to "prompt engineering", "build a prompt", "write a system prompt", or "improve this prompt".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build a Production-Ready Prompt

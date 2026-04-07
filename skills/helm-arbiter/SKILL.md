@@ -1,6 +1,10 @@
 ---
 name: helm-arbiter
 description: Scope arbitration — resolve disagreements between product and engineering on what is in or out of scope, with a decision log and escalation path. Use when asked to "resolve this scope disagreement", "arbitrate between product and eng", "scope is creeping", "we can't agree on what's in scope", or "help us decide what to cut".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Scope Arbitration

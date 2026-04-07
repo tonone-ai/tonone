@@ -1,6 +1,10 @@
 ---
 name: draft-recon
 description: UI and UX reconnaissance — scan existing frontend routes, components, navigation, and flows to understand the current UX state before designing. Use when asked to "understand the current UI", "what UX patterns exist", "map the navigation", "what screens exist", or before starting any flow or wireframe work.
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # UX Reconnaissance

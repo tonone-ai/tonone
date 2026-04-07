@@ -1,12 +1,6 @@
 ---
 name: form
 description: Visual designer — brand identity, color systems, typography, UI design, and design systems
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

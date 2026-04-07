@@ -1,6 +1,11 @@
 ---
 name: helm-brief
-description: Use when asked to write a product brief, turn a feature idea into a spec, define requirements for something to build, or clarify what a product should do and why. Examples: "write a brief for X", "turn this idea into a spec", "what should we build here", "help me define requirements".
+description: |
+  Use when asked to write a product brief, turn a feature idea into a spec, define requirements for something to build, or clarify what a product should do and why. Examples: "write a brief for X", "turn this idea into a spec", "what should we build here", "help me define requirements".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Helm Brief

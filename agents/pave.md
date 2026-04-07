@@ -1,12 +1,6 @@
 ---
 name: pave
 description: Platform engineer — developer experience, golden paths, service catalogs, environment management, internal tooling. Builds what removes friction for the team that exists.
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

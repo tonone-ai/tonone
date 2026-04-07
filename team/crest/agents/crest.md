@@ -1,12 +1,6 @@
 ---
 name: crest
 description: Product strategist — diagnosis-first strategy, roadmap sequencing, competitive positioning, and market decisions
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

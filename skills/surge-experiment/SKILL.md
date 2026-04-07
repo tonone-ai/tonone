@@ -1,6 +1,10 @@
 ---
 name: surge-experiment
 description: Growth experiment design — structure a growth hypothesis, define metric, baseline, expected lift, and kill condition for a single experiment. Use when asked to "design a growth experiment", "test this growth idea", "experiment framework", "how do we test if this works", or "growth hypothesis".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Growth Experiment Design

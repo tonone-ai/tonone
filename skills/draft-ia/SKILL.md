@@ -1,6 +1,10 @@
 ---
 name: draft-ia
 description: Information architecture — design navigation structure, content hierarchy, sitemap, and taxonomy for a product or feature set. Use when asked to "organize the navigation", "information architecture", "how should content be structured", "sitemap", "nav redesign", "where should X live", or "content hierarchy".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Information Architecture

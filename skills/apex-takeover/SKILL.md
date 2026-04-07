@@ -1,6 +1,10 @@
 ---
 name: apex-takeover
 description: System takeover — take ownership of an existing codebase or inherited system. Use when "we acquired this", "previous team left", "take over this system", "inherited this codebase".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Apex Takeover
