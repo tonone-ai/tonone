@@ -1,12 +1,6 @@
 ---
 name: surge
 description: Growth engineer — acquisition channels, activation funnels, retention playbooks, and PLG strategy
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

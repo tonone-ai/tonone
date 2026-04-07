@@ -1,6 +1,10 @@
 ---
 name: warden-recon
 description: Security reconnaissance — full inventory of secrets management, IAM, dependencies, auth, encryption, audit logging, and compliance gaps. Use when asked about "security posture", "how secure is this", or "security assessment".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Security Reconnaissance

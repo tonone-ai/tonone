@@ -1,6 +1,11 @@
 ---
 name: helm-plan
-description: Use when asked to build a product roadmap, prioritize a backlog, decide what to build next, or sequence a list of feature ideas. Examples: "what should we build next", "prioritize this backlog", "make a roadmap", "RICE score these features".
+description: |
+  Use when asked to build a product roadmap, prioritize a backlog, decide what to build next, or sequence a list of feature ideas. Examples: "what should we build next", "prioritize this backlog", "make a roadmap", "RICE score these features".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Helm Plan

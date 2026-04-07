@@ -1,6 +1,10 @@
 ---
 name: crest-narrative
 description: Strategic narrative — write a standalone strategy memo that frames product direction, bets, and rationale for a planning horizon. Use when asked to "write a strategy doc", "product vision", "strategic narrative", "company strategy memo", "planning memo", or "explain our product direction".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Strategic Narrative

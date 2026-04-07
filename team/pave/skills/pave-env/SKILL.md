@@ -1,6 +1,10 @@
 ---
 name: pave-env
 description: Set up local development environments — devcontainers, Docker Compose, one-command setup, dev/prod parity. Use when asked to "set up dev environment", "devcontainer", "docker compose for dev", "local development setup", or "one command to run".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Development Environment

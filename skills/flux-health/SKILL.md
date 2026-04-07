@@ -1,6 +1,10 @@
 ---
 name: flux-health
 description: Data quality and pipeline health check — freshness, schema drift, null rates, orphaned records, pipeline status. Use when asked about "data quality check", "pipeline health", "is our data fresh", or "schema drift".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Data Quality and Pipeline Health

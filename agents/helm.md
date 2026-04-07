@@ -1,13 +1,6 @@
 ---
 name: helm
 description: Head of Product — product strategy, requirements, and engineering handoff via the Helm↔Apex interface
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
-  - Agent
 model: sonnet
 ---
 

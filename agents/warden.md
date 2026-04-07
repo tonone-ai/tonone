@@ -1,12 +1,6 @@
 ---
 name: warden
 description: Security engineer — IAM, secrets, threat modeling, hardening, auth, and supply chain security
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

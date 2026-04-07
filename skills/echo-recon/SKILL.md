@@ -1,6 +1,10 @@
 ---
 name: echo-recon
 description: User research reconnaissance — survey existing personas, research docs, interview notes, and feedback artifacts to establish what is already known about users. Use when asked to "what research exists", "review existing personas", "what do we know about our users", or before starting new research or synthesis work.
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Research Reconnaissance

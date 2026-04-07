@@ -1,6 +1,10 @@
 ---
 name: warden-harden
 description: Produce a hardening spec and implement it — auth patterns, security headers, rate limiting, input validation, secrets management, dependency hygiene. Use when asked to "harden this", "add security to this service", "what security do I need", or "secure this before launch".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Harden a Service

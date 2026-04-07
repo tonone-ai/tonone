@@ -1,6 +1,10 @@
 ---
 name: volt-driver
 description: Build a device driver or protocol handler — I2C sensors, BLE services, MQTT clients, SPI peripherals with interrupt-driven I/O and clean HAL abstraction. Use when asked to "write a driver", "I2C device", "BLE service", "MQTT client", or "sensor integration".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build Device Driver or Protocol Handler

@@ -1,6 +1,10 @@
 ---
 name: flux-query
 description: Optimize slow database queries — analyze execution plans, add indexes, rewrite queries. Use when asked about "slow query", "optimize SQL", "query performance", or "explain this query".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Optimize Slow Queries

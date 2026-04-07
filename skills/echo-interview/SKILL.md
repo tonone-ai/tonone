@@ -1,6 +1,10 @@
 ---
 name: echo-interview
 description: Run a user interview — produce an interview guide and synthesize the output into an actionable insight report. Use when asked to "run a user interview", "synthesize these interview notes", "what do users actually want", "build a persona from this feedback", "find the JTBD in these transcripts", or "analyze this interview data".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Echo Interview

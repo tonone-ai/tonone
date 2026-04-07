@@ -1,6 +1,10 @@
 ---
 name: apex-recon
 description: Engineering lead reconnaissance — inventory the project before planning. Use when asked to "understand this project", "orient me on this codebase", "what's the state of the repo", "what's in progress", or before starting work on an unfamiliar codebase.
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Engineering Reconnaissance

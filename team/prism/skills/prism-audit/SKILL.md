@@ -1,6 +1,10 @@
 ---
 name: prism-audit
 description: Frontend audit — bundle size, dependencies, accessibility, performance, component quality. Use when asked for "frontend review", "performance audit", "accessibility check", or "bundle size".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Frontend Audit

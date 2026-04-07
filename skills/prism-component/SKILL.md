@@ -1,6 +1,10 @@
 ---
 name: prism-component
 description: Implement a reusable, accessible, typed component from a design spec. Use when asked to "create a component", "build a widget", "implement this design", or "reusable UI element".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Implement a Component

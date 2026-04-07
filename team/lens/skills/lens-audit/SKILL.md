@@ -1,6 +1,10 @@
 ---
 name: lens-audit
 description: Review existing analytics — find all dashboards and reports, check who uses them, whether metrics are defined, and whether they drive decisions. Recommend what to keep, kill, or add. Use when asked "are our dashboards useful", "analytics review", or "metrics audit".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Audit Existing Analytics

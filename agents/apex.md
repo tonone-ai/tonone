@@ -1,13 +1,6 @@
 ---
 name: apex
 description: Engineering lead — orchestrates the team, scopes work, controls depth and budget
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
-  - Agent
 model: opus
 ---
 

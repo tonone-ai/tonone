@@ -1,12 +1,6 @@
 ---
 name: pitch
 description: Product marketer — positioning, messaging, value proposition, GTM strategy, and launch copy
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

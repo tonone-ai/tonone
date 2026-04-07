@@ -1,6 +1,10 @@
 ---
 name: relay-deploy
 description: Set up a complete deployment configuration — Dockerfile, deployment manifest, environment config, and rollback procedure. Use when asked about "deployment setup", "how do I deploy this", "deployment strategy", or "rollback plan".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Set Up Deployment Configuration

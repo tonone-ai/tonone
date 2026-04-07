@@ -1,6 +1,10 @@
 ---
 name: vigil-alert
 description: Write SLO-based alert rules with burn rate thresholds and paired runbooks. Outputs actual alert configs, not a strategy doc. Use when asked to "set up alerts", "create runbooks", "define SLOs", or "alerting strategy".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build Alert Rules and Runbooks

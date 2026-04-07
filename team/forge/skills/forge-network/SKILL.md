@@ -1,6 +1,10 @@
 ---
 name: forge-network
 description: Design and build networking infrastructure — VPCs, subnets, DNS, load balancers, firewall rules. Use when asked to "set up networking", "VPC design", "configure DNS", "load balancer setup", "network architecture", or "firewall rules".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Design and Build Networking

@@ -1,6 +1,11 @@
 ---
 name: surge-activation
-description: Use when asked to improve activation, map the growth funnel, identify growth levers, design a referral program, build a retention playbook, develop a PLG strategy, or find where to invest in growth. Examples: "how do we grow faster", "improve our activation rate", "design a referral program", "build a retention playbook", "what are our best growth levers", "map our growth funnel".
+description: |
+  Use when asked to improve activation, map the growth funnel, identify growth levers, design a referral program, build a retention playbook, develop a PLG strategy, or find where to invest in growth. Examples: "how do we grow faster", "improve our activation rate", "design a referral program", "build a retention playbook", "what are our best growth levers", "map our growth funnel".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Surge Activation

@@ -1,6 +1,10 @@
 ---
 name: lens-report
 description: Build a reporting pipeline — scheduled reports with SQL queries, delivery via Slack or email, threshold alerts, and historical comparison. Use when asked for "automated reports", "scheduled report", "email digest", or "Slack alerts for metrics".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build Reporting Pipeline

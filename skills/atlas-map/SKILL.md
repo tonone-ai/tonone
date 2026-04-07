@@ -1,6 +1,10 @@
 ---
 name: atlas-map
 description: Map the system architecture — read the codebase, identify services and connections, output a C4-level architecture map as Mermaid diagrams with component descriptions. Use when asked to "map the architecture", "system diagram", "how does this work", or "architecture overview".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Map the System Architecture

@@ -1,6 +1,10 @@
 ---
 name: proof-recon
 description: Testing reconnaissance — inventory all tests, frameworks, coverage, CI integration, and assess testing maturity for project takeover. Use when asked to "understand the tests", "testing assessment", "what's tested", or "test inventory".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Testing Reconnaissance

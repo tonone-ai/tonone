@@ -1,6 +1,10 @@
 ---
 name: touch-feature
 description: Produce a mobile feature spec — user story, technical approach, component breakdown, platform-specific considerations, edge cases. Use when asked to "add a screen", "spec this feature", "mobile feature", "new tab", "push notifications", or "deep link".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Mobile Feature Spec

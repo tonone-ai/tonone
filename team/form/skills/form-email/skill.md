@@ -1,6 +1,11 @@
 ---
 name: form-email
-description: Use when asked to design an email template, newsletter, drip campaign email, transactional email, or any HTML email asset. Examples: "design a welcome email", "create a newsletter template", "make an onboarding email sequence", "design a password reset email", "build an email campaign".
+description: |
+  Use when asked to design an email template, newsletter, drip campaign email, transactional email, or any HTML email asset. Examples: "design a welcome email", "create a newsletter template", "make an onboarding email sequence", "design a password reset email", "build an email campaign".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Form Email

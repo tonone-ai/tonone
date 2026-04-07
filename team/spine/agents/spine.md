@@ -1,12 +1,6 @@
 ---
 name: spine
 description: Backend engineer — APIs, system design, performance, distributed systems
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

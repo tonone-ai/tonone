@@ -1,6 +1,10 @@
 ---
 name: pitch-launch
 description: Produce an actual launch plan with announcement copy, channel sequence, and day-1 checklist. Use when asked to "plan a launch", "GTM strategy", "how do we announce this", "launch plan for [feature]", "go-to-market", "write our Product Hunt post", or "how do we get people to notice this".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Pitch Launch

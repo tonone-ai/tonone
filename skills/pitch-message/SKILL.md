@@ -1,6 +1,10 @@
 ---
 name: pitch-message
 description: Messaging framework — produce a full headline, subheadline, proof points, and CTA hierarchy for use across all surfaces. Use when asked to "write our messaging", "messaging framework", "what should our headline say", "copy hierarchy", "tagline and messaging", or "how do we talk about the product".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Messaging Framework

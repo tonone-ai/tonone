@@ -1,6 +1,10 @@
 ---
 name: spine-recon
 description: Backend reconnaissance — map all routes, middleware, models, dependencies, auth, and assess code quality for project takeover. Use when asked to "understand this backend", "map the API", or "assess code quality".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Backend Reconnaissance

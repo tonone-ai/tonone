@@ -1,6 +1,10 @@
 ---
 name: cortex-recon
 description: ML reconnaissance — inventory all models, pipelines, data sources, and monitoring. Use when asked "what ML do we have", "model inventory", or "ML assessment".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # ML Reconnaissance

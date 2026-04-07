@@ -1,6 +1,11 @@
 ---
 name: lumen-funnel
-description: Use when asked to analyze a funnel, find where users drop off, diagnose low conversion or activation rates, design a metrics framework, set up OKRs, or measure whether a feature is working. Examples: "analyze our funnel", "why is activation low", "where are users dropping off", "design OKRs for this quarter", "is this feature working", "set up metrics for this launch".
+description: |
+  Use when asked to analyze a funnel, find where users drop off, diagnose low conversion or activation rates, design a metrics framework, set up OKRs, or measure whether a feature is working. Examples: "analyze our funnel", "why is activation low", "where are users dropping off", "design OKRs for this quarter", "is this feature working", "set up metrics for this launch".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Lumen Funnel

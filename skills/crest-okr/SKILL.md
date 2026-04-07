@@ -1,6 +1,10 @@
 ---
 name: crest-okr
 description: OKR design — create objectives and key results with a North Star metric, input metrics tree, and cadence. Use when asked to "set OKRs", "define our objectives", "what should we measure this quarter", "design our OKR framework", "build a metrics tree", or "what's our North Star".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # OKR Design

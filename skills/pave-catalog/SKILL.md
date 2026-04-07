@@ -1,6 +1,10 @@
 ---
 name: pave-catalog
 description: Build a service catalog — schema, starter entries, and governance model. Produces what information to capture per service, how it's maintained, and where it lives. Use when asked to "service catalog", "what services do we have", "catalog our services", "service inventory", or "who owns what".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Service Catalog

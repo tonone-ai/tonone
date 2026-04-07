@@ -1,6 +1,10 @@
 ---
 name: cortex-eval
 description: Evaluate model performance — check for accuracy drops, data drift, and error patterns. Use when asked about "model accuracy dropped", "evaluate the model", "check for drift", or "model performance".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Evaluate Model Performance

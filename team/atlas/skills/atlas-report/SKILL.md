@@ -1,6 +1,10 @@
 ---
 name: atlas-report
 description: Render agent findings as a styled HTML report in the browser. Use when asked for "full report", "detailed report", "show in browser", or when CLI output exceeds the 40-line budget.
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Render HTML Report

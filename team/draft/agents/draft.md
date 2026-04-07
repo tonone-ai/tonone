@@ -1,12 +1,6 @@
 ---
 name: draft
 description: UX designer — user flows, information architecture, wireframes, and interaction design
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

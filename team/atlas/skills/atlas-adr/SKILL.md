@@ -1,6 +1,10 @@
 ---
 name: atlas-adr
 description: Write an Architecture Decision Record — document what was decided, why, what alternatives were considered, and what trade-offs were accepted. Use when asked to "write an ADR", "document this decision", or "why did we choose X".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Write an Architecture Decision Record

@@ -1,6 +1,10 @@
 ---
 name: lumen-instrument
 description: Instrumentation plan — design event taxonomy, property schema, and tracking plan for analytics tools. Use when asked to "what should we track", "instrumentation plan", "set up analytics events", "analytics event schema", "tracking plan", or "instrument this feature".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Instrumentation Plan

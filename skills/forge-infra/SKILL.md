@@ -1,6 +1,10 @@
 ---
 name: forge-infra
 description: Build production-grade infrastructure as code for a service or project. Use when asked to "set up infra", "provision infrastructure", "create cloud resources", "IaC for this project", "terraform for this", or "deploy this service".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build Infrastructure as Code

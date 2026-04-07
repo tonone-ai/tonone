@@ -1,6 +1,10 @@
 ---
 name: warden-iam
 description: Build IAM from scratch — roles, policies, service accounts with least privilege. Use when asked to "set up IAM", "create roles", "service accounts", or "access control".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Build IAM from Scratch

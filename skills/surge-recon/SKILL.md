@@ -1,6 +1,10 @@
 ---
 name: surge-recon
 description: Growth state reconnaissance — scan existing onboarding flows, acquisition channels, conversion funnels, and growth experiment logs to understand current growth state. Use when asked to "what's our growth state", "audit the funnel", "what growth experiments have we run", "acquisition channel inventory", or before designing new growth experiments.
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Growth Reconnaissance

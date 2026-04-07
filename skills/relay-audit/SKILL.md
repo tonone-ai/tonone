@@ -1,6 +1,10 @@
 ---
 name: relay-audit
 description: Audit an existing CI/CD pipeline for slowness, security issues, and reliability gaps. Use when asked to "audit pipeline", "why is CI slow", "pipeline review", or "deployment review".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Audit Existing Pipeline

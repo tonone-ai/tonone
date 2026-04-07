@@ -1,6 +1,11 @@
 ---
 name: form-component
-description: Use when asked to design a UI component, specify a button, input, card, modal, badge, or any interactive element. Examples: "design a button component", "spec out the input field", "define the card component states", "create a component spec for Prism", "what should the dropdown look like".
+description: |
+  Use when asked to design a UI component, specify a button, input, card, modal, badge, or any interactive element. Examples: "design a button component", "spec out the input field", "define the card component states", "create a component spec for Prism", "what should the dropdown look like".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Form Component

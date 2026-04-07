@@ -1,6 +1,10 @@
 ---
 name: touch-audit
 description: Mobile audit — app size, startup time, crash reporting, store compliance, accessibility, offline behavior. Use when asked for "mobile review", "app store readiness", "mobile performance", or "crash analysis".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Mobile Audit

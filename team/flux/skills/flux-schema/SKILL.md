@@ -1,6 +1,10 @@
 ---
 name: flux-schema
 description: Design and build database schema — tables, columns, types, indexes, constraints, relationships. Given a domain description, output the schema and write the files. Use when asked to "design schema", "database design", "create tables", or "data model".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Design and Build Database Schema

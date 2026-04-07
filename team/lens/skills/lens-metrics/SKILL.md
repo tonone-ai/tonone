@@ -1,6 +1,10 @@
 ---
 name: lens-metrics
 description: Produce a complete metrics definition doc — metric name, formula, data source, segmentation, SQL or event tracking spec, and what good/bad looks like. Given a product area, outputs the full metrics spec. Use when asked to "define KPIs", "metrics framework", "what should we measure", "north star metric", or "instrument this feature".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Define and Implement Metrics

@@ -1,12 +1,6 @@
 ---
 name: lens
 description: Data analytics & BI engineer — dashboards, metrics design, reporting, data storytelling
-tools:
-  - Bash
-  - Read
-  - Glob
-  - Grep
-  - Write
 model: sonnet
 ---
 

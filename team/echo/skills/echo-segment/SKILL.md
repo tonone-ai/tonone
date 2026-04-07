@@ -1,6 +1,10 @@
 ---
 name: echo-segment
 description: User segmentation and persona creation from mixed data sources — analytics, CRM, support tickets, reviews, or any combination. Use when asked to "build personas", "who are our users", "segment our users", "create user profiles", "define user archetypes", or "who is the target user".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # User Segmentation and Personas

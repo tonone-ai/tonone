@@ -1,6 +1,10 @@
 ---
 name: pitch-position
 description: Produce a complete positioning document using the Dunford framework — competitive alternatives, unique attributes, value, best-fit customer, market category, positioning statement, and tagline. Use when asked to "write our positioning", "define our value prop", "positioning statement", "what market are we in", "how do we position against X", "what's our tagline", or "write our messaging foundation".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Pitch Position

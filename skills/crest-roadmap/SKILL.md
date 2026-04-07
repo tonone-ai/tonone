@@ -1,6 +1,10 @@
 ---
 name: crest-roadmap
 description: Build a product roadmap with sequenced bets and explicit tradeoffs. Use when asked to "build a roadmap", "prioritize the backlog strategically", "what do we build next quarter", "sequence our bets", "what should we focus on", or "product strategy for the next N months".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Crest Roadmap

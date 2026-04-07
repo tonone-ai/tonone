@@ -1,6 +1,10 @@
 ---
 name: atlas-present
 description: Generate a polished HTML presentation page and Obsidian Canvas for big releases — new products, takeovers, major migrations. Non-technical audience. Use when asked to "present this", "release announcement", "show what we built", or "stakeholder update".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Release Presentation

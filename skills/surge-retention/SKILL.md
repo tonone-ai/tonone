@@ -1,6 +1,10 @@
 ---
 name: surge-retention
 description: Retention diagnosis + intervention plan — analyze the retention curve, identify the primary drop-off point, and produce a specific intervention plan with expected impact. Use when asked to "improve retention", "why are users churning", "build a retention playbook", "reduce churn", "win-back campaign", or "users aren't coming back".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Retention Diagnosis + Intervention Plan

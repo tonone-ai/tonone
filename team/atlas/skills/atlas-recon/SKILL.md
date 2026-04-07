@@ -1,6 +1,10 @@
 ---
 name: atlas-recon
 description: Documentation reconnaissance for takeover — find all docs, assess accuracy, freshness, coverage, and discoverability, and identify critical knowledge gaps. Use when asked "what docs exist", "documentation assessment", or "knowledge gaps".
+allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Documentation Reconnaissance

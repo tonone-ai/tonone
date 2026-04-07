@@ -1,6 +1,10 @@
 ---
 name: touch-release
 description: Set up mobile release pipeline — Fastlane, code signing, CI, beta distribution, versioning. Use when asked about "app store setup", "release pipeline", "fastlane", "beta distribution", or "signing".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Set Up Mobile Release Pipeline

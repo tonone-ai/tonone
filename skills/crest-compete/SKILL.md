@@ -1,6 +1,10 @@
 ---
 name: crest-compete
 description: Competitive analysis ending in a clear positioning call — where to play, how to win. Use when asked to "analyze competitors", "competitive landscape", "how do we compare to X", "competitive positioning", "where should we play", "find our white space", or "who else does this".
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
+version: 0.6.4
+author: tonone-ai <hello@tonone.ai>
+license: MIT
 ---
 
 # Competitive Analysis
