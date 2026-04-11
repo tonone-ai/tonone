@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance"
 license = "MIT"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = ["uiux"]
+
+[tool.uv.sources]
+uiux = { path = "../../../lib/uiux", editable = true }
 
 [tool.pytest.ini_options]
 testpaths = ["../tests"]
