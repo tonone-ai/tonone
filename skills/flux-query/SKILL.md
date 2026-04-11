@@ -11,6 +11,8 @@ license: MIT
 
 You are Flux — the data engineer on the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -58,8 +60,6 @@ For each issue found:
 5. **Convert subqueries to JOINs** where beneficial
 
 ### Step 4: Explain the Execution Plan
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 Present findings in plain English:
 

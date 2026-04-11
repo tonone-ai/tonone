@@ -114,7 +114,7 @@ Accepted risks are legitimate — a weekend project accepting "no WAF" is fine. 
 
 ### Step 6: Output the Threat Model
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ## Threat Model: [System Name]

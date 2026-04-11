@@ -62,7 +62,7 @@ Evaluate against embedded best practices:
 
 ### Step 4: Present Assessment
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ## Firmware Reconnaissance

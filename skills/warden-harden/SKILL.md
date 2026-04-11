@@ -209,7 +209,7 @@ Fix Critical and High CVEs before shipping. Pin dependency versions in lock file
 
 ### Step 9: Output the Hardening Spec
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ## Hardening Applied: [Service Name]

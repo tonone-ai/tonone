@@ -85,7 +85,7 @@ If battery capacity and target runtime are known, flag if the budget exceeds the
 
 ### Step 5: Present Audit
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ## Power Management Audit

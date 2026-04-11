@@ -26,11 +26,11 @@ If stage is ambiguous, default to pre-PMF rules (fewer metrics, qualitative prio
 
 ## Step 1: Define the North Star Metric
 
-The North Star is the single metric that captures the value users get from the product AND predicts long-term business health. Run the three-part test:
+North Star is the single metric capturing value users get from product AND predicting long-term business health. Run three-part test:
 
 1. Does it capture **user value** (not just activity or revenue)?
-2. Can the **product team influence** it (not just sales or marketing)?
-3. Is it a **leading indicator** of revenue — not a lagging one?
+2. Can **product team influence** it (not just sales or marketing)?
+3. Is it **leading indicator** of revenue — not a lagging one?
 
 All three must be true. Revenue itself almost never passes test 1 and 2.
 
@@ -45,18 +45,18 @@ North Star patterns by product type:
 | Data / analytics tool         | [Analytical actions] per [active account]            | "Dashboards viewed per active account per week"     |
 | Consumer habit app            | [Habit action] per [active user] per [period]        | "Workouts logged per weekly active user"            |
 
-State the North Star as:
+State North Star as:
 **"[Metric] — [precise definition including numerator, denominator, time window] — reviewed [weekly/monthly]"**
 
-Flag if the proposed North Star fails the test. Suggest the corrected version.
+Flag if proposed North Star fails the test. Suggest corrected version.
 
 ---
 
 ## Step 2: Build the Input Metrics Tree
 
-Decompose the North Star into 4–6 input metrics the team can directly move. These are leading indicators — they explain why the North Star moves and they're actionable enough to run experiments against.
+Decompose North Star into 4–6 input metrics the team can directly move. These are leading indicators — they explain why North Star moves and are actionable enough to run experiments against.
 
-Reforge rule: output metrics (North Star, revenue) tell you the score. Input metrics tell you what plays to run. Build experiments against input metrics, not the North Star itself.
+Reforge rule: output metrics (North Star, revenue) tell you the score. Input metrics tell you what plays to run. Build experiments against input metrics, not North Star itself.
 
 ```
 NORTH STAR: [metric] — [definition]
@@ -96,7 +96,7 @@ NORTH STAR: [metric] — [definition]
 
 ## Step 3: Instrumentation Spec
 
-For each metric, produce the minimal instrumentation required:
+For each metric, produce minimal instrumentation required:
 
 | Metric            | Event(s) to Fire                     | Denominator      | Time Window   | Tool                 | Status     |
 | ----------------- | ------------------------------------ | ---------------- | ------------- | -------------------- | ---------- |
@@ -121,7 +121,7 @@ For each metric, define what happens when it moves. Metrics without action trigg
 
 ## Step 5: Counter-Metrics
 
-Define 1–2 counter-metrics to prevent optimizing the wrong thing:
+Define 1–2 counter-metrics to prevent optimizing wrong thing:
 
 | Optimized Metric | Gaming Risk                               | Counter-Metric                                                   |
 | ---------------- | ----------------------------------------- | ---------------------------------------------------------------- |
@@ -133,17 +133,19 @@ Define 1–2 counter-metrics to prevent optimizing the wrong thing:
 
 ## Step 6: Stage-Appropriate Scope
 
-Apply the right instrumentation scope for the product stage:
+Apply right instrumentation scope for product stage:
 
-**Pre-PMF (<1k users):** Output 3 metrics only — activation rate, D7 retention, North Star. Add session recordings. Do NOT build a 30-metric dashboard. Sample sizes are too small for statistical confidence on most things. Qualitative signal dominates.
+**Pre-PMF (<1k users):** Output 3 metrics only — activation rate, D7 retention, North Star. Add session recordings. Do NOT build a 30-metric dashboard. Sample sizes too small for statistical confidence on most things. Qualitative signal dominates.
 
-**Post-PMF signal (1k–50k users):** Full input metrics tree. Cohort analysis by acquisition channel. Begin measuring DAU/MAU ratio and the North Star weekly.
+**Post-PMF signal (1k–50k users):** Full input metrics tree. Cohort analysis by acquisition channel. Begin measuring DAU/MAU ratio and North Star weekly.
 
 **Scaling (50k+ users):** Add unit economics overlay (CAC, LTV, payback period). Funnel analysis by segment. Experiment velocity becomes a metric itself.
 
 ---
 
 ## Output Format
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ┌─────────────────────────────────────────────────────┐

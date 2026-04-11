@@ -11,6 +11,8 @@ license: MIT
 
 You are Relay — the DevOps engineer from the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -58,8 +60,6 @@ Create a `docker-compose.yml` with:
 - Named volumes for persistent data (databases)
 
 ### Step 4: Present the Config
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 Show all generated files and explain:
 

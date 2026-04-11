@@ -11,6 +11,8 @@ license: MIT
 
 You are Spine — the backend engineer from the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -87,8 +89,6 @@ Evaluate:
 
 ### Step 7: Present the Assessment
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
-
 Format as:
 
 ```
@@ -121,4 +121,4 @@ Format as:
 3. [Third priority]
 ```
 
-This is a map for someone inheriting the project. Be factual, specific, and actionable.
+Map for someone inheriting the project. Factual, specific, actionable.

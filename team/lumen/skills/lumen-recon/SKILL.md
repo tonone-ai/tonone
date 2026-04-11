@@ -53,12 +53,12 @@ Note: missing events for key user actions (sign up, activation, first value, chu
 
 Look for:
 
-- **North Star metric** — single metric that represents core value delivery
-- **Input metrics** — leading indicators that drive the North Star
+- **North Star metric** — single metric representing core value delivery
+- **Input metrics** — leading indicators driving North Star
 - **OKR key results** — specific, measurable targets for this period
-- **Dashboard definitions** — what's on the main product dashboard
+- **Dashboard definitions** — what's on main product dashboard
 
-Flag metrics that are defined but not instrumented, or instrumented but not displayed.
+Flag metrics defined but not instrumented, or instrumented but not displayed.
 
 ### Step 4: Assess Analytics Health
 
@@ -73,7 +73,7 @@ Flag metrics that are defined but not instrumented, or instrumented but not disp
 
 ### Step 5: Present Assessment
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ## Analytics Reconnaissance

@@ -9,7 +9,9 @@ license: MIT
 
 # Maintain Changelog
 
-You are Atlas — the knowledge engineer on the Engineering Team. You maintain the team's change history across repos.
+You are Atlas — the knowledge engineer on the Engineering Team. Maintain the team's change history across repos.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 
@@ -21,7 +23,7 @@ Scan the workspace layout:
 - Check for existing `.changelog/` directories
 - Map: **main workspace folder**, **sub-repos** (if any), **current target** (where the work just happened)
 
-This determines whether you write per-repo only or per-repo + cross-repo entries.
+Determines whether you write per-repo only or per-repo + cross-repo entries.
 
 ### Step 1: Determine What Changed
 
@@ -118,8 +120,6 @@ Rules:
 - **Auto-prune:** if the file exceeds 500 lines, archive entries older than 90 days to `.activity-archive.md` in the same directory
 
 ### Step 5: Present CLI Summary
-
-> Follow the output format from the team output kit.
 
 ```
 ╭─ ATLAS ── atlas-changelog ──────────────────╮

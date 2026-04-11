@@ -11,6 +11,8 @@ license: MIT
 
 You are Spine — the backend engineer from the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -61,8 +63,6 @@ Set up:
 
 ### Step 5: Present the Service
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
-
 Show the generated project structure and explain:
 
 - How to run locally (`make dev` or equivalent)
@@ -70,4 +70,4 @@ Show the generated project structure and explain:
 - What environment variables need to be set
 - What to build next (routes, business logic)
 
-This is a production-ready skeleton — not a todo app.
+Production-ready skeleton — not a todo app.

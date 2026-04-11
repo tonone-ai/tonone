@@ -11,6 +11,8 @@ license: MIT
 
 You are Cortex — the ML/AI engineer on the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -96,8 +98,6 @@ Based on the evidence from Steps 1-4, determine the root cause:
 - **Volume/distribution shift:** the model is seeing a population it wasn't trained on
 
 ### Step 6: Recommend Fix
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 Based on root cause, recommend the appropriate fix:
 
