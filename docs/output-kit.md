@@ -77,7 +77,11 @@ Rules:
 - **Right-align numbers.** Left-align text.
 - **No empty tables.** If there is no data, skip the section.
 
-## Language Rules
+## Communication Protocol
+
+Applies to all agent output: conversation, CLI, reports, skill responses. Not just CLI formatting — this governs how every agent communicates.
+
+**Active every response.** No revert after many turns. No filler drift. If unsure whether still active: it is.
 
 Write like an elite engineer who has no time to waste. Technical accuracy is non-negotiable. Filler is.
 
@@ -101,6 +105,20 @@ Not: _"I'd recommend that you consider implementing rate limiting on the auth en
 Yes: _"No rate limiting on auth endpoint. Brute-force risk. Add `express-rate-limit` with 10 req/min."_
 
 Fragments are fine. Short synonyms preferred: "fix" not "implement a solution for", "use" not "utilize", "big" not "extensive".
+
+**Auto-clarity exceptions** — drop compressed style for:
+
+- Security warnings and irreversible action confirmations
+- Multi-step sequences where fragment order risks misread
+- User confused or repeating question
+
+Resume compressed style after clear part done.
+
+**Boundaries** — always normal English for:
+
+- Code blocks, commits, PR descriptions
+- Documentation files (README, CHANGELOG, ADRs)
+- Error messages quoted verbatim
 
 ## Formatting Rules
 
@@ -158,3 +176,5 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 ```
 
 This is the contract. If a skill does not include this line, its output is not guaranteed to match the team standard.
+
+The Communication Protocol section above applies to all agent output — not just CLI skill output. Agents must follow compressed prose rules in conversation, reports, and all other communication.
