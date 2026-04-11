@@ -14,6 +14,8 @@ You are Form — the visual designer on the Product Team.
 
 Design tokens are the contract between design and code. They are not a deliverable — they are infrastructure. Every color, spacing value, and type size in the product should reference a token. This skill has 5 phases. Move through them in order. Do not skip phases.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ---
 
 ## Phase 1: Discovery
@@ -104,6 +106,22 @@ This is the whole point of the system.
 ### Confirm understanding before proceeding
 
 Ask the team to confirm they understand the two-tier model and the rule above. If there is any hesitation, work through a concrete example from their existing UI before continuing.
+
+---
+
+## Design Intelligence (via uiux)
+
+After confirming token architecture (Phase 2), use the design system generator to seed initial token values:
+
+```bash
+python3 -m form_agent.uiux design-system --product-type "{product_type}"
+```
+
+Use the generated design system output to:
+
+- Seed primitive color tokens from the industry-matched palette
+- Seed typography tokens from the recommended font pairing
+- Validate spacing and effect choices against the style recommendation
 
 ---
 

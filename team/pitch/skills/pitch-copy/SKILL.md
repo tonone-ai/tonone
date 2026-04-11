@@ -25,9 +25,23 @@ Before writing, confirm:
 
 If none of this is available, ask. Copy without context is guessing.
 
+### Design Intelligence (via uiux)
+
+After establishing context (Step 1), query landing page patterns for structural guidance:
+
+```bash
+python3 -m pitch_agent.uiux search --domain landing --query "{product_type}" --limit 3
+```
+
+Use results to:
+
+- Align copy block structure with proven landing page section orders
+- Place CTAs according to the pattern's recommended placement
+- Apply conversion optimization techniques specific to the product type
+
 ### Step 2: Write the Hero Section
 
-The hero is the most critical section — users form their opinion in seconds.
+The hero is most critical — users form opinion in seconds.
 
 **Structure:**
 
@@ -46,25 +60,25 @@ Rules for headlines:
 - Specific > vague ("Deploy APIs in 3 minutes" > "Build faster")
 - Outcome > feature ("Close more deals" > "Advanced CRM integration")
 - User language > internal language (use words users say, not product terms)
-- No adjectives that every product claims: fast, powerful, easy, seamless, simple
+- No adjectives every product claims: fast, powerful, easy, seamless, simple
 
 ### Step 3: Write the Problem Section
 
-Make the reader feel understood before selling to them.
+Make reader feel understood before selling to them.
 
 **Structure:**
 
 ```
 [Section header — the pain, stated plainly]
 
-[2-3 bullet points or short paragraphs describing the frustrating status quo]
-[Use "you" language — speak directly to the reader]
+[2-3 bullet points or short paragraphs describing frustrating status quo]
+[Use "you" language — speak directly to reader]
 [Use specifics — avoid "things take too long"; say "two weeks of back-and-forth"]
 ```
 
 ### Step 4: Write the Solution Section
 
-Show how the product resolves the pain from Step 3.
+Show how product resolves pain from Step 3.
 
 **Structure (one block per proof point):**
 
@@ -74,7 +88,7 @@ Show how the product resolves the pain from Step 3.
 [Optional: screenshot or illustration placeholder]
 ```
 
-Write 2-4 blocks. Each block maps to one proof point from the message framework.
+Write 2-4 blocks. Each block maps to one proof point from message framework.
 
 ### Step 5: Write the Social Proof Section
 
@@ -89,11 +103,11 @@ If no proof exists yet, write placeholder format: `"[quote about [specific benef
 
 ### Step 6: Write the CTA Section
 
-The final CTA section at the bottom of the page:
+Final CTA section at bottom of page:
 
 ```
-[Restate the headline or a transformation statement]
-[1 sentence removing the last objection — free trial, no credit card, cancel anytime]
+[Restate headline or transformation statement]
+[1 sentence removing last objection — free trial, no credit card, cancel anytime]
 [PRIMARY CTA BUTTON]
 ```
 
@@ -108,6 +122,6 @@ If requested, also write:
 
 ### Step 8: Present Copy
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max for the wrapper.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
-Present the copy in order (hero → problem → solution → proof → CTA), each section clearly labeled. Flag any claim that needs evidence before going live. Note any section where you made assumptions about tone or audience that should be validated.
+Present copy in order (hero → problem → solution → proof → CTA), each section clearly labeled. Flag any claim that needs evidence before going live. Note any section where you made assumptions about tone or audience that should be validated.

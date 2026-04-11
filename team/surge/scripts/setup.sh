@@ -3,6 +3,11 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+UIUX_LIB="$SCRIPT_DIR/../../../lib/uiux"
+if [ ! -d "$UIUX_LIB/uiux" ]; then
+	echo "uiux lib not found at $UIUX_LIB — skipping design intelligence"
+fi
+
 if command -v uv &>/dev/null; then
 	uv venv "$SCRIPT_DIR/.venv"
 	uv pip install -e "$SCRIPT_DIR" --python "$SCRIPT_DIR/.venv/bin/python"

@@ -16,6 +16,8 @@ Brand identity flows in one direction: strategy → visual. You do not touch col
 
 This skill has 4 phases. Move through them in order.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ---
 
 ## Phase 1: Positioning Anchor
@@ -28,15 +30,15 @@ Ask:
 2. **What makes it different from the obvious alternatives?** (Not "we're better" — what is the _specific, concrete_ difference?)
 3. **What should someone feel the first time they encounter this brand?** (Two or three words. These become the filter for every visual decision.)
 
-If you're working from a Helm brief, extract these answers from it directly. If you're working from a product description, extract them and confirm before moving on.
+If working from a Helm brief, extract these answers from it directly. If working from a product description, extract them and confirm before moving on.
 
-**Done when:** You can write one sentence answering each question. If you can't, surface the gap. Do not proceed until this is resolved — visual guesses built on strategic ambiguity compound into expensive rework.
+**Done when:** You can write one sentence answering each question. If you can't, surface the gap. Do not proceed until resolved — visual guesses built on strategic ambiguity compound into expensive rework.
 
 ---
 
 ## Phase 2: Competitive Audit
 
-Before defining the visual language, understand what already exists in this category. This is not about copying — it's about finding the white space.
+Before defining the visual language, understand what already exists in this category. Not about copying — it's about finding the white space.
 
 For the product's category, describe:
 
@@ -161,7 +163,7 @@ Output the palette and type system as CSS custom properties. This is the contrac
 
 ### 4.2 Brand Brief
 
-Consolidate into a single deliverable. This is what gets handed to the team — not a 200-page doc, a one-pager with everything that matters.
+Consolidate into a single deliverable. One-pager with everything that matters.
 
 1. **Positioning summary** (one paragraph — what it is, who it's for, what makes it different)
 2. **Brand adjectives** with anti-adjectives

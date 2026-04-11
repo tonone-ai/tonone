@@ -21,7 +21,7 @@ Scan the project broadly to discover all observability infrastructure:
 - Check deployment platform: `Dockerfile`, `docker-compose.yml`, `fly.toml`, `app.yaml`, Kubernetes manifests, `render.yaml`, serverless configs
 - Identify all services: scan for service definitions, separate build targets, microservice boundaries
 
-This is a read-only reconnaissance — do not modify anything.
+This is read-only reconnaissance — do not modify anything.
 
 ### Step 1: Discover Monitoring Platforms
 
@@ -67,7 +67,7 @@ For each service, catalog what exists:
 
 ### Step 3: Present Coverage Map
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 Present findings as a structured assessment:
 

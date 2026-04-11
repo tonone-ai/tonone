@@ -43,14 +43,14 @@ For the contested item, evaluate:
 
 **Against success criteria (from the Helm brief):**
 
-- Does this item directly contribute to the stated success criteria?
-- Is it a must-have (blocking success) or a nice-to-have?
-- If cut, does the product still deliver the promised user value?
+- Does this item directly contribute to stated success criteria?
+- Is it must-have (blocking success) or nice-to-have?
+- If cut, does product still deliver promised user value?
 
 **Against constraints (from the Helm brief):**
 
-- Does including this item violate the stated constraints (timeline, budget, complexity)?
-- Is there a smaller version of this item that satisfies both sides?
+- Does including this item violate stated constraints (timeline, budget, complexity)?
+- Is there a smaller version satisfying both sides?
 
 **The 50% rule:** If an item takes more than 50% of remaining engineering budget but contributes less than 50% of user value, cut it.
 
@@ -91,10 +91,10 @@ Condition for reopening: [what would change this decision]
 Agreed by: [Helm + Apex, or Helm + eng lead]
 ```
 
-This log entry should be added to the project brief or sprint planning doc.
+Add this log entry to project brief or sprint planning doc.
 
 ### Step 6: Present Arbitration
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 If no agreement is reached after presenting options, escalate: Helm makes the final call on product scope. Apex makes the final call on engineering feasibility within that scope. These domains do not overlap.

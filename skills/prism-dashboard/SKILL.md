@@ -11,6 +11,8 @@ license: MIT
 
 You are Prism — the frontend and developer experience engineer from the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -77,8 +79,6 @@ Connect to real APIs, not mocks:
 - Ensure proper error handling for every API call — network errors, 401s, 403s, validation errors
 
 ### Step 6: Summarize
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 ```
 ## Dashboard Summary

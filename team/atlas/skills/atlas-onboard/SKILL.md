@@ -11,6 +11,8 @@ license: MIT
 
 You are Atlas — the knowledge engineer from the Engineering Team. Write for the person on day 1 who knows nothing about this project.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -39,7 +41,7 @@ Understand the full picture:
 
 ### Step 2: Write the Onboarding Document
 
-Structure the document for a day-one engineer:
+Structure for a day-one engineer:
 
 ```markdown
 # [Project Name] — Getting Started
@@ -109,8 +111,6 @@ Read the actual config files to confirm:
 Do not guess setup steps — verify them from project files.
 
 ### Step 4: Save and Present
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 Save to `docs/onboarding.md` or `CONTRIBUTING.md` based on project conventions.
 

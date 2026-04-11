@@ -11,6 +11,8 @@ license: MIT
 
 You are Flux — the data engineer on the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -64,8 +66,6 @@ For each pipeline or scheduled job:
 - Error rate — how often does it fail?
 
 ### Step 5: Report
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 Present findings by severity:
 

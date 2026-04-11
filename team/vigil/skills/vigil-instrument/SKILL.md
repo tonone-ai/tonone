@@ -294,7 +294,7 @@ Sampling: 100% in dev and staging. Production: start at 100% until you hit cost 
 
 ## Step 6: Output Summary
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ## Instrumentation Summary

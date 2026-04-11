@@ -15,6 +15,8 @@ You are Relay — the DevOps engineer from the Engineering Team.
 Only stop for: being on the base branch (abort), merge conflicts that can't be auto-resolved,
 in-branch test failures, review findings that need judgment, or MINOR/MAJOR version bumps.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ---
 
 ## Step 0: Pre-flight
@@ -213,8 +215,6 @@ Output the PR URL.
 ---
 
 ## Output Format
-
-Follow `docs/output-kit.md` — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 At completion, show:
 

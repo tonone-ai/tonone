@@ -27,7 +27,7 @@ Output a one-paragraph posture summary: what's already alerting, what's silent, 
 
 ## Step 1: Define SLOs
 
-Define SLOs from the user's perspective. If the user hasn't provided them, derive them from the service's role.
+Define SLOs from the user's perspective. If the user hasn't provided them, derive from the service's role.
 
 **SLO template:**
 
@@ -51,9 +51,9 @@ Error budget: [calculated minutes or request count at the SLO target]
 - 99.5% SLO → 3.6 hours downtime OR ~0.5% of requests can fail
 - 99% SLO → 7.2 hours downtime OR ~1% of requests can fail
 
-**Low-traffic caveat:** If the service receives fewer than ~100 requests/hour, burn rate alerts are unreliable — a single error triggers absurd burn rates. For low-traffic services, use raw error count thresholds (e.g., > 5 errors in 10 minutes) instead of burn rate.
+**Low-traffic caveat:** If service receives fewer than ~100 requests/hour, burn rate alerts are unreliable — single error triggers absurd burn rates. For low-traffic services, use raw error count thresholds (e.g., > 5 errors in 10 minutes) instead of burn rate.
 
-Write the SLO definition to `docs/slos/[service-name].md` if docs exist, or output it inline.
+Write SLO definition to `docs/slos/[service-name].md` if docs exist, or output inline.
 
 ## Step 2: Write Alert Rules
 
@@ -68,7 +68,7 @@ Write actual alert configurations. Use the format matching the detected platform
 | CRITICAL | 14.4x burn rate over 1h + 5m (SLO exhausted in ~2h)    | Page on-call immediately |
 | WARNING  | 3x burn rate over 6h + 30m (SLO exhausted in ~10 days) | Create ticket            |
 
-Never alert on: CPU alone, memory alone, disk I/O alone, network traffic alone. These are not SLO signals. They become relevant only when they're causing SLO burn — at which point the SLO alert already fired.
+Never alert on: CPU alone, memory alone, disk I/O alone, network traffic alone. These are not SLO signals. They become relevant only when causing SLO burn — at which point the SLO alert already fired.
 
 ### Prometheus / Grafana alert rules
 
@@ -164,11 +164,11 @@ resource "datadog_monitor" "[service]_high_burn_rate" {
 
 ### Betterstack / simple uptime monitors
 
-For services without Prometheus/Datadog, use a synthetic availability monitor as the SLO proxy:
+For services without Prometheus/Datadog, use synthetic availability monitor as SLO proxy:
 
 - Monitor the health endpoint (`/healthz`) every 30s
 - Alert if down for 2+ consecutive checks
-- This is not burn rate alerting, but it covers the 99.9% case for simple services
+- Not burn rate alerting, but covers the 99.9% case for simple services
 
 ## Step 3: What NOT to Alert On
 
@@ -251,7 +251,7 @@ fly scale count 3 -a [app-name]
 
 ## Step 5: Output Summary
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 

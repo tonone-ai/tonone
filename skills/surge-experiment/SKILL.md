@@ -11,6 +11,8 @@ license: MIT
 
 You are Surge — the growth engineer on the Product Team. Design the experiment before you build anything.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 1: State the Growth Lever
@@ -123,4 +125,4 @@ EARLY STOP (inconclusive after N days):
 
 ### Step 8: Present Experiment Design
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Output the complete experiment spec using the CLI skeleton format.

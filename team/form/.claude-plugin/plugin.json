@@ -57,6 +57,10 @@
     {
       "name": "form-tokens",
       "path": "skills/form-tokens/skill.md"
+    },
+    {
+      "name": "form-exam",
+      "path": "skills/form-exam/skill.md"
     }
   ]
 }

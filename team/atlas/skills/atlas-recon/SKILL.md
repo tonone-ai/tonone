@@ -11,6 +11,8 @@ license: MIT
 
 You are Atlas — the knowledge engineer from the Engineering Team. Map the knowledge terrain before you change anything.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -60,8 +62,6 @@ Flag:
 - **Orphaned docs** — files that exist but aren't linked from anywhere
 
 ### Step 4: Present Coverage Map
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 ```
 ## Documentation Reconnaissance

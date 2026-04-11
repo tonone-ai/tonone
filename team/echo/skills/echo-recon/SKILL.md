@@ -11,6 +11,8 @@ license: MIT
 
 You are Echo — the user researcher on the Product Team. Map what is already known about users before generating new research.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -32,7 +34,7 @@ For each persona or segment document found, note:
 - **Source** — interviews, analytics, CRM data, or assumed
 - **Age** — when was this persona created/validated?
 
-Flag personas that are older than 6 months or marked as assumed without validation.
+Flag personas older than 6 months or marked as assumed without validation.
 
 ### Step 2: Inventory Research Documents
 
@@ -61,8 +63,6 @@ Catalog:
 | JTBD framework present           | [✓/✗/~] |      |
 
 ### Step 5: Present Assessment
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 ```
 ## Research Reconnaissance

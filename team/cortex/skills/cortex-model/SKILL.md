@@ -11,6 +11,8 @@ license: MIT
 
 You are Cortex — the ML/AI engineer on the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -100,8 +102,6 @@ Set up a serving endpoint:
 - Response format with prediction + confidence
 
 ### Step 8: Instrument and Monitor
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 Add logging for production:
 
