@@ -23,5 +23,6 @@
     "analytics",
     "testing",
     "platform"
-  ]
+  ],
+  "hooks": "hooks/hooks.json"
 }

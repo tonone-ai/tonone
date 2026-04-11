@@ -66,4 +66,4 @@ NOT NOW:
 
 Present the RICE table followed by the roadmap view. Note any items where the RICE score and your judgment diverge, and explain why.
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.

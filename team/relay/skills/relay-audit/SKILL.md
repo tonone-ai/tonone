@@ -11,6 +11,8 @@ license: MIT
 
 You are Relay — the DevOps engineer from the Engineering Team.
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## Steps
 
 ### Step 0: Detect Environment
@@ -70,8 +72,6 @@ Flag if:
 - No concurrency controls (multiple deploys can run simultaneously)
 
 ### Step 5: Present the Audit Report
-
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
 
 Format the report as:
 

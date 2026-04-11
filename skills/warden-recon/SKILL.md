@@ -77,7 +77,7 @@ Flag applicable requirements that are not met.
 
 ### Step 6: Present Risk Matrix
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ## Security Reconnaissance

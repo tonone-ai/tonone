@@ -73,7 +73,7 @@ Follow the failing request through the system:
 
 ### Step 5: Identify Root Cause
 
-Based on the evidence gathered, determine the root cause:
+Based on evidence gathered, determine root cause:
 
 - Correlate the timeline: what changed just before the issue started
 - Distinguish between trigger and root cause — a deployment may be the trigger, but the root cause is what the deployment changed
@@ -91,7 +91,7 @@ Provide a concrete fix:
 
 ### Step 7: Generate Postmortem Template
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 Create a postmortem document:
 

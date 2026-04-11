@@ -15,7 +15,7 @@ You are Lens — the data analytics and BI engineer from the Engineering Team.
 
 ### Step 0: Detect Environment
 
-Scan the workspace for data and scheduling infrastructure:
+Scan workspace for data and scheduling infrastructure:
 
 - Database configs — connection strings, ORM configs (what data source)
 - `docker-compose.yml` — check for Airflow, Prefect, Dagster, or cron-based scheduling
@@ -40,9 +40,9 @@ Determine (from context or by asking):
 
 ### Step 2: Build SQL Queries
 
-For each metric in the report, create a SQL query that returns:
+For each metric in the report, create SQL returning:
 
-- **Current value** — the metric for this reporting period
+- **Current value** — metric for this reporting period
 - **Previous period** — same metric for last period (week-over-week, month-over-month)
 - **Change** — absolute and percentage change
 - **Threshold status** — above/below target
@@ -77,7 +77,7 @@ Choose based on detected infrastructure:
 - **Simple cron** — bash or Python script on a schedule
 - **dbt + scheduler** — dbt run then report
 
-Create the scheduling config with:
+Create scheduling config with:
 
 - Schedule expression (cron syntax)
 - Retry logic on failure
@@ -107,7 +107,7 @@ Include:
 - **Historical comparison** — this week vs last week, this month vs last month
 - **Threshold alerts** — highlight metrics that crossed boundaries (above/below target)
 - **Trend indicator** — up/down/stable arrows or text
-- **Link to detail** — always link to the full dashboard for drill-down
+- **Link to detail** — always link to full dashboard for drill-down
 
 ### Step 5: Add Threshold Alerts
 
@@ -116,11 +116,11 @@ For critical metrics, add separate alerts (not just in the report):
 - **Threshold definition** — what value triggers an alert
 - **Alert channel** — Slack DM, channel mention, PagerDuty for critical
 - **Cooldown** — don't alert again for N hours after firing
-- **Context** — include enough data in the alert to understand the issue
+- **Context** — include enough data in alert to understand the issue
 
 ### Step 6: Present Summary
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ```
 ## Reporting Pipeline Built
