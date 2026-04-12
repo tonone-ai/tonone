@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tonone Full Team Review - 2026-04-12</title>
+<style>
+:root {
+  --bg: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-alt: #162032;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --accent: #3b82f6;
+  --critical: #dc2626;
+  --critical-bg: rgba(220,38,38,0.12);
+  --warning: #d97706;
+  --warning-bg: rgba(217,119,6,0.12);
+  --info: #2563eb;
+  --info-bg: rgba(37,99,235,0.12);
+  --success: #16a34a;
+  --success-bg: rgba(22,163,74,0.12);
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --sidebar-w: 260px;
+}
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-card-alt: #f1f5f9;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --critical-bg: #fef2f2;
+  --warning-bg: #fffbeb;
+  --info-bg: #eff6ff;
+  --success-bg: #f0fdf4;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  overflow-y: auto;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+.sidebar h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar .brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.sidebar .subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.sidebar a {
+  display: block;
+  padding: 6px 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.sidebar a:hover, .sidebar a.active {
+  color: var(--text);
+  background: rgba(59,130,246,0.1);
+}
+.sidebar .agent-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge-apex { background: rgba(59,130,246,0.2); color: #60a5fa; }
+.badge-helm { background: rgba(168,85,247,0.2); color: #c084fc; }
+.badge-crest { background: rgba(236,72,153,0.2); color: #f472b6; }
+.badge-pitch { background: rgba(251,146,60,0.2); color: #fb923c; }
+.badge-surge { background: rgba(34,197,94,0.2); color: #4ade80; }
+.badge-atlas { background: rgba(20,184,166,0.2); color: #2dd4bf; }
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 12px; left: 12px;
+  z-index: 200;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  padding: 32px 48px;
+  max-width: 960px;
+}
+.theme-toggle {
+  position: fixed;
+  top: 12px; right: 16px;
+  z-index: 200;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+header { margin-bottom: 40px; }
+header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+header h1 span { color: var(--accent); }
+.meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.meta-item { display: flex; align-items: center; gap: 6px; }
+.meta-item strong { color: var(--text); font-weight: 600; }
+section { margin-bottom: 48px; }
+section > h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+  letter-spacing: -0.01em;
+}
+section > h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 24px 0 12px;
+  color: var(--text);
+}
+p { margin-bottom: 12px; color: var(--text); }
+.finding-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  background: var(--bg-card);
+  border-left: 4px solid var(--border);
+}
+.finding-card.critical { border-left-color: var(--critical); background: var(--critical-bg); }
+.finding-card.warning { border-left-color: var(--warning); background: var(--warning-bg); }
+.finding-card.info { border-left-color: var(--info); background: var(--info-bg); }
+.finding-card.success { border-left-color: var(--success); background: var(--success-bg); }
+.finding-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.severity {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.severity-critical { background: var(--critical); color: #fff; }
+.severity-warning { background: var(--warning); color: #fff; }
+.severity-info { background: var(--info); color: #fff; }
+.severity-success { background: var(--success); color: #fff; }
+.finding-title { font-weight: 600; font-size: 15px; }
+.finding-source {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-left: auto;
+}
+.finding-body { font-size: 14px; color: var(--text); line-height: 1.65; }
+.finding-body strong { color: var(--text); }
+.finding-body .fix {
+  display: block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: var(--bg-card-alt);
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+}
+.finding-body .fix::before {
+  content: "Fix: ";
+  font-weight: 700;
+  color: var(--accent);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+th {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  background: var(--bg-card);
+}
+td { color: var(--text); }
+tr:hover td { background: var(--bg-card-alt); }
+.grade {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 2px 10px;
+  border-radius: 6px;
+  text-align: center;
+  min-width: 32px;
+}
+.grade-a { background: rgba(34,197,94,0.2); color: #4ade80; }
+.grade-b { background: rgba(59,130,246,0.2); color: #60a5fa; }
+.grade-c { background: rgba(251,146,60,0.2); color: #fb923c; }
+.grade-d { background: rgba(220,38,38,0.2); color: #f87171; }
+.grade-f { background: rgba(220,38,38,0.3); color: #ef4444; }
+.scorecard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.score-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+.score-value {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.score-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.verdict-box {
+  background: var(--bg-card);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+.verdict-box h3 {
+  color: var(--accent);
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+.verdict-box p { margin-bottom: 8px; }
+details {
+  margin: 12px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+}
+details summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  user-select: none;
+}
+details summary:hover { color: var(--accent); }
+details > div { padding: 0 14px 14px; }
+pre {
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  position: relative;
+}
+code { font-family: var(--font-mono); font-size: 13px; }
+.mermaid {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  text-align: center;
+}
+.action-list { list-style: none; counter-reset: actions; }
+.action-list li {
+  counter-increment: actions;
+  padding: 12px 16px 12px 48px;
+  margin-bottom: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  position: relative;
+  font-size: 14px;
+}
+.action-list li::before {
+  content: counter(actions);
+  position: absolute;
+  left: 14px; top: 12px;
+  width: 24px; height: 24px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.action-list li strong { display: block; margin-bottom: 4px; }
+.agent-section {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.agent-section-header {
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.agent-section-header h3 { margin: 0; font-size: 16px; }
+.agent-section-body { padding: 16px 20px; }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); }
+  .hamburger { display: flex; }
+  main { margin-left: 0; padding: 60px 20px 32px; }
+  .scorecard { grid-template-columns: repeat(2, 1fr); }
+}
+@media print {
+  .sidebar, .hamburger, .theme-toggle { display: none !important; }
+  main { margin-left: 0; max-width: 100%; }
+  html { color-scheme: light; }
+  body { background: #fff; color: #000; }
+  .finding-card { break-inside: avoid; }
+  details { open: true; }
+  details[open] summary { display: none; }
+}
+</style>
+</head>
+<body>
+
+<button class="hamburger" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#9776;</button>
+<button class="theme-toggle" onclick="toggleTheme()">&#9790;</button>
+
+<nav class="sidebar">
+  <div class="brand">tonone</div>
+  <div class="subtitle">Full Team Review</div>
+  <h2>Sections</h2>
+  <a href="#summary">Executive Summary</a>
+  <a href="#scorecard">Scorecard</a>
+  <a href="#engineering">Engineering (Apex)</a>
+  <a href="#product">Product (Helm)</a>
+  <a href="#strategy">Strategy (Crest)</a>
+  <a href="#marketing">Marketing (Pitch)</a>
+  <a href="#growth">Growth (Surge)</a>
+  <a href="#docs">Documentation (Atlas)</a>
+  <a href="#architecture">Architecture</a>
+  <a href="#risks">Critical Risks</a>
+  <a href="#actions">Action Plan</a>
+  <h2 style="margin-top:20px">Agents</h2>
+  <a href="#engineering"><span class="agent-badge badge-apex">APEX</span> Engineering</a>
+  <a href="#product"><span class="agent-badge badge-helm">HELM</span> Product</a>
+  <a href="#strategy"><span class="agent-badge badge-crest">CREST</span> Strategy</a>
+  <a href="#marketing"><span class="agent-badge badge-pitch">PITCH</span> Marketing</a>
+  <a href="#growth"><span class="agent-badge badge-surge">SURGE</span> Growth</a>
+  <a href="#docs"><span class="agent-badge badge-atlas">ATLAS</span> Docs</a>
+</nav>
+
+<main>
+
+<header>
+  <h1><span>tonone</span> Full Team Review</h1>
+  <div class="meta">
+    <div class="meta-item"><strong>Agents:</strong> Apex, Helm, Crest, Pitch, Surge, Atlas</div>
+    <div class="meta-item"><strong>Date:</strong> 2026-04-12</div>
+    <div class="meta-item"><strong>Repo:</strong> tonone-ai/tonone</div>
+    <div class="meta-item"><strong>Branch:</strong> main</div>
+  </div>
+</header>
+
+<!-- ============ EXECUTIVE SUMMARY ============ -->
+<section id="summary">
+  <h2>Executive Summary</h2>
+  <div class="verdict-box">
+    <h3>The Verdict</h3>
+    <p><strong>tonone is a well-structured, high-quality prompt engineering product masquerading as a software project.</strong> The 23 agent definitions and 140+ skill workflows are production-grade. The Python runtime, tests, and hooks are almost entirely scaffolding. This is not a weakness if you own it. The value IS the prompts.</p>
+    <p>The product solves a real, painful problem for solo technical founders. The competitive position is structurally unique (pre-built team, not a framework). But three things threaten launch: no onboarding path from install to value, a brand name that doesn't work, and 100% platform dependency on Claude Code.</p>
+  </div>
+
+  <div class="finding-card info">
+    <div class="finding-body">
+      <strong>What 6 agents agree on:</strong> The core product (agent definitions + skill workflows) is genuinely strong. The biggest gap isn't code quality, it's the space between "installed" and "wow this is incredible." Every agent independently flagged activation clarity as the #1 priority.
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCORECARD ============ -->
+<section id="scorecard">
+  <h2>Scorecard</h2>
+  <div class="scorecard">
+    <div class="score-item">
+      <div class="score-value" style="color: var(--success);">A</div>
+      <div class="score-label">Agent Definitions</div>
+    </div>
+    <div class="score-item">
+      <div class="score-value" style="color: var(--success);">A</div>
+      <div class="score-label">Skill Workflows</div>
+    </div>
+    <div class="score-item">
+      <div class="score-value" style="color: var(--success);">A-</div>
+      <div class="score-label">Documentation</div>
+    </div>
+    <div class="score-item">
+      <div class="score-value" style="color: var(--info);">B</div>
+      <div class="score-label">Product Coherence</div>
+    </div>
+    <div class="score-item">
+      <div class="score-value" style="color: var(--warning);">C</div>
+      <div class="score-label">Test Coverage</div>
+    </div>
+    <div class="score-item">
+      <div class="score-value" style="color: var(--warning);">C</div>
+      <div class="score-label">Runtime Code</div>
+    </div>
+    <div class="score-item">
+      <div class="score-value" style="color: var(--critical);">D</div>
+      <div class="score-label">Onboarding UX</div>
+    </div>
+    <div class="score-item">
+      <div class="score-value" style="color: var(--critical);">D</div>
+      <div class="score-label">Growth Mechanics</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Grade</th><th>Assessment</th><th>Agent</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Agent definitions (23/23)</td><td><span class="grade grade-a">A</span></td><td>Production-grade. Opinionated, concrete, with real decision frameworks.</td><td><span class="agent-badge badge-apex">APEX</span></td></tr>
+      <tr><td>Skill workflows (140+)</td><td><span class="grade grade-a">A</span></td><td>Detailed multi-step workflows. Core product value.</td><td><span class="agent-badge badge-apex">APEX</span></td></tr>
+      <tr><td>Docs &amp; architecture</td><td><span class="grade grade-a">A-</span></td><td>README sells well. Architecture doc is thorough. Skill count mismatch.</td><td><span class="agent-badge badge-atlas">ATLAS</span></td></tr>
+      <tr><td>CI / structural integrity</td><td><span class="grade grade-b">B+</span></td><td>Honest, solid. Tests what exists, doesn't pretend otherwise.</td><td><span class="agent-badge badge-apex">APEX</span></td></tr>
+      <tr><td>Product roster coherence</td><td><span class="grade grade-b">B</span></td><td>Strong mapping to real org. Relay/Pave overlap. Missing Legal agent.</td><td><span class="agent-badge badge-helm">HELM</span></td></tr>
+      <tr><td>Helm-to-Apex handoff</td><td><span class="grade grade-a">A</span></td><td>6-field brief schema is tight. Strongest part of system design.</td><td><span class="agent-badge badge-helm">HELM</span></td></tr>
+      <tr><td>Competitive position</td><td><span class="grade grade-b">B</span></td><td>Structurally unique but fragile moat. First-mover advantage is real.</td><td><span class="agent-badge badge-crest">CREST</span></td></tr>
+      <tr><td>Messaging &amp; positioning</td><td><span class="grade grade-c">C+</span></td><td>Right instinct, wrong execution. Leads with mechanics, not outcome.</td><td><span class="agent-badge badge-pitch">PITCH</span></td></tr>
+      <tr><td>Brand name</td><td><span class="grade grade-d">D</span></td><td>Not memorable, not searchable, pronunciation ambiguous.</td><td><span class="agent-badge badge-pitch">PITCH</span></td></tr>
+      <tr><td>Test coverage</td><td><span class="grade grade-c">C</span></td><td>3 root structural tests. 16/23 agents have zero functional tests.</td><td><span class="agent-badge badge-apex">APEX</span></td></tr>
+      <tr><td>Python runtime</td><td><span class="grade grade-d">D</span></td><td>16/23 agents are NotImplementedError stubs. 7 have real uiux code.</td><td><span class="agent-badge badge-apex">APEX</span></td></tr>
+      <tr><td>Onboarding / activation</td><td><span class="grade grade-d">D</span></td><td>No /start, no /welcome, no guided entry. 140+ skills, zero routing.</td><td><span class="agent-badge badge-surge">SURGE</span></td></tr>
+      <tr><td>Viral / growth mechanics</td><td><span class="grade grade-d">D</span></td><td>K-factor 0.05-0.15. No share moments, no attribution in output.</td><td><span class="agent-badge badge-surge">SURGE</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ ENGINEERING ============ -->
+<section id="engineering">
+  <h2><span class="agent-badge badge-apex">APEX</span> Engineering Assessment</h2>
+
+  <div class="finding-card success">
+    <div class="finding-header">
+      <span class="severity severity-success">STRONG</span>
+      <span class="finding-title">Agent definitions are production-grade</span>
+    </div>
+    <div class="finding-body">
+      All 23 agent .md files are substantive (50+ lines, enforced by CI). They read like real engineering leadership documents: opinionated operating principles, concrete scope boundaries, platform fluency tables, decision frameworks. Forge's scale-awareness model, Spine's "boring technology default," Helm's 6-field brief schema. Not generated boilerplate.
+    </div>
+  </div>
+
+  <div class="finding-card success">
+    <div class="finding-header">
+      <span class="severity severity-success">STRONG</span>
+      <span class="finding-title">140+ skills are detailed workflow scripts</span>
+    </div>
+    <div class="finding-body">
+      Every agent has 4-7 skills. SKILL.md files are structured prompt workflows with concrete bash commands, severity classifications, and spec templates. For a Claude Code plugin, this IS the implementation. The skill density and quality is the core product value.
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">16/23 agents have zero runtime Python code</span>
+    </div>
+    <div class="finding-body">
+      Every agent has <code>runner.py</code> containing exactly: <code>raise NotImplementedError("Implement your analyzers here")</code>. All 23 are identical stubs. Only 7 agents (form, draft, pitch, prism, touch, surge, lens) have a real <code>uiux/</code> submodule. The other 16 have zero functional Python.
+      <span class="fix">Either remove the stub files (accept this is a prompt-only product) or implement analyzers for the highest-value agents first (Warden, Forge, Relay).</span>
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Test coverage is structural only</span>
+    </div>
+    <div class="finding-body">
+      3 root-level tests enforce consistency across all 23 agents (file existence, structure compliance). Per-agent: 23 empty <code>__init__.py</code> stubs, 7 <code>test_uiux.py</code> files with ~3 tests each. Zero functional tests for 16 agents. CI test matrix is explicitly disabled.
+      <span class="fix">Honest for current maturity. Add skill output tests (run skill, validate structure) for the top 10 most-used skills as usage data arrives.</span>
+    </div>
+  </div>
+
+  <div class="finding-card info">
+    <div class="finding-header">
+      <span class="severity severity-info">INFO</span>
+      <span class="finding-title">CI is honest and well-designed</span>
+    </div>
+    <div class="finding-body">
+      Structure validation, shell linting, agent/skill compliance. Agent test matrix explicitly disabled with a clear comment. The CI tests what matters today and doesn't pretend to test what doesn't exist. Well-designed for current maturity.
+    </div>
+  </div>
+
+  <details>
+    <summary>Implementation depth by component</summary>
+    <div>
+      <table>
+        <thead><tr><th>Component</th><th>Status</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Agent definitions</td><td><span class="grade grade-a">A</span></td><td>23/23 substantive, CI-enforced</td></tr>
+          <tr><td>Skills (SKILL.md)</td><td><span class="grade grade-a">A</span></td><td>140+ detailed workflows</td></tr>
+          <tr><td>Plugin wiring</td><td><span class="grade grade-b">B+</span></td><td>Root + 20 per-agent manifests (3 missing)</td></tr>
+          <tr><td>Root hooks</td><td><span class="grade grade-b">B</span></td><td>Statusline + agent tracker (real)</td></tr>
+          <tr><td>Per-agent hooks</td><td><span class="grade grade-d">D</span></td><td>23/23 identical post_install stubs</td></tr>
+          <tr><td>Python runtime</td><td><span class="grade grade-d">D</span></td><td>7/23 real, 16/23 NotImplementedError</td></tr>
+          <tr><td>Tests</td><td><span class="grade grade-c">C</span></td><td>3 structural + 7 uiux = 10 total</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<!-- ============ PRODUCT ============ -->
+<section id="product">
+  <h2><span class="agent-badge badge-helm">HELM</span> Product Assessment</h2>
+
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <span class="severity severity-critical">CRITICAL</span>
+      <span class="finding-title">No onboarding path from install to value</span>
+    </div>
+    <div class="finding-body">
+      A new user installs the plugin and faces 23 agents and 140+ skills with zero guided entry point. No <code>/start</code>, no <code>/setup</code>, no welcome flow. Time-to-first-value is indeterminate. <code>atlas-onboard</code> exists but is positioned as knowledge engineering, not user onboarding.
+      <span class="fix">Build a <code>/welcome</code> or <code>/start</code> skill that asks 3 questions and routes the user to their first high-value agent within 90 seconds.</span>
+    </div>
+  </div>
+
+  <div class="finding-card success">
+    <div class="finding-header">
+      <span class="severity severity-success">STRONG</span>
+      <span class="finding-title">Helm-to-Apex handoff is well-designed</span>
+    </div>
+    <div class="finding-body">
+      The 6-field brief schema is tight, the contract is explicit, both agents reference it. Helm infers rather than stalls. This is the strongest part of the system design and a genuine differentiator from unstructured agent frameworks.
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Relay/Pave overlap creates routing confusion</span>
+    </div>
+    <div class="finding-body">
+      Relay owns CI/CD and GitOps. Pave owns developer experience and golden paths. A solo founder won't know which to call for "set up my pipeline." The boundaries need sharper dispatch language.
+      <span class="fix">Clarify in agent definitions: Relay = pipelines and deployment. Pave = local dev environment and internal tooling. Add disambiguation to skill routing rules.</span>
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Skill routing is Apex-biased, product tasks underserved</span>
+    </div>
+    <div class="finding-body">
+      Routing rules in CLAUDE.md cover engineering tasks well (ship, review, investigate, qa). Product tasks have no entry points: "I have a feature idea" doesn't route to Helm, "pricing question" doesn't route to Pitch.
+      <span class="fix">Add product-task routing: "new feature idea" to Helm, "pricing or positioning" to Pitch, "growth problem" to Surge, "user research" to Echo.</span>
+    </div>
+  </div>
+
+  <div class="finding-card info">
+    <div class="finding-header">
+      <span class="severity severity-info">INFO</span>
+      <span class="finding-title">Missing role: Legal/Compliance</span>
+    </div>
+    <div class="finding-body">
+      Warden covers security, but contract review, terms of service, privacy policy, and regulatory guidance (GDPR, SOC 2 prep) are common solo-founder pain points with no home in the current roster. Not blocking for launch but a real gap.
+    </div>
+  </div>
+
+  <details>
+    <summary>Target user profile</summary>
+    <div>
+      <p><strong>Primary:</strong> Solo technical founder building a SaaS. Both the PM and the engineer. Context-switches between tools, AI assistants, and their own knowledge gaps.</p>
+      <p><strong>Secondary:</strong> Small team (2-4 engineers) operating above their headcount.</p>
+      <p><strong>Not:</strong> Enterprise (Devin owns that). Agencies (product team is overkill for ship-focused work).</p>
+      <p><strong>PMF risk:</strong> The "AI team" frame raises the bar on quality expectations. If any agent produces generic output, the frame collapses. "AI assistant" sets a lower bar; "AI team" implies specialist depth.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ STRATEGY ============ -->
+<section id="strategy">
+  <h2><span class="agent-badge badge-crest">CREST</span> Competitive Strategy</h2>
+
+  <h3>Competitive Map</h3>
+  <table>
+    <thead><tr><th>Category</th><th>Competitors</th><th>Approach</th><th>tonone Advantage</th></tr></thead>
+    <tbody>
+      <tr><td>Framework builders</td><td>CrewAI, AutoGen, LangGraph</td><td>You bring your own agents, code to configure</td><td>Zero-config, pre-built team</td></tr>
+      <tr><td>Coded AI dev teams</td><td>MetaGPT, ChatDev, OpenHands</td><td>Simulated software companies, autonomous execution</td><td>Human-in-the-loop, org-chart coherence</td></tr>
+      <tr><td>Commercial AI engineers</td><td>Devin, Copilot Workspace</td><td>Async autonomous, deep IDE integration</td><td>Open source, full-stack team (not just code)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Three Unique Differentiators</h3>
+  <div class="finding-card info">
+    <div class="finding-body">
+      <strong>1. Claude Code native.</strong> Installs as a plugin, zero config, activates via slash commands. No Python environments, API keys, or orchestration code.<br><br>
+      <strong>2. Prompt-only architecture.</strong> Agents are Markdown files. No runtime dependency, no framework lock-in. Fork an agent, edit a .md, done.<br><br>
+      <strong>3. Full team metaphor with role separation.</strong> Not just "agents that can do things" but an org chart with handoff contracts, output standards, and domain ownership. Creates coherent behavior under ambiguity.
+    </div>
+  </div>
+
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <span class="severity severity-critical">CRITICAL</span>
+      <span class="finding-title">100% platform dependency on Claude Code</span>
+    </div>
+    <div class="finding-body">
+      Distribution is entirely dependent on Anthropic's platform trajectory. If Claude Code loses to Cursor/Copilot, tonone's install base ceiling drops dramatically. Worse: if Anthropic ships a first-party team template, tonone gets compressed to customization only.
+      <span class="fix">Monitor Claude Code market share quarterly. If professional dev share drops below 20% in 18 months, re-evaluate. Meanwhile, the Codex CLI support is a smart hedge but needs more investment.</span>
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Prompt-only architecture is trivially copyable</span>
+    </div>
+    <div class="finding-body">
+      Any developer can fork this repo, rename agents, and republish. The moat is in brand, quality of agent definitions, and contributor network effect. Not in code.
+      <span class="fix">The real moat is being the canonical "team install" in the Claude Code ecosystem. Ship fast, build community, become the default before someone copies the approach.</span>
+    </div>
+  </div>
+
+  <div class="verdict-box">
+    <h3>Where to Play / How to Win</h3>
+    <p><strong>Where:</strong> Solo developers and small teams (1-5 engineers) who need to operate above their headcount. Not enterprise (Devin). Not framework builders (CrewAI/LangGraph). The gap: developer who wants senior team judgment, not framework configuration.</p>
+    <p><strong>How:</strong> Own the Claude Code plugin category before Anthropic does it themselves. Deepen agent quality over agent count. Add autonomous loop as next capability milestone. Track which skills get used, kill the ones that don't.</p>
+    <p><strong>Not now:</strong> Enterprise sales, multi-LLM support, GUI builders. These dilute the Claude Code native bet before it's proven.</p>
+  </div>
+</section>
+
+<!-- ============ MARKETING ============ -->
+<section id="marketing">
+  <h2><span class="agent-badge badge-pitch">PITCH</span> Positioning &amp; Messaging</h2>
+
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <span class="severity severity-critical">CRITICAL</span>
+      <span class="finding-title">"tonone" doesn't work as a brand name</span>
+    </div>
+    <div class="finding-body">
+      Not memorable, not searchable, pronunciation is ambiguous (toe-none? ton-one?). Reads as an inside joke or dev codename. The agent names (Apex, Forge, Relay, Spine, Vigil, Warden, Proof) are excellent, possibly the best AI agent names in the space. The parent brand doesn't match that quality.
+      <span class="fix">Either commit with a pronunciation guide + origin story, or rename before public launch. The agent names are an asset. The parent name is a liability.</span>
+    </div>
+  </div>
+
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <span class="severity severity-critical">CRITICAL</span>
+      <span class="finding-title">"Replace your team" is wrong framing for the buyer</span>
+    </div>
+    <div class="finding-body">
+      The best-fit customer doesn't have a team to replace. They're a solo dev or early startup. "Replace" implies the buyer has something to replace. The honest, believable version: <strong>"Get a full-stack team when you don't have one, or can't afford one."</strong>
+      <span class="fix">Reframe from replacement to access/augmentation. Lead with the customer's reality (alone, context-switching, gaps in expertise), not a confrontational claim.</span>
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">README leads with mechanics, not outcome</span>
+    </div>
+    <div class="finding-body">
+      "One session. Two commands. Full team. Zero meetings." leads with installation ease. That's a feature, not a value proposition. The Apex S/M/L scope dialogue is the most differentiated moment in all the copy, but it's buried in "The Leads" section.
+      <span class="fix">Rewrite first 50 words to name the customer and their problem. Move the Apex S/M/L dialogue above the fold. Tables are not copy.</span>
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">No social proof or competitive framing</span>
+    </div>
+    <div class="finding-body">
+      Zero social proof. No "compared to" framing. Buyer will ask: why not just use Claude directly? Why not GitHub Copilot? The README doesn't answer. No community signal (stars, contributors, Discord).
+      <span class="fix">Add "built by [person who shipped X]." Add a "Why not just use Claude?" section. Seed community signals before launch.</span>
+    </div>
+  </div>
+
+  <details>
+    <summary>Launch channel recommendations</summary>
+    <div>
+      <p><strong>Beachhead:</strong> Solo technical founders on X/Twitter and Hacker News.</p>
+      <ol>
+        <li><strong>Show HN</strong> -- lead with the coordination problem, not agent count</li>
+        <li><strong>X thread</strong> -- show the Apex S/M/L dialogue as a screenshot, ask "which size would you pick?"</li>
+        <li><strong>Product Hunt</strong> -- category: Developer Tools. Hook: "23 specialists, two commands, zero meetings"</li>
+      </ol>
+      <p><strong>Viral asset:</strong> Record a demo of <code>/apex-takeover</code> on a real inherited codebase. That's the launch video.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ GROWTH ============ -->
+<section id="growth">
+  <h2><span class="agent-badge badge-surge">SURGE</span> Growth Analysis</h2>
+
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <span class="severity severity-critical">CRITICAL</span>
+      <span class="finding-title">Activation is undefined and unmeasured</span>
+    </div>
+    <div class="finding-body">
+      No activation event exists. No instrumentation. The closest proxy: user invokes a skill and gets output that would have taken 30+ minutes manually. Time-to-that-moment is under 5 minutes IF the user knows what to ask. But with 140+ skills and no hierarchy, a first-timer is lost.
+      <span class="fix">Ship <code>/tonone-start</code>: asks 3 questions (what are you building, your role, first need), routes to the right specialist. Target: 60%+ of installers invoke a second skill in the same session.</span>
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Viral mechanics are weak</span>
+    </div>
+    <div class="finding-body">
+      Estimated K-factor: 0.05-0.15. Not an engine. The natural share moment is showing a colleague <code>/apex-takeover</code> output, but it's passive. No built-in attribution in generated artifacts, no "share this output" prompt, no community showcase.
+      <span class="fix">Add one-liner attribution to every agent output: "Built with tonone -- tonone.ai". Seed a "Skills I wish existed" discussion thread. Pin an <code>/apex-takeover</code> showcase with real output.</span>
+    </div>
+  </div>
+
+  <div class="finding-card info">
+    <div class="finding-header">
+      <span class="severity severity-info">INFO</span>
+      <span class="finding-title">Retention habit loop is the strongest growth card</span>
+    </div>
+    <div class="finding-body">
+      Users who integrate agents into daily workflow (<code>/apex-plan</code> at project start, <code>/warden-audit</code> before PRs) develop genuine habit. The loop: task arises, agent handles it, user trusts output, agent becomes default. No mechanism currently accelerates this, but the loop structure is sound.
+    </div>
+  </div>
+
+  <details>
+    <summary>Growth sequencing</summary>
+    <div>
+      <ol>
+        <li><strong>This week:</strong> Fix activation with <code>/tonone-start</code> onboarding skill</li>
+        <li><strong>Next:</strong> Build the share moment. Attribution in output + showcase thread</li>
+        <li><strong>Then:</strong> Community scaffolding. "Good first skill" labels, public changelog</li>
+        <li><strong>Hold:</strong> Referral/viral investment until week-2 retention is proven</li>
+      </ol>
+      <p><strong>Do not:</strong> Build marketing expansion before you know the bucket isn't leaky.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ DOCS ============ -->
+<section id="docs">
+  <h2><span class="agent-badge badge-atlas">ATLAS</span> Documentation Assessment</h2>
+
+  <div class="finding-card success">
+    <div class="finding-header">
+      <span class="severity severity-success">STRONG</span>
+      <span class="finding-title">README, architecture, and guides are solid</span>
+    </div>
+    <div class="finding-body">
+      README sells the project immediately. Architecture doc explains the two-location file strategy, plugin system, and agent model clearly. Agent guide and skill guide are thorough with mapping tables and inline examples. Naming guide and output kit are well-specified.
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Two-location file sync has no tooling</span>
+    </div>
+    <div class="finding-body">
+      The pattern (edit in <code>team/</code>, copy to root <code>agents/</code>) is documented in CONTRIBUTING and architecture, but there's no <code>sync.sh</code> or Makefile target to enforce it. Contributors will forget. Highest contributor friction point.
+      <span class="fix">Add a <code>make sync</code> target or pre-commit hook that copies agent definitions from <code>team/*/agents/</code> to root <code>agents/</code>.</span>
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Skill count mismatch: 125 claimed vs 138 actual</span>
+    </div>
+    <div class="finding-body">
+      README says 125 skills. Repo has 138. Either the README is stale or 13 skills are unlisted. Worth auditing.
+      <span class="fix">Run a count, update README, or determine if 13 skills should be pruned.</span>
+    </div>
+  </div>
+
+  <div class="finding-card info">
+    <div class="finding-header">
+      <span class="severity severity-info">INFO</span>
+      <span class="finding-title">Skill template is thinner than skill guide</span>
+    </div>
+    <div class="finding-body">
+      <code>templates/new-agent/skills/SKILL_NAME/SKILL.md</code> has 3 steps, no structure. A contributor following only the template would underspec their skill vs what <code>docs/skill-guide.md</code> prescribes. Expand the template to match the guide.
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section id="architecture">
+  <h2>Architecture Overview</h2>
+  <div class="mermaid">
+graph TB
+    subgraph "Claude Code Plugin System"
+        ROOT[".claude-plugin/<br>Root Plugin Manifest"]
+    end
+
+    subgraph "Orchestration Layer"
+        APEX["Apex<br>Engineering Lead"]
+        HELM["Helm<br>Head of Product"]
+    end
+
+    subgraph "Engineering Team (13 specialists)"
+        FORGE["Forge<br>Infrastructure"]
+        RELAY["Relay<br>DevOps"]
+        SPINE["Spine<br>Backend"]
+        FLUX["Flux<br>Data"]
+        WARDEN["Warden<br>Security"]
+        VIGIL["Vigil<br>Observability"]
+        PRISM["Prism<br>Frontend"]
+        CORTEX["Cortex<br>ML/AI"]
+        TOUCH["Touch<br>Mobile"]
+        VOLT["Volt<br>IoT"]
+        ATLAS["Atlas<br>Knowledge"]
+        PROOF["Proof<br>QA"]
+        PAVE["Pave<br>Platform"]
+    end
+
+    subgraph "Product Team (7 specialists)"
+        ECHO["Echo<br>Research"]
+        LUMEN["Lumen<br>Analytics"]
+        DRAFT["Draft<br>UX"]
+        FORM["Form<br>Visual"]
+        CREST["Crest<br>Strategy"]
+        PITCH["Pitch<br>Marketing"]
+        SURGE["Surge<br>Growth"]
+    end
+
+    ROOT --> APEX
+    ROOT --> HELM
+    HELM -->|"6-field brief"| APEX
+    APEX --> FORGE
+    APEX --> RELAY
+    APEX --> SPINE
+    APEX --> FLUX
+    APEX --> WARDEN
+    APEX --> VIGIL
+    APEX --> PRISM
+    APEX --> CORTEX
+    APEX --> TOUCH
+    APEX --> VOLT
+    APEX --> ATLAS
+    APEX --> PROOF
+    APEX --> PAVE
+    HELM --> ECHO
+    HELM --> LUMEN
+    HELM --> DRAFT
+    HELM --> FORM
+    HELM --> CREST
+    HELM --> PITCH
+    HELM --> SURGE
+
+    style APEX fill:#3b82f6,color:#fff
+    style HELM fill:#a855f7,color:#fff
+    style ROOT fill:#334155,color:#e2e8f0
+  </div>
+</section>
+
+<!-- ============ RISKS ============ -->
+<section id="risks">
+  <h2>Critical Risks</h2>
+
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <span class="severity severity-critical">CRITICAL</span>
+      <span class="finding-title">Platform dependency risk</span>
+      <span class="finding-source">CREST</span>
+    </div>
+    <div class="finding-body">
+      100% tied to Claude Code. If Anthropic ships a first-party team template or Claude Code loses market share, tonone's position compresses dramatically. No fallback distribution channel is production-ready.
+    </div>
+  </div>
+
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <span class="severity severity-critical">CRITICAL</span>
+      <span class="finding-title">Activation cliff</span>
+      <span class="finding-source">SURGE + HELM</span>
+    </div>
+    <div class="finding-body">
+      Every agent independently flagged: there's no path from "installed" to "first value." 140+ skills with no hierarchy, no onboarding, no guided first step. This is the #1 thing that will kill adoption.
+    </div>
+  </div>
+
+  <div class="finding-card critical">
+    <div class="finding-header">
+      <span class="severity severity-critical">CRITICAL</span>
+      <span class="finding-title">Quality credibility gap</span>
+      <span class="finding-source">PITCH + HELM</span>
+    </div>
+    <div class="finding-body">
+      "AI team" raises quality expectations beyond "AI assistant." If any agent produces generic output, the entire frame collapses. The README shows structure but not output quality. Prospects have no way to verify the claim before installing.
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Brand name liability</span>
+      <span class="finding-source">PITCH</span>
+    </div>
+    <div class="finding-body">
+      "tonone" is not memorable, not searchable, and pronunciation is ambiguous. This matters for word-of-mouth, the primary distribution channel for dev tools.
+    </div>
+  </div>
+
+  <div class="finding-card warning">
+    <div class="finding-header">
+      <span class="severity severity-warning">WARNING</span>
+      <span class="finding-title">Copyability</span>
+      <span class="finding-source">CREST</span>
+    </div>
+    <div class="finding-body">
+      Prompt-only architecture means anyone can fork, rename, and republish. The moat is speed-to-market and community, not technical barriers. Clock is ticking.
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIONS ============ -->
+<section id="actions">
+  <h2>Action Plan</h2>
+
+  <h3>This Week (Pre-Launch Critical)</h3>
+  <ol class="action-list">
+    <li>
+      <strong>Ship /tonone-start onboarding skill</strong>
+      Asks 3 questions (what are you building, your role, first need), routes to the right specialist. This is the single highest-impact change. Flagged by Helm, Surge, and Atlas independently.
+    </li>
+    <li>
+      <strong>Rewrite README first 50 words</strong>
+      Name the customer and their problem before describing the product. Move Apex S/M/L dialogue above the fold. Current copy leads with mechanics, not outcome.
+    </li>
+    <li>
+      <strong>Decide on the name</strong>
+      Either commit to "tonone" with pronunciation guide + origin story, or rename before public launch. This blocks all marketing materials.
+    </li>
+    <li>
+      <strong>Fix skill count mismatch</strong>
+      README says 125, repo has 138. Audit and reconcile. Small but erodes trust in a product that claims precision.
+    </li>
+  </ol>
+
+  <h3>Next Two Weeks (Launch Readiness)</h3>
+  <ol class="action-list" style="counter-reset: actions 4;">
+    <li>
+      <strong>Add product-task routing to CLAUDE.md</strong>
+      "New feature idea" to Helm, "pricing" to Pitch, "growth" to Surge, "user research" to Echo. Currently Apex-biased.
+    </li>
+    <li>
+      <strong>Sharpen Relay/Pave dispatch language</strong>
+      Relay = pipelines and deployment. Pave = local dev and internal tooling. Add disambiguation to agent defs and routing.
+    </li>
+    <li>
+      <strong>Add attribution to agent output</strong>
+      Every output: "Built with tonone -- tonone.ai". Passive viral mechanic. Low cost, compounds over time.
+    </li>
+    <li>
+      <strong>Build file sync tooling</strong>
+      <code>make sync</code> or pre-commit hook for the two-location agent definition pattern. Biggest contributor friction point.
+    </li>
+  </ol>
+
+  <h3>Before Launch (Quality Bar)</h3>
+  <ol class="action-list" style="counter-reset: actions 8;">
+    <li>
+      <strong>Add social proof and competitive framing to README</strong>
+      "Built by [person who shipped X]." "Why not just use Claude directly?" section. Community signals.
+    </li>
+    <li>
+      <strong>Record /apex-takeover demo on a real codebase</strong>
+      This is the launch video. Shows parallel recon, specialist depth, and coordination in one artifact.
+    </li>
+    <li>
+      <strong>Reframe positioning from "replace" to "access"</strong>
+      "Get a full-stack team when you don't have one" beats "replace your team with AI agents." The buyer doesn't have a team.
+    </li>
+  </ol>
+
+  <h3>Post-Launch (Iterate)</h3>
+  <ol class="action-list" style="counter-reset: actions 11;">
+    <li>
+      <strong>Add telemetry for skill usage</strong>
+      Track which skills get used. Kill the ones that don't. Double down on the ones that do. Can't iterate blind.
+    </li>
+    <li>
+      <strong>Clean up Python stubs</strong>
+      Either remove NotImplementedError files (own the prompt-only identity) or implement analyzers for Warden, Forge, Relay first.
+    </li>
+    <li>
+      <strong>Seed community</strong>
+      "Good first skill" issue labels, "Skills I wish existed" discussion, monthly changelog highlighting contributors.
+    </li>
+  </ol>
+</section>
+
+</main>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  document.querySelector('.theme-toggle').textContent = next === 'dark' ? '\u263E' : '\u2600';
+}
+
+// Sidebar active state
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`.sidebar a[href="#${entry.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+
+// Copy buttons
+document.querySelectorAll('pre').forEach(pre => {
+  const btn = document.createElement('button');
+  btn.textContent = 'Copy';
+  btn.style.cssText = 'position:absolute;top:6px;right:6px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-muted);padding:2px 8px;border-radius:4px;font-size:11px;cursor:pointer;';
+  btn.onclick = () => {
+    navigator.clipboard.writeText(pre.textContent.replace('Copy', '').trim());
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  };
+  pre.style.position = 'relative';
+  pre.appendChild(btn);
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+try { mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#3b82f6', primaryTextColor: '#e2e8f0', lineColor: '#64748b', secondaryColor: '#1e293b' }}); } catch(e) { document.querySelectorAll('.mermaid').forEach(el => { const pre = document.createElement('pre'); pre.textContent = el.textContent; el.replaceWith(pre); }); }
+</script>
+
+</body>
+</html>

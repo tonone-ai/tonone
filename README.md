@@ -1,8 +1,8 @@
 # Tonone
 
-**One session. Two commands. Full team. Zero meetings.**
+**Your AI team, second to none.**
 
-23 specialists just showed up. Engineering executes. Product decides. 125 skills across every discipline. MIT licensed, two commands to install.
+23 specialists. Engineering executes. Product decides. One session, two commands, zero meetings. 125 skills across every discipline. MIT licensed.
 
 ## Why This Exists
 
