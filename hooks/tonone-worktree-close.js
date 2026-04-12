@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // tonone-worktree-close — Stop hook
 //
-// If the current session is in a clean worktree (no commits or uncommitted
-// changes ahead of the default branch), auto-removes it.
-// If the worktree has changes, prints a /ship prompt to the user.
+// If the current session is in a worktree with changes, prints a /ship prompt.
+// Clean worktrees are left in place — pruning happens at SessionStart, not here,
+// because Stop fires after every assistant turn (not just at true session exit).
 // Silent-fails on any error — never block the user's workflow.
 
 const { execSync } = require("child_process");
@@ -63,15 +63,8 @@ process.stdin.on("end", () => {
 
     const isClean = commits === "" && uncommitted === "";
 
-    if (isClean) {
-      // Auto-remove the worktree (run from main repo to avoid self-removal issues)
-      execSync(`git -C "${mainRepoPath}" worktree remove --force "${worktreePath}"`, { encoding: "utf8" });
-      try {
-        execSync(`git -C "${mainRepoPath}" branch -d ${branch}`, { encoding: "utf8" });
-      } catch {}
-      console.log(`Session branch ${branch} was clean — removed.`);
-    } else {
-      // Suggest shipping
+    if (!isClean) {
+      // Suggest shipping — only print when there are actual changes
       console.log(
         `\nWorktree: ${branch}\n` +
         `Changes detected. Run /ship to open a PR.\n` +
@@ -79,6 +72,9 @@ process.stdin.on("end", () => {
         `&& git -C "${mainRepoPath}" branch -D ${branch}\n`
       );
     }
+    // Clean worktree: silent exit. Pruning of stale clean worktrees happens at
+    // SessionStart via `git worktree prune`, not here — the Stop hook fires after
+    // every assistant turn, so auto-deleting here kills the worktree mid-session.
   } catch {
     // Silent fail
   }

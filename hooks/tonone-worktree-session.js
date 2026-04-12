@@ -31,14 +31,33 @@ process.stdin.on("end", () => {
     // 2. Already in a worktree — nothing to do
     if (gitDir !== commonDir) process.exit(0);
 
-    // 3. Build branch name: session-YYYYMMDD-HHMMSS (UTC)
+    // 3a. Prune stale clean worktrees from previous sessions before creating a new one
+    try {
+      execSync("git worktree prune", { encoding: "utf8", stdio: "pipe" });
+    } catch {}
+
+    // 3b. Also remove any session-* branches whose worktrees no longer exist
+    try {
+      const sessionBranches = execSync(
+        "git branch --list 'session-*'",
+        { encoding: "utf8" }
+      ).trim().split("\n").map(b => b.trim().replace(/^\*\s*/, "")).filter(Boolean);
+      const worktreeList = execSync("git worktree list --porcelain", { encoding: "utf8" });
+      for (const b of sessionBranches) {
+        if (!worktreeList.includes(b)) {
+          try { execSync(`git branch -d ${b}`, { encoding: "utf8", stdio: "pipe" }); } catch {}
+        }
+      }
+    } catch {}
+
+    // 4. Build branch name: session-YYYYMMDD-HHMMSS (UTC)
     const now = new Date();
     const pad = (n) => String(n).padStart(2, "0");
     const date = `${now.getUTCFullYear()}${pad(now.getUTCMonth() + 1)}${pad(now.getUTCDate())}`;
     const time = `${pad(now.getUTCHours())}${pad(now.getUTCMinutes())}${pad(now.getUTCSeconds())}`;
     const base = `session-${date}-${time}`;
 
-    // 4. Create worktree — up to 3 retries on name collision
+    // 5. Create worktree — up to 3 retries on name collision
     let worktreePath = null;
     let branchName = null;
     for (let i = 0; i < 3; i++) {
@@ -55,10 +74,10 @@ process.stdin.on("end", () => {
       }
     }
 
-    // 5. Silent fail if creation failed — never block the user
+    // 6. Silent fail if creation failed — never block the user
     if (!worktreePath) process.exit(0);
 
-    // 6. Tell Claude to enter the worktree
+    // 7. Tell Claude to enter the worktree
     console.log(
       `WORKTREE_READY: Isolated workspace created for this session.\n` +
       `Path: ${worktreePath}\n` +
