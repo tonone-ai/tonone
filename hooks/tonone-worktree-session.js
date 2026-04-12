@@ -6,7 +6,6 @@
 // Silent-fails on any error — never block the user's workflow.
 
 const { execSync, spawnSync } = require("child_process");
-const fs = require("fs");
 const path = require("path");
 
 let input = "";
