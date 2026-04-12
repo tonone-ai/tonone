@@ -81,7 +81,7 @@ Appended as a final section in the PR description, separated by a horizontal rul
 ```markdown
 
 ---
-*Spine · Warden · Proof — [tonone](https://claude.ai/plugins/tonone)*
+*Spine · Warden · Proof — [tonone](https://second.tonone.ai)*
 ```
 
 Rules:
@@ -103,7 +103,7 @@ Rules:
 - [ ] Rate limiter verified under load
 
 ---
-*Atlas · Spine · Warden — [tonone](https://claude.ai/plugins/tonone)*
+*Atlas · Spine · Warden — [tonone](https://second.tonone.ai)*
 ```
 
 ---
@@ -139,7 +139,7 @@ Relay owns this — it lives in DevOps/GitOps territory (PR lifecycle, CI/CD hoo
 - Attribution visible in ≥90% of PRs created during tonone sessions
 - Zero user complaints about attribution being disruptive or breaking PR format
 
-## Open Questions
+## Resolved
 
-- What is the exact plugin registry URL for tonone? (needed for link target)
-- Do all 23 agent skills get the session-write one-liner, or only a subset (e.g., only skills that produce substantial output)?
+- **Link target:** `https://second.tonone.ai` — dedicated viral landing page, optimized for conversion from PR clicks
+- **Session tracking scope:** All 23 agent skills write to `.claude/session-agents` on activation
