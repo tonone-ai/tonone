@@ -48,7 +48,8 @@ function parseFile(filePath, isGlobal) {
 
 function main() {
   const now = new Date();
-  const todayStr = now.toISOString().slice(0, 10);
+  const pad = (n) => String(n).padStart(2, "0");
+  const todayStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
   const cutoff7 = new Date(now - 7 * 24 * 60 * 60 * 1000);
 
   // Local entries (this repo)
