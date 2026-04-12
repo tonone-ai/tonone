@@ -98,6 +98,33 @@ function fmtDuration(ms) {
   return rem > 0 ? `${hrs}h${rem}m` : `${hrs}h`;
 }
 
+// ── Session goal ─────────────────────────────────────────────────────────────
+
+const FILLER = /\b(a|an|the|just|really|basically|actually|simply|some|very)\b/gi;
+
+function caveman(text) {
+  return text
+    .replace(/-/g, " ")
+    .replace(FILLER, "")
+    .replace(/\s{2,}/g, " ")
+    .trim()
+    .slice(0, 40);
+}
+
+function readSessionGoal(cwd) {
+  const candidates = [
+    path.join(cwd, ".claude", "session-goal"),
+    path.join(cwd, ".claude", "branch-slug"),
+  ];
+  for (const p of candidates) {
+    try {
+      const raw = fs.readFileSync(p, "utf8").trim();
+      if (raw) return caveman(raw);
+    } catch {}
+  }
+  return null;
+}
+
 // ── Subagent bridge ──────────────────────────────────────────────────────────
 
 function readSubagents(sessionId) {
@@ -373,7 +400,12 @@ function render(data) {
 
   const line3 = [modelStr, ctxBar, fiveHStr, sevenDStr].join(SEP);
 
-  return `${line1}\n${line2}\n${line3}`;
+  // ── Line 4: Session Goal ────────────────────────────────────────────────
+  const goal = readSessionGoal(cwd);
+  if (!goal) return `${line1}\n${line2}\n${line3}`;
+
+  const line4 = `${c.dim}goal:${c.reset} ${c.cyan}${goal}${c.reset}`;
+  return `${line1}\n${line2}\n${line3}\n${line4}`;
 }
 
 // ── Stdin reader with 3s timeout guard ───────────────────────────────────────
