@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.1] — 2026-04-12
+
+### Fixed
+
+- **atlas-elephant skill** — renamed from `skills/elephant` to `skills/atlas-elephant` to satisfy 7 skill compliance checks: kebab-case naming, valid agent prefix (`atlas`), description trigger phrases, output-kit reference, atlas-report overflow clause, identity line, and structured workflow steps.
+
 ## [0.7.0] — 2026-04-12
 
 ### Added
