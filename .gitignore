@@ -63,6 +63,8 @@ pip-wheel-metadata/
 .claude/agents/frontend-developer.md
 .claude/commands/
 .claude/skills/
+.claude/worktrees/
+.claude/skip-worktree
 
 # External tools
 .superpowers/

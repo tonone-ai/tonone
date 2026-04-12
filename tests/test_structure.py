@@ -209,3 +209,37 @@ def test_plugin_json_name_matches_agent_directory():
         assert (
             data["name"] == expected
         ), f"{agent}/plugin.json: 'name' is '{data['name']}', expected '{expected}'"
+
+
+# ---------------------------------------------------------------------------
+# Worktree isolation
+# ---------------------------------------------------------------------------
+
+
+def test_worktree_hooks_exist():
+    """Both worktree isolation hooks must exist — they are interdependent (creator + gate)."""
+    for hook in ["tonone-worktree-create.js", "tonone-worktree-gate.js"]:
+        p = REPO / "hooks" / hook
+        assert p.exists(), f"Missing worktree hook: hooks/{hook}"
+
+
+def test_worktree_hooks_registered_in_plugin_json():
+    """Root plugin.json must register both worktree hooks."""
+    plugin = json.loads((REPO / ".claude-plugin" / "plugin.json").read_text())
+    hooks = plugin.get("hooks", {})
+
+    # Check PostToolUse has ExitPlanMode matcher
+    post_matchers = [
+        h.get("matcher") for h in hooks.get("PostToolUse", [])
+    ]
+    assert "ExitPlanMode" in post_matchers, (
+        "plugin.json PostToolUse missing ExitPlanMode matcher for worktree creator"
+    )
+
+    # Check PreToolUse has Edit|Write|NotebookEdit matcher
+    pre_matchers = [
+        h.get("matcher") for h in hooks.get("PreToolUse", [])
+    ]
+    assert any("Edit" in (m or "") for m in pre_matchers), (
+        "plugin.json PreToolUse missing Edit matcher for worktree gate"
+    )
