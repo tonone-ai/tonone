@@ -51,6 +51,7 @@ test("already in a worktree — exits 0, no WORKTREE_READY", () => {
     const result = runHook(wtPath);
     assert.strictEqual(result.status, 0, result.stderr);
     assert.doesNotMatch(result.stdout, /WORKTREE_READY/);
+    try { execSync(`git worktree remove --force "${wtPath}"`, { cwd: main }); } catch {}
   } finally {
     cleanup(main);
   }
