@@ -5,7 +5,7 @@
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
-const { execSync } = require("child_process");
+const { execSync, spawnSync } = require("child_process");
 
 const SESSION_FILE = path.join(".claude", "session-agents");
 const TONONE_URL = "https://second.tonone.ai";
@@ -46,7 +46,7 @@ function clearAgents() {
 
 function getPrUrl(toolOutput) {
   const raw = (toolOutput && (toolOutput.output || toolOutput)) || "";
-  const urlMatch = String(raw).match(/https:\/\/github\.com\/[^\s]+\/pull\/\d+/);
+  const urlMatch = String(raw).match(/https:\/\/github\.com\/[\w.\-]+\/[\w.\-]+\/pull\/\d+/);
   if (urlMatch) return urlMatch[0];
   try {
     const url = execSync("gh pr view --json url -q .url", { encoding: "utf8", timeout: 5000 }).trim();
@@ -58,10 +58,17 @@ function getPrUrl(toolOutput) {
 function appendAttribution(prUrl, attributionLine) {
   const tmpFile = path.join(os.tmpdir(), `tonone-pr-body-${process.pid}.md`);
   try {
-    const currentBody = execSync(`gh pr view "${prUrl}" --json body -q .body`, { encoding: "utf8", timeout: 5000 }).trim();
+    const viewResult = spawnSync(
+      "gh", ["pr", "view", prUrl, "--json", "body", "-q", ".body"],
+      { encoding: "utf8", timeout: 5000 }
+    );
+    const currentBody = (viewResult.stdout || "").trim();
     const newBody = `${currentBody}\n\n---\n${attributionLine}`;
     fs.writeFileSync(tmpFile, newBody);
-    execSync(`gh pr edit "${prUrl}" --body-file "${tmpFile}"`, { timeout: 10000 });
+    spawnSync(
+      "gh", ["pr", "edit", prUrl, "--body-file", tmpFile],
+      { timeout: 10000 }
+    );
   } finally {
     try { fs.unlinkSync(tmpFile); } catch {}
   }
