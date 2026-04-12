@@ -3,8 +3,6 @@
 // Tracks which tonone agents were invoked in this session.
 // Appends agent name to .claude/session-agents for PR attribution.
 
-"use strict";
-
 const fs = require("fs");
 const path = require("path");
 
