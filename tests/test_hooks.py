@@ -13,6 +13,9 @@ import subprocess
 from pathlib import Path
 
 REPO = Path(__file__).parent.parent
+
+# Hooks live in /hooks/ at the repo root (sibling to .claude-plugin/).
+# They are registered in .claude-plugin/plugin.json via CLAUDE_PLUGIN_ROOT.
 GATE = REPO / "hooks" / "tonone-worktree-gate.js"
 CREATE = REPO / "hooks" / "tonone-worktree-create.js"
 
@@ -27,6 +30,17 @@ def run_hook(hook_path: Path, stdin_data: dict) -> tuple[int, str, str]:
         timeout=10,
     )
     return proc.returncode, proc.stdout, proc.stderr
+
+
+# ---------------------------------------------------------------------------
+# File existence (must pass before other tests)
+# ---------------------------------------------------------------------------
+
+
+def test_hook_files_exist():
+    """Both hook files must exist before other tests can run."""
+    assert CREATE.exists(), f"Missing: {CREATE}"
+    assert GATE.exists(), f"Missing: {GATE}"
 
 
 # ---------------------------------------------------------------------------
@@ -68,7 +82,7 @@ def test_create_ignores_non_exit_plan_mode():
 
 
 def test_create_handles_invalid_json():
-    """Creator hook exits 0 (not crash) when fed invalid stdin."""
+    """Creator hook exits 0 on invalid stdin — hooks must never block user workflow on a crash."""
     proc = subprocess.run(
         ["node", str(CREATE)],
         input="not json",
@@ -110,7 +124,7 @@ def test_gate_allows_skip_marker_with_absolute_path():
 
 
 def test_gate_handles_invalid_json():
-    """Gate hook exits 0 (not crash) when fed invalid stdin."""
+    """Gate hook exits 0 on invalid stdin — hooks must never block user workflow on a crash."""
     proc = subprocess.run(
         ["node", str(GATE)],
         input="not json",
@@ -128,3 +142,9 @@ def test_gate_block_message_is_actionable():
     assert "EnterWorktree" in source
     assert ".claude/skip-worktree" in source
     assert "process.exit(1)" in source
+
+
+# NOTE: The gate's actual blocking behavior (exit 1 on main with active plan) is
+# environment-dependent (requires: not in a worktree AND a recent ~/.gstack plan).
+# It is validated in the smoke test (Task 7 of the implementation plan) rather
+# than here, where we can only inspect the source code for correctness.
