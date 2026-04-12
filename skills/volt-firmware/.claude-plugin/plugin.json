@@ -1,7 +1,7 @@
 {
   "name": "volt-firmware",
-  "version": "0.1.0",
-  "description": "Build firmware from scratch for any MCU platform \u2014 scaffolds a complete embedded project with RTOS tasks, peripherals, power management, comms, and OTA from day one. Use when asked to \"firmware project\", \"new embedded project\", \"set up ESP32/STM32\", or \"IoT device firmware\".",
+  "version": "0.6.6",
+  "description": "Produce a complete firmware architecture spec for a described device \u2014 layer diagram, module responsibilities, HAL interface definitions, key state machines, RTOS decision. Use when asked to \"design firmware architecture\", \"plan embedded firmware\", \"architect an IoT device\", \"how should I structure this firmware\", or given a device description and asked what the firmware should look like.",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

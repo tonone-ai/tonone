@@ -246,3 +246,7 @@ Flag any component that does not exist in the current design system. Prism needs
 - **Skipping the mobile layout.** Writing only the 1280px spec and noting "scales down gracefully" is not a spec. Specify both.
 - **Treating social proof as decoration.** Social proof is a conversion mechanism. It must appear in a defined position, with a defined job, before the second CTA.
 - **Above-the-fold clutter.** The Hook section has one job: earn the scroll. Every element that does not directly serve the value prop or the primary CTA should be moved lower or removed.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

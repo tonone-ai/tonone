@@ -1,7 +1,7 @@
 {
   "name": "prism-ui",
-  "version": "0.1.0",
-  "description": "Build a UI from scratch \u2014 production-ready pages with real data, loading/error states, responsive layout, keyboard navigation. Use when asked to \"build a page\", \"create the frontend\", \"build this UI\", or \"new web app\".",
+  "version": "0.6.6",
+  "description": "Implement a complete UI screen or feature from a Form visual spec. Use when asked to \"build a page\", \"implement this screen\", \"build the frontend for this feature\", or \"create this UI\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -327,3 +327,7 @@ Architecture is done enough to build when:
 - [ ] Performance budget is set before any screen is built
 
 **What this architecture does not include:** Pixel-perfect UI design (Draft/Form own that), API endpoint implementation (Spine owns that), backend infrastructure (Forge/Flux own that).
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

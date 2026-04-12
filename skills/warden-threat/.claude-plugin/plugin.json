@@ -1,7 +1,7 @@
 {
   "name": "warden-threat",
-  "version": "0.1.0",
-  "description": "Threat modeling \u2014 identify attack surfaces, data flows, trust boundaries, and threat actors using STRIDE. Use when asked to \"threat model this\", \"identify attack surfaces\", \"what could go wrong security-wise\", \"map our trust boundaries\", \"what are our threats\", or before designing any security-sensitive feature.",
+  "version": "0.6.6",
+  "description": "Produce a threat model \u2014 assets, ranked threats, mitigations, accepted risks. Use when asked to \"threat model this\", \"what could go wrong security-wise\", \"map our attack surface\", or before designing any security-sensitive feature.",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

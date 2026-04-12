@@ -118,3 +118,7 @@ Format as a single, readable document:
 ```
 
 The delivery wrapper uses the output kit format, but the memo body itself should be clean prose, not a CLI report.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

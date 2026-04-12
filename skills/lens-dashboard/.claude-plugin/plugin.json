@@ -1,7 +1,7 @@
 {
   "name": "lens-dashboard",
-  "version": "0.1.0",
-  "description": "Build an analytical dashboard \u2014 detect the data stack, design key metrics with hierarchy, implement using the right tool (Metabase, Grafana, Streamlit, Chart.js). Each chart answers exactly one question. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", or \"visualize this data\".",
+  "version": "0.6.6",
+  "description": "Design and spec an analytical dashboard \u2014 define the question each chart answers, write the SQL queries, spec the layout and refresh cadence. Produces a complete dashboard spec ready to implement. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", \"weekly product health\", or \"visualize this data\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

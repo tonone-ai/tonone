@@ -1,7 +1,7 @@
 {
   "name": "touch-feature",
-  "version": "0.1.0",
-  "description": "Build a mobile feature \u2014 screen, state, API integration, navigation, offline handling. Use when asked to \"add screen\", \"mobile feature\", \"new tab\", \"push notifications\", or \"deep link\".",
+  "version": "0.6.6",
+  "description": "Produce a mobile feature spec \u2014 user story, technical approach, component breakdown, platform-specific considerations, edge cases. Use when asked to \"add a screen\", \"spec this feature\", \"mobile feature\", \"new tab\", \"push notifications\", or \"deep link\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

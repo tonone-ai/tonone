@@ -296,3 +296,7 @@ Every HTML email requires a plain text alternative. Spec it.
 - Using `<video>` — stripped by Gmail and Outlook
 - Using CSS Grid or Flexbox for structural layout — Outlook's Word engine ignores them
 - Body copy longer than a blog post — email is a prompt to act, not a content channel
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

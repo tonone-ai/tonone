@@ -301,3 +301,7 @@ Output what was written:
 - 1 retry in CI only — retries hide flakiness, don't use them locally
 - Screenshots and traces on failure are mandatory — debugging blind wastes hours
 - Explicit "skip" list — document what you're not testing in E2E and why
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

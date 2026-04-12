@@ -67,3 +67,7 @@ Show all generated files and explain:
 - How to build and run locally
 - How to push to a container registry
 - Any secrets or env vars that need to be set at runtime
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

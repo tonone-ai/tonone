@@ -1,7 +1,7 @@
 {
   "name": "draft-flow",
-  "version": "0.1.0",
-  "description": "Use when asked to design a user flow, map how a user moves through a feature, create a wireframe or flow diagram, or document interaction design for a product brief. Examples: \"design the flow for X\", \"map out the user journey\", \"create a wireframe for this feature\", \"how should the UX work for this\".",
+  "version": "0.6.6",
+  "description": "|",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -37,10 +37,14 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
    Skip specialists whose domain doesn't apply. Deliver Phase 2 findings before proceeding.
 
-3. **Phase 3 — Takeover Report.** Synthesize all findings into a single takeover document:
+3. **Phase 3 — Takeover Report.** Synthesize all findings, then route through `atlas-report`:
+
+   Gather these sections for the report:
    - **System map**: Architecture diagram (text-based), tech stack summary, key dependencies
    - **Risk assessment**: Top 10 risks ranked by likelihood x impact
    - **Technical debt inventory**: Categorized by severity and effort to fix
    - **Quick wins**: Things to fix in week 1 that reduce risk or improve confidence
    - **Roadmap recommendation**: Suggested first 30/60/90 day priorities
    - **"Don't touch" list**: Things that work and should not be changed without good reason — the load-bearing walls of the system
+
+   **Delivery:** Invoke `/atlas-report` with the full synthesized findings. The HTML report is the output. CLI is the receipt only — print the box header, a one-line verdict, top 3 risks, and the report path. Nothing else in CLI.

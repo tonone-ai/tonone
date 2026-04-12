@@ -80,3 +80,7 @@ Summarize what was built or configured in the CLI skeleton format with key findi
 - Status codes matter — a 200 that should be a 201 is a bug
 - Clean up test data — don't leave test records in the database
 - Contract tests prevent "works for me" across services
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

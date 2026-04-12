@@ -1,7 +1,7 @@
 {
   "name": "forge-cost",
-  "version": "0.1.0",
-  "description": "Estimate infrastructure cost and find savings opportunities. Use when asked to \"how much is this costing\", \"estimate infra cost\", \"cloud spend\", \"cost optimization\", \"are we overpaying\", or \"budget for this infra\".",
+  "version": "0.6.6",
+  "description": "Audit cloud infrastructure costs and produce a concrete optimization plan with specific changes and estimated savings. Use when asked to \"how much is this costing\", \"reduce cloud spend\", \"cost optimization\", \"are we overpaying\", \"cloud bill\", or \"budget for this infra\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

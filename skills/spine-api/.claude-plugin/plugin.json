@@ -1,7 +1,7 @@
 {
   "name": "spine-api",
-  "version": "0.1.0",
-  "description": "Design and build an API \u2014 contract-first, with validation, auth, error handling, and pagination. Use when asked to \"build an API\", \"design API endpoints\", \"create REST API\", or \"API for this feature\".",
+  "version": "0.6.6",
+  "description": "Design and spec an API \u2014 endpoints, request/response shapes, error codes, auth pattern, pagination. Applies Stripe's consistency principles. Use when asked to \"design an API\", \"build API endpoints\", \"create REST API\", or \"API for this feature\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

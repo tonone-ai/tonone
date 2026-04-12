@@ -328,3 +328,7 @@ All transitions must respect `prefers-reduced-motion`. For every transition spec
 - **Variants without purpose.** Every variant must have a use case. If you cannot describe when `secondary-lg` is used differently from `secondary-md`, you do not need the variant.
 - **Forgetting `focus-visible`.** Focus rings hidden on mouse interaction, visible on keyboard — always use `:focus-visible`, never `:focus` alone.
 - **Assuming Prism knows the context.** The spec is the contract. Everything Prism needs to implement the component without a single follow-up question must be in this document.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

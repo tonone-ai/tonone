@@ -12,6 +12,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).parent.parent
 SKILLS_DIR = REPO_ROOT / "skills"
 MARKETPLACE_FILE = REPO_ROOT / ".claude-plugin" / "marketplace.json"
+ROOT_PLUGIN = REPO_ROOT / ".claude-plugin" / "plugin.json"
 
 AUTHOR = {"name": "tonone-ai", "url": "https://tonone.ai"}
 REPOSITORY = "https://github.com/tonone-ai/tonone"
@@ -61,11 +62,15 @@ def agent_prefix(skill_name: str) -> str:
     return skill_name.split("-")[0]
 
 
-def make_plugin_json(name: str, description: str) -> dict:
+def read_root_version() -> str:
+    return json.loads(ROOT_PLUGIN.read_text())["version"]
+
+
+def make_plugin_json(name: str, description: str, version: str) -> dict:
     prefix = agent_prefix(name)
     return {
         "name": name,
-        "version": "0.1.0",
+        "version": version,
         "description": description,
         "author": AUTHOR,
         "repository": REPOSITORY,
@@ -75,12 +80,12 @@ def make_plugin_json(name: str, description: str) -> dict:
     }
 
 
-def make_marketplace_entry(name: str, description: str) -> dict:
+def make_marketplace_entry(name: str, description: str, version: str) -> dict:
     prefix = agent_prefix(name)
     return {
         "name": name,
         "description": description,
-        "version": "0.1.0",
+        "version": version,
         "source": f"./skills/{name}",
         "author": AUTHOR,
         "type": "skill",
@@ -90,6 +95,9 @@ def make_marketplace_entry(name: str, description: str) -> dict:
 
 
 def main():
+    version = read_root_version()
+    print(f"Using version {version} from root plugin.json\n")
+
     skill_dirs = sorted(p for p in SKILLS_DIR.iterdir() if p.is_dir())
     new_marketplace_entries = []
 
@@ -107,11 +115,13 @@ def main():
         plugin_dir.mkdir(exist_ok=True)
         plugin_json = plugin_dir / "plugin.json"
         plugin_json.write_text(
-            json.dumps(make_plugin_json(name, description), indent=2) + "\n"
+            json.dumps(make_plugin_json(name, description, version), indent=2) + "\n"
         )
         print(f"  wrote {plugin_json.relative_to(REPO_ROOT)}")
 
-        new_marketplace_entries.append(make_marketplace_entry(name, description))
+        new_marketplace_entries.append(
+            make_marketplace_entry(name, description, version)
+        )
 
     # Update marketplace.json — replace any existing skill entries, keep agent/bundle entries
     marketplace = json.loads(MARKETPLACE_FILE.read_text())

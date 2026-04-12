@@ -223,3 +223,7 @@ A founder doesn't need 47 rounds of logo exploration. They need a clear directio
 - Generic marks that could belong to any company in any category
 - Skipping the 32px test
 - Presenting options without a recommendation — make the call
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

@@ -114,3 +114,7 @@ For each identified issue:
 4. **Verification** — how to confirm the fix worked
 
 Implement the fix in IaC if possible. If it requires a CLI command (e.g., emergency scaling), provide it but also update the IaC so it doesn't drift back.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

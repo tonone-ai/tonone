@@ -263,3 +263,7 @@ DONE-ENOUGH GATE
 ```
 
 The done-enough gate is the handoff signal. When all boxes are checked, this spec is ready for implementation. Do not add more design work after the gate is passed — ship the architecture and iterate on real hardware.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

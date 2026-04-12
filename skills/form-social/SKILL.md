@@ -264,3 +264,7 @@ When designing a campaign set (e.g., LinkedIn post + Instagram story + Twitter c
 - Lorem ipsum in any deliverable — real copy or a clear flag that copy is missing
 - Transposing a landscape layout to a vertical format without redesigning — each format is its own canvas
 - Starting visual spec before the brief is confirmed — Phase 2 gate is hard
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

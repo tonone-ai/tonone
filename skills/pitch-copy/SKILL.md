@@ -125,3 +125,7 @@ If requested, also write:
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 Present copy in order (hero → problem → solution → proof → CTA), each section clearly labeled. Flag any claim that needs evidence before going live. Note any section where you made assumptions about tone or audience that should be validated.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

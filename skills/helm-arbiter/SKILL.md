@@ -98,3 +98,7 @@ Add this log entry to project brief or sprint planning doc.
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 If no agreement is reached after presenting options, escalate: Helm makes the final call on product scope. Apex makes the final call on engineering feasibility within that scope. These domains do not overlap.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

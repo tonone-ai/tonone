@@ -1,7 +1,7 @@
 {
   "name": "forge-infra",
-  "version": "0.1.0",
-  "description": "Build production-grade infrastructure from scratch using IaC. Use when asked to \"set up infra\", \"provision infrastructure\", \"create cloud resources\", \"IaC for this project\", or \"terraform for this\".",
+  "version": "0.6.6",
+  "description": "Build production-grade infrastructure as code for a service or project. Use when asked to \"set up infra\", \"provision infrastructure\", \"create cloud resources\", \"IaC for this project\", \"terraform for this\", or \"deploy this service\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -102,3 +102,7 @@ Order recommendations by impact:
 5. **Batch jobs and cron** — often forgotten, monitor for failure and duration drift
 
 For each gap, provide a concrete recommendation: what to add, which library/tool, and estimated effort (small/medium/large).
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

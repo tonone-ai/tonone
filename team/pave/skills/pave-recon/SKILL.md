@@ -110,3 +110,7 @@ Include:
 - Time developer journey — clone to running, change to deployed
 - Check for consistency — if 5 services use 5 different setups, that's a finding
 - Look for tribal knowledge — if it's not in a script or doc, it's a risk
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

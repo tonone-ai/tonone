@@ -92,3 +92,7 @@ Include:
 - Separate test types — mixing unit and E2E counts hides the real picture
 - Check CI, not just local — tests that don't run in CI don't protect anything
 - Look for the gaps — what's NOT tested matters more than what is
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

@@ -268,3 +268,7 @@ OPEN QUESTIONS
 - **Hardcoding px values.** Mobile layout is in pt (iOS) and dp (Android). px values are device-dependent and break on high-density screens.
 - **Designing only for one screen size.** Spec for your priority device first, then note how the layout adapts for smallest supported (e.g., iPhone SE / 320pt, small Android / 320dp) and largest (e.g., iPhone Pro Max / 430pt, large Android / 412dp).
 - **Skipping the content-length check.** Every text element will receive real data. "Username" will sometimes be "Maximilian Beauchamp-Fontaine." Spec the truncation rule, the max line count, and the overflow behavior before handing off.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

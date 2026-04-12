@@ -1,7 +1,7 @@
 {
   "name": "pitch-position",
-  "version": "0.1.0",
-  "description": "Use when asked to write positioning, define a value proposition, create a messaging framework, write landing page copy, develop GTM strategy, or explain what the product is and why someone should care. Examples: \"write our positioning\", \"what's our value prop\", \"write landing page copy\", \"create a messaging framework\", \"how do we position against X\", \"write our GTM plan\", \"what should our tagline be\".",
+  "version": "0.6.6",
+  "description": "Produce a complete positioning document using the Dunford framework \u2014 competitive alternatives, unique attributes, value, best-fit customer, market category, positioning statement, and tagline. Use when asked to \"write our positioning\", \"define our value prop\", \"positioning statement\", \"what market are we in\", \"how do we position against X\", \"what's our tagline\", or \"write our messaging foundation\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

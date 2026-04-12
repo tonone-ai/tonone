@@ -122,3 +122,7 @@ MEASURE:
 ### Step 6: Deliver
 
 Present the constraint diagnosis, top 3 levers, strongest growth loop, and the 3-week playbook. Close with: the single action that, if done this week, would have the most impact on sustainable growth.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

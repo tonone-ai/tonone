@@ -1,6 +1,6 @@
 {
   "name": "forge-diagnose",
-  "version": "0.1.0",
+  "version": "0.6.6",
   "description": "Diagnose runtime infrastructure issues \u2014 cold starts, timeouts, scaling problems, network failures. Use when asked about \"infra is slow\", \"cold starts\", \"network issues\", \"why is this timing out\", \"scaling problem\", \"latency spikes\", or \"service is down\".",
   "author": {
     "name": "tonone-ai",

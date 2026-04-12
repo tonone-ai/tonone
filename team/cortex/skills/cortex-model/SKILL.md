@@ -130,3 +130,7 @@ Present a summary:
 - [ ] Add A/B testing capability
 - [ ] Monitor prediction drift
 ```
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

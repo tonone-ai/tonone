@@ -1,7 +1,7 @@
 {
   "name": "proof-e2e",
-  "version": "0.1.0",
-  "description": "Build E2E test suites with Playwright, Cypress, or Selenium \u2014 user journey tests, not implementation tests. Use when asked to \"write E2E tests\", \"end-to-end testing\", \"browser tests\", \"UI tests\", or \"Playwright tests\".",
+  "version": "0.6.6",
+  "description": "Build E2E test specs for critical user journeys \u2014 Playwright or Cypress, page objects, setup/teardown, CI config. Use when asked to \"write E2E tests\", \"end-to-end testing\", \"browser tests\", \"UI tests\", or \"Playwright tests\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -41,7 +41,7 @@
     },
     {
       "name": "full-team",
-      "description": "Install all 23 tonone agents at once — Engineering Team + Product Team",
+      "description": "Install all 23 tonone agents at once \u2014 Engineering Team + Product Team",
       "version": "0.6.1",
       "source": "./bundle/full-team",
       "author": {
@@ -370,10 +370,10 @@
     {
       "name": "apex-plan",
       "description": "Plan and scope a project \u2014 discovery, challenge assumptions, present S/M/L options with token and cost estimates. Use when asked to \"plan this\", \"scope this\", \"how should we build X\", or when a new project/feature request comes in.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/apex-plan",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -383,10 +383,10 @@
     {
       "name": "apex-recon",
       "description": "Engineering lead reconnaissance \u2014 inventory the project before planning. Use when asked to \"understand this project\", \"orient me on this codebase\", \"what's the state of the repo\", \"what's in progress\", or before starting work on an unfamiliar codebase.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/apex-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -396,10 +396,10 @@
     {
       "name": "apex-review",
       "description": "Cross-cutting review of recent work \u2014 catches gaps between specialists. Use when asked to \"review what we built\", \"check the work\", \"pre-launch review\", or after completing a significant chunk of work.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/apex-review",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -409,10 +409,10 @@
     {
       "name": "apex-status",
       "description": "CTO-level project status from git and codebase state. Use when asked \"where are we\", \"project status\", \"what's done\", or at the start of a work session.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/apex-status",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -422,10 +422,10 @@
     {
       "name": "apex-takeover",
       "description": "System takeover \u2014 take ownership of an existing codebase or inherited system. Use when \"we acquired this\", \"previous team left\", \"take over this system\", \"inherited this codebase\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/apex-takeover",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -435,10 +435,10 @@
     {
       "name": "atlas-adr",
       "description": "Write an Architecture Decision Record \u2014 document what was decided, why, what alternatives were considered, and what trade-offs were accepted. Use when asked to \"write an ADR\", \"document this decision\", or \"why did we choose X\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/atlas-adr",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -448,10 +448,10 @@
     {
       "name": "atlas-changelog",
       "description": "Maintain per-repo and cross-repo changelogs \u2014 append structured entries after agent work. Use when asked to \"log this change\", \"update changelog\", \"what changed\", \"change history\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/atlas-changelog",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -460,11 +460,11 @@
     },
     {
       "name": "atlas-map",
-      "description": "Map the system architecture \u2014 read the codebase, identify services and connections, generate Mermaid diagrams (C4 level 1 and 2), and write descriptions. Use when asked to \"map the architecture\", \"system diagram\", \"how does this work\", or \"architecture overview\".",
-      "version": "0.1.0",
+      "description": "Map the system architecture \u2014 read the codebase, identify services and connections, output a C4-level architecture map as Mermaid diagrams with component descriptions. Use when asked to \"map the architecture\", \"system diagram\", \"how does this work\", or \"architecture overview\".",
+      "version": "0.6.6",
       "source": "./skills/atlas-map",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -474,10 +474,10 @@
     {
       "name": "atlas-onboard",
       "description": "Generate onboarding documentation \u2014 what this project does, how to set up locally, where things live, key decisions, how to deploy. Written for day-one engineers who know nothing. Use when asked for \"onboarding docs\", \"new engineer guide\", \"how to get started\", or \"developer setup\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/atlas-onboard",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -487,10 +487,10 @@
     {
       "name": "atlas-present",
       "description": "Generate a polished HTML presentation page and Obsidian Canvas for big releases \u2014 new products, takeovers, major migrations. Non-technical audience. Use when asked to \"present this\", \"release announcement\", \"show what we built\", or \"stakeholder update\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/atlas-present",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -500,10 +500,10 @@
     {
       "name": "atlas-recon",
       "description": "Documentation reconnaissance for takeover \u2014 find all docs, assess accuracy, freshness, coverage, and discoverability, and identify critical knowledge gaps. Use when asked \"what docs exist\", \"documentation assessment\", or \"knowledge gaps\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/atlas-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -513,10 +513,10 @@
     {
       "name": "atlas-report",
       "description": "Render agent findings as a styled HTML report in the browser. Use when asked for \"full report\", \"detailed report\", \"show in browser\", or when CLI output exceeds the 40-line budget.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/atlas-report",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -526,10 +526,10 @@
     {
       "name": "cortex-eval",
       "description": "Evaluate model performance \u2014 check for accuracy drops, data drift, and error patterns. Use when asked about \"model accuracy dropped\", \"evaluate the model\", \"check for drift\", or \"model performance\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/cortex-eval",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -538,11 +538,11 @@
     },
     {
       "name": "cortex-integrate",
-      "description": "Integrate an LLM into a production service \u2014 API client, caching, streaming, fallbacks, cost controls. Use when asked to \"add AI to this\", \"LLM integration\", \"add Claude/GPT\", or \"AI-powered feature\".",
-      "version": "0.1.0",
+      "description": "Design and implement an AI feature integration \u2014 model selection, architecture pattern, system prompt, data flow, error handling, cost estimate. Use when asked to \"add AI to this\", \"LLM integration\", \"add Claude/GPT\", or \"AI-powered feature\".",
+      "version": "0.6.6",
       "source": "./skills/cortex-integrate",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -552,10 +552,10 @@
     {
       "name": "cortex-model",
       "description": "Build an ML pipeline \u2014 from data to trained model to serving endpoint. Use when asked to \"build ML model\", \"train a model\", \"prediction pipeline\", \"classification\", or \"regression\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/cortex-model",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -564,11 +564,11 @@
     },
     {
       "name": "cortex-prompt",
-      "description": "Build and test prompts with versioning and evaluation. Use when asked to do \"prompt engineering\", \"build a prompt\", \"test prompts\", or \"prompt evaluation\".",
-      "version": "0.1.0",
+      "description": "Build a production-ready prompt package \u2014 system prompt, few-shot examples, output format, edge case handling, eval criteria. Use when asked to \"prompt engineering\", \"build a prompt\", \"write a system prompt\", or \"improve this prompt\".",
+      "version": "0.6.6",
       "source": "./skills/cortex-prompt",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -578,10 +578,10 @@
     {
       "name": "cortex-recon",
       "description": "ML reconnaissance \u2014 inventory all models, pipelines, data sources, and monitoring. Use when asked \"what ML do we have\", \"model inventory\", or \"ML assessment\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/cortex-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -590,11 +590,11 @@
     },
     {
       "name": "crest-compete",
-      "description": "Competitive analysis \u2014 map the competitive landscape with a feature parity grid, positioning 2x2, and table stakes vs differentiator classification. Use when asked to \"analyze competitors\", \"competitive landscape\", \"how do we compare to X\", \"competitive positioning\", \"feature comparison\", or \"who else does this\".",
-      "version": "0.1.0",
+      "description": "Competitive analysis ending in a clear positioning call \u2014 where to play, how to win. Use when asked to \"analyze competitors\", \"competitive landscape\", \"how do we compare to X\", \"competitive positioning\", \"where should we play\", \"find our white space\", or \"who else does this\".",
+      "version": "0.6.6",
       "source": "./skills/crest-compete",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -604,10 +604,10 @@
     {
       "name": "crest-narrative",
       "description": "Strategic narrative \u2014 write a standalone strategy memo that frames product direction, bets, and rationale for a planning horizon. Use when asked to \"write a strategy doc\", \"product vision\", \"strategic narrative\", \"company strategy memo\", \"planning memo\", or \"explain our product direction\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/crest-narrative",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -617,10 +617,10 @@
     {
       "name": "crest-okr",
       "description": "OKR design \u2014 create objectives and key results with a North Star metric, input metrics tree, and cadence. Use when asked to \"set OKRs\", \"define our objectives\", \"what should we measure this quarter\", \"design our OKR framework\", \"build a metrics tree\", or \"what's our North Star\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/crest-okr",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -630,10 +630,10 @@
     {
       "name": "crest-recon",
       "description": "Strategic context reconnaissance \u2014 read existing roadmaps, OKRs, competitive docs, and briefs to establish context before planning. Use when asked to \"understand our strategy\", \"what's the current roadmap\", \"what OKRs do we have\", \"strategic context\", or before starting any prioritization or roadmap work.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/crest-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -642,11 +642,11 @@
     },
     {
       "name": "crest-roadmap",
-      "description": "Use when asked to build a product roadmap, prioritize a feature backlog with strategic rationale, do a competitive analysis, set OKRs, or decide what to focus on next quarter. Examples: \"build a roadmap for next quarter\", \"prioritize this backlog strategically\", \"competitive analysis vs X\", \"set our OKRs\", \"what's our product strategy\", \"should we build X or Y first and why\".",
-      "version": "0.1.0",
+      "description": "Build a product roadmap with sequenced bets and explicit tradeoffs. Use when asked to \"build a roadmap\", \"prioritize the backlog strategically\", \"what do we build next quarter\", \"sequence our bets\", \"what should we focus on\", or \"product strategy for the next N months\".",
+      "version": "0.6.6",
       "source": "./skills/crest-roadmap",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -655,11 +655,11 @@
     },
     {
       "name": "draft-flow",
-      "description": "Use when asked to design a user flow, map how a user moves through a feature, create a wireframe or flow diagram, or document interaction design for a product brief. Examples: \"design the flow for X\", \"map out the user journey\", \"create a wireframe for this feature\", \"how should the UX work for this\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/draft-flow",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -669,10 +669,36 @@
     {
       "name": "draft-ia",
       "description": "Information architecture \u2014 design navigation structure, content hierarchy, sitemap, and taxonomy for a product or feature set. Use when asked to \"organize the navigation\", \"information architecture\", \"how should content be structured\", \"sitemap\", \"nav redesign\", \"where should X live\", or \"content hierarchy\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/draft-ia",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "ux",
+      "tags": ["draft", "skill"]
+    },
+    {
+      "name": "draft-landing",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/draft-landing",
+      "author": {
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "ux",
+      "tags": ["draft", "skill"]
+    },
+    {
+      "name": "draft-patterns",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/draft-patterns",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -682,10 +708,10 @@
     {
       "name": "draft-recon",
       "description": "UI and UX reconnaissance \u2014 scan existing frontend routes, components, navigation, and flows to understand the current UX state before designing. Use when asked to \"understand the current UI\", \"what UX patterns exist\", \"map the navigation\", \"what screens exist\", or before starting any flow or wireframe work.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/draft-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -695,10 +721,10 @@
     {
       "name": "draft-review",
       "description": "Usability review \u2014 evaluate an existing flow or UI against usability heuristics, flag friction points, and recommend fixes. Use when asked to \"review the UX\", \"usability audit\", \"what's wrong with this flow\", \"UX feedback\", \"critique this design\", or \"why are users dropping off here\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/draft-review",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -708,10 +734,10 @@
     {
       "name": "draft-wireframe",
       "description": "Text and Mermaid wireframes \u2014 produce screen-level layouts with content hierarchy, component placement, and interaction annotations. Use when asked to \"wireframe this\", \"sketch the UI\", \"layout for this screen\", \"lo-fi mockup\", \"screen design\", or \"what should this page look like\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/draft-wireframe",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -721,10 +747,10 @@
     {
       "name": "echo-feedback",
       "description": "Feedback synthesis \u2014 cluster support tickets, NPS verbatims, app store reviews, and churn surveys by theme, separate signal from noise, and produce an actionable insight report. Use when asked to \"synthesize this feedback\", \"analyze support tickets\", \"what are users complaining about\", \"NPS analysis\", \"churn feedback synthesis\", or \"what's the feedback telling us\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/echo-feedback",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -733,11 +759,11 @@
     },
     {
       "name": "echo-interview",
-      "description": "Use when asked to synthesize user interview notes, analyze customer feedback, build a persona, identify Jobs-to-Be-Done, or extract insights from user research. Examples: \"synthesize these interview notes\", \"what do users actually want\", \"build a persona from this feedback\", \"find the JTBD in these transcripts\", \"analyze this support ticket data\".",
-      "version": "0.1.0",
+      "description": "Run a user interview \u2014 produce an interview guide and synthesize the output into an actionable insight report. Use when asked to \"run a user interview\", \"synthesize these interview notes\", \"what do users actually want\", \"build a persona from this feedback\", \"find the JTBD in these transcripts\", or \"analyze this interview data\".",
+      "version": "0.6.6",
       "source": "./skills/echo-interview",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -746,11 +772,11 @@
     },
     {
       "name": "echo-jobs",
-      "description": "Jobs-to-Be-Done analysis \u2014 take any input (transcripts, tickets, surveys, user descriptions) and produce structured JTBD statements with frequency, intensity, and underserved ratings. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", or \"JTBD framework\".",
-      "version": "0.1.0",
+      "description": "Jobs-to-Be-Done analysis \u2014 given a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces analysis and opportunity ranking. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", \"JTBD framework\", or \"why are users switching\".",
+      "version": "0.6.6",
       "source": "./skills/echo-jobs",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -760,10 +786,10 @@
     {
       "name": "echo-recon",
       "description": "User research reconnaissance \u2014 survey existing personas, research docs, interview notes, and feedback artifacts to establish what is already known about users. Use when asked to \"what research exists\", \"review existing personas\", \"what do we know about our users\", or before starting new research or synthesis work.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/echo-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -773,10 +799,10 @@
     {
       "name": "echo-segment",
       "description": "User segmentation and persona creation from mixed data sources \u2014 analytics, CRM, support tickets, reviews, or any combination. Use when asked to \"build personas\", \"who are our users\", \"segment our users\", \"create user profiles\", \"define user archetypes\", or \"who is the target user\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/echo-segment",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -786,10 +812,10 @@
     {
       "name": "flux-health",
       "description": "Data quality and pipeline health check \u2014 freshness, schema drift, null rates, orphaned records, pipeline status. Use when asked about \"data quality check\", \"pipeline health\", \"is our data fresh\", or \"schema drift\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/flux-health",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -798,11 +824,11 @@
     },
     {
       "name": "flux-migrate",
-      "description": "Build zero-downtime database migrations \u2014 reversible, safe for concurrent reads, with rollback plan. Use when asked to \"write migration\", \"schema change\", \"add column\", \"rename table\", or \"migrate safely\".",
-      "version": "0.1.0",
+      "description": "Build zero-downtime database migrations \u2014 forward SQL, rollback SQL, deployment sequence. Use when asked to \"write migration\", \"schema change\", \"add column\", \"rename table\", \"drop column\", or \"migrate safely\".",
+      "version": "0.6.6",
       "source": "./skills/flux-migrate",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -812,10 +838,10 @@
     {
       "name": "flux-pipeline",
       "description": "Build a data pipeline \u2014 ETL/ELT with extraction, transformation, loading, error handling, and scheduling. Use when asked to \"build ETL\", \"data pipeline\", \"move data from X to Y\", or \"sync data\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/flux-pipeline",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -825,10 +851,10 @@
     {
       "name": "flux-query",
       "description": "Optimize slow database queries \u2014 analyze execution plans, add indexes, rewrite queries. Use when asked about \"slow query\", \"optimize SQL\", \"query performance\", or \"explain this query\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/flux-query",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -838,10 +864,10 @@
     {
       "name": "flux-recon",
       "description": "Database reconnaissance \u2014 full inventory of schema, migrations, data volume, backups, connection pooling, and query patterns. Use when asked to \"assess this database\", \"understand the schema\", or \"database health check\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/flux-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -850,11 +876,11 @@
     },
     {
       "name": "flux-schema",
-      "description": "Design and build database schema \u2014 proper normalization, indexes, constraints, and migration files. Use when asked to \"design schema\", \"database design\", \"create tables\", or \"data model\".",
-      "version": "0.1.0",
+      "description": "Design and build database schema \u2014 tables, columns, types, indexes, constraints, relationships. Given a domain description, output the schema and write the files. Use when asked to \"design schema\", \"database design\", \"create tables\", or \"data model\".",
+      "version": "0.6.6",
       "source": "./skills/flux-schema",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -864,10 +890,10 @@
     {
       "name": "forge-audit",
       "description": "Audit existing infrastructure for security issues, waste, and misconfigurations. Use when asked to \"audit my infra\", \"check cloud setup\", \"infra review\", \"are we wasting money\", \"security check on infra\", or \"review my terraform\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/forge-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -876,11 +902,11 @@
     },
     {
       "name": "forge-cost",
-      "description": "Estimate infrastructure cost and find savings opportunities. Use when asked to \"how much is this costing\", \"estimate infra cost\", \"cloud spend\", \"cost optimization\", \"are we overpaying\", or \"budget for this infra\".",
-      "version": "0.1.0",
+      "description": "Audit cloud infrastructure costs and produce a concrete optimization plan with specific changes and estimated savings. Use when asked to \"how much is this costing\", \"reduce cloud spend\", \"cost optimization\", \"are we overpaying\", \"cloud bill\", or \"budget for this infra\".",
+      "version": "0.6.6",
       "source": "./skills/forge-cost",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -890,10 +916,10 @@
     {
       "name": "forge-diagnose",
       "description": "Diagnose runtime infrastructure issues \u2014 cold starts, timeouts, scaling problems, network failures. Use when asked about \"infra is slow\", \"cold starts\", \"network issues\", \"why is this timing out\", \"scaling problem\", \"latency spikes\", or \"service is down\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/forge-diagnose",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -902,11 +928,11 @@
     },
     {
       "name": "forge-infra",
-      "description": "Build production-grade infrastructure from scratch using IaC. Use when asked to \"set up infra\", \"provision infrastructure\", \"create cloud resources\", \"IaC for this project\", or \"terraform for this\".",
-      "version": "0.1.0",
+      "description": "Build production-grade infrastructure as code for a service or project. Use when asked to \"set up infra\", \"provision infrastructure\", \"create cloud resources\", \"IaC for this project\", \"terraform for this\", or \"deploy this service\".",
+      "version": "0.6.6",
       "source": "./skills/forge-infra",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -916,10 +942,10 @@
     {
       "name": "forge-network",
       "description": "Design and build networking infrastructure \u2014 VPCs, subnets, DNS, load balancers, firewall rules. Use when asked to \"set up networking\", \"VPC design\", \"configure DNS\", \"load balancer setup\", \"network architecture\", or \"firewall rules\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/forge-network",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -929,10 +955,10 @@
     {
       "name": "forge-recon",
       "description": "Infrastructure reconnaissance \u2014 inventory all cloud resources, map connections, flag risks. Use when asked to \"inventory our infra\", \"what infrastructure do we have\", \"map our cloud resources\", \"infra discovery\", or \"what's running in our cloud\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/forge-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -941,11 +967,11 @@
     },
     {
       "name": "form-audit",
-      "description": "Use when asked to audit UI for visual quality, check design consistency, review brand alignment, evaluate design system compliance, or find visual issues before a launch. Examples: \"audit our UI\", \"check visual consistency\", \"review the design for issues\", \"is our UI on-brand\", \"find visual bugs\", \"design QA before launch\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -954,11 +980,11 @@
     },
     {
       "name": "form-brand",
-      "description": "Use when asked to create a brand identity, define visual design direction, generate a color palette or type system, build a style guide, or establish the look and feel for a product. Examples: \"create a brand for X\", \"define the visual identity\", \"what colors should we use\", \"build a style guide\", \"design system foundations\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-brand",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -967,11 +993,11 @@
     },
     {
       "name": "form-component",
-      "description": "Use when asked to design a UI component, specify a button, input, card, modal, badge, or any interactive element. Examples: \"design a button component\", \"spec out the input field\", \"define the card component states\", \"create a component spec for Prism\", \"what should the dropdown look like\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-component",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -980,11 +1006,11 @@
     },
     {
       "name": "form-deck",
-      "description": "Use when asked to design a pitch deck, presentation, or slide set. Examples: \"design a pitch deck\", \"create a sales deck\", \"make a conference presentation\", \"build an investor deck\", \"help me present this to the board\", \"create slides for X\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-deck",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -993,11 +1019,24 @@
     },
     {
       "name": "form-email",
-      "description": "Use when asked to design an email template, newsletter, drip campaign email, transactional email, or any HTML email asset. Examples: \"design a welcome email\", \"create a newsletter template\", \"make an onboarding email sequence\", \"design a password reset email\", \"build an email campaign\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-email",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "design",
+      "tags": ["form", "skill"]
+    },
+    {
+      "name": "form-exam",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/form-exam",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1006,11 +1045,11 @@
     },
     {
       "name": "form-logo",
-      "description": "Use when asked to create a logo, design a brand mark, generate a logo concept, or produce any logo asset. Examples: \"create a logo for X\", \"design a brand mark\", \"make me a logo\", \"generate logo concepts\", \"logo for our product\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-logo",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1019,11 +1058,24 @@
     },
     {
       "name": "form-mobile",
-      "description": "Use when asked to design iOS or Android mobile app screens, create mobile UI, spec mobile flows, or produce screen designs for a native app. Examples: \"design the onboarding screens\", \"spec the checkout flow for iOS\", \"design a home screen for Android\", \"create mobile UI for this feature\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-mobile",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "design",
+      "tags": ["form", "skill"]
+    },
+    {
+      "name": "form-palette",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/form-palette",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1032,11 +1084,24 @@
     },
     {
       "name": "form-social",
-      "description": "Use when asked to design social media graphics, ad creatives, or marketing assets. Examples: \"design a LinkedIn post for our launch\", \"create ad creatives for our campaign\", \"make an Instagram story\", \"design a Twitter card\", \"create a banner ad\", \"social assets for the product announcement\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-social",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "design",
+      "tags": ["form", "skill"]
+    },
+    {
+      "name": "form-style",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/form-style",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1045,11 +1110,11 @@
     },
     {
       "name": "form-tokens",
-      "description": "Use when asked to define a design token system, create tokens, document tokens, set up CSS custom properties, build a Tailwind token config, establish a spacing scale, define color semantics, or bridge design decisions to code. Examples: \"set up design tokens\", \"define our token system\", \"create CSS variables for the design system\", \"document our color tokens\", \"establish a spacing scale\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-tokens",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1058,11 +1123,11 @@
     },
     {
       "name": "form-web",
-      "description": "Use when asked to design a landing page, marketing website, or any web presence intended to convert or inform. Examples: \"design a landing page for X\", \"create a marketing site\", \"we need a homepage\", \"design our website\", \"build a page for our launch\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/form-web",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1072,10 +1137,10 @@
     {
       "name": "helm-arbiter",
       "description": "Scope arbitration \u2014 resolve disagreements between product and engineering on what is in or out of scope, with a decision log and escalation path. Use when asked to \"resolve this scope disagreement\", \"arbitrate between product and eng\", \"scope is creeping\", \"we can't agree on what's in scope\", or \"help us decide what to cut\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/helm-arbiter",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1084,11 +1149,11 @@
     },
     {
       "name": "helm-brief",
-      "description": "Use when asked to write a product brief, turn a feature idea into a spec, define requirements for something to build, or clarify what a product should do and why. Examples: \"write a brief for X\", \"turn this idea into a spec\", \"what should we build here\", \"help me define requirements\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/helm-brief",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1097,11 +1162,11 @@
     },
     {
       "name": "helm-handoff",
-      "description": "Use when a product brief is finalized and ready to hand off to the engineering team, or when asked to send a brief to Apex, kick off engineering work, or start development on a product spec. Examples: \"hand this off to engineering\", \"send brief to Apex\", \"start building this\", \"kick off dev on this spec\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/helm-handoff",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1110,11 +1175,11 @@
     },
     {
       "name": "helm-plan",
-      "description": "Use when asked to build a product roadmap, prioritize a backlog, decide what to build next, or sequence a list of feature ideas. Examples: \"what should we build next\", \"prioritize this backlog\", \"make a roadmap\", \"RICE score these features\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/helm-plan",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1124,10 +1189,10 @@
     {
       "name": "helm-recon",
       "description": "Product landscape reconnaissance \u2014 survey existing briefs, research, strategy, and team output before writing new briefs or dispatching specialists. Use when asked to \"understand the product state\", \"what briefs exist\", \"what has the team produced\", \"orient me on this product\", or before starting a new product initiative.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/helm-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1137,10 +1202,23 @@
     {
       "name": "lens-audit",
       "description": "Review existing analytics \u2014 find all dashboards and reports, check who uses them, whether metrics are defined, and whether they drive decisions. Recommend what to keep, kill, or add. Use when asked \"are our dashboards useful\", \"analytics review\", or \"metrics audit\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/lens-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "analytics",
+      "tags": ["lens", "skill"]
+    },
+    {
+      "name": "lens-chart",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/lens-chart",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1149,11 +1227,11 @@
     },
     {
       "name": "lens-dashboard",
-      "description": "Build an analytical dashboard \u2014 detect the data stack, design key metrics with hierarchy, implement using the right tool (Metabase, Grafana, Streamlit, Chart.js). Each chart answers exactly one question. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", or \"visualize this data\".",
-      "version": "0.1.0",
+      "description": "Design and spec an analytical dashboard \u2014 define the question each chart answers, write the SQL queries, spec the layout and refresh cadence. Produces a complete dashboard spec ready to implement. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", \"weekly product health\", or \"visualize this data\".",
+      "version": "0.6.6",
       "source": "./skills/lens-dashboard",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1162,11 +1240,11 @@
     },
     {
       "name": "lens-metrics",
-      "description": "Define and implement a metrics framework \u2014 north star metric, supporting KPIs, operational metrics, with precise definitions and SQL queries. A metric without a definition is a lie. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", or \"north star metric\".",
-      "version": "0.1.0",
+      "description": "Produce a complete metrics definition doc \u2014 metric name, formula, data source, segmentation, SQL or event tracking spec, and what good/bad looks like. Given a product area, outputs the full metrics spec. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", \"north star metric\", or \"instrument this feature\".",
+      "version": "0.6.6",
       "source": "./skills/lens-metrics",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1176,10 +1254,10 @@
     {
       "name": "lens-recon",
       "description": "Analytics reconnaissance for takeover \u2014 find all analytics tools, inventory what's tracked and dashboarded, assess data freshness and metric definitions, and present a coverage map. Use when asked \"what analytics exist\", \"BI assessment\", or \"what do we track\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/lens-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1189,10 +1267,10 @@
     {
       "name": "lens-report",
       "description": "Build a reporting pipeline \u2014 scheduled reports with SQL queries, delivery via Slack or email, threshold alerts, and historical comparison. Use when asked for \"automated reports\", \"scheduled report\", \"email digest\", or \"Slack alerts for metrics\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/lens-report",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1201,11 +1279,11 @@
     },
     {
       "name": "lumen-abtest",
-      "description": "A/B test design \u2014 calculate sample size, minimum detectable effect, define hypothesis, guardrail metrics, and run time before launch. Use when asked to \"design an A/B test\", \"should we test this\", \"experiment design\", \"how do we know if this works\", \"what's the sample size for this test\", or \"set up an experiment\".",
-      "version": "0.1.0",
+      "description": "A/B test design \u2014 produce an experiment spec with hypothesis, primary metric, MDE, sample size, run time, and decision rule. Also determines when NOT to A/B test and what to do instead. Use when asked to \"design an A/B test\", \"should we test this\", \"experiment design\", \"how do we know if this works\", \"what's the sample size\", or \"set up an experiment\".",
+      "version": "0.6.6",
       "source": "./skills/lumen-abtest",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1214,11 +1292,11 @@
     },
     {
       "name": "lumen-funnel",
-      "description": "Use when asked to analyze a funnel, find where users drop off, diagnose low conversion or activation rates, design a metrics framework, set up OKRs, or measure whether a feature is working. Examples: \"analyze our funnel\", \"why is activation low\", \"where are users dropping off\", \"design OKRs for this quarter\", \"is this feature working\", \"set up metrics for this launch\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/lumen-funnel",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1228,10 +1306,10 @@
     {
       "name": "lumen-instrument",
       "description": "Instrumentation plan \u2014 design event taxonomy, property schema, and tracking plan for analytics tools. Use when asked to \"what should we track\", \"instrumentation plan\", \"set up analytics events\", \"analytics event schema\", \"tracking plan\", or \"instrument this feature\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/lumen-instrument",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1240,11 +1318,11 @@
     },
     {
       "name": "lumen-metrics",
-      "description": "Metrics framework design \u2014 create a North Star metric, input metrics tree, define ownership, cadence, and action triggers. Use when asked to \"design a metrics framework\", \"what should we measure\", \"build a metrics system\", \"define our KPIs\", \"what are our success metrics\", or \"metrics strategy\".",
-      "version": "0.1.0",
+      "description": "Metrics architecture \u2014 produce a complete metrics plan given a product description. North Star, input metrics tree, instrumentation spec, action triggers, and counter-metrics. Use when asked to \"design a metrics framework\", \"what should we measure\", \"build a metrics system\", \"define our KPIs\", \"what are our success metrics\", \"metrics strategy\", or \"what do we track\".",
+      "version": "0.6.6",
       "source": "./skills/lumen-metrics",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1254,10 +1332,10 @@
     {
       "name": "lumen-recon",
       "description": "Analytics reconnaissance \u2014 scan existing event tracking, metric definitions, dashboards, and analytics configuration to understand what is currently being measured. Use when asked to \"what are we tracking\", \"audit our analytics\", \"what metrics exist\", \"analytics inventory\", or before designing new metrics or instrumentation.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/lumen-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1267,10 +1345,10 @@
     {
       "name": "pave-audit",
       "description": "Audit developer experience \u2014 measure onboarding time, build speed, deployment friction, and developer satisfaction. Use when asked to \"DX audit\", \"developer experience review\", \"why is development slow\", \"onboarding assessment\", or \"DORA metrics\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/pave-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1279,11 +1357,11 @@
     },
     {
       "name": "pave-catalog",
-      "description": "Build a service catalog \u2014 inventory all services, owners, dependencies, health status, and documentation links. Use when asked to \"service catalog\", \"what services do we have\", \"Backstage setup\", \"service inventory\", or \"developer portal\".",
-      "version": "0.1.0",
+      "description": "Build a service catalog \u2014 schema, starter entries, and governance model. Produces what information to capture per service, how it's maintained, and where it lives. Use when asked to \"service catalog\", \"what services do we have\", \"catalog our services\", \"service inventory\", or \"who owns what\".",
+      "version": "0.6.6",
       "source": "./skills/pave-catalog",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1293,10 +1371,10 @@
     {
       "name": "pave-env",
       "description": "Set up local development environments \u2014 devcontainers, Docker Compose, one-command setup, dev/prod parity. Use when asked to \"set up dev environment\", \"devcontainer\", \"docker compose for dev\", \"local development setup\", or \"one command to run\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/pave-env",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1305,11 +1383,11 @@
     },
     {
       "name": "pave-golden",
-      "description": "Build golden path templates \u2014 opinionated project scaffolding with local dev, CI, deploy, and monitoring baked in. Use when asked to \"create project template\", \"golden path\", \"scaffold a new service\", \"project generator\", or \"service template\".",
-      "version": "0.1.0",
+      "description": "Define a golden path \u2014 the opinionated, supported way to do a common developer task (create a new service, set up an environment, deploy a feature). Produces concrete steps, templates, and tooling. Use when asked to \"golden path\", \"create project template\", \"scaffold a new service\", \"how should we create services\", or \"standardize our setup\".",
+      "version": "0.6.6",
       "source": "./skills/pave-golden",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1319,10 +1397,10 @@
     {
       "name": "pave-recon",
       "description": "Platform reconnaissance \u2014 inventory all developer tooling, environments, build systems, and developer workflows for project takeover. Use when asked to \"understand the dev setup\", \"developer tooling assessment\", \"platform assessment\", or \"how do developers work here\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/pave-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1332,10 +1410,23 @@
     {
       "name": "pitch-copy",
       "description": "Landing page and marketing copy \u2014 write hero section, problem/solution blocks, proof points, and CTAs. Use when asked to \"write landing page copy\", \"write the homepage\", \"marketing copy for this feature\", \"product page copy\", \"write the hero section\", or \"write copy for [surface]\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/pitch-copy",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "marketing",
+      "tags": ["pitch", "skill"]
+    },
+    {
+      "name": "pitch-landing",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/pitch-landing",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1344,11 +1435,11 @@
     },
     {
       "name": "pitch-launch",
-      "description": "Launch plan \u2014 create a tiered GTM plan with day-1 distribution, success metrics, copy asset checklist, and timeline. Use when asked to \"plan a launch\", \"GTM strategy\", \"how do we announce this\", \"launch plan for [feature]\", \"go-to-market\", or \"how do we get people to notice this\".",
-      "version": "0.1.0",
+      "description": "Produce an actual launch plan with announcement copy, channel sequence, and day-1 checklist. Use when asked to \"plan a launch\", \"GTM strategy\", \"how do we announce this\", \"launch plan for [feature]\", \"go-to-market\", \"write our Product Hunt post\", or \"how do we get people to notice this\".",
+      "version": "0.6.6",
       "source": "./skills/pitch-launch",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1358,10 +1449,10 @@
     {
       "name": "pitch-message",
       "description": "Messaging framework \u2014 produce a full headline, subheadline, proof points, and CTA hierarchy for use across all surfaces. Use when asked to \"write our messaging\", \"messaging framework\", \"what should our headline say\", \"copy hierarchy\", \"tagline and messaging\", or \"how do we talk about the product\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/pitch-message",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1370,11 +1461,11 @@
     },
     {
       "name": "pitch-position",
-      "description": "Use when asked to write positioning, define a value proposition, create a messaging framework, write landing page copy, develop GTM strategy, or explain what the product is and why someone should care. Examples: \"write our positioning\", \"what's our value prop\", \"write landing page copy\", \"create a messaging framework\", \"how do we position against X\", \"write our GTM plan\", \"what should our tagline be\".",
-      "version": "0.1.0",
+      "description": "Produce a complete positioning document using the Dunford framework \u2014 competitive alternatives, unique attributes, value, best-fit customer, market category, positioning statement, and tagline. Use when asked to \"write our positioning\", \"define our value prop\", \"positioning statement\", \"what market are we in\", \"how do we position against X\", \"what's our tagline\", or \"write our messaging foundation\".",
+      "version": "0.6.6",
       "source": "./skills/pitch-position",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1384,10 +1475,10 @@
     {
       "name": "pitch-recon",
       "description": "Marketing and messaging reconnaissance \u2014 read existing landing pages, copy, positioning docs, and marketing materials to understand the current messaging state. Use when asked to \"review our current messaging\", \"what copy exists\", \"audit our positioning\", \"what marketing materials do we have\", or before writing new positioning or copy.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/pitch-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1397,10 +1488,23 @@
     {
       "name": "prism-audit",
       "description": "Frontend audit \u2014 bundle size, dependencies, accessibility, performance, component quality. Use when asked for \"frontend review\", \"performance audit\", \"accessibility check\", or \"bundle size\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/prism-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "frontend",
+      "tags": ["prism", "skill"]
+    },
+    {
+      "name": "prism-chart",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/prism-chart",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1409,11 +1513,11 @@
     },
     {
       "name": "prism-component",
-      "description": "Build a reusable, accessible, typed component with all states handled. Use when asked to \"create a component\", \"build a widget\", or \"reusable UI element\".",
-      "version": "0.1.0",
+      "description": "Implement a reusable, accessible, typed component from a design spec. Use when asked to \"create a component\", \"build a widget\", \"implement this design\", or \"reusable UI element\".",
+      "version": "0.6.6",
       "source": "./skills/prism-component",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1423,10 +1527,10 @@
     {
       "name": "prism-dashboard",
       "description": "Build an internal dashboard with data tables, filters, detail views, and CRUD. Use when asked to build an \"admin panel\", \"internal dashboard\", \"back office\", or \"data dashboard UI\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/prism-dashboard",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1436,10 +1540,23 @@
     {
       "name": "prism-recon",
       "description": "Frontend reconnaissance \u2014 map the component tree, routing, state management, build config, and assess quality. Use when asked to \"understand this frontend\", \"frontend assessment\", or \"what's the UI built with\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/prism-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "frontend",
+      "tags": ["prism", "skill"]
+    },
+    {
+      "name": "prism-stack",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/prism-stack",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1448,11 +1565,11 @@
     },
     {
       "name": "prism-ui",
-      "description": "Build a UI from scratch \u2014 production-ready pages with real data, loading/error states, responsive layout, keyboard navigation. Use when asked to \"build a page\", \"create the frontend\", \"build this UI\", or \"new web app\".",
-      "version": "0.1.0",
+      "description": "Implement a complete UI screen or feature from a Form visual spec. Use when asked to \"build a page\", \"implement this screen\", \"build the frontend for this feature\", or \"create this UI\".",
+      "version": "0.6.6",
       "source": "./skills/prism-ui",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1462,10 +1579,10 @@
     {
       "name": "proof-api",
       "description": "Build API test suites \u2014 endpoint testing, contract testing, load testing for REST/GraphQL/gRPC APIs. Use when asked to \"test this API\", \"API tests\", \"endpoint testing\", \"contract tests\", or \"load test\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/proof-api",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1475,10 +1592,23 @@
     {
       "name": "proof-audit",
       "description": "Audit test suite health \u2014 find flaky tests, slow tests, coverage gaps, and testing anti-patterns. Use when asked to \"audit tests\", \"fix flaky tests\", \"why are tests slow\", \"test health\", or \"improve test suite\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/proof-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "testing",
+      "tags": ["proof", "skill"]
+    },
+    {
+      "name": "proof-design",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/proof-design",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1487,11 +1617,11 @@
     },
     {
       "name": "proof-e2e",
-      "description": "Build E2E test suites with Playwright, Cypress, or Selenium \u2014 user journey tests, not implementation tests. Use when asked to \"write E2E tests\", \"end-to-end testing\", \"browser tests\", \"UI tests\", or \"Playwright tests\".",
-      "version": "0.1.0",
+      "description": "Build E2E test specs for critical user journeys \u2014 Playwright or Cypress, page objects, setup/teardown, CI config. Use when asked to \"write E2E tests\", \"end-to-end testing\", \"browser tests\", \"UI tests\", or \"Playwright tests\".",
+      "version": "0.6.6",
       "source": "./skills/proof-e2e",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1501,10 +1631,10 @@
     {
       "name": "proof-recon",
       "description": "Testing reconnaissance \u2014 inventory all tests, frameworks, coverage, CI integration, and assess testing maturity for project takeover. Use when asked to \"understand the tests\", \"testing assessment\", \"what's tested\", or \"test inventory\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/proof-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1513,11 +1643,11 @@
     },
     {
       "name": "proof-strategy",
-      "description": "Design a test strategy for a project \u2014 analyze what exists, identify gaps, recommend the right mix of unit/integration/E2E tests. Use when asked to \"create test strategy\", \"what should we test\", \"testing plan\", or \"improve test coverage\".",
-      "version": "0.1.0",
+      "description": "Produce a test strategy for a project or feature \u2014 risk map, test type decisions, coverage targets, CI config. Use when asked to \"create test strategy\", \"what should we test\", \"testing plan\", or \"improve test coverage\".",
+      "version": "0.6.6",
       "source": "./skills/proof-strategy",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1527,10 +1657,10 @@
     {
       "name": "relay-audit",
       "description": "Audit an existing CI/CD pipeline for slowness, security issues, and reliability gaps. Use when asked to \"audit pipeline\", \"why is CI slow\", \"pipeline review\", or \"deployment review\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/relay-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1539,11 +1669,11 @@
     },
     {
       "name": "relay-deploy",
-      "description": "Set up a deployment strategy \u2014 rolling, canary, blue-green \u2014 with rollback procedures and smoke tests. Use when asked about \"deployment strategy\", \"set up canary\", \"blue-green deploy\", or \"rollback plan\".",
-      "version": "0.1.0",
+      "description": "Set up a complete deployment configuration \u2014 Dockerfile, deployment manifest, environment config, and rollback procedure. Use when asked about \"deployment setup\", \"how do I deploy this\", \"deployment strategy\", or \"rollback plan\".",
+      "version": "0.6.6",
       "source": "./skills/relay-deploy",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1553,10 +1683,10 @@
     {
       "name": "relay-docker",
       "description": "Build production-ready Dockerfiles with multi-stage builds, security hardening, and docker-compose for local dev. Use when asked to \"create Dockerfile\", \"optimize container\", or \"dockerize this\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/relay-docker",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1566,10 +1696,10 @@
     {
       "name": "relay-pipeline",
       "description": "Build a full CI/CD pipeline from scratch. Use when asked to \"set up CI/CD\", \"create pipeline\", or \"automate deploys\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/relay-pipeline",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1579,10 +1709,23 @@
     {
       "name": "relay-recon",
       "description": "Map the full CI/CD pipeline \u2014 triggers, build, test, deploy flow \u2014 with risk assessment. Use when asked \"how does this deploy\", \"map the pipeline\", or \"understand CI/CD\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/relay-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "devops",
+      "tags": ["relay", "skill"]
+    },
+    {
+      "name": "relay-ship",
+      "description": "End-to-end ship workflow \u2014 merge base, run tests, review diff, bump version, commit, push, create PR. Use when asked to \"ship\", \"push to main\", \"create a PR\", \"get this merged\", or \"deploy this branch\".",
+      "version": "0.6.6",
+      "source": "./skills/relay-ship",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1591,11 +1734,11 @@
     },
     {
       "name": "spine-api",
-      "description": "Design and build an API \u2014 contract-first, with validation, auth, error handling, and pagination. Use when asked to \"build an API\", \"design API endpoints\", \"create REST API\", or \"API for this feature\".",
-      "version": "0.1.0",
+      "description": "Design and spec an API \u2014 endpoints, request/response shapes, error codes, auth pattern, pagination. Applies Stripe's consistency principles. Use when asked to \"design an API\", \"build API endpoints\", \"create REST API\", or \"API for this feature\".",
+      "version": "0.6.6",
       "source": "./skills/spine-api",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1604,11 +1747,11 @@
     },
     {
       "name": "spine-design",
-      "description": "System design \u2014 components, data flow, API contracts, failure modes, scaling strategy. Use when asked for \"system design for\", \"architect this\", \"how should we build\", or \"design the backend\".",
-      "version": "0.1.0",
+      "description": "Produce a system design doc \u2014 components, data flow, decisions made, tradeoffs, failure modes. Not a list of options. An actual design with calls made. Use when asked for \"system design for\", \"architect this\", \"how should we build\", or \"design the backend\".",
+      "version": "0.6.6",
       "source": "./skills/spine-design",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1618,10 +1761,10 @@
     {
       "name": "spine-perf",
       "description": "Find and fix performance bottlenecks \u2014 N+1 queries, missing indexes, sync bottlenecks, caching gaps. Use when asked \"why is this slow\", \"performance issue\", \"optimize this endpoint\", or \"N+1 queries\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/spine-perf",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1631,10 +1774,10 @@
     {
       "name": "spine-recon",
       "description": "Backend reconnaissance \u2014 map all routes, middleware, models, dependencies, auth, and assess code quality for project takeover. Use when asked to \"understand this backend\", \"map the API\", or \"assess code quality\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/spine-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1644,10 +1787,10 @@
     {
       "name": "spine-review",
       "description": "API and backend code review \u2014 REST conventions, auth, validation, error handling, pagination, rate limiting, test coverage. Use when asked to \"review this API\", \"code review\", \"review backend\", or \"pre-launch backend check\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/spine-review",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1657,10 +1800,10 @@
     {
       "name": "spine-service",
       "description": "Build a new production-ready service from scratch \u2014 config management, health checks, graceful shutdown, structured logging. Use when asked to \"new service\", \"scaffold a backend\", \"bootstrap service\", or \"create microservice\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/spine-service",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1669,11 +1812,11 @@
     },
     {
       "name": "surge-activation",
-      "description": "Use when asked to improve activation, map the growth funnel, identify growth levers, design a referral program, build a retention playbook, develop a PLG strategy, or find where to invest in growth. Examples: \"how do we grow faster\", \"improve our activation rate\", \"design a referral program\", \"build a retention playbook\", \"what are our best growth levers\", \"map our growth funnel\".",
-      "version": "0.1.0",
+      "description": "|",
+      "version": "0.6.6",
       "source": "./skills/surge-activation",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1683,10 +1826,23 @@
     {
       "name": "surge-experiment",
       "description": "Growth experiment design \u2014 structure a growth hypothesis, define metric, baseline, expected lift, and kill condition for a single experiment. Use when asked to \"design a growth experiment\", \"test this growth idea\", \"experiment framework\", \"how do we test if this works\", or \"growth hypothesis\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/surge-experiment",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "growth",
+      "tags": ["surge", "skill"]
+    },
+    {
+      "name": "surge-landing",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/surge-landing",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1695,11 +1851,11 @@
     },
     {
       "name": "surge-plg",
-      "description": "PLG strategy \u2014 design product-led growth motion including self-serve onboarding, freemium tier, upgrade triggers, and viral mechanics. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", \"how do we add a free tier\", \"upgrade triggers\", or \"viral loop design\".",
-      "version": "0.1.0",
+      "description": "PLG motion design \u2014 free tier definition, activation sequence, expansion trigger points, viral mechanic assessment. Given a product, output the PLG architecture and make the calls. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", \"how do we add a free tier\", \"upgrade triggers\", or \"viral loop design\".",
+      "version": "0.6.6",
       "source": "./skills/surge-plg",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1709,10 +1865,10 @@
     {
       "name": "surge-recon",
       "description": "Growth state reconnaissance \u2014 scan existing onboarding flows, acquisition channels, conversion funnels, and growth experiment logs to understand current growth state. Use when asked to \"what's our growth state\", \"audit the funnel\", \"what growth experiments have we run\", \"acquisition channel inventory\", or before designing new growth experiments.",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/surge-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1721,11 +1877,11 @@
     },
     {
       "name": "surge-retention",
-      "description": "Retention playbook \u2014 analyze retention curves, identify churn drivers, and design re-engagement triggers and win-back sequences. Use when asked to \"improve retention\", \"why are users churning\", \"build a retention playbook\", \"reduce churn\", \"win-back campaign\", or \"users aren't coming back\".",
-      "version": "0.1.0",
+      "description": "Retention diagnosis + intervention plan \u2014 analyze the retention curve, identify the primary drop-off point, and produce a specific intervention plan with expected impact. Use when asked to \"improve retention\", \"why are users churning\", \"build a retention playbook\", \"reduce churn\", \"win-back campaign\", or \"users aren't coming back\".",
+      "version": "0.6.6",
       "source": "./skills/surge-retention",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1734,11 +1890,11 @@
     },
     {
       "name": "touch-app",
-      "description": "Build a mobile app from scratch \u2014 scaffold a production-ready project with navigation, API client, auth, and push notifications. Use when asked to \"build a mobile app\", \"new app\", \"create iOS/Android app\", or \"cross-platform app\".",
-      "version": "0.1.0",
+      "description": "Produce a complete mobile app architecture design \u2014 platform choice, navigation structure, state management, data layer, key screens. Use when asked to \"build a mobile app\", \"new app\", \"create iOS/Android app\", \"app architecture\", or \"cross-platform app\".",
+      "version": "0.6.6",
       "source": "./skills/touch-app",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1748,10 +1904,10 @@
     {
       "name": "touch-audit",
       "description": "Mobile audit \u2014 app size, startup time, crash reporting, store compliance, accessibility, offline behavior. Use when asked for \"mobile review\", \"app store readiness\", \"mobile performance\", or \"crash analysis\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/touch-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1760,11 +1916,11 @@
     },
     {
       "name": "touch-feature",
-      "description": "Build a mobile feature \u2014 screen, state, API integration, navigation, offline handling. Use when asked to \"add screen\", \"mobile feature\", \"new tab\", \"push notifications\", or \"deep link\".",
-      "version": "0.1.0",
+      "description": "Produce a mobile feature spec \u2014 user story, technical approach, component breakdown, platform-specific considerations, edge cases. Use when asked to \"add a screen\", \"spec this feature\", \"mobile feature\", \"new tab\", \"push notifications\", or \"deep link\".",
+      "version": "0.6.6",
       "source": "./skills/touch-feature",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1774,10 +1930,10 @@
     {
       "name": "touch-recon",
       "description": "Mobile reconnaissance \u2014 understand the app's tech stack, architecture, dependencies, and health for takeover. Use when asked to \"understand this app\", \"mobile assessment\", or \"app health\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/touch-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1787,10 +1943,23 @@
     {
       "name": "touch-release",
       "description": "Set up mobile release pipeline \u2014 Fastlane, code signing, CI, beta distribution, versioning. Use when asked about \"app store setup\", \"release pipeline\", \"fastlane\", \"beta distribution\", or \"signing\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/touch-release",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "mobile",
+      "tags": ["touch", "skill"]
+    },
+    {
+      "name": "touch-ui",
+      "description": "|",
+      "version": "0.6.6",
+      "source": "./skills/touch-ui",
+      "author": {
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1799,11 +1968,11 @@
     },
     {
       "name": "vigil-alert",
-      "description": "Build alerting rules with SLOs and paired runbooks. Use when asked to \"set up alerts\", \"create runbooks\", \"define SLOs\", or \"alerting strategy\".",
-      "version": "0.1.0",
+      "description": "Write SLO-based alert rules with burn rate thresholds and paired runbooks. Outputs actual alert configs, not a strategy doc. Use when asked to \"set up alerts\", \"create runbooks\", \"define SLOs\", or \"alerting strategy\".",
+      "version": "0.6.6",
       "source": "./skills/vigil-alert",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1813,10 +1982,10 @@
     {
       "name": "vigil-check",
       "description": "Verify observability posture \u2014 audit monitoring coverage, find blind spots, prioritize gaps. Use when asked \"is monitoring sufficient\", \"observability review\", \"are we covered\", or \"pre-launch monitoring check\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/vigil-check",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1826,10 +1995,10 @@
     {
       "name": "vigil-incident",
       "description": "Incident response \u2014 diagnose production issues, find root cause, propose fix with rollback. Use when asked about \"something is broken\", \"production issue\", \"why is this down\", \"incident\", or \"debug production\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/vigil-incident",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1838,11 +2007,11 @@
     },
     {
       "name": "vigil-instrument",
-      "description": "Instrument a service with structured logging, RED metrics, distributed tracing, and health checks. Use when asked to \"add monitoring\", \"instrument this\", \"add logging\", \"set up tracing\", or \"observability\".",
-      "version": "0.1.0",
+      "description": "Instrument a service with OpenTelemetry \u2014 RED metrics, structured logs, distributed tracing, and health checks. Outputs actual code and config, not a plan. Use when asked to \"add monitoring\", \"instrument this\", \"add logging\", \"set up tracing\", or \"observability\".",
+      "version": "0.6.6",
       "source": "./skills/vigil-instrument",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1852,10 +2021,10 @@
     {
       "name": "vigil-recon",
       "description": "Observability reconnaissance \u2014 inventory what monitoring exists, map coverage, highlight blind spots. Use when asked \"what monitoring exists\", \"observability assessment\", or \"what can we see\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/vigil-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1865,10 +2034,10 @@
     {
       "name": "volt-driver",
       "description": "Build a device driver or protocol handler \u2014 I2C sensors, BLE services, MQTT clients, SPI peripherals with interrupt-driven I/O and clean HAL abstraction. Use when asked to \"write a driver\", \"I2C device\", \"BLE service\", \"MQTT client\", or \"sensor integration\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/volt-driver",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1877,11 +2046,11 @@
     },
     {
       "name": "volt-firmware",
-      "description": "Build firmware from scratch for any MCU platform \u2014 scaffolds a complete embedded project with RTOS tasks, peripherals, power management, comms, and OTA from day one. Use when asked to \"firmware project\", \"new embedded project\", \"set up ESP32/STM32\", or \"IoT device firmware\".",
-      "version": "0.1.0",
+      "description": "Produce a complete firmware architecture spec for a described device \u2014 layer diagram, module responsibilities, HAL interface definitions, key state machines, RTOS decision. Use when asked to \"design firmware architecture\", \"plan embedded firmware\", \"architect an IoT device\", \"how should I structure this firmware\", or given a device description and asked what the firmware should look like.",
+      "version": "0.6.6",
       "source": "./skills/volt-firmware",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1890,11 +2059,11 @@
     },
     {
       "name": "volt-ota",
-      "description": "Build an OTA update system \u2014 dual partition A/B scheme, firmware signature verification, download with resume, atomic swap with rollback. Use when asked about \"OTA updates\", \"firmware updates\", \"remote update\", or \"device update system\".",
-      "version": "0.1.0",
+      "description": "Produce a complete OTA update system design \u2014 partition layout, update flow, rollback conditions, validation checks, fleet management approach, failure modes and recovery. Use when asked about \"OTA updates\", \"firmware updates over the air\", \"how do I update devices in the field\", \"OTA strategy\", or \"remote firmware update design\".",
+      "version": "0.6.6",
       "source": "./skills/volt-ota",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1904,10 +2073,10 @@
     {
       "name": "volt-power",
       "description": "Power management audit \u2014 analyze sleep modes, wake sources, power state machines, radio duty cycles, and battery life estimates. Use when asked to \"audit power usage\", \"optimize battery life\", \"review power management\", \"why is my battery draining\", \"power budget analysis\", or \"sleep mode review\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/volt-power",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1917,10 +2086,10 @@
     {
       "name": "volt-recon",
       "description": "Firmware reconnaissance for takeover \u2014 inventory the MCU, peripherals, RTOS, protocols, OTA, power management, and assess code quality with risk flags. Use when asked to \"understand this firmware\", \"device inventory\", or \"embedded assessment\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/volt-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1930,10 +2099,10 @@
     {
       "name": "warden-audit",
       "description": "Full security audit \u2014 secrets, dependencies, IAM, auth, injection, XSS, HTTPS, rate limiting, public storage. Use when asked for \"security audit\", \"check for vulnerabilities\", \"security review\", or \"are we secure\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/warden-audit",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1942,11 +2111,11 @@
     },
     {
       "name": "warden-harden",
-      "description": "Harden a service \u2014 implement auth, input validation, rate limiting, security headers, CORS, secrets management. Use when asked to \"harden this\", \"add security\", \"secure this service\", or \"security headers\".",
-      "version": "0.1.0",
+      "description": "Produce a hardening spec and implement it \u2014 auth patterns, security headers, rate limiting, input validation, secrets management, dependency hygiene. Use when asked to \"harden this\", \"add security to this service\", \"what security do I need\", or \"secure this before launch\".",
+      "version": "0.6.6",
       "source": "./skills/warden-harden",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1956,10 +2125,10 @@
     {
       "name": "warden-iam",
       "description": "Build IAM from scratch \u2014 roles, policies, service accounts with least privilege. Use when asked to \"set up IAM\", \"create roles\", \"service accounts\", or \"access control\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/warden-iam",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1969,10 +2138,10 @@
     {
       "name": "warden-recon",
       "description": "Security reconnaissance \u2014 full inventory of secrets management, IAM, dependencies, auth, encryption, audit logging, and compliance gaps. Use when asked about \"security posture\", \"how secure is this\", or \"security assessment\".",
-      "version": "0.1.0",
+      "version": "0.6.6",
       "source": "./skills/warden-recon",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",
@@ -1981,11 +2150,11 @@
     },
     {
       "name": "warden-threat",
-      "description": "Threat modeling \u2014 identify attack surfaces, data flows, trust boundaries, and threat actors using STRIDE. Use when asked to \"threat model this\", \"identify attack surfaces\", \"what could go wrong security-wise\", \"map our trust boundaries\", \"what are our threats\", or before designing any security-sensitive feature.",
-      "version": "0.1.0",
+      "description": "Produce a threat model \u2014 assets, ranked threats, mitigations, accepted risks. Use when asked to \"threat model this\", \"what could go wrong security-wise\", \"map our attack surface\", or before designing any security-sensitive feature.",
+      "version": "0.6.6",
       "source": "./skills/warden-threat",
       "author": {
-        "name": "ai",
+        "name": "tonone-ai",
         "url": "https://tonone.ai"
       },
       "type": "skill",

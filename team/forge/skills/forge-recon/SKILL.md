@@ -135,3 +135,7 @@ Present as a structured inventory document. End with:
 - Top 3 risks to address first
 - Whether IaC coverage is complete or if there's drift
 - Recommended next steps (audit, cost optimization, security hardening)
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.
