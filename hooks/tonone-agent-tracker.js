@@ -37,6 +37,7 @@ process.stdin.on("end", () => {
 
     if (isStart) {
       // New agent started
+      const agentModel = toolInput.model || null;
       state = {
         ...state,
         agents: [
@@ -44,6 +45,7 @@ process.stdin.on("end", () => {
           {
             id: toolOutput.agentId,
             desc: agentDesc,
+            model: agentModel,
             started: Date.now(),
             finished: null,
           },
