@@ -161,7 +161,7 @@ function computePace(currentPct, startPct, startTime, resetsAt) {
   if (!resetsAt) {
     return { verdict: "--", color: c.dim, multiplier: null };
   }
-  const resetsAtMs = new Date(resetsAt).getTime();
+  const resetsAtMs = typeof resetsAt === "number" ? resetsAt * 1000 : new Date(resetsAt).getTime();
   const timeRemainingHours = (resetsAtMs - now) / 3_600_000;
   if (timeRemainingHours <= 0) {
     return { verdict: "--", color: c.dim, multiplier: null };
