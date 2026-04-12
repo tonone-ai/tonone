@@ -12,6 +12,8 @@ license: MIT
 
 # lens-chart — BI & Analytics Chart Selection
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## When to use
 
 User needs chart type selection or visualization recommendations for analytics dashboards or BI contexts.

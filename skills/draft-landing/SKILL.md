@@ -12,6 +12,8 @@ license: MIT
 
 # draft-landing — Landing Page Information Architecture
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## When to use
 
 User needs a landing page structure, section order, or conversion-optimized layout. Product type is known or discoverable.

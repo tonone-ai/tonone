@@ -12,6 +12,8 @@ license: MIT
 
 # prism-stack — Framework Best Practices
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## When to use
 
 User asks about framework-specific patterns, component architecture, or stack guidelines.

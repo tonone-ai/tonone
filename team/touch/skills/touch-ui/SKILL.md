@@ -12,6 +12,8 @@ license: MIT
 
 # touch-ui — Mobile UI Guidelines
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## When to use
 
 User asks about mobile UI, touch targets, platform conventions, or mobile interaction patterns.

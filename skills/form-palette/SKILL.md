@@ -12,6 +12,8 @@ license: MIT
 
 # form-palette — Color Palette Generation
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## When to use
 
 Product needs a color palette. Industry or product type is known or discoverable from context.
