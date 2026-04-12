@@ -26,8 +26,14 @@ jobs:
           python-version: "3.11"
       - name: Install pytest
         run: pip install pytest
+      - name: Install pyyaml
+        run: pip install pyyaml
       - name: Run structure tests
         run: python -m pytest tests/test_structure.py -v
+      - name: Run agent compliance tests
+        run: python -m pytest tests/test_agent_compliance.py -v
+      - name: Run skill compliance tests
+        run: python -m pytest tests/test_skill_compliance.py -v
 
   # ---------------------------------------------------------------------------
   # Job 2: Shell script linting
