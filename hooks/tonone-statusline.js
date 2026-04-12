@@ -51,6 +51,20 @@ function gitDirtyCount(cwd) {
   }
 }
 
+function gitAhead(cwd) {
+  try {
+    const out = execSync("git rev-list --count @{u}..HEAD", {
+      cwd,
+      encoding: "utf8",
+      timeout: 1000,
+      stdio: ["pipe", "pipe", "pipe"],
+    });
+    return parseInt(out.trim(), 10) || 0;
+  } catch {
+    return 0;
+  }
+}
+
 // ── Formatters ────────────────────────────────────────────────────────────────
 
 function fmtTokens(n) {
@@ -65,6 +79,17 @@ function fmtCost(usd) {
   if (usd === 0) return null;
   if (usd < 0.01) return `$${usd.toFixed(3)}`;
   return `$${usd.toFixed(2)}`;
+}
+
+function fmtDuration(ms) {
+  if (ms == null || ms <= 0) return null;
+  const totalSec = Math.floor(ms / 1000);
+  if (totalSec < 60) return `${totalSec}s`;
+  const mins = Math.floor(totalSec / 60);
+  if (mins < 60) return `${mins}m`;
+  const hrs = Math.floor(mins / 60);
+  const rem = mins % 60;
+  return rem > 0 ? `${hrs}h${rem}m` : `${hrs}h`;
 }
 
 function fmtRelativeTime(isoTimestamp) {
@@ -153,9 +178,13 @@ function render(data) {
   const session = data.session_id || "";
   const segments = [];
 
-  // 1. Branch (cyan, always shown)
+  // 1. Branch + ahead count (cyan, always shown)
   const branch = gitBranch(cwd);
-  if (branch) segments.push(`${c.cyan}\u25c6 ${branch}${c.reset}`);
+  if (branch) {
+    const ahead = gitAhead(cwd);
+    const aheadStr = ahead > 0 ? ` ${c.green}\u2191${ahead}${c.reset}` : "";
+    segments.push(`${c.cyan}\u25c6 ${branch}${c.reset}${aheadStr}`);
+  }
 
   // 2. Dirty count (yellow, hidden when clean)
   const dirty = gitDirtyCount(cwd);
@@ -207,6 +236,35 @@ function render(data) {
   const modelName = data.model?.display_name;
   if (modelName) {
     line2Parts.push(`${c.dimWhite}${modelName}${c.reset}`);
+  }
+
+  // Session duration
+  const duration = fmtDuration(data.cost?.total_duration_ms);
+  if (duration) {
+    line2Parts.push(`${c.dimWhite}${duration}${c.reset}`);
+  }
+
+  // Lines changed (+N -N)
+  const added = data.cost?.total_lines_added || 0;
+  const removed = data.cost?.total_lines_removed || 0;
+  if (added > 0 || removed > 0) {
+    let linesStr = "";
+    if (added > 0) linesStr += `${c.green}+${added}${c.reset}`;
+    if (added > 0 && removed > 0) linesStr += " ";
+    if (removed > 0) linesStr += `${c.red}-${removed}${c.reset}`;
+    line2Parts.push(linesStr);
+  }
+
+  // Cost per line (wow metric — hidden when no lines or no cost)
+  const totalLines = added + removed;
+  const totalCost = data.cost?.total_cost_usd || 0;
+  if (totalLines > 0 && totalCost > 0) {
+    const cpl = totalCost / totalLines;
+    const cplStr =
+      cpl < 0.001
+        ? `$${(cpl * 1000).toFixed(1)}\u00d710\u207b\u00b3`
+        : `$${cpl.toFixed(3)}`;
+    line2Parts.push(`${c.dimWhite}${cplStr}/line${c.reset}`);
   }
 
   // 5-hour usage
