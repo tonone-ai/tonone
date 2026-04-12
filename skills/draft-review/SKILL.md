@@ -60,6 +60,20 @@ Evaluate against each heuristic. Only flag real violations — not hypothetical 
 
 Severity: **Critical** (blocks task completion), **Major** (slows significantly), **Minor** (annoying but workaroundable).
 
+### Design Intelligence (via uiux)
+
+During heuristic evaluation (Step 3), query UX guidelines for the specific interaction patterns being reviewed:
+
+```bash
+python3 -m draft_agent.uiux search --domain ux --query "{pattern_category}" --limit 5
+```
+
+Use results to:
+
+- Supplement Nielsen's heuristics with specific do/don't guidelines
+- Check severity ratings from the database against your own assessment
+- Reference platform-specific rules (web vs mobile) from the results
+
 ### Step 4: Check the Critical Moments
 
 Always check these specifically, as they have highest impact:

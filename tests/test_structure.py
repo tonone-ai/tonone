@@ -139,6 +139,33 @@ def test_team_agents_match_agents_directory():
     ), f"In agents/ but missing team/ dir: {sorted(only_in_agents_dir)}"
 
 
+def test_root_skills_match_team_skills():
+    """
+    Every root skills/<name>/SKILL.md must be identical to its canonical copy in
+    team/<agent>/skills/<name>/SKILL.md.  Drift means the root copy is missing
+    features that the team copy gained (or vice versa).
+    """
+    skills_dir = REPO / "skills"
+    drifted = []
+    for skill_dir in sorted(skills_dir.iterdir()):
+        if not skill_dir.is_dir():
+            continue
+        root_file = skill_dir / "SKILL.md"
+        if not root_file.exists():
+            continue
+        agent = skill_dir.name.split("-")[0]
+        team_file = REPO / "team" / agent / "skills" / skill_dir.name / "SKILL.md"
+        if not team_file.exists():
+            continue  # team-only or root-only mismatches caught elsewhere
+        if root_file.read_text() != team_file.read_text():
+            drifted.append(skill_dir.name)
+    assert (
+        not drifted
+    ), f"{len(drifted)} root skill(s) drifted from team/ canonical copy: " + ", ".join(
+        drifted
+    )
+
+
 def test_plugin_json_name_matches_agent_directory():
     """
     plugin.json 'name' must match the agent directory name (bare, no prefix).

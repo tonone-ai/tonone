@@ -109,6 +109,22 @@ Ask the team to confirm they understand the two-tier model and the rule above. I
 
 ---
 
+## Design Intelligence (via uiux)
+
+After confirming token architecture (Phase 2), use the design system generator to seed initial token values:
+
+```bash
+python3 -m form_agent.uiux design-system --product-type "{product_type}"
+```
+
+Use the generated design system output to:
+
+- Seed primitive color tokens from the industry-matched palette
+- Seed typography tokens from the recommended font pairing
+- Validate spacing and effect choices against the style recommendation
+
+---
+
 ## Phase 3: Token Categories
 
 Define tokens in this order. Each category builds on the previous.

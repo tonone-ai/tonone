@@ -25,6 +25,20 @@ Before writing, confirm:
 
 If none of this is available, ask. Copy without context is guessing.
 
+### Design Intelligence (via uiux)
+
+After establishing context (Step 1), query landing page patterns for structural guidance:
+
+```bash
+python3 -m pitch_agent.uiux search --domain landing --query "{product_type}" --limit 3
+```
+
+Use results to:
+
+- Align copy block structure with proven landing page section orders
+- Place CTAs according to the pattern's recommended placement
+- Apply conversion optimization techniques specific to the product type
+
 ### Step 2: Write the Hero Section
 
 The hero is most critical — users form opinion in seconds.
