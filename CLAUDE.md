@@ -93,6 +93,18 @@ cd team/forge/scripts && bash setup.sh
 .venv/bin/python -m pytest ../tests/
 ```
 
+## Worktree branch naming
+
+Before making the first edit in an implementation session, write a short kebab-case description of the task to `.claude/branch-slug`. The worktree hooks read this file to name the branch.
+
+```bash
+# Example — do this before any file edit:
+echo "fix-auth-bug" > .claude/branch-slug
+echo "add-worktree-git-gate" > .claude/branch-slug
+```
+
+No slashes. Lowercase. Max 50 chars. If omitted, branch falls back to `impl-YYYYMMDD-HHMMSS`.
+
 ## Skill routing
 
 When the user's request matches an available skill, ALWAYS invoke it using the Skill
