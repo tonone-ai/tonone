@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 // tonone-worktree-gate — PreToolUse hook for Edit/Write/NotebookEdit
 //
-// Safety net: if an agent tries to edit files while on main AND a recent
-// implementation plan exists, block and tell the agent to call EnterWorktree.
+// On any file-modifying tool call while on main: auto-creates (or reuses) an
+// isolated worktree and tells Claude to enter it before proceeding.
 //
-// Opt-out: agent creates .claude/skip-worktree (valid for 2 hours) to allow
-// deliberate main-branch edits (docs, CHANGELOG, version bumps, etc).
+// Opt-out: write .claude/skip-worktree (valid 2 hours) for deliberate main
+// edits (docs, CHANGELOG, version bumps).
 
-const { execSync } = require("child_process");
+const { execSync, spawnSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
-const os = require("os");
 
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 3000);
@@ -28,8 +27,7 @@ process.stdin.on("end", () => {
     if (!GATED.includes(toolName)) process.exit(0);
 
     // Whitelist: always allow creating the opt-out marker itself
-    const filePath =
-      toolInput.file_path || toolInput.notebook_path || "";
+    const filePath = toolInput.file_path || toolInput.notebook_path || "";
     if (
       filePath === ".claude/skip-worktree" ||
       filePath.endsWith("/.claude/skip-worktree")
@@ -41,11 +39,9 @@ process.stdin.on("end", () => {
     const skipMarker = ".claude/skip-worktree";
     if (fs.existsSync(skipMarker)) {
       const stat = fs.statSync(skipMarker);
-      const ageMs = Date.now() - stat.mtimeMs;
-      if (ageMs < 2 * 60 * 60 * 1000) {
-        process.exit(0); // Valid opt-out — allow
+      if (Date.now() - stat.mtimeMs < 2 * 60 * 60 * 1000) {
+        process.exit(0);
       }
-      // Stale marker (>2h) — fall through to check
     }
 
     // Check if already in a worktree
@@ -63,56 +59,72 @@ process.stdin.on("end", () => {
       process.exit(0); // Already in a worktree — allow
     }
 
-    // Check for a recent gstack plan (modified within last 24h) as implementation signal.
-    // gstack is the office-hours/planning tool (github.com/... — see ~/.claude/skills/gstack/).
-    // ceo-plans/ stores approved design docs. If gstack is not installed, hasRecentPlan stays
-    // false and the gate never fires — the feature degrades gracefully to a no-op.
-    const gstackProjects = path.join(os.homedir(), ".gstack", "projects");
-    let hasRecentPlan = false;
-    try {
-      const result = execSync(
-        `find "${gstackProjects}" -name "*.md" -path "*/ceo-plans/*" -mtime -1 2>/dev/null`,
-        { encoding: "utf8" },
-      ).trim();
-      hasRecentPlan = result.length > 0;
-    } catch {
-      hasRecentPlan = false;
-    }
+    // On main. Try to reuse a worktree pre-created by tonone-worktree-create.
+    const worktreesDir = ".claude/worktrees";
+    let worktreePath = null;
+    let branchName = null;
 
-    if (!hasRecentPlan) {
-      process.exit(0); // No recent plan = exploratory session, allow
-    }
-
-    // Check for a pre-created worktree to guide Claude
-    let worktreeHint = "";
     try {
-      const worktreesDir = ".claude/worktrees";
       if (fs.existsSync(worktreesDir)) {
-        // Sort lexicographically reversed: impl-YYYYMMDD-HHMMSS-PID names are chronologically
-        // ordered by their string value, so this surfaces the most recently created worktree.
+        // Lexicographic descending = most-recent impl-YYYYMMDD-HHMMSS-PID first
         const entries = fs
           .readdirSync(worktreesDir)
           .filter((e) => e.startsWith("impl-"))
           .sort()
           .reverse();
-        if (entries.length > 0) {
-          worktreeHint = `\nA pre-created worktree is available: .claude/worktrees/${entries[0]}`;
+        for (const entry of entries) {
+          const candidate = path.join(worktreesDir, entry);
+          if (fs.existsSync(candidate)) {
+            worktreePath = candidate;
+            branchName = entry;
+            break;
+          }
         }
       }
     } catch {}
 
-    // Block with actionable message
-    process.stderr.write(
-      `WORKTREE_REQUIRED: You have an active implementation plan but are editing files directly on main.\n` +
-        `This can conflict with other concurrent sessions.\n\n` +
-        `Options:\n` +
-        `(a) Call EnterWorktree to create an isolated workspace.${worktreeHint}\n` +
-        `(b) If this edit is intentionally on main (docs, CHANGELOG, version bumps),\n` +
-        `    write .claude/skip-worktree first, then retry the edit.\n`,
+    // No pre-existing worktree — create one now.
+    if (!worktreePath) {
+      const now = new Date();
+      const pad = (n) => String(n).padStart(2, "0");
+      const dateStr = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}`;
+      const timeStr = `${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+      const base = `impl-${dateStr}-${timeStr}-${process.pid}`;
+
+      for (let i = 0; i < 5; i++) {
+        const suffix = i === 0 ? "" : `-${i + 1}`;
+        const candidate = base + suffix;
+        const wPath = path.join(worktreesDir, candidate);
+        const result = spawnSync(
+          "git",
+          ["worktree", "add", wPath, "-b", candidate],
+          { encoding: "utf8" },
+        );
+        if (result.status === 0) {
+          worktreePath = wPath;
+          branchName = candidate;
+          break;
+        }
+      }
+    }
+
+    // Creation failed — silent fallthrough, allow edit on main.
+    if (!worktreePath) {
+      process.exit(0);
+    }
+
+    // Block and redirect to worktree.
+    process.stdout.write(
+      `\nWORKTREE_READY: An isolated workspace is ready for this session.\n` +
+        `Path: ${worktreePath}\n` +
+        `Branch: ${branchName}\n\n` +
+        `Call EnterWorktree("${worktreePath}") now, then retry your edit. ` +
+        `This keeps your changes isolated from other concurrent sessions.\n` +
+        `\nTo edit on main intentionally (docs, CHANGELOG, version bumps), ` +
+        `write .claude/skip-worktree first, then retry.\n`,
     );
     process.exit(1);
   } catch {
-    // Silent fail — never block the user on a hook crash
     process.exit(0);
   }
 });
