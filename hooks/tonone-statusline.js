@@ -198,7 +198,41 @@ function render(data) {
   const rateLimit = renderRateLimit(data.rate_limits);
   if (rateLimit) segments.push(rateLimit);
 
-  return segments.join(` ${c.dim}\u2502${c.reset} `);
+  const line1 = segments.join(` ${c.dim}\u2502${c.reset} `);
+
+  // ── Line 2: model + usage windows ──────────────────────────────────────────
+  const line2Parts = [];
+
+  // Model name (always shown when available)
+  const modelName = data.model?.display_name;
+  if (modelName) {
+    line2Parts.push(`${c.dimWhite}${modelName}${c.reset}`);
+  }
+
+  // 5-hour usage
+  const fiveH = data.rate_limits?.five_hour;
+  if (fiveH?.used_percentage != null) {
+    const pct = Math.round(fiveH.used_percentage);
+    let col = c.dimWhite;
+    if (pct >= 90) col = `${c.blink}${c.red}`;
+    else if (pct >= 70) col = c.yellow;
+    line2Parts.push(`${col}5h: ${pct}%${c.reset}`);
+  }
+
+  // 7-day (weekly) usage
+  const sevenD = data.rate_limits?.seven_day;
+  if (sevenD?.used_percentage != null) {
+    const pct = Math.round(sevenD.used_percentage);
+    let col = c.dimWhite;
+    if (pct >= 90) col = `${c.blink}${c.red}`;
+    else if (pct >= 70) col = c.yellow;
+    line2Parts.push(`${col}7d: ${pct}%${c.reset}`);
+  }
+
+  if (line2Parts.length === 0) return line1;
+
+  const line2 = line2Parts.join(` ${c.dim}\u2502${c.reset} `);
+  return `${line1}\n${line2}`;
 }
 
 // ── Stdin reader with 3s timeout guard ───────────────────────────────────────
