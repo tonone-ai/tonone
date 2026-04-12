@@ -148,3 +148,66 @@ def test_gate_message_is_actionable():
 # environment-dependent (requires: not in a worktree AND a recent ~/.gstack plan).
 # It is validated in the smoke test (Task 7 of the implementation plan) rather
 # than here, where we can only inspect the source code for correctness.
+
+
+# ---------------------------------------------------------------------------
+# tonone-git-gate.js
+# ---------------------------------------------------------------------------
+
+GIT_GATE = REPO / "hooks" / "tonone-git-gate.js"
+
+
+def test_git_gate_file_exists():
+    """Git gate hook file must exist."""
+    assert GIT_GATE.exists(), f"Missing: {GIT_GATE}"
+
+
+def test_git_gate_is_valid_js():
+    """tonone-git-gate.js must be syntactically valid Node.js."""
+    result = subprocess.run(
+        ["node", "--check", str(GIT_GATE)],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
+
+
+def test_git_gate_allows_non_git_commands():
+    """Gate exits 0 for Bash commands that are not git commit/push."""
+    for cmd in ["npm test", "echo hello", "git status", "git log", "git add ."]:
+        rc, _, _ = run_hook(GIT_GATE, {
+            "tool_name": "Bash",
+            "tool_input": {"command": cmd},
+        })
+        assert rc == 0, f"Expected exit 0 for command={cmd!r}, got {rc}"
+
+
+def test_git_gate_allows_non_bash_tools():
+    """Gate exits 0 for tools other than Bash."""
+    for tool in ["Edit", "Write", "Read", "Agent"]:
+        rc, _, _ = run_hook(GIT_GATE, {
+            "tool_name": tool,
+            "tool_input": {"command": "git commit -m 'test'"},
+        })
+        assert rc == 0, f"Expected exit 0 for tool={tool}, got {rc}"
+
+
+def test_git_gate_handles_invalid_json():
+    """Git gate exits 0 on invalid stdin — must never block user on a crash."""
+    proc = subprocess.run(
+        ["node", str(GIT_GATE)],
+        input="not json",
+        capture_output=True,
+        text=True,
+        timeout=10,
+    )
+    assert proc.returncode == 0
+
+
+def test_git_gate_message_is_actionable():
+    """When git gate blocks, source must contain GIT_GATE, EnterWorktree, and skip-worktree."""
+    source = GIT_GATE.read_text()
+    assert "GIT_GATE" in source
+    assert "EnterWorktree" in source
+    assert ".claude/skip-worktree" in source
+    assert "process.exit(1)" in source
