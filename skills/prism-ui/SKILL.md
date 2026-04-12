@@ -67,6 +67,20 @@ UserProfilePage (server — fetches data)
     └── SaveButton (shared component)
 ```
 
+### Design Intelligence (via uiux)
+
+After planning the component structure (Step 2), query performance and stack guidelines:
+
+```bash
+python3 -m prism_agent.uiux search --domain react --query "{optimization_area}" --limit 3
+```
+
+Use results to:
+
+- Apply framework-specific performance patterns (memoization, code splitting, Suspense)
+- Avoid documented performance anti-patterns
+- Choose correct data fetching strategy based on the guidelines
+
 ### Step 3: Write the Implementation
 
 Write all files. Not scaffolding — complete, working code.

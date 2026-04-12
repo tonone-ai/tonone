@@ -114,6 +114,23 @@ Type scale (base: [N]px, ratio: [e.g., 1.25 Major Third]):
 
 ---
 
+## Design Intelligence (via uiux)
+
+After defining brand adjectives and visual language (Phase 3), query the design database to validate color and style choices against industry data:
+
+```bash
+python3 -m form_agent.uiux search --domain color --query "{industry/product_type}" --limit 3
+python3 -m form_agent.uiux search --domain style --query "{product_type}" --limit 3
+```
+
+Use results to:
+
+- Validate color palette aligns with industry conventions
+- Check recommended style matches brand adjectives
+- Cross-reference anti-patterns before finalizing visual direction
+
+---
+
 ## Phase 4: Design Tokens + Brand Brief
 
 ### 4.1 Design Tokens

@@ -29,6 +29,21 @@ If no existing components exist, use framework conventions. Default stack if gre
 
 **Stop if design tokens are missing.** Ask Form for the token file before implementing. Do not invent color or spacing values.
 
+### Design Intelligence (via uiux)
+
+After detecting the project framework (Step 0), load stack-specific guidelines and icon references:
+
+```bash
+python3 -m prism_agent.uiux search --domain stacks --query "{detected_framework}" --limit 3
+python3 -m prism_agent.uiux search --domain icons --query "{component_type}" --limit 5
+```
+
+Use results to:
+
+- Follow framework-specific component patterns (e.g., React composition vs Vue slots)
+- Select appropriate icons from the Phosphor Icons catalog
+- Apply stack-specific accessibility and performance guidelines
+
 ### Step 1: Read the Spec
 
 Identify what Form has specified:

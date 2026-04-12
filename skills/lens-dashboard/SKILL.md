@@ -71,6 +71,21 @@ Define dashboard with 3–5 panels maximum:
 - Table — detail drill-down, top N lists
 - Avoid: pie charts for more than 3 categories, dual-axis charts, 3D anything
 
+### Design Intelligence (via uiux)
+
+When selecting chart types for each panel (Step 2), query the chart database:
+
+```bash
+python3 -m lens_agent.uiux search --domain chart --query "{data_type}" --limit 3
+```
+
+Use results to:
+
+- Select optimal chart type based on data characteristics and volume threshold
+- Check accessibility grade — prefer AA or higher for public dashboards
+- Apply the recommended library (Chart.js, Recharts, D3, etc.) matching the detected stack
+- Use the dashboard style search for overall visual treatment
+
 ### Step 3: Write the SQL Queries
 
 Write production-quality SQL for each panel. Include:

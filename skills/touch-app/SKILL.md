@@ -58,6 +58,23 @@ Output the full architecture spec in this structure:
 
 ---
 
+### Design Intelligence (via uiux)
+
+After the platform decision is made, query platform-specific UI rules:
+
+```bash
+python3 -m touch_agent.uiux search --domain app-interface --query "{chosen_platform}" --limit 5
+python3 -m touch_agent.uiux search --domain stacks --query "{chosen_framework}" --limit 3
+```
+
+Use results to:
+
+- Validate platform choice against UI convention requirements (iOS vs Android)
+- Apply framework-specific architecture patterns from stack guidelines
+- Set performance budgets using platform-specific touch target and animation rules
+
+---
+
 ### Architecture Pattern
 
 **Pattern:** [MVVM / MVVM + service layer / MVVM + domain layer]
