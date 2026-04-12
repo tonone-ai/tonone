@@ -74,6 +74,7 @@ test("dirty worktree (committed changes) — prints /ship suggestion, keeps work
     assert.strictEqual(result.status, 0, result.stderr);
     assert.match(result.stdout, /\/ship/);
     assert.ok(fs.existsSync(wtPath), "worktree should still exist");
+    try { execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir }); } catch {}
   } finally {
     cleanup(dir);
   }
@@ -88,6 +89,7 @@ test("dirty worktree (uncommitted changes) — prints /ship suggestion, keeps wo
     assert.strictEqual(result.status, 0, result.stderr);
     assert.match(result.stdout, /\/ship/);
     assert.ok(fs.existsSync(wtPath), "worktree should still exist");
+    try { execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir }); } catch {}
   } finally {
     cleanup(dir);
   }
