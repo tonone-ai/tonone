@@ -78,7 +78,7 @@ process.stdin.on("end", () => {
       desc = compress(desc);
     } else if (tool === "Bash") {
       const cmd = inp.command || "";
-      if (!cmd.includes("git commit")) process.exit(0);
+      if (!/\bgit commit(?!-)/.test(cmd)) process.exit(0);
       // Extract -m message if present
       const mMatch = cmd.match(/-m\s+["']([^"']{1,80})/);
       desc = mMatch ? `commit: ${mMatch[1]}` : `commit: ${compress(cmd.slice(0, 80))}`;
