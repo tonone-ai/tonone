@@ -112,16 +112,10 @@ function caveman(text) {
 }
 
 function readSessionGoal(cwd) {
-  const candidates = [
-    path.join(cwd, ".claude", "session-goal"),
-    path.join(cwd, ".claude", "branch-slug"),
-  ];
-  for (const p of candidates) {
-    try {
-      const raw = fs.readFileSync(p, "utf8").trim();
-      if (raw) return caveman(raw);
-    } catch {}
-  }
+  try {
+    const raw = fs.readFileSync(path.join(cwd, ".claude", "session-goal"), "utf8").trim();
+    if (raw) return caveman(raw);
+  } catch {}
   return null;
 }
 
