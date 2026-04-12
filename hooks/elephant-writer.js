@@ -7,6 +7,7 @@
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
+const { spawnSync } = require("child_process");
 
 const PLUGIN_ROOT =
   process.env.CLAUDE_PLUGIN_ROOT || path.join(__dirname, "..");
@@ -78,10 +79,23 @@ process.stdin.on("end", () => {
       desc = compress(desc);
     } else if (tool === "Bash") {
       const cmd = inp.command || "";
-      if (!/\bgit commit(?!-)/.test(cmd)) process.exit(0);
-      // Extract -m message if present
-      const mMatch = cmd.match(/-m\s+["']([^"']{1,80})/);
-      desc = mMatch ? `commit: ${mMatch[1]}` : `commit: ${compress(cmd.slice(0, 80))}`;
+      // Only capture git commit (not --amend, not commit-graph, not commitlint)
+      if (!/\bgit commit\b/.test(cmd)) process.exit(0);
+      if (/--amend|commit-graph|commitlint/.test(cmd)) process.exit(0);
+      // Try to extract -m message; fall back to git log if heredoc/subshell
+      const mMatch = cmd.match(/-m\s+["']([^"'$\n]{3,80})/);
+      if (mMatch) {
+        desc = `commit: ${mMatch[1]}`;
+      } else {
+        // HEREDOC or subshell — commit already ran, read actual message from git
+        const result = spawnSync("git", ["log", "-1", "--format=%s"], {
+          cwd: PLUGIN_ROOT,
+          encoding: "utf8",
+          timeout: 3000,
+        });
+        const msg = (result.stdout || "").trim();
+        desc = msg ? `commit: ${msg}` : null;
+      }
     } else if (tool === "Skill") {
       const skillName = inp.skill || "unknown";
       const args = inp.args ? ` ${inp.args.slice(0, 40)}` : "";
