@@ -83,9 +83,11 @@ function main() {
 
   // Other repos: last 3 entries
   const otherEntries = global.slice(0, 3);
-  if (otherEntries.length > 0) {
+  // Only show other-repos section if there's room (need separator + at least 1 entry)
+  const roomForOthers = 15 - lines.length;
+  if (otherEntries.length > 0 && roomForOthers >= 2) {
     lines.push("── other repos ──");
-    for (const e of otherEntries) {
+    for (const e of otherEntries.slice(0, roomForOthers - 1)) {
       const dateShort = e.tsStr ? e.tsStr.slice(5, 10) : "??-??";
       lines.push(`${e.repo} : ${e.text} (${dateShort})`);
     }
@@ -103,7 +105,7 @@ function main() {
 
   // Render
   const body = capped.map((l, i) => {
-    const prefix = i === capped.length - 1 && otherEntries.length === 0 ? "└" : "├";
+    const prefix = "├";
     return `${prefix} ${l}`;
   });
 
