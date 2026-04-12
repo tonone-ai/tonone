@@ -63,7 +63,10 @@ process.stdin.on("end", () => {
       process.exit(0); // Already in a worktree — allow
     }
 
-    // Check for a recent plan (modified within last 24h) as implementation signal
+    // Check for a recent gstack plan (modified within last 24h) as implementation signal.
+    // gstack is the office-hours/planning tool (github.com/... — see ~/.claude/skills/gstack/).
+    // ceo-plans/ stores approved design docs. If gstack is not installed, hasRecentPlan stays
+    // false and the gate never fires — the feature degrades gracefully to a no-op.
     const gstackProjects = path.join(os.homedir(), ".gstack", "projects");
     let hasRecentPlan = false;
     try {
@@ -85,6 +88,8 @@ process.stdin.on("end", () => {
     try {
       const worktreesDir = ".claude/worktrees";
       if (fs.existsSync(worktreesDir)) {
+        // Sort lexicographically reversed: impl-YYYYMMDD-HHMMSS-PID names are chronologically
+        // ordered by their string value, so this surfaces the most recently created worktree.
         const entries = fs
           .readdirSync(worktreesDir)
           .filter((e) => e.startsWith("impl-"))

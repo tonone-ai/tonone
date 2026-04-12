@@ -11,7 +11,7 @@
 // created on disk. tonone-worktree-gate.js will tell Claude about it when it
 // tries to make its first file edit.
 
-const { execSync } = require("child_process");
+const { execSync, spawnSync } = require("child_process");
 const path = require("path");
 
 let input = "";
@@ -55,17 +55,17 @@ process.stdin.on("end", () => {
       const suffix = i === 0 ? "" : `-${i + 1}`;
       const candidate = base + suffix;
       const wPath = path.join(".claude", "worktrees", candidate);
-      try {
-        execSync(`git worktree add "${wPath}" -b "${candidate}"`, {
-          encoding: "utf8",
-          stdio: ["ignore", "pipe", "pipe"],
-        });
-        worktreePath = wPath;
-        branchName = candidate;
-        break;
-      } catch {
+      const result = spawnSync(
+        "git",
+        ["worktree", "add", wPath, "-b", candidate],
+        { encoding: "utf8" },
+      );
+      if (result.status !== 0) {
         continue; // Name collision or other transient error — retry
       }
+      worktreePath = wPath;
+      branchName = candidate;
+      break;
     }
 
     if (!worktreePath) {
