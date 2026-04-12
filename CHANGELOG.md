@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] — 2026-04-12
+
+### Added
+
+- **Eager worktree sessions** — `hooks/tonone-worktree-session.js` fires on `SessionStart` and auto-creates a worktree immediately, before any edits. Replaces the deferred gate approach. `plugin.json` wired; old `tonone-worktree-create.js` and `tonone-worktree-gate.js` deleted.
+- **Human-readable branch names** — `.claude/branch-slug` maps session IDs to short slugs (e.g. `feat/auth-fixes`) so worktree branches are readable at a glance instead of UUID-based.
+- **PR attribution** — `hooks/tonone-pr-attribution.js` appends a "Built by Tonone team" credits block to every PR body, listing the agents involved. Boosts K-factor via team credit visibility. Registered in `plugin.json`.
+- **Elephant memory** — persistent caveman-compressed memory system: `hooks/tonone-elephant-writer.js` auto-captures agent completions, commits, and skill runs; `hooks/tonone-elephant-recall.js` surfaces a startup summary. `/elephant` skill adds `save`, `show`, and `compact` commands.
+- **Elephant takeover** — `/elephant takeover` cold-starts the memory system from git history, bootstrapping recall for repos with no prior elephant data.
+- **Statusline session goal** — Line 4 of the 3-line statusline redesign now shows the session goal. Shoutouts added.
+
+### Fixed
+
+- **Statusline** — `resets_at` now parsed as Unix seconds (not milliseconds), fixing incorrect pace projection display.
+- **Worktree session hook** — removed unused `fs` import.
+
 ## [0.6.9] — 2026-04-12
 
 ### Added
