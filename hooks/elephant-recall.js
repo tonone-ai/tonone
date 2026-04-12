@@ -78,7 +78,8 @@ function main() {
   );
 
   for (const e of today) lines.push(`${e.important ? "[!!] " : ""}${e.tsStr} : ${e.text}`);
-  for (const e of week.slice(0, 10 - today.length)) lines.push(`${e.important ? "[!!] " : ""}${e.tsStr} : ${e.text}`);
+  const weekBudget = Math.max(0, 10 - today.length);
+  for (const e of week.slice(0, weekBudget)) lines.push(`${e.important ? "[!!] " : ""}${e.tsStr} : ${e.text}`);
   for (const e of older) lines.push(`[!!] ${e.tsStr} : ${e.text}`);
 
   // Other repos: last 3 entries
@@ -104,10 +105,7 @@ function main() {
     : "?";
 
   // Render
-  const body = capped.map((l, i) => {
-    const prefix = "├";
-    return `${prefix} ${l}`;
-  });
+  const body = capped.map((l) => `├ ${l}`);
 
   console.log("🐘 ELEPHANT RECALL");
   for (const l of body) console.log(l);
