@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Draft UX Review — Statusline Redesign</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --bg-card: #1e293b;
+        --bg-card-alt: #162032;
+        --text: #e2e8f0;
+        --text-muted: #94a3b8;
+        --border: #334155;
+        --accent: #3b82f6;
+        --critical: #dc2626;
+        --critical-bg: rgba(220, 38, 38, 0.12);
+        --warning: #d97706;
+        --warning-bg: rgba(217, 119, 6, 0.12);
+        --info: #2563eb;
+        --info-bg: rgba(37, 99, 235, 0.12);
+        --success: #16a34a;
+        --success-bg: rgba(22, 163, 74, 0.12);
+        --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
+      [data-theme="light"] {
+        --bg: #ffffff;
+        --bg-card: #f8fafc;
+        --bg-card-alt: #f1f5f9;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --critical-bg: #fef2f2;
+        --warning-bg: #fffbeb;
+        --info-bg: #eff6ff;
+        --success-bg: #f0fdf4;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        padding: 0;
+      }
+      .theme-toggle {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        z-index: 100;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        color: var(--text-muted);
+        border-radius: 8px;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .container { max-width: 860px; margin: 0 auto; padding: 48px 32px; }
+      .header {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 32px;
+        margin-bottom: 40px;
+      }
+      .header .agent-tag {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 3px 10px;
+        border-radius: 4px;
+        margin-bottom: 12px;
+      }
+      .header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+      }
+      .header .subtitle {
+        color: var(--text-muted);
+        font-size: 15px;
+      }
+      .verdict-box {
+        background: var(--critical-bg);
+        border: 1px solid var(--critical);
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin-bottom: 40px;
+      }
+      .verdict-box h2 {
+        color: var(--critical);
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .verdict-box p {
+        color: var(--text);
+        font-size: 14px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 40px 0 16px 0;
+        letter-spacing: -0.01em;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 24px 0 10px 0;
+        color: var(--text);
+      }
+      p, li { font-size: 14px; color: var(--text); }
+      .section {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+      .section h2 { margin-top: 0; }
+
+      /* Status bar mockups */
+      .mockup {
+        background: #0c0c0c;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 16px 20px;
+        font-family: var(--font-mono);
+        font-size: 13px;
+        line-height: 1.8;
+        overflow-x: auto;
+        margin: 16px 0;
+      }
+      .mockup .line { white-space: nowrap; }
+      .mockup .cyan { color: #22d3ee; }
+      .mockup .green { color: #4ade80; }
+      .mockup .yellow { color: #facc15; }
+      .mockup .red { color: #f87171; }
+      .mockup .magenta { color: #c084fc; }
+      .mockup .dim { color: #64748b; }
+      .mockup .dimwhite { color: #94a3b8; }
+      .mockup .bold { font-weight: 700; }
+      .mockup .label { color: #64748b; font-size: 11px; }
+      .mockup .sep { color: #334155; }
+
+      /* Findings table */
+      .finding {
+        border-left: 3px solid var(--border);
+        padding: 12px 16px;
+        margin: 12px 0;
+        background: var(--bg-card-alt);
+        border-radius: 0 8px 8px 0;
+      }
+      .finding.critical { border-left-color: var(--critical); background: var(--critical-bg); }
+      .finding.major { border-left-color: var(--warning); background: var(--warning-bg); }
+      .finding.minor { border-left-color: var(--info); background: var(--info-bg); }
+      .finding .sev {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 4px;
+      }
+      .finding.critical .sev { color: var(--critical); }
+      .finding.major .sev { color: var(--warning); }
+      .finding.minor .sev { color: var(--info); }
+      .finding .title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+      .finding .desc { font-size: 13px; color: var(--text-muted); }
+
+      /* Heuristic table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin: 16px 0;
+      }
+      th, td {
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      th {
+        font-weight: 600;
+        color: var(--text-muted);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      td { color: var(--text); }
+      .pass { color: var(--success); }
+      .fail { color: var(--critical); }
+      .warn { color: var(--warning); }
+
+      /* Comparison grid */
+      .comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 16px 0;
+      }
+      .comparison .col h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+      }
+      .comparison .col.before h4 { color: var(--critical); }
+      .comparison .col.after h4 { color: var(--success); }
+
+      ul { padding-left: 20px; margin: 8px 0; }
+      li { margin: 4px 0; }
+
+      .callout {
+        background: var(--success-bg);
+        border: 1px solid var(--success);
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin: 16px 0;
+      }
+      .callout h4 { color: var(--success); font-size: 13px; margin-bottom: 6px; }
+      .callout p { font-size: 13px; }
+
+      .principle {
+        display: flex;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .principle:last-child { border-bottom: none; }
+      .principle .num {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .principle .body { font-size: 13px; }
+      .principle .body strong { color: var(--text); }
+      .principle .body span { color: var(--text-muted); }
+
+      @media (max-width: 680px) {
+        .container { padding: 24px 16px; }
+        .comparison { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-toggle" onclick="
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    ">Toggle theme</button>
+
+    <div class="container">
+      <div class="header">
+        <span class="agent-tag">Draft &mdash; UX Review</span>
+        <h1>Statusline Usability Review</h1>
+        <p class="subtitle">tonone two-line CLI status bar &bull; Nielsen heuristic evaluation &bull; 2026-04-12</p>
+      </div>
+
+      <!-- Verdict -->
+      <div class="verdict-box">
+        <h2>Verdict: The creator can't parse it. That's the diagnosis.</h2>
+        <p>The statusline packs 14&ndash;15 data points across 2 lines using abstract symbols with no labels. It violates <strong>Recognition over Recall</strong> (Nielsen #6) at a fundamental level. The fix: group by mental model, add micro-labels, cut to what matters <em>now</em>.</p>
+      </div>
+
+      <!-- Current Design -->
+      <div class="section">
+        <h2>Current Design</h2>
+        <p style="margin-bottom: 12px; color: var(--text-muted);">Full session with all segments visible:</p>
+        <div class="mockup">
+          <div class="line">
+            <span class="cyan">&#9670; main</span> <span class="green">&#8593;3</span>
+            <span class="sep"> &#9474; </span>
+            <span class="yellow">&#9650;2</span>
+            <span class="sep"> &#9474; </span>
+            <span class="magenta bold">spine</span>
+            <span class="magenta"> &#8853;1</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">50k tk</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">$0.38</span>
+            <span class="sep"> &#9474; </span>
+            <span class="green">&#9608;&#9608;&#9608;&#9608;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617; 52%</span>
+            <span class="sep"> &#9474; </span>
+            <span class="green">&#9678;65% &#8635;2h</span>
+          </div>
+          <div class="line">
+            <span class="dimwhite">Opus 4.6</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">23m</span>
+            <span class="sep"> &#9474; </span>
+            <span class="green">+156</span> <span class="red">-23</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">$0.010/line</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">5h: 24%</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">7d: 41%</span>
+          </div>
+        </div>
+        <p style="color: var(--text-muted); font-size: 13px;">8 segments on Line 1 &bull; 6 segments on Line 2 &bull; 6 abstract symbols &bull; 0 labels</p>
+      </div>
+
+      <!-- Nielsen Heuristics -->
+      <div class="section">
+        <h2>Nielsen's 10 Heuristics</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Heuristic</th>
+              <th>Result</th>
+              <th>Severity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Visibility of system status</td>
+              <td class="pass">&#10003; Pass</td>
+              <td>&mdash;</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Match between system and real world</td>
+              <td class="fail">&#10007; Fail</td>
+              <td class="fail">Major</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>User control and freedom</td>
+              <td class="pass">&#10003; N/A</td>
+              <td>&mdash;</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Consistency and standards</td>
+              <td class="fail">&#10007; Fail</td>
+              <td class="warn">Major</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Error prevention</td>
+              <td class="pass">&#10003; N/A</td>
+              <td>&mdash;</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Recognition rather than recall</td>
+              <td class="fail">&#10007; Fail</td>
+              <td class="fail">Critical</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Flexibility and efficiency of use</td>
+              <td class="pass">&#10003; Pass</td>
+              <td>&mdash;</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Aesthetic and minimalist design</td>
+              <td class="fail">&#10007; Fail</td>
+              <td class="warn">Major</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Help users recognize, diagnose, recover</td>
+              <td class="pass">&#10003; Pass</td>
+              <td>&mdash;</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Help and documentation</td>
+              <td class="fail">&#10007; Fail</td>
+              <td class="warn">Minor</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Findings -->
+      <div class="section">
+        <h2>Findings</h2>
+
+        <div class="finding critical">
+          <div class="sev">&#9632; Critical &mdash; Nielsen #6</div>
+          <div class="title">Symbol soup: 6 abstract glyphs with zero labels</div>
+          <div class="desc">
+            &#9670; = branch, &#9650; = dirty, &#8853; = subagents, &#9678; = rate limit, &#8593; = ahead, &#8635; = reset.
+            These require memorizing a legend. The user &mdash; who <em>designed</em> this &mdash; can't parse it at a glance. That's the clearest possible signal. Symbols work only when universally understood ($ for money, % for percentage). Custom symbols create a private language.
+            <br><br>
+            <strong>Fix:</strong> Replace symbols with micro-labels. <code>&#9650;2</code> &rarr; <code>2 dirty</code>. <code>&#8853;1</code> &rarr; <code>+1 sub</code>. The 3&ndash;4 extra characters per segment buy instant comprehension.
+          </div>
+        </div>
+
+        <div class="finding major">
+          <div class="sev">&#9650; Major &mdash; Nielsen #8</div>
+          <div class="title">14 segments across 2 lines overloads working memory</div>
+          <div class="desc">
+            Miller's Law: humans chunk 7&plusmn;2 items. The statusline presents 14&ndash;15 discrete data points with flat hierarchy &mdash; identical pipe separators, similar visual weight. The eye has nowhere to anchor.
+            <br><br>
+            <strong>Fix:</strong> Reduce to max 5 segments per line. Cut tokens (cost tells the same story), cost/line (vanity metric &mdash; show at session end), and the duplicate rate limit.
+          </div>
+        </div>
+
+        <div class="finding major">
+          <div class="sev">&#9650; Major &mdash; Nielsen #4</div>
+          <div class="title">No semantic grouping &mdash; 4 domains share one line with identical separators</div>
+          <div class="desc">
+            Line 1 mixes git state (branch, dirty, ahead), agent state (name, subagents), consumption (tokens, cost), and system health (context, rate limit). All separated by the same dim pipe. The brain can't chunk what looks visually identical.
+            <br><br>
+            <strong>Fix:</strong> Group by mental model. Line 1 = work context (what you're doing). Line 2 = resources (what's being consumed). Use visual separator hierarchy: spaces within groups, pipes between groups.
+          </div>
+        </div>
+
+        <div class="finding major">
+          <div class="sev">&#9650; Major &mdash; Nielsen #4</div>
+          <div class="title">Rate limit appears on both lines with different formats</div>
+          <div class="desc">
+            Line 1: <code>&#9678;65% &#8635;2h</code> (five-hour only, shown &gt;50%). Line 2: <code>5h: 24%</code> and <code>7d: 41%</code> (both windows, always shown). Two displays for overlapping data, different thresholds for visibility, different symbols. Which one do you look at?
+            <br><br>
+            <strong>Fix:</strong> One location. Line 2 only. Both windows. Drop the &#9678; symbol from Line 1 entirely.
+          </div>
+        </div>
+
+        <div class="finding major">
+          <div class="sev">&#9650; Major</div>
+          <div class="title">Progressive disclosure creates layout instability</div>
+          <div class="desc">
+            When segments hide (tokens at 0, cost at $0, agent when none), everything downstream shifts left. You can't build positional memory &mdash; "cost is always in position 6" is only true sometimes. A status bar's strength is glanceability, which requires spatial stability.
+            <br><br>
+            <strong>Fix:</strong> Use fixed-order <em>groups</em> (not segments). Groups always appear in the same position. Items within a group can still hide. Since there are only 2&ndash;3 groups per line, positional shift is minimal and predictable.
+          </div>
+        </div>
+
+        <div class="finding minor">
+          <div class="sev">&#9679; Minor</div>
+          <div class="title">Yellow means 3 unrelated things</div>
+          <div class="desc">
+            Yellow = dirty files = cost &gt;$1 = rate limit 70&ndash;90%. When the same color signals different alerts, color loses its power as a channel. Keep yellow for warnings only (cost, rate limit). Dirty count doesn't need a warning color &mdash; it's normal working state.
+          </div>
+        </div>
+
+        <div class="finding minor">
+          <div class="sev">&#9679; Minor</div>
+          <div class="title">"tk" is a non-standard abbreviation</div>
+          <div class="desc">
+            In publishing, "tk" means "to come" (placeholder text). For tokens, use "tok" or just show the number without a unit label &mdash; the position makes it clear.
+          </div>
+        </div>
+
+        <div class="finding minor">
+          <div class="sev">&#9679; Minor</div>
+          <div class="title">Line 2 lacks a coherent organizing principle</div>
+          <div class="desc">
+            Model name, session duration, lines changed, cost/line, rate limits. The code comment says "model + usage windows" but it's really 5 unrelated things. Cost/line is a "wow metric" (per the code comment) &mdash; interesting at session end, noise on a persistent display.
+          </div>
+        </div>
+      </div>
+
+      <!-- Proposed Redesign -->
+      <div class="section">
+        <h2>Proposed Redesign</h2>
+
+        <h3>Design Principles</h3>
+        <div>
+          <div class="principle">
+            <div class="num">1</div>
+            <div class="body"><strong>Max 5 segments per line.</strong> <span>If you can't fit it in 5, you're showing too much for a status bar.</span></div>
+          </div>
+          <div class="principle">
+            <div class="num">2</div>
+            <div class="body"><strong>Labels for anything non-universal.</strong> <span>$ and % don't need labels. &#9650; does. Spend 3&ndash;5 characters on a word to save the user 3&ndash;5 seconds of confusion.</span></div>
+          </div>
+          <div class="principle">
+            <div class="num">3</div>
+            <div class="body"><strong>Group by mental model, not data source.</strong> <span>Line 1: work context (what you're doing). Line 2: resource gauges (what's being consumed).</span></div>
+          </div>
+          <div class="principle">
+            <div class="num">4</div>
+            <div class="body"><strong>Stable group positions.</strong> <span>Groups always appear in order. Items within a group can hide. Positional shift stays within one group.</span></div>
+          </div>
+          <div class="principle">
+            <div class="num">5</div>
+            <div class="body"><strong>One source of truth per metric.</strong> <span>Rate limit in one place. Cost in one place. No duplicates.</span></div>
+          </div>
+        </div>
+
+        <h3>Line 1 &mdash; Work Context</h3>
+        <p style="color: var(--text-muted); margin-bottom: 8px;">What you're working on. Answers: which branch? any uncommitted work? who's running? what changed?</p>
+        <div class="mockup">
+          <div class="line">
+            <span class="cyan">main</span> <span class="green">&#8593;3</span>
+            <span class="sep"> &#9474; </span>
+            <span class="yellow">2 dirty</span>
+            <span class="sep"> &#9474; </span>
+            <span class="magenta bold">spine</span> <span class="magenta">+1 sub</span>
+            <span class="sep"> &#9474; </span>
+            <span class="green">+156</span> <span class="red">-23</span> <span class="dim">lines</span>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: var(--text-muted);">4 groups: git identity, working tree state, agent activity, work output. Each instantly scannable.</p>
+
+        <h3>Line 2 &mdash; Resource Gauges</h3>
+        <p style="color: var(--text-muted); margin-bottom: 8px;">What's being consumed. Answers: which model? how long? how much spent? how much runway left?</p>
+        <div class="mockup">
+          <div class="line">
+            <span class="dimwhite">Opus 4.6</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">23m</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">$0.38</span>
+            <span class="sep"> &#9474; </span>
+            <span class="green">&#9608;&#9608;&#9608;&#9608;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617; 48%</span>
+            <span class="sep"> &#9474; </span>
+            <span class="dimwhite">5h: 24%</span>
+            <span class="dim"> &#183; </span>
+            <span class="dimwhite">7d: 41%</span>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: var(--text-muted);">5 groups: model, duration, cost, context window, rate limits (5h &middot; 7d as one group). All "gauges" &mdash; things that fill up or drain.</p>
+
+        <h3>What Changed</h3>
+        <div class="comparison">
+          <div class="col before">
+            <h4>Removed</h4>
+            <ul>
+              <li><strong>&#9670; symbol</strong> before branch &mdash; position is the label</li>
+              <li><strong>Token count</strong> &mdash; cost tells the same story more usefully</li>
+              <li><strong>Cost/line</strong> &mdash; vanity metric, show at session end instead</li>
+              <li><strong>Line 1 rate limit</strong> (&#9678;) &mdash; duplicate of Line 2</li>
+              <li><strong>&#9650; &#8853; &#9678; symbols</strong> &mdash; replaced with words</li>
+            </ul>
+          </div>
+          <div class="col after">
+            <h4>Added / Changed</h4>
+            <ul>
+              <li><strong>"dirty"</strong> label after count</li>
+              <li><strong>"+1 sub"</strong> label instead of &#8853;1</li>
+              <li><strong>"lines"</strong> label after +N -N</li>
+              <li><strong>Lines changed</strong> moved to Line 1 (it's work context)</li>
+              <li><strong>5h/7d</strong> joined with &middot; as one group (both are rate limits)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side-by-side comparison -->
+      <div class="section">
+        <h2>Before / After Comparison</h2>
+
+        <h3>Full session (everything visible)</h3>
+        <div class="comparison">
+          <div class="col before">
+            <h4>Before (14 segments)</h4>
+            <div class="mockup" style="font-size: 11px;">
+              <div class="line"><span class="cyan">&#9670; main</span> <span class="green">&#8593;3</span> <span class="sep">&#9474;</span> <span class="yellow">&#9650;2</span> <span class="sep">&#9474;</span> <span class="magenta bold">spine</span> <span class="magenta">&#8853;1</span> <span class="sep">&#9474;</span> <span class="dimwhite">50k tk</span> <span class="sep">&#9474;</span> <span class="dimwhite">$0.38</span> <span class="sep">&#9474;</span> <span class="green">&#9608;&#9608;&#9608;&#9608;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617; 52%</span> <span class="sep">&#9474;</span> <span class="green">&#9678;65%</span></div>
+              <div class="line"><span class="dimwhite">Opus 4.6</span> <span class="sep">&#9474;</span> <span class="dimwhite">23m</span> <span class="sep">&#9474;</span> <span class="green">+156</span> <span class="red">-23</span> <span class="sep">&#9474;</span> <span class="dimwhite">$0.010/line</span> <span class="sep">&#9474;</span> <span class="dimwhite">5h: 24%</span> <span class="sep">&#9474;</span> <span class="dimwhite">7d: 41%</span></div>
+            </div>
+          </div>
+          <div class="col after">
+            <h4>After (9 segments)</h4>
+            <div class="mockup" style="font-size: 11px;">
+              <div class="line"><span class="cyan">main</span> <span class="green">&#8593;3</span> <span class="sep">&#9474;</span> <span class="yellow">2 dirty</span> <span class="sep">&#9474;</span> <span class="magenta bold">spine</span> <span class="magenta">+1 sub</span> <span class="sep">&#9474;</span> <span class="green">+156</span> <span class="red">-23</span> <span class="dim">lines</span></div>
+              <div class="line"><span class="dimwhite">Opus 4.6</span> <span class="sep">&#9474;</span> <span class="dimwhite">23m</span> <span class="sep">&#9474;</span> <span class="dimwhite">$0.38</span> <span class="sep">&#9474;</span> <span class="green">&#9608;&#9608;&#9608;&#9608;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617; 48%</span> <span class="sep">&#9474;</span> <span class="dimwhite">5h: 24%</span><span class="dim"> &#183; </span><span class="dimwhite">7d: 41%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Fresh session (minimal state)</h3>
+        <div class="comparison">
+          <div class="col before">
+            <h4>Before</h4>
+            <div class="mockup" style="font-size: 11px;">
+              <div class="line"><span class="cyan">&#9670; main</span> <span class="sep">&#9474;</span> <span class="green">&#9608;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617; 94%</span></div>
+              <div class="line"><span class="dimwhite">Opus 4.6</span></div>
+            </div>
+          </div>
+          <div class="col after">
+            <h4>After</h4>
+            <div class="mockup" style="font-size: 11px;">
+              <div class="line"><span class="cyan">main</span></div>
+              <div class="line"><span class="dimwhite">Opus 4.6</span> <span class="sep">&#9474;</span> <span class="green">&#9608;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617; 94%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Warning state (high usage)</h3>
+        <div class="comparison">
+          <div class="col before">
+            <h4>Before</h4>
+            <div class="mockup" style="font-size: 11px;">
+              <div class="line"><span class="cyan">&#9670; feat-x</span> <span class="green">&#8593;7</span> <span class="sep">&#9474;</span> <span class="yellow">&#9650;5</span> <span class="sep">&#9474;</span> <span class="magenta bold">spine</span> <span class="magenta">&#8853;3</span> <span class="sep">&#9474;</span> <span class="dimwhite">800k tk</span> <span class="sep">&#9474;</span> <span class="red">$6.20</span> <span class="sep">&#9474;</span> <span class="red">&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9617;&#9617; 15%</span> <span class="sep">&#9474;</span> <span class="yellow">&#9678;82% &#8635;1h</span></div>
+              <div class="line"><span class="dimwhite">Opus 4.6</span> <span class="sep">&#9474;</span> <span class="dimwhite">48m</span> <span class="sep">&#9474;</span> <span class="green">+420</span> <span class="red">-87</span> <span class="sep">&#9474;</span> <span class="dimwhite">$0.012/line</span> <span class="sep">&#9474;</span> <span class="yellow">5h: 82%</span> <span class="sep">&#9474;</span> <span class="dimwhite">7d: 55%</span></div>
+            </div>
+          </div>
+          <div class="col after">
+            <h4>After</h4>
+            <div class="mockup" style="font-size: 11px;">
+              <div class="line"><span class="cyan">feat-x</span> <span class="green">&#8593;7</span> <span class="sep">&#9474;</span> <span class="yellow">5 dirty</span> <span class="sep">&#9474;</span> <span class="magenta bold">spine</span> <span class="magenta">+3 sub</span> <span class="sep">&#9474;</span> <span class="green">+420</span> <span class="red">-87</span> <span class="dim">lines</span></div>
+              <div class="line"><span class="dimwhite">Opus 4.6</span> <span class="sep">&#9474;</span> <span class="dimwhite">48m</span> <span class="sep">&#9474;</span> <span class="red">$6.20</span> <span class="sep">&#9474;</span> <span class="red">&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9617;&#9617; 15%</span> <span class="sep">&#9474;</span> <span class="yellow">5h: 82%</span><span class="dim"> &#183; </span><span class="dimwhite">7d: 55%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What's Working -->
+      <div class="section">
+        <div class="callout">
+          <h4>What's Working Well (don't change)</h4>
+          <ul style="margin-top: 8px;">
+            <li><strong>Color-escalation on context bar and rate limit</strong> &mdash; green/yellow/red/blink progression is immediately understood</li>
+            <li><strong>The 10-block progress bar</strong> &mdash; universally scannable, great spatial encoding</li>
+            <li><strong>Progressive disclosure concept</strong> &mdash; hiding zero-value segments is correct; the execution just needs group-level stability</li>
+            <li><strong>Two-line layout</strong> &mdash; the right amount of space for a status bar</li>
+            <li><strong>+N / -N for lines</strong> &mdash; matches git convention, no learning curve</li>
+            <li><strong>Cost color thresholds</strong> ($1 yellow, $5 red) &mdash; sensible escalation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Implementation Notes -->
+      <div class="section">
+        <h2>Implementation Changes</h2>
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Minimal code changes in <code>hooks/tonone-statusline.js</code>:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Change</th>
+              <th>Current Code</th>
+              <th>New Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drop &#9670; from branch</td>
+              <td><code>\u25c6 ${branch}</code></td>
+              <td><code>${branch}</code></td>
+            </tr>
+            <tr>
+              <td>Label dirty count</td>
+              <td><code>\u25b2${dirty}</code></td>
+              <td><code>${dirty} dirty</code></td>
+            </tr>
+            <tr>
+              <td>Label subagents</td>
+              <td><code>\u2295${subCount}</code></td>
+              <td><code>+${subCount} sub</code></td>
+            </tr>
+            <tr>
+              <td>Move lines changed</td>
+              <td>Line 2, segment 3</td>
+              <td>Line 1, segment 4</td>
+            </tr>
+            <tr>
+              <td>Add "lines" label</td>
+              <td><code>+${added} -${removed}</code></td>
+              <td><code>+${added} -${removed} lines</code></td>
+            </tr>
+            <tr>
+              <td>Drop token count</td>
+              <td>Segment 5 on Line 1</td>
+              <td>Remove</td>
+            </tr>
+            <tr>
+              <td>Drop cost/line</td>
+              <td>Line 2, segment 4</td>
+              <td>Remove</td>
+            </tr>
+            <tr>
+              <td>Drop Line 1 rate limit</td>
+              <td><code>renderRateLimit()</code> on Line 1</td>
+              <td>Remove from Line 1</td>
+            </tr>
+            <tr>
+              <td>Join rate windows</td>
+              <td>Two pipe-separated segments</td>
+              <td>One group with &middot; separator</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Top Priority -->
+      <div class="section" style="border-color: var(--accent);">
+        <h2 style="color: var(--accent);">Top Priority Fix</h2>
+        <p>If only one thing changes: <strong>replace symbols with micro-labels</strong>. This single change addresses the core complaint ("hard to understand what is what") with minimal code change. <code>&#9650;2</code> &rarr; <code>2 dirty</code>, <code>&#8853;1</code> &rarr; <code>+1 sub</code>, drop <code>&#9670;</code>. Three lines of code, immediate comprehension gain.</p>
+      </div>
+
+      <p style="color: var(--text-muted); font-size: 12px; text-align: center; margin-top: 40px;">
+        Draft &mdash; UX Design &bull; tonone Product Team &bull; 2026-04-12
+      </p>
+    </div>
+  </body>
+</html>

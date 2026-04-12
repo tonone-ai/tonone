@@ -1,3 +1,91 @@
+# Statusline Redesign Implementation Plan
+
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+
+**Goal:** Rewrite the two-line statusline into a three-line design with semantic grouping, micro-labels, static fields, subagent names, model routing display, and pace projection for rate limits.
+
+**Architecture:** Single-file rewrite of `hooks/tonone-statusline.js` (Node.js, reads JSON from stdin, outputs ANSI text). Small addition to `hooks/tonone-agent-tracker.js` to capture subagent model. New pace bridge file created at runtime in `/tmp/`.
+
+**Tech Stack:** Node.js (no dependencies), ANSI escape codes, child_process for git, fs for bridge files.
+
+---
+
+## File Structure
+
+| File | Action | Responsibility |
+|------|--------|---------------|
+| `hooks/tonone-agent-tracker.js` | Modify | Add `model` field from `tool_input.model` to agent entries |
+| `hooks/tonone-statusline.js` | Rewrite | Full rewrite: 3-line render, pace calculation, static fields |
+| `hooks/test-statusline.sh` | Create | Test runner — pipes JSON fixtures through statusline |
+
+---
+
+### Task 1: Add model field to agent tracker
+
+**Files:**
+- Modify: `hooks/tonone-agent-tracker.js:38-50`
+
+- [ ] **Step 1: Add model capture to agent start block**
+
+In `hooks/tonone-agent-tracker.js`, replace the `isStart` block (lines 38-50):
+
+```javascript
+    if (isStart) {
+      // New agent started
+      state = {
+        ...state,
+        agents: [
+          ...state.agents,
+          {
+            id: toolOutput.agentId,
+            desc: agentDesc,
+            started: Date.now(),
+            finished: null,
+          },
+        ],
+      };
+```
+
+With:
+
+```javascript
+    if (isStart) {
+      // New agent started
+      const agentModel = toolInput.model || null;
+      state = {
+        ...state,
+        agents: [
+          ...state.agents,
+          {
+            id: toolOutput.agentId,
+            desc: agentDesc,
+            model: agentModel,
+            started: Date.now(),
+            finished: null,
+          },
+        ],
+      };
+```
+
+- [ ] **Step 2: Commit**
+
+```bash
+git add hooks/tonone-agent-tracker.js
+git commit -m "feat(statusline): track subagent model in bridge file"
+```
+
+---
+
+### Task 2: Rewrite statusline — colors, formatters, and git helpers
+
+**Files:**
+- Modify: `hooks/tonone-statusline.js:1-104`
+
+- [ ] **Step 1: Replace the entire top section (lines 1-104) with updated helpers**
+
+Replace everything from line 1 through the end of `fmtRelativeTime` (line 104) with:
+
+```javascript
 #!/usr/bin/env node
 "use strict";
 
@@ -97,7 +185,35 @@ function fmtDuration(ms) {
   const rem = mins % 60;
   return rem > 0 ? `${hrs}h${rem}m` : `${hrs}h`;
 }
+```
 
+- [ ] **Step 2: Verify syntax**
+
+```bash
+node -c hooks/tonone-statusline.js
+```
+
+Expected: no output (syntax ok) — this will fail because the bottom half still references removed functions. That's fine, we're replacing it in the next tasks.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add hooks/tonone-statusline.js
+git commit -m "feat(statusline): rewrite helpers — fmtDir, static fmtCost/fmtDuration, drop tokens formatter"
+```
+
+---
+
+### Task 3: Rewrite statusline — subagent reader, pace bridge, and pace computation
+
+**Files:**
+- Modify: `hooks/tonone-statusline.js:106-172` (replace old subagent reader, context bar, and rate limit renderer)
+
+- [ ] **Step 1: Replace lines 106-172 (old subagent reader, context bar, rate limit) with new sections**
+
+Replace everything from the `// ── Subagent bridge` comment through the end of `renderRateLimit` with:
+
+```javascript
 // ── Subagent bridge ──────────────────────────────────────────────────────────
 
 function readSubagents(sessionId) {
@@ -272,7 +388,35 @@ function renderModel(mainDisplayName, activeSubagents) {
   const mainShort = name.split(" ")[0];
   return `${c.dimWhite}${mainShort} ${c.dim}\u2192${c.reset} ${c.dimWhite}${subStr}${c.reset}`;
 }
+```
 
+- [ ] **Step 2: Verify syntax**
+
+```bash
+node -c hooks/tonone-statusline.js
+```
+
+Expected: still fails (render function not yet replaced). That's expected.
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add hooks/tonone-statusline.js
+git commit -m "feat(statusline): add pace bridge, pace computation, model display, rewrite subagent reader"
+```
+
+---
+
+### Task 4: Rewrite statusline — render function and stdin reader
+
+**Files:**
+- Modify: `hooks/tonone-statusline.js:174-311` (replace old render function and stdin reader)
+
+- [ ] **Step 1: Replace everything from `// ── Main render` to end of file with new render function**
+
+Replace from line 174 (`// ── Main render`) through line 311 (end of file) with:
+
+```javascript
 // ── Main render ──────────────────────────────────────────────────────────────
 
 function render(data) {
@@ -391,3 +535,309 @@ process.stdin.on("end", () => {
     process.stdout.write(render(data));
   } catch (e) {}
 });
+```
+
+- [ ] **Step 2: Verify full file parses**
+
+```bash
+node -c hooks/tonone-statusline.js
+```
+
+Expected: no output (clean parse).
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add hooks/tonone-statusline.js
+git commit -m "feat(statusline): 3-line render — location/git, session, model/runway with pace"
+```
+
+---
+
+### Task 5: Create test runner and verify all 7 states
+
+**Files:**
+- Create: `hooks/test-statusline.sh`
+
+- [ ] **Step 1: Create the test script**
+
+Create `hooks/test-statusline.sh`:
+
+```bash
+#!/usr/bin/env bash
+# Test statusline rendering with JSON fixtures piped to stdin.
+# Usage: bash hooks/test-statusline.sh
+set -euo pipefail
+
+SCRIPT="hooks/tonone-statusline.js"
+PASS=0
+FAIL=0
+
+run_test() {
+  local name="$1"
+  local json="$2"
+  shift 2
+  local expected=("$@")
+
+  echo "── $name ──"
+  local output
+  output=$(echo "$json" | node "$SCRIPT" 2>/dev/null) || true
+  echo "$output"
+  echo ""
+
+  local ok=true
+  for pattern in "${expected[@]}"; do
+    # Strip ANSI codes for matching
+    local stripped
+    stripped=$(echo "$output" | sed 's/\x1b\[[0-9;]*m//g')
+    if ! echo "$stripped" | grep -qF "$pattern"; then
+      echo "  FAIL: expected '$pattern' not found"
+      ok=false
+    fi
+  done
+
+  if $ok; then
+    echo "  PASS"
+    ((PASS++))
+  else
+    ((FAIL++))
+  fi
+  echo ""
+}
+
+# State 1: Fresh session
+run_test "Fresh session" '{
+  "session_id": "test-fresh",
+  "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},
+  "model": {"display_name": "Opus 4.6"},
+  "cost": {}
+}' \
+  "~/repos/tn/tonone" \
+  "clean" \
+  "+0 -0 lines" \
+  "idle" \
+  "no subs" \
+  '$0.00' \
+  "0m" \
+  "Opus 4.6" \
+  "5h: 0% --" \
+  "7d: 0% --"
+
+# State 2: Active session with agent (no subs)
+run_test "Active session, no subs" '{
+  "session_id": "test-active",
+  "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},
+  "agent": {"name": "spine"},
+  "model": {"display_name": "Opus 4.6"},
+  "cost": {"total_cost_usd": 0.38, "total_duration_ms": 1380000, "total_lines_added": 156, "total_lines_removed": 23},
+  "context_window": {"remaining_percentage": 60},
+  "rate_limits": {
+    "five_hour": {"used_percentage": 24, "resets_at": "'"$(date -u -v+3H +%Y-%m-%dT%H:%M:%SZ)"'"},
+    "seven_day": {"used_percentage": 41, "resets_at": "'"$(date -u -v+4d +%Y-%m-%dT%H:%M:%SZ)"'"}
+  }
+}' \
+  "~/repos/tn/tonone" \
+  "spine" \
+  "no subs" \
+  '$0.38' \
+  "23m" \
+  "+156" \
+  "-23" \
+  "lines" \
+  "Opus 4.6" \
+  "5h: 24%" \
+  "7d: 41%"
+
+# State 3: Warning state (high usage)
+run_test "Warning state" '{
+  "session_id": "test-warn",
+  "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},
+  "agent": {"name": "spine"},
+  "model": {"display_name": "Opus 4.6"},
+  "cost": {"total_cost_usd": 6.20, "total_duration_ms": 2880000, "total_lines_added": 420, "total_lines_removed": 87},
+  "context_window": {"remaining_percentage": 30},
+  "rate_limits": {
+    "five_hour": {"used_percentage": 82, "resets_at": "'"$(date -u -v+2H +%Y-%m-%dT%H:%M:%SZ)"'"},
+    "seven_day": {"used_percentage": 68, "resets_at": "'"$(date -u -v+3d +%Y-%m-%dT%H:%M:%SZ)"'"}
+  }
+}' \
+  "spine" \
+  '$6.20' \
+  "48m" \
+  "+420" \
+  "-87" \
+  "5h: 82%" \
+  "7d: 68%"
+
+# State 4: Critical state (context almost gone)
+run_test "Critical state" '{
+  "session_id": "test-critical",
+  "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},
+  "agent": {"name": "spine"},
+  "model": {"display_name": "Opus 4.6"},
+  "cost": {"total_cost_usd": 8.40, "total_duration_ms": 4320000, "total_lines_added": 520, "total_lines_removed": 110},
+  "context_window": {"remaining_percentage": 18},
+  "rate_limits": {
+    "five_hour": {"used_percentage": 92, "resets_at": "'"$(date -u -v+1H +%Y-%m-%dT%H:%M:%SZ)"'"},
+    "seven_day": {"used_percentage": 78, "resets_at": "'"$(date -u -v+2d +%Y-%m-%dT%H:%M:%SZ)"'"}
+  }
+}' \
+  "spine" \
+  '$8.40' \
+  "1h12m" \
+  "compact soon" \
+  "5h: 92%" \
+  "7d: 78%"
+
+# State 5: Active session with subs on different model
+# Pre-populate the agent bridge file so readSubagents finds active subs
+AGENT_BRIDGE="$TMPDIR/tonone-agents-test-subs.json"
+NOW_MS=$(node -e "process.stdout.write(String(Date.now()))")
+cat > "$AGENT_BRIDGE" <<AGENT_EOF
+{"agents":[
+  {"id":"a1","desc":"audit pipeline","model":"sonnet","started":${NOW_MS},"finished":null},
+  {"id":"a2","desc":"check deps","model":"sonnet","started":${NOW_MS},"finished":null}
+]}
+AGENT_EOF
+
+run_test "Subs on different model" '{
+  "session_id": "test-subs",
+  "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},
+  "agent": {"name": "apex"},
+  "model": {"display_name": "Opus 4.6"},
+  "cost": {"total_cost_usd": 1.50, "total_duration_ms": 900000, "total_lines_added": 80, "total_lines_removed": 12},
+  "context_window": {"remaining_percentage": 55},
+  "rate_limits": {
+    "five_hour": {"used_percentage": 35, "resets_at": "'"$(date -u -v+4H +%Y-%m-%dT%H:%M:%SZ)"'"},
+    "seven_day": {"used_percentage": 20, "resets_at": "'"$(date -u -v+5d +%Y-%m-%dT%H:%M:%SZ)"'"}
+  }
+}' \
+  "apex" \
+  "subs: audit pipeline, check deps" \
+  "Opus" \
+  "Sonnet" \
+  '$1.50' \
+  "15m"
+
+rm -f "$AGENT_BRIDGE"
+
+# State 6: Window reset during session (pace bridge re-initialization)
+# Pre-populate pace bridge with start_5h_pct HIGHER than current — simulates window reset
+PACE_BRIDGE="$TMPDIR/tonone-pace-test-reset.json"
+cat > "$PACE_BRIDGE" <<PACE_EOF
+{"session_id":"test-reset","start_time":${NOW_MS},"start_5h_pct":60.0,"start_7d_pct":50.0}
+PACE_EOF
+
+run_test "Window reset during session" '{
+  "session_id": "test-reset",
+  "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},
+  "model": {"display_name": "Opus 4.6"},
+  "cost": {"total_duration_ms": 600000},
+  "rate_limits": {
+    "five_hour": {"used_percentage": 5, "resets_at": "'"$(date -u -v+5H +%Y-%m-%dT%H:%M:%SZ)"'"},
+    "seven_day": {"used_percentage": 10, "resets_at": "'"$(date -u -v+7d +%Y-%m-%dT%H:%M:%SZ)"'"}
+  }
+}' \
+  "5h: 5%" \
+  "7d: 10%"
+
+rm -f "$PACE_BRIDGE"
+
+# State 7: Long directory path (truncation)
+run_test "Long directory path" '{
+  "session_id": "test-longdir",
+  "workspace": {"current_dir": "'"$HOME"'/very/deeply/nested/project/directory/structure/src"},
+  "model": {"display_name": "Opus 4.6"},
+  "cost": {}
+}' \
+  "idle" \
+  "no subs" \
+  "Opus 4.6"
+
+# State 8: No rate limit data
+run_test "No rate limits" '{
+  "session_id": "test-norate",
+  "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},
+  "model": {"display_name": "Sonnet 4.6"},
+  "cost": {"total_cost_usd": 0.05, "total_duration_ms": 120000}
+}' \
+  "Sonnet 4.6" \
+  '$0.05' \
+  "5h: 0% --" \
+  "7d: 0% --"
+
+echo "═══════════════════════════"
+echo "Results: $PASS passed, $FAIL failed"
+echo "═══════════════════════════"
+
+[ "$FAIL" -eq 0 ] || exit 1
+```
+
+- [ ] **Step 2: Run the test script**
+
+```bash
+bash hooks/test-statusline.sh
+```
+
+Expected: All tests pass. Each test prints the rendered statusline (with ANSI colors visible) and checks that key strings appear in the output.
+
+- [ ] **Step 3: Fix any failures**
+
+If any test fails, check the `FAIL: expected '...' not found` output, read the relevant section of `hooks/tonone-statusline.js`, and fix.
+
+- [ ] **Step 4: Verify the 3-line structure**
+
+```bash
+echo '{"session_id":"x","workspace":{"current_dir":"'"$HOME"'/repos/tn/tonone"},"model":{"display_name":"Opus 4.6"},"cost":{}}' | node hooks/tonone-statusline.js | wc -l
+```
+
+Expected: `3` (three lines of output).
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add hooks/test-statusline.sh hooks/tonone-statusline.js
+git commit -m "test(statusline): add test runner, verify all 7 states"
+```
+
+---
+
+### Task 6: Final cleanup and integration commit
+
+- [ ] **Step 1: Verify the full statusline script parses cleanly**
+
+```bash
+node -c hooks/tonone-statusline.js && echo "OK"
+```
+
+Expected: `OK`
+
+- [ ] **Step 2: Run tests one final time**
+
+```bash
+bash hooks/test-statusline.sh
+```
+
+Expected: All pass.
+
+- [ ] **Step 3: Verify no leftover references to removed features**
+
+Check that old symbols (◆, ▲, ⊕, ◎), `fmtTokens`, `renderRateLimit`, and `readSubagentCount` are gone:
+
+```bash
+grep -nE '\\u25c6|\\u25b2|\\u2295|\\u25ce|fmtTokens|renderRateLimit|readSubagentCount' hooks/tonone-statusline.js
+```
+
+Expected: no output (no matches).
+
+- [ ] **Step 4: Confirm line count is reasonable**
+
+```bash
+wc -l hooks/tonone-statusline.js
+```
+
+Expected: ~280-320 lines (similar to before, reorganized).
+
+- [ ] **Step 5: Squash into feature commit if desired, or leave as incremental commits**
+
+The incremental commits from Tasks 1-5 tell a clean story. No squash needed unless preferred.

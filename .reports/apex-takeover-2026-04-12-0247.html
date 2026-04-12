@@ -1,0 +1,1664 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apex Takeover Report — tonone</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --bg-card: #1e293b;
+        --bg-card-alt: #162032;
+        --text: #e2e8f0;
+        --text-muted: #94a3b8;
+        --border: #334155;
+        --accent: #3b82f6;
+        --critical: #dc2626;
+        --critical-bg: rgba(220, 38, 38, 0.12);
+        --warning: #d97706;
+        --warning-bg: rgba(217, 119, 6, 0.12);
+        --info: #2563eb;
+        --info-bg: rgba(37, 99, 235, 0.12);
+        --success: #16a34a;
+        --success-bg: rgba(22, 163, 74, 0.12);
+        --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+      }
+      [data-theme="light"] {
+        --bg: #ffffff;
+        --bg-card: #f8fafc;
+        --bg-card-alt: #f1f5f9;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --critical-bg: #fef2f2;
+        --warning-bg: #fffbeb;
+        --info-bg: #eff6ff;
+        --success-bg: #f0fdf4;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        display: flex;
+        min-height: 100vh;
+      }
+      /* Sidebar */
+      .sidebar {
+        width: 260px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: var(--bg-card);
+        border-right: 1px solid var(--border);
+        padding: 1.5rem 1rem;
+        overflow-y: auto;
+        z-index: 100;
+        transition: transform 0.3s ease;
+      }
+      .sidebar-brand {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        margin-bottom: 0.25rem;
+      }
+      .sidebar-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--text);
+      }
+      .sidebar-section {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+        margin: 1.25rem 0 0.5rem;
+      }
+      .sidebar a {
+        display: block;
+        padding: 0.35rem 0.75rem;
+        margin: 0.15rem 0;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.85rem;
+        border-radius: 6px;
+        transition: all 0.15s;
+      }
+      .sidebar a:hover,
+      .sidebar a.active {
+        color: var(--text);
+        background: var(--bg);
+      }
+      .hamburger {
+        display: none;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 200;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        color: var(--text);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      /* Theme toggle */
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 200;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        color: var(--text);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .theme-toggle:hover {
+        border-color: var(--accent);
+      }
+      /* Main */
+      main {
+        margin-left: 260px;
+        flex: 1;
+        max-width: 900px;
+        padding: 2rem 3rem 4rem;
+      }
+      header {
+        margin-bottom: 2.5rem;
+      }
+      header h1 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .meta-label {
+        font-weight: 600;
+        color: var(--text);
+      }
+      section {
+        margin-bottom: 3rem;
+      }
+      section > h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      section > h3 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.75rem;
+      }
+      p,
+      li {
+        color: var(--text);
+        font-size: 0.9rem;
+      }
+      p {
+        margin-bottom: 0.75rem;
+      }
+      ul,
+      ol {
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      li {
+        margin-bottom: 0.35rem;
+      }
+      strong {
+        font-weight: 600;
+      }
+      /* Cards */
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .card-critical {
+        border-left: 4px solid var(--critical);
+        background: var(--critical-bg);
+      }
+      .card-warning {
+        border-left: 4px solid var(--warning);
+        background: var(--warning-bg);
+      }
+      .card-info {
+        border-left: 4px solid var(--info);
+        background: var(--info-bg);
+      }
+      .card-success {
+        border-left: 4px solid var(--success);
+        background: var(--success-bg);
+      }
+      .severity {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+      .severity-critical {
+        color: var(--critical);
+      }
+      .severity-warning {
+        color: var(--warning);
+      }
+      .severity-info {
+        color: var(--info);
+      }
+      .card h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .card p:last-child {
+        margin-bottom: 0;
+      }
+      .card code {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        background: var(--bg);
+        padding: 0.15rem 0.4rem;
+        border-radius: 4px;
+      }
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 0.6rem 0.75rem;
+        border-bottom: 1px solid var(--border);
+      }
+      th {
+        font-weight: 600;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      tr:hover td {
+        background: var(--bg-card-alt);
+      }
+      /* Code */
+      pre {
+        position: relative;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1rem;
+        overflow-x: auto;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+      .copy-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        color: var(--text-muted);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.15s;
+      }
+      pre:hover .copy-btn {
+        opacity: 1;
+      }
+      .copy-btn:hover {
+        color: var(--text);
+        border-color: var(--accent);
+      }
+      /* Details */
+      details {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+      }
+      details summary {
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+        user-select: none;
+      }
+      details summary:hover {
+        color: var(--accent);
+      }
+      details > div,
+      details > pre,
+      details > table,
+      details > p {
+        margin: 0 1rem 1rem;
+      }
+      /* Risk matrix */
+      .risk-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .risk-item {
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--bg-card);
+      }
+      .risk-score {
+        font-family: var(--font-mono);
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      .risk-label {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
+      }
+      /* Roadmap */
+      .roadmap-phase {
+        margin-bottom: 1.5rem;
+      }
+      .roadmap-phase h4 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .phase-badge {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.6rem;
+        border-radius: 999px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .phase-now {
+        background: var(--critical-bg);
+        color: var(--critical);
+      }
+      .phase-next {
+        background: var(--warning-bg);
+        color: var(--warning);
+      }
+      .phase-later {
+        background: var(--info-bg);
+        color: var(--info);
+      }
+      /* Mermaid */
+      .mermaid {
+        background: var(--bg-card);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      /* Stats row */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .stat {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+      }
+      .stat-value {
+        font-size: 1.5rem;
+        font-weight: 800;
+        font-family: var(--font-mono);
+      }
+      .stat-label {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
+      }
+      /* Responsive */
+      @media (max-width: 768px) {
+        .sidebar {
+          transform: translateX(-100%);
+        }
+        .sidebar.open {
+          transform: translateX(0);
+        }
+        .hamburger {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        main {
+          margin-left: 0;
+          padding: 2rem 1.25rem;
+        }
+      }
+      @media print {
+        .sidebar,
+        .hamburger,
+        .theme-toggle {
+          display: none !important;
+        }
+        main {
+          margin-left: 0;
+          max-width: 100%;
+        }
+        body {
+          background: #fff;
+          color: #000;
+        }
+        .card {
+          break-inside: avoid;
+        }
+        details[open] > summary {
+          font-weight: 700;
+        }
+        details:not([open]) > * {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="hamburger"
+      onclick="document.querySelector('.sidebar').classList.toggle('open')"
+      aria-label="Toggle menu"
+    >
+      &#9776;
+    </button>
+    <button
+      class="theme-toggle"
+      onclick="toggleTheme()"
+      aria-label="Toggle theme"
+    >
+      &#9790;
+    </button>
+
+    <nav class="sidebar">
+      <div class="sidebar-brand">tonone</div>
+      <div class="sidebar-title">Takeover Report</div>
+      <div class="sidebar-section">Overview</div>
+      <a href="#summary">Executive Summary</a>
+      <a href="#stats">System at a Glance</a>
+      <a href="#architecture">Architecture</a>
+      <div class="sidebar-section">Assessment</div>
+      <a href="#findings">Findings</a>
+      <a href="#risk">Risk Assessment</a>
+      <a href="#debt">Technical Debt</a>
+      <div class="sidebar-section">Plan</div>
+      <a href="#quickwins">Quick Wins (Week 1)</a>
+      <a href="#roadmap">30/60/90 Day Roadmap</a>
+      <a href="#donot">Don't Touch List</a>
+      <div class="sidebar-section">Specialists</div>
+      <a href="#atlas-detail">Atlas (Architecture)</a>
+      <a href="#relay-detail">Relay (CI/CD)</a>
+      <a href="#warden-detail">Warden (Security)</a>
+      <a href="#spine-detail">Spine (Quality)</a>
+      <a href="#prism-detail">Prism (DX)</a>
+      <a href="#cortex-detail">Cortex (AI/Prompt)</a>
+    </nav>
+
+    <main>
+      <header>
+        <h1>Apex Takeover Report</h1>
+        <div class="meta">
+          <div class="meta-item">
+            <span class="meta-label">Agent:</span> Apex (Engineering Lead)
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Skill:</span> apex-takeover
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Target:</span> tonone &mdash;
+            /Users/f/repos/tn/tonone
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Date:</span> 2026-04-12
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Version:</span> 0.6.6
+          </div>
+        </div>
+      </header>
+
+      <!-- ====== EXECUTIVE SUMMARY ====== -->
+      <section id="summary">
+        <h2>Executive Summary</h2>
+        <div class="card card-info">
+          <ul>
+            <li>
+              <strong>System type:</strong> Prompt-engineering framework &mdash;
+              23 AI agents and 138 skills delivered as a Claude Code plugin. No
+              deployed services, no cloud, no APIs. The git repo is the
+              artifact.
+            </li>
+            <li>
+              <strong>Architecture quality:</strong> High. Consistent 3-layer
+              plugin architecture (root plugin &rarr; agent layer &rarr; skill
+              layer) with strong structural conventions enforced by CI.
+            </li>
+            <li>
+              <strong>Prompt engineering:</strong> Strong. All 23 agents follow
+              a uniform persona template. The Helm&harr;Apex handoff protocol is
+              the standout design. Output kit provides effective format control.
+            </li>
+            <li>
+              <strong>Primary risks:</strong> No prompt injection defenses, 12
+              newer skills missing output-kit contract, agent definition drift
+              invisible without versioning, no eval infrastructure for agent
+              behaviors.
+            </li>
+            <li>
+              <strong>Immediate posture:</strong> Healthy for stage 0&rarr;1.
+              Security is clean, CI gates work, documentation is strong. The
+              gaps are all forward-looking &mdash; things to build before
+              scaling, not fires to fight.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====== STATS ====== -->
+      <section id="stats">
+        <h2>System at a Glance</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">23</div>
+            <div class="stat-label">Agents</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">138</div>
+            <div class="stat-label">Skills</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Cloud Services</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">0</div>
+            <div class="stat-label">External Deps</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">2</div>
+            <div class="stat-label">CI Jobs</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">91%</div>
+            <div class="stat-label">Output Kit Compliance</div>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>Specialist</th>
+              <th>Status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Architecture</td>
+              <td>Atlas</td>
+              <td>&#9679; Healthy</td>
+              <td>3-layer plugin system, strong conventions</td>
+            </tr>
+            <tr>
+              <td>Infrastructure</td>
+              <td>Forge</td>
+              <td>&#9679; N/A</td>
+              <td>No cloud infra &mdash; correct for this stage</td>
+            </tr>
+            <tr>
+              <td>CI/CD</td>
+              <td>Relay</td>
+              <td>&#9650; Gaps</td>
+              <td>Validation gate works; release tagging broken</td>
+            </tr>
+            <tr>
+              <td>Security</td>
+              <td>Warden</td>
+              <td>&#9679; Clean</td>
+              <td>Zero attack surface, minor CI hardening opps</td>
+            </tr>
+            <tr>
+              <td>Observability</td>
+              <td>Vigil</td>
+              <td>&#9679; N/A</td>
+              <td>No services to instrument</td>
+            </tr>
+            <tr>
+              <td>Quality</td>
+              <td>Spine</td>
+              <td>&#9650; Gaps</td>
+              <td>12 skills missing output-kit, test gaps</td>
+            </tr>
+            <tr>
+              <td>DX</td>
+              <td>Prism</td>
+              <td>&#9650; Gaps</td>
+              <td>Manual sync hazard, no root task runner</td>
+            </tr>
+            <tr>
+              <td>AI/Prompts</td>
+              <td>Cortex</td>
+              <td>&#9650; Gaps</td>
+              <td>Strong architecture, no injection defenses</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ====== ARCHITECTURE ====== -->
+      <section id="architecture">
+        <h2>Architecture</h2>
+        <div class="mermaid">
+          graph TD subgraph "Root Plugin" RP["/.claude-plugin/plugin.json"]
+          SL["hooks/tonone-statusline.js"] AT["hooks/tonone-agent-tracker.js"]
+          end subgraph "Agent Layer (x23)" AD["team/&lt;agent&gt;/agents/*.md"]
+          SK["team/&lt;agent&gt;/skills/*/SKILL.md"]
+          SC["team/&lt;agent&gt;/scripts/"] HK["team/&lt;agent&gt;/hooks/"]
+          TS["team/&lt;agent&gt;/tests/"] end subgraph "Standalone Skills (138)"
+          SS["skills/*/SKILL.md"] end subgraph "Bundles" FT["bundle/full-team/"]
+          ET["bundle/engineering-team/"] PT["bundle/product-team/"] end subgraph
+          "Docs" OK["docs/output-kit.md"] NG["docs/naming-guide.md"]
+          AG["docs/agent-guide.md"] end RP --> AD RP --> SS AD --> SK AD --> SC
+          AD --> HK FT --> ET FT --> PT SK -.->|"follows"| OK SS -.->|"follows"|
+          OK
+        </div>
+
+        <h3>Tech Stack</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Technology</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Agent definitions</td>
+              <td>Markdown + YAML frontmatter</td>
+              <td>Persona, scope, principles, routing</td>
+            </tr>
+            <tr>
+              <td>Skills</td>
+              <td>Markdown (SKILL.md)</td>
+              <td>Step-by-step workflows with tool declarations</td>
+            </tr>
+            <tr>
+              <td>Scripts</td>
+              <td>Python 3.10+ (per-agent venv)</td>
+              <td>Analyzer stubs &mdash; not yet implemented</td>
+            </tr>
+            <tr>
+              <td>Hooks</td>
+              <td>Node.js (stdlib only)</td>
+              <td>Statusline display, agent tracking</td>
+            </tr>
+            <tr>
+              <td>Tests</td>
+              <td>pytest</td>
+              <td>Structural validation</td>
+            </tr>
+            <tr>
+              <td>CI</td>
+              <td>GitHub Actions</td>
+              <td>Structure checks + shellcheck</td>
+            </tr>
+            <tr>
+              <td>Package mgr</td>
+              <td>uv (preferred) / pip</td>
+              <td>Per-agent Python environments</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Key Design Decisions</h3>
+        <ul>
+          <li>
+            <strong>Agents are prompts, not code.</strong> The product value is
+            in the structured markdown that defines each agent's persona,
+            decision framework, and workflow.
+          </li>
+          <li>
+            <strong>Self-contained agents.</strong> Each agent has its own
+            plugin manifest, scripts, tests, and hooks. No cross-agent code
+            dependencies.
+          </li>
+          <li>
+            <strong>Output kit as a shared contract.</strong> All 23 agents and
+            138 skills reference a single formatting standard (40-line CLI max,
+            severity indicators, box-drawing).
+          </li>
+          <li>
+            <strong>Dual-location agent defs.</strong> Canonical copy in
+            <code>team/&lt;agent&gt;/agents/</code>, working copy in root
+            <code>agents/</code>. CI enforces sync.
+          </li>
+          <li>
+            <strong>Model tiering.</strong> Apex runs on Opus; specialists run
+            on Sonnet. Cost control by design.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ====== FINDINGS ====== -->
+      <section id="findings">
+        <h2>Findings</h2>
+
+        <div class="card card-warning">
+          <div class="severity severity-warning">
+            &#9650; WARNING &mdash; F1
+          </div>
+          <h4>No prompt injection defenses</h4>
+          <p>
+            No agent carries a standing instruction to treat user-provided
+            content as untrusted. Skills like <code>cortex-integrate</code> and
+            <code>warden-audit</code> read untrusted codebases directly into LLM
+            context. <code>cortex-prompt</code> uses XML delimiters for user
+            content but no explicit "do not override system instructions" guard.
+          </p>
+          <p>
+            <strong>Fix:</strong> Add a standard prompt injection defense
+            paragraph to the agent template and backfill into all 23 agents. Add
+            to the skill template for skills that accept external input.
+          </p>
+        </div>
+
+        <div class="card card-warning">
+          <div class="severity severity-warning">
+            &#9650; WARNING &mdash; F2
+          </div>
+          <h4>12 skills missing output-kit contract line</h4>
+          <p>
+            All v0.6.6 skills (touch-ui, surge-landing, prism-stack,
+            prism-chart, pitch-landing, lens-chart, form-style, form-palette,
+            draft-patterns, draft-landing + 2 others) lack the mandatory
+            output-kit reference. These have a lighter body format
+            (reference-style vs. step-by-step workflow). No CI test catches
+            this.
+          </p>
+          <p>
+            <strong>Fix:</strong> Add
+            <code>test_skill_output_kit_contract</code> to
+            <code>test_structure.py</code>. Backfill the contract line into the
+            12 missing skills.
+          </p>
+        </div>
+
+        <div class="card card-warning">
+          <div class="severity severity-warning">
+            &#9650; WARNING &mdash; F3
+          </div>
+          <h4>No eval infrastructure for agent behaviors</h4>
+          <p>
+            <code>cortex-eval</code> exists for evaluating user ML features, but
+            nothing measures whether the 23 agents themselves comply with output
+            format, schema adherence, or decision quality. Prompt drift is
+            invisible.
+          </p>
+          <p>
+            <strong>Fix:</strong> Build an agent eval suite &mdash; test output
+            format compliance, routing accuracy, handoff schema adherence. Start
+            with the output-kit 40-line rule and severity indicator usage.
+          </p>
+        </div>
+
+        <div class="card card-warning">
+          <div class="severity severity-warning">
+            &#9650; WARNING &mdash; F4
+          </div>
+          <h4>Git tags stale &mdash; release process broken</h4>
+          <p>
+            Only one git tag exists (<code>v0.1.0</code>) but CHANGELOG shows
+            current version <code>0.6.6</code>. No automated version bumping, no
+            tag-on-merge. Version lives in <code>marketplace.json</code> only.
+          </p>
+          <p>
+            <strong>Fix:</strong> Add a CI job or post-merge hook that creates a
+            git tag matching the version in <code>marketplace.json</code>.
+            Backfill tags for 0.6.0&ndash;0.6.6.
+          </p>
+        </div>
+
+        <div class="card card-warning">
+          <div class="severity severity-warning">
+            &#9650; WARNING &mdash; F5
+          </div>
+          <h4>Sparse skill routing in CLAUDE.md</h4>
+          <p>
+            CLAUDE.md covers ~10 trigger patterns for 138 skills. High miss rate
+            likely for mid-specificity requests. Users asking for things outside
+            the top-10 patterns won't get routed to the right skill.
+          </p>
+          <p>
+            <strong>Fix:</strong> Expand routing rules or add a skill discovery
+            mechanism. Consider a "routing index" skill that maps intents to
+            skills programmatically.
+          </p>
+        </div>
+
+        <div class="card card-info">
+          <div class="severity severity-info">&#9679; INFO &mdash; F6</div>
+          <h4>No cost ceiling or timeout protocol for specialist dispatch</h4>
+          <p>
+            Apex dispatches specialists via the Agent tool but there's no kill
+            switch if a specialist runs deep on what was scoped as a Small task.
+            The S/M/L format with estimates is a good start but lacks
+            enforcement.
+          </p>
+          <p>
+            <strong>Fix:</strong> Add explicit token budget guidance per S/M/L
+            tier in the Apex prompt. Consider a meta-skill that monitors
+            dispatch cost.
+          </p>
+        </div>
+
+        <div class="card card-info">
+          <div class="severity severity-info">&#9679; INFO &mdash; F7</div>
+          <h4>Agent tracker uses description-string matching</h4>
+          <p>
+            <code>tonone-agent-tracker.js</code> matches agent completion by
+            <code>desc</code> string equality. If two subagents share a
+            description prefix, the wrong one could be marked finished.
+          </p>
+          <p>
+            <strong>Fix:</strong> Use the agent ID (already available in hook
+            context) for matching instead of the description string.
+          </p>
+        </div>
+
+        <div class="card card-info">
+          <div class="severity severity-info">&#9679; INFO &mdash; F8</div>
+          <h4>No SKILL.md template in new-agent scaffold</h4>
+          <p>
+            <code>templates/new-agent/skills/SKILL_NAME/</code> directory exists
+            but contains no populated SKILL.md scaffold. New agent authors must
+            copy from an existing skill and strip it.
+          </p>
+          <p>
+            <strong>Fix:</strong> Add a scaffold SKILL.md with placeholder
+            frontmatter and the output-kit contract line.
+          </p>
+        </div>
+
+        <div class="card card-info">
+          <div class="severity severity-info">&#9679; INFO &mdash; F9</div>
+          <h4>CI dependencies unpinned</h4>
+          <p>
+            <code>pip install pytest</code> without version pin in CI. GitHub
+            Actions at major version (<code>@v4</code>) not SHA-pinned. Low risk
+            at current scale but blocks reproducible builds.
+          </p>
+          <p>
+            <strong>Fix:</strong> Pin <code>pytest</code> version in CI. SHA-pin
+            Actions when hardening is prioritized.
+          </p>
+        </div>
+
+        <div class="card card-info">
+          <div class="severity severity-info">&#9679; INFO &mdash; F10</div>
+          <h4>No root-level task runner</h4>
+          <p>
+            No <code>make</code>, <code>just</code>, or
+            <code>npm run</code> commands at root for common dev tasks (run all
+            tests, lint all, validate structure). Developers must know to run
+            pytest against specific test files.
+          </p>
+          <p>
+            <strong>Fix:</strong> Add a <code>Makefile</code> or
+            <code>justfile</code> with <code>test</code>, <code>lint</code>,
+            <code>validate</code> targets.
+          </p>
+        </div>
+      </section>
+
+      <!-- ====== RISK ASSESSMENT ====== -->
+      <section id="risk">
+        <h2>Risk Assessment</h2>
+        <p>
+          Top 10 risks ranked by likelihood &times; impact. Scale: L
+          (likelihood) 1&ndash;5, I (impact) 1&ndash;5, Score = L &times; I.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Risk</th>
+              <th>L</th>
+              <th>I</th>
+              <th>Score</th>
+              <th>Mitigation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Prompt injection via untrusted codebase content</td>
+              <td>3</td>
+              <td>5</td>
+              <td style="color: var(--critical); font-weight: 700">15</td>
+              <td>Add injection defense to agent template</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Agent behavior drift (no evals)</td>
+              <td>4</td>
+              <td>3</td>
+              <td style="color: var(--warning); font-weight: 700">12</td>
+              <td>Build agent eval suite</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Skill routing misses (138 skills, 10 patterns)</td>
+              <td>4</td>
+              <td>3</td>
+              <td style="color: var(--warning); font-weight: 700">12</td>
+              <td>Expand routing or add discovery</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>New skills skip output-kit contract (no CI gate)</td>
+              <td>4</td>
+              <td>2</td>
+              <td style="color: var(--warning); font-weight: 700">8</td>
+              <td>Add structural test</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Agent def drift between locations (sync break)</td>
+              <td>2</td>
+              <td>4</td>
+              <td style="color: var(--warning); font-weight: 700">8</td>
+              <td>CI catches this &mdash; monitor</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Version tag desync (users on wrong version)</td>
+              <td>3</td>
+              <td>2</td>
+              <td style="color: var(--info); font-weight: 700">6</td>
+              <td>Automate tag on merge</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Specialist dispatch exceeds user budget</td>
+              <td>2</td>
+              <td>3</td>
+              <td style="color: var(--info); font-weight: 700">6</td>
+              <td>Token budget guidance per tier</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Agent tracker false match on duplicate desc</td>
+              <td>2</td>
+              <td>2</td>
+              <td style="color: var(--info); font-weight: 700">4</td>
+              <td>Switch to ID-based matching</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>CI supply chain (unpinned deps)</td>
+              <td>1</td>
+              <td>3</td>
+              <td style="color: var(--info); font-weight: 700">3</td>
+              <td>Pin versions when ready</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>New agent onboarding friction (missing template)</td>
+              <td>2</td>
+              <td>1</td>
+              <td style="color: var(--info); font-weight: 700">2</td>
+              <td>Complete scaffold template</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ====== TECHNICAL DEBT ====== -->
+      <section id="debt">
+        <h2>Technical Debt Inventory</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Item</th>
+              <th>Severity</th>
+              <th>Effort</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Prompt safety</td>
+              <td>No injection defense in 23 agents</td>
+              <td style="color: var(--warning)">&#9650; Medium</td>
+              <td>S &mdash; template paragraph + backfill</td>
+            </tr>
+            <tr>
+              <td>Test coverage</td>
+              <td>No SKILL.md frontmatter validation</td>
+              <td style="color: var(--warning)">&#9650; Medium</td>
+              <td>S &mdash; one pytest function</td>
+            </tr>
+            <tr>
+              <td>Test coverage</td>
+              <td>No output-kit contract assertion</td>
+              <td style="color: var(--warning)">&#9650; Medium</td>
+              <td>S &mdash; one pytest function</td>
+            </tr>
+            <tr>
+              <td>Release process</td>
+              <td>Git tags not tracking versions</td>
+              <td style="color: var(--warning)">&#9650; Medium</td>
+              <td>S &mdash; CI job + backfill</td>
+            </tr>
+            <tr>
+              <td>Skill quality</td>
+              <td>12 v0.6.6 skills lack output-kit line</td>
+              <td style="color: var(--info)">&#9679; Low</td>
+              <td>S &mdash; add line to 12 files</td>
+            </tr>
+            <tr>
+              <td>Skill quality</td>
+              <td>v0.6.6 format divergence undocumented</td>
+              <td style="color: var(--info)">&#9679; Low</td>
+              <td>S &mdash; document in skill-guide.md</td>
+            </tr>
+            <tr>
+              <td>Agent versioning</td>
+              <td>Agent .md files have no version field</td>
+              <td style="color: var(--info)">&#9679; Low</td>
+              <td>M &mdash; add field + backfill 23 agents</td>
+            </tr>
+            <tr>
+              <td>DX</td>
+              <td>No root task runner (make/just)</td>
+              <td style="color: var(--info)">&#9679; Low</td>
+              <td>S &mdash; one file</td>
+            </tr>
+            <tr>
+              <td>DX</td>
+              <td>No SKILL.md in new-agent template</td>
+              <td style="color: var(--info)">&#9679; Low</td>
+              <td>S &mdash; one file</td>
+            </tr>
+            <tr>
+              <td>Hooks</td>
+              <td>Agent tracker desc-matching fragility</td>
+              <td style="color: var(--info)">&#9679; Low</td>
+              <td>S &mdash; switch to ID field</td>
+            </tr>
+            <tr>
+              <td>Routing</td>
+              <td>CLAUDE.md skill routing sparse</td>
+              <td style="color: var(--warning)">&#9650; Medium</td>
+              <td>L &mdash; 138 skills need routing rules</td>
+            </tr>
+            <tr>
+              <td>Eval</td>
+              <td>No agent behavior eval infrastructure</td>
+              <td style="color: var(--warning)">&#9650; Medium</td>
+              <td>L &mdash; new system to build</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ====== QUICK WINS ====== -->
+      <section id="quickwins">
+        <h2>Quick Wins &mdash; Week 1</h2>
+        <p>
+          High-impact, low-effort items that reduce risk or improve confidence
+          immediately.
+        </p>
+
+        <div class="card card-success">
+          <h4>1. Add output-kit contract test</h4>
+          <p>
+            One pytest function in <code>test_structure.py</code> asserting
+            every SKILL.md contains the output-kit reference. Catches 12
+            existing gaps + prevents future regressions.
+            <strong>~30 min.</strong>
+          </p>
+        </div>
+
+        <div class="card card-success">
+          <h4>2. Backfill output-kit line into 12 skills</h4>
+          <p>
+            Add the contract line to the 12 v0.6.6 skills. Mechanical change, no
+            design decisions. <strong>~20 min.</strong>
+          </p>
+        </div>
+
+        <div class="card card-success">
+          <h4>3. Add SKILL.md frontmatter test</h4>
+          <p>
+            Assert required frontmatter fields (<code>name</code>,
+            <code>description</code>, <code>version</code>,
+            <code>allowed-tools</code>) exist in every SKILL.md.
+            <strong>~30 min.</strong>
+          </p>
+        </div>
+
+        <div class="card card-success">
+          <h4>4. Add scaffold SKILL.md to new-agent template</h4>
+          <p>
+            Populate
+            <code>templates/new-agent/skills/SKILL_NAME/SKILL.md</code> with
+            placeholder frontmatter and output-kit contract.
+            <strong>~15 min.</strong>
+          </p>
+        </div>
+
+        <div class="card card-success">
+          <h4>5. Backfill git tags for 0.6.0&ndash;0.6.6</h4>
+          <p>
+            Create annotated tags from commit history matching CHANGELOG
+            entries. Brings tag state in sync with reality.
+            <strong>~20 min.</strong>
+          </p>
+        </div>
+
+        <div class="card card-success">
+          <h4>6. Add root Makefile</h4>
+          <p>
+            Targets: <code>test</code> (run test_structure.py),
+            <code>lint</code> (shellcheck), <code>validate</code> (both).
+            One-command entry point for developers. <strong>~15 min.</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- ====== ROADMAP ====== -->
+      <section id="roadmap">
+        <h2>30 / 60 / 90 Day Roadmap</h2>
+
+        <div class="roadmap-phase">
+          <h4>
+            <span class="phase-badge phase-now">Days 1&ndash;30</span> Seal the
+            hull
+          </h4>
+          <ul>
+            <li>
+              Execute all Week 1 quick wins (tests, templates, tags, Makefile)
+            </li>
+            <li>
+              Add prompt injection defense paragraph to agent template; backfill
+              into all 23 agents
+            </li>
+            <li>
+              Document the v0.6.6 skill format as an intentional variant (or
+              converge it)
+            </li>
+            <li>Add automated git tag creation on merge to main</li>
+            <li>Pin pytest version in CI; consider SHA-pinning Actions</li>
+          </ul>
+        </div>
+
+        <div class="roadmap-phase">
+          <h4>
+            <span class="phase-badge phase-next">Days 31&ndash;60</span> Build
+            confidence
+          </h4>
+          <ul>
+            <li>
+              Build agent eval suite &mdash; start with output-kit compliance
+              (40-line rule, severity indicators)
+            </li>
+            <li>
+              Expand CLAUDE.md routing rules &mdash; cover top 50 skill triggers
+              at minimum
+            </li>
+            <li>Add token budget guidance per S/M/L tier in Apex prompt</li>
+            <li>
+              Fix agent tracker to use ID-based matching instead of description
+              strings
+            </li>
+            <li>
+              Add version field to agent definition frontmatter; enforce in CI
+            </li>
+          </ul>
+        </div>
+
+        <div class="roadmap-phase">
+          <h4>
+            <span class="phase-badge phase-later">Days 61&ndash;90</span> Scale
+            the system
+          </h4>
+          <ul>
+            <li>
+              Build skill routing index &mdash; programmatic intent-to-skill
+              mapping
+            </li>
+            <li>
+              Expand eval suite to cover routing accuracy, handoff schema
+              adherence, decision quality
+            </li>
+            <li>
+              Implement Python analyzer scripts for agents that need them (move
+              beyond stubs)
+            </li>
+            <li>
+              Consider automated agent def sync (eliminate manual copy from
+              team/ to agents/)
+            </li>
+            <li>
+              Assess whether <code>lib/uiux</code> should be surfaced as a skill
+              or remain a library
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====== DON'T TOUCH LIST ====== -->
+      <section id="donot">
+        <h2>Don't Touch List</h2>
+        <p>
+          Load-bearing walls of the system. Do not change without strong
+          justification and broad review.
+        </p>
+
+        <div class="card">
+          <h4>1. Agent definition structure</h4>
+          <p>
+            The 7-section template (Communication &rarr; Operating Principle
+            &rarr; Scope &rarr; Platform Fluency &rarr; Workflow &rarr; Key
+            Rules &rarr; Anti-Patterns) is consistent across all 23 agents.
+            Changing this structure means touching every agent. Leave it alone.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>2. Helm &harr; Apex handoff protocol</h4>
+          <p>
+            The 6-field brief schema with mandatory <code>out_of_scope</code> is
+            the best-designed interface in the system. It works. Don't simplify
+            or "improve" it.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>3. Output kit (docs/output-kit.md)</h4>
+          <p>
+            The 40-line CLI max, severity indicators (<code
+              >&blacksquare; &#9650; &#9679;</code
+            >), and atlas-report escalation pattern are load-bearing constraints
+            referenced by 126+ skills. Changes cascade everywhere.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>4. Plugin manifest format (.claude-plugin/plugin.json)</h4>
+          <p>
+            This is the Claude Code contract. The schema is external &mdash;
+            it's defined by the Claude Code platform, not by this project.
+            Respect it as-is.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>5. CI structural tests (test_structure.py)</h4>
+          <p>
+            These tests enforce the architectural invariants that keep 23 agents
+            and 138 skills consistent. Add to them, never weaken them.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>6. Statusline hooks</h4>
+          <p>
+            Both <code>tonone-statusline.js</code> and
+            <code>tonone-agent-tracker.js</code> are well-written with proper
+            null-safety, timeouts, and atomic writes. They work in production.
+            Touch only to fix the desc-matching issue in the tracker.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>7. Model tiering (Apex=Opus, specialists=Sonnet)</h4>
+          <p>
+            This is an intentional cost-control design. Don't promote all agents
+            to Opus "for quality" &mdash; it would blow up token spend with
+            marginal quality gain for specialist work.
+          </p>
+        </div>
+      </section>
+
+      <!-- ====== SPECIALIST DETAILS ====== -->
+      <section id="atlas-detail">
+        <h2>Atlas &mdash; Architecture Details</h2>
+        <details>
+          <summary>Full findings</summary>
+          <div>
+            <p>
+              <strong>System type:</strong> Pure text/markdown-driven
+              prompt-engineering framework. No compiled languages, no bundlers,
+              no runtime framework.
+            </p>
+            <p>
+              <strong>Languages:</strong> Python 3.10+ (per-agent analyzer
+              stubs), JavaScript/Node.js (hooks only &mdash; statusline, agent
+              tracker). Package manager: <code>uv</code> (preferred) or pip.
+            </p>
+            <p><strong>Three-layer architecture:</strong></p>
+            <ol>
+              <li>
+                <strong>Root plugin</strong>
+                (<code>/.claude-plugin/plugin.json</code>) &mdash; installs the
+                full 23-agent team. Two hooks: SessionStart runs statusline
+                installer, PostToolUse[Agent] runs agent tracker.
+              </li>
+              <li>
+                <strong>Agent layer</strong> (<code>team/&lt;agent&gt;/</code>)
+                &mdash; each agent is self-contained with plugin manifest, agent
+                definition, skills, scripts, hooks, and tests.
+              </li>
+              <li>
+                <strong>Standalone skills</strong>
+                (<code>skills/*/SKILL.md</code>) &mdash; 138 skills as
+                independent installable plugins.
+              </li>
+            </ol>
+            <p>
+              <strong>Bundles:</strong> <code>bundle/</code> contains thin
+              manifests grouping agents into engineering-team (15), product-team
+              (8), and full-team (23).
+            </p>
+            <p>
+              <strong>Internal coupling:</strong> Agents reference each other by
+              name in prompts (conversational coupling only). No code-level
+              imports between agents.
+            </p>
+            <p>
+              <strong>External dependencies:</strong> Effectively none. Python
+              deps list is empty in every pyproject.toml. Node.js hooks use only
+              stdlib.
+            </p>
+            <p>
+              <strong>Documentation:</strong> Good coverage &mdash;
+              output-kit.md, naming-guide.md, agent-guide.md, skill-guide.md,
+              architecture.md, CLAUDE.md, CONTRIBUTING.md, ROADMAP.md,
+              CHANGELOG.md. No ADRs (appropriate for this stage).
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section id="relay-detail">
+        <h2>Relay &mdash; CI/CD Details</h2>
+        <details>
+          <summary>Full findings</summary>
+          <div>
+            <p>
+              <strong>CI pipeline:</strong> GitHub Actions, single workflow
+              <code>.github/workflows/ci.yml</code>. Runs on push to main and
+              all PRs.
+            </p>
+            <p>
+              <strong>Jobs:</strong> (1) <code>validate-structure</code> &mdash;
+              pytest against <code>tests/test_structure.py</code>; (2)
+              <code>lint-shell</code> &mdash; shellcheck at WARNING severity on
+              all <code>setup.sh</code> files. Agent matrix job exists but is
+              disabled (stub tests only).
+            </p>
+            <p>
+              <strong>Release process:</strong> Manual. CHANGELOG.md maintained
+              by hand. Version in <code>marketplace.json</code>. One stale git
+              tag (<code>v0.1.0</code>) vs. actual version 0.6.6.
+            </p>
+            <p>
+              <strong>Hooks:</strong> No pre-commit hooks active. Only default
+              git sample hooks.
+            </p>
+            <p>
+              <strong>Deployment:</strong> None. This is a plugin repo &mdash;
+              the git repo is the artifact.
+            </p>
+            <p>
+              <strong>Gaps:</strong> Stale git tags, no dep caching, no branch
+              protection documented, disabled agent matrix job is dead code.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section id="warden-detail">
+        <h2>Warden &mdash; Security Details</h2>
+        <details>
+          <summary>Full findings</summary>
+          <div>
+            <p>
+              <strong>Secrets:</strong> Clean. No hardcoded secrets, API keys,
+              tokens, or connection strings. No .env files committed. .gitignore
+              correctly excludes sensitive patterns.
+            </p>
+            <p>
+              <strong>Dependencies:</strong> All 23 agent
+              <code>pyproject.toml</code> files declare
+              <code>dependencies = []</code>. Only CI installs pytest unpinned.
+              Low risk.
+            </p>
+            <p>
+              <strong>Access control:</strong> N/A &mdash; no endpoints, no HTTP
+              servers, no network surface.
+            </p>
+            <p>
+              <strong>Supply chain:</strong> <code>setup.sh</code> scripts use
+              local editable installs only. No
+              <code>curl | bash</code> patterns. CI uses Actions at major
+              version, not SHA-pinned. Non-urgent.
+            </p>
+            <p>
+              <strong>Assessment:</strong> Attack surface is effectively zero.
+              The only real exposure is the CI pipeline itself (unpinned deps +
+              non-SHA-pinned Actions). Both are low-severity at this scale.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section id="spine-detail">
+        <h2>Spine &mdash; Quality Details</h2>
+        <details>
+          <summary>Full findings</summary>
+          <div>
+            <p>
+              <strong>Agent consistency:</strong> All 23 agents follow a uniform
+              7-section template. Quality is high &mdash; each agent has a real
+              persona, concrete decision frameworks, and explicit
+              skip/never-skip contracts.
+            </p>
+            <p>
+              <strong>Skill quality:</strong> 126 of 138 skills (91%) include
+              the output-kit contract. 12 v0.6.6 skills are missing it. These
+              newer skills have a lighter reference-style body format
+              (intentional or underbuilt &mdash; undocumented). v0.6.4 skills
+              have high step quality with concrete decision tables.
+            </p>
+            <p>
+              <strong>Sync state:</strong> Root <code>agents/</code> and
+              <code>team/*/agents/</code> are identical across all sampled
+              agents. CI test enforces this.
+            </p>
+            <p>
+              <strong>Template:</strong> Usable but incomplete &mdash; missing
+              SKILL.md scaffold in the skills subdirectory.
+            </p>
+            <p>
+              <strong>Test coverage:</strong> Covers plugin.json fields, agent
+              def existence, setup.sh existence, bidirectional sync. Does NOT
+              cover: SKILL.md frontmatter fields, output-kit contract presence,
+              v0.6.6 format consistency.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section id="prism-detail">
+        <h2>Prism &mdash; DX Details</h2>
+        <details>
+          <summary>Full findings</summary>
+          <div>
+            <p>
+              <strong>UI components:</strong> None. No web UI.
+              <code>lib/uiux/</code> is a Python CLI package for design system
+              generation (BM25 search over CSV design data, Unicode box
+              diagrams). 13 design domains in CSV format.
+            </p>
+            <p>
+              <strong>Hooks quality:</strong> Both hooks are well-written.
+              Statusline: clean segment composition, null-safe, 3s stdin
+              timeout, ANSI color helpers. Agent tracker: path traversal guard
+              on session ID, atomic write via temp+rename, 10-min pruning,
+              silent fail on exit. One issue: desc-string matching for
+              completion.
+            </p>
+            <p>
+              <strong>Developer experience:</strong> Template scaffolding exists
+              at <code>templates/new-agent/</code>.
+              <code>docs/agent-guide.md</code> is thorough (9-step walkthrough).
+              Dual-location sync is a manual hazard but CI enforces it.
+            </p>
+            <p>
+              <strong>Gaps:</strong> No root task runner.
+              <code>lib/uiux</code> has zero discoverability (not wired into any
+              skill). Agent tracker uses fragile string matching. No linter for
+              agent Communication section presence.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section id="cortex-detail">
+        <h2>Cortex &mdash; AI/Prompt Architecture Details</h2>
+        <details>
+          <summary>Full findings</summary>
+          <div>
+            <p>
+              <strong>Prompt architecture:</strong> Strong. All agents follow
+              role-before-task, constraints-before-instructions,
+              negative-examples pattern. Form agent stands out with "AI slop
+              detection" gate and logo evaluation checklist as concrete
+              behavioral anchors.
+            </p>
+            <p>
+              <strong>Orchestration:</strong> Apex dispatches via Agent tool,
+              parallel for independent work, sequential for dependent. S/M/L
+              format with token/cost estimates is a good cost gate. "One lateral
+              check-in max, then escalate" prevents sprawl. Model tiering
+              (Apex=Opus, specialists=Sonnet) is correct.
+            </p>
+            <p>
+              <strong>Helm&harr;Apex handoff:</strong> Best-designed interface
+              in the system. 6-field schema is explicit and falsifiable.
+              Mandatory <code>out_of_scope</code> with forcing function ("if you
+              wrote none, you haven't thought hard enough").
+              <code>helm-handoff</code> validates before dispatch. One risk:
+              <code>open_questions</code> can contain non-blocking feasibility
+              asks.
+            </p>
+            <p>
+              <strong>Prompt risks:</strong> No injection mitigations. Skills
+              that read untrusted codebases pipe content directly into LLM
+              context. XML delimiters used for user content in
+              <code>cortex-prompt</code> but no explicit "treat as untrusted"
+              instruction. The review skill checks for "LLM trust boundary
+              violations" but this is a reviewer check, not a runtime control.
+            </p>
+            <p>
+              <strong>Output control:</strong> Tight. Output kit is
+              well-enforced at the prompt level. 40-line rule with atlas-report
+              escalation is clean progressive disclosure. Communication protocol
+              kill-list is specific enough to be enforceable. Risk: 40-line rule
+              has no enforcement mechanism beyond prompt instruction.
+            </p>
+            <p>
+              <strong>Missing:</strong> No agent eval infrastructure, no cost
+              ceiling protocol, sparse skill routing (10 patterns for 138
+              skills), no version field in agent definitions.
+            </p>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.getAttribute("data-theme");
+        const next = current === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", next);
+        document.querySelector(".theme-toggle").textContent =
+          next === "dark" ? "\u263E" : "\u2600";
+      }
+
+      // Copy buttons
+      document.querySelectorAll("pre").forEach((pre) => {
+        const btn = document.createElement("button");
+        btn.className = "copy-btn";
+        btn.textContent = "Copy";
+        btn.addEventListener("click", () => {
+          const code = pre.querySelector("code") || pre;
+          navigator.clipboard.writeText(code.textContent).then(() => {
+            btn.textContent = "Copied!";
+            setTimeout(() => (btn.textContent = "Copy"), 1500);
+          });
+        });
+        pre.style.position = "relative";
+        pre.appendChild(btn);
+      });
+
+      // Sidebar active link
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".sidebar a");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          if (window.scrollY >= section.offsetTop - 100) current = section.id;
+        });
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + current,
+          );
+        });
+      });
+
+      // Mermaid init with graceful degradation
+      (function () {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js";
+        script.onload = function () {
+          mermaid.initialize({
+            startOnLoad: true,
+            theme:
+              document.documentElement.getAttribute("data-theme") === "dark"
+                ? "dark"
+                : "default",
+            flowchart: { useMaxWidth: true, htmlLabels: true },
+          });
+        };
+        script.onerror = function () {
+          document.querySelectorAll(".mermaid").forEach((el) => {
+            const pre = document.createElement("pre");
+            pre.style.textAlign = "left";
+            const code = document.createElement("code");
+            code.textContent = el.textContent;
+            pre.appendChild(code);
+            el.replaceWith(pre);
+          });
+        };
+        document.head.appendChild(script);
+      })();
+    </script>
+  </body>
+</html>
