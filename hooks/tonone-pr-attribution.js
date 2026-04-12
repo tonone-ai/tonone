@@ -95,12 +95,12 @@ process.stdin.on("end", () => {
 
     const agents = readAgents();
     const attributionLine = formatAttribution(agents);
-    clearAgents();
 
     const prUrl = getPrUrl(data.tool_output);
     if (!prUrl) process.exit(0);
 
     appendAttribution(prUrl, attributionLine);
+    clearAgents();
   } catch {
     // Silent fail
   }
