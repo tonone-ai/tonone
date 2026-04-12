@@ -1,7 +1,7 @@
 {
   "name": "tonone",
   "description": "Engineering + Product team — 23 agents as Claude Code specialists. Infrastructure, DevOps, backend, security, ML/AI, mobile, UX, analytics, growth, strategy, and more.",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
@@ -41,6 +41,11 @@
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-update-check.js\"",
             "timeout": 8
+          },
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-worktree-session.js\"",
+            "timeout": 10
           }
         ]
       }
@@ -68,11 +73,6 @@
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-writer.js\"",
             "timeout": 5
-          },
-          {
-            "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-pr-attribution.js\"",
-            "timeout": 10
           }
         ]
       },
@@ -83,36 +83,11 @@
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-writer.js\"",
             "timeout": 5
-          },
-          {
-            "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-session-tracker.js\"",
-            "timeout": 5
-          }
-        ]
-      },
-      {
-        "matcher": "ExitPlanMode",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-worktree-create.js\"",
-            "timeout": 10
           }
         ]
       }
     ],
     "PreToolUse": [
-      {
-        "matcher": "Edit|Write|NotebookEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-worktree-gate.js\"",
-            "timeout": 5
-          }
-        ]
-      },
       {
         "matcher": "Bash",
         "hooks": [
@@ -131,6 +106,11 @@
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-notify.js\"",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-worktree-close.js\"",
+            "timeout": 10
           }
         ]
       }

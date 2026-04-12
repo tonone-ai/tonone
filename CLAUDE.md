@@ -93,17 +93,31 @@ cd team/forge/scripts && bash setup.sh
 .venv/bin/python -m pytest ../tests/
 ```
 
-## Worktree branch naming
+## Worktree sessions
 
-Before making the first edit in an implementation session, write a short kebab-case description of the task to `.claude/branch-slug`. The worktree hooks read this file to name the branch.
+Every session starts in an isolated git worktree branch automatically. The SessionStart hook creates a `session-YYYYMMDD-HHMMSS` branch and prints `WORKTREE_READY`. **Call `EnterWorktree("<path>")` immediately — before any other action.**
+
+### Branch rename
+
+Once you understand what the user wants (after the first substantive exchange), rename the branch to a descriptive kebab-case slug:
 
 ```bash
-# Example — do this before any file edit:
-echo "fix-auth-bug" > .claude/branch-slug
-echo "add-worktree-git-gate" > .claude/branch-slug
+git branch -m session-YYYYMMDD-HHMMSS <kebab-slug>
 ```
 
-No slashes. Lowercase. Max 50 chars. If omitted, branch falls back to `impl-YYYYMMDD-HHMMSS`.
+Max 50 chars. Lowercase. No slashes. Example: `fix-auth-bug`, `add-stripe-webhooks`.
+
+### Topic drift
+
+If the user shifts to a clearly different task while the current worktree has uncommitted or unpushed changes, say:
+
+> "This looks like a new topic. Want me to open a PR for the current changes first, then start a fresh session for this?"
+
+Do not switch topics silently. Keep sessions focused.
+
+### Session end
+
+When stopping, the hook auto-removes clean worktrees. If changes exist, it prints a `/ship` reminder to the user.
 
 ## Skill routing
 
