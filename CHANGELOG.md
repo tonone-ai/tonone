@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.9] — 2026-04-12
+
+### Added
+
+- **Update checker** — `hooks/tonone-update-check.js` runs at `SessionStart`, fetches the latest version from GitHub at most once per 24 h, and notifies via OS notification + stderr line when a newer version is available. Result is cached in `~/.config/tonone/update-cache.json`.
+
+## [0.6.8] — 2026-04-12
+
+### Added
+
+- **Notification system** — `hooks/tonone-notify.js` fires a macOS notification (via `osascript`) when Claude finishes a turn (`Stop` hook) or needs your attention (`Notification` hook). Sound plays via `afplay` and is on by default. Configure in `~/.config/tonone/config.json` under the `notify` key (`sound: bool`, `soundFile: string`).
+
 ## [0.6.7] — 2026-04-12
 
 ### Added
