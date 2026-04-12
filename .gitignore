@@ -65,6 +65,7 @@ pip-wheel-metadata/
 .claude/skills/
 .claude/worktrees/
 .claude/skip-worktree
+.claude/branch-slug
 
 # External tools
 .superpowers/
