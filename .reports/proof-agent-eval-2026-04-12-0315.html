@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Eval Suite — Proof / agent-eval — 2026-04-12</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --bg-card: #1e293b;
+        --text: #e2e8f0;
+        --text-muted: #94a3b8;
+        --border: #334155;
+        --accent: #3b82f6;
+        --critical: #dc2626;
+        --critical-bg: rgba(220, 38, 38, 0.12);
+        --warning: #d97706;
+        --warning-bg: rgba(217, 119, 6, 0.12);
+        --info: #2563eb;
+        --info-bg: rgba(37, 99, 235, 0.12);
+        --success: #16a34a;
+        --success-bg: rgba(22, 163, 74, 0.12);
+        --font-mono: "JetBrains Mono", "Fira Code", monospace;
+        --font-sans: "Inter", system-ui, sans-serif;
+      }
+      [data-theme="light"] {
+        --bg: #ffffff;
+        --bg-card: #f8fafc;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --critical-bg: #fef2f2;
+        --warning-bg: #fffbeb;
+        --info-bg: #eff6ff;
+        --success-bg: #f0fdf4;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 15px;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        min-height: 100vh;
+      }
+      /* Sidebar */
+      .sidebar {
+        position: sticky;
+        top: 0;
+        width: 240px;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 1.5rem 1rem;
+        border-right: 1px solid var(--border);
+        background: var(--bg-card);
+        flex-shrink: 0;
+      }
+      .sidebar h2 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+      }
+      .sidebar a {
+        display: block;
+        padding: 0.4rem 0.6rem;
+        margin-bottom: 0.2rem;
+        border-radius: 6px;
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: background 0.15s;
+      }
+      .sidebar a:hover {
+        background: var(--border);
+      }
+      .hamburger {
+        display: none;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 100;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.5rem 0.7rem;
+        color: var(--text);
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+      /* Main */
+      main {
+        flex: 1;
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 2rem 2.5rem;
+      }
+      header {
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1.5rem;
+      }
+      header h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+      }
+      .meta {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+      .meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+      section {
+        margin-bottom: 2.5rem;
+      }
+      section h2 {
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+      /* Cards */
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .card.critical {
+        border-left: 4px solid var(--critical);
+        background: var(--critical-bg);
+      }
+      .card.warning {
+        border-left: 4px solid var(--warning);
+        background: var(--warning-bg);
+      }
+      .card.info {
+        border-left: 4px solid var(--info);
+        background: var(--info-bg);
+      }
+      .card.success {
+        border-left: 4px solid var(--success);
+        background: var(--success-bg);
+      }
+      .card .severity {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+      }
+      .card .severity.crit {
+        color: var(--critical);
+      }
+      .card .severity.warn {
+        color: var(--warning);
+      }
+      .card .severity.inf {
+        color: var(--info);
+      }
+      .card .severity.ok {
+        color: var(--success);
+      }
+      .card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+      }
+      .card p,
+      .card ul {
+        font-size: 0.88rem;
+        color: var(--text);
+        line-height: 1.55;
+      }
+      .card ul {
+        padding-left: 1.2rem;
+      }
+      .card li {
+        margin-bottom: 0.3rem;
+      }
+      code {
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 0.15rem 0.4rem;
+        border-radius: 4px;
+      }
+      pre {
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+        position: relative;
+        margin: 0.75rem 0;
+      }
+      pre code {
+        background: none;
+        padding: 0;
+        font-size: 0.8rem;
+      }
+      .copy-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: var(--border);
+        border: none;
+        color: var(--text-muted);
+        border-radius: 4px;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        font-size: 0.7rem;
+      }
+      .copy-btn:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin: 0.75rem 0;
+      }
+      th,
+      td {
+        padding: 0.5rem 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+      th {
+        font-weight: 600;
+        color: var(--text-muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      td.num {
+        text-align: right;
+        font-family: var(--font-mono);
+      }
+      /* Theme toggle */
+      .theme-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 100;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.4rem 0.7rem;
+        color: var(--text);
+        cursor: pointer;
+        font-size: 0.85rem;
+      }
+      /* Responsive */
+      @media (max-width: 768px) {
+        .sidebar {
+          position: fixed;
+          left: -260px;
+          z-index: 99;
+          transition: left 0.25s;
+        }
+        .sidebar.open {
+          left: 0;
+        }
+        .hamburger {
+          display: block;
+        }
+        main {
+          padding: 2rem 1rem;
+        }
+      }
+      @media print {
+        .sidebar,
+        .theme-toggle,
+        .hamburger,
+        .copy-btn {
+          display: none !important;
+        }
+        body {
+          display: block;
+        }
+        [data-theme] {
+          --bg: #fff;
+          --bg-card: #f8fafc;
+          --text: #1e293b;
+          --text-muted: #64748b;
+          --border: #e2e8f0;
+        }
+      }
+      /* Summary list */
+      .summary-list {
+        list-style: none;
+        padding: 0;
+      }
+      .summary-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.9rem;
+        display: flex;
+        gap: 0.5rem;
+      }
+      .summary-list li:last-child {
+        border-bottom: none;
+      }
+      /* Stats grid */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .stat {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+      }
+      .stat .num {
+        font-size: 1.8rem;
+        font-weight: 700;
+        font-family: var(--font-mono);
+        color: var(--accent);
+      }
+      .stat .label {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        margin-top: 0.3rem;
+      }
+      details {
+        margin: 0.5rem 0;
+      }
+      details summary {
+        cursor: pointer;
+        font-size: 0.88rem;
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="hamburger"
+      onclick="document.querySelector('.sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+    <button class="theme-toggle" onclick="toggleTheme()">◐ Theme</button>
+
+    <nav class="sidebar">
+      <h2>Agent Eval Suite</h2>
+      <a href="#summary">Executive Summary</a>
+      <a href="#stats">Test Stats</a>
+      <a href="#agent-tests">Agent Tests (11)</a>
+      <a href="#skill-tests">Skill Tests (14)</a>
+      <a href="#drift">Known Drift (6)</a>
+      <a href="#coverage">Coverage Map</a>
+      <a href="#actions">Next Steps</a>
+    </nav>
+
+    <main>
+      <header>
+        <h1>Agent Eval Suite — Prompt Drift Detection</h1>
+        <div class="meta">
+          <span><strong>Agent:</strong> Proof</span>
+          <span><strong>Skill:</strong> agent-eval</span>
+          <span><strong>Repo:</strong> tonone-ai/tonone</span>
+          <span><strong>Date:</strong> 2026-04-12</span>
+          <span
+            ><strong>PR:</strong>
+            <a
+              href="https://github.com/tonone-ai/tonone/pull/41"
+              style="color: var(--accent)"
+              >#41</a
+            ></span
+          >
+        </div>
+      </header>
+
+      <!-- ── Summary ──────────────────────────────────── -->
+      <section id="summary">
+        <h2>Executive Summary</h2>
+        <ul class="summary-list">
+          <li>
+            <strong>25 new tests</strong> validate behavioral contracts across
+            23 agent definitions and 138 skills
+          </li>
+          <li>
+            <strong>12 skills fixed</strong> — v0.6.6 reference skills were
+            missing the output-kit contract line
+          </li>
+          <li>
+            <strong>6 skills have known drift</strong> — 4 severity indicator
+            violations, 2 emoji violations (tracked, not blocking)
+          </li>
+          <li>
+            <strong>CI gated</strong> — both test suites run in the
+            validate-structure job on every push/PR
+          </li>
+          <li>
+            <strong>All 37 tests pass</strong> — 11 agent + 14 skill compliance
+            + 12 existing structure tests
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── Stats ────────────────────────────────────── -->
+      <section id="stats">
+        <h2>Test Stats</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="num">37</div>
+            <div class="label">Total Tests</div>
+          </div>
+          <div class="stat">
+            <div class="num">37</div>
+            <div class="label">Passing</div>
+          </div>
+          <div class="stat">
+            <div class="num">23</div>
+            <div class="label">Agents Validated</div>
+          </div>
+          <div class="stat">
+            <div class="num">138</div>
+            <div class="label">Skills Validated</div>
+          </div>
+          <div class="stat">
+            <div class="num">6</div>
+            <div class="label">Known Drift</div>
+          </div>
+          <div class="stat">
+            <div class="num">0</div>
+            <div class="label">New Violations</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Agent Tests ──────────────────────────────── -->
+      <section id="agent-tests">
+        <h2>Agent Compliance Tests (11)</h2>
+        <p
+          style="
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+          "
+        >
+          File: <code>tests/test_agent_compliance.py</code> — validates all 23
+          agent definitions in <code>agents/*.md</code>
+        </p>
+
+        <div class="card success">
+          <div class="severity ok">✓ ALL PASSING</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Test</th>
+                <th>What It Catches</th>
+                <th>Scope</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>test_all_agents_have_frontmatter</code></td>
+                <td>Missing YAML frontmatter</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_frontmatter_required_fields</code></td>
+                <td>Missing name, description, or model</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_frontmatter_name_matches_filename</code></td>
+                <td>Frontmatter/filename mismatch</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_model_selection</code></td>
+                <td>Wrong model (opus vs sonnet)</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_communication_section_exists</code></td>
+                <td>Missing ## Communication</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_communication_references_output_kit</code></td>
+                <td>Communication without output-kit ref</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_identity_line_exists</code></td>
+                <td>Missing "You are &lt;Name&gt;" opener</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_scope_or_operating_principle</code></td>
+                <td>No boundary-setting section</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_no_emoji_in_agent_definitions</code></td>
+                <td>Emoji in definitions</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_no_unauthorized_severity_indicators</code></td>
+                <td>Custom severity like ■ HIGH</td>
+                <td class="num">23 agents</td>
+              </tr>
+              <tr>
+                <td><code>test_collaboration_references_valid_agents</code></td>
+                <td>Naming nonexistent agents</td>
+                <td class="num">23 agents</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── Skill Tests ──────────────────────────────── -->
+      <section id="skill-tests">
+        <h2>Skill Compliance Tests (14)</h2>
+        <p
+          style="
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+          "
+        >
+          File: <code>tests/test_skill_compliance.py</code> — validates all 138
+          skills in <code>skills/*/SKILL.md</code>
+        </p>
+
+        <div class="card success">
+          <div class="severity ok">✓ ALL PASSING</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Test</th>
+                <th>What It Catches</th>
+                <th>Scope</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>test_all_skills_have_frontmatter</code></td>
+                <td>Missing YAML frontmatter</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_frontmatter_required_fields</code></td>
+                <td>Missing name or description</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_frontmatter_name_matches_directory</code></td>
+                <td>Frontmatter/directory mismatch</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_skill_name_is_kebab_case</code></td>
+                <td>Non-kebab-case naming</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_skill_prefix_is_valid_agent</code></td>
+                <td>Orphaned skill (no matching agent)</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_description_has_trigger_phrases</code></td>
+                <td>Weak descriptions hurt routing</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_skills_reference_output_kit</code></td>
+                <td>Missing output-kit contract</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_skills_reference_atlas_report</code></td>
+                <td>No overflow clause</td>
+                <td class="num">137 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_skills_have_identity_or_title</code></td>
+                <td>No persona or title header</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_skills_have_structured_workflow</code></td>
+                <td>Vague instead of numbered steps</td>
+                <td class="num">138 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_no_unauthorized_severity_in_skills</code></td>
+                <td>New custom severity indicators</td>
+                <td class="num">134 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_known_severity_drift_still_exists</code></td>
+                <td>Fixed but not removed from allowlist</td>
+                <td class="num">4 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_no_emoji_in_skills</code></td>
+                <td>New emoji violations</td>
+                <td class="num">136 skills</td>
+              </tr>
+              <tr>
+                <td><code>test_known_emoji_drift_still_exists</code></td>
+                <td>Fixed but not removed from allowlist</td>
+                <td class="num">2 skills</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── Known Drift ──────────────────────────────── -->
+      <section id="drift">
+        <h2>Known Drift (6 skills)</h2>
+        <p
+          style="
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+          "
+        >
+          Tracked in <code>KNOWN_SEVERITY_DRIFT</code> and
+          <code>KNOWN_EMOJI_DRIFT</code> sets. CI passes — new violations are
+          caught, known ones are documented.
+        </p>
+
+        <div class="card warning">
+          <div class="severity warn">▲ WARNING — Severity Indicator Drift</div>
+          <h3>4 skills use non-standard severity indicators</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Skill</th>
+                <th>Found</th>
+                <th>Should Be</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>draft-flow</code></td>
+                <td><code>▲ FRICTION</code></td>
+                <td><code>▲ WARNING</code></td>
+              </tr>
+              <tr>
+                <td><code>echo-interview</code></td>
+                <td><code>▲ HIGH</code>, <code>● MEDIUM</code></td>
+                <td><code>▲ WARNING</code>, <code>● INFO</code></td>
+              </tr>
+              <tr>
+                <td><code>echo-jobs</code></td>
+                <td><code>▲ HIGH</code>, <code>● MEDIUM</code></td>
+                <td><code>▲ WARNING</code>, <code>● INFO</code></td>
+              </tr>
+              <tr>
+                <td><code>lumen-funnel</code></td>
+                <td><code>▲ HIGH</code>, <code>● MEDIUM</code></td>
+                <td><code>▲ WARNING</code>, <code>● INFO</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <details>
+            <summary>Fix instructions</summary>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem">
+              Replace the non-standard indicators in each SKILL.md (both
+              <code>skills/</code> and <code>team/</code> copies), then remove
+              the skill name from <code>KNOWN_SEVERITY_DRIFT</code> in
+              <code>tests/test_skill_compliance.py</code>. The companion test
+              <code>test_known_severity_drift_still_exists</code> will fail if
+              you fix the skill but forget to update the set.
+            </p>
+          </details>
+        </div>
+
+        <div class="card info">
+          <div class="severity inf">● INFO — Emoji in Skills</div>
+          <h3>2 skills contain emoji characters</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Skill</th>
+                <th>Context</th>
+                <th>Characters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>atlas-map</code></td>
+                <td>Mermaid diagram actor labels</td>
+                <td>👤 🤖 📨 💳</td>
+              </tr>
+              <tr>
+                <td><code>relay-ship</code></td>
+                <td>Attribution signature</td>
+                <td>🤖</td>
+              </tr>
+            </tbody>
+          </table>
+          <details>
+            <summary>Fix instructions</summary>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem">
+              <code>atlas-map</code>: Replace emoji in Mermaid templates with
+              text labels or unicode symbols. <code>relay-ship</code>: Replace
+              🤖 with a text identifier in the attribution line. Then remove
+              from <code>KNOWN_EMOJI_DRIFT</code>.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- ── Coverage Map ─────────────────────────────── -->
+      <section id="coverage">
+        <h2>Coverage Map</h2>
+        <p
+          style="
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+          "
+        >
+          What the eval suite does and doesn't cover.
+        </p>
+
+        <div class="card">
+          <h3>Covered (static analysis of definitions)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Tests</th>
+                <th>What's Verified</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Frontmatter Schema</td>
+                <td class="num">5</td>
+                <td>Required fields, name consistency, model selection</td>
+              </tr>
+              <tr>
+                <td>Output-Kit Protocol</td>
+                <td class="num">6</td>
+                <td>
+                  Communication section, output-kit ref, atlas-report clause,
+                  severity indicators, emoji
+                </td>
+              </tr>
+              <tr>
+                <td>Naming Conventions</td>
+                <td class="num">3</td>
+                <td>Kebab-case, valid agent prefix, trigger phrases</td>
+              </tr>
+              <tr>
+                <td>Structural Integrity</td>
+                <td class="num">4</td>
+                <td>
+                  Identity line, scope section, workflow steps, collaboration
+                  refs
+                </td>
+              </tr>
+              <tr>
+                <td>Drift Tracking</td>
+                <td class="num">4</td>
+                <td>
+                  Known violations tracked, companion tests keep allowlists
+                  honest
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card warning">
+          <div class="severity warn">▲ WARNING — Not Yet Covered</div>
+          <h3>Future eval work</h3>
+          <ul>
+            <li>
+              <strong>Runtime output compliance</strong> — do agents actually
+              produce ≤40 lines when invoked? (Requires execution harness)
+            </li>
+            <li>
+              <strong>Routing accuracy</strong> — does the right skill fire for
+              a given user query? (Requires labeled test set)
+            </li>
+            <li>
+              <strong>Handoff schema adherence</strong> — does Helm→Apex produce
+              valid 6-field briefs? (Requires mock conversations)
+            </li>
+            <li>
+              <strong>Decision quality</strong> — do agents make defensible
+              technical calls? (Requires expert-labeled rubric)
+            </li>
+            <li>
+              <strong>Cross-agent consistency</strong> — do overlapping agents
+              give contradictory advice? (Requires adversarial test pairs)
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ── Actions ──────────────────────────────────── -->
+      <section id="actions">
+        <h2>Next Steps</h2>
+
+        <div class="card critical">
+          <div class="severity crit">■ P0 — Fix severity drift</div>
+          <p>
+            4 skills using <code>▲ HIGH</code> / <code>● MEDIUM</code> /
+            <code>▲ FRICTION</code> instead of the standard
+            <code>▲ WARNING</code> / <code>● INFO</code>. Quick find-and-replace
+            across <code>draft-flow</code>, <code>echo-interview</code>,
+            <code>echo-jobs</code>, <code>lumen-funnel</code>.
+          </p>
+        </div>
+
+        <div class="card warning">
+          <div class="severity warn">
+            ▲ P1 — Fix emoji in atlas-map and relay-ship
+          </div>
+          <p>
+            Replace emoji with text labels in Mermaid templates and attribution
+            line.
+          </p>
+        </div>
+
+        <div class="card info">
+          <div class="severity inf">
+            ● P2 — Build runtime output compliance harness
+          </div>
+          <p>
+            Execute each skill against a synthetic project and measure: line
+            count, severity indicator usage, box-drawing presence, atlas-report
+            invocation for long output. This is the next major eval investment.
+          </p>
+        </div>
+
+        <div class="card info">
+          <div class="severity inf">● P3 — Build routing accuracy test set</div>
+          <p>
+            Create 50+ labeled user queries with expected skill matches. Run
+            against Claude Code's skill suggestion system and measure
+            precision/recall.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+      }
+
+      document.querySelectorAll("pre").forEach((pre) => {
+        const btn = document.createElement("button");
+        btn.className = "copy-btn";
+        btn.textContent = "Copy";
+        btn.onclick = () => {
+          const code = pre.querySelector("code") || pre;
+          navigator.clipboard.writeText(code.textContent).then(() => {
+            btn.textContent = "Copied!";
+            setTimeout(() => (btn.textContent = "Copy"), 1500);
+          });
+        };
+        pre.appendChild(btn);
+      });
+    </script>
+  </body>
+</html>
