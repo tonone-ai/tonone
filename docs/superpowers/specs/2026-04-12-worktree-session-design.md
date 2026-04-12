@@ -95,7 +95,8 @@ Stop hook (tonone-worktree-close.js)
 3. Get worktree path: `git rev-parse --show-toplevel`.
 
 4. Clean check:
-   - `git log main..HEAD --oneline` — empty?
+   - Detect default branch: `git symbolic-ref refs/remotes/origin/HEAD` → strip `refs/remotes/origin/` prefix. Fallback: try `main`, then `master`.
+   - `git log <default-branch>..HEAD --oneline` — empty?
    - `git status --porcelain` — empty?
    - Both empty → clean.
 
