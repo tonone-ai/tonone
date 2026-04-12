@@ -12,6 +12,8 @@ license: MIT
 
 # draft-patterns — UX Pattern Reference
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## When to use
 
 User asks about interaction patterns, best practices, form design, navigation, or loading/empty states.

@@ -12,6 +12,8 @@ license: MIT
 
 # pitch-landing — Launch & Positioning Landing Page
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## When to use
 
 User needs a landing page structured around product positioning, launch messaging, or conversion for a specific audience.

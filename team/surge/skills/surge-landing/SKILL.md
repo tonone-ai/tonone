@@ -12,6 +12,8 @@ license: MIT
 
 # surge-landing — Growth-Optimized Landing Page
 
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
 ## When to use
 
 User needs a landing page designed for growth: activation funnels, A/B testing, acquisition, or PLG flows.

@@ -166,6 +166,33 @@ def test_root_skills_match_team_skills():
     )
 
 
+def test_skill_output_kit_contract():
+    """
+    Every skill SKILL.md must contain the output-kit contract line.
+    Without it, the skill's output is not guaranteed to follow the team standard
+    (40-line CLI max, box-drawing skeleton, severity indicators, compressed prose).
+    """
+    contract = "Follow the output format defined in docs/output-kit.md"
+    missing = []
+    for agent in AGENTS:
+        skills_dir = REPO / "team" / agent / "skills"
+        if not skills_dir.exists():
+            continue
+        for skill_dir in sorted(skills_dir.iterdir()):
+            if not skill_dir.is_dir():
+                continue
+            skill_file = skill_dir / "SKILL.md"
+            if not skill_file.exists():
+                continue
+            if contract not in skill_file.read_text():
+                missing.append(skill_dir.name)
+    assert (
+        not missing
+    ), f"{len(missing)} skill(s) missing output-kit contract line: " + ", ".join(
+        missing
+    )
+
+
 def test_plugin_json_name_matches_agent_directory():
     """
     plugin.json 'name' must match the agent directory name (bare, no prefix).

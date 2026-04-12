@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.7] — 2026-04-12
+
+### Added
+
+- **Agent eval suite** — 25 new tests across `test_agent_compliance.py` (11 tests) and `test_skill_compliance.py` (14 tests) validating frontmatter schema, model selection, communication protocol, identity lines, severity indicators, emoji, naming conventions, output-kit contract, atlas-report overflow clause, and structured workflow steps
+- **Drift tracking** — known severity and emoji violations tracked in explicit sets with companion tests that fail when drift is fixed but not removed from the allowlist
+- **CI gate** — agent and skill compliance tests wired into the validate-structure job
+
+### Fixed
+
+- **12 skills missing output-kit contract** — added the standard output-kit reference line to draft-landing, draft-patterns, form-exam, form-palette, form-style, lens-chart, pitch-landing, prism-chart, prism-stack, proof-design, surge-landing, touch-ui (root + team copies)
+
 ## [0.6.6] — 2026-04-12
 
 ### Added
