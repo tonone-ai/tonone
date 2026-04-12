@@ -17,6 +17,7 @@ Line 3  Opus → Sonnet │ ████░░░░░░ 48% │ 5h: 24% ok 0.
 | 1 | **Where** — location & code state | directory, branch + ahead, dirty count, lines changed |
 | 2 | **What** — session activity | agent + subs, cost, duration |
 | 3 | **How much left** — runway gauges | model(s), context window, 5h pace, 7d pace |
+| 4 | **Why** — session purpose | goal (optional, from `.claude/session-goal` or `.claude/branch-slug`) |
 
 ## Static Fields
 
@@ -164,9 +165,25 @@ Source: `data.tool_input.model` from the Agent tool call (falls back to `null` i
 | Pace -- | dim | `\x1b[2m` |
 | Separators │ | dim | `\x1b[2m` |
 
+### Line 4: Session Goal (optional)
+
+Reads from `.claude/session-goal` first, falls back to `.claude/branch-slug`. Hyphens converted to spaces. Line 4 is omitted entirely when neither file exists.
+
+Format: `goal: <text>` — dim label, cyan text.
+
+Users set this by writing the branch-slug before a session (already the project convention):
+```bash
+echo "fix-auth-bug" > .claude/branch-slug
+```
+
+Or a more descriptive one-liner:
+```bash
+echo "add session goal to statusline" > .claude/session-goal
+```
+
 ## Files Modified
 
-1. `hooks/tonone-statusline.js` — full rewrite of `render()` function
+1. `hooks/tonone-statusline.js` — added `readSessionGoal()`, Line 4 in `render()`
 2. `hooks/tonone-agent-tracker.js` — add `model` field from `tool_input.model`
 
 ## Files Created
