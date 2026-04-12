@@ -135,10 +135,10 @@ def test_gate_handles_invalid_json():
     assert proc.returncode == 0
 
 
-def test_gate_block_message_is_actionable():
-    """When gate blocks, stderr must contain both action options."""
+def test_gate_message_is_actionable():
+    """When gate blocks, stdout must contain WORKTREE_READY, EnterWorktree, and skip-worktree opt-out."""
     source = GATE.read_text()
-    assert "WORKTREE_REQUIRED" in source
+    assert "WORKTREE_READY" in source
     assert "EnterWorktree" in source
     assert ".claude/skip-worktree" in source
     assert "process.exit(1)" in source
