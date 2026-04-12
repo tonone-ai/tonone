@@ -217,29 +217,35 @@ def test_plugin_json_name_matches_agent_directory():
 
 
 def test_worktree_hooks_exist():
-    """Both worktree isolation hooks must exist — they are interdependent (creator + gate)."""
-    for hook in ["tonone-worktree-create.js", "tonone-worktree-gate.js"]:
+    """Both worktree session hooks must exist — session (SessionStart) and close (Stop)."""
+    for hook in ["tonone-worktree-session.js", "tonone-worktree-close.js"]:
         p = REPO / "hooks" / hook
         assert p.exists(), f"Missing worktree hook: hooks/{hook}"
 
 
 def test_worktree_hooks_registered_in_plugin_json():
-    """Root plugin.json must register both worktree hooks."""
+    """Root plugin.json must register both worktree hooks in SessionStart and Stop."""
     plugin = json.loads((REPO / ".claude-plugin" / "plugin.json").read_text())
     hooks = plugin.get("hooks", {})
 
-    # Check PostToolUse has ExitPlanMode matcher
-    post_matchers = [
-        h.get("matcher") for h in hooks.get("PostToolUse", [])
+    # Check SessionStart has worktree-session hook
+    session_commands = [
+        cmd
+        for group in hooks.get("SessionStart", [])
+        for h in group.get("hooks", [])
+        for cmd in [h.get("command", "")]
     ]
-    assert "ExitPlanMode" in post_matchers, (
-        "plugin.json PostToolUse missing ExitPlanMode matcher for worktree creator"
+    assert any("tonone-worktree-session" in c for c in session_commands), (
+        "plugin.json SessionStart missing tonone-worktree-session.js hook"
     )
 
-    # Check PreToolUse has Edit|Write|NotebookEdit matcher
-    pre_matchers = [
-        h.get("matcher") for h in hooks.get("PreToolUse", [])
+    # Check Stop has worktree-close hook
+    stop_commands = [
+        cmd
+        for group in hooks.get("Stop", [])
+        for h in group.get("hooks", [])
+        for cmd in [h.get("command", "")]
     ]
-    assert any("Edit" in (m or "") for m in pre_matchers), (
-        "plugin.json PreToolUse missing Edit matcher for worktree gate"
+    assert any("tonone-worktree-close" in c for c in stop_commands), (
+        "plugin.json Stop missing tonone-worktree-close.js hook"
     )

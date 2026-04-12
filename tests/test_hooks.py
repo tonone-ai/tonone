@@ -3,9 +3,9 @@ Tests for tonone worktree hooks.
 
 These tests validate:
 - JS syntax is valid (node --check)
-- Non-targeted tool names are passed through (exit 0)
-- The opt-out whitelist for .claude/skip-worktree is respected
-- ExitPlanMode is the only trigger for the creator hook
+- Hooks always exit 0 (silent-fail philosophy)
+- Session hook output contains required Claude instructions
+- Close hook source contains /ship suggestion
 """
 
 import json
@@ -16,8 +16,8 @@ REPO = Path(__file__).parent.parent
 
 # Hooks live in /hooks/ at the repo root (sibling to .claude-plugin/).
 # They are registered in .claude-plugin/plugin.json via CLAUDE_PLUGIN_ROOT.
-GATE = REPO / "hooks" / "tonone-worktree-gate.js"
-CREATE = REPO / "hooks" / "tonone-worktree-create.js"
+SESSION = REPO / "hooks" / "tonone-worktree-session.js"
+CLOSE = REPO / "hooks" / "tonone-worktree-close.js"
 
 
 def run_hook(hook_path: Path, stdin_data: dict) -> tuple[int, str, str]:
@@ -39,8 +39,8 @@ def run_hook(hook_path: Path, stdin_data: dict) -> tuple[int, str, str]:
 
 def test_hook_files_exist():
     """Both hook files must exist before other tests can run."""
-    assert CREATE.exists(), f"Missing: {CREATE}"
-    assert GATE.exists(), f"Missing: {GATE}"
+    assert SESSION.exists(), f"Missing: {SESSION}"
+    assert CLOSE.exists(), f"Missing: {CLOSE}"
 
 
 # ---------------------------------------------------------------------------
@@ -48,20 +48,20 @@ def test_hook_files_exist():
 # ---------------------------------------------------------------------------
 
 
-def test_worktree_create_is_valid_js():
-    """tonone-worktree-create.js must be syntactically valid Node.js."""
+def test_worktree_session_is_valid_js():
+    """tonone-worktree-session.js must be syntactically valid Node.js."""
     result = subprocess.run(
-        ["node", "--check", str(CREATE)],
+        ["node", "--check", str(SESSION)],
         capture_output=True,
         text=True,
     )
     assert result.returncode == 0, result.stderr
 
 
-def test_worktree_gate_is_valid_js():
-    """tonone-worktree-gate.js must be syntactically valid Node.js."""
+def test_worktree_close_is_valid_js():
+    """tonone-worktree-close.js must be syntactically valid Node.js."""
     result = subprocess.run(
-        ["node", "--check", str(GATE)],
+        ["node", "--check", str(CLOSE)],
         capture_output=True,
         text=True,
     )
@@ -69,22 +69,14 @@ def test_worktree_gate_is_valid_js():
 
 
 # ---------------------------------------------------------------------------
-# tonone-worktree-create.js
+# tonone-worktree-session.js
 # ---------------------------------------------------------------------------
 
 
-def test_create_ignores_non_exit_plan_mode():
-    """Creator hook exits 0 silently for tools other than ExitPlanMode."""
-    for tool in ["Agent", "Edit", "Write", "Bash", "Read"]:
-        rc, out, _ = run_hook(CREATE, {"tool_name": tool, "tool_input": {}})
-        assert rc == 0, f"Expected exit 0 for tool={tool}, got {rc}"
-        assert "WORKTREE_READY" not in out, f"Unexpected output for tool={tool}"
-
-
-def test_create_handles_invalid_json():
-    """Creator hook exits 0 on invalid stdin — hooks must never block user workflow on a crash."""
+def test_session_handles_invalid_json():
+    """Session hook exits 0 on invalid stdin — hooks must never block user workflow on a crash."""
     proc = subprocess.run(
-        ["node", str(CREATE)],
+        ["node", str(SESSION)],
         input="not json",
         capture_output=True,
         text=True,
@@ -93,61 +85,37 @@ def test_create_handles_invalid_json():
     assert proc.returncode == 0
 
 
-# ---------------------------------------------------------------------------
-# tonone-worktree-gate.js
-# ---------------------------------------------------------------------------
-
-
-def test_gate_allows_non_gated_tools():
-    """Gate hook exits 0 for tools that don't modify files."""
-    for tool in ["Bash", "Read", "Glob", "Grep", "Agent", "WebSearch"]:
-        rc, _, _ = run_hook(GATE, {"tool_name": tool, "tool_input": {}})
-        assert rc == 0, f"Expected exit 0 for tool={tool}, got {rc}"
-
-
-def test_gate_allows_skip_marker_creation():
-    """Writing .claude/skip-worktree is always allowed — it's the opt-out path."""
-    rc, _, _ = run_hook(GATE, {
-        "tool_name": "Write",
-        "tool_input": {"file_path": ".claude/skip-worktree"},
-    })
-    assert rc == 0
-
-
-def test_gate_allows_skip_marker_with_absolute_path():
-    """Writing .claude/skip-worktree with absolute path is also allowed."""
-    rc, _, _ = run_hook(GATE, {
-        "tool_name": "Edit",
-        "tool_input": {"file_path": "/some/repo/.claude/skip-worktree"},
-    })
-    assert rc == 0
-
-
-def test_gate_handles_invalid_json():
-    """Gate hook exits 0 on invalid stdin — hooks must never block user workflow on a crash."""
-    proc = subprocess.run(
-        ["node", str(GATE)],
-        input="not json",
-        capture_output=True,
-        text=True,
-        timeout=10,
-    )
-    assert proc.returncode == 0
-
-
-def test_gate_message_is_actionable():
-    """When gate blocks, stdout must contain WORKTREE_READY, EnterWorktree, and skip-worktree opt-out."""
-    source = GATE.read_text()
+def test_session_source_contains_required_instructions():
+    """Session hook source must instruct Claude to call EnterWorktree and rename the branch."""
+    source = SESSION.read_text()
     assert "WORKTREE_READY" in source
     assert "EnterWorktree" in source
-    assert ".claude/skip-worktree" in source
-    assert "process.exit(1)" in source
+    assert "git branch -m" in source
+    assert "process.exit(1)" not in source, "session hook must never exit 1"
 
 
-# NOTE: The gate's actual blocking behavior (exit 1 on main with active plan) is
-# environment-dependent (requires: not in a worktree AND a recent ~/.gstack plan).
-# It is validated in the smoke test (Task 7 of the implementation plan) rather
-# than here, where we can only inspect the source code for correctness.
+# ---------------------------------------------------------------------------
+# tonone-worktree-close.js
+# ---------------------------------------------------------------------------
+
+
+def test_close_handles_invalid_json():
+    """Close hook exits 0 on invalid stdin — hooks must never block user workflow on a crash."""
+    proc = subprocess.run(
+        ["node", str(CLOSE)],
+        input="not json",
+        capture_output=True,
+        text=True,
+        timeout=10,
+    )
+    assert proc.returncode == 0
+
+
+def test_close_source_contains_ship_suggestion():
+    """Close hook source must suggest /ship for dirty sessions."""
+    source = CLOSE.read_text()
+    assert "/ship" in source
+    assert "process.exit(1)" not in source, "close hook must never exit 1"
 
 
 # ---------------------------------------------------------------------------
