@@ -43,6 +43,11 @@ if [ -n "$CURRENT_SL" ] && [ "$CURRENT_SL" != "node \"$STATUSLINE_SCRIPT\"" ]; t
 fi
 
 # Patch settings.json with tonone statusline
+EXPECTED_CMD="node \"$STATUSLINE_SCRIPT\""
+if [ "$CURRENT_SL" = "$EXPECTED_CMD" ]; then
+	exit 0
+fi
+
 if command -v node &>/dev/null; then
 	node -e "
     const fs = require('fs');
