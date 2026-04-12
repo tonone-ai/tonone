@@ -11,6 +11,32 @@ const { execSync, spawnSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
+/** Read .claude/branch-slug and return sanitized kebab-case name, or fallback. */
+function branchBase(fallback) {
+  try {
+    const raw = fs.readFileSync(".claude/branch-slug", "utf8").trim();
+    const slug = raw.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50);
+    if (slug) return slug;
+  } catch {}
+  return fallback;
+}
+
+/** List .claude/worktrees entries sorted by mtime descending (most recent first). */
+function latestWorktree(worktreesDir) {
+  if (!fs.existsSync(worktreesDir)) return null;
+  const entries = fs.readdirSync(worktreesDir)
+    .map((e) => {
+      const p = path.join(worktreesDir, e);
+      try { return { name: e, mtime: fs.statSync(p).mtimeMs, p }; } catch { return null; }
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.mtime - a.mtime);
+  for (const { name, p } of entries) {
+    if (fs.existsSync(p)) return { worktreePath: p, branchName: name };
+  }
+  return null;
+}
+
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 3000);
 process.stdin.setEncoding("utf8");
@@ -65,22 +91,8 @@ process.stdin.on("end", () => {
     let branchName = null;
 
     try {
-      if (fs.existsSync(worktreesDir)) {
-        // Lexicographic descending = most-recent impl-YYYYMMDD-HHMMSS-PID first
-        const entries = fs
-          .readdirSync(worktreesDir)
-          .filter((e) => e.startsWith("impl-"))
-          .sort()
-          .reverse();
-        for (const entry of entries) {
-          const candidate = path.join(worktreesDir, entry);
-          if (fs.existsSync(candidate)) {
-            worktreePath = candidate;
-            branchName = entry;
-            break;
-          }
-        }
-      }
+      const found = latestWorktree(worktreesDir);
+      if (found) ({ worktreePath, branchName } = found);
     } catch {}
 
     // No pre-existing worktree — create one now.
@@ -89,7 +101,7 @@ process.stdin.on("end", () => {
       const pad = (n) => String(n).padStart(2, "0");
       const dateStr = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}`;
       const timeStr = `${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
-      const base = `impl-${dateStr}-${timeStr}-${process.pid}`;
+      const base = branchBase(`impl-${dateStr}-${timeStr}-${process.pid}`);
 
       for (let i = 0; i < 5; i++) {
         const suffix = i === 0 ? "" : `-${i + 1}`;
@@ -120,6 +132,8 @@ process.stdin.on("end", () => {
         `Branch: ${branchName}\n\n` +
         `Call EnterWorktree("${worktreePath}") now, then retry your edit. ` +
         `This keeps your changes isolated from other concurrent sessions.\n` +
+        `\nTip: set a human-readable branch name by writing a kebab-case slug to ` +
+        `.claude/branch-slug before your first edit (e.g. "fix-auth-bug").\n` +
         `\nTo edit on main intentionally (docs, CHANGELOG, version bumps), ` +
         `write .claude/skip-worktree first, then retry.\n`,
     );

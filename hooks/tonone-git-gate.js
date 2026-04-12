@@ -57,14 +57,16 @@ process.stdin.on("end", () => {
       if (fs.existsSync(worktreesDir)) {
         const entries = fs
           .readdirSync(worktreesDir)
-          .filter((e) => e.startsWith("impl-"))
-          .sort()
-          .reverse();
-        for (const entry of entries) {
-          const candidate = path.join(worktreesDir, entry);
-          if (fs.existsSync(candidate)) {
-            worktreePath = candidate;
-            branchName = entry;
+          .map((e) => {
+            const p = path.join(worktreesDir, e);
+            try { return { name: e, mtime: fs.statSync(p).mtimeMs, p }; } catch { return null; }
+          })
+          .filter(Boolean)
+          .sort((a, b) => b.mtime - a.mtime);
+        for (const { name, p } of entries) {
+          if (fs.existsSync(p)) {
+            worktreePath = p;
+            branchName = name;
             break;
           }
         }

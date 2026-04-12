@@ -12,7 +12,18 @@
 // tries to make its first file edit.
 
 const { execSync, spawnSync } = require("child_process");
+const fs = require("fs");
 const path = require("path");
+
+/** Read .claude/branch-slug and return sanitized kebab-case name, or fallback. */
+function branchBase(fallback) {
+  try {
+    const raw = fs.readFileSync(".claude/branch-slug", "utf8").trim();
+    const slug = raw.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50);
+    if (slug) return slug;
+  } catch {}
+  return fallback;
+}
 
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 5000);
@@ -41,12 +52,12 @@ process.stdin.on("end", () => {
       process.exit(0); // Already in a worktree — nothing to do
     }
 
-    // Build a race-safe branch name: impl-YYYYMMDD-HHMMSS-PID
+    // Build branch name: from .claude/branch-slug if set, else impl-YYYYMMDD-HHMMSS-PID
     const now = new Date();
     const pad = (n) => String(n).padStart(2, "0");
     const dateStr = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}`;
     const timeStr = `${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
-    const base = `impl-${dateStr}-${timeStr}-${process.pid}`;
+    const base = branchBase(`impl-${dateStr}-${timeStr}-${process.pid}`);
 
     // Try to create the worktree (with collision retry)
     let worktreePath = null;
