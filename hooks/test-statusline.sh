@@ -185,7 +185,23 @@ run_test "Long directory path" '{
   "no subs" \
   "Opus 4.6"
 
-# State 8: No rate limit data
+# State 8: Session goal from branch-slug
+SLUG_PATH="$HOME/repos/tn/tonone/.claude/branch-slug"
+SLUG_EXISTED=false
+[ -f "$SLUG_PATH" ] && SLUG_EXISTED=true
+echo "add-the-session-goal-row" > "$SLUG_PATH"
+
+run_test "Session goal from branch-slug" '{
+  "session_id": "test-goal",
+  "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},
+  "model": {"display_name": "Opus 4.6"},
+  "cost": {}
+}' \
+  "goal: add session goal row"
+
+$SLUG_EXISTED || rm -f "$SLUG_PATH"
+
+# State 9: No rate limit data
 run_test "No rate limits" '{
   "session_id": "test-norate",
   "workspace": {"current_dir": "'"$HOME"'/repos/tn/tonone"},

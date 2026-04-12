@@ -379,6 +379,18 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) to get started — improve skills, propos
 | [Agent Guide](docs/agent-guide.md)   | Creating new agents          |
 | [Naming Guide](docs/naming-guide.md) | Agent naming conventions     |
 
+## Shoutouts
+
+Tonone stands on the shoulders of giants. Big thanks to the plugins that shaped how this team thinks and works:
+
+| Plugin | What it brought |
+| ------ | --------------- |
+| **superpowers** | Structured skill workflows, brainstorming loops, TDD discipline, and the worktree-native development model that Tonone runs on |
+| **impeccable** | Design critique vocabulary and the polish-first mindset baked into Form and Draft |
+| **frontend-design** | Frontend implementation patterns that Prism and Touch draw from |
+| **ui-ux-pro-max** | 161 color palettes, 84 UI styles, 57 font pairings, 99 UX guidelines, and the BM25 design search engine now powering `lib/uiux` |
+| **caveman** | The communication mode that cuts every response to its bones — no fluff, all signal |
+
 ## License
 
 MIT. Fork it. Ship it. Use it anywhere. [LICENSE](LICENSE)
