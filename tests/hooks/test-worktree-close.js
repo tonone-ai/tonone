@@ -50,14 +50,17 @@ test("not in a worktree (main repo) — exits 0, no output", () => {
   }
 });
 
-test("clean worktree (no changes) — removes it and prints confirmation", () => {
+test("clean worktree (no changes) — silent exit, worktree preserved", () => {
+  // Stop fires after every turn, not just at session exit. Auto-deleting a clean
+  // worktree here would kill it mid-session. Pruning happens at SessionStart instead.
   const dir = makeTempRepo();
   try {
     const wtPath = makeWorktree(dir);
     const result = runHook(wtPath);
     assert.strictEqual(result.status, 0, result.stderr);
-    assert.match(result.stdout, /clean|removed/i);
-    assert.ok(!fs.existsSync(wtPath), "worktree directory should be deleted");
+    assert.strictEqual(result.stdout.trim(), "", "no output for clean worktree");
+    assert.ok(fs.existsSync(wtPath), "clean worktree should be preserved");
+    try { execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir }); } catch {}
   } finally {
     cleanup(dir);
   }
