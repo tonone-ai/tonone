@@ -91,3 +91,7 @@ Output a test health report:
 - Coverage without quality is vanity — 90% coverage means nothing if assertions are weak
 - Flaky tests erode trust — fix them before adding new tests
 - Don't just report problems — propose specific, actionable fixes
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

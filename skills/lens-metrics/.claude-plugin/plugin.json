@@ -1,7 +1,7 @@
 {
   "name": "lens-metrics",
-  "version": "0.1.0",
-  "description": "Define and implement a metrics framework \u2014 north star metric, supporting KPIs, operational metrics, with precise definitions and SQL queries. A metric without a definition is a lie. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", or \"north star metric\".",
+  "version": "0.6.6",
+  "description": "Produce a complete metrics definition doc \u2014 metric name, formula, data source, segmentation, SQL or event tracking spec, and what good/bad looks like. Given a product area, outputs the full metrics spec. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", \"north star metric\", or \"instrument this feature\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

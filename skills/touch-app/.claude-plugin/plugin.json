@@ -1,7 +1,7 @@
 {
   "name": "touch-app",
-  "version": "0.1.0",
-  "description": "Build a mobile app from scratch \u2014 scaffold a production-ready project with navigation, API client, auth, and push notifications. Use when asked to \"build a mobile app\", \"new app\", \"create iOS/Android app\", or \"cross-platform app\".",
+  "version": "0.6.6",
+  "description": "Produce a complete mobile app architecture design \u2014 platform choice, navigation structure, state management, data layer, key screens. Use when asked to \"build a mobile app\", \"new app\", \"create iOS/Android app\", \"app architecture\", or \"cross-platform app\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

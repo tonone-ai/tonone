@@ -1,7 +1,7 @@
 {
   "name": "echo-jobs",
-  "version": "0.1.0",
-  "description": "Jobs-to-Be-Done analysis \u2014 take any input (transcripts, tickets, surveys, user descriptions) and produce structured JTBD statements with frequency, intensity, and underserved ratings. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", or \"JTBD framework\".",
+  "version": "0.6.6",
+  "description": "Jobs-to-Be-Done analysis \u2014 given a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces analysis and opportunity ranking. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", \"JTBD framework\", or \"why are users switching\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -234,3 +234,7 @@ This feature is done when:
 - [ ] Deep link opens correct screen from a cold start (if deep-linkable)
 - [ ] ViewModel unit tests pass
 - [ ] No new crashes in the crash reporter after 1 session of dogfooding
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

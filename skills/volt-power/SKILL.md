@@ -106,3 +106,7 @@ Average current: [X] mA | Battery: [X] mAh | Estimated runtime: [X hours/days]
 2. [fix] — [estimated current saving] — [effort: hours/days]
 3. [fix] — [estimated current saving] — [effort: hours/days]
 ```
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

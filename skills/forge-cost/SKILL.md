@@ -136,3 +136,7 @@ Categories to always check:
 ```
 
 If the architecture itself is the problem (e.g., Kubernetes for a 3-service app, multi-region before there are users in multiple regions), say so directly and state the estimated savings from simplifying — not as a future recommendation, but as the highest-priority optimization.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

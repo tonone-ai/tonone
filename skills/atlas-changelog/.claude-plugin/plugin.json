@@ -1,6 +1,6 @@
 {
   "name": "atlas-changelog",
-  "version": "0.1.0",
+  "version": "0.6.6",
   "description": "Maintain per-repo and cross-repo changelogs \u2014 append structured entries after agent work. Use when asked to \"log this change\", \"update changelog\", \"what changed\", \"change history\".",
   "author": {
     "name": "tonone-ai",

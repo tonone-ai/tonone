@@ -1,7 +1,7 @@
 {
   "name": "pave-catalog",
-  "version": "0.1.0",
-  "description": "Build a service catalog \u2014 inventory all services, owners, dependencies, health status, and documentation links. Use when asked to \"service catalog\", \"what services do we have\", \"Backstage setup\", \"service inventory\", or \"developer portal\".",
+  "version": "0.6.6",
+  "description": "Build a service catalog \u2014 schema, starter entries, and governance model. Produces what information to capture per service, how it's maintained, and where it lives. Use when asked to \"service catalog\", \"what services do we have\", \"catalog our services\", \"service inventory\", or \"who owns what\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

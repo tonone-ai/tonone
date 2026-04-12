@@ -102,3 +102,7 @@ Effort: [Low / Medium / High — engineering days estimate]
 Present funnel table, ranked drop-off list, and top 3 fix recommendations. Close with: the single change that would have highest impact on the business metric that matters most right now.
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

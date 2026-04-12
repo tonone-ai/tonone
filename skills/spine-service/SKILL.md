@@ -71,3 +71,7 @@ Show the generated project structure and explain:
 - What to build next (routes, business logic)
 
 Production-ready skeleton — not a todo app.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

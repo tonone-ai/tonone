@@ -1,7 +1,7 @@
 {
   "name": "cortex-integrate",
-  "version": "0.1.0",
-  "description": "Integrate an LLM into a production service \u2014 API client, caching, streaming, fallbacks, cost controls. Use when asked to \"add AI to this\", \"LLM integration\", \"add Claude/GPT\", or \"AI-powered feature\".",
+  "version": "0.6.6",
+  "description": "Design and implement an AI feature integration \u2014 model selection, architecture pattern, system prompt, data flow, error handling, cost estimate. Use when asked to \"add AI to this\", \"LLM integration\", \"add Claude/GPT\", or \"AI-powered feature\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

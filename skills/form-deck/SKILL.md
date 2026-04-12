@@ -257,3 +257,7 @@ Complete before delivering the spec:
 - **Adding slides to be thorough.** Length signals indecision, not rigor. Every extra slide dilutes the core message.
 - **Audience-generic messaging.** A deck for VC partners and a deck for enterprise buyers are different decks — same product, different story angle.
 - **Forgetting the leave-behind constraint.** A live deck relies on the speaker's voice; a leave-behind must work without narration. These require different headline density and visual choices.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

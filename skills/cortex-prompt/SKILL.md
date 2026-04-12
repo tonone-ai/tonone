@@ -238,3 +238,7 @@ evals/[feature]/run_evals.py           — eval runner
 ```
 
 **Done when:** prompt is versioned in code, eval suite exists with a baseline score, cost is known.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

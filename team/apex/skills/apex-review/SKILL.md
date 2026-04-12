@@ -49,3 +49,5 @@ Read the key changed files to understand the shape of the work.
    - Risk level (critical / moderate / minor)
 
 5. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
+
+6. **Delivery:** If findings exceed the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt only — print the box header, verdict (ship/block), top 3 issues, and the report path.

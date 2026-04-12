@@ -282,3 +282,7 @@ Fix: Replace one-off inline card implementation → use `<Card variant="default"
 - **Generic recommendations** — "Improve spacing consistency" is not actionable. "Standardize card gap to 24px across dashboard and profile" is.
 - **Reporting without priority** — If everything is the same severity, nothing gets fixed first. Every finding must have a severity.
 - **Treating Minor issues as Critical** — Reserve Critical for genuine accessibility failures and direct brand contradictions. Severity inflation causes teams to deprioritize audits.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

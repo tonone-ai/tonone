@@ -1,6 +1,6 @@
 {
   "name": "relay-recon",
-  "version": "0.1.0",
+  "version": "0.6.6",
   "description": "Map the full CI/CD pipeline \u2014 triggers, build, test, deploy flow \u2014 with risk assessment. Use when asked \"how does this deploy\", \"map the pipeline\", or \"understand CI/CD\".",
   "author": {
     "name": "tonone-ai",

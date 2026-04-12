@@ -1,7 +1,7 @@
 {
   "name": "form-email",
-  "version": "0.1.0",
-  "description": "Use when asked to design an email template, newsletter, drip campaign email, transactional email, or any HTML email asset. Examples: \"design a welcome email\", \"create a newsletter template\", \"make an onboarding email sequence\", \"design a password reset email\", \"build an email campaign\".",
+  "version": "0.6.6",
+  "description": "|",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

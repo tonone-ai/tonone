@@ -1,7 +1,7 @@
 {
   "name": "lumen-abtest",
-  "version": "0.1.0",
-  "description": "A/B test design \u2014 calculate sample size, minimum detectable effect, define hypothesis, guardrail metrics, and run time before launch. Use when asked to \"design an A/B test\", \"should we test this\", \"experiment design\", \"how do we know if this works\", \"what's the sample size for this test\", or \"set up an experiment\".",
+  "version": "0.6.6",
+  "description": "A/B test design \u2014 produce an experiment spec with hypothesis, primary metric, MDE, sample size, run time, and decision rule. Also determines when NOT to A/B test and what to do instead. Use when asked to \"design an A/B test\", \"should we test this\", \"experiment design\", \"how do we know if this works\", \"what's the sample size\", or \"set up an experiment\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

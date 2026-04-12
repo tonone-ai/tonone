@@ -1,7 +1,7 @@
 {
   "name": "surge-plg",
-  "version": "0.1.0",
-  "description": "PLG strategy \u2014 design product-led growth motion including self-serve onboarding, freemium tier, upgrade triggers, and viral mechanics. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", \"how do we add a free tier\", \"upgrade triggers\", or \"viral loop design\".",
+  "version": "0.6.6",
+  "description": "PLG motion design \u2014 free tier definition, activation sequence, expansion trigger points, viral mechanic assessment. Given a product, output the PLG architecture and make the calls. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", \"how do we add a free tier\", \"upgrade triggers\", or \"viral loop design\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -144,3 +144,7 @@ Be specific. "Add more integration tests" is not a strategy. "Add integration te
 - Match existing stack — don't introduce new tooling unless existing tools are the problem
 - If the current suite is flaky or slow, address that before adding more tests
 - The strategy includes explicit "don't test" decisions — that's the point
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

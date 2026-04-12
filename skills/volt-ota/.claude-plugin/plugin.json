@@ -1,7 +1,7 @@
 {
   "name": "volt-ota",
-  "version": "0.1.0",
-  "description": "Build an OTA update system \u2014 dual partition A/B scheme, firmware signature verification, download with resume, atomic swap with rollback. Use when asked about \"OTA updates\", \"firmware updates\", \"remote update\", or \"device update system\".",
+  "version": "0.6.6",
+  "description": "Produce a complete OTA update system design \u2014 partition layout, update flow, rollback conditions, validation checks, fleet management approach, failure modes and recovery. Use when asked about \"OTA updates\", \"firmware updates over the air\", \"how do I update devices in the field\", \"OTA strategy\", or \"remote firmware update design\".",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

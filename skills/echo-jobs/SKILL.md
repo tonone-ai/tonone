@@ -185,3 +185,7 @@ Next step: [what to validate, build, or change]
 - Map is shallow enough to be useful (3 levels max)
 
 No further analysis needed once the highest-opportunity job is named and the switching threshold is understood. Hand off to Draft (UX flow) or Helm (brief) depending on what happens next.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

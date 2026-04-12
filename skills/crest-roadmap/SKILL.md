@@ -121,3 +121,7 @@ This paragraph is what drives team alignment. Numbers justify the choices; the n
 Present in this order: strategic anchor → Rumelt kernel → roadmap (Now/Next/Later/Not Now) → bet cards → strategic narrative → the single highest-confidence move for this horizon.
 
 Close with: **"The one assumption that could break this roadmap is [X]. We'll know within [timeframe]."**
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

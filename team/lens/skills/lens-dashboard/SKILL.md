@@ -204,3 +204,7 @@ NEXT STEPS
   [ ] Share with [audience] — confirm the "so what?" lands
   [ ] Iterate: kill any chart nobody acts on after 2 weeks
 ```
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

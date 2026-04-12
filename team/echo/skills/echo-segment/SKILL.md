@@ -99,3 +99,7 @@ For each persona, flag how much evidence backs it:
 ### Step 6: Present Personas
 
 Present each persona card, then the counter-persona, then a brief recommendation: "Design primarily for [Persona A]. [Persona B] is valuable but secondary."
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

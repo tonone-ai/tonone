@@ -150,3 +150,7 @@ Translate the analysis into concrete actions:
 Output: competitive set → landscape grid → positioning map → white space statement → positioning call → strategic implications.
 
 One page. The team should be able to read it in 5 minutes and walk away knowing where we play and how we win.
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

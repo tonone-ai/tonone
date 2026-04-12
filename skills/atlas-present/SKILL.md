@@ -206,3 +206,7 @@ Generate a JSON Canvas (`.canvas`) file alongside the HTML.
 - **Canvas nodes must have meaningful descriptions** — not just component names
 - **Omit Before/After if no data** — do not fabricate metrics
 - **Manual trigger only** — presentations are intentional
+
+## Delivery
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

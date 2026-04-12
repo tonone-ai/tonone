@@ -1,7 +1,7 @@
 {
   "name": "helm-plan",
-  "version": "0.1.0",
-  "description": "Use when asked to build a product roadmap, prioritize a backlog, decide what to build next, or sequence a list of feature ideas. Examples: \"what should we build next\", \"prioritize this backlog\", \"make a roadmap\", \"RICE score these features\".",
+  "version": "0.6.6",
+  "description": "|",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
