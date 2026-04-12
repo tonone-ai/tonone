@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.6] — 2026-04-12
+
+### Added
+
+- **Communication Protocol** — rolled out to all 21 agents (apex, atlas, cortex, crest, draft, forge, form, helm, lens, lumen, pave, pitch, prism, proof, relay, spine, surge, touch, vigil, volt, warden) and agent template; upgrades output-kit Language Rules to a full Communication Protocol
+- **Agent template** — new agents now include communication protocol by default
+
+### Fixed
+
+- **plugin.json hooks** — inlined hooks directly in root plugin manifest to fix install validation failure
+
+### Changed
+
+- **Agent docs** — compressed prose across all 21 updated agent definitions
+- **Agent plugin versions** — bumped from 0.1.0 → 0.1.1 for all agents with communication protocol changes
+
 ## [0.6.5] — 2026-04-07
 
 ### Changed
