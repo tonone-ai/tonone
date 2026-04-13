@@ -89,7 +89,7 @@ test("skip-worktree marker stale (>2h) — exits 1 and blocks", () => {
   }
 });
 
-test("writing skip-worktree itself — exits 0, no output", () => {
+test("writing skip-worktree itself (relative path) — exits 0, no output", () => {
   const dir = makeTempRepo();
   try {
     const result = runHook(dir, "Write", { file_path: ".claude/skip-worktree" });
@@ -99,6 +99,7 @@ test("writing skip-worktree itself — exits 0, no output", () => {
     cleanup(dir);
   }
 });
+
 
 test("NotebookEdit with notebook_path skip-worktree — exits 0, no output", () => {
   const dir = makeTempRepo();

@@ -11,6 +11,7 @@
 
 const { execSync } = require("child_process");
 const fs = require("fs");
+const path = require("path");
 
 // Keep GATED in sync with the PreToolUse matcher in .claude-plugin/plugin.json
 const GATED = ["Edit", "Write", "NotebookEdit"];
@@ -33,10 +34,7 @@ process.stdin.on("end", () => {
 
     // Whitelist: always allow creating the opt-out marker itself
     const filePath = toolInput.file_path || toolInput.notebook_path || "";
-    if (
-      filePath === SKIP_MARKER ||
-      filePath.endsWith("/.claude/skip-worktree")
-    ) {
+    if (path.resolve(filePath) === path.resolve(SKIP_MARKER)) {
       process.exit(0);
     }
 
@@ -46,6 +44,8 @@ process.stdin.on("end", () => {
       if (Date.now() - stat.mtimeMs < SKIP_MARKER_TTL_MS) {
         process.exit(0);
       }
+      // Stale marker — remove it so the user isn't confused about why they're blocked
+      try { fs.unlinkSync(SKIP_MARKER); } catch {}
     } catch {
       // Marker absent — continue
     }
@@ -56,6 +56,7 @@ process.stdin.on("end", () => {
       const out = execSync("git rev-parse --git-dir --git-common-dir", {
         encoding: "utf8",
       }).trim().split("\n");
+      if (out.length < 2) process.exit(0); // Unexpected git output — allow
       gitDir = out[0];
       commonDir = out[1];
     } catch {
