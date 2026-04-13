@@ -1,7 +1,7 @@
 {
   "name": "tonone",
   "description": "Engineering + Product team — 23 agents as Claude Code specialists. Infrastructure, DevOps, backend, security, ML/AI, mobile, UX, analytics, growth, strategy, and more.",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
@@ -41,11 +41,6 @@
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-update-check.js\"",
             "timeout": 8
-          },
-          {
-            "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-worktree-session.js\"",
-            "timeout": 10
           },
           {
             "type": "command",
@@ -99,6 +94,16 @@
           {
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-git-gate.js\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-worktree-gate.js\"",
             "timeout": 5
           }
         ]

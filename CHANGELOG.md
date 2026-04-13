@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.1] — 2026-04-13
+
+### Changed
+
+- **Lazy worktree creation** — sessions now start clean on `main` with no upfront worktree. The first `Edit`, `Write`, or `NotebookEdit` on main triggers a `PreToolUse` gate (`tonone-worktree-gate.js`) that blocks and asks Claude to create a properly-named branch. By the time the gate fires, Claude knows the task — so the slug is meaningful and no rename step is ever needed.
+
+### Removed
+
+- **Session-start auto-worktree** — `tonone-worktree-session.js` and its `session-YYYYMMDD-HHMMSS` branch naming removed. No more stale worktree branches accumulating per session.
+
 ## [0.7.1] — 2026-04-12
 
 ### Fixed

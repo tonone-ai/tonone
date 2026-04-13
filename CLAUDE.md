@@ -95,17 +95,17 @@ cd team/forge/scripts && bash setup.sh
 
 ## Worktree sessions
 
-Every session starts in an isolated git worktree branch automatically. The SessionStart hook creates a `session-YYYYMMDD-HHMMSS` branch and prints `WORKTREE_READY`. **Call `EnterWorktree("<path>")` immediately — before any other action.**
-
-### Branch rename
-
-Once you understand what the user wants (after the first substantive exchange), rename the branch to a descriptive kebab-case slug:
+Sessions start clean on main — no worktree is created upfront. When you're about to make your first file change, the gate hook fires and blocks you. **At that point you know what the task is, so create a properly-named worktree:**
 
 ```bash
-git branch -m session-YYYYMMDD-HHMMSS <kebab-slug>
+git worktree add .claude/worktrees/<slug> -b <slug>
 ```
 
+Then call `EnterWorktree(".claude/worktrees/<slug>")` and retry the edit.
+
 Max 50 chars. Lowercase. No slashes. Example: `fix-auth-bug`, `add-stripe-webhooks`.
+
+To edit main intentionally (CHANGELOG, version bumps, docs), create `.claude/skip-worktree` first (valid 2 hours).
 
 ### Topic drift
 
