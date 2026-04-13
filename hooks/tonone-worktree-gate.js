@@ -12,6 +12,11 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
 
+// Keep GATED in sync with the PreToolUse matcher in .claude-plugin/plugin.json
+const GATED = ["Edit", "Write", "NotebookEdit"];
+const SKIP_MARKER = ".claude/skip-worktree";
+const SKIP_MARKER_TTL_MS = 2 * 60 * 60 * 1000; // 2 hours
+
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 3000);
 process.stdin.setEncoding("utf8");
@@ -24,34 +29,35 @@ process.stdin.on("end", () => {
     const toolInput = data.tool_input || {};
 
     // Only gate file-modifying tools
-    const GATED = ["Edit", "Write", "NotebookEdit"];
     if (!GATED.includes(toolName)) process.exit(0);
 
     // Whitelist: always allow creating the opt-out marker itself
     const filePath = toolInput.file_path || toolInput.notebook_path || "";
     if (
-      filePath === ".claude/skip-worktree" ||
+      filePath === SKIP_MARKER ||
       filePath.endsWith("/.claude/skip-worktree")
     ) {
       process.exit(0);
     }
 
-    // Check for opt-out marker (valid for 2 hours)
-    const skipMarker = ".claude/skip-worktree";
-    if (fs.existsSync(skipMarker)) {
-      const stat = fs.statSync(skipMarker);
-      if (Date.now() - stat.mtimeMs < 2 * 60 * 60 * 1000) {
+    // Check for opt-out marker (valid for SKIP_MARKER_TTL_MS)
+    try {
+      const stat = fs.statSync(SKIP_MARKER);
+      if (Date.now() - stat.mtimeMs < SKIP_MARKER_TTL_MS) {
         process.exit(0);
       }
+    } catch {
+      // Marker absent — continue
     }
 
-    // Check if already in a worktree
+    // Check if already in a worktree (single subprocess call)
     let gitDir, commonDir;
     try {
-      gitDir = execSync("git rev-parse --git-dir", { encoding: "utf8" }).trim();
-      commonDir = execSync("git rev-parse --git-common-dir", {
+      const out = execSync("git rev-parse --git-dir --git-common-dir", {
         encoding: "utf8",
-      }).trim();
+      }).trim().split("\n");
+      gitDir = out[0];
+      commonDir = out[1];
     } catch {
       process.exit(0); // Not a git repo — allow
     }

@@ -59,7 +59,7 @@ test("already in a worktree — exits 0, no output", () => {
   }
 });
 
-test("skip-worktree marker present and fresh — exits 0", () => {
+test("skip-worktree marker present and fresh — exits 0, no output", () => {
   const dir = makeTempRepo();
   try {
     fs.mkdirSync(path.join(dir, ".claude"), { recursive: true });
@@ -72,11 +72,60 @@ test("skip-worktree marker present and fresh — exits 0", () => {
   }
 });
 
-test("writing skip-worktree itself — exits 0 regardless", () => {
+test("skip-worktree marker stale (>2h) — exits 1 and blocks", () => {
+  const dir = makeTempRepo();
+  try {
+    fs.mkdirSync(path.join(dir, ".claude"), { recursive: true });
+    const markerPath = path.join(dir, ".claude", "skip-worktree");
+    fs.writeFileSync(markerPath, "");
+    // Backdate mtime to 3 hours ago
+    const threeHoursAgo = (Date.now() - 3 * 60 * 60 * 1000) / 1000;
+    fs.utimesSync(markerPath, threeHoursAgo, threeHoursAgo);
+    const result = runHook(dir, "Edit");
+    assert.strictEqual(result.status, 1, "stale marker should not bypass gate");
+    assert.match(result.stdout, /WORKTREE_REQUIRED/);
+  } finally {
+    cleanup(dir);
+  }
+});
+
+test("writing skip-worktree itself — exits 0, no output", () => {
   const dir = makeTempRepo();
   try {
     const result = runHook(dir, "Write", { file_path: ".claude/skip-worktree" });
     assert.strictEqual(result.status, 0, result.stderr);
+    assert.strictEqual(result.stdout.trim(), "");
+  } finally {
+    cleanup(dir);
+  }
+});
+
+test("NotebookEdit with notebook_path skip-worktree — exits 0, no output", () => {
+  const dir = makeTempRepo();
+  try {
+    const input = JSON.stringify({
+      tool_name: "NotebookEdit",
+      tool_input: { notebook_path: ".claude/skip-worktree" },
+    });
+    const result = spawnSync("node", [HOOK], { input, encoding: "utf8", cwd: dir, timeout: 10000 });
+    assert.strictEqual(result.status, 0, result.stderr);
+    assert.strictEqual(result.stdout.trim(), "");
+  } finally {
+    cleanup(dir);
+  }
+});
+
+test("malformed JSON input — exits 0 (fail-open contract)", () => {
+  const dir = makeTempRepo();
+  try {
+    const result = spawnSync("node", [HOOK], {
+      input: "not valid json {{",
+      encoding: "utf8",
+      cwd: dir,
+      timeout: 10000,
+    });
+    assert.strictEqual(result.status, 0, "malformed input must never block");
+    assert.strictEqual(result.stdout.trim(), "");
   } finally {
     cleanup(dir);
   }
