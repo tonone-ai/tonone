@@ -2163,7 +2163,7 @@
     },
     {
       "name": "tonone-onboard",
-      "description": "First-run onboarding tour — guided walkthrough of tonone's 23 agents, key skills, elephant memory, and worktree sessions. Two paths: expert (~90 sec) and newcomer (~8 min). Use when asked \"how do I use tonone\", \"what can tonone do\", \"show me around\", or \"first steps\".",
+      "description": "First-run onboarding tour — guided walkthrough of tonone's 23 agents, key skills, and worktree sessions. Two paths: expert (~90 sec) and newcomer (~8 min). Use when asked \"how do I use tonone\", \"what can tonone do\", \"show me around\", or \"first steps\".",
       "version": "0.8.0",
       "source": "./skills/tonone-onboard",
       "author": {
