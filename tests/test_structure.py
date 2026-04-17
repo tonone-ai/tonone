@@ -217,35 +217,33 @@ def test_plugin_json_name_matches_agent_directory():
 
 
 def test_worktree_hooks_exist():
-    """Both worktree session hooks must exist — session (SessionStart) and close (Stop)."""
-    for hook in ["tonone-worktree-session.js", "tonone-worktree-close.js"]:
+    """Worktree hooks must exist — gate (PreToolUse, lazy create on first edit) and close (Stop)."""
+    for hook in ["tonone-worktree-gate.js", "tonone-worktree-close.js"]:
         p = REPO / "hooks" / hook
         assert p.exists(), f"Missing worktree hook: hooks/{hook}"
 
 
 def test_worktree_hooks_registered_in_plugin_json():
-    """Root plugin.json must register both worktree hooks in SessionStart and Stop."""
+    """Root plugin.json must register both worktree hooks — gate on PreToolUse, close on Stop."""
     plugin = json.loads((REPO / ".claude-plugin" / "plugin.json").read_text())
     hooks = plugin.get("hooks", {})
 
-    # Check SessionStart has worktree-session hook
-    session_commands = [
+    pretool_commands = [
         cmd
-        for group in hooks.get("SessionStart", [])
+        for group in hooks.get("PreToolUse", [])
         for h in group.get("hooks", [])
         for cmd in [h.get("command", "")]
     ]
-    assert any("tonone-worktree-session" in c for c in session_commands), (
-        "plugin.json SessionStart missing tonone-worktree-session.js hook"
-    )
+    assert any(
+        "tonone-worktree-gate" in c for c in pretool_commands
+    ), "plugin.json PreToolUse missing tonone-worktree-gate.js hook"
 
-    # Check Stop has worktree-close hook
     stop_commands = [
         cmd
         for group in hooks.get("Stop", [])
         for h in group.get("hooks", [])
         for cmd in [h.get("command", "")]
     ]
-    assert any("tonone-worktree-close" in c for c in stop_commands), (
-        "plugin.json Stop missing tonone-worktree-close.js hook"
-    )
+    assert any(
+        "tonone-worktree-close" in c for c in stop_commands
+    ), "plugin.json Stop missing tonone-worktree-close.js hook"
