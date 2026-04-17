@@ -1,13 +1,15 @@
 ---
 name: tonone-onboard
-description: First-run onboarding tour — guided walkthrough of tonone's 23 agents, key skills, and worktree sessions. Two paths: expert (~90 sec) and newcomer (~8 min). Use when asked "how do I use tonone", "what can tonone do", "show me around", or "first steps".
+description: 'First-run onboarding tour — guided walkthrough of tonone''s 23 agents, key skills, and worktree sessions. Two paths — expert (~90 sec) and newcomer (~8 min). Use when asked "how do I use tonone", "what can tonone do", "show me around", or "first steps".'
 allowed-tools: AskUserQuestion
 version: 0.8.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 ---
 
-# tonone Onboarding Tour
+# tonone-onboard
+
+Cross-agent onboarding tour. Not tied to a single agent.
 
 Always runs. Never checks the marker file — the skill replays the tour regardless
 of prior runs. To re-show the SessionStart welcome banner, delete
@@ -26,7 +28,7 @@ Options:
 
 ---
 
-## Expert Path (A)
+## Step 2: Expert Path (A)
 
 ### What tonone is
 
@@ -59,7 +61,7 @@ Parallel sessions never conflict. Clean sessions auto-remove their branch on clo
 
 ---
 
-## Newcomer Path (B)
+## Step 3: Newcomer Path (B)
 
 ### What Claude Code agents are
 
