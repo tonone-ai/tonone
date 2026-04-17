@@ -58,3 +58,5 @@
 2026-04-12 23:41 : fix(worktree): stop hook no longer deletes clean worktrees mid-session + onboard skill (v0.8.0) (#56) — @thisisfatih
 2026-04-13 12:34 : feat(worktree): lazy creation on first edit — proper naming, no rename dance (v0.8.1) (#57) — @thisisfatih
 2026-04-17 13:00 : chore: remove bundled elephant — now standalone plugin (v0.9.0) — @fatih
+2026-04-17 13:24 : fix(compliance): tonone-onboard skill passes suite — @fatih
+2026-04-17 13:27 : chore(elephant): log compliance fix entry — @fatih

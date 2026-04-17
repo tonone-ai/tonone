@@ -32,6 +32,11 @@ ATLAS_REPORT_REFERENCE = "atlas-report"
 # can never exceed the CLI budget.
 SHORT_FORM_SKILLS = {"apex-status"}
 
+# Root-level cross-agent skills — not tied to any single agent in team/.
+# Exempt from the agent-prefix rule and from output-kit/atlas-report refs
+# because they do not produce structured CLI output.
+SPECIAL_SKILLS = {"tonone-onboard"}
+
 # Known severity indicator violations — real drift, tracked for cleanup.
 # Remove entries as they get fixed in the skill definitions.
 KNOWN_SEVERITY_DRIFT = {
@@ -127,6 +132,8 @@ def test_skill_prefix_is_valid_agent():
     A skill named 'foo-audit' without a 'foo' agent = orphaned skill.
     """
     for name, _ in _skill_files():
+        if name in SPECIAL_SKILLS:
+            continue
         prefix = name.split("-")[0]
         assert (
             prefix in VALID_AGENTS
@@ -172,6 +179,8 @@ def test_skills_reference_output_kit():
     not guaranteed.
     """
     for name, path in _skill_files():
+        if name in SPECIAL_SKILLS:
+            continue
         text = path.read_text()
         assert OUTPUT_KIT_REFERENCE in text, (
             f"skills/{name}: does not reference 'output-kit' — "
@@ -186,7 +195,7 @@ def test_skills_reference_atlas_report():
     instead of dumped to the terminal. Short-form skills are exempt.
     """
     for name, path in _skill_files():
-        if name in SHORT_FORM_SKILLS:
+        if name in SHORT_FORM_SKILLS or name in SPECIAL_SKILLS:
             continue
         text = path.read_text()
         assert ATLAS_REPORT_REFERENCE in text, (
