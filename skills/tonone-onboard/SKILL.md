@@ -1,6 +1,6 @@
 ---
 name: tonone-onboard
-description: First-run onboarding tour — guided walkthrough of tonone's 23 agents, key skills, elephant memory, and worktree sessions. Two paths: expert (~90 sec) and newcomer (~8 min). Use when asked "how do I use tonone", "what can tonone do", "show me around", or "first steps".
+description: First-run onboarding tour — guided walkthrough of tonone's 23 agents, key skills, and worktree sessions. Two paths: expert (~90 sec) and newcomer (~8 min). Use when asked "how do I use tonone", "what can tonone do", "show me around", or "first steps".
 allowed-tools: AskUserQuestion
 version: 0.8.0
 author: tonone-ai <hello@tonone.ai>
@@ -20,6 +20,7 @@ Ask via AskUserQuestion:
 > Are you familiar with Claude Code agents?
 
 Options:
+
 - A) Yes — I know CC agents, just show me tonone's capabilities (~90 sec)
 - B) No — walk me through the whole thing (~8 min)
 
@@ -39,17 +40,13 @@ Output this block verbatim:
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  /apex-takeover     hand any task to the full team          │
-│  /elephant          review your session memory log          │
 │  /atlas-onboard     generate project docs for day-1 devs   │
 │  /forge-audit       infra cost check                        │
 │  /relay-ship        deploy your stack                       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Two mental models (memorize these)
-
-**Elephant memory:** Every session is logged automatically. Say "recall what we
-worked on last week" and any agent will surface relevant context. No manual notes.
+### Mental model
 
 **Worktree sessions:** Every session gets its own git branch automatically.
 Parallel sessions never conflict. Clean sessions auto-remove their branch on close.
@@ -116,20 +113,6 @@ Run `/apex-takeover` and describe your task. Example:
 
 The right agent always gets the job. You don't need to know who to call.
 
-### Elephant memory
-
-Every session is logged automatically by the elephant-recall and elephant-writer
-hooks. The log lives at `.elephant/memory.md` (project) and
-`~/.claude/elephant/memory.md` (global across all projects).
-
-At the start of each session, recent entries are surfaced in your context. Ask any
-agent: "recall what we built last Tuesday" and it will look back.
-
-Commands:
-- `/elephant show` — print current memory
-- `/elephant save <note>` — add an entry manually
-- `/elephant takeover` — seed memory from git history (great for new installs)
-
 ### Worktree sessions
 
 Every session gets an isolated git branch at `.claude/worktrees/`. Sessions editing
@@ -146,6 +129,7 @@ directly when the request matches a known pattern. This is already configured in
 this project's `CLAUDE.md` — see the `## Skill routing` section.
 
 Examples already wired:
+
 - "there's a bug" → `/investigate`
 - "ship this" → `/ship`
 - "review my diff" → `/review`
@@ -159,13 +143,12 @@ Output this block verbatim:
 
 ```
 1. /apex-takeover     describe any task, Apex routes it
-2. /elephant show     see your current memory (probably empty — that's fine)
-3. /atlas-onboard     generate onboarding docs for this project
+2. /atlas-onboard     generate onboarding docs for this project
 ```
 
 ### Done
 
-> You're set. 23 agents, 100+ skills, automatic memory, isolated sessions.
+> You're set. 23 agents, 100+ skills, isolated sessions.
 >
 > Replay this tour any time: `/tonone-onboard`
 > Re-show the install banner: delete `~/.config/tonone/onboarded`

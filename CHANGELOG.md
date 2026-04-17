@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.0] — 2026-04-17
+
+### Removed
+
+- **Elephant memory bundled in tonone** — `hooks/elephant-recall.js`, `hooks/elephant-writer.js`, and the `skills/atlas-elephant/` skill are gone. Elephant is now a standalone plugin at [tonone-ai/elephant](https://github.com/tonone-ai/elephant); install it separately if you want persistent memory. This drops 4 hook entries from `.claude-plugin/plugin.json` (1× `SessionStart`, 3× `PostToolUse` on `Agent`/`Bash`/`Skill`).
+
+### Changed
+
+- **Onboarding tour** — `skills/tonone-onboard/` no longer advertises bundled elephant memory. Description, expert-path command list, mental-model section, and newcomer-path next-steps updated to reflect tonone's current scope (agents + skills + worktree sessions).
+
 ## [0.8.1] — 2026-04-13
 
 ### Changed
