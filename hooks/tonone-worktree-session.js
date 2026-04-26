@@ -35,6 +35,7 @@ process.stdin.on("end", () => {
       })
         .trim()
         .split("\n");
+      if (parts.length < 2) process.exit(0); // Unexpected output — allow
       gitDir = parts[0];
       commonDir = parts[1];
     } catch {

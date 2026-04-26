@@ -39,6 +39,7 @@ process.stdin.on("end", () => {
     let gitDir, commonDir;
     try {
       const parts = execSync("git rev-parse --git-dir --git-common-dir", { encoding: "utf8" }).trim().split("\n");
+      if (parts.length < 2) process.exit(0); // Unexpected output — allow
       gitDir = parts[0];
       commonDir = parts[1];
     } catch {
