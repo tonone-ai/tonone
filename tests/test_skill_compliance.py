@@ -37,6 +37,13 @@ SHORT_FORM_SKILLS = {"apex-status"}
 # because they do not produce structured CLI output.
 SPECIAL_SKILLS = {"tonone-onboard"}
 
+# Agent entry-point skills — single-word names (/apex, /helm, /forge, etc.).
+# These are intake routers: the user hands the agent a task and the skill
+# routes internally to the right sub-skill. They follow different naming
+# rules (no agent-action hyphen required) and different output rules
+# (they delegate output to the sub-skill, never produce CLI output directly).
+AGENT_ENTRY_SKILLS = {d.name for d in (REPO / "team").iterdir() if d.is_dir()}
+
 # Known severity indicator violations — real drift, tracked for cleanup.
 # Remove entries as they get fixed in the skill definitions.
 KNOWN_SEVERITY_DRIFT = {
@@ -119,8 +126,12 @@ def test_frontmatter_name_matches_directory():
 
 
 def test_skill_name_is_kebab_case():
-    """Skill names must be kebab-case (lowercase with hyphens, alphanumeric segments)."""
+    """Skill names must be kebab-case (lowercase with hyphens, alphanumeric segments).
+    Agent entry-point skills (single-word: /apex, /helm, etc.) are exempt —
+    they are the agent itself, not an agent-action pair."""
     for name, _ in _skill_files():
+        if name in AGENT_ENTRY_SKILLS:
+            continue
         assert re.match(
             r"^[a-z][a-z0-9]*(-[a-z][a-z0-9]*)+$", name
         ), f"skills/{name}: name must be kebab-case (agent-action)"
@@ -150,10 +161,13 @@ def test_description_has_trigger_phrases():
     Skill description must include quoted trigger phrases that users would say.
     These help Claude Code's skill suggestion system route correctly.
     Pattern: 'Use when asked to "X"' or 'Use when asked about "X"'.
+    Agent entry-point skills are exempt — their trigger IS the agent name itself.
     """
     # Match quoted strings in the description
     quote_pattern = re.compile(r'"[^"]{3,}"')
     for name, path in _skill_files():
+        if name in AGENT_ENTRY_SKILLS:
+            continue
         fm, _ = _parse_frontmatter(path)
         desc = fm.get("description", "")
         if isinstance(desc, str):
@@ -177,9 +191,10 @@ def test_skills_reference_output_kit():
     Every skill must reference output-kit.md — the 40-line rule, severity
     indicators, and communication protocol. Without this, output format is
     not guaranteed.
+    Agent entry-point skills are exempt — they delegate output to sub-skills.
     """
     for name, path in _skill_files():
-        if name in SPECIAL_SKILLS:
+        if name in SPECIAL_SKILLS or name in AGENT_ENTRY_SKILLS:
             continue
         text = path.read_text()
         assert OUTPUT_KIT_REFERENCE in text, (
@@ -192,10 +207,11 @@ def test_skills_reference_atlas_report():
     """
     Every skill must include the atlas-report overflow clause. This ensures
     findings exceeding the 40-line CLI budget are routed to an HTML report
-    instead of dumped to the terminal. Short-form skills are exempt.
+    instead of dumped to the terminal. Short-form skills and agent entry-point
+    skills are exempt (entry skills delegate output to the sub-skill they invoke).
     """
     for name, path in _skill_files():
-        if name in SHORT_FORM_SKILLS or name in SPECIAL_SKILLS:
+        if name in SHORT_FORM_SKILLS or name in SPECIAL_SKILLS or name in AGENT_ENTRY_SKILLS:
             continue
         text = path.read_text()
         assert ATLAS_REPORT_REFERENCE in text, (
@@ -236,6 +252,8 @@ def test_skills_have_structured_workflow():
     - N. **bold text** (numbered list skills)
     - ## Phase N: ... (multi-phase skills)
     - ## Workflow with numbered items (reference skills)
+    Agent entry-point skills are exempt — their workflow is a single routing
+    decision expressed as a lookup table, not a multi-step process.
     """
     # Patterns that indicate structured workflow steps
     step_patterns = [
@@ -244,6 +262,8 @@ def test_skills_have_structured_workflow():
         re.compile(r"^#{2,3}\s+Phase\s+\d+", re.MULTILINE),  # ## Phase 1: ...
     ]
     for name, path in _skill_files():
+        if name in AGENT_ENTRY_SKILLS:
+            continue
         _, body = _parse_frontmatter(path)
         total_steps = 0
         for pattern in step_patterns:
