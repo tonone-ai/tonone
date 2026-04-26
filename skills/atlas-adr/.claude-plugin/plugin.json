@@ -1,6 +1,6 @@
 {
   "name": "atlas-adr",
-  "version": "0.6.6",
+  "version": "0.9.4",
   "description": "Write an Architecture Decision Record \u2014 document what was decided, why, what alternatives were considered, and what trade-offs were accepted. Use when asked to \"write an ADR\", \"document this decision\", or \"why did we choose X\".",
   "author": {
     "name": "tonone-ai",
@@ -9,5 +9,8 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": ["atlas", "skill"]
+  "keywords": [
+    "atlas",
+    "skill"
+  ]
 }

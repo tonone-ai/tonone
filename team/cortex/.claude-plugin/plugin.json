@@ -1,6 +1,6 @@
 {
   "name": "cortex",
-  "version": "0.1.1",
+  "version": "0.9.4",
   "description": "ML/AI engineer \u2014 model training, MLOps, feature engineering, LLM integration",
   "author": {
     "name": "tonone-ai",
@@ -8,5 +8,12 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": ["ml", "ai", "mlops", "models", "llm", "feature-engineering"]
+  "keywords": [
+    "ml",
+    "ai",
+    "mlops",
+    "models",
+    "llm",
+    "feature-engineering"
+  ]
 }

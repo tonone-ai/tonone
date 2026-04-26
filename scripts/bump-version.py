@@ -79,12 +79,19 @@ def find_files():
     plugin_files = sorted(REPO_ROOT.glob("**/.claude-plugin/plugin.json"))
     pyproject_files = sorted(REPO_ROOT.glob("**/pyproject.toml"))
 
-    # Exclude templates and venvs
-    plugin_files = [p for p in plugin_files if not str(p).startswith(TEMPLATE_DIR)]
+    WORKTREES_DIR = str(REPO_ROOT / ".claude" / "worktrees")
+
+    # Exclude templates, venvs, and git worktrees
+    plugin_files = [
+        p for p in plugin_files
+        if not str(p).startswith(TEMPLATE_DIR) and not str(p).startswith(WORKTREES_DIR)
+    ]
     pyproject_files = [
         p
         for p in pyproject_files
-        if not str(p).startswith(TEMPLATE_DIR) and ".venv" not in str(p)
+        if not str(p).startswith(TEMPLATE_DIR)
+        and ".venv" not in str(p)
+        and not str(p).startswith(WORKTREES_DIR)
     ]
 
     return plugin_files, pyproject_files

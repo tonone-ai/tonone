@@ -38,10 +38,10 @@ process.stdin.on("end", () => {
     // Check if already in a worktree
     let gitDir, commonDir;
     try {
-      gitDir = execSync("git rev-parse --git-dir", { encoding: "utf8" }).trim();
-      commonDir = execSync("git rev-parse --git-common-dir", {
-        encoding: "utf8",
-      }).trim();
+      const parts = execSync("git rev-parse --git-dir --git-common-dir", { encoding: "utf8" }).trim().split("\n");
+      if (parts.length < 2) process.exit(0); // Unexpected output — allow
+      gitDir = parts[0];
+      commonDir = parts[1];
     } catch {
       process.exit(0); // Not a git repo — allow
     }
@@ -74,7 +74,7 @@ process.stdin.on("end", () => {
     } catch {}
 
     const redirect = worktreePath
-      ? `Call EnterWorktree("${branchName}") first, then retry your command.\nBranch: ${branchName}`
+      ? `Call EnterWorktree("${worktreePath}") first, then retry your command.\nBranch: ${branchName}`
       : `No worktree found. Edit a file first to auto-create one, then retry.`;
 
     process.stdout.write(
