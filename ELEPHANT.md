@@ -64,3 +64,4 @@
 2026-04-26 14:31 : docs(launch): add HN post and X thread drafts — @fatih
 2026-04-26 14:33 : docs(launch): move launch/ to repo root — @fatih
 2026-04-26 14:46 : chore: sync CLAUDE.md gstack section + resolve ELEPHANT.md conflict — @fatih
+2026-04-26 18:16 : chore: gitignore .claude/ fully + add personal/ and .gstack/ — @fatih

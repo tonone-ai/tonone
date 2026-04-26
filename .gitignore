@@ -56,20 +56,15 @@ pip-wheel-metadata/
 .classpath
 .settings/
 
-# Claude Code personal config (project .claude/ dirs are committed)
-.claude/settings.json
-.claude/settings.local.json
-.claude/agents/code-reviewer.md
-.claude/agents/frontend-developer.md
-.claude/commands/
-.claude/skills/
-.claude/worktrees/
-.claude/skip-worktree
-.claude/branch-slug
+# Claude Code local config (not committed — hooks/agents live in team/ and .claude-plugin/)
+.claude/
 
 # External tools
 .superpowers/
 .planning/
+
+# Personal / local workflows (not for public repo)
+personal/
 
 # Misc
 .trunk/
@@ -79,3 +74,4 @@ pip-wheel-metadata/
 node_modules/
 .npm/
 .yarn/
+.gstack/
