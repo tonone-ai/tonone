@@ -83,3 +83,8 @@
 2026-04-26 21:52 : chore: remove accidentally committed tests/ELEPHANT.md (elephant hook artifact) — @fatih
 2026-04-26 22:05 : fix(atlas-report): redesign UI tokens + gitignore .reports/ — @fatih
 2026-04-26 22:07 : chore: resolve ELEPHANT.md merge conflict — @fatih
+[!!] 2026-04-26 22:26 : apex-takeover rerun — 6 parallel agents, deeper recon — report at .reports/apex-takeover-2026-04-26-2223.html — @fatih
+[!!] 2026-04-26 22:26 : confirmed: pr-attribution.js + session-tracker.js not in plugin.json — dead since merge, never fired for any user — @fatih
+[!!] 2026-04-26 22:26 : confirmed: bump-version.py globs worktrees — corrupts all active worktrees on every version bump, one-line fix — @fatih
+[!!] 2026-04-26 22:26 : confirmed: tonone-git-gate.js:77 EnterWorktree arg wrong (slug not path) — core recovery broken — @fatih
+2026-04-26 22:26 : confirmed: second.tonone.ai not an outbound POST — just URL string in PR body copy, no HTTP call — false alarm — @fatih
