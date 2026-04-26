@@ -65,3 +65,6 @@
 2026-04-26 14:33 : docs(launch): move launch/ to repo root — @fatih
 2026-04-26 14:46 : chore: sync CLAUDE.md gstack section + resolve ELEPHANT.md conflict — @fatih
 2026-04-26 18:16 : chore: gitignore .claude/ fully + add personal/ and .gstack/ — @fatih
+2026-04-17 13:06 : test(worktree): align hooks test with lazy-gate pattern (#60) — @thisisfatih
+2026-04-26 14:20 : docs: reframe around founder vision, add roadmap, fix test docs (#62) — @fatih
+2026-04-26 14:40 : docs(launch): add launch/ folder with HN and X thread drafts (#63) — @fatih
