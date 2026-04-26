@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.3] — 2026-04-26
+
+### Added
+
+- **`/draft-proto`** — hi-fi interactive HTML prototype skill for Draft. Takes wireframes to the next level: single-file React+Babel HTML, device-framed (iOS), real images from Wikimedia/Unsplash, state-driven navigation, Playwright-verified before delivery. Fills the gap between `/draft-wireframe` (lo-fi) and `/prism-ui` (production code).
+- **`/form-direction`** — design direction advisor for Form. Generates 3 differentiated visual directions from 5 design schools (Information Architecture, Motion Poetry, Minimalism, Experimental Avant-garde, Eastern Philosophy), each with a parallel HTML demo. Richer than `/form-style`: produces actual visual demos for selection, not just text recommendations.
+- **`/form-animate`** — motion design skill for Form. HTML animation to Playwright render to MP4/GIF export with BGM. Includes brand asset protocol, anti-AI-slop guardrails (no CSS silhouettes, no blue-purple gradient defaults), and narrative structure (hook, build, resolve, hold).
+- **`/form-critique`** — 5-dimension expert design critique for Form. Scores coherence, visual hierarchy, execution craft, functionality, and innovation 0-10 with ASCII radar chart and Keep/Fix/Quick Wins punch list. Distinct from `/form-audit` (technical QA): evaluates design as a craft object.
+- **`form-palette` and `form-style`** registered in Form plugin.json (previously existed but untracked).
+
+### Changed
+
+- Draft agent definition updated with `## Draft Skills` routing table referencing `/draft-wireframe` vs `/draft-proto` decision logic.
+- Form agent definition updated with `## Form Skills` routing table for all 6 specialized workflows.
+
 ## [0.9.2] — 2026-04-26
 
 ### Added
