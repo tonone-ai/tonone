@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.2] — 2026-04-26
+
+### Added
+
+- **23 agent entry-point skills** — each agent now has a root `/apex`, `/helm`, `/forge`, etc. skill that accepts any task description and routes internally to the right sub-skill. Users no longer need to know which sub-skill to call; they hand the task to the agent and the agent decides. Brings total skill count to 161.
+
 ## [0.9.1] — 2026-04-26
 
 ### Fixed
