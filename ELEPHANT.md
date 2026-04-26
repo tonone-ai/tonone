@@ -76,5 +76,6 @@
 2026-04-26 21:34 : lib/uiux install story broken for 7 agents — no declared dep, manual setup required — @fatih
 2026-04-26 21:34 : outbound POST to second.tonone.ai on every PR — verify domain ownership — @fatih
 2026-04-26 21:43 : fix(atlas-report): copy buttons pre-only hover-reveal, no inline code buttons, no Tonone branding in report output — @fatih
+2026-04-26 21:48 : chore: add .reports/ to .gitignore — generated agent output, not for public repo — @fatih
 2026-04-26 21:43 : fix(atlas-report): redesigned CSS tokens — darker bg, OKLCH severity badges, whitespace-forward finding cards — @fatih
 2026-04-26 20:41 : feat: add agent entry-point skills — /apex, /helm, /forge, etc. for all 23 agents — @fatih
