@@ -73,7 +73,7 @@ process.stdin.on("end", () => {
     } catch {}
 
     const redirect = worktreePath
-      ? `Call EnterWorktree("${branchName}") first, then retry your command.\nBranch: ${branchName}`
+      ? `Call EnterWorktree("${worktreePath}") first, then retry your command.\nBranch: ${branchName}`
       : `No worktree found. Edit a file first to auto-create one, then retry.`;
 
     process.stdout.write(
