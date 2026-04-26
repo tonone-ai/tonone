@@ -1,5 +1,7 @@
 # Tonone
 
+<img src="https://img.shields.io/badge/version-0.9.1-green"> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue">
+
 **Founder + Tonone = whole company.**
 
 23 specialists. Engineering executes. Product decides. One session, two commands, zero meetings. 138 skills across every discipline. MIT licensed.
@@ -14,44 +16,7 @@ The engineering team (15 agents) builds and ships. The product team (8 agents) d
 
 This is v1 — engineering + product. The roadmap adds sales, customer success, finance, and ops. The goal: a complete AI company in a single plugin.
 
-## The Team
-
-### Engineering — 15 agents
-
-| Agent      | Hat                         | What They Do                                                  |
-| ---------- | --------------------------- | ------------------------------------------------------------- |
-| **Apex**   | Engineering Lead            | Orchestrates the team, scopes work, controls depth and budget |
-| **Forge**  | Infrastructure              | Cloud services, networking, IaC, cost optimization            |
-| **Relay**  | DevOps                      | CI/CD, deployments, GitOps, developer experience              |
-| **Spine**  | Backend                     | APIs, system design, performance, distributed systems         |
-| **Flux**   | Data                        | Databases, migrations, pipelines, data modeling               |
-| **Warden** | Security                    | IAM, secrets, compliance, threat modeling                     |
-| **Vigil**  | Observability + Reliability | Monitoring, alerting, SRE, incident response, SLOs            |
-| **Prism**  | Frontend/DX                 | UI, internal tools, developer portals                         |
-| **Cortex** | ML/AI                       | Model training, MLOps, feature engineering, LLM integration   |
-| **Touch**  | Mobile                      | Native iOS/Android, cross-platform, app stores                |
-| **Volt**   | Embedded/IoT                | Firmware, microcontrollers, edge computing, protocols         |
-| **Atlas**  | Knowledge Engineering       | Architecture docs, ADRs, API specs, system diagrams           |
-| **Lens**   | Data Analytics & BI         | Dashboards, metrics design, reporting, data storytelling      |
-| **Proof**  | QA & Testing                | Test strategy, E2E suites, integration testing, flaky triage  |
-| **Pave**   | Platform Engineering        | Developer experience, golden paths, service catalogs          |
-
-### Product — 8 agents
-
-| Agent     | Hat               | What They Do                                                    |
-| --------- | ----------------- | --------------------------------------------------------------- |
-| **Helm**  | Head of Product   | Orchestrates the product team, writes briefs, hands off to Apex |
-| **Echo**  | User Research     | User interviews, personas, Jobs-to-Be-Done, feedback synthesis  |
-| **Lumen** | Product Analytics | Metrics frameworks, funnel analysis, OKRs, A/B test design      |
-| **Draft** | UX Design         | User flows, information architecture, wireframes                |
-| **Form**  | Visual Design     | Brand identity, color systems, typography, design system        |
-| **Crest** | Product Strategy  | Roadmap planning, prioritization, competitive analysis          |
-| **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy            |
-| **Surge** | Growth            | Acquisition channels, activation funnels, retention playbooks   |
-
-## Quick Start
-
-### Claude Code (primary)
+## Install
 
 **Prerequisites:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) v1.0+
 
@@ -67,18 +32,6 @@ Or inside an active Claude Code session:
 ```text
 /plugin marketplace add tonone-ai/tonone
 /plugin install tonone@tonone-ai
-```
-
-Your team is ready:
-
-```text
-> /apex-plan Build a real-time analytics platform for our IoT fleet
-> /helm-brief Define the next product sprint
-> /forge-infra Set up cloud infrastructure for a new SaaS product
-> /spine-api Design a REST API for user management
-> /warden-audit Run a full security audit on this codebase
-> /echo-interview Run a user research session
-> /crest-roadmap Build a product roadmap
 ```
 
 ### Codex CLI
@@ -101,7 +54,17 @@ Codex reads `AGENTS.md` automatically. Invoke agents and skills by describing wh
 
 Skills are markdown workflow documents in `skills/<name>/SKILL.md`. Read them and follow the steps — no slash commands needed.
 
-## What You Get
+## Usage
+
+```text
+> /apex-plan Build a real-time analytics platform for our IoT fleet
+> /helm-brief Define the next product sprint
+> /forge-infra Set up cloud infrastructure for a new SaaS product
+> /spine-api Design a REST API for user management
+> /warden-audit Run a full security audit on this codebase
+> /echo-interview Run a user research session
+> /crest-roadmap Build a product roadmap
+```
 
 Every specialist ships in three modes:
 
@@ -110,18 +73,6 @@ Every specialist ships in three modes:
 | **Build**  | Create from scratch — production-ready, not tutorials | `/forge-infra`, `/spine-api`, `/prism-ui`, `/touch-app`         |
 | **Review** | Audit and fix existing systems                        | `/warden-audit`, `/relay-audit`, `/prism-audit`, `/vigil-check` |
 | **Recon**  | Survey a domain for system takeover                   | `/forge-recon`, `/spine-recon`, `/flux-recon`, `/apex-takeover` |
-
-### They detect your stack
-
-Every engineering agent adapts to what you're already using:
-
-- **Cloud:** GCP, AWS, Azure, Cloudflare, Vercel, Fly.io, Hetzner, DigitalOcean
-- **CI/CD:** GitHub Actions, GitLab CI, Cloud Build, CircleCI, Bitbucket Pipelines
-- **Backend:** Node.js, Python, Go, Rust, Java/Kotlin, Ruby
-- **Databases:** PostgreSQL, MySQL, MongoDB, Redis, BigQuery, Snowflake, Supabase, Planetscale
-- **Frontend:** React/Next.js, Vue/Nuxt, Svelte/SvelteKit, Astro
-- **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
-- **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
 ### The Leads
 
@@ -168,6 +119,55 @@ Phase 2 — Deep dive (targeted):
 Phase 3 — Takeover report:
   System map, risk assessment, quick wins, roadmap
 ```
+
+## The Team
+
+### Engineering — 15 agents
+
+| Agent      | Hat                         | What They Do                                                  |
+| ---------- | --------------------------- | ------------------------------------------------------------- |
+| **Apex**   | Engineering Lead            | Orchestrates the team, scopes work, controls depth and budget |
+| **Forge**  | Infrastructure              | Cloud services, networking, IaC, cost optimization            |
+| **Relay**  | DevOps                      | CI/CD, deployments, GitOps, developer experience              |
+| **Spine**  | Backend                     | APIs, system design, performance, distributed systems         |
+| **Flux**   | Data                        | Databases, migrations, pipelines, data modeling               |
+| **Warden** | Security                    | IAM, secrets, compliance, threat modeling                     |
+| **Vigil**  | Observability + Reliability | Monitoring, alerting, SRE, incident response, SLOs            |
+| **Prism**  | Frontend/DX                 | UI, internal tools, developer portals                         |
+| **Cortex** | ML/AI                       | Model training, MLOps, feature engineering, LLM integration   |
+| **Touch**  | Mobile                      | Native iOS/Android, cross-platform, app stores                |
+| **Volt**   | Embedded/IoT                | Firmware, microcontrollers, edge computing, protocols         |
+| **Atlas**  | Knowledge Engineering       | Architecture docs, ADRs, API specs, system diagrams           |
+| **Lens**   | Data Analytics & BI         | Dashboards, metrics design, reporting, data storytelling      |
+| **Proof**  | QA & Testing                | Test strategy, E2E suites, integration testing, flaky triage  |
+| **Pave**   | Platform Engineering        | Developer experience, golden paths, service catalogs          |
+
+### Product — 8 agents
+
+| Agent     | Hat               | What They Do                                                    |
+| --------- | ----------------- | --------------------------------------------------------------- |
+| **Helm**  | Head of Product   | Orchestrates the product team, writes briefs, hands off to Apex |
+| **Echo**  | User Research     | User interviews, personas, Jobs-to-Be-Done, feedback synthesis  |
+| **Lumen** | Product Analytics | Metrics frameworks, funnel analysis, OKRs, A/B test design      |
+| **Draft** | UX Design         | User flows, information architecture, wireframes                |
+| **Form**  | Visual Design     | Brand identity, color systems, typography, design system        |
+| **Crest** | Product Strategy  | Roadmap planning, prioritization, competitive analysis          |
+| **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy            |
+| **Surge** | Growth            | Acquisition channels, activation funnels, retention playbooks   |
+
+## How it works
+
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `skills/<name>/SKILL.md`). The Claude Code plugin system installs all 23 agents and 138 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+
+Every engineering agent detects your stack automatically:
+
+- **Cloud:** GCP, AWS, Azure, Cloudflare, Vercel, Fly.io, Hetzner, DigitalOcean
+- **CI/CD:** GitHub Actions, GitLab CI, Cloud Build, CircleCI, Bitbucket Pipelines
+- **Backend:** Node.js, Python, Go, Rust, Java/Kotlin, Ruby
+- **Databases:** PostgreSQL, MySQL, MongoDB, Redis, BigQuery, Snowflake, Supabase, Planetscale
+- **Frontend:** React/Next.js, Vue/Nuxt, Svelte/SvelteKit, Astro
+- **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
+- **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
 ## All 138 Skills
 
@@ -405,12 +405,18 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) to get started. The highest-leverage cont
 - **Build a new agent** — claim a phase from the roadmap above
 - **Test on real codebases** — try `/apex-takeover` on a production repo and file what breaks
 
+Tests run with `uv run pytest` from any agent's `scripts/` directory.
+
 | Doc                                  | Covers                       |
 | ------------------------------------ | ---------------------------- |
 | [Architecture](docs/architecture.md) | How the plugin system works  |
 | [Skill Guide](docs/skill-guide.md)   | Writing and improving skills |
 | [Agent Guide](docs/agent-guide.md)   | Creating new agents          |
 | [Naming Guide](docs/naming-guide.md) | Agent naming conventions     |
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for full release history.
 
 ## Shoutouts
 
@@ -427,3 +433,7 @@ Tonone stands on the shoulders of giants. Big thanks to the plugins that shaped 
 ## License
 
 MIT. Fork it. Ship it. Use it anywhere. [LICENSE](LICENSE)
+
+---
+
+> README maintained automatically by [🐘 elephant](https://github.com/tonone-ai/elephant) — keep your docs in sync without the manual work.
