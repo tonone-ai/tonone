@@ -71,3 +71,4 @@
 [!!] 2026-04-26 18:26 : release 0.9.1 — 0 features, 1 fix, 2 doc changes — @fatih
 2026-04-26 18:28 : readme updated — mode: full regenerate — @fatih
 2026-04-26 18:29 : chore: v0.9.1 changelog, README regenerate, badges — @fatih
+2026-04-26 20:41 : feat: add agent entry-point skills — /apex, /helm, /forge, etc. for all 23 agents — @fatih
