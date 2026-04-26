@@ -60,3 +60,4 @@
 2026-04-17 13:00 : chore: remove bundled elephant — now standalone plugin (v0.9.0) — @fatih
 2026-04-17 13:24 : fix(compliance): tonone-onboard skill passes suite — @fatih
 2026-04-17 13:27 : chore(elephant): log compliance fix entry — @fatih
+2026-04-26 14:31 : docs(launch): add HN post and X thread drafts — @fatih
