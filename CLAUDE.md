@@ -119,6 +119,12 @@ Do not switch topics silently. Keep sessions focused.
 
 When stopping, the hook auto-removes clean worktrees. If changes exist, it prints a `/ship` reminder to the user.
 
+## gstack
+
+gstack is installed at `~/.claude/skills/gstack`. Use `/browse` for all web browsing — never use `mcp__claude-in-chrome__*` tools.
+
+Available gstack skills: /office-hours, /plan-ceo-review, /plan-eng-review, /plan-design-review, /design-consultation, /design-shotgun, /design-html, /review, /ship, /land-and-deploy, /canary, /benchmark, /browse, /connect-chrome, /qa, /qa-only, /design-review, /setup-browser-cookies, /setup-deploy, /setup-gbrain, /retro, /investigate, /document-release, /codex, /cso, /autoplan, /plan-devex-review, /devex-review, /careful, /freeze, /guard, /unfreeze, /gstack-upgrade, /learn
+
 ## Skill routing
 
 When the user's request matches an available skill, ALWAYS invoke it using the Skill
