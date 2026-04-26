@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.1] — 2026-04-26
+
+### Fixed
+
+- Fix `tonone-onboard` skill compliance — quoted YAML description (colon broke parse), added Step 2/3 workflow headers, exempted from prefix/output-kit/atlas-report checks via new `SPECIAL_SKILLS` set
+
+### Changed
+
+- README reframed around founder vision — "Founder + Tonone = whole company" thesis, roadmap table with sales/CS/finance/ops phases, skill count corrected to 138
+- Add `launch/` folder — HN post and X thread drafts for public launch prep
+
 ## [0.9.0] — 2026-04-17
 
 ### Removed
@@ -244,3 +255,7 @@ All notable changes to this project will be documented in this file.
 - Naming guide for consistent agent identity
 - Apex lead agent with orchestration and S/M/L scoping
 - 12 specialist agents: Forge, Relay, Spine, Flux, Warden, Vigil, Prism, Cortex, Touch, Volt, Atlas, Lens
+
+---
+
+> Changelog maintained automatically by [🐘 elephant](https://github.com/tonone-ai/elephant) — keep your changelog up to date without the manual work.

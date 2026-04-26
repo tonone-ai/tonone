@@ -68,3 +68,6 @@
 2026-04-17 13:06 : test(worktree): align hooks test with lazy-gate pattern (#60) — @thisisfatih
 2026-04-26 14:20 : docs: reframe around founder vision, add roadmap, fix test docs (#62) — @fatih
 2026-04-26 14:40 : docs(launch): add launch/ folder with HN and X thread drafts (#63) — @fatih
+[!!] 2026-04-26 18:26 : release 0.9.1 — 0 features, 1 fix, 2 doc changes — @fatih
+2026-04-26 18:28 : readme updated — mode: full regenerate — @fatih
+2026-04-26 18:29 : chore: v0.9.1 changelog, README regenerate, badges — @fatih
