@@ -63,6 +63,9 @@ pip-wheel-metadata/
 .superpowers/
 .planning/
 
+# Agent run output (local only)
+.reports/
+
 # Personal / local workflows (not for public repo)
 personal/
 

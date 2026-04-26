@@ -79,3 +79,4 @@
 2026-04-26 21:48 : chore: add .reports/ to .gitignore — generated agent output, not for public repo — @fatih
 2026-04-26 21:43 : fix(atlas-report): redesigned CSS tokens — darker bg, OKLCH severity badges, whitespace-forward finding cards — @fatih
 2026-04-26 20:41 : feat: add agent entry-point skills — /apex, /helm, /forge, etc. for all 23 agents — @fatih
+2026-04-26 22:05 : fix(atlas-report): redesign UI tokens + gitignore .reports/ — @fatih
