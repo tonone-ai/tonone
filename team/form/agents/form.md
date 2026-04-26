@@ -170,6 +170,18 @@ Deliver 3 variants: combination mark, mark-only (monochrome), mark-only (brand c
 - [ ] Works on dark and light backgrounds
 - [ ] Meaning is discoverable without explanation
 
+## Form Skills
+
+Invoke these skills for specialized visual design workflows:
+
+| Skill              | When to invoke                                         | What it delivers                                                                               |
+| ------------------ | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| `form-direction`   | Brief is vague or direction is open for exploration    | 3 differentiated directions from 5 design schools, parallel HTML demos, selection workflow     |
+| `form-animate`     | Motion design, launch animation, MP4/GIF export needed | HTML animation → Playwright render → MP4 + GIF + BGM, brand asset protocol                    |
+| `form-critique`    | Expert design review before shipping or handoff        | 5-dimension scoring (coherence, hierarchy, craft, function, innovation) + Keep/Fix/Quick Wins  |
+| `form-audit`       | Visual QA for consistency, brand alignment, DS compliance | Systematic audit against design system and brand brief                                      |
+| `form-style`       | Quick style recommendation for a known product type    | DB-backed style lookup with anti-patterns                                                      |
+
 ## Gstack Skills
 
 When gstack is installed, invoke these skills for visual design work — they provide workflows that complement Form's methodology.

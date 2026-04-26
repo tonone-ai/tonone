@@ -75,4 +75,16 @@
 [!!] 2026-04-26 21:34 : active bug: tonone-pr-attribution.js:49 String(object) breaks URL extraction every PR — unfixed — @fatih
 2026-04-26 21:34 : lib/uiux install story broken for 7 agents — no declared dep, manual setup required — @fatih
 2026-04-26 21:34 : outbound POST to second.tonone.ai on every PR — verify domain ownership — @fatih
+2026-04-26 21:43 : fix(atlas-report): copy buttons pre-only hover-reveal, no inline code buttons, no Tonone branding in report output — @fatih
+2026-04-26 21:48 : chore: add .reports/ to .gitignore — generated agent output, not for public repo — @fatih
+2026-04-26 21:43 : fix(atlas-report): redesigned CSS tokens — darker bg, OKLCH severity badges, whitespace-forward finding cards — @fatih
 2026-04-26 20:41 : feat: add agent entry-point skills — /apex, /helm, /forge, etc. for all 23 agents — @fatih
+2026-04-26 21:49 : feat: adapt huashu-design skills to Draft and Form agents — @fatih
+2026-04-26 21:52 : chore: remove accidentally committed tests/ELEPHANT.md (elephant hook artifact) — @fatih
+2026-04-26 22:05 : fix(atlas-report): redesign UI tokens + gitignore .reports/ — @fatih
+2026-04-26 22:07 : chore: resolve ELEPHANT.md merge conflict — @fatih
+[!!] 2026-04-26 22:26 : apex-takeover rerun — 6 parallel agents, deeper recon — report at .reports/apex-takeover-2026-04-26-2223.html — @fatih
+[!!] 2026-04-26 22:26 : confirmed: pr-attribution.js + session-tracker.js not in plugin.json — dead since merge, never fired for any user — @fatih
+[!!] 2026-04-26 22:26 : confirmed: bump-version.py globs worktrees — corrupts all active worktrees on every version bump, one-line fix — @fatih
+[!!] 2026-04-26 22:26 : confirmed: tonone-git-gate.js:77 EnterWorktree arg wrong (slug not path) — core recovery broken — @fatih
+2026-04-26 22:26 : confirmed: second.tonone.ai not an outbound POST — just URL string in PR body copy, no HTTP call — false alarm — @fatih

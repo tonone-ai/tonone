@@ -67,34 +67,105 @@ Generate a single self-contained HTML file with the following requirements:
 
 **Interactive elements:**
 
-- Collapsible `<details><summary>` for code blocks and verbose data
-- Copy buttons on all `<code>` and `<pre>` blocks using the JS Clipboard API
+- Collapsible `<details><summary>` for verbose data sections
+- Copy button on `<pre>` blocks only — appears on hover, hidden by default. **Never on inline `<code>` elements** — inline code is for reading, not copying
 - Mermaid JS CDN (`https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js`) for rendering diagrams, with graceful degradation to plain code blocks if CDN is unavailable
+
+**Copy button implementation:**
+
+```css
+pre { position: relative; }
+pre .copy-btn {
+  position: absolute; top: 0.5rem; right: 0.5rem;
+  opacity: 0; transition: opacity 0.15s;
+  padding: 0.2rem 0.5rem; font-size: 0.7rem;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 4px; cursor: pointer; color: var(--text-muted);
+}
+pre:hover .copy-btn { opacity: 1; }
+pre .copy-btn.copied { color: var(--success); }
+```
 
 **CSS design tokens:**
 
 ```css
 :root {
-  --bg: #0f172a;
-  --bg-card: #1e293b;
+  --bg: #0a0f1e;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2236;
   --text: #e2e8f0;
-  --text-muted: #94a3b8;
-  --border: #334155;
+  --text-muted: #64748b;
+  --border: #1e2d45;
+  --border-subtle: #162032;
   --accent: #3b82f6;
-  --critical: #dc2626;
-  --warning: #d97706;
-  --info: #2563eb;
-  --success: #16a34a;
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --critical: #ef4444;
+  --critical-bg: oklch(20% 0.05 25);
+  --warning: #f59e0b;
+  --warning-bg: oklch(20% 0.05 80);
+  --info: #3b82f6;
+  --info-bg: oklch(20% 0.05 240);
+  --success: #22c55e;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 [data-theme="light"] {
-  --bg: #ffffff;
-  --bg-card: #f8fafc;
-  --text: #1e293b;
+  --bg: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --text: #0f172a;
   --text-muted: #64748b;
   --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --critical-bg: #fef2f2;
+  --warning-bg: #fffbeb;
+  --info-bg: #eff6ff;
 }
+```
+
+**Typography and spacing:**
+
+```css
+body { font-family: var(--font-sans); font-size: 14px; line-height: 1.6; }
+h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
+h3 { font-size: 0.9rem; font-weight: 600; text-transform: uppercase;
+     letter-spacing: 0.08em; color: var(--text-muted); }
+code { font-family: var(--font-mono); font-size: 0.85em;
+       padding: 0.1em 0.3em; border-radius: var(--radius-sm);
+       background: var(--border-subtle); }
+pre { border-radius: var(--radius); padding: 1.25rem; overflow-x: auto;
+      background: var(--bg-card); border: 1px solid var(--border); }
+pre code { background: none; padding: 0; }
+```
+
+**Finding card design — minimal, whitespace-forward:**
+
+```css
+.finding {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--bg-card);
+}
+.finding-header {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.badge {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem; border-radius: 3px; text-transform: uppercase;
+}
+.badge-critical { background: var(--critical-bg); color: var(--critical); }
+.badge-warning  { background: var(--warning-bg);  color: var(--warning);  }
+.badge-info     { background: var(--info-bg);      color: var(--info);     }
+.finding-title  { font-weight: 600; font-size: 0.95rem; }
+.finding-body   { color: var(--text-muted); font-size: 0.875rem; }
+.finding-fix    { margin-top: 0.75rem; padding-top: 0.75rem;
+                  border-top: 1px solid var(--border-subtle);
+                  font-size: 0.875rem; }
 ```
 
 **HTML structure skeleton:**
@@ -161,3 +232,5 @@ Generate a single self-contained HTML file with the following requirements:
 - **Severity colors match output kit** — `■` red, `▲` amber, `● ` blue, consistent across CLI and HTML
 - **Graceful Mermaid degradation** — if CDN is unreachable, diagrams fall back to styled code blocks
 - **Omit empty sections** — do not render sections that have no content
+- **No Tonone branding** — no footer attribution, no "powered by", no agent author credit in the rendered HTML. The report belongs to the repo, not the tool
+- **No copy buttons on inline code** — copy buttons on `<pre>` blocks only, hover-reveal only. Inline `<code>` never gets a copy button
