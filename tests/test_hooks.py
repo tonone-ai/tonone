@@ -179,3 +179,68 @@ def test_git_gate_message_is_actionable():
     assert "EnterWorktree" in source
     assert ".claude/skip-worktree" in source
     assert "process.exit(1)" in source
+
+
+# ---------------------------------------------------------------------------
+# bump-version.py
+# ---------------------------------------------------------------------------
+
+import sys
+import types
+import importlib
+
+BUMP_VERSION = REPO / "scripts" / "bump-version.py"
+
+
+def _load_bump_version():
+    """Load bump-version.py as a module without executing main()."""
+    spec = importlib.util.spec_from_file_location("bump_version", BUMP_VERSION)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_bump_version_excludes_worktrees(tmp_path):
+    """find_files() must not return paths inside .claude/worktrees/."""
+    import importlib.util, types, sys as _sys
+
+    mod = _load_bump_version()
+
+    # Create a fake worktree plugin.json inside a temp REPO_ROOT
+    fake_root = tmp_path
+    wt_plugin = fake_root / ".claude" / "worktrees" / "my-feature" / ".claude-plugin" / "plugin.json"
+    wt_plugin.parent.mkdir(parents=True)
+    wt_plugin.write_text('{"name":"tonone","version":"0.0.0"}')
+
+    # Also create a real plugin.json at root level
+    real_plugin = fake_root / ".claude-plugin" / "plugin.json"
+    real_plugin.parent.mkdir(parents=True)
+    real_plugin.write_text('{"name":"tonone","version":"0.0.0"}')
+
+    # Patch REPO_ROOT and TEMPLATE_DIR inside the module
+    orig_root = mod.REPO_ROOT
+    orig_tmpl = mod.TEMPLATE_DIR
+    mod.REPO_ROOT = fake_root
+    mod.TEMPLATE_DIR = str(fake_root / "templates")
+
+    try:
+        plugin_files, _ = mod.find_files()
+        paths = [str(p) for p in plugin_files]
+        assert any("claude-plugin" in p and "worktrees" not in p for p in paths), (
+            "real plugin.json should be included"
+        )
+        assert not any("worktrees" in p for p in paths), (
+            f"worktree plugin.json must be excluded, got: {paths}"
+        )
+    finally:
+        mod.REPO_ROOT = orig_root
+        mod.TEMPLATE_DIR = orig_tmpl
+
+
+def test_git_gate_uses_worktree_path_in_message():
+    """Source must use worktreePath (not branchName) as the EnterWorktree arg."""
+    source = GIT_GATE.read_text()
+    # The fix: EnterWorktree("${worktreePath}"), not EnterWorktree("${branchName}")
+    assert 'EnterWorktree("${worktreePath}")' in source, (
+        "git-gate must pass worktreePath to EnterWorktree, not branchName"
+    )

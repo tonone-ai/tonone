@@ -99,3 +99,75 @@ test("malformed JSON input — exits 0 silently", () => {
   });
   assert.strictEqual(result.status, 0);
 });
+
+// getPrUrl — object tool_output (regression test for String(object) bug)
+const { getPrUrl } = (() => {
+  // Re-export getPrUrl by reading and evaluating a subset of the hook.
+  // The hook exports { formatAttribution } only; getPrUrl is internal.
+  // We test the visible behavior: does the hook extract a URL from an
+  // object tool_output and act on it (clear session-agents)?
+  return {};
+})();
+
+test("getPrUrl — object tool_output with .output field containing URL", () => {
+  const dir = makeTempDir(["spine"]);
+  try {
+    const result = runHook(
+      {
+        tool_name: "Bash",
+        tool_input: { command: "gh pr create --title t --body b" },
+        // tool_output is an OBJECT (not a string) — this was the bug
+        tool_output: { output: "https://github.com/owner/repo/pull/42" },
+      },
+      dir
+    );
+    assert.strictEqual(result.status, 0, result.stderr);
+    // session-agents cleared means getPrUrl successfully extracted the URL
+    const content = fs.existsSync(path.join(dir, ".claude", "session-agents"))
+      ? fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8")
+      : "";
+    assert.strictEqual(content.trim(), "", `getPrUrl failed to extract URL from object tool_output — session-agents not cleared: ${content}`);
+  } finally {
+    cleanup(dir);
+  }
+});
+
+test("getPrUrl — plain string tool_output containing URL", () => {
+  const dir = makeTempDir(["atlas"]);
+  try {
+    runHook(
+      {
+        tool_name: "Bash",
+        tool_input: { command: "gh pr create --title t --body b" },
+        // tool_output is a plain string
+        tool_output: "https://github.com/owner/repo/pull/99",
+      },
+      dir
+    );
+    const content = fs.existsSync(path.join(dir, ".claude", "session-agents"))
+      ? fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8")
+      : "";
+    assert.strictEqual(content.trim(), "", `getPrUrl failed on plain string tool_output: ${content}`);
+  } finally {
+    cleanup(dir);
+  }
+});
+
+test("getPrUrl — tool_output object with no .output field — falls back to gh cli", () => {
+  const dir = makeTempDir(["forge"]);
+  try {
+    // No URL in tool_output at all — hook should try gh pr view and gracefully
+    // exit 0 even if gh fails (no real PR exists in this temp dir)
+    const result = runHook(
+      {
+        tool_name: "Bash",
+        tool_input: { command: "gh pr create --title t --body b" },
+        tool_output: { stdout: "", stderr: "some error" }, // no .output, no URL
+      },
+      dir
+    );
+    assert.strictEqual(result.status, 0, "hook must exit 0 even when URL not found");
+  } finally {
+    cleanup(dir);
+  }
+});
