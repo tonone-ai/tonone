@@ -38,10 +38,9 @@ process.stdin.on("end", () => {
     // Check if already in a worktree
     let gitDir, commonDir;
     try {
-      gitDir = execSync("git rev-parse --git-dir", { encoding: "utf8" }).trim();
-      commonDir = execSync("git rev-parse --git-common-dir", {
-        encoding: "utf8",
-      }).trim();
+      const parts = execSync("git rev-parse --git-dir --git-common-dir", { encoding: "utf8" }).trim().split("\n");
+      gitDir = parts[0];
+      commonDir = parts[1];
     } catch {
       process.exit(0); // Not a git repo — allow
     }

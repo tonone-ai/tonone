@@ -45,7 +45,7 @@ function clearAgents() {
 }
 
 function getPrUrl(toolOutput) {
-  const raw = (toolOutput && (toolOutput.output || toolOutput)) || "";
+  const raw = (toolOutput && (typeof toolOutput === "string" ? toolOutput : toolOutput.output)) || "";
   const urlMatch = String(raw).match(/https:\/\/github\.com\/[\w.\-]+\/[\w.\-]+\/pull\/\d+/);
   if (urlMatch) return urlMatch[0];
   try {
