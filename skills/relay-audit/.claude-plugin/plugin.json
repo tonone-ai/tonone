@@ -1,6 +1,6 @@
 {
   "name": "relay-audit",
-  "version": "0.6.6",
+  "version": "0.9.4",
   "description": "Audit an existing CI/CD pipeline for slowness, security issues, and reliability gaps. Use when asked to \"audit pipeline\", \"why is CI slow\", \"pipeline review\", or \"deployment review\".",
   "author": {
     "name": "tonone-ai",
@@ -9,5 +9,8 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": ["relay", "skill"]
+  "keywords": [
+    "relay",
+    "skill"
+  ]
 }

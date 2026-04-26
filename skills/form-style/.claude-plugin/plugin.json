@@ -1,6 +1,6 @@
 {
   "name": "form-style",
-  "version": "0.6.6",
+  "version": "0.9.4",
   "description": "|",
   "author": {
     "name": "tonone-ai",
@@ -9,5 +9,8 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": ["form", "skill"]
+  "keywords": [
+    "form",
+    "skill"
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "lens-audit",
-  "version": "0.6.6",
+  "version": "0.9.4",
   "description": "Review existing analytics \u2014 find all dashboards and reports, check who uses them, whether metrics are defined, and whether they drive decisions. Recommend what to keep, kill, or add. Use when asked \"are our dashboards useful\", \"analytics review\", or \"metrics audit\".",
   "author": {
     "name": "tonone-ai",
@@ -9,5 +9,8 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": ["lens", "skill"]
+  "keywords": [
+    "lens",
+    "skill"
+  ]
 }

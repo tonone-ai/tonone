@@ -1,6 +1,6 @@
 {
   "name": "warden-iam",
-  "version": "0.6.6",
+  "version": "0.9.4",
   "description": "Build IAM from scratch \u2014 roles, policies, service accounts with least privilege. Use when asked to \"set up IAM\", \"create roles\", \"service accounts\", or \"access control\".",
   "author": {
     "name": "tonone-ai",
@@ -9,5 +9,8 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": ["warden", "skill"]
+  "keywords": [
+    "warden",
+    "skill"
+  ]
 }

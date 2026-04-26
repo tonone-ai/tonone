@@ -1,6 +1,6 @@
 [project]
 name = "uiux"
-version = "0.1.0"
+version = "0.9.4"
 description = "Shared UI/UX design intelligence library — BM25 search engine + design system generator"
 license = "MIT"
 requires-python = ">=3.10"

@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.4] — 2026-04-26
+
+### Fixed
+
+- **`tonone-session-tracker.js` and `tonone-pr-attribution.js` never ran** — both hooks existed but were not declared in `.claude-plugin/plugin.json`. Every Skill invocation went untracked and every PR shipped without agent attribution since the hooks were added.
+- **`tonone-worktree-session.js` missing** — tests expected this SessionStart hook since commit `24498a2` but it was never created. The hook now prunes stale git worktrees at session start and emits `WORKTREE_READY` status so Claude knows whether it is resuming an existing worktree or starting fresh on main.
+- **`tonone-worktree-session.js` not registered** — hook was implemented but absent from the `SessionStart` array in `plugin.json`, making the prune and status features dead code.
+- **`tonone-git-gate.js` passed wrong argument to `EnterWorktree`** — the blocked-on-main recovery message passed `${branchName}` (slug only) but `EnterWorktree` requires the full worktree path. Now passes `${worktreePath}`.
+- **`tonone-git-gate.js` TOCTOU** — two separate `execSync` calls for `--git-dir` and `--git-common-dir` could race if git state changed between calls. Merged into a single atomic invocation.
+- **`tonone-git-gate.js` + `tonone-worktree-session.js` array bounds** — `git rev-parse --git-dir --git-common-dir` output was split by newline without a length check. If git returned fewer than 2 lines, `parts[1]` was `undefined`, incorrectly treating main as a worktree.
+- **`tonone-pr-attribution.js` URL extraction silent failure** — `toolOutput.output || toolOutput` fell through to the object itself when `.output` was falsy, causing `String(object)` to produce `[object Object]` and silently failing to extract the GitHub PR URL on every PR.
+- **`bump-version.py` corrupted active worktrees** — `Path.glob("**/.claude-plugin/plugin.json")` recursed into `.claude/worktrees/`, writing version changes into every active worktree and dirtying them. Now excludes `.claude/worktrees/` alongside templates and venvs.
+
+### Tests
+
+- 3 regression tests for `getPrUrl()` — covers object `.output` field, plain string, and no-URL fallback.
+- Worktree exclusion test for `bump-version.py` `find_files()`.
+- Source assertion that `EnterWorktree` receives `${worktreePath}` not `${branchName}`.
+
 ## [0.9.3] — 2026-04-26
 
 ### Added
