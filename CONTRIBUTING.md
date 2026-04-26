@@ -66,7 +66,16 @@ Standard PR workflow — fork, branch, fix, PR.
 
 ## Testing Your Changes
 
-There's no automated test suite for skills yet. Test manually:
+Each agent has a test suite under `team/<agent>/tests/`. Run it via `uv run pytest` from the agent's `scripts/` directory:
+
+```bash
+cd team/forge/scripts
+uv run pytest ../tests/ -v
+```
+
+Tests cover skill compliance (output format, required sections, anti-patterns). Add or update tests when changing agent behavior.
+
+Also test manually against a real codebase:
 
 1. **Install locally:**
 

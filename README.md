@@ -1,16 +1,18 @@
 # Tonone
 
-**Your AI team, second to none.**
+**Founder + Tonone = whole company.**
 
-23 specialists. Engineering executes. Product decides. One session, two commands, zero meetings. 125 skills across every discipline. MIT licensed.
+23 specialists. Engineering executes. Product decides. One session, two commands, zero meetings. 138 skills across every discipline. MIT licensed.
 
-## Why This Exists
+## The idea
 
-Right now, everyone gets a generalized AI assistant. Engineers, product managers, designers, strategists — all prompting separately, getting separate outputs, then copying results into Slack threads for the next person to feed back into AI. It's a relay race where every handoff loses context.
+A solo founder used to have one choice: stay small, or hire. Now there's a third path.
 
-**The team is the unit. Not the assistant.** Instead of giving each person an AI assistant, give the whole company an AI team. Specialists that talk to each other, share context, and run the show end to end — from user research to infrastructure to deployment — without the copy-paste relay.
+Tonone is an open-source AI team you install into Claude Code. Not a generalist assistant — specialists. Each agent owns one domain deeply: infrastructure, security, user research, product strategy, growth. They share context, hand off cleanly, and produce work you can ship.
 
-That's Tonone. Not twenty-three copies of the same generalist. Twenty-three specialists, each owning one domain, coordinated by leads who know when to call who and at what depth. Production-ready output. No tutorials. No boilerplate.
+The engineering team (15 agents) builds and ships. The product team (8 agents) decides what to build and why. Together, one founder can run what used to take a company.
+
+This is v1 — engineering + product. The roadmap adds sales, customer success, finance, and ops. The goal: a complete AI company in a single plugin.
 
 ## The Team
 
@@ -167,7 +169,7 @@ Phase 3 — Takeover report:
   System map, risk assessment, quick wins, roadmap
 ```
 
-## All 125 Skills
+## All 138 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
@@ -194,6 +196,7 @@ Phase 3 — Takeover report:
 - `/relay-pipeline` — Build CI/CD pipeline from scratch
 - `/relay-docker` — Build production Dockerfiles
 - `/relay-deploy` — Set up deployment strategy
+- `/relay-ship` — Ship a release end to end
 - `/relay-audit` — Audit existing pipeline
 - `/relay-recon` — Pipeline reconnaissance
 
@@ -236,6 +239,7 @@ Phase 3 — Takeover report:
 - `/prism-ui` — Build a UI from scratch
 - `/prism-component` — Build a reusable component
 - `/prism-dashboard` — Build an internal dashboard
+- `/prism-chart` — Build data visualization
 - `/prism-audit` — Frontend audit
 - `/prism-recon` — Frontend reconnaissance
 
@@ -251,6 +255,7 @@ Phase 3 — Takeover report:
 
 - `/touch-app` — Build mobile app from scratch
 - `/touch-feature` — Build a mobile feature
+- `/touch-ui` — Design and build mobile UI
 - `/touch-release` — Set up mobile release pipeline
 - `/touch-audit` — Mobile audit
 - `/touch-recon` — Mobile reconnaissance
@@ -277,6 +282,7 @@ Phase 3 — Takeover report:
 
 - `/lens-dashboard` — Build an analytical dashboard
 - `/lens-metrics` — Define and implement metrics framework
+- `/lens-chart` — Build a data visualization
 - `/lens-report` — Build a reporting pipeline
 - `/lens-audit` — Review existing analytics
 - `/lens-recon` — Analytics reconnaissance
@@ -284,6 +290,7 @@ Phase 3 — Takeover report:
 ### Proof (QA & Testing)
 
 - `/proof-strategy` — Design a test strategy for a project
+- `/proof-design` — Design tests before implementation
 - `/proof-e2e` — Build E2E test suites with Playwright/Cypress
 - `/proof-api` — Build API test suites
 - `/proof-audit` — Audit test suite health
@@ -326,6 +333,8 @@ Phase 3 — Takeover report:
 - `/draft-wireframe` — Wireframe a flow or screen
 - `/draft-flow` — Map a user flow end to end
 - `/draft-ia` — Design information architecture
+- `/draft-patterns` — Document design patterns
+- `/draft-landing` — Design a landing page
 - `/draft-review` — Review a design for UX quality
 - `/draft-recon` — UX reconnaissance
 
@@ -334,13 +343,16 @@ Phase 3 — Takeover report:
 - `/form-brand` — Define or audit brand identity
 - `/form-logo` — Design a logo system
 - `/form-tokens` — Build a design token system
+- `/form-style` — Define a visual style guide
 - `/form-component` — Specify UI components
 - `/form-web` — Design a web interface
 - `/form-mobile` — Design a mobile screen
 - `/form-email` — Design an email template
 - `/form-social` — Design social and ad creatives
+- `/form-palette` — Build a color palette
 - `/form-audit` — Audit visual quality and consistency
 - `/form-deck` — Design a presentation deck
+- `/form-exam` — Evaluate visual quality against standards
 
 ### Crest (Product Strategy)
 
@@ -356,6 +368,7 @@ Phase 3 — Takeover report:
 - `/pitch-message` — Write core messaging
 - `/pitch-copy` — Write launch copy
 - `/pitch-launch` — Plan a product launch
+- `/pitch-landing` — Write a landing page
 - `/pitch-recon` — Marketing reconnaissance
 
 ### Surge (Growth)
@@ -364,13 +377,33 @@ Phase 3 — Takeover report:
 - `/surge-plg` — Build a PLG strategy
 - `/surge-experiment` — Design a growth experiment
 - `/surge-retention` — Build a retention playbook
+- `/surge-landing` — Build a growth-optimized landing page
 - `/surge-recon` — Growth reconnaissance
 
 </details>
 
+## Roadmap
+
+| Phase                       | Status     | What it covers                     |
+| --------------------------- | ---------- | ---------------------------------- |
+| **Engineering** (15 agents) | ✅ Done    | Build, ship, operate               |
+| **Product** (8 agents)      | ✅ Done    | Research, strategy, design, growth |
+| **Sales**                   | 🔲 Planned | Outreach, pipeline, RevOps         |
+| **Customer Success**        | 🔲 Planned | Support triage, onboarding, CSM    |
+| **Finance & Legal**         | 🔲 Planned | Budgets, compliance, contracts     |
+| **Ops & People**            | 🔲 Planned | HR, recruiting, office             |
+
+Star the repo to follow along. Open an issue to claim a phase.
+
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) to get started — improve skills, propose agents, or fix bugs.
+Everything is Markdown. Fork it, improve it, open a PR. Agents are system prompts. Skills are workflow docs. No build step.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) to get started. The highest-leverage contributions right now:
+
+- **Sharpen existing skills** — better steps, sharper output formats, fewer hallucinations
+- **Build a new agent** — claim a phase from the roadmap above
+- **Test on real codebases** — try `/apex-takeover` on a production repo and file what breaks
 
 | Doc                                  | Covers                       |
 | ------------------------------------ | ---------------------------- |
@@ -383,13 +416,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) to get started — improve skills, propos
 
 Tonone stands on the shoulders of giants. Big thanks to the plugins that shaped how this team thinks and works:
 
-| Plugin | What it brought |
-| ------ | --------------- |
-| **superpowers** | Structured skill workflows, brainstorming loops, TDD discipline, and the worktree-native development model that Tonone runs on |
-| **impeccable** | Design critique vocabulary and the polish-first mindset baked into Form and Draft |
-| **frontend-design** | Frontend implementation patterns that Prism and Touch draw from |
-| **ui-ux-pro-max** | 161 color palettes, 84 UI styles, 57 font pairings, 99 UX guidelines, and the BM25 design search engine now powering `lib/uiux` |
-| **caveman** | The communication mode that cuts every response to its bones — no fluff, all signal |
+| Plugin              | What it brought                                                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **superpowers**     | Structured skill workflows, brainstorming loops, TDD discipline, and the worktree-native development model that Tonone runs on  |
+| **impeccable**      | Design critique vocabulary and the polish-first mindset baked into Form and Draft                                               |
+| **frontend-design** | Frontend implementation patterns that Prism and Touch draw from                                                                 |
+| **ui-ux-pro-max**   | 161 color palettes, 84 UI styles, 57 font pairings, 99 UX guidelines, and the BM25 design search engine now powering `lib/uiux` |
+| **caveman**         | The communication mode that cuts every response to its bones — no fluff, all signal                                             |
 
 ## License
 
