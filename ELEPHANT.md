@@ -61,3 +61,4 @@
 2026-04-17 13:24 : fix(compliance): tonone-onboard skill passes suite — @fatih
 2026-04-17 13:27 : chore(elephant): log compliance fix entry — @fatih
 2026-04-26 14:31 : docs(launch): add HN post and X thread drafts — @fatih
+2026-04-26 14:33 : docs(launch): move launch/ to repo root — @fatih
