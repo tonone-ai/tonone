@@ -1,6 +1,6 @@
 {
   "name": "form",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Visual designer \u2014 brand identity, color systems, typography, UI design, and design systems",
   "author": {
     "name": "tonone-ai",
@@ -61,6 +61,26 @@
     {
       "name": "form-exam",
       "path": "skills/form-exam/skill.md"
+    },
+    {
+      "name": "form-palette",
+      "path": "skills/form-palette/skill.md"
+    },
+    {
+      "name": "form-style",
+      "path": "skills/form-style/skill.md"
+    },
+    {
+      "name": "form-direction",
+      "path": "skills/form-direction/skill.md"
+    },
+    {
+      "name": "form-animate",
+      "path": "skills/form-animate/skill.md"
+    },
+    {
+      "name": "form-critique",
+      "path": "skills/form-critique/skill.md"
     }
   ]
 }

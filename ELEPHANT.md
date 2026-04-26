@@ -76,3 +76,4 @@
 2026-04-26 21:34 : lib/uiux install story broken for 7 agents — no declared dep, manual setup required — @fatih
 2026-04-26 21:34 : outbound POST to second.tonone.ai on every PR — verify domain ownership — @fatih
 2026-04-26 20:41 : feat: add agent entry-point skills — /apex, /helm, /forge, etc. for all 23 agents — @fatih
+2026-04-26 21:49 : feat: adapt huashu-design skills to Draft and Form agents — @fatih
