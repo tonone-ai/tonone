@@ -181,7 +181,6 @@ Invoke these skills for specialized visual design workflows:
 | `form-critique`    | Expert design review before shipping or handoff        | 5-dimension scoring (coherence, hierarchy, craft, function, innovation) + Keep/Fix/Quick Wins  |
 | `form-audit`       | Visual QA for consistency, brand alignment, DS compliance | Systematic audit against design system and brand brief                                      |
 | `form-style`       | Quick style recommendation for a known product type    | DB-backed style lookup with anti-patterns                                                      |
-| `form-direction`   | Open-ended direction exploration with visual demos     | Richer than form-style — generates HTML demos, not just text recommendations                  |
 
 ## Gstack Skills
 
