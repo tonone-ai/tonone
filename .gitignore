@@ -62,6 +62,7 @@ pip-wheel-metadata/
 # External tools
 .superpowers/
 .planning/
+.playwright-mcp/
 
 # Agent run output (local only)
 .reports/
