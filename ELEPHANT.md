@@ -99,3 +99,5 @@
 2026-04-28 13:49 : chore: elephant takeover + readme badge 0.9.1 → 0.9.5 — @fatih
 [!!] 2026-04-28 14:00 : release 0.9.6 — elephant memory seeded, readme badge fixed — @fatih
 2026-04-28 14:57 : fix(relay-ship): enrich PR footer with Tonone attribution table — @fatih
+2026-04-28 15:11 : fix(relay-ship): PR footer redesigned — bullet list (agents/session/cost), Co-Authored-By trailers, hook guard prevents duplicate — merged #72 — @fatih
+2026-04-28 15:12 : chore: engrave session memory — @fatih
