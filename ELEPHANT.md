@@ -91,3 +91,7 @@
 2026-04-27 19:42 : chore: add .playwright-mcp/ to .gitignore under External tools section — @fatih
 2026-04-27 19:53 : chore: update .gitignore — add .playwright-mcp/, untrack .reports/ — @fatih
 2026-04-28 13:22 : feat(relay-ship): PR footer redesigned — friendly multi-line, lists agents used + session duration + token cost; both skills/relay-ship/ and team/relay/ updated — @fatih
+2026-04-26 20:51 : test: exempt agent entry-point skills from compliance checks — @fatih
+2026-04-26 22:45 : fix: hook registration, git-gate path, worktree exclusions, missing session hook — @fatih
+2026-04-28 13:33 : feat(relay-ship): friendly PR footer with agent attribution — @fatih
+2026-04-28 13:47 : elephant takeover — appended 3 missing commits (entry-point test, v0.9.4 fix, relay-ship PR footer) — @fatih
