@@ -11,7 +11,8 @@ const path = require("path");
 
 // ── Config ────────────────────────────────────────────────────────────────────
 
-const PLUGIN_ROOT = process.env.CLAUDE_PLUGIN_ROOT || path.join(__dirname, "..");
+const PLUGIN_ROOT =
+  process.env.CLAUDE_PLUGIN_ROOT || path.join(__dirname, "..");
 const PLUGIN_JSON = path.join(PLUGIN_ROOT, ".claude-plugin", "plugin.json");
 const MARKER_DIR = path.join(os.homedir(), ".config", "tonone");
 const MARKER_FILE = path.join(MARKER_DIR, "onboarded");
@@ -20,7 +21,9 @@ const MARKER_FILE = path.join(MARKER_DIR, "onboarded");
 
 function currentVersion() {
   try {
-    return JSON.parse(fs.readFileSync(PLUGIN_JSON, "utf8")).version || "unknown";
+    return (
+      JSON.parse(fs.readFileSync(PLUGIN_JSON, "utf8")).version || "unknown"
+    );
   } catch {
     return "unknown";
   }
@@ -39,7 +42,7 @@ function writeMarker(version) {
     fs.mkdirSync(MARKER_DIR, { recursive: true });
     fs.writeFileSync(
       MARKER_FILE,
-      JSON.stringify({ version, ts: new Date().toISOString() })
+      JSON.stringify({ version, ts: new Date().toISOString() }),
     );
   } catch {
     // If write fails, hook exits 0 and retries next session — correct behavior.

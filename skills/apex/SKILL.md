@@ -17,13 +17,13 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `apex-plan` | Plan or scope a new feature, project, or idea — S/M/L options with cost estimates |
-| `apex-recon` | Understand or orient on an unfamiliar codebase, map what's in progress |
-| `apex-review` | Cross-cutting review of recently completed work before launch |
-| `apex-status` | CTO-level project status: what's done, what's in flight, what's next |
-| `apex-takeover` | Take ownership of an inherited or acquired codebase |
+| Skill           | Use when                                                                          |
+| --------------- | --------------------------------------------------------------------------------- |
+| `apex-plan`     | Plan or scope a new feature, project, or idea — S/M/L options with cost estimates |
+| `apex-recon`    | Understand or orient on an unfamiliar codebase, map what's in progress            |
+| `apex-review`   | Cross-cutting review of recently completed work before launch                     |
+| `apex-status`   | CTO-level project status: what's done, what's in flight, what's next              |
+| `apex-takeover` | Take ownership of an inherited or acquired codebase                               |
 
 Default (no args or unclear): `apex-status`.
 

@@ -17,14 +17,14 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `lens-audit` | Review existing dashboards — find what's used, unused, or misleading |
-| `lens-chart` | Design a single chart or visualization — type, axes, data, framing |
-| `lens-dashboard` | Design and spec a full analytical dashboard with SQL and layout |
-| `lens-metrics` | Produce a complete metrics definition doc for a product area |
-| `lens-recon` | Inventory all analytics tools, dashboards, and what is tracked |
-| `lens-report` | Build a reporting pipeline — scheduled reports with Slack or email delivery |
+| Skill            | Use when                                                                    |
+| ---------------- | --------------------------------------------------------------------------- |
+| `lens-audit`     | Review existing dashboards — find what's used, unused, or misleading        |
+| `lens-chart`     | Design a single chart or visualization — type, axes, data, framing          |
+| `lens-dashboard` | Design and spec a full analytical dashboard with SQL and layout             |
+| `lens-metrics`   | Produce a complete metrics definition doc for a product area                |
+| `lens-recon`     | Inventory all analytics tools, dashboards, and what is tracked              |
+| `lens-report`    | Build a reporting pipeline — scheduled reports with Slack or email delivery |
 
 Default (no args or unclear): `lens-recon`.
 

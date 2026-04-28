@@ -100,7 +100,8 @@ function fmtDuration(ms) {
 
 // ── Session goal ─────────────────────────────────────────────────────────────
 
-const FILLER = /\b(a|an|the|just|really|basically|actually|simply|some|very)\b/gi;
+const FILLER =
+  /\b(a|an|the|just|really|basically|actually|simply|some|very)\b/gi;
 
 function caveman(text) {
   return text
@@ -113,7 +114,9 @@ function caveman(text) {
 
 function readSessionGoal(cwd) {
   try {
-    const raw = fs.readFileSync(path.join(cwd, ".claude", "session-goal"), "utf8").trim();
+    const raw = fs
+      .readFileSync(path.join(cwd, ".claude", "session-goal"), "utf8")
+      .trim();
     if (raw) return caveman(raw);
   } catch {}
   return null;
@@ -145,10 +148,8 @@ function readOrCreatePaceBridge(sessionId, fiveHourPct, sevenDayPct) {
     const data = JSON.parse(fs.readFileSync(bridgePath, "utf8"));
     if (data.session_id === sessionId) {
       // Window reset during session — burn went negative, re-initialize
-      const fiveReset =
-        fiveHourPct != null && fiveHourPct < data.start_5h_pct;
-      const sevenReset =
-        sevenDayPct != null && sevenDayPct < data.start_7d_pct;
+      const fiveReset = fiveHourPct != null && fiveHourPct < data.start_5h_pct;
+      const sevenReset = sevenDayPct != null && sevenDayPct < data.start_7d_pct;
       if (!fiveReset && !sevenReset) return data;
     }
   } catch {}
@@ -182,7 +183,10 @@ function computePace(currentPct, startPct, startTime, resetsAt) {
   if (!resetsAt) {
     return { verdict: "--", color: c.dim, multiplier: null };
   }
-  const resetsAtMs = typeof resetsAt === "number" ? resetsAt * 1000 : new Date(resetsAt).getTime();
+  const resetsAtMs =
+    typeof resetsAt === "number"
+      ? resetsAt * 1000
+      : new Date(resetsAt).getTime();
   const timeRemainingHours = (resetsAtMs - now) / 3_600_000;
   if (timeRemainingHours <= 0) {
     return { verdict: "--", color: c.dim, multiplier: null };

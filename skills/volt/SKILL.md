@@ -17,13 +17,13 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `volt-driver` | Build a device driver or protocol handler — I2C, BLE, MQTT, SPI |
+| Skill           | Use when                                                                    |
+| --------------- | --------------------------------------------------------------------------- |
+| `volt-driver`   | Build a device driver or protocol handler — I2C, BLE, MQTT, SPI             |
 | `volt-firmware` | Design firmware architecture — layers, HAL interfaces, state machines, RTOS |
-| `volt-ota` | Design an OTA update system — partition layout, update flow, rollback |
-| `volt-power` | Power management audit — sleep modes, radio duty cycles, battery estimate |
-| `volt-recon` | Firmware reconnaissance — MCU, peripherals, RTOS, protocols, code quality |
+| `volt-ota`      | Design an OTA update system — partition layout, update flow, rollback       |
+| `volt-power`    | Power management audit — sleep modes, radio duty cycles, battery estimate   |
+| `volt-recon`    | Firmware reconnaissance — MCU, peripherals, RTOS, protocols, code quality   |
 
 Default (no args or unclear): `volt-recon`.
 

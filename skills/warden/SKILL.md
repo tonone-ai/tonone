@@ -17,13 +17,13 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `warden-audit` | Full security audit — secrets, dependencies, IAM, auth, injection, XSS |
+| Skill           | Use when                                                                       |
+| --------------- | ------------------------------------------------------------------------------ |
+| `warden-audit`  | Full security audit — secrets, dependencies, IAM, auth, injection, XSS         |
 | `warden-harden` | Produce and implement a hardening spec — auth, headers, rate limiting, secrets |
-| `warden-iam` | Build IAM from scratch — roles, policies, service accounts, least privilege |
-| `warden-recon` | Security reconnaissance — secrets, IAM, auth, encryption, compliance gaps |
-| `warden-threat` | Produce a threat model — assets, ranked threats, mitigations, accepted risks |
+| `warden-iam`    | Build IAM from scratch — roles, policies, service accounts, least privilege    |
+| `warden-recon`  | Security reconnaissance — secrets, IAM, auth, encryption, compliance gaps      |
+| `warden-threat` | Produce a threat model — assets, ranked threats, mitigations, accepted risks   |
 
 Default (no args or unclear): `warden-recon`.
 

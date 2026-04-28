@@ -48,6 +48,7 @@ If the animation involves a specific product, company, or event:
 ## Phase 1: Clarify
 
 Ask (max 3 questions if unclear):
+
 - What is the animation about? (product, brand, data story, concept)
 - Duration target? (default: 15–30 seconds)
 - Output format? MP4 / GIF / both (default: MP4 with BGM)
@@ -71,12 +72,12 @@ Mandatory 5-step protocol when animation involves a specific brand:
 
 If no direction is specified, run a mini-direction pass (3 options, no full demos needed at this stage):
 
-| Direction | Style | Best for |
-|-----------|-------|---------|
-| **Kinetic editorial** | Typography-led, editorial rhythm, text as visual element | Brand identity, announcement |
-| **Product cinema** | Product in environment, cinematic camera, depth of field feel | Hardware launch, product reveal |
-| **Data narrative** | Numbers animate in, charts build, information unfolds | Investor deck, data story |
-| **Conceptual abstract** | Particle systems, generative geometry, emotional atmosphere | Brand values, vision piece |
+| Direction               | Style                                                         | Best for                        |
+| ----------------------- | ------------------------------------------------------------- | ------------------------------- |
+| **Kinetic editorial**   | Typography-led, editorial rhythm, text as visual element      | Brand identity, announcement    |
+| **Product cinema**      | Product in environment, cinematic camera, depth of field feel | Hardware launch, product reveal |
+| **Data narrative**      | Numbers animate in, charts build, information unfolds         | Investor deck, data story       |
+| **Conceptual abstract** | Particle systems, generative geometry, emotional atmosphere   | Brand values, vision piece      |
 
 Present the 3 best fits for this brief and let the user choose before building.
 
@@ -108,17 +109,17 @@ function useTime(duration, { loop = true } = {}) {
   return t;
 }
 
-function interpolate(t, from, to, easing = x => x) {
+function interpolate(t, from, to, easing = (x) => x) {
   return from + (to - from) * easing(t);
 }
 
 const Easing = {
-  linear: t => t,
-  easeIn:  t => t * t,
-  easeOut: t => 1 - (1 - t) ** 2,
-  easeInOut: t => t < 0.5 ? 2*t*t : 1 - (-2*t+2)**2/2,
-  expo:    t => t === 0 ? 0 : Math.pow(2, 10 * t - 10),
-  spring:  t => 1 - Math.cos(t * Math.PI * 2.5) * Math.pow(2, -8*t),
+  linear: (t) => t,
+  easeIn: (t) => t * t,
+  easeOut: (t) => 1 - (1 - t) ** 2,
+  easeInOut: (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2),
+  expo: (t) => (t === 0 ? 0 : Math.pow(2, 10 * t - 10)),
+  spring: (t) => 1 - Math.cos(t * Math.PI * 2.5) * Math.pow(2, -8 * t),
 };
 ```
 
@@ -138,6 +139,7 @@ Each "scene" is a time slice: `if (t >= 0.2 && t < 0.5) { /* render this */ }`. 
 ## Phase 5: Build
 
 **Anti-slop checklist before writing code:**
+
 - [ ] No blue-purple gradient background unless brand-specified
 - [ ] No "glowing orb" / "particle sphere" / "DNA helix" generics
 - [ ] No centered white text on dark gradient as the main composition
@@ -146,6 +148,7 @@ Each "scene" is a time slice: `if (t >= 0.2 && t < 0.5) { /* render this */ }`. 
 - [ ] One "screenshot-worthy" frame in the animation — a moment worth pausing on
 
 **Narrative structure (15–30s default):**
+
 1. **Hook** (0–3s): single strong visual that earns attention
 2. **Build** (3–12s): idea develops, tension rises, information arrives
 3. **Resolve** (12–20s): payoff — product shown, message lands, logo reveals
@@ -201,6 +204,7 @@ BGM scene guide:
 ## Phase 7: Delivery
 
 Output to `_animations/[project-name]/`:
+
 - `animation.html` — source (double-click to preview)
 - `final.mp4` — primary deliverable
 - `output.gif` — if requested

@@ -211,7 +211,11 @@ def test_skills_reference_atlas_report():
     skills are exempt (entry skills delegate output to the sub-skill they invoke).
     """
     for name, path in _skill_files():
-        if name in SHORT_FORM_SKILLS or name in SPECIAL_SKILLS or name in AGENT_ENTRY_SKILLS:
+        if (
+            name in SHORT_FORM_SKILLS
+            or name in SPECIAL_SKILLS
+            or name in AGENT_ENTRY_SKILLS
+        ):
             continue
         text = path.read_text()
         assert ATLAS_REPORT_REFERENCE in text, (

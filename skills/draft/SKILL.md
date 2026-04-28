@@ -17,15 +17,15 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `draft-flow` | Diagram user flows for a feature or product area |
-| `draft-ia` | Design navigation structure, sitemap, and content hierarchy |
-| `draft-landing` | UX design for a landing page — layout, hierarchy, conversion flow |
-| `draft-patterns` | Document or design reusable UI interaction patterns |
-| `draft-recon` | Scan existing frontend routes, components, and flows before designing |
-| `draft-review` | Usability review — evaluate a flow against heuristics, flag friction |
-| `draft-wireframe` | Text and Mermaid wireframes — screen layouts with interaction notes |
+| Skill             | Use when                                                              |
+| ----------------- | --------------------------------------------------------------------- |
+| `draft-flow`      | Diagram user flows for a feature or product area                      |
+| `draft-ia`        | Design navigation structure, sitemap, and content hierarchy           |
+| `draft-landing`   | UX design for a landing page — layout, hierarchy, conversion flow     |
+| `draft-patterns`  | Document or design reusable UI interaction patterns                   |
+| `draft-recon`     | Scan existing frontend routes, components, and flows before designing |
+| `draft-review`    | Usability review — evaluate a flow against heuristics, flag friction  |
+| `draft-wireframe` | Text and Mermaid wireframes — screen layouts with interaction notes   |
 
 Default (no args or unclear): `draft-recon`.
 

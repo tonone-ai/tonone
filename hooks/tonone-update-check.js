@@ -13,7 +13,8 @@ const { spawnSync } = require("child_process");
 
 // ── Config ────────────────────────────────────────────────────────────────────
 
-const PLUGIN_ROOT = process.env.CLAUDE_PLUGIN_ROOT || path.join(__dirname, "..");
+const PLUGIN_ROOT =
+  process.env.CLAUDE_PLUGIN_ROOT || path.join(__dirname, "..");
 const PLUGIN_JSON = path.join(PLUGIN_ROOT, ".claude-plugin", "plugin.json");
 const CACHE_DIR = path.join(os.homedir(), ".config", "tonone");
 const CACHE_FILE = path.join(CACHE_DIR, "update-cache.json");

@@ -143,20 +143,26 @@ def test_git_gate_is_valid_js():
 def test_git_gate_allows_non_git_commands():
     """Gate exits 0 for Bash commands that are not git commit/push."""
     for cmd in ["npm test", "echo hello", "git status", "git log", "git add ."]:
-        rc, _, _ = run_hook(GIT_GATE, {
-            "tool_name": "Bash",
-            "tool_input": {"command": cmd},
-        })
+        rc, _, _ = run_hook(
+            GIT_GATE,
+            {
+                "tool_name": "Bash",
+                "tool_input": {"command": cmd},
+            },
+        )
         assert rc == 0, f"Expected exit 0 for command={cmd!r}, got {rc}"
 
 
 def test_git_gate_allows_non_bash_tools():
     """Gate exits 0 for tools other than Bash."""
     for tool in ["Edit", "Write", "Read", "Agent"]:
-        rc, _, _ = run_hook(GIT_GATE, {
-            "tool_name": tool,
-            "tool_input": {"command": "git commit -m 'test'"},
-        })
+        rc, _, _ = run_hook(
+            GIT_GATE,
+            {
+                "tool_name": tool,
+                "tool_input": {"command": "git commit -m 'test'"},
+            },
+        )
         assert rc == 0, f"Expected exit 0 for tool={tool}, got {rc}"
 
 
@@ -185,9 +191,9 @@ def test_git_gate_message_is_actionable():
 # bump-version.py
 # ---------------------------------------------------------------------------
 
+import importlib
 import sys
 import types
-import importlib
 
 BUMP_VERSION = REPO / "scripts" / "bump-version.py"
 
@@ -202,13 +208,22 @@ def _load_bump_version():
 
 def test_bump_version_excludes_worktrees(tmp_path):
     """find_files() must not return paths inside .claude/worktrees/."""
-    import importlib.util, types, sys as _sys
+    import importlib.util
+    import sys as _sys
+    import types
 
     mod = _load_bump_version()
 
     # Create a fake worktree plugin.json inside a temp REPO_ROOT
     fake_root = tmp_path
-    wt_plugin = fake_root / ".claude" / "worktrees" / "my-feature" / ".claude-plugin" / "plugin.json"
+    wt_plugin = (
+        fake_root
+        / ".claude"
+        / "worktrees"
+        / "my-feature"
+        / ".claude-plugin"
+        / "plugin.json"
+    )
     wt_plugin.parent.mkdir(parents=True)
     wt_plugin.write_text('{"name":"tonone","version":"0.0.0"}')
 
@@ -226,12 +241,12 @@ def test_bump_version_excludes_worktrees(tmp_path):
     try:
         plugin_files, _ = mod.find_files()
         paths = [str(p) for p in plugin_files]
-        assert any("claude-plugin" in p and "worktrees" not in p for p in paths), (
-            "real plugin.json should be included"
-        )
-        assert not any("worktrees" in p for p in paths), (
-            f"worktree plugin.json must be excluded, got: {paths}"
-        )
+        assert any(
+            "claude-plugin" in p and "worktrees" not in p for p in paths
+        ), "real plugin.json should be included"
+        assert not any(
+            "worktrees" in p for p in paths
+        ), f"worktree plugin.json must be excluded, got: {paths}"
     finally:
         mod.REPO_ROOT = orig_root
         mod.TEMPLATE_DIR = orig_tmpl
@@ -241,6 +256,6 @@ def test_git_gate_uses_worktree_path_in_message():
     """Source must use worktreePath (not branchName) as the EnterWorktree arg."""
     source = GIT_GATE.read_text()
     # The fix: EnterWorktree("${worktreePath}"), not EnterWorktree("${branchName}")
-    assert 'EnterWorktree("${worktreePath}")' in source, (
-        "git-gate must pass worktreePath to EnterWorktree, not branchName"
-    )
+    assert (
+        'EnterWorktree("${worktreePath}")' in source
+    ), "git-gate must pass worktreePath to EnterWorktree, not branchName"

@@ -58,7 +58,7 @@ process.stdin.on("end", () => {
       process.stdout.write(
         `WORKTREE_READY: session is inside worktree "${branch}" at ${worktreePath}.\n` +
           `You are already in the correct context. Proceed with edits directly.\n` +
-          `To rename this branch: git branch -m ${branch} <new-name>\n`
+          `To rename this branch: git branch -m ${branch} <new-name>\n`,
       );
     } else {
       // Fresh main-branch session -- print cheatsheet
@@ -67,7 +67,7 @@ process.stdin.on("end", () => {
           `hook will fire. Create a worktree at that point:\n` +
           `  git worktree add .claude/worktrees/<slug> -b <slug>\n` +
           `  EnterWorktree(".claude/worktrees/<slug>")\n` +
-          `To rename later: git branch -m <old-name> <new-name>\n`
+          `To rename later: git branch -m <old-name> <new-name>\n`,
       );
     }
   } catch {

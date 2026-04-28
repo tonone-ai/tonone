@@ -17,14 +17,14 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `forge-audit` | Audit existing infrastructure for security issues and waste |
-| `forge-cost` | Audit cloud spend and produce a concrete optimization plan |
+| Skill            | Use when                                                                |
+| ---------------- | ----------------------------------------------------------------------- |
+| `forge-audit`    | Audit existing infrastructure for security issues and waste             |
+| `forge-cost`     | Audit cloud spend and produce a concrete optimization plan              |
 | `forge-diagnose` | Diagnose runtime infra issues — cold starts, timeouts, scaling, latency |
-| `forge-infra` | Build production-grade IaC (Terraform, CloudFormation) for a service |
-| `forge-network` | Design and build networking infrastructure — VPCs, DNS, load balancers |
-| `forge-recon` | Inventory all cloud resources, map connections, flag risks |
+| `forge-infra`    | Build production-grade IaC (Terraform, CloudFormation) for a service    |
+| `forge-network`  | Design and build networking infrastructure — VPCs, DNS, load balancers  |
+| `forge-recon`    | Inventory all cloud resources, map connections, flag risks              |
 
 Default (no args or unclear): `forge-recon`.
 

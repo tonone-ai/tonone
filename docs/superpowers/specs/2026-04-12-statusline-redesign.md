@@ -12,31 +12,31 @@ Line 2  spine │ subs: audit pipeline, check deps │ $0.38 │ 23m
 Line 3  Opus → Sonnet │ ████░░░░░░ 48% │ 5h: 24% ok 0.6× │ 7d: 41% ok 0.8×
 ```
 
-| Line | Theme | Segments |
-|------|-------|----------|
-| 1 | **Where** — location & code state | directory, branch + ahead, dirty count, lines changed |
-| 2 | **What** — session activity | agent + subs, cost, duration |
-| 3 | **How much left** — runway gauges | model(s), context window, 5h pace, 7d pace |
-| 4 | **Why** — session purpose | goal (optional, from `.claude/session-goal` or `.claude/branch-slug`) |
+| Line | Theme                             | Segments                                                              |
+| ---- | --------------------------------- | --------------------------------------------------------------------- |
+| 1    | **Where** — location & code state | directory, branch + ahead, dirty count, lines changed                 |
+| 2    | **What** — session activity       | agent + subs, cost, duration                                          |
+| 3    | **How much left** — runway gauges | model(s), context window, 5h pace, 7d pace                            |
+| 4    | **Why** — session purpose         | goal (optional, from `.claude/session-goal` or `.claude/branch-slug`) |
 
 ## Static Fields
 
 All segments are always visible. No progressive disclosure. When a value is zero or unavailable, show a dim placeholder instead of hiding the segment:
 
-| Segment | Active | Empty/Zero |
-|---------|--------|------------|
-| Directory | `~/repos/tn/tonone` | always present (from cwd) |
-| Branch | `main ↑3` | `main` (no ↑ when 0) |
-| Dirty | `2 dirty` (yellow) | `clean` (dim) |
-| Lines | `+156 -23 lines` (green/red) | `+0 -0 lines` (dim) |
-| Agent | `spine` (magenta bold) | `idle` (dim) |
-| Subs | `subs: audit, recon` (magenta) | `no subs` (dim) |
-| Cost | `$0.38` | `$0.00` (dim) |
-| Duration | `23m` | `0m` (dim) |
-| Model | `Opus → Sonnet` | `Opus 4.6` (just main, no arrow) |
-| Context bar | `████░░░░░░ 48%` | `░░░░░░░░░░ 100%` (dim) |
-| 5h pace | `5h: 24% ok 0.6×` | `5h: 0% --` (dim) |
-| 7d pace | `7d: 41% ok 0.8×` | `7d: 0% --` (dim) |
+| Segment     | Active                         | Empty/Zero                       |
+| ----------- | ------------------------------ | -------------------------------- |
+| Directory   | `~/repos/tn/tonone`            | always present (from cwd)        |
+| Branch      | `main ↑3`                      | `main` (no ↑ when 0)             |
+| Dirty       | `2 dirty` (yellow)             | `clean` (dim)                    |
+| Lines       | `+156 -23 lines` (green/red)   | `+0 -0 lines` (dim)              |
+| Agent       | `spine` (magenta bold)         | `idle` (dim)                     |
+| Subs        | `subs: audit, recon` (magenta) | `no subs` (dim)                  |
+| Cost        | `$0.38`                        | `$0.00` (dim)                    |
+| Duration    | `23m`                          | `0m` (dim)                       |
+| Model       | `Opus → Sonnet`                | `Opus 4.6` (just main, no arrow) |
+| Context bar | `████░░░░░░ 48%`               | `░░░░░░░░░░ 100%` (dim)          |
+| 5h pace     | `5h: 24% ok 0.6×`              | `5h: 0% --` (dim)                |
+| 7d pace     | `7d: 41% ok 0.8×`              | `7d: 0% --` (dim)                |
 
 ## Segment Details
 
@@ -97,12 +97,12 @@ pace_multiplier = burn_rate / safe_rate
 
 ### Verdict Logic
 
-| Condition | Verdict | Color |
-|-----------|---------|-------|
-| Session < 2 minutes | `--` | dim |
-| `projected_total ≤ 80` | `ok` | green |
-| `projected_total ≤ 100` | `tight` | yellow |
-| `projected_total > 100` | `~Xm` or `~Xh` (time to impact) | red |
+| Condition               | Verdict                         | Color  |
+| ----------------------- | ------------------------------- | ------ |
+| Session < 2 minutes     | `--`                            | dim    |
+| `projected_total ≤ 80`  | `ok`                            | green  |
+| `projected_total ≤ 100` | `tight`                         | yellow |
+| `projected_total > 100` | `~Xm` or `~Xh` (time to impact) | red    |
 
 Time to impact = `(100 - current_pct) / burn_rate`, formatted as minutes or hours.
 
@@ -137,33 +137,33 @@ Source: `data.tool_input.model` from the Agent tool call (falls back to `null` i
 
 ## Colors
 
-| Element | ANSI | Code |
-|---------|------|------|
-| Directory | dim white | `\x1b[2;37m` |
-| Branch | cyan | `\x1b[36m` |
-| ↑N | green | `\x1b[32m` |
-| Dirty count | yellow | `\x1b[33m` |
-| "clean" | dim | `\x1b[2m` |
-| Lines +N | green | `\x1b[32m` |
-| Lines -N | red | `\x1b[31m` |
-| Agent name | magenta bold | `\x1b[35m\x1b[1m` |
-| Sub names | magenta | `\x1b[35m` |
-| "idle", "no subs" | dim | `\x1b[2m` |
-| Cost normal | dim white | `\x1b[2;37m` |
-| Cost >$1 | yellow | `\x1b[33m` |
-| Cost >$5 | red | `\x1b[31m` |
-| Duration | dim white | `\x1b[2;37m` |
-| Model names | dim white | `\x1b[2;37m` |
-| Arrow → | dim | `\x1b[2m` |
-| Context bar >50% | green | `\x1b[32m` |
-| Context bar >25% | yellow | `\x1b[33m` |
-| Context bar >10% | red | `\x1b[31m` |
-| Context bar ≤10% | blink red | `\x1b[5m\x1b[31m` |
-| Pace ok | green | `\x1b[32m` |
-| Pace tight | yellow | `\x1b[33m` |
-| Pace ~Xm | red | `\x1b[31m` |
-| Pace -- | dim | `\x1b[2m` |
-| Separators │ | dim | `\x1b[2m` |
+| Element           | ANSI         | Code              |
+| ----------------- | ------------ | ----------------- |
+| Directory         | dim white    | `\x1b[2;37m`      |
+| Branch            | cyan         | `\x1b[36m`        |
+| ↑N                | green        | `\x1b[32m`        |
+| Dirty count       | yellow       | `\x1b[33m`        |
+| "clean"           | dim          | `\x1b[2m`         |
+| Lines +N          | green        | `\x1b[32m`        |
+| Lines -N          | red          | `\x1b[31m`        |
+| Agent name        | magenta bold | `\x1b[35m\x1b[1m` |
+| Sub names         | magenta      | `\x1b[35m`        |
+| "idle", "no subs" | dim          | `\x1b[2m`         |
+| Cost normal       | dim white    | `\x1b[2;37m`      |
+| Cost >$1          | yellow       | `\x1b[33m`        |
+| Cost >$5          | red          | `\x1b[31m`        |
+| Duration          | dim white    | `\x1b[2;37m`      |
+| Model names       | dim white    | `\x1b[2;37m`      |
+| Arrow →           | dim          | `\x1b[2m`         |
+| Context bar >50%  | green        | `\x1b[32m`        |
+| Context bar >25%  | yellow       | `\x1b[33m`        |
+| Context bar >10%  | red          | `\x1b[31m`        |
+| Context bar ≤10%  | blink red    | `\x1b[5m\x1b[31m` |
+| Pace ok           | green        | `\x1b[32m`        |
+| Pace tight        | yellow       | `\x1b[33m`        |
+| Pace ~Xm          | red          | `\x1b[31m`        |
+| Pace --           | dim          | `\x1b[2m`         |
+| Separators │      | dim          | `\x1b[2m`         |
 
 ### Line 4: Session Goal (optional)
 
@@ -172,11 +172,13 @@ Reads from `.claude/session-goal` first, falls back to `.claude/branch-slug`. Hy
 Format: `goal: <text>` — dim label, cyan text.
 
 Users set this by writing the branch-slug before a session (already the project convention):
+
 ```bash
 echo "fix-auth-bug" > .claude/branch-slug
 ```
 
 Or a more descriptive one-liner:
+
 ```bash
 echo "add session goal to statusline" > .claude/session-goal
 ```

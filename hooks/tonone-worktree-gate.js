@@ -45,7 +45,9 @@ process.stdin.on("end", () => {
         process.exit(0);
       }
       // Stale marker — remove it so the user isn't confused about why they're blocked
-      try { fs.unlinkSync(SKIP_MARKER); } catch {}
+      try {
+        fs.unlinkSync(SKIP_MARKER);
+      } catch {}
     } catch {
       // Marker absent — continue
     }
@@ -55,7 +57,9 @@ process.stdin.on("end", () => {
     try {
       const out = execSync("git rev-parse --git-dir --git-common-dir", {
         encoding: "utf8",
-      }).trim().split("\n");
+      })
+        .trim()
+        .split("\n");
       if (out.length < 2) process.exit(0); // Unexpected git output — allow
       gitDir = out[0];
       commonDir = out[1];
@@ -75,7 +79,7 @@ process.stdin.on("end", () => {
         `  EnterWorktree(".claude/worktrees/<slug>")\n\n` +
         `Then retry your edit.\n\n` +
         `To edit main intentionally (CHANGELOG, version bumps, docs), ` +
-        `create .claude/skip-worktree first, then retry.\n`
+        `create .claude/skip-worktree first, then retry.\n`,
     );
     process.exit(1);
   } catch {

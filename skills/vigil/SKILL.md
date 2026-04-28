@@ -17,13 +17,13 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `vigil-alert` | Write SLO-based alert rules with burn rate thresholds and runbooks |
-| `vigil-check` | Verify observability posture — coverage audit, blind spots, pre-launch check |
-| `vigil-incident` | Incident response — diagnose production issues, find root cause, propose fix |
-| `vigil-instrument` | Instrument a service with OpenTelemetry — RED metrics, logs, tracing |
-| `vigil-recon` | Inventory existing monitoring, map coverage, highlight gaps |
+| Skill              | Use when                                                                     |
+| ------------------ | ---------------------------------------------------------------------------- |
+| `vigil-alert`      | Write SLO-based alert rules with burn rate thresholds and runbooks           |
+| `vigil-check`      | Verify observability posture — coverage audit, blind spots, pre-launch check |
+| `vigil-incident`   | Incident response — diagnose production issues, find root cause, propose fix |
+| `vigil-instrument` | Instrument a service with OpenTelemetry — RED metrics, logs, tracing         |
+| `vigil-recon`      | Inventory existing monitoring, map coverage, highlight gaps                  |
 
 Default (no args or unclear): `vigil-recon`.
 

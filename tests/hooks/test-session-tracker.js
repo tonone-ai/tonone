@@ -23,7 +23,9 @@ function makeTempDir() {
 }
 
 function cleanup(dir) {
-  try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  try {
+    fs.rmSync(dir, { recursive: true, force: true });
+  } catch {}
 }
 
 test("tonone skill — appends agent name to .claude/session-agents", () => {
@@ -31,10 +33,13 @@ test("tonone skill — appends agent name to .claude/session-agents", () => {
   try {
     const result = runHook(
       { tool_name: "Skill", tool_input: { skill: "spine-api" } },
-      dir
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
-    const content = fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8");
+    const content = fs.readFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      "utf8",
+    );
     assert.ok(content.includes("spine"), `expected 'spine' in: ${content}`);
   } finally {
     cleanup(dir);
@@ -45,12 +50,18 @@ test("non-tonone skill — ignored, file not written", () => {
   const dir = makeTempDir();
   try {
     const result = runHook(
-      { tool_name: "Skill", tool_input: { skill: "superpowers:brainstorming" } },
-      dir
+      {
+        tool_name: "Skill",
+        tool_input: { skill: "superpowers:brainstorming" },
+      },
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
     const filePath = path.join(dir, ".claude", "session-agents");
-    assert.ok(!fs.existsSync(filePath), "file should not be created for non-tonone skill");
+    assert.ok(
+      !fs.existsSync(filePath),
+      "file should not be created for non-tonone skill",
+    );
   } finally {
     cleanup(dir);
   }
@@ -60,11 +71,21 @@ test("same agent invoked twice — deduplication, appears once", () => {
   const dir = makeTempDir();
   try {
     runHook({ tool_name: "Skill", tool_input: { skill: "warden-audit" } }, dir);
-    runHook({ tool_name: "Skill", tool_input: { skill: "warden-harden" } }, dir);
-    const content = fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8");
+    runHook(
+      { tool_name: "Skill", tool_input: { skill: "warden-harden" } },
+      dir,
+    );
+    const content = fs.readFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      "utf8",
+    );
     const lines = content.trim().split("\n").filter(Boolean);
-    const wardenLines = lines.filter(l => l === "warden");
-    assert.strictEqual(wardenLines.length, 1, `expected 1 warden line, got: ${content}`);
+    const wardenLines = lines.filter((l) => l === "warden");
+    assert.strictEqual(
+      wardenLines.length,
+      1,
+      `expected 1 warden line, got: ${content}`,
+    );
   } finally {
     cleanup(dir);
   }
@@ -76,7 +97,10 @@ test("multiple different agents — all appended", () => {
     runHook({ tool_name: "Skill", tool_input: { skill: "spine-api" } }, dir);
     runHook({ tool_name: "Skill", tool_input: { skill: "atlas-map" } }, dir);
     runHook({ tool_name: "Skill", tool_input: { skill: "proof-audit" } }, dir);
-    const content = fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8");
+    const content = fs.readFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      "utf8",
+    );
     assert.ok(content.includes("spine"), content);
     assert.ok(content.includes("atlas"), content);
     assert.ok(content.includes("proof"), content);
@@ -90,7 +114,7 @@ test("non-Skill tool event — exits 0, no file written", () => {
   try {
     const result = runHook(
       { tool_name: "Bash", tool_input: { command: "ls" } },
-      dir
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
     assert.ok(!fs.existsSync(path.join(dir, ".claude", "session-agents")));

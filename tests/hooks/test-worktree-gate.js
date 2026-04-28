@@ -20,11 +20,16 @@ function makeTempRepo() {
 }
 
 function cleanup(dir) {
-  try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  try {
+    fs.rmSync(dir, { recursive: true, force: true });
+  } catch {}
 }
 
 function runHook(cwd, toolName = "Edit", extraInput = {}) {
-  const input = JSON.stringify({ tool_name: toolName, tool_input: { file_path: "foo.txt", ...extraInput } });
+  const input = JSON.stringify({
+    tool_name: toolName,
+    tool_input: { file_path: "foo.txt", ...extraInput },
+  });
   return spawnSync("node", [HOOK], {
     input,
     encoding: "utf8",
@@ -53,7 +58,9 @@ test("already in a worktree — exits 0, no output", () => {
     const result = runHook(wtPath, "Edit");
     assert.strictEqual(result.status, 0, result.stderr);
     assert.strictEqual(result.stdout.trim(), "");
-    try { execSync(`git worktree remove --force "${wtPath}"`, { cwd: main }); } catch {}
+    try {
+      execSync(`git worktree remove --force "${wtPath}"`, { cwd: main });
+    } catch {}
   } finally {
     cleanup(main);
   }
@@ -92,14 +99,15 @@ test("skip-worktree marker stale (>2h) — exits 1 and blocks", () => {
 test("writing skip-worktree itself (relative path) — exits 0, no output", () => {
   const dir = makeTempRepo();
   try {
-    const result = runHook(dir, "Write", { file_path: ".claude/skip-worktree" });
+    const result = runHook(dir, "Write", {
+      file_path: ".claude/skip-worktree",
+    });
     assert.strictEqual(result.status, 0, result.stderr);
     assert.strictEqual(result.stdout.trim(), "");
   } finally {
     cleanup(dir);
   }
 });
-
 
 test("NotebookEdit with notebook_path skip-worktree — exits 0, no output", () => {
   const dir = makeTempRepo();
@@ -108,7 +116,12 @@ test("NotebookEdit with notebook_path skip-worktree — exits 0, no output", () 
       tool_name: "NotebookEdit",
       tool_input: { notebook_path: ".claude/skip-worktree" },
     });
-    const result = spawnSync("node", [HOOK], { input, encoding: "utf8", cwd: dir, timeout: 10000 });
+    const result = spawnSync("node", [HOOK], {
+      input,
+      encoding: "utf8",
+      cwd: dir,
+      timeout: 10000,
+    });
     assert.strictEqual(result.status, 0, result.stderr);
     assert.strictEqual(result.stdout.trim(), "");
   } finally {

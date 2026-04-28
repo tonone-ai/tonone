@@ -38,7 +38,11 @@ process.stdin.on("end", () => {
     // Check if already in a worktree
     let gitDir, commonDir;
     try {
-      const parts = execSync("git rev-parse --git-dir --git-common-dir", { encoding: "utf8" }).trim().split("\n");
+      const parts = execSync("git rev-parse --git-dir --git-common-dir", {
+        encoding: "utf8",
+      })
+        .trim()
+        .split("\n");
       if (parts.length < 2) process.exit(0); // Unexpected output — allow
       gitDir = parts[0];
       commonDir = parts[1];
@@ -59,7 +63,11 @@ process.stdin.on("end", () => {
           .readdirSync(worktreesDir)
           .map((e) => {
             const p = path.join(worktreesDir, e);
-            try { return { name: e, mtime: fs.statSync(p).mtimeMs, p }; } catch { return null; }
+            try {
+              return { name: e, mtime: fs.statSync(p).mtimeMs, p };
+            } catch {
+              return null;
+            }
           })
           .filter(Boolean)
           .sort((a, b) => b.mtime - a.mtime);

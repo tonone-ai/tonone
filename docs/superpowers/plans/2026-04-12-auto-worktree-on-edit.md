@@ -12,10 +12,10 @@
 
 ## File Map
 
-| File | Change |
-|------|--------|
-| `hooks/tonone-worktree-gate.js` | Rewrite |
-| `tests/test_hooks.py` | Update 1 test |
+| File                                                                                  | Change             |
+| ------------------------------------------------------------------------------------- | ------------------ |
+| `hooks/tonone-worktree-gate.js`                                                       | Rewrite            |
+| `tests/test_hooks.py`                                                                 | Update 1 test      |
 | `/Users/f/.claude/plugins/cache/tonone-ai/tonone/0.6.9/hooks/tonone-worktree-gate.js` | Sync after rewrite |
 
 ---
@@ -23,6 +23,7 @@
 ## Task 1: Update failing test (TDD — red first)
 
 **Files:**
+
 - Modify: `tests/test_hooks.py:138-144`
 
 - [ ] **Step 1: Update the source-inspection test**
@@ -53,6 +54,7 @@ Expected: `FAILED` — `WORKTREE_READY` not in source (current source has `WORKT
 ## Task 2: Rewrite `tonone-worktree-gate.js`
 
 **Files:**
+
 - Modify: `hooks/tonone-worktree-gate.js`
 
 - [ ] **Step 1: Replace the file with the new implementation**
@@ -196,6 +198,7 @@ python -m pytest tests/test_hooks.py -v
 ```
 
 Expected output — all pass:
+
 ```
 tests/test_hooks.py::test_hook_files_exist PASSED
 tests/test_hooks.py::test_worktree_create_is_valid_js PASSED
@@ -221,6 +224,7 @@ git commit -m "feat(worktree): auto-create worktree on first edit — drop plan 
 ## Task 3: Sync to plugin cache
 
 **Files:**
+
 - Modify: `/Users/f/.claude/plugins/cache/tonone-ai/tonone/0.6.9/hooks/tonone-worktree-gate.js`
 
 - [ ] **Step 1: Copy rewritten hook to plugin cache**

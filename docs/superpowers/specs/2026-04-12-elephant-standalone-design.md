@@ -44,11 +44,13 @@ elephant/
 ## Install Mechanisms
 
 **Plugin registry (primary):**
+
 ```bash
 claude plugins install github:<owner>/elephant
 ```
 
 **Curl fallback:**
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/<owner>/elephant/main/install.sh | bash
 ```
@@ -60,19 +62,20 @@ curl -fsSL https://raw.githubusercontent.com/<owner>/elephant/main/install.sh | 
 ## Skill Content
 
 Direct extraction from `tonone/skills/elephant/SKILL.md` (v1.1.0, MIT).  
-Frontmatter updated: remove tonone-specific `author` coupling, bump as standalone.  
+Frontmatter updated: remove tonone-specific `author` coupling, bump as standalone.
 
 No logic changes. Four commands (save has two variants) unchanged:
 
-| Command | Action |
-|---|---|
-| `/elephant save <text>` | Write routine memory entry |
+| Command                    | Action                                   |
+| -------------------------- | ---------------------------------------- |
+| `/elephant save <text>`    | Write routine memory entry               |
 | `/elephant save !! <text>` | Write important entry (never compressed) |
-| `/elephant show` | Print full memory file |
-| `/elephant compact` | Merge routine entries older than 7 days |
-| `/elephant takeover [N]` | Bootstrap from git history (cold start) |
+| `/elephant show`           | Print full memory file                   |
+| `/elephant compact`        | Merge routine entries older than 7 days  |
+| `/elephant takeover [N]`   | Bootstrap from git history (cold start)  |
 
 Memory files:
+
 - Local: `.elephant/memory.md`
 - Global: `~/.claude/elephant/memory.md`
 
@@ -85,6 +88,7 @@ Memory files:
 **Vibe:** Fun, personality-first, 🐘 emoji as logo. Bold colors — deep forest green bg, cream text, amber `[!!]` highlights.
 
 **Hero:**
+
 ```
 "Consider the elephant. Legend has it its memory
  is so robust it never forgets."
@@ -96,6 +100,7 @@ Claude Code forgets. Elephant doesn't.
 ```
 
 **Sections:**
+
 1. Hero — quote + tagline + install CTA
 2. Terminal demo block — static code block showing `/elephant takeover` output (demo GIF slot reserved: `<!-- demo.gif coming soon -->`)
 3. Commands grid — 4 commands with one-line descriptions
@@ -107,6 +112,7 @@ Claude Code forgets. Elephant doesn't.
 ## README
 
 **Structure:**
+
 ```
 🐘 elephant
 
@@ -118,7 +124,7 @@ Claude Code forgets everything between sessions. Elephant fixes that.
 [badges]
 
 ## Install
-## Commands  
+## Commands
 ## How it works
 ## Contributing
 ```

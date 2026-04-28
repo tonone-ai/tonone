@@ -17,15 +17,15 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `atlas-adr` | Write an Architecture Decision Record for a technical decision |
+| Skill             | Use when                                                         |
+| ----------------- | ---------------------------------------------------------------- |
+| `atlas-adr`       | Write an Architecture Decision Record for a technical decision   |
 | `atlas-changelog` | Append or update the project changelog after a release or change |
-| `atlas-map` | Map the system architecture as C4 diagrams and Mermaid |
-| `atlas-onboard` | Generate onboarding docs for new engineers |
-| `atlas-present` | Produce a polished HTML release presentation for stakeholders |
-| `atlas-recon` | Survey existing docs, assess accuracy, find knowledge gaps |
-| `atlas-report` | Render agent findings as a styled HTML report in the browser |
+| `atlas-map`       | Map the system architecture as C4 diagrams and Mermaid           |
+| `atlas-onboard`   | Generate onboarding docs for new engineers                       |
+| `atlas-present`   | Produce a polished HTML release presentation for stakeholders    |
+| `atlas-recon`     | Survey existing docs, assess accuracy, find knowledge gaps       |
+| `atlas-report`    | Render agent findings as a styled HTML report in the browser     |
 
 Default (no args or unclear): `atlas-recon`.
 

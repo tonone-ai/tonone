@@ -20,13 +20,18 @@ function makeTempDir(agents) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "pr-attr-"));
   fs.mkdirSync(path.join(dir, ".claude"), { recursive: true });
   if (agents && agents.length > 0) {
-    fs.writeFileSync(path.join(dir, ".claude", "session-agents"), agents.join("\n") + "\n");
+    fs.writeFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      agents.join("\n") + "\n",
+    );
   }
   return dir;
 }
 
 function cleanup(dir) {
-  try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  try {
+    fs.rmSync(dir, { recursive: true, force: true });
+  } catch {}
 }
 
 // Load formatAttribution for pure function tests
@@ -45,7 +50,15 @@ test("formatAttribution — multiple agents, alphabetical, title-cased", () => {
 });
 
 test("formatAttribution — more than 5 agents, truncated with count", () => {
-  const line = hook.formatAttribution(["apex", "atlas", "forge", "lens", "proof", "spine", "warden"]);
+  const line = hook.formatAttribution([
+    "apex",
+    "atlas",
+    "forge",
+    "lens",
+    "proof",
+    "spine",
+    "warden",
+  ]);
   assert.ok(line.includes("and 2 more"), line);
 });
 
@@ -59,8 +72,12 @@ test("non gh-pr-create command — exits 0, session-agents not cleared", () => {
   const dir = makeTempDir(["spine"]);
   try {
     const result = runHook(
-      { tool_name: "Bash", tool_input: { command: "git status" }, tool_output: {} },
-      dir
+      {
+        tool_name: "Bash",
+        tool_input: { command: "git status" },
+        tool_output: {},
+      },
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
     // session-agents file should still exist (not cleared)
@@ -79,13 +96,17 @@ test("gh pr create — session-agents cleared after run (regardless of gh succes
         tool_input: { command: "gh pr create --title test --body test" },
         tool_output: { output: "https://github.com/owner/repo/pull/1" },
       },
-      dir
+      dir,
     );
     // session-agents should be cleared regardless of gh success/failure
     const content = fs.existsSync(path.join(dir, ".claude", "session-agents"))
       ? fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8")
       : "";
-    assert.strictEqual(content.trim(), "", `expected empty session-agents, got: ${content}`);
+    assert.strictEqual(
+      content.trim(),
+      "",
+      `expected empty session-agents, got: ${content}`,
+    );
   } finally {
     cleanup(dir);
   }
@@ -119,14 +140,18 @@ test("getPrUrl — object tool_output with .output field containing URL", () => 
         // tool_output is an OBJECT (not a string) — this was the bug
         tool_output: { output: "https://github.com/owner/repo/pull/42" },
       },
-      dir
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
     // session-agents cleared means getPrUrl successfully extracted the URL
     const content = fs.existsSync(path.join(dir, ".claude", "session-agents"))
       ? fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8")
       : "";
-    assert.strictEqual(content.trim(), "", `getPrUrl failed to extract URL from object tool_output — session-agents not cleared: ${content}`);
+    assert.strictEqual(
+      content.trim(),
+      "",
+      `getPrUrl failed to extract URL from object tool_output — session-agents not cleared: ${content}`,
+    );
   } finally {
     cleanup(dir);
   }
@@ -142,12 +167,16 @@ test("getPrUrl — plain string tool_output containing URL", () => {
         // tool_output is a plain string
         tool_output: "https://github.com/owner/repo/pull/99",
       },
-      dir
+      dir,
     );
     const content = fs.existsSync(path.join(dir, ".claude", "session-agents"))
       ? fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8")
       : "";
-    assert.strictEqual(content.trim(), "", `getPrUrl failed on plain string tool_output: ${content}`);
+    assert.strictEqual(
+      content.trim(),
+      "",
+      `getPrUrl failed on plain string tool_output: ${content}`,
+    );
   } finally {
     cleanup(dir);
   }
@@ -164,9 +193,13 @@ test("getPrUrl — tool_output object with no .output field — falls back to gh
         tool_input: { command: "gh pr create --title t --body b" },
         tool_output: { stdout: "", stderr: "some error" }, // no .output, no URL
       },
-      dir
+      dir,
     );
-    assert.strictEqual(result.status, 0, "hook must exit 0 even when URL not found");
+    assert.strictEqual(
+      result.status,
+      0,
+      "hook must exit 0 even when URL not found",
+    );
   } finally {
     cleanup(dir);
   }

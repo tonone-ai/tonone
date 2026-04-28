@@ -12,22 +12,23 @@
 
 ## File Map
 
-| File | Action | Responsibility |
-|------|--------|----------------|
-| `hooks/tonone-worktree-session.js` | Create | SessionStart hook — eager worktree creation |
-| `hooks/tonone-worktree-close.js` | Create | Stop hook — auto-remove clean sessions, suggest PR for dirty ones |
-| `tests/hooks/test-worktree-session.js` | Create | Integration tests for session hook |
-| `tests/hooks/test-worktree-close.js` | Create | Integration tests for close hook |
-| `hooks/tonone-worktree-create.js` | Delete | Replaced by session hook |
-| `hooks/tonone-worktree-gate.js` | Delete | Replaced by eager creation |
-| `.claude-plugin/plugin.json` | Modify | Wire new hooks, remove old ExitPlanMode + PreToolUse worktree entries |
-| `CLAUDE.md` | Modify | Replace `## Worktree branch naming` with `## Worktree sessions` |
+| File                                   | Action | Responsibility                                                        |
+| -------------------------------------- | ------ | --------------------------------------------------------------------- |
+| `hooks/tonone-worktree-session.js`     | Create | SessionStart hook — eager worktree creation                           |
+| `hooks/tonone-worktree-close.js`       | Create | Stop hook — auto-remove clean sessions, suggest PR for dirty ones     |
+| `tests/hooks/test-worktree-session.js` | Create | Integration tests for session hook                                    |
+| `tests/hooks/test-worktree-close.js`   | Create | Integration tests for close hook                                      |
+| `hooks/tonone-worktree-create.js`      | Delete | Replaced by session hook                                              |
+| `hooks/tonone-worktree-gate.js`        | Delete | Replaced by eager creation                                            |
+| `.claude-plugin/plugin.json`           | Modify | Wire new hooks, remove old ExitPlanMode + PreToolUse worktree entries |
+| `CLAUDE.md`                            | Modify | Replace `## Worktree branch naming` with `## Worktree sessions`       |
 
 ---
 
 ## Task 1: Write failing tests for tonone-worktree-session.js
 
 **Files:**
+
 - Create: `tests/hooks/test-worktree-session.js`
 
 - [ ] **Step 1: Create the test file**
@@ -55,7 +56,9 @@ function makeTempRepo() {
 }
 
 function cleanup(dir) {
-  try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  try {
+    fs.rmSync(dir, { recursive: true, force: true });
+  } catch {}
 }
 
 function runHook(cwd) {
@@ -102,7 +105,9 @@ test("on main — creates worktree, prints WORKTREE_READY with EnterWorktree cal
     assert.match(result.stdout, /session-\d{8}-\d{6}/);
     // Verify the worktree directory was actually created on disk
     const wtDir = path.join(dir, ".claude", "worktrees");
-    const entries = fs.readdirSync(wtDir).filter((e) => e.startsWith("session-"));
+    const entries = fs
+      .readdirSync(wtDir)
+      .filter((e) => e.startsWith("session-"));
     assert.ok(entries.length > 0, "expected a session-* worktree directory");
   } finally {
     cleanup(dir);
@@ -141,6 +146,7 @@ git commit -m "test(worktree): failing tests for tonone-worktree-session"
 ## Task 2: Implement tonone-worktree-session.js
 
 **Files:**
+
 - Create: `hooks/tonone-worktree-session.js`
 
 - [ ] **Step 1: Create the hook**
@@ -168,11 +174,13 @@ process.stdin.on("end", () => {
     let gitDir, commonDir;
     try {
       gitDir = execSync("git rev-parse --git-dir", { encoding: "utf8" }).trim();
-      commonDir = execSync("git rev-parse --git-common-dir", { encoding: "utf8" }).trim();
+      commonDir = execSync("git rev-parse --git-common-dir", {
+        encoding: "utf8",
+      }).trim();
     } catch {
       console.log(
         "Tip: this directory is not a git repo. " +
-        "Run `git init` to get isolated session branches automatically."
+          "Run `git init` to get isolated session branches automatically.",
       );
       process.exit(0);
     }
@@ -194,8 +202,9 @@ process.stdin.on("end", () => {
       const candidate = i === 0 ? base : `${base}-${i + 1}`;
       const wPath = path.join(".claude", "worktrees", candidate);
       const result = spawnSync(
-        "git", ["worktree", "add", wPath, "-b", candidate],
-        { encoding: "utf8" }
+        "git",
+        ["worktree", "add", wPath, "-b", candidate],
+        { encoding: "utf8" },
       );
       if (result.status === 0) {
         worktreePath = wPath;
@@ -210,11 +219,11 @@ process.stdin.on("end", () => {
     // 6. Tell Claude to enter the worktree
     console.log(
       `WORKTREE_READY: Isolated workspace created for this session.\n` +
-      `Path: ${worktreePath}\n` +
-      `Branch: ${branchName}\n\n` +
-      `Call EnterWorktree("${worktreePath}") now before any other action.\n` +
-      `Once you understand the task, rename the branch:\n` +
-      `  git branch -m ${branchName} <kebab-slug>`
+        `Path: ${worktreePath}\n` +
+        `Branch: ${branchName}\n\n` +
+        `Call EnterWorktree("${worktreePath}") now before any other action.\n` +
+        `Once you understand the task, rename the branch:\n` +
+        `  git branch -m ${branchName} <kebab-slug>`,
     );
   } catch {
     // Silent fail
@@ -243,6 +252,7 @@ git commit -m "feat(worktree): add tonone-worktree-session — eager SessionStar
 ## Task 3: Write failing tests for tonone-worktree-close.js
 
 **Files:**
+
 - Create: `tests/hooks/test-worktree-close.js`
 
 - [ ] **Step 1: Create the test file**
@@ -271,13 +281,17 @@ function makeTempRepo() {
 
 function makeWorktree(mainRepo, name = "test-branch") {
   const wtPath = path.join(mainRepo, ".claude", "worktrees", name);
-  fs.mkdirSync(path.join(mainRepo, ".claude", "worktrees"), { recursive: true });
+  fs.mkdirSync(path.join(mainRepo, ".claude", "worktrees"), {
+    recursive: true,
+  });
   execSync(`git worktree add "${wtPath}" -b ${name}`, { cwd: mainRepo });
   return wtPath;
 }
 
 function cleanup(dir) {
-  try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  try {
+    fs.rmSync(dir, { recursive: true, force: true });
+  } catch {}
 }
 
 function runHook(cwd) {
@@ -364,6 +378,7 @@ git commit -m "test(worktree): failing tests for tonone-worktree-close"
 ## Task 4: Implement tonone-worktree-close.js
 
 **Files:**
+
 - Create: `hooks/tonone-worktree-close.js`
 
 - [ ] **Step 1: Create the hook**
@@ -383,12 +398,17 @@ const path = require("path");
 /** Detect default branch: remote HEAD → fallback to main → master. */
 function defaultBranch() {
   try {
-    const ref = execSync("git symbolic-ref refs/remotes/origin/HEAD", { encoding: "utf8" }).trim();
+    const ref = execSync("git symbolic-ref refs/remotes/origin/HEAD", {
+      encoding: "utf8",
+    }).trim();
     return ref.replace("refs/remotes/origin/", "");
   } catch {}
   for (const name of ["main", "master"]) {
     try {
-      execSync(`git rev-parse --verify ${name}`, { encoding: "utf8", stdio: "pipe" });
+      execSync(`git rev-parse --verify ${name}`, {
+        encoding: "utf8",
+        stdio: "pipe",
+      });
       return name;
     } catch {}
   }
@@ -406,15 +426,21 @@ process.stdin.on("end", () => {
     let gitDir, commonDir;
     try {
       gitDir = execSync("git rev-parse --git-dir", { encoding: "utf8" }).trim();
-      commonDir = execSync("git rev-parse --git-common-dir", { encoding: "utf8" }).trim();
+      commonDir = execSync("git rev-parse --git-common-dir", {
+        encoding: "utf8",
+      }).trim();
     } catch {
       process.exit(0);
     }
     if (gitDir === commonDir) process.exit(0); // Not in a worktree
 
     // 2. Gather context
-    const branch = execSync("git rev-parse --abbrev-ref HEAD", { encoding: "utf8" }).trim();
-    const worktreePath = execSync("git rev-parse --show-toplevel", { encoding: "utf8" }).trim();
+    const branch = execSync("git rev-parse --abbrev-ref HEAD", {
+      encoding: "utf8",
+    }).trim();
+    const worktreePath = execSync("git rev-parse --show-toplevel", {
+      encoding: "utf8",
+    }).trim();
     // commonDir is something like /abs/path/to/main/.git
     const mainRepoPath = path.resolve(commonDir, "..");
 
@@ -423,31 +449,40 @@ process.stdin.on("end", () => {
     let commits = "";
     let uncommitted = "";
     try {
-      commits = execSync(`git log ${base}..HEAD --oneline`, { encoding: "utf8" }).trim();
+      commits = execSync(`git log ${base}..HEAD --oneline`, {
+        encoding: "utf8",
+      }).trim();
     } catch {
       // If default branch lookup fails, treat as dirty — safer to warn than delete
       commits = "unknown";
     }
     try {
-      uncommitted = execSync("git status --porcelain", { encoding: "utf8" }).trim();
+      uncommitted = execSync("git status --porcelain", {
+        encoding: "utf8",
+      }).trim();
     } catch {}
 
     const isClean = commits === "" && uncommitted === "";
 
     if (isClean) {
       // Auto-remove the worktree (run from main repo to avoid self-removal issues)
-      execSync(`git -C "${mainRepoPath}" worktree remove --force "${worktreePath}"`, { encoding: "utf8" });
+      execSync(
+        `git -C "${mainRepoPath}" worktree remove --force "${worktreePath}"`,
+        { encoding: "utf8" },
+      );
       try {
-        execSync(`git -C "${mainRepoPath}" branch -d ${branch}`, { encoding: "utf8" });
+        execSync(`git -C "${mainRepoPath}" branch -d ${branch}`, {
+          encoding: "utf8",
+        });
       } catch {}
       console.log(`Session branch ${branch} was clean — removed.`);
     } else {
       // Suggest shipping
       console.log(
         `\nWorktree: ${branch}\n` +
-        `Changes detected. Run /ship to open a PR.\n` +
-        `To discard: git -C "${mainRepoPath}" worktree remove --force "${worktreePath}" ` +
-        `&& git -C "${mainRepoPath}" branch -D ${branch}\n`
+          `Changes detected. Run /ship to open a PR.\n` +
+          `To discard: git -C "${mainRepoPath}" worktree remove --force "${worktreePath}" ` +
+          `&& git -C "${mainRepoPath}" branch -D ${branch}\n`,
       );
     }
   } catch {
@@ -485,6 +520,7 @@ git commit -m "feat(worktree): add tonone-worktree-close — Stop hook for sessi
 ## Task 5: Wire up plugin.json, delete old hooks, update CLAUDE.md
 
 **Files:**
+
 - Modify: `.claude-plugin/plugin.json`
 - Delete: `hooks/tonone-worktree-create.js`
 - Delete: `hooks/tonone-worktree-gate.js`
@@ -637,7 +673,7 @@ git rm hooks/tonone-worktree-create.js hooks/tonone-worktree-gate.js
 
 Find this section in `CLAUDE.md`:
 
-```markdown
+````markdown
 ## Worktree branch naming
 
 Before making the first edit in an implementation session, write a short kebab-case description of the task to `.claude/branch-slug`. The worktree hooks read this file to name the branch.
@@ -647,9 +683,11 @@ Before making the first edit in an implementation session, write a short kebab-c
 echo "fix-auth-bug" > .claude/branch-slug
 echo "add-worktree-git-gate" > .claude/branch-slug
 ```
+````
 
 No slashes. Lowercase. Max 50 chars. If omitted, branch falls back to `impl-YYYYMMDD-HHMMSS`.
-```
+
+````
 
 Replace with:
 
@@ -664,7 +702,7 @@ Once you understand what the user wants (after the first substantive exchange), 
 
 ```bash
 git branch -m session-YYYYMMDD-HHMMSS <kebab-slug>
-```
+````
 
 Max 50 chars. Lowercase. No slashes. Example: `fix-auth-bug`, `add-stripe-webhooks`.
 
@@ -679,14 +717,15 @@ Do not switch topics silently. Keep sessions focused.
 ### Session end
 
 When stopping, the hook auto-removes clean worktrees. If changes exist, it prints a `/ship` reminder to the user.
-```
+
+````
 
 - [ ] **Step 4: Commit everything**
 
 ```bash
 git add .claude-plugin/plugin.json CLAUDE.md
 git commit -m "feat(worktree): wire eager session hooks, remove gate, update CLAUDE.md"
-```
+````
 
 ---
 

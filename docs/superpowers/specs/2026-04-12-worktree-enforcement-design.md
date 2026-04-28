@@ -22,6 +22,7 @@ Once an agent starts editing, all work — file changes AND git writes — stays
 `PreToolUse` hook on `Bash`. Guards `git commit` and `git push`.
 
 **Logic:**
+
 1. Parse `tool_input.command`. If no `git commit` or `git push` match, pass through.
 2. Check `.claude/skip-worktree` opt-out marker (2hr TTL). If valid, pass through.
 3. `git rev-parse --git-dir` vs `--git-common-dir`. If they differ, already in worktree — pass.
@@ -36,11 +37,13 @@ Add to `PreToolUse`:
 ```json
 {
   "matcher": "Bash",
-  "hooks": [{
-    "type": "command",
-    "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-git-gate.js\"",
-    "timeout": 5
-  }]
+  "hooks": [
+    {
+      "type": "command",
+      "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-git-gate.js\"",
+      "timeout": 5
+    }
+  ]
 }
 ```
 
@@ -49,6 +52,7 @@ Add to `PreToolUse`:
 When work is done, Claude asks: "Ready to push? I'll create a PR from `<branch>` → `main`."
 
 On user confirm, Claude (from inside the worktree):
+
 1. `git push -u origin <branch>`
 2. `gh pr create --title "..." --body "..."`
 3. Returns PR URL
@@ -61,10 +65,10 @@ Write `.claude/skip-worktree` to allow deliberate main operations (docs, CHANGEL
 
 ## Files changed
 
-| File | Change |
-|------|--------|
-| `hooks/tonone-git-gate.js` | New — Bash PreToolUse git guard |
-| `.claude-plugin/plugin.json` | Add PreToolUse Bash matcher |
+| File                         | Change                          |
+| ---------------------------- | ------------------------------- |
+| `hooks/tonone-git-gate.js`   | New — Bash PreToolUse git guard |
+| `.claude-plugin/plugin.json` | Add PreToolUse Bash matcher     |
 
 ## What this does NOT do
 

@@ -121,12 +121,12 @@ Don't design for happy paths only. The error state, the empty state, and the edg
 
 Invoke these skills for specialized UX design workflows:
 
-| Skill             | When to invoke                                             | What it delivers                                                                                   |
-| ----------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `draft-wireframe` | Lo-fi screen layout, structure, content hierarchy          | ASCII wireframe + interaction annotations + responsive behavior, handoff-ready for Form and Prism  |
+| Skill             | When to invoke                                              | What it delivers                                                                                  |
+| ----------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `draft-wireframe` | Lo-fi screen layout, structure, content hierarchy           | ASCII wireframe + interaction annotations + responsive behavior, handoff-ready for Form and Prism |
 | `draft-proto`     | Hi-fi clickable prototype, stakeholder demo, usability test | Single-file HTML, device-framed, Playwright-verified, real images — double-click to open          |
-| `draft-flow`      | Mapping a multi-step user journey or task flow             | Mermaid flowchart or numbered step list with branching states                                      |
-| `draft-ia`        | Information architecture, navigation structure, sitemap    | Card sort output analysis, sitemap, breadcrumb logic                                               |
+| `draft-flow`      | Mapping a multi-step user journey or task flow              | Mermaid flowchart or numbered step list with branching states                                     |
+| `draft-ia`        | Information architecture, navigation structure, sitemap     | Card sort output analysis, sitemap, breadcrumb logic                                              |
 
 **Routing:** `draft-wireframe` for lo-fi/structure; `draft-proto` when stakeholders need to click through it or when a usability test requires interaction.
 

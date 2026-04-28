@@ -39,14 +39,14 @@ Stop hook (tonone-worktree-close.js)
 
 ## Files Changed
 
-| File | Action |
-|------|--------|
-| `hooks/tonone-worktree-session.js` | New — SessionStart hook |
-| `hooks/tonone-worktree-close.js` | New — Stop hook |
-| `hooks/tonone-worktree-create.js` | Delete |
-| `hooks/tonone-worktree-gate.js` | Delete |
-| `plugin.json` | Remove ExitPlanMode + PreToolUse worktree entries; add SessionStart + Stop entries |
-| `CLAUDE.md` | Add `## Worktree sessions` section |
+| File                               | Action                                                                             |
+| ---------------------------------- | ---------------------------------------------------------------------------------- |
+| `hooks/tonone-worktree-session.js` | New — SessionStart hook                                                            |
+| `hooks/tonone-worktree-close.js`   | New — Stop hook                                                                    |
+| `hooks/tonone-worktree-create.js`  | Delete                                                                             |
+| `hooks/tonone-worktree-gate.js`    | Delete                                                                             |
+| `plugin.json`                      | Remove ExitPlanMode + PreToolUse worktree entries; add SessionStart + Stop entries |
+| `CLAUDE.md`                        | Add `## Worktree sessions` section                                                 |
 
 ---
 
@@ -57,9 +57,11 @@ Stop hook (tonone-worktree-close.js)
 **Logic:**
 
 1. `git rev-parse --git-dir` — not a git repo → print:
+
    ```
    Tip: this directory is not a git repo. Run `git init` for isolated session branches.
    ```
+
    Exit 0.
 
 2. `gitDir !== commonDir` — already in worktree → exit 0.
@@ -69,6 +71,7 @@ Stop hook (tonone-worktree-close.js)
 4. `git worktree add .claude/worktrees/<branch> -b <branch>` — up to 3 retries with suffix on collision.
 
 5. On success, stdout:
+
    ```
    WORKTREE_READY: Isolated workspace created for this session.
    Path: .claude/worktrees/session-YYYYMMDD-HHMMSS
@@ -101,10 +104,12 @@ Stop hook (tonone-worktree-close.js)
    - Both empty → clean.
 
 5. Clean → auto-remove:
+
    ```
    git worktree remove --force <path>
    git branch -d <branch>
    ```
+
    Print: `Session branch <branch> was clean — removed.`
 
 6. Dirty → print user-facing message:

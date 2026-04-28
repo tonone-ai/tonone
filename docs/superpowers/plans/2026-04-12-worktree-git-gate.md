@@ -13,6 +13,7 @@
 ### Task 1: Write failing tests for `tonone-git-gate.js`
 
 **Files:**
+
 - Modify: `tests/test_hooks.py`
 
 - [ ] **Step 1: Add GIT_GATE path constant and tests at the bottom of `tests/test_hooks.py`**
@@ -103,6 +104,7 @@ git commit -m "test(worktree): add failing tests for tonone-git-gate.js"
 ### Task 2: Implement `hooks/tonone-git-gate.js`
 
 **Files:**
+
 - Create: `hooks/tonone-git-gate.js`
 
 - [ ] **Step 1: Create the hook file**
@@ -223,6 +225,7 @@ git commit -m "feat(worktree): add tonone-git-gate — block git commit/push on 
 ### Task 3: Register hook in `plugin.json`
 
 **Files:**
+
 - Modify: `.claude-plugin/plugin.json`
 
 - [ ] **Step 1: Add the Bash PreToolUse entry**

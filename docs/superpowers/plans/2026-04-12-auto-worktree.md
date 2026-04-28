@@ -12,20 +12,21 @@
 
 ## File Map
 
-| File | Action | Purpose |
-|------|--------|---------|
-| `hooks/tonone-worktree-create.js` | Create | PostToolUse hook — creates worktree on ExitPlanMode |
-| `hooks/tonone-worktree-gate.js` | Create | PreToolUse hook — safety net gate on Edit/Write/NotebookEdit |
-| `.claude-plugin/plugin.json` | Modify | Register both hooks |
-| `.gitignore` | Modify | Ignore `.claude/worktrees/` and `.claude/skip-worktree` |
-| `tests/test_hooks.py` | Create | Logic and syntax tests for both hooks |
-| `tests/test_structure.py` | Modify | Add existence check for both hook files |
+| File                              | Action | Purpose                                                      |
+| --------------------------------- | ------ | ------------------------------------------------------------ |
+| `hooks/tonone-worktree-create.js` | Create | PostToolUse hook — creates worktree on ExitPlanMode          |
+| `hooks/tonone-worktree-gate.js`   | Create | PreToolUse hook — safety net gate on Edit/Write/NotebookEdit |
+| `.claude-plugin/plugin.json`      | Modify | Register both hooks                                          |
+| `.gitignore`                      | Modify | Ignore `.claude/worktrees/` and `.claude/skip-worktree`      |
+| `tests/test_hooks.py`             | Create | Logic and syntax tests for both hooks                        |
+| `tests/test_structure.py`         | Modify | Add existence check for both hook files                      |
 
 ---
 
 ## Task 1: Update .gitignore
 
 **Files:**
+
 - Modify: `.gitignore`
 
 - [ ] **Step 1: Add the two new gitignore entries**
@@ -38,6 +39,7 @@ Open `.gitignore` and append to the `# Claude Code personal config` section (aft
 ```
 
 The `.gitignore` section should look like:
+
 ```
 # Claude Code personal config (project .claude/ dirs are committed)
 .claude/settings.json
@@ -53,6 +55,7 @@ The `.gitignore` section should look like:
 - [ ] **Step 2: Verify entries are correct**
 
 Run:
+
 ```bash
 git check-ignore -v .claude/worktrees/notifications
 git check-ignore -v .claude/skip-worktree
@@ -72,6 +75,7 @@ git commit -m "chore: gitignore .claude/worktrees/ and .claude/skip-worktree"
 ## Task 2: Write failing hook tests
 
 **Files:**
+
 - Create: `tests/test_hooks.py`
 
 - [ ] **Step 1: Write the test file**
@@ -228,6 +232,7 @@ All tests should show `FAILED` or `ERROR` for now. That's correct — red before
 ## Task 3: Implement `hooks/tonone-worktree-create.js`
 
 **Files:**
+
 - Create: `hooks/tonone-worktree-create.js`
 
 - [ ] **Step 1: Create the hook file**
@@ -346,6 +351,7 @@ git commit -m "feat: add tonone-worktree-create hook (PostToolUse on ExitPlanMod
 ## Task 4: Implement `hooks/tonone-worktree-gate.js`
 
 **Files:**
+
 - Create: `hooks/tonone-worktree-gate.js`
 
 - [ ] **Step 1: Create the hook file**
@@ -381,8 +387,7 @@ process.stdin.on("end", () => {
     if (!GATED.includes(toolName)) process.exit(0);
 
     // Whitelist: always allow creating the opt-out marker itself
-    const filePath =
-      toolInput.file_path || toolInput.notebook_path || "";
+    const filePath = toolInput.file_path || toolInput.notebook_path || "";
     if (
       filePath === ".claude/skip-worktree" ||
       filePath.endsWith("/.claude/skip-worktree")
@@ -486,11 +491,13 @@ git commit -m "feat: add tonone-worktree-gate hook (PreToolUse safety net)"
 ## Task 5: Register hooks in `plugin.json`
 
 **Files:**
+
 - Modify: `.claude-plugin/plugin.json`
 
 - [ ] **Step 1: Add the two hook entries**
 
 The `hooks` block currently has `SessionStart` and `PostToolUse` (for `Agent`). Add:
+
 - `PostToolUse` entry for `ExitPlanMode` → `tonone-worktree-create.js`
 - `PreToolUse` entry for `Edit|Write|NotebookEdit` → `tonone-worktree-gate.js`
 
@@ -565,6 +572,7 @@ git commit -m "feat: register worktree hooks in plugin.json"
 ## Task 6: Add structure tests for new hook files
 
 **Files:**
+
 - Modify: `tests/test_structure.py`
 
 - [ ] **Step 1: Add hook existence test**
@@ -627,6 +635,7 @@ This is a manual verification task. No automated test — it requires an interac
 - [ ] **Step 1: Verify ExitPlanMode fires PostToolUse hook**
 
 In a new Claude Code session on main:
+
 1. Enter plan mode: ask Claude to write a plan (any trivial plan)
 2. Approve the plan (ExitPlanMode)
 3. Check if a new worktree was created:
@@ -675,6 +684,7 @@ Expected: all tests PASS.
 ## Self-Review
 
 **Spec coverage:**
+
 - [x] PostToolUse on ExitPlanMode creates worktree → Task 3
 - [x] PreToolUse gate blocks edits on main with active plan → Task 4
 - [x] Opt-out via `.claude/skip-worktree` → Task 4 (hook), Task 1 (gitignore)

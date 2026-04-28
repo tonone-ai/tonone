@@ -17,14 +17,14 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `flux-health` | Data quality and pipeline health check — freshness, schema drift, nulls |
-| `flux-migrate` | Build a zero-downtime database migration with rollback SQL |
-| `flux-pipeline` | Build an ETL/ELT data pipeline with scheduling and error handling |
-| `flux-query` | Optimize slow queries — analyze execution plans, add indexes |
-| `flux-recon` | Full database inventory — schema, migrations, volume, backup, pooling |
-| `flux-schema` | Design and build a database schema from a domain description |
+| Skill           | Use when                                                                |
+| --------------- | ----------------------------------------------------------------------- |
+| `flux-health`   | Data quality and pipeline health check — freshness, schema drift, nulls |
+| `flux-migrate`  | Build a zero-downtime database migration with rollback SQL              |
+| `flux-pipeline` | Build an ETL/ELT data pipeline with scheduling and error handling       |
+| `flux-query`    | Optimize slow queries — analyze execution plans, add indexes            |
+| `flux-recon`    | Full database inventory — schema, migrations, volume, backup, pooling   |
+| `flux-schema`   | Design and build a database schema from a domain description            |
 
 Default (no args or unclear): `flux-recon`.
 

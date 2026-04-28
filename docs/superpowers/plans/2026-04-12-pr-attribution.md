@@ -12,19 +12,20 @@
 
 ## File Map
 
-| File | Action | Purpose |
-|---|---|---|
-| `hooks/tonone-session-tracker.js` | Create | Skill PostToolUse — write agent name to `.claude/session-agents` |
-| `hooks/tonone-pr-attribution.js` | Create | Bash PostToolUse — detect `gh pr create`, append attribution to PR |
-| `.claude-plugin/plugin.json` | Modify lines 76–83 | Register both new hooks |
-| `tests/hooks/test-session-tracker.js` | Create | Unit tests for session tracker |
-| `tests/hooks/test-pr-attribution.js` | Create | Unit tests for PR attribution hook |
+| File                                  | Action             | Purpose                                                            |
+| ------------------------------------- | ------------------ | ------------------------------------------------------------------ |
+| `hooks/tonone-session-tracker.js`     | Create             | Skill PostToolUse — write agent name to `.claude/session-agents`   |
+| `hooks/tonone-pr-attribution.js`      | Create             | Bash PostToolUse — detect `gh pr create`, append attribution to PR |
+| `.claude-plugin/plugin.json`          | Modify lines 76–83 | Register both new hooks                                            |
+| `tests/hooks/test-session-tracker.js` | Create             | Unit tests for session tracker                                     |
+| `tests/hooks/test-pr-attribution.js`  | Create             | Unit tests for PR attribution hook                                 |
 
 ---
 
 ## Task 1: Write failing tests for tonone-session-tracker.js
 
 **Files:**
+
 - Create: `tests/hooks/test-session-tracker.js`
 
 - [ ] **Step 1: Write the test file**
@@ -55,7 +56,9 @@ function makeTempDir() {
 }
 
 function cleanup(dir) {
-  try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  try {
+    fs.rmSync(dir, { recursive: true, force: true });
+  } catch {}
 }
 
 test("tonone skill — appends agent name to .claude/session-agents", () => {
@@ -63,10 +66,13 @@ test("tonone skill — appends agent name to .claude/session-agents", () => {
   try {
     const result = runHook(
       { tool_name: "Skill", tool_input: { skill: "spine-api" } },
-      dir
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
-    const content = fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8");
+    const content = fs.readFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      "utf8",
+    );
     assert.ok(content.includes("spine"), `expected 'spine' in: ${content}`);
   } finally {
     cleanup(dir);
@@ -77,12 +83,18 @@ test("non-tonone skill — ignored, file not written", () => {
   const dir = makeTempDir();
   try {
     const result = runHook(
-      { tool_name: "Skill", tool_input: { skill: "superpowers:brainstorming" } },
-      dir
+      {
+        tool_name: "Skill",
+        tool_input: { skill: "superpowers:brainstorming" },
+      },
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
     const filePath = path.join(dir, ".claude", "session-agents");
-    assert.ok(!fs.existsSync(filePath), "file should not be created for non-tonone skill");
+    assert.ok(
+      !fs.existsSync(filePath),
+      "file should not be created for non-tonone skill",
+    );
   } finally {
     cleanup(dir);
   }
@@ -92,11 +104,21 @@ test("same agent invoked twice — deduplication, appears once", () => {
   const dir = makeTempDir();
   try {
     runHook({ tool_name: "Skill", tool_input: { skill: "warden-audit" } }, dir);
-    runHook({ tool_name: "Skill", tool_input: { skill: "warden-harden" } }, dir);
-    const content = fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8");
+    runHook(
+      { tool_name: "Skill", tool_input: { skill: "warden-harden" } },
+      dir,
+    );
+    const content = fs.readFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      "utf8",
+    );
     const lines = content.trim().split("\n").filter(Boolean);
-    const wardenLines = lines.filter(l => l === "warden");
-    assert.strictEqual(wardenLines.length, 1, `expected 1 warden line, got: ${content}`);
+    const wardenLines = lines.filter((l) => l === "warden");
+    assert.strictEqual(
+      wardenLines.length,
+      1,
+      `expected 1 warden line, got: ${content}`,
+    );
   } finally {
     cleanup(dir);
   }
@@ -108,7 +130,10 @@ test("multiple different agents — all appended", () => {
     runHook({ tool_name: "Skill", tool_input: { skill: "spine-api" } }, dir);
     runHook({ tool_name: "Skill", tool_input: { skill: "atlas-map" } }, dir);
     runHook({ tool_name: "Skill", tool_input: { skill: "proof-audit" } }, dir);
-    const content = fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8");
+    const content = fs.readFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      "utf8",
+    );
     assert.ok(content.includes("spine"), content);
     assert.ok(content.includes("atlas"), content);
     assert.ok(content.includes("proof"), content);
@@ -122,7 +147,7 @@ test("non-Skill tool event — exits 0, no file written", () => {
   try {
     const result = runHook(
       { tool_name: "Bash", tool_input: { command: "ls" } },
-      dir
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
     assert.ok(!fs.existsSync(path.join(dir, ".claude", "session-agents")));
@@ -154,6 +179,7 @@ Expected: all tests fail with `Cannot find module` or `ENOENT`.
 ## Task 2: Implement tonone-session-tracker.js
 
 **Files:**
+
 - Create: `hooks/tonone-session-tracker.js`
 
 - [ ] **Step 1: Write the hook**
@@ -170,10 +196,29 @@ const fs = require("fs");
 const path = require("path");
 
 const TONONE_AGENTS = new Set([
-  "apex", "forge", "relay", "spine", "flux", "warden", "vigil",
-  "prism", "cortex", "touch", "volt", "atlas", "lens", "proof",
-  "pave", "helm", "echo", "lumen", "draft", "form", "crest",
-  "pitch", "surge",
+  "apex",
+  "forge",
+  "relay",
+  "spine",
+  "flux",
+  "warden",
+  "vigil",
+  "prism",
+  "cortex",
+  "touch",
+  "volt",
+  "atlas",
+  "lens",
+  "proof",
+  "pave",
+  "helm",
+  "echo",
+  "lumen",
+  "draft",
+  "form",
+  "crest",
+  "pitch",
+  "surge",
 ]);
 
 const SESSION_FILE = path.join(".claude", "session-agents");
@@ -183,7 +228,11 @@ function appendAgent(agentName) {
   let existing = new Set();
   try {
     const content = fs.readFileSync(SESSION_FILE, "utf8");
-    content.trim().split("\n").filter(Boolean).forEach(l => existing.add(l));
+    content
+      .trim()
+      .split("\n")
+      .filter(Boolean)
+      .forEach((l) => existing.add(l));
   } catch {}
 
   if (existing.has(agentName)) return; // Already tracked
@@ -200,7 +249,7 @@ function appendAgent(agentName) {
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 3000);
 process.stdin.setEncoding("utf8");
-process.stdin.on("data", chunk => (input += chunk));
+process.stdin.on("data", (chunk) => (input += chunk));
 process.stdin.on("end", () => {
   clearTimeout(timeout);
   try {
@@ -242,6 +291,7 @@ git commit -m "feat(growth): add tonone-session-tracker — record active agents
 ## Task 3: Write failing tests for tonone-pr-attribution.js
 
 **Files:**
+
 - Create: `tests/hooks/test-pr-attribution.js`
 
 - [ ] **Step 1: Write the test file**
@@ -271,13 +321,18 @@ function makeTempDir(agents) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "pr-attr-"));
   fs.mkdirSync(path.join(dir, ".claude"), { recursive: true });
   if (agents && agents.length > 0) {
-    fs.writeFileSync(path.join(dir, ".claude", "session-agents"), agents.join("\n") + "\n");
+    fs.writeFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      agents.join("\n") + "\n",
+    );
   }
   return dir;
 }
 
 function cleanup(dir) {
-  try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  try {
+    fs.rmSync(dir, { recursive: true, force: true });
+  } catch {}
 }
 
 // --- Unit tests for attribution formatting (tested via hook output on non-gh-create commands)
@@ -299,7 +354,15 @@ test("formatAttribution — multiple agents, alphabetical, title-cased", () => {
 });
 
 test("formatAttribution — more than 5 agents, truncated", () => {
-  const line = hook.formatAttribution(["apex", "atlas", "forge", "lens", "proof", "spine", "warden"]);
+  const line = hook.formatAttribution([
+    "apex",
+    "atlas",
+    "forge",
+    "lens",
+    "proof",
+    "spine",
+    "warden",
+  ]);
   assert.ok(line.includes("and 2 more"), line);
 });
 
@@ -314,8 +377,12 @@ test("non gh-pr-create command — exits 0, no side effects", () => {
   const dir = makeTempDir(["spine"]);
   try {
     const result = runHook(
-      { tool_name: "Bash", tool_input: { command: "git status" }, tool_output: {} },
-      dir
+      {
+        tool_name: "Bash",
+        tool_input: { command: "git status" },
+        tool_output: {},
+      },
+      dir,
     );
     assert.strictEqual(result.status, 0, result.stderr);
     // session-agents file should still exist (not cleared)
@@ -335,13 +402,17 @@ test("gh pr create — session-agents cleared after run", () => {
         tool_input: { command: "gh pr create --title test --body test" },
         tool_output: { output: "https://github.com/owner/repo/pull/1" },
       },
-      dir
+      dir,
     );
     // session-agents should be cleared regardless of gh success/failure
     const content = fs.existsSync(path.join(dir, ".claude", "session-agents"))
       ? fs.readFileSync(path.join(dir, ".claude", "session-agents"), "utf8")
       : "";
-    assert.strictEqual(content.trim(), "", `expected empty session-agents, got: ${content}`);
+    assert.strictEqual(
+      content.trim(),
+      "",
+      `expected empty session-agents, got: ${content}`,
+    );
   } finally {
     cleanup(dir);
   }
@@ -370,6 +441,7 @@ Expected: fail with `Cannot find module` or `ENOENT`.
 ## Task 4: Implement tonone-pr-attribution.js
 
 **Files:**
+
 - Create: `hooks/tonone-pr-attribution.js`
 
 - [ ] **Step 1: Write the hook**
@@ -419,18 +491,25 @@ function readAgents() {
 }
 
 function clearAgents() {
-  try { fs.writeFileSync(SESSION_FILE, ""); } catch {}
+  try {
+    fs.writeFileSync(SESSION_FILE, "");
+  } catch {}
 }
 
 function getPrUrl(toolOutput) {
   // Try tool_output.output first (stdout of gh pr create)
   const raw = (toolOutput && (toolOutput.output || toolOutput)) || "";
-  const urlMatch = String(raw).match(/https:\/\/github\.com\/[^\s]+\/pull\/\d+/);
+  const urlMatch = String(raw).match(
+    /https:\/\/github\.com\/[^\s]+\/pull\/\d+/,
+  );
   if (urlMatch) return urlMatch[0];
 
   // Fallback: ask gh for the current branch's PR
   try {
-    const url = execSync("gh pr view --json url -q .url", { encoding: "utf8", timeout: 5000 }).trim();
+    const url = execSync("gh pr view --json url -q .url", {
+      encoding: "utf8",
+      timeout: 5000,
+    }).trim();
     if (url.startsWith("http")) return url;
   } catch {}
 
@@ -438,7 +517,10 @@ function getPrUrl(toolOutput) {
 }
 
 function appendAttribution(prUrl, attributionLine) {
-  const tmpFile = path.join(require("os").tmpdir(), `tonone-pr-body-${process.pid}.md`);
+  const tmpFile = path.join(
+    require("os").tmpdir(),
+    `tonone-pr-body-${process.pid}.md`,
+  );
   try {
     const currentBody = execSync(`gh pr view "${prUrl}" --json body -q .body`, {
       encoding: "utf8",
@@ -446,9 +528,13 @@ function appendAttribution(prUrl, attributionLine) {
     }).trim();
     const newBody = `${currentBody}\n\n---\n${attributionLine}`;
     fs.writeFileSync(tmpFile, newBody);
-    execSync(`gh pr edit "${prUrl}" --body-file "${tmpFile}"`, { timeout: 10000 });
+    execSync(`gh pr edit "${prUrl}" --body-file "${tmpFile}"`, {
+      timeout: 10000,
+    });
   } finally {
-    try { fs.unlinkSync(tmpFile); } catch {}
+    try {
+      fs.unlinkSync(tmpFile);
+    } catch {}
   }
 }
 
@@ -461,7 +547,7 @@ if (require.main !== module) {
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 3000);
 process.stdin.setEncoding("utf8");
-process.stdin.on("data", chunk => (input += chunk));
+process.stdin.on("data", (chunk) => (input += chunk));
 process.stdin.on("end", () => {
   clearTimeout(timeout);
   try {
@@ -508,6 +594,7 @@ git commit -m "feat(growth): add tonone-pr-attribution — append team credits t
 ## Task 5: Register both hooks in plugin.json
 
 **Files:**
+
 - Modify: `.claude-plugin/plugin.json`
 
 - [ ] **Step 1: Read current plugin.json to confirm exact line positions**
@@ -517,6 +604,7 @@ Read `.claude-plugin/plugin.json` lines 70–90 (the PostToolUse Bash and Skill 
 - [ ] **Step 2: Add session-tracker to Skill PostToolUse matcher**
 
 Current Skill matcher block (lines ~75–83):
+
 ```json
 {
   "matcher": "Skill",
@@ -531,6 +619,7 @@ Current Skill matcher block (lines ~75–83):
 ```
 
 Replace with:
+
 ```json
 {
   "matcher": "Skill",
@@ -552,6 +641,7 @@ Replace with:
 - [ ] **Step 3: Add PR attribution to Bash PostToolUse matcher**
 
 Current Bash matcher block (lines ~49–56):
+
 ```json
 {
   "matcher": "Bash",
@@ -566,6 +656,7 @@ Current Bash matcher block (lines ~49–56):
 ```
 
 Replace with:
+
 ```json
 {
   "matcher": "Bash",
@@ -622,6 +713,7 @@ Open Claude Code in this repo. The session-tracker hook will now fire on every t
 - [ ] **Step 2: Invoke any tonone skill** (e.g., `/relay-recon` or `/atlas-map`)
 
 Expected: `.claude/session-agents` now contains the agent name:
+
 ```bash
 cat .claude/session-agents
 # → relay
@@ -632,6 +724,7 @@ cat .claude/session-agents
 In a feature branch with a harmless change, run `gh pr create` (or `/relay-ship`).
 
 Expected: PR description contains attribution block at the bottom:
+
 ```
 ---
 *Relay — [tonone](https://second.tonone.ai)*

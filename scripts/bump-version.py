@@ -83,7 +83,8 @@ def find_files():
 
     # Exclude templates, venvs, and git worktrees
     plugin_files = [
-        p for p in plugin_files
+        p
+        for p in plugin_files
         if not str(p).startswith(TEMPLATE_DIR) and not str(p).startswith(WORKTREES_DIR)
     ]
     pyproject_files = [

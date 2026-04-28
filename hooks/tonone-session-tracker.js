@@ -7,10 +7,29 @@ const fs = require("fs");
 const path = require("path");
 
 const TONONE_AGENTS = new Set([
-  "apex", "forge", "relay", "spine", "flux", "warden", "vigil",
-  "prism", "cortex", "touch", "volt", "atlas", "lens", "proof",
-  "pave", "helm", "echo", "lumen", "draft", "form", "crest",
-  "pitch", "surge",
+  "apex",
+  "forge",
+  "relay",
+  "spine",
+  "flux",
+  "warden",
+  "vigil",
+  "prism",
+  "cortex",
+  "touch",
+  "volt",
+  "atlas",
+  "lens",
+  "proof",
+  "pave",
+  "helm",
+  "echo",
+  "lumen",
+  "draft",
+  "form",
+  "crest",
+  "pitch",
+  "surge",
 ]);
 
 const SESSION_FILE = path.join(".claude", "session-agents");
@@ -20,7 +39,11 @@ function appendAgent(agentName) {
   let existing = new Set();
   try {
     const content = fs.readFileSync(SESSION_FILE, "utf8");
-    content.trim().split("\n").filter(Boolean).forEach(l => existing.add(l));
+    content
+      .trim()
+      .split("\n")
+      .filter(Boolean)
+      .forEach((l) => existing.add(l));
   } catch {}
 
   if (existing.has(agentName)) return; // Already tracked
@@ -37,7 +60,7 @@ function appendAgent(agentName) {
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 3000);
 process.stdin.setEncoding("utf8");
-process.stdin.on("data", chunk => (input += chunk));
+process.stdin.on("data", (chunk) => (input += chunk));
 process.stdin.on("end", () => {
   clearTimeout(timeout);
   try {

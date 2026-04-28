@@ -74,16 +74,29 @@ Generate a single self-contained HTML file with the following requirements:
 **Copy button implementation:**
 
 ```css
-pre { position: relative; }
-pre .copy-btn {
-  position: absolute; top: 0.5rem; right: 0.5rem;
-  opacity: 0; transition: opacity 0.15s;
-  padding: 0.2rem 0.5rem; font-size: 0.7rem;
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 4px; cursor: pointer; color: var(--text-muted);
+pre {
+  position: relative;
 }
-pre:hover .copy-btn { opacity: 1; }
-pre .copy-btn.copied { color: var(--success); }
+pre .copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+pre:hover .copy-btn {
+  opacity: 1;
+}
+pre .copy-btn.copied {
+  color: var(--success);
+}
 ```
 
 **CSS design tokens:**
@@ -127,17 +140,46 @@ pre .copy-btn.copied { color: var(--success); }
 **Typography and spacing:**
 
 ```css
-body { font-family: var(--font-sans); font-size: 14px; line-height: 1.6; }
-h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
-h2 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; }
-h3 { font-size: 0.9rem; font-weight: 600; text-transform: uppercase;
-     letter-spacing: 0.08em; color: var(--text-muted); }
-code { font-family: var(--font-mono); font-size: 0.85em;
-       padding: 0.1em 0.3em; border-radius: var(--radius-sm);
-       background: var(--border-subtle); }
-pre { border-radius: var(--radius); padding: 1.25rem; overflow-x: auto;
-      background: var(--bg-card); border: 1px solid var(--border); }
-pre code { background: none; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+}
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 0.1em 0.3em;
+  border-radius: var(--radius-sm);
+  background: var(--border-subtle);
+}
+pre {
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  overflow-x: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+pre code {
+  background: none;
+  padding: 0;
+}
 ```
 
 **Finding card design — minimal, whitespace-forward:**
@@ -151,21 +193,45 @@ pre code { background: none; padding: 0; }
   background: var(--bg-card);
 }
 .finding-header {
-  display: flex; align-items: center; gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
 .badge {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
-  padding: 0.15rem 0.5rem; border-radius: 3px; text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
-.badge-critical { background: var(--critical-bg); color: var(--critical); }
-.badge-warning  { background: var(--warning-bg);  color: var(--warning);  }
-.badge-info     { background: var(--info-bg);      color: var(--info);     }
-.finding-title  { font-weight: 600; font-size: 0.95rem; }
-.finding-body   { color: var(--text-muted); font-size: 0.875rem; }
-.finding-fix    { margin-top: 0.75rem; padding-top: 0.75rem;
-                  border-top: 1px solid var(--border-subtle);
-                  font-size: 0.875rem; }
+.badge-critical {
+  background: var(--critical-bg);
+  color: var(--critical);
+}
+.badge-warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+.badge-info {
+  background: var(--info-bg);
+  color: var(--info);
+}
+.finding-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.finding-body {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+.finding-fix {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.875rem;
+}
 ```
 
 **HTML structure skeleton:**

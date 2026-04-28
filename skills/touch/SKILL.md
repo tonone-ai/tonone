@@ -17,14 +17,14 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `touch-app` | Design a complete mobile app architecture — platform, navigation, state |
-| `touch-audit` | Mobile audit — app size, startup time, crash reporting, store compliance |
+| Skill           | Use when                                                                  |
+| --------------- | ------------------------------------------------------------------------- |
+| `touch-app`     | Design a complete mobile app architecture — platform, navigation, state   |
+| `touch-audit`   | Mobile audit — app size, startup time, crash reporting, store compliance  |
 | `touch-feature` | Produce a mobile feature spec — user story, approach, platform edge cases |
-| `touch-recon` | Understand the app's tech stack, architecture, and health for takeover |
+| `touch-recon`   | Understand the app's tech stack, architecture, and health for takeover    |
 | `touch-release` | Set up mobile release pipeline — Fastlane, signing, CI, beta distribution |
-| `touch-ui` | Build or review mobile UI components — native patterns, accessibility |
+| `touch-ui`      | Build or review mobile UI components — native patterns, accessibility     |
 
 Default (no args or unclear): `touch-recon`.
 

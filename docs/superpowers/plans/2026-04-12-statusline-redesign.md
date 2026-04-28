@@ -12,17 +12,18 @@
 
 ## File Structure
 
-| File | Action | Responsibility |
-|------|--------|---------------|
-| `hooks/tonone-agent-tracker.js` | Modify | Add `model` field from `tool_input.model` to agent entries |
-| `hooks/tonone-statusline.js` | Rewrite | Full rewrite: 3-line render, pace calculation, static fields |
-| `hooks/test-statusline.sh` | Create | Test runner — pipes JSON fixtures through statusline |
+| File                            | Action  | Responsibility                                               |
+| ------------------------------- | ------- | ------------------------------------------------------------ |
+| `hooks/tonone-agent-tracker.js` | Modify  | Add `model` field from `tool_input.model` to agent entries   |
+| `hooks/tonone-statusline.js`    | Rewrite | Full rewrite: 3-line render, pace calculation, static fields |
+| `hooks/test-statusline.sh`      | Create  | Test runner — pipes JSON fixtures through statusline         |
 
 ---
 
 ### Task 1: Add model field to agent tracker
 
 **Files:**
+
 - Modify: `hooks/tonone-agent-tracker.js:38-50`
 
 - [ ] **Step 1: Add model capture to agent start block**
@@ -79,6 +80,7 @@ git commit -m "feat(statusline): track subagent model in bridge file"
 ### Task 2: Rewrite statusline — colors, formatters, and git helpers
 
 **Files:**
+
 - Modify: `hooks/tonone-statusline.js:1-104`
 
 - [ ] **Step 1: Replace the entire top section (lines 1-104) with updated helpers**
@@ -207,6 +209,7 @@ git commit -m "feat(statusline): rewrite helpers — fmtDir, static fmtCost/fmtD
 ### Task 3: Rewrite statusline — subagent reader, pace bridge, and pace computation
 
 **Files:**
+
 - Modify: `hooks/tonone-statusline.js:106-172` (replace old subagent reader, context bar, and rate limit renderer)
 
 - [ ] **Step 1: Replace lines 106-172 (old subagent reader, context bar, rate limit) with new sections**
@@ -240,10 +243,8 @@ function readOrCreatePaceBridge(sessionId, fiveHourPct, sevenDayPct) {
     const data = JSON.parse(fs.readFileSync(bridgePath, "utf8"));
     if (data.session_id === sessionId) {
       // Window reset during session — burn went negative, re-initialize
-      const fiveReset =
-        fiveHourPct != null && fiveHourPct < data.start_5h_pct;
-      const sevenReset =
-        sevenDayPct != null && sevenDayPct < data.start_7d_pct;
+      const fiveReset = fiveHourPct != null && fiveHourPct < data.start_5h_pct;
+      const sevenReset = sevenDayPct != null && sevenDayPct < data.start_7d_pct;
       if (!fiveReset && !sevenReset) return data;
     }
   } catch {}
@@ -410,6 +411,7 @@ git commit -m "feat(statusline): add pace bridge, pace computation, model displa
 ### Task 4: Rewrite statusline — render function and stdin reader
 
 **Files:**
+
 - Modify: `hooks/tonone-statusline.js:174-311` (replace old render function and stdin reader)
 
 - [ ] **Step 1: Replace everything from `// ── Main render` to end of file with new render function**
@@ -557,6 +559,7 @@ git commit -m "feat(statusline): 3-line render — location/git, session, model/
 ### Task 5: Create test runner and verify all 7 states
 
 **Files:**
+
 - Create: `hooks/test-statusline.sh`
 
 - [ ] **Step 1: Create the test script**

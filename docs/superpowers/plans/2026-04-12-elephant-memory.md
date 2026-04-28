@@ -12,19 +12,20 @@
 
 ## File Map
 
-| File | Action | Purpose |
-|------|--------|---------|
-| `hooks/elephant-recall.js` | Create | SessionStart hook — reads both memory files, outputs recall block |
-| `hooks/elephant-writer.js` | Create | PostToolUse hook — compresses and prepends entries to both files |
-| `skills/elephant/SKILL.md` | Create | Skill for manual `/elephant` commands |
-| `.elephant/.gitignore` | Create | Ignore `memory.md` (per-machine) |
-| `.claude-plugin/plugin.json` | Modify | Wire new hooks into SessionStart + PostToolUse |
+| File                         | Action | Purpose                                                           |
+| ---------------------------- | ------ | ----------------------------------------------------------------- |
+| `hooks/elephant-recall.js`   | Create | SessionStart hook — reads both memory files, outputs recall block |
+| `hooks/elephant-writer.js`   | Create | PostToolUse hook — compresses and prepends entries to both files  |
+| `skills/elephant/SKILL.md`   | Create | Skill for manual `/elephant` commands                             |
+| `.elephant/.gitignore`       | Create | Ignore `memory.md` (per-machine)                                  |
+| `.claude-plugin/plugin.json` | Modify | Wire new hooks into SessionStart + PostToolUse                    |
 
 ---
 
 ### Task 1: `.elephant/.gitignore`
 
 **Files:**
+
 - Create: `.elephant/.gitignore`
 
 - [ ] **Step 1: Create the gitignore**
@@ -39,6 +40,7 @@ memory.md
 mkdir -p .elephant && touch .elephant/memory.md
 git check-ignore -v .elephant/memory.md
 ```
+
 Expected: `.elephant/.gitignore:1:memory.md   .elephant/memory.md`
 
 - [ ] **Step 3: Commit**
@@ -53,6 +55,7 @@ git commit -m "feat(elephant): add .elephant dir with gitignore for local memory
 ### Task 2: `hooks/elephant-writer.js`
 
 **Files:**
+
 - Create: `hooks/elephant-writer.js`
 
 PostToolUse hook. Reads stdin JSON, extracts a caveman-compressed description, prepends an entry to both local and global memory files. Filters: Agent (always), Bash (only git commit), Skill (always).
@@ -85,7 +88,8 @@ function repoName() {
 // Caveman compression — drop filler, shorten, truncate to ~100 chars
 function compress(text) {
   if (!text) return "";
-  const drop = /\b(a|an|the|just|really|basically|actually|simply|successfully|I've|I'll|we've|we'll|it's been)\b/gi;
+  const drop =
+    /\b(a|an|the|just|really|basically|actually|simply|successfully|I've|I'll|we've|we'll|it's been)\b/gi;
   const shorten = [
     [/\bimplemented\b/gi, "built"],
     [/\bcompleted\b/gi, "done"],
@@ -93,7 +97,10 @@ function compress(text) {
     [/\bgenerated\b/gi, "gen"],
     [/\bfunctions?\b/gi, "fn"],
   ];
-  let out = text.replace(drop, "").replace(/\s{2,}/g, " ").trim();
+  let out = text
+    .replace(drop, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
   for (const [re, rep] of shorten) out = out.replace(re, rep);
   return out.slice(0, 100).trim();
 }
@@ -143,7 +150,9 @@ process.stdin.on("end", () => {
       if (!cmd.includes("git commit")) process.exit(0);
       // Extract -m message if present
       const mMatch = cmd.match(/-m\s+["']([^"']{1,80})/);
-      desc = mMatch ? `commit: ${mMatch[1]}` : `commit: ${compress(cmd.slice(0, 80))}`;
+      desc = mMatch
+        ? `commit: ${mMatch[1]}`
+        : `commit: ${compress(cmd.slice(0, 80))}`;
     } else if (tool === "Skill") {
       const skillName = inp.skill || "unknown";
       const args = inp.args ? ` ${inp.args.slice(0, 40)}` : "";
@@ -180,6 +189,7 @@ echo '{"tool_name":"Agent","tool_input":{"description":"spine build auth API"},"
   | node hooks/elephant-writer.js
 cat .elephant/memory.md
 ```
+
 Expected: one line like `2026-04-12 HH:MM : spine build auth API`
 
 - [ ] **Step 4: Smoke-test Bash / git commit capture**
@@ -189,6 +199,7 @@ echo '{"tool_name":"Bash","tool_input":{"command":"git commit -m \"feat: add JWT
   | node hooks/elephant-writer.js
 cat .elephant/memory.md
 ```
+
 Expected: new first line like `2026-04-12 HH:MM : commit: feat: add JWT auth middleware`
 
 - [ ] **Step 5: Smoke-test Bash non-commit is ignored**
@@ -208,6 +219,7 @@ echo '{"tool_name":"Skill","tool_input":{"skill":"ship","args":""},"tool_output"
   | node hooks/elephant-writer.js
 cat .elephant/memory.md
 ```
+
 Expected: new first line like `2026-04-12 HH:MM : ran /ship`
 
 - [ ] **Step 7: Verify global file updated**
@@ -215,6 +227,7 @@ Expected: new first line like `2026-04-12 HH:MM : ran /ship`
 ```bash
 cat ~/.claude/elephant/memory.md
 ```
+
 Expected: matching entry with `tonone :` prefix.
 
 - [ ] **Step 8: Verify Agent start is ignored (no duplicate)**
@@ -239,6 +252,7 @@ git commit -m "feat(elephant): add writer hook — auto-captures agent completio
 ### Task 3: `hooks/elephant-recall.js`
 
 **Files:**
+
 - Create: `hooks/elephant-recall.js`
 
 SessionStart hook. Reads both memory files. Filters entries by age. Renders a box-drawing recall block to stdout. Exits silently if both files are empty or missing.
@@ -274,7 +288,9 @@ function parseFile(filePath, isGlobal) {
       const tsMatch = body.match(/^(\d{4}-\d{2}-\d{2} \d{2}:\d{2})/);
       const tsStr = tsMatch ? tsMatch[1] : null;
       const date = tsStr ? new Date(tsStr) : null;
-      const rest = tsStr ? body.slice(tsStr.length).replace(/^\s*:\s*/, "") : body;
+      const rest = tsStr
+        ? body.slice(tsStr.length).replace(/^\s*:\s*/, "")
+        : body;
 
       let repo = null;
       let text = rest;
@@ -304,12 +320,12 @@ function main() {
 
   // Global entries (other repos only)
   const global = parseFile(GLOBAL_MEM, true).filter(
-    (e) => e.repo && e.repo !== REPO
+    (e) => e.repo && e.repo !== REPO,
   );
 
   if (local.length === 0 && global.length === 0) {
     console.log(
-      "🐘 ELEPHANT RECALL\n└ nothing yet. use /elephant save to start remembering."
+      "🐘 ELEPHANT RECALL\n└ nothing yet. use /elephant save to start remembering.",
     );
     return;
   }
@@ -319,14 +335,14 @@ function main() {
   // Local: today in full, last 7 days in full (cap 10), older only [!!]
   const today = local.filter((e) => e.tsStr?.startsWith(todayStr));
   const week = local.filter(
-    (e) => !e.tsStr?.startsWith(todayStr) && e.date && e.date >= cutoff7
+    (e) => !e.tsStr?.startsWith(todayStr) && e.date && e.date >= cutoff7,
   );
-  const older = local.filter(
-    (e) => e.date && e.date < cutoff7 && e.important
-  );
+  const older = local.filter((e) => e.date && e.date < cutoff7 && e.important);
 
-  for (const e of today) lines.push(`${e.important ? "[!!] " : ""}${e.tsStr} : ${e.text}`);
-  for (const e of week.slice(0, 10 - today.length)) lines.push(`${e.important ? "[!!] " : ""}${e.tsStr} : ${e.text}`);
+  for (const e of today)
+    lines.push(`${e.important ? "[!!] " : ""}${e.tsStr} : ${e.text}`);
+  for (const e of week.slice(0, 10 - today.length))
+    lines.push(`${e.important ? "[!!] " : ""}${e.tsStr} : ${e.text}`);
   for (const e of older) lines.push(`[!!] ${e.tsStr} : ${e.text}`);
 
   // Other repos: last 3 entries
@@ -351,14 +367,15 @@ function main() {
 
   // Render
   const body = capped.map((l, i) => {
-    const prefix = i === capped.length - 1 && otherEntries.length === 0 ? "└" : "├";
+    const prefix =
+      i === capped.length - 1 && otherEntries.length === 0 ? "└" : "├";
     return `${prefix} ${l}`;
   });
 
   console.log("🐘 ELEPHANT RECALL");
   for (const l of body) console.log(l);
   console.log(
-    `└ ${total} entries total │ ${important} important │ oldest: ${oldest}`
+    `└ ${total} entries total │ ${important} important │ oldest: ${oldest}`,
   );
 }
 
@@ -376,6 +393,7 @@ chmod +x hooks/elephant-recall.js
 ```bash
 node hooks/elephant-recall.js
 ```
+
 Expected: box-drawing output showing entries from Task 2 smoke tests.
 
 - [ ] **Step 4: Test empty state**
@@ -385,7 +403,9 @@ mv .elephant/memory.md .elephant/memory.md.bak 2>/dev/null || true
 mv ~/.claude/elephant/memory.md ~/.claude/elephant/memory.md.bak 2>/dev/null || true
 node hooks/elephant-recall.js
 ```
+
 Expected:
+
 ```
 🐘 ELEPHANT RECALL
 └ nothing yet. use /elephant save to start remembering.
@@ -410,6 +430,7 @@ git commit -m "feat(elephant): add recall hook — startup summary of local + gl
 ### Task 4: `skills/elephant/SKILL.md`
 
 **Files:**
+
 - Create: `skills/elephant/SKILL.md`
 
 Manual skill for `/elephant save`, `/elephant show`, `/elephant compact`.
@@ -431,9 +452,10 @@ license: MIT
 Manage the elephant memory system. Local file: `.elephant/memory.md`. Global file: `~/.claude/elephant/memory.md`.
 
 ## Entry Format
-
 ```
+
 [!!]? YYYY-MM-DD HH:MM : text
+
 ```
 
 `[!!]` = important (never compressed). No prefix = routine (eligible for compression after 7 days).
@@ -486,6 +508,7 @@ Compress old routine entries (older than 7 days, no `[!!]` prefix).
 ```bash
 ls skills/elephant/
 ```
+
 Expected: `SKILL.md`
 
 - [ ] **Step 3: Commit**
@@ -500,6 +523,7 @@ git commit -m "feat(elephant): add /elephant skill — save, show, compact comma
 ### Task 5: Wire hooks into `plugin.json`
 
 **Files:**
+
 - Modify: `.claude-plugin/plugin.json`
 
 Add `elephant-recall.js` to SessionStart. Add `elephant-writer.js` to PostToolUse for Agent, Bash, and Skill matchers.
@@ -619,6 +643,7 @@ Replace the hooks section with:
 ```bash
 node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/plugin.json','utf8')); console.log('valid')"
 ```
+
 Expected: `valid`
 
 - [ ] **Step 3: Commit**
@@ -634,27 +659,27 @@ git commit -m "feat(elephant): wire recall + writer hooks into plugin.json"
 
 **Spec coverage check:**
 
-| Spec requirement | Task |
-|-----------------|------|
-| Auto-capture Agent completions | Task 2 |
-| Auto-capture git commits | Task 2 |
-| Auto-capture Skill runs | Task 2 |
-| Prepend to local `.elephant/memory.md` | Task 2 |
+| Spec requirement                                 | Task   |
+| ------------------------------------------------ | ------ |
+| Auto-capture Agent completions                   | Task 2 |
+| Auto-capture git commits                         | Task 2 |
+| Auto-capture Skill runs                          | Task 2 |
+| Prepend to local `.elephant/memory.md`           | Task 2 |
 | Prepend to global `~/.claude/elephant/memory.md` | Task 2 |
-| Caveman compression in writer | Task 2 |
-| SessionStart recall block | Task 3 |
-| Today / 7-day / older filter logic | Task 3 |
-| Other repos from global (last 3) | Task 3 |
-| 15-line cap | Task 3 |
-| Empty state message | Task 3 |
-| Footer counts | Task 3 |
-| `/elephant save` | Task 4 |
-| `/elephant save !!` | Task 4 |
-| `/elephant show` | Task 4 |
-| `/elephant compact` | Task 4 |
-| `.elephant/.gitignore` | Task 1 |
-| Hook registration in plugin.json | Task 5 |
-| `[!!]` never compress | Task 4 |
+| Caveman compression in writer                    | Task 2 |
+| SessionStart recall block                        | Task 3 |
+| Today / 7-day / older filter logic               | Task 3 |
+| Other repos from global (last 3)                 | Task 3 |
+| 15-line cap                                      | Task 3 |
+| Empty state message                              | Task 3 |
+| Footer counts                                    | Task 3 |
+| `/elephant save`                                 | Task 4 |
+| `/elephant save !!`                              | Task 4 |
+| `/elephant show`                                 | Task 4 |
+| `/elephant compact`                              | Task 4 |
+| `.elephant/.gitignore`                           | Task 1 |
+| Hook registration in plugin.json                 | Task 5 |
+| `[!!]` never compress                            | Task 4 |
 
 **Gaps:** None found.
 

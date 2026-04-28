@@ -19,6 +19,7 @@ Persistent memory system. Auto-captures agent work, commits, skill runs. Manual 
 ## Entry Format
 
 **Local `memory.md`:**
+
 ```
 [!!] 2026-04-12 14:30 : chose JWT over sessions — stateless API need
 2026-04-12 14:45 : spine build auth API + 12 endpoints. tests pass.
@@ -27,6 +28,7 @@ Persistent memory system. Auto-captures agent work, commits, skill runs. Manual 
 ```
 
 **Global `memory.md`:**
+
 ```
 [!!] 2026-04-12 14:30 : tonone : chose JWT over sessions — stateless API need
 2026-04-12 14:45 : tonone : spine build auth API + 12 endpoints. tests pass.
@@ -34,6 +36,7 @@ Persistent memory system. Auto-captures agent work, commits, skill runs. Manual 
 ```
 
 **Format rules:**
+
 - Local: `[!!]? YYYY-MM-DD HH:MM : text`
 - Global: `[!!]? YYYY-MM-DD HH:MM : repo : text`
 - `[!!]` prefix = important, never compress
@@ -49,13 +52,14 @@ Hook script: `hooks/elephant-writer.js`
 
 Triggers via PostToolUse hook on these events:
 
-| Event | Hook Matcher | Example Entry |
-|-------|-------------|---------------|
-| Agent completes | `Agent` | `spine build auth API. 12 endpoints.` |
-| Commit created | `Bash` (matches git commit) | `commit: add JWT auth middleware` |
-| Skill finishes | `Skill` | `ran /ship — PR #42 created` |
+| Event           | Hook Matcher                | Example Entry                         |
+| --------------- | --------------------------- | ------------------------------------- |
+| Agent completes | `Agent`                     | `spine build auth API. 12 endpoints.` |
+| Commit created  | `Bash` (matches git commit) | `commit: add JWT auth middleware`     |
+| Skill finishes  | `Skill`                     | `ran /ship — PR #42 created`          |
 
 **Hook flow:**
+
 1. Read tool result from stdin JSON (same pattern as existing `tonone-agent-tracker.js`)
 2. Compress description to caveman style (drop articles, truncate, short synonyms)
 3. Prepend line to local `.elephant/memory.md`
@@ -63,6 +67,7 @@ Triggers via PostToolUse hook on these events:
 5. Create directories if they don't exist
 
 **Caveman compression in the hook (lightweight rules):**
+
 - Drop: a, an, the, just, really, basically, actually, simply
 - Drop: "I've", "I'll", "we've", "we'll", "it's been"
 - Shorten: "implemented" → "build", "successfully" → drop, "completed" → "done"
@@ -73,12 +78,12 @@ Triggers via PostToolUse hook on these events:
 
 Skill: `/elephant`
 
-| Command | Action |
-|---------|--------|
-| `/elephant save <text>` | Write routine entry |
-| `/elephant save !! <text>` | Write important entry |
-| `/elephant show` | Print current memory contents |
-| `/elephant compact` | Compress old routine entries |
+| Command                    | Action                        |
+| -------------------------- | ----------------------------- |
+| `/elephant save <text>`    | Write routine entry           |
+| `/elephant save !! <text>` | Write important entry         |
+| `/elephant show`           | Print current memory contents |
+| `/elephant compact`        | Compress old routine entries  |
 
 ## Startup Recall
 
@@ -87,6 +92,7 @@ Hook script: `hooks/elephant-recall.js`
 Runs on SessionStart. Reads both memory files, builds smart summary, outputs as hook additional context.
 
 **Summary logic:**
+
 - Today's entries — show in full
 - Last 7 days — show in full, capped at 10 lines
 - Older than 7 days — only show `[!!]` entries
@@ -94,6 +100,7 @@ Runs on SessionStart. Reads both memory files, builds smart summary, outputs as 
 - Total block capped at 15 lines max
 
 **Output format:**
+
 ```
 🐘 ELEPHANT RECALL
 ├ [!!] 2026-04-12 14:30 : chose JWT over sessions — stateless API need
@@ -106,6 +113,7 @@ Runs on SessionStart. Reads both memory files, builds smart summary, outputs as 
 ```
 
 **Empty state:**
+
 ```
 🐘 ELEPHANT RECALL
 └ nothing yet. use /elephant save to start remembering.
@@ -116,6 +124,7 @@ Runs on SessionStart. Reads both memory files, builds smart summary, outputs as 
 ## Compression (`/elephant compact`)
 
 Merges old routine entries to save space:
+
 - Entries older than 7 days without `[!!]` get merged
 - Multiple entries from same day collapse into one line
 - Example: 3 entries from 04-05 → `2026-04-05 : spine auth + proof 42 tests + relay staging deploy`
@@ -129,30 +138,65 @@ Added to `.claude-plugin/plugin.json` hooks:
 ```json
 {
   "SessionStart": [
-    { "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-recall.js\"" }] }
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-recall.js\""
+        }
+      ]
+    }
   ],
   "PostToolUse": [
-    { "matcher": "Agent", "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-writer.js\"", "timeout": 5 }] },
-    { "matcher": "Bash", "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-writer.js\"", "timeout": 5 }] },
-    { "matcher": "Skill", "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-writer.js\"", "timeout": 5 }] }
+    {
+      "matcher": "Agent",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-writer.js\"",
+          "timeout": 5
+        }
+      ]
+    },
+    {
+      "matcher": "Bash",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-writer.js\"",
+          "timeout": 5
+        }
+      ]
+    },
+    {
+      "matcher": "Skill",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/elephant-writer.js\"",
+          "timeout": 5
+        }
+      ]
+    }
   ]
 }
 ```
 
 **Filtering logic inside `elephant-writer.js`:**
+
 - `Agent` matcher: always capture. Extract description from agent result.
 - `Bash` matcher: only capture if command contains `git commit`. Ignore all other Bash calls.
 - `Skill` matcher: always capture. Extract skill name from tool input.
 
 ## Files to Create
 
-| File | Purpose |
-|------|---------|
-| `hooks/elephant-recall.js` | SessionStart hook — reads memory, renders recap block |
-| `hooks/elephant-writer.js` | PostToolUse hook — auto-captures entries to both files |
-| `skills/elephant/SKILL.md` | Skill definition for manual commands |
-| `skills/elephant/.claude-plugin/plugin.json` | Plugin manifest for the skill |
-| `.elephant/.gitignore` | Ignore `memory.md` (local memory is per-machine) |
+| File                                         | Purpose                                                |
+| -------------------------------------------- | ------------------------------------------------------ |
+| `hooks/elephant-recall.js`                   | SessionStart hook — reads memory, renders recap block  |
+| `hooks/elephant-writer.js`                   | PostToolUse hook — auto-captures entries to both files |
+| `skills/elephant/SKILL.md`                   | Skill definition for manual commands                   |
+| `skills/elephant/.claude-plugin/plugin.json` | Plugin manifest for the skill                          |
+| `.elephant/.gitignore`                       | Ignore `memory.md` (local memory is per-machine)       |
 
 ## Integration with Existing Hooks
 
@@ -164,6 +208,7 @@ Added to `.claude-plugin/plugin.json` hooks:
 ## Repo Detection for Global Memory
 
 The writer hook determines repo name from:
+
 1. `cwd` field in stdin JSON
 2. Extract last path component (e.g., `/Users/f/repos/tn/tonone` → `tonone`)
 3. Use as repo identifier in global memory entries

@@ -29,6 +29,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 - When user wants an honest read on whether something is good
 
 **Different from `/form-audit`:**
+
 - `form-audit` = technical QA: consistency, design system compliance, brand alignment
 - `form-critique` = philosophical evaluation: does this work as a designed object?
 
@@ -37,6 +38,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 ## Phase 1: Intake
 
 Receive the design. Format accepted:
+
 - Screenshot / image upload
 - Figma link
 - Live URL (use `/browse`)
@@ -61,6 +63,7 @@ Score each dimension 0–10. Be honest — scores above 8 must be earned, not gi
 Does the design have a clear point of view? Is there a design philosophy at work — or is it a collection of decisions that don't add up to anything?
 
 Evidence questions:
+
 - Can you name the design school or reference this work belongs to?
 - Is the same sensibility operating at the macro level (layout, color, type) AND the micro level (icon style, border treatment, spacing rhythm)?
 - Does the design know what it is trying not to be?
@@ -72,6 +75,7 @@ Deductions: inconsistent type pairings, mood-board aesthetics (borrows from many
 Can a user's eye travel through the design without being lost? Is the most important thing the most prominent thing?
 
 Evidence questions:
+
 - Where does the eye land first? Is that the right place?
 - Is there a clear primary → secondary → tertiary reading path?
 - Do competing elements fight for attention at the same weight?
@@ -83,6 +87,7 @@ Deductions: three competing CTAs at equal prominence, body text the same weight 
 Are the details precise? Does the work look like someone cared about the small things?
 
 Evidence questions:
+
 - Are spacing values consistent (8pt grid adherence or intentional deviation)?
 - Are icon styles unified (line weight, corner radius, fill philosophy)?
 - Are typographic details right (optical alignment, widow/orphan handling, quote marks)?
@@ -95,6 +100,7 @@ Deductions: mixed border radii with no logic, spacing that varies by 1–2px wit
 Does the design communicate what users need to do? Does it help them succeed at the task?
 
 Evidence questions:
+
 - Is the primary action obvious without explanation?
 - Are interactive elements distinguishable from static ones?
 - Does the design communicate state? (loading, error, empty, success)
@@ -109,6 +115,7 @@ Does this design have something new to say? Or is it a familiar template filled 
 This is not about being weird — it is about design decisions that are made, not defaulted into.
 
 Evidence questions:
+
 - Is there at least one decision that could only come from someone thinking about this specific problem?
 - Does the design use the medium interestingly — or does it just put content on a screen?
 - Is there a detail that would make a designer stop scrolling?
@@ -168,12 +175,15 @@ Score guide: 40–50 = shipping quality; 30–39 = needs iteration; below 30 = r
 Three sections — be specific, not generic:
 
 ### Keep (what's working — don't touch)
+
 - [specific element]: [why it works — name the principle]
 
 ### Fix (must address before shipping)
+
 - [specific issue] → [specific fix, not "improve the typography"]
 
 ### Quick Wins (high-impact, low-effort)
+
 - [change]: [expected impact]
 
 ---

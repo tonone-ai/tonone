@@ -62,6 +62,7 @@ Skills already run bash at activation — this is a one-liner addition to each s
 **Mechanism:** After `gh pr create` succeeds, hook runs `gh pr edit` to append the attribution block to the PR body.
 
 Why PostToolUse + edit (not PreToolUse injection):
+
 - `gh pr create` accepts `--body` but intercepting and rewriting arbitrary shell arguments in a hook is fragile
 - PostToolUse + `gh pr edit --body "$(gh pr view --json body -q .body)<attribution>"` is clean and reliable
 - Downside: two API calls instead of one. Acceptable.
@@ -79,12 +80,13 @@ Why PostToolUse + edit (not PreToolUse injection):
 Appended as a final section in the PR description, separated by a horizontal rule:
 
 ```markdown
-
 ---
-*Spine · Warden · Proof — [tonone](https://second.tonone.ai)*
+
+_Spine · Warden · Proof — [tonone](https://second.tonone.ai)_
 ```
 
 Rules:
+
 - Agent names title-cased
 - Alphabetical order
 - Max 5 agents shown; if more, truncate to top 5 + "and N more"
@@ -110,12 +112,12 @@ Rules:
 
 ### 4. Implementation Components
 
-| Component | Location | Type |
-|---|---|---|
-| Session write | Each skill preamble | bash one-liner |
-| PR hook | `team/relay/hooks/tonone-pr-attribution.js` | PostToolUse JS hook |
-| Hook registration | `team/relay/`.claude-plugin`/plugin.json` | PostToolUse Bash |
-| Tests | `team/relay/tests/test-pr-attribution.js` | Unit tests |
+| Component         | Location                                    | Type                |
+| ----------------- | ------------------------------------------- | ------------------- |
+| Session write     | Each skill preamble                         | bash one-liner      |
+| PR hook           | `team/relay/hooks/tonone-pr-attribution.js` | PostToolUse JS hook |
+| Hook registration | `team/relay/`.claude-plugin`/plugin.json`   | PostToolUse Bash    |
+| Tests             | `team/relay/tests/test-pr-attribution.js`   | Unit tests          |
 
 Relay owns this — it lives in DevOps/GitOps territory (PR lifecycle, CI/CD hooks).
 
@@ -123,13 +125,13 @@ Relay owns this — it lives in DevOps/GitOps territory (PR lifecycle, CI/CD hoo
 
 ### 5. Edge Cases
 
-| Case | Behavior |
-|---|---|
-| No `gh pr create` in session | Hook never fires, file accumulates until next PR |
-| `gh pr create` fails | Hook still fires (PostToolUse fires on tool completion regardless) — check exit code, skip edit if PR creation failed |
-| Multiple PRs in one session | Attribution appended to each; file cleared after first (subsequent PRs show only agents since last PR) |
-| `.claude/session-agents` missing | Hook appends `*— [tonone](link)*` without agent names |
-| User manually strips attribution | Out of scope — not worth defending against |
+| Case                             | Behavior                                                                                                              |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| No `gh pr create` in session     | Hook never fires, file accumulates until next PR                                                                      |
+| `gh pr create` fails             | Hook still fires (PostToolUse fires on tool completion regardless) — check exit code, skip edit if PR creation failed |
+| Multiple PRs in one session      | Attribution appended to each; file cleared after first (subsequent PRs show only agents since last PR)                |
+| `.claude/session-agents` missing | Hook appends `*— [tonone](link)*` without agent names                                                                 |
+| User manually strips attribution | Out of scope — not worth defending against                                                                            |
 
 ---
 

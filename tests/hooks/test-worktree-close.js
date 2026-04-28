@@ -21,13 +21,17 @@ function makeTempRepo() {
 
 function makeWorktree(mainRepo, name = "test-branch") {
   const wtPath = path.join(mainRepo, ".claude", "worktrees", name);
-  fs.mkdirSync(path.join(mainRepo, ".claude", "worktrees"), { recursive: true });
+  fs.mkdirSync(path.join(mainRepo, ".claude", "worktrees"), {
+    recursive: true,
+  });
   execSync(`git worktree add "${wtPath}" -b ${name}`, { cwd: mainRepo });
   return wtPath;
 }
 
 function cleanup(dir) {
-  try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  try {
+    fs.rmSync(dir, { recursive: true, force: true });
+  } catch {}
 }
 
 function runHook(cwd) {
@@ -58,9 +62,15 @@ test("clean worktree (no changes) — silent exit, worktree preserved", () => {
     const wtPath = makeWorktree(dir);
     const result = runHook(wtPath);
     assert.strictEqual(result.status, 0, result.stderr);
-    assert.strictEqual(result.stdout.trim(), "", "no output for clean worktree");
+    assert.strictEqual(
+      result.stdout.trim(),
+      "",
+      "no output for clean worktree",
+    );
     assert.ok(fs.existsSync(wtPath), "clean worktree should be preserved");
-    try { execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir }); } catch {}
+    try {
+      execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir });
+    } catch {}
   } finally {
     cleanup(dir);
   }
@@ -77,7 +87,9 @@ test("dirty worktree (committed changes) — prints /ship suggestion, keeps work
     assert.strictEqual(result.status, 0, result.stderr);
     assert.match(result.stdout, /\/ship/);
     assert.ok(fs.existsSync(wtPath), "worktree should still exist");
-    try { execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir }); } catch {}
+    try {
+      execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir });
+    } catch {}
   } finally {
     cleanup(dir);
   }
@@ -92,7 +104,9 @@ test("dirty worktree (uncommitted changes) — prints /ship suggestion, keeps wo
     assert.strictEqual(result.status, 0, result.stderr);
     assert.match(result.stdout, /\/ship/);
     assert.ok(fs.existsSync(wtPath), "worktree should still exist");
-    try { execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir }); } catch {}
+    try {
+      execSync(`git worktree remove --force "${wtPath}"`, { cwd: dir });
+    } catch {}
   } finally {
     cleanup(dir);
   }

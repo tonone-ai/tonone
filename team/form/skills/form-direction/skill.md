@@ -37,6 +37,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 ## Phase 1: Extract the Brief (max 3 questions)
 
 Ask only if unclear:
+
 - Who is the target audience and what feeling should the design evoke?
 - What is the output format? (web app, mobile, slide deck, marketing site, data viz)
 - Are there any brands, products, or designs the user admires or wants to avoid?
@@ -57,13 +58,13 @@ Write a 100–200 word restatement of the core need: audience, context, emotiona
 
 ### The 5 Schools
 
-| School | Visual character | Best as |
-|--------|-----------------|---------|
-| **Information Architecture** (01–04) | Rational, data-driven, restrained — Pentagram, Vignelli, Rams | Safe/professional choice |
-| **Motion Poetry** (05–08) | Kinetic, immersive, technical beauty — Field.io, Universal Everything, GMUNK | Bold/avant-garde choice |
-| **Minimalism** (09–12) | Order, whitespace, precision — Kenya Hara, Jasper Morrison, Muji | Safe/premium choice |
-| **Experimental Avant-garde** (13–16) | Generative, typographic shock, visual collision — Sagmeister, Experimental Jetset, Stefan Marx | Bold/innovative choice |
-| **Eastern Philosophy** (17–20) | Warmth, poetry, tension between tradition and digital — Neri Oxman (organic), Han Jiaying (ink), wabi-sabi digital | Differentiated/unique choice |
+| School                               | Visual character                                                                                                   | Best as                      |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| **Information Architecture** (01–04) | Rational, data-driven, restrained — Pentagram, Vignelli, Rams                                                      | Safe/professional choice     |
+| **Motion Poetry** (05–08)            | Kinetic, immersive, technical beauty — Field.io, Universal Everything, GMUNK                                       | Bold/avant-garde choice      |
+| **Minimalism** (09–12)               | Order, whitespace, precision — Kenya Hara, Jasper Morrison, Muji                                                   | Safe/premium choice          |
+| **Experimental Avant-garde** (13–16) | Generative, typographic shock, visual collision — Sagmeister, Experimental Jetset, Stefan Marx                     | Bold/innovative choice       |
+| **Eastern Philosophy** (17–20)       | Warmth, poetry, tension between tradition and digital — Neri Oxman (organic), Han Jiaying (ink), wabi-sabi digital | Differentiated/unique choice |
 
 ### Direction format (per direction)
 
@@ -91,6 +92,7 @@ School: [school name]
 For each direction, generate a self-contained HTML demo using the actual content/theme from the brief (not Lorem ipsum).
 
 **Build approach:**
+
 - React + Babel inline (CDN, no build step)
 - Single file, opens with double-click
 - 1200×900 viewport target
@@ -99,6 +101,7 @@ For each direction, generate a self-contained HTML demo using the actual content
 **File output:** `_temp/design-demos/demo-a.html`, `demo-b.html`, `demo-c.html`
 
 **Screenshot each:**
+
 ```bash
 npx playwright screenshot "file:///$(pwd)/_temp/design-demos/demo-a.html" _temp/design-demos/demo-a.png --viewport-size=1200,900
 ```
@@ -106,6 +109,7 @@ npx playwright screenshot "file:///$(pwd)/_temp/design-demos/demo-a.html" _temp/
 Show all 3 screenshots together. If parallel subagents available, generate the 3 demos concurrently.
 
 **Taste guardrails per demo:**
+
 - One warm or distinctive base color + single accent — not a gradient rainbow
 - Typography: mix display serif + body sans — not all-system-font
 - One "screenshot-worthy" detail that distinguishes the direction
@@ -116,6 +120,7 @@ Show all 3 screenshots together. If parallel subagents available, generate the 3
 ## Phase 5: User Selects
 
 User options:
+
 - "A" → deepen direction A
 - "B + C's layout" → hybrid — go back to Phase 3 with the hybrid constraint
 - "None — try again" → return to Phase 3 with new constraints
@@ -134,24 +139,29 @@ School: [school]
 Designer reference: [name/studio]
 
 ## Color
+
 Primary: #[hex] — [usage]
 Accent: #[hex] — [usage]
 Background: #[hex]
 Text: #[hex]
 
 ## Typography
+
 Display: [font] — [weight/size usage]
 Body: [font] — [size/line-height]
 
 ## Visual fingerprint
+
 - [characteristic 1]
 - [characteristic 2]
 - [characteristic 3]
 
 ## Tone keywords
+
 [word], [word], [word]
 
 ## What to avoid
+
 - [anti-pattern specific to this direction]
 - [another anti-pattern]
 ```
@@ -167,6 +177,7 @@ If the user needs to generate images or visual assets in this direction:
 Structure: `[design philosophy constraints] + [content description] + [technical parameters]`
 
 Use specific visual traits, not style labels:
+
 - Write: "Kenya Hara's breathing whitespace, terracotta #C04A1A accent, EB Garamond display, 8:1 signal-to-noise ratio"
 - Not: "minimalist"
 

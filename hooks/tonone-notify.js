@@ -39,13 +39,14 @@ function loadConfig() {
 
 // Escape a string for use inside an AppleScript double-quoted string literal.
 function escapeAS(s) {
-  return String(s)
-    .replace(/\\/g, "\\\\")
-    .replace(/"/g, '\\"');
+  return String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"');
 }
 
 function sendNotification(title, subtitle, body) {
-  const parts = [`display notification "${escapeAS(body)}"`, `with title "${escapeAS(title)}"`];
+  const parts = [
+    `display notification "${escapeAS(body)}"`,
+    `with title "${escapeAS(title)}"`,
+  ];
   if (subtitle) parts.push(`subtitle "${escapeAS(subtitle)}"`);
   spawnSync("osascript", ["-e", parts.join(" ")], { timeout: 3000 });
 }
@@ -72,7 +73,8 @@ process.stdin.on("end", () => {
   }
 
   // Detect event type: prefer explicit field, fall back to payload shape.
-  const event = data.hook_event_name || (data.message != null ? "Notification" : "Stop");
+  const event =
+    data.hook_event_name || (data.message != null ? "Notification" : "Stop");
 
   if (event !== "Stop" && event !== "Notification") process.exit(0);
 

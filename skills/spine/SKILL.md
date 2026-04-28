@@ -17,14 +17,14 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `spine-api` | Design and spec an API — endpoints, request/response, auth, pagination |
-| `spine-design` | Produce a system design doc with actual architecture calls made |
-| `spine-perf` | Find and fix performance bottlenecks — N+1 queries, slow endpoints |
-| `spine-recon` | Map all routes, middleware, models, auth, and assess code quality |
-| `spine-review` | API and backend code review — conventions, auth, validation, test coverage |
-| `spine-service` | Build a new production-ready service — config, health checks, logging |
+| Skill           | Use when                                                                   |
+| --------------- | -------------------------------------------------------------------------- |
+| `spine-api`     | Design and spec an API — endpoints, request/response, auth, pagination     |
+| `spine-design`  | Produce a system design doc with actual architecture calls made            |
+| `spine-perf`    | Find and fix performance bottlenecks — N+1 queries, slow endpoints         |
+| `spine-recon`   | Map all routes, middleware, models, auth, and assess code quality          |
+| `spine-review`  | API and backend code review — conventions, auth, validation, test coverage |
+| `spine-service` | Build a new production-ready service — config, health checks, logging      |
 
 Default (no args or unclear): `spine-recon`.
 

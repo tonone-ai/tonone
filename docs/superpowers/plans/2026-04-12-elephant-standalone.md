@@ -13,6 +13,7 @@
 ### Task 1: Init repo + scaffold directories
 
 **Files:**
+
 - Create: `~/repos/elephant/` (git repo)
 - Create: `~/repos/elephant/.claude-plugin/`
 - Create: `~/repos/elephant/skills/elephant/`
@@ -50,6 +51,7 @@ find . -not -path './.git/*' | sort
 ```
 
 Expected:
+
 ```
 .
 ./.gitignore
@@ -64,6 +66,7 @@ Expected:
 ### Task 2: LICENSE
 
 **Files:**
+
 - Create: `~/repos/elephant/LICENSE`
 
 - [ ] **Step 1: Write MIT license**
@@ -106,6 +109,7 @@ git commit -m "chore: init repo"
 ### Task 3: Plugin manifest
 
 **Files:**
+
 - Create: `~/repos/elephant/.claude-plugin/plugin.json`
 
 - [ ] **Step 1: Write plugin manifest**
@@ -150,6 +154,7 @@ git commit -m "feat: add plugin manifest"
 ### Task 4: Skill file
 
 **Files:**
+
 - Create: `~/repos/elephant/skills/elephant/SKILL.md`
 
 - [ ] **Step 1: Write skill file**
@@ -250,6 +255,7 @@ Steps:
      - subject contains `(#` (PR reference = likely significant)
 
 4. Format entries (newest first, matching git log default order):
+
    ```
    [!!] 2026-04-12 13:58 : feat: elephant memory system
    2026-04-12 12:00 : fix typo in output kit
@@ -261,9 +267,11 @@ Steps:
    - Use a temp file + rename for atomicity.
 
 6. For each entry, also append to `~/.claude/elephant/memory.md` (repo-prefixed):
+
    ```
    [!!] 2026-04-12 13:58 : tonone : feat: elephant memory system
    ```
+
    Append only entries not already present (match on timestamp + text).
 
 7. Report:
@@ -293,6 +301,7 @@ git commit -m "feat: add elephant skill v1.1.0"
 ### Task 5: Install script
 
 **Files:**
+
 - Create: `~/repos/elephant/install.sh`
 
 - [ ] **Step 1: Write install script**
@@ -346,6 +355,7 @@ git commit -m "feat: add curl install script"
 ### Task 6: CONTRIBUTING.md
 
 **Files:**
+
 - Create: `~/repos/elephant/CONTRIBUTING.md`
 
 - [ ] **Step 1: Write contributing guide**
@@ -395,13 +405,14 @@ git commit -m "docs: add contributing guide"
 ### Task 7: README
 
 **Files:**
+
 - Create: `~/repos/elephant/README.md`
 
 - [ ] **Step 1: Write README**
 
 Create `~/repos/elephant/README.md`:
 
-```markdown
+````markdown
 # 🐘 elephant
 
 > "Consider the elephant. Legend has it its memory is so robust it never forgets."
@@ -420,11 +431,14 @@ Claude Code forgets everything between sessions. Elephant fixes that.
 ## Install
 
 **Plugin registry:**
+
 ```bash
 claude plugins install github:tonone-ai/elephant
 ```
+````
 
 **Or curl:**
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/tonone-ai/elephant/main/install.sh | bash
 ```
@@ -435,13 +449,13 @@ Restart Claude Code. Done.
 
 ## Commands
 
-| Command | What it does |
-|---|---|
-| `/elephant save <text>` | Save a memory entry |
+| Command                    | What it does                               |
+| -------------------------- | ------------------------------------------ |
+| `/elephant save <text>`    | Save a memory entry                        |
 | `/elephant save !! <text>` | Save an important entry (never compressed) |
-| `/elephant show` | Print your memory |
-| `/elephant compact` | Merge old entries to save tokens |
-| `/elephant takeover [N]` | Bootstrap from git history (cold start) |
+| `/elephant show`           | Print your memory                          |
+| `/elephant compact`        | Merge old entries to save tokens           |
+| `/elephant takeover [N]`   | Bootstrap from git history (cold start)    |
 
 ---
 
@@ -475,20 +489,22 @@ New project? No history? Run `/elephant takeover` — it reads your last 60 comm
 MIT — see [LICENSE](LICENSE)
 
 Made by [tonone-ai](https://github.com/tonone-ai)
-```
+
+````
 
 - [ ] **Step 2: Commit**
 
 ```bash
 git add README.md
 git commit -m "docs: add README with install, commands, format"
-```
+````
 
 ---
 
 ### Task 8: Landing page
 
 **Files:**
+
 - Create: `~/repos/elephant/docs/index.html`
 
 - [ ] **Step 1: Write landing page**
@@ -498,298 +514,451 @@ Create `~/repos/elephant/docs/index.html`:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🐘 elephant — Claude Code memory</title>
-  <meta name="description" content="Claude Code forgets. Elephant doesn't. Persistent memory for Claude Code sessions.">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐘 elephant — Claude Code memory</title>
+    <meta
+      name="description"
+      content="Claude Code forgets. Elephant doesn't. Persistent memory for Claude Code sessions."
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --bg:        #0d1f0d;
-      --bg2:       #162416;
-      --bg3:       #1e321e;
-      --cream:     #f0ead6;
-      --cream-dim: #9a9080;
-      --green:     #4ade80;
-      --amber:     #f59e0b;
-      --border:    #2a3d2a;
-      --mono:      'Courier New', Courier, monospace;
-    }
+      :root {
+        --bg: #0d1f0d;
+        --bg2: #162416;
+        --bg3: #1e321e;
+        --cream: #f0ead6;
+        --cream-dim: #9a9080;
+        --green: #4ade80;
+        --amber: #f59e0b;
+        --border: #2a3d2a;
+        --mono: "Courier New", Courier, monospace;
+      }
 
-    html { scroll-behavior: smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      background: var(--bg);
-      color: var(--cream);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
 
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 2rem;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 10;
-    }
-    .nav-brand { font-weight: 700; font-size: 1.1rem; }
-    .nav-star {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      color: var(--cream);
-      padding: 0.4rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: border-color 0.15s;
-    }
-    .nav-star:hover { border-color: var(--green); color: var(--green); }
+      /* ── NAV ── */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 2rem;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        background: var(--bg);
+        z-index: 10;
+      }
+      .nav-brand {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      .nav-star {
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        color: var(--cream);
+        padding: 0.4rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: border-color 0.15s;
+      }
+      .nav-star:hover {
+        border-color: var(--green);
+        color: var(--green);
+      }
 
-    /* ── HERO ── */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 6rem 2rem 5rem;
-      gap: 1.5rem;
-    }
-    .hero-emoji { font-size: 5rem; line-height: 1; }
-    .hero-quote {
-      font-style: italic;
-      color: var(--cream-dim);
-      font-size: 1rem;
-      max-width: 420px;
-      line-height: 1.7;
-    }
-    .hero-attribution {
-      color: var(--cream-dim);
-      font-size: 0.85rem;
-      margin-top: -0.75rem;
-    }
-    .hero-headline {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
-    .hero-headline .accent { color: var(--green); }
-    .hero-sub {
-      color: var(--cream-dim);
-      font-size: 1.1rem;
-      max-width: 380px;
-    }
-    .hero-install {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.9rem 1.75rem;
-      font-family: var(--mono);
-      font-size: 0.95rem;
-      color: var(--green);
-      cursor: pointer;
-      user-select: all;
-      transition: border-color 0.15s;
-    }
-    .hero-install:hover { border-color: var(--green); }
-    .hero-install-hint { color: var(--cream-dim); font-size: 0.8rem; margin-top: -0.75rem; }
+      /* ── HERO ── */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 6rem 2rem 5rem;
+        gap: 1.5rem;
+      }
+      .hero-emoji {
+        font-size: 5rem;
+        line-height: 1;
+      }
+      .hero-quote {
+        font-style: italic;
+        color: var(--cream-dim);
+        font-size: 1rem;
+        max-width: 420px;
+        line-height: 1.7;
+      }
+      .hero-attribution {
+        color: var(--cream-dim);
+        font-size: 0.85rem;
+        margin-top: -0.75rem;
+      }
+      .hero-headline {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+      .hero-headline .accent {
+        color: var(--green);
+      }
+      .hero-sub {
+        color: var(--cream-dim);
+        font-size: 1.1rem;
+        max-width: 380px;
+      }
+      .hero-install {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.9rem 1.75rem;
+        font-family: var(--mono);
+        font-size: 0.95rem;
+        color: var(--green);
+        cursor: pointer;
+        user-select: all;
+        transition: border-color 0.15s;
+      }
+      .hero-install:hover {
+        border-color: var(--green);
+      }
+      .hero-install-hint {
+        color: var(--cream-dim);
+        font-size: 0.8rem;
+        margin-top: -0.75rem;
+      }
 
-    /* ── DEMO ── */
-    .section { padding: 4rem 2rem; max-width: 700px; margin: 0 auto; }
-    .section-label {
-      color: var(--green);
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-    .terminal {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .terminal-bar {
-      background: var(--bg3);
-      padding: 0.6rem 1rem;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-    }
-    .dot { width: 12px; height: 12px; border-radius: 50%; }
-    .dot-r { background: #ff5f57; }
-    .dot-y { background: #febc2e; }
-    .dot-g { background: #28c840; }
-    .terminal-body { padding: 1.25rem 1.5rem; font-family: var(--mono); font-size: 0.875rem; line-height: 1.8; }
-    .t-prompt { color: var(--green); }
-    .t-out { color: var(--cream-dim); }
-    .t-important { color: var(--amber); }
-    .t-tip { color: var(--cream-dim); font-style: italic; }
+      /* ── DEMO ── */
+      .section {
+        padding: 4rem 2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .section-label {
+        color: var(--green);
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+      }
+      .terminal {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .terminal-bar {
+        background: var(--bg3);
+        padding: 0.6rem 1rem;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .dot-r {
+        background: #ff5f57;
+      }
+      .dot-y {
+        background: #febc2e;
+      }
+      .dot-g {
+        background: #28c840;
+      }
+      .terminal-body {
+        padding: 1.25rem 1.5rem;
+        font-family: var(--mono);
+        font-size: 0.875rem;
+        line-height: 1.8;
+      }
+      .t-prompt {
+        color: var(--green);
+      }
+      .t-out {
+        color: var(--cream-dim);
+      }
+      .t-important {
+        color: var(--amber);
+      }
+      .t-tip {
+        color: var(--cream-dim);
+        font-style: italic;
+      }
 
-    /* ── COMMANDS ── */
-    .commands-grid {
-      display: grid;
-      gap: 1rem;
-    }
-    .cmd-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-    }
-    .cmd-name { font-family: var(--mono); color: var(--green); font-size: 0.9rem; margin-bottom: 0.25rem; }
-    .cmd-desc { color: var(--cream-dim); font-size: 0.875rem; }
-    .cmd-badge {
-      display: inline-block;
-      background: var(--amber);
-      color: var(--bg);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.1rem 0.4rem;
-      border-radius: 3px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-    }
+      /* ── COMMANDS ── */
+      .commands-grid {
+        display: grid;
+        gap: 1rem;
+      }
+      .cmd-card {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+      }
+      .cmd-name {
+        font-family: var(--mono);
+        color: var(--green);
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+      }
+      .cmd-desc {
+        color: var(--cream-dim);
+        font-size: 0.875rem;
+      }
+      .cmd-badge {
+        display: inline-block;
+        background: var(--amber);
+        color: var(--bg);
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 0.1rem 0.4rem;
+        border-radius: 3px;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+      }
 
-    /* ── VALUE PROPS ── */
-    .props { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
-    .prop { text-align: center; }
-    .prop-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .prop-title { font-weight: 700; margin-bottom: 0.25rem; }
-    .prop-desc { color: var(--cream-dim); font-size: 0.875rem; }
+      /* ── VALUE PROPS ── */
+      .props {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+      }
+      .prop {
+        text-align: center;
+      }
+      .prop-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .prop-title {
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+      .prop-desc {
+        color: var(--cream-dim);
+        font-size: 0.875rem;
+      }
 
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      text-align: center;
-      color: var(--cream-dim);
-      font-size: 0.875rem;
-    }
-    footer a { color: var(--cream-dim); text-decoration: underline; }
-    footer a:hover { color: var(--cream); }
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 2rem;
+        text-align: center;
+        color: var(--cream-dim);
+        font-size: 0.875rem;
+      }
+      footer a {
+        color: var(--cream-dim);
+        text-decoration: underline;
+      }
+      footer a:hover {
+        color: var(--cream);
+      }
 
-    /* ── DIVIDER ── */
-    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-  </style>
-</head>
-<body>
+      /* ── DIVIDER ── */
+      .divider {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <span class="nav-brand">🐘 elephant</span>
+      <a
+        class="nav-star"
+        href="https://github.com/tonone-ai/elephant"
+        target="_blank"
+        rel="noopener"
+        >★ Star on GitHub</a
+      >
+    </nav>
 
-  <!-- NAV -->
-  <nav>
-    <span class="nav-brand">🐘 elephant</span>
-    <a class="nav-star" href="https://github.com/tonone-ai/elephant" target="_blank" rel="noopener">★ Star on GitHub</a>
-  </nav>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-emoji">🐘</div>
+      <p class="hero-quote">
+        "Consider the elephant. Legend has it its memory is so robust it never
+        forgets."
+      </p>
+      <p class="hero-attribution">— Gavin Belson</p>
+      <h1 class="hero-headline">
+        Claude Code <span class="accent">forgets</span>.<br />Elephant doesn't.
+      </h1>
+      <p class="hero-sub">
+        Persistent memory for Claude Code sessions. No cloud. No config. Just a
+        file.
+      </p>
+      <code class="hero-install"
+        >claude plugins install github:tonone-ai/elephant</code
+      >
+      <p class="hero-install-hint">
+        or: <code>curl -fsSL …/install.sh | bash</code>
+      </p>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-emoji">🐘</div>
-    <p class="hero-quote">"Consider the elephant. Legend has it its memory is so robust it never forgets."</p>
-    <p class="hero-attribution">— Gavin Belson</p>
-    <h1 class="hero-headline">Claude Code <span class="accent">forgets</span>.<br>Elephant doesn't.</h1>
-    <p class="hero-sub">Persistent memory for Claude Code sessions. No cloud. No config. Just a file.</p>
-    <code class="hero-install">claude plugins install github:tonone-ai/elephant</code>
-    <p class="hero-install-hint">or: <code>curl -fsSL …/install.sh | bash</code></p>
-  </section>
+    <hr class="divider" />
 
-  <hr class="divider">
-
-  <!-- DEMO -->
-  <div class="section">
-    <p class="section-label">Cold start → memory in one shot</p>
-    <div class="terminal">
-      <div class="terminal-bar">
-        <div class="dot dot-r"></div>
-        <div class="dot dot-y"></div>
-        <div class="dot dot-g"></div>
-      </div>
-      <div class="terminal-body">
-        <div><span class="t-prompt">/elephant takeover</span></div>
-        <div class="t-out">&nbsp;</div>
-        <div class="t-important">[!!] 2026-04-11 09:14 : feat: add stripe webhook handler</div>
-        <div class="t-important">[!!] 2026-04-10 16:32 : fix: null pointer in auth middleware</div>
-        <div class="t-out">    2026-04-09 11:05 : refactor user model</div>
-        <div class="t-out">    2026-04-08 14:22 : update env vars in staging</div>
-        <div class="t-important">[!!] 2026-04-07 10:00 : feat: onboarding flow (#142)</div>
-        <div class="t-out">    …</div>
-        <div class="t-out">&nbsp;</div>
-        <div class="t-out">seeded 60 entries (2026-02-01 → 2026-04-11) — 18 marked [!!]</div>
-        <div class="t-tip">tip: run /elephant compact to merge old routine entries</div>
+    <!-- DEMO -->
+    <div class="section">
+      <p class="section-label">Cold start → memory in one shot</p>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+        </div>
+        <div class="terminal-body">
+          <div><span class="t-prompt">/elephant takeover</span></div>
+          <div class="t-out">&nbsp;</div>
+          <div class="t-important">
+            [!!] 2026-04-11 09:14 : feat: add stripe webhook handler
+          </div>
+          <div class="t-important">
+            [!!] 2026-04-10 16:32 : fix: null pointer in auth middleware
+          </div>
+          <div class="t-out">2026-04-09 11:05 : refactor user model</div>
+          <div class="t-out">2026-04-08 14:22 : update env vars in staging</div>
+          <div class="t-important">
+            [!!] 2026-04-07 10:00 : feat: onboarding flow (#142)
+          </div>
+          <div class="t-out">…</div>
+          <div class="t-out">&nbsp;</div>
+          <div class="t-out">
+            seeded 60 entries (2026-02-01 → 2026-04-11) — 18 marked [!!]
+          </div>
+          <div class="t-tip">
+            tip: run /elephant compact to merge old routine entries
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <hr class="divider">
+    <hr class="divider" />
 
-  <!-- COMMANDS -->
-  <div class="section">
-    <p class="section-label">Commands</p>
-    <div class="commands-grid">
-      <div class="cmd-card">
-        <div class="cmd-name">/elephant save &lt;text&gt;</div>
-        <div class="cmd-desc">Write a memory entry to local + global files. Caveman-compressed to save tokens.</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/elephant save !! &lt;text&gt; <span class="cmd-badge">!!</span></div>
-        <div class="cmd-desc">Write an important entry. Never compressed, never deleted.</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/elephant show</div>
-        <div class="cmd-desc">Print your full memory file verbatim.</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/elephant compact</div>
-        <div class="cmd-desc">Merge routine entries older than 7 days into single lines. Keeps token count low.</div>
-      </div>
-      <div class="cmd-card">
-        <div class="cmd-name">/elephant takeover [N]</div>
-        <div class="cmd-desc">Bootstrap from git history. Seeds the last N commits (default 60). Marks important commits <span class="cmd-badge">!!</span></div>
+    <!-- COMMANDS -->
+    <div class="section">
+      <p class="section-label">Commands</p>
+      <div class="commands-grid">
+        <div class="cmd-card">
+          <div class="cmd-name">/elephant save &lt;text&gt;</div>
+          <div class="cmd-desc">
+            Write a memory entry to local + global files. Caveman-compressed to
+            save tokens.
+          </div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">
+            /elephant save !! &lt;text&gt; <span class="cmd-badge">!!</span>
+          </div>
+          <div class="cmd-desc">
+            Write an important entry. Never compressed, never deleted.
+          </div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/elephant show</div>
+          <div class="cmd-desc">Print your full memory file verbatim.</div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/elephant compact</div>
+          <div class="cmd-desc">
+            Merge routine entries older than 7 days into single lines. Keeps
+            token count low.
+          </div>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-name">/elephant takeover [N]</div>
+          <div class="cmd-desc">
+            Bootstrap from git history. Seeds the last N commits (default 60).
+            Marks important commits <span class="cmd-badge">!!</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <hr class="divider">
+    <hr class="divider" />
 
-  <!-- VALUE PROPS -->
-  <div class="section">
-    <div class="props">
-      <div class="prop">
-        <div class="prop-icon">📁</div>
-        <div class="prop-title">Just a file</div>
-        <div class="prop-desc">Memory lives in <code>.elephant/memory.md</code>. Readable, editable, committable.</div>
-      </div>
-      <div class="prop">
-        <div class="prop-icon">☁️</div>
-        <div class="prop-title">No cloud</div>
-        <div class="prop-desc">Nothing leaves your machine. No API keys beyond your Claude subscription.</div>
-      </div>
-      <div class="prop">
-        <div class="prop-icon">🗜️</div>
-        <div class="prop-title">Token-efficient</div>
-        <div class="prop-desc">Caveman compression. Articles and filler dropped. Compact keeps history lean.</div>
+    <!-- VALUE PROPS -->
+    <div class="section">
+      <div class="props">
+        <div class="prop">
+          <div class="prop-icon">📁</div>
+          <div class="prop-title">Just a file</div>
+          <div class="prop-desc">
+            Memory lives in <code>.elephant/memory.md</code>. Readable,
+            editable, committable.
+          </div>
+        </div>
+        <div class="prop">
+          <div class="prop-icon">☁️</div>
+          <div class="prop-title">No cloud</div>
+          <div class="prop-desc">
+            Nothing leaves your machine. No API keys beyond your Claude
+            subscription.
+          </div>
+        </div>
+        <div class="prop">
+          <div class="prop-icon">🗜️</div>
+          <div class="prop-title">Token-efficient</div>
+          <div class="prop-desc">
+            Caveman compression. Articles and filler dropped. Compact keeps
+            history lean.
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <hr class="divider">
+    <hr class="divider" />
 
-  <!-- FOOTER -->
-  <footer>
-    <p>MIT license · <a href="https://github.com/tonone-ai/elephant" target="_blank" rel="noopener">GitHub</a> · made by <a href="https://github.com/tonone-ai" target="_blank" rel="noopener">tonone-ai</a></p>
-  </footer>
-
-</body>
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        MIT license ·
+        <a
+          href="https://github.com/tonone-ai/elephant"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+        · made by
+        <a href="https://github.com/tonone-ai" target="_blank" rel="noopener"
+          >tonone-ai</a
+        >
+      </p>
+    </footer>
+  </body>
 </html>
 ```
 

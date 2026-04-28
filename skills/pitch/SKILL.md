@@ -17,14 +17,14 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `pitch-copy` | Write landing page and marketing copy — hero, problem/solution, CTAs |
-| `pitch-landing` | Strategy and structure for a growth landing page — layout, hooks, proof |
-| `pitch-launch` | Produce a launch plan — announcement copy, channel sequence, day-1 checklist |
-| `pitch-message` | Messaging framework — headline, subheadline, proof points, CTA hierarchy |
-| `pitch-position` | Positioning document — Dunford framework, competitive alternatives, tagline |
-| `pitch-recon` | Survey existing landing pages, copy, and positioning docs |
+| Skill            | Use when                                                                     |
+| ---------------- | ---------------------------------------------------------------------------- |
+| `pitch-copy`     | Write landing page and marketing copy — hero, problem/solution, CTAs         |
+| `pitch-landing`  | Strategy and structure for a growth landing page — layout, hooks, proof      |
+| `pitch-launch`   | Produce a launch plan — announcement copy, channel sequence, day-1 checklist |
+| `pitch-message`  | Messaging framework — headline, subheadline, proof points, CTA hierarchy     |
+| `pitch-position` | Positioning document — Dunford framework, competitive alternatives, tagline  |
+| `pitch-recon`    | Survey existing landing pages, copy, and positioning docs                    |
 
 Default (no args or unclear): `pitch-recon`.
 

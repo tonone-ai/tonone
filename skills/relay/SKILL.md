@@ -17,14 +17,14 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `relay-audit` | Audit an existing CI/CD pipeline for slowness, security, reliability |
-| `relay-deploy` | Set up a deployment configuration — Dockerfile, manifest, rollback |
-| `relay-docker` | Build production-ready Dockerfiles with multi-stage builds and hardening |
-| `relay-pipeline` | Build a full CI/CD pipeline from scratch |
-| `relay-recon` | Map the full CI/CD pipeline — triggers, build, test, deploy flow |
-| `relay-ship` | End-to-end ship workflow — test, bump version, commit, push, create PR |
+| Skill            | Use when                                                                 |
+| ---------------- | ------------------------------------------------------------------------ |
+| `relay-audit`    | Audit an existing CI/CD pipeline for slowness, security, reliability     |
+| `relay-deploy`   | Set up a deployment configuration — Dockerfile, manifest, rollback       |
+| `relay-docker`   | Build production-ready Dockerfiles with multi-stage builds and hardening |
+| `relay-pipeline` | Build a full CI/CD pipeline from scratch                                 |
+| `relay-recon`    | Map the full CI/CD pipeline — triggers, build, test, deploy flow         |
+| `relay-ship`     | End-to-end ship workflow — test, bump version, commit, push, create PR   |
 
 Default (no args or unclear): `relay-recon`.
 

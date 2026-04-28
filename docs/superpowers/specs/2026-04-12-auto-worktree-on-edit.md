@@ -67,6 +67,7 @@ Call EnterWorktree(".claude/worktrees/impl-20260412-143022-12345") now, then ret
 **Remove:** `test_gate_block_message_is_actionable` — references old `hasRecentPlan` behavior and is environment-dependent.
 
 **Add:**
+
 - `test_gate_exits_0_if_already_in_worktree` — mock `git rev-parse --git-dir` ≠ `--git-common-dir`
 - `test_gate_exits_0_on_skip_marker` — existing behavior, keep
 - `test_gate_message_format_on_main` — check stdout contains `WORKTREE_READY` and `EnterWorktree`
@@ -75,9 +76,9 @@ Note: full blocking behavior (exit 1) remains environment-dependent (requires re
 
 ## Files Changed
 
-| File | Change |
-|------|--------|
-| `hooks/tonone-worktree-gate.js` | Rewrite: drop plan check, add inline worktree creation, update message |
-| `tests/test_hooks.py` | Remove 1 test, add 2 tests |
-| `.claude-plugin/plugin.json` | No change |
-| `hooks/tonone-worktree-create.js` | No change |
+| File                              | Change                                                                 |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| `hooks/tonone-worktree-gate.js`   | Rewrite: drop plan check, add inline worktree creation, update message |
+| `tests/test_hooks.py`             | Remove 1 test, add 2 tests                                             |
+| `.claude-plugin/plugin.json`      | No change                                                              |
+| `hooks/tonone-worktree-create.js` | No change                                                              |
