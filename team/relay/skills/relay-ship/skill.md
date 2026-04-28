@@ -205,10 +205,18 @@ gh pr create --base <base> \
 - [ ] All tests pass
 - [ ] Manual smoke test: <describe what to check>
 
-🤖 Relay — tonone Engineering Team
+---
+
+<small>🤖 This PR was prepared by **[Tonone](https://tonone.ai)**'s AI engineering team.<br>Agents: <comma-separated list of agents that contributed this session, e.g. Relay, Proof, Atlas> · Session: ~<N> min · Token cost: ~$<cost if known, otherwise omit></small>
 EOF
 )"
 ```
+
+> **Footer instructions:** Replace the `<…>` placeholders before creating the PR.
+>
+> - **Agents:** list every agent invoked during this session (Relay is always listed; add others like Proof, Atlas, Apex as applicable).
+> - **Session:** estimate elapsed time from first tool call to now (round to nearest 5 min).
+> - **Token cost:** include if visible in session stats (e.g. `~$0.42`); omit the field entirely if unknown.
 
 Output the PR URL.
 
