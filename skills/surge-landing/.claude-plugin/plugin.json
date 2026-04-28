@@ -1,6 +1,6 @@
 {
   "name": "surge-landing",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "|",
   "author": {
     "name": "tonone-ai",
@@ -9,5 +9,8 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": ["surge", "skill"]
+  "keywords": [
+    "surge",
+    "skill"
+  ]
 }

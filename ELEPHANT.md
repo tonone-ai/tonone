@@ -98,3 +98,4 @@
 2026-04-28 13:48 : readme updated — version badge 0.9.1 → 0.9.5 — @fatih
 2026-04-28 13:49 : chore: elephant takeover + readme badge 0.9.1 → 0.9.5 — @fatih
 [!!] 2026-04-28 14:00 : release 0.9.6 — elephant memory seeded, readme badge fixed — @fatih
+2026-04-28 14:57 : fix(relay-ship): enrich PR footer with Tonone attribution table — @fatih
