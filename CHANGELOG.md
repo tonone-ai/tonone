@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.5] — 2026-04-28
+
+### Changed
+
+- **`relay-ship` PR footer** — replaced bare `🤖 Relay — tonone Engineering Team` with a friendly multi-line attribution that names the agents involved, session duration, and approximate token cost. Relay fills in the placeholders at PR-creation time from session context.
+
 ## [0.9.4] — 2026-04-26
 
 ### Fixed

@@ -1,6 +1,6 @@
 {
   "name": "forge",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Infrastructure engineer \u2014 cloud services, networking, IaC, cost optimization",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "infrastructure",
-    "cloud",
-    "iac",
-    "networking",
-    "cost"
-  ]
+  "keywords": ["infrastructure", "cloud", "iac", "networking", "cost"]
 }

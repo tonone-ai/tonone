@@ -1,6 +1,6 @@
 {
   "name": "helm",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Head of Product \u2014 product strategy, requirements, and engineering handoff via the Helm\u2194Apex interface",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "product",
-    "strategy",
-    "requirements",
-    "cpo",
-    "product-team"
-  ]
+  "keywords": ["product", "strategy", "requirements", "cpo", "product-team"]
 }
