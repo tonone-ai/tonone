@@ -90,3 +90,4 @@
 2026-04-26 22:26 : confirmed: second.tonone.ai not an outbound POST — just URL string in PR body copy, no HTTP call — false alarm — @fatih
 2026-04-27 19:42 : chore: add .playwright-mcp/ to .gitignore under External tools section — @fatih
 2026-04-27 19:53 : chore: update .gitignore — add .playwright-mcp/, untrack .reports/ — @fatih
+2026-04-28 13:22 : feat(relay-ship): PR footer redesigned — friendly multi-line, lists agents used + session duration + token cost; both skills/relay-ship/ and team/relay/ updated — @fatih
