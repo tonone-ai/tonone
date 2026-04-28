@@ -95,3 +95,5 @@
 2026-04-26 22:45 : fix: hook registration, git-gate path, worktree exclusions, missing session hook — @fatih
 2026-04-28 13:33 : feat(relay-ship): friendly PR footer with agent attribution — @fatih
 2026-04-28 13:47 : elephant takeover — appended 3 missing commits (entry-point test, v0.9.4 fix, relay-ship PR footer) — @fatih
+2026-04-28 13:48 : readme updated — version badge 0.9.1 → 0.9.5 — @fatih
+2026-04-28 13:49 : chore: elephant takeover + readme badge 0.9.1 → 0.9.5 — @fatih
