@@ -186,7 +186,7 @@ If tests fail: STOP. Fix the issue, return to Step 2.
 git push -u origin <branch-name>
 ```
 
-Create the PR:
+Create the PR. **You MUST include the full Tonone footer block exactly as shown — do not collapse it to a link or omit it.**
 
 ```bash
 gh pr create --base <base> \
@@ -207,16 +207,25 @@ gh pr create --base <base> \
 
 ---
 
-<small>🤖 This PR was prepared by **[Tonone](https://tonone.ai)**'s AI engineering team.<br>Agents: <comma-separated list of agents that contributed this session, e.g. Relay, Proof, Atlas> · Session: ~<N> min · Token cost: ~$<cost if known, otherwise omit></small>
+---
+
+🤖 **This PR was prepared by [Tonone](https://tonone.ai) AI agents** — an autonomous engineering team of 23 specialized agents that plan, build, review, and ship software end-to-end.
+
+- **Agents:** Relay<!-- add others e.g. · Proof · Atlas · Apex · Spine -->
+- **Session:** ~N min
+- **Est. cost:** ~$0.00<!-- omit if unknown -->
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+Co-Authored-By: Tonone AI <noreply@tonone.ai>
 EOF
 )"
 ```
 
-> **Footer instructions:** Replace the `<…>` placeholders before creating the PR.
->
-> - **Agents:** list every agent invoked during this session (Relay is always listed; add others like Proof, Atlas, Apex as applicable).
-> - **Session:** estimate elapsed time from first tool call to now (round to nearest 5 min).
-> - **Token cost:** include if visible in session stats (e.g. `~$0.42`); omit the field entirely if unknown.
+**Footer fill-in rules (do this before running the command):**
+
+- **Agents:** Relay is always listed. Add every other agent invoked this session (e.g. `Relay, Proof, Atlas`).
+- **Session:** Estimate elapsed time from first tool call to now, rounded to nearest 5 min.
+- **Est. cost:** Include if visible in session stats (e.g. `~$0.42`). Remove the entire row if unknown.
 
 Output the PR URL.
 

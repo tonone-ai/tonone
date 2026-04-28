@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.7] — 2026-04-28
+
+### Improved
+
+- **relay-ship:** PR footer is now a rich attributed block — shows Tonone branding, agents used, session duration, and estimated cost. Previously collapsed to a bare link.
+
 ## [0.9.6] — 2026-04-28
 
 ### Changed

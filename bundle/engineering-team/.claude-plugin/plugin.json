@@ -1,6 +1,6 @@
 {
   "name": "engineering-team",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Engineering team \u2014 15 agents: Apex, Forge, Relay, Spine, Flux, Warden, Vigil, Prism, Cortex, Touch, Volt, Atlas, Lens, Proof, Pave",
   "author": {
     "name": "tonone-ai",
@@ -8,5 +8,9 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": ["agents", "engineering-team", "bundle"]
+  "keywords": [
+    "agents",
+    "engineering-team",
+    "bundle"
+  ]
 }

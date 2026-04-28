@@ -1,6 +1,6 @@
 {
   "name": "apex",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Engineering lead \u2014 orchestrates the team, scopes work, controls depth and budget",
   "author": {
     "name": "tonone-ai",
@@ -8,5 +8,10 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": ["lead", "orchestrator", "tech-lead", "engineering-management"]
+  "keywords": [
+    "lead",
+    "orchestrator",
+    "tech-lead",
+    "engineering-management"
+  ]
 }

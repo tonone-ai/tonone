@@ -41,15 +41,25 @@ function readAgents() {
 }
 
 function clearAgents() {
-  try { fs.writeFileSync(SESSION_FILE, ""); } catch {}
+  try {
+    fs.writeFileSync(SESSION_FILE, "");
+  } catch {}
 }
 
 function getPrUrl(toolOutput) {
-  const raw = (toolOutput && (typeof toolOutput === "string" ? toolOutput : toolOutput.output)) || "";
-  const urlMatch = String(raw).match(/https:\/\/github\.com\/[\w.\-]+\/[\w.\-]+\/pull\/\d+/);
+  const raw =
+    (toolOutput &&
+      (typeof toolOutput === "string" ? toolOutput : toolOutput.output)) ||
+    "";
+  const urlMatch = String(raw).match(
+    /https:\/\/github\.com\/[\w.\-]+\/[\w.\-]+\/pull\/\d+/,
+  );
   if (urlMatch) return urlMatch[0];
   try {
-    const url = execSync("gh pr view --json url -q .url", { encoding: "utf8", timeout: 5000 }).trim();
+    const url = execSync("gh pr view --json url -q .url", {
+      encoding: "utf8",
+      timeout: 5000,
+    }).trim();
     if (url.startsWith("http")) return url;
   } catch {}
   return null;
@@ -59,18 +69,26 @@ function appendAttribution(prUrl, attributionLine) {
   const tmpFile = path.join(os.tmpdir(), `tonone-pr-body-${process.pid}.md`);
   try {
     const viewResult = spawnSync(
-      "gh", ["pr", "view", prUrl, "--json", "body", "-q", ".body"],
-      { encoding: "utf8", timeout: 5000 }
+      "gh",
+      ["pr", "view", prUrl, "--json", "body", "-q", ".body"],
+      { encoding: "utf8", timeout: 5000 },
     );
     const currentBody = (viewResult.stdout || "").trim();
+    // Skip if relay-ship already wrote the rich Tonone footer
+    if (
+      currentBody.includes("tonone.ai") &&
+      currentBody.includes("Co-Authored-By: Tonone")
+    )
+      return;
     const newBody = `${currentBody}\n\n---\n${attributionLine}`;
     fs.writeFileSync(tmpFile, newBody);
-    spawnSync(
-      "gh", ["pr", "edit", prUrl, "--body-file", tmpFile],
-      { timeout: 10000 }
-    );
+    spawnSync("gh", ["pr", "edit", prUrl, "--body-file", tmpFile], {
+      timeout: 10000,
+    });
   } finally {
-    try { fs.unlinkSync(tmpFile); } catch {}
+    try {
+      fs.unlinkSync(tmpFile);
+    } catch {}
   }
 }
 
@@ -82,7 +100,7 @@ if (require.main !== module) {
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 3000);
 process.stdin.setEncoding("utf8");
-process.stdin.on("data", chunk => (input += chunk));
+process.stdin.on("data", (chunk) => (input += chunk));
 process.stdin.on("end", () => {
   clearTimeout(timeout);
   try {
