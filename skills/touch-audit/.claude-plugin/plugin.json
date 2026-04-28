@@ -1,6 +1,6 @@
 {
   "name": "touch-audit",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Mobile audit \u2014 app size, startup time, crash reporting, store compliance, accessibility, offline behavior. Use when asked for \"mobile review\", \"app store readiness\", \"mobile performance\", or \"crash analysis\".",
   "author": {
     "name": "tonone-ai",
@@ -9,8 +9,5 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": [
-    "touch",
-    "skill"
-  ]
+  "keywords": ["touch", "skill"]
 }

@@ -1,6 +1,6 @@
 {
   "name": "atlas",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Knowledge engineer \u2014 architecture docs, ADRs, API specs, system diagrams, onboarding, output formatting, browser reports, changelogs, release presentations",
   "author": {
     "name": "tonone-ai",
