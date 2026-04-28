@@ -1,6 +1,6 @@
 [project]
 name = "relay"
-version = "0.9.5"
+version = "0.9.6"
 description = "DevOps engineer — CI/CD, deployments, GitOps, developer experience"
 license = "MIT"
 requires-python = ">=3.10"

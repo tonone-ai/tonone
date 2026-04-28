@@ -1,6 +1,6 @@
 {
   "name": "proof",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "QA & testing engineer \u2014 test strategy, E2E suites, integration testing, test infrastructure, flaky test triage",
   "author": {
     "name": "tonone-ai",

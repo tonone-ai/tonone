@@ -1,6 +1,6 @@
 # Tonone
 
-<img src="https://img.shields.io/badge/version-0.9.5-green"> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue">
+<img src="https://img.shields.io/badge/version-0.9.6-green"> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue">
 
 **Founder + Tonone = whole company.**
 

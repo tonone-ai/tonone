@@ -1,6 +1,6 @@
 [project]
 name = "atlas"
-version = "0.9.5"
+version = "0.9.6"
 description = "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding"
 license = "MIT"
 requires-python = ">=3.10"

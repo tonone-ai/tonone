@@ -97,3 +97,4 @@
 2026-04-28 13:47 : elephant takeover — appended 3 missing commits (entry-point test, v0.9.4 fix, relay-ship PR footer) — @fatih
 2026-04-28 13:48 : readme updated — version badge 0.9.1 → 0.9.5 — @fatih
 2026-04-28 13:49 : chore: elephant takeover + readme badge 0.9.1 → 0.9.5 — @fatih
+[!!] 2026-04-28 14:00 : release 0.9.6 — elephant memory seeded, readme badge fixed — @fatih

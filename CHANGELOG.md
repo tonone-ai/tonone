@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.6] — 2026-04-28
+
+### Changed
+
+- Elephant memory seeded from full git history via `/elephant takeover` — all 91+ commits now indexed for cross-session recall.
+- README version badge corrected from `0.9.1` to `0.9.5`.
+
 ## [0.9.5] — 2026-04-28
 
 ### Changed

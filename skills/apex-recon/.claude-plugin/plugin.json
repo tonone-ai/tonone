@@ -1,6 +1,6 @@
 {
   "name": "apex-recon",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "Engineering lead reconnaissance \u2014 inventory the project before planning. Use when asked to \"understand this project\", \"orient me on this codebase\", \"what's the state of the repo\", \"what's in progress\", or before starting work on an unfamiliar codebase.",
   "author": {
     "name": "tonone-ai",
