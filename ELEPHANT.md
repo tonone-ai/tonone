@@ -99,3 +99,6 @@
 2026-04-28 13:49 : chore: elephant takeover + readme badge 0.9.1 → 0.9.5 — @fatih
 [!!] 2026-04-28 14:00 : release 0.9.6 — elephant memory seeded, readme badge fixed — @fatih
 2026-04-28 14:57 : fix(relay-ship): enrich PR footer with Tonone attribution table — @fatih
+2026-04-28 22:05 : demo(sprint): full L-depth tonone-starter sprint — 8 agents (Helm+Spine+Flux+Warden+Relay+Vigil+Atlas+Prism) produced real FastAPI+PG scaffold — @fatih
+2026-04-28 22:05 : demo(sprint): Warden found 3 criticals (timing attack, algo confusion, no rate limit) — all fixed inline during sprint — @fatih
+[!!] 2026-04-28 22:05 : demo(sprint): tonone-starter = YC demo artifact — complete repo scaffold, README, ADR, CI YAML, security config, observability stack — no placeholders — @fatih
