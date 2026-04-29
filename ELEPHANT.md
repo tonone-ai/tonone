@@ -55,7 +55,7 @@
 2026-04-12 19:13 : refactor(statusline): simplify readSessionGoal to single candidate (#53) — @thisisfatih
 2026-04-12 22:59 : fix(elephant): rename to atlas-elephant, fix 7 skill compliance failures (#54) — @thisisfatih
 2026-04-12 23:38 : feat(onboarding): first-run tour — SessionStart hook + /tonone-onboard skill (#55) — @thisisfatih
-2026-04-12 23:41 : fix(worktree): stop hook no longer deletes clean worktrees mid-session + onboard skill (v0.8.0) (#56) — @thisisfatih
+2026-04-12 23:41 : fix(worktree): stop hook no longer deletes clean worktrees mid-session + onboard skill (v0.8.0) — @thisisfatih
 2026-04-13 12:34 : feat(worktree): lazy creation on first edit — proper naming, no rename dance (v0.8.1) (#57) — @thisisfatih
 2026-04-17 13:00 : chore: remove bundled elephant — now standalone plugin (v0.9.0) — @fatih
 2026-04-17 13:24 : fix(compliance): tonone-onboard skill passes suite — @fatih
@@ -75,22 +75,22 @@
 [!!] 2026-04-26 21:34 : active bug: tonone-pr-attribution.js:49 String(object) breaks URL extraction every PR — unfixed — @fatih
 2026-04-26 21:34 : lib/uiux install story broken for 7 agents — no declared dep, manual setup required — @fatih
 2026-04-26 21:34 : outbound POST to second.tonone.ai on every PR — verify domain ownership — @fatih
-2026-04-26 21:43 : fix(atlas-report): copy buttons pre-only hover-reveal, no inline code buttons, no Tonone branding in report output — @fatih
+2026-04-26 21:43 : fix(atlas-report): copy buttons pre-only hover-reveal, no inline code buttons, no Tonone branding in — @fatih
 2026-04-26 21:48 : chore: add .reports/ to .gitignore — generated agent output, not for public repo — @fatih
-2026-04-26 21:43 : fix(atlas-report): redesigned CSS tokens — darker bg, OKLCH severity badges, whitespace-forward finding cards — @fatih
+2026-04-26 21:43 : fix(atlas-report): redesigned CSS tokens — darker bg, OKLCH severity badges, whitespace-forward — @fatih
 2026-04-26 20:41 : feat: add agent entry-point skills — /apex, /helm, /forge, etc. for all 23 agents — @fatih
 2026-04-26 21:49 : feat: adapt huashu-design skills to Draft and Form agents — @fatih
 2026-04-26 21:52 : chore: remove accidentally committed tests/ELEPHANT.md (elephant hook artifact) — @fatih
 2026-04-26 22:05 : fix(atlas-report): redesign UI tokens + gitignore .reports/ — @fatih
 2026-04-26 22:07 : chore: resolve ELEPHANT.md merge conflict — @fatih
-[!!] 2026-04-26 22:26 : apex-takeover rerun — 6 parallel agents, deeper recon — report at .reports/apex-takeover-2026-04-26-2223.html — @fatih
-[!!] 2026-04-26 22:26 : confirmed: pr-attribution.js + session-tracker.js not in plugin.json — dead since merge, never fired for any user — @fatih
-[!!] 2026-04-26 22:26 : confirmed: bump-version.py globs worktrees — corrupts all active worktrees on every version bump, one-line fix — @fatih
+[!!] 2026-04-26 22:26 : apex-takeover rerun — 6 parallel agents, deeper recon — report at — @fatih
+[!!] 2026-04-26 22:26 : confirmed: pr-attribution.js + session-tracker.js not in plugin.json — dead since merge, never fired — @fatih
+[!!] 2026-04-26 22:26 : confirmed: bump-version.py globs worktrees — corrupts all active worktrees on every version bump, — @fatih
 [!!] 2026-04-26 22:26 : confirmed: tonone-git-gate.js:77 EnterWorktree arg wrong (slug not path) — core recovery broken — @fatih
-2026-04-26 22:26 : confirmed: second.tonone.ai not an outbound POST — just URL string in PR body copy, no HTTP call — false alarm — @fatih
+2026-04-26 22:26 : confirmed: second.tonone.ai not outbound POST — URL string in PR body copy, no HTTP call — false — @fatih
 2026-04-27 19:42 : chore: add .playwright-mcp/ to .gitignore under External tools section — @fatih
 2026-04-27 19:53 : chore: update .gitignore — add .playwright-mcp/, untrack .reports/ — @fatih
-2026-04-28 13:22 : feat(relay-ship): PR footer redesigned — friendly multi-line, lists agents used + session duration + token cost; both skills/relay-ship/ and team/relay/ updated — @fatih
+2026-04-28 13:22 : feat(relay-ship): PR footer redesigned — friendly multi-line, lists agents used + session duration + — @fatih
 2026-04-26 20:51 : test: exempt agent entry-point skills from compliance checks — @fatih
 2026-04-26 22:45 : fix: hook registration, git-gate path, worktree exclusions, missing session hook — @fatih
 2026-04-28 13:33 : feat(relay-ship): friendly PR footer with agent attribution — @fatih
@@ -99,6 +99,10 @@
 2026-04-28 13:49 : chore: elephant takeover + readme badge 0.9.1 → 0.9.5 — @fatih
 [!!] 2026-04-28 14:00 : release 0.9.6 — elephant memory seeded, readme badge fixed — @fatih
 2026-04-28 14:57 : fix(relay-ship): enrich PR footer with Tonone attribution table — @fatih
-2026-04-28 22:05 : demo(sprint): full L-depth tonone-starter sprint — 8 agents (Helm+Spine+Flux+Warden+Relay+Vigil+Atlas+Prism) produced real FastAPI+PG scaffold — @fatih
-2026-04-28 22:05 : demo(sprint): Warden found 3 criticals (timing attack, algo confusion, no rate limit) — all fixed inline during sprint — @fatih
-[!!] 2026-04-28 22:05 : demo(sprint): tonone-starter = YC demo artifact — complete repo scaffold, README, ADR, CI YAML, security config, observability stack — no placeholders — @fatih
+2026-04-28 22:05 : demo(sprint): full L-depth tonone-starter sprint — 8 agents — @fatih
+2026-04-28 22:05 : demo(sprint): Warden found 3 criticals (timing attack, algo confusion, no rate limit) — all fixed — @fatih
+[!!] 2026-04-28 22:05 : demo(sprint): tonone-starter = YC demo artifact — complete repo scaffold, README, ADR, CI YAML, — @fatih
+2026-04-28 15:15 : chore: commit stale local changes — hook reformats, new form/draft skills, docs, tests — @fatih
+2026-04-29 14:58 : readme regenerated — version badge 0.9.6 → 0.9.7, skills heading 138 → 161, added 23 entry-point — @fatih
+2026-04-29 15:03 : changelog [Unreleased] section added — no release since 0.9.7, only docs/reformats — @fatih
+2026-04-29 15:03 : elephant restyle complete — 12 of 102 entries compressed, 100-char trims + article drops — @fatih
