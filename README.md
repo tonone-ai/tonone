@@ -1,6 +1,6 @@
 # Tonone
 
-<img src="https://img.shields.io/badge/version-0.9.6-green"> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue">
+<img src="https://img.shields.io/badge/version-0.9.7-green"> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue">
 
 **Founder + Tonone = whole company.**
 
@@ -169,13 +169,14 @@ Every engineering agent detects your stack automatically:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-## All 138 Skills
+## All 161 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
 
 ### Apex (Engineering Lead)
 
+- `/apex` — Accept any engineering task, route internally to the right sub-skill
 - `/apex-plan` — Plan and scope a project with S/M/L options
 - `/apex-review` — Cross-cutting review of recent work
 - `/apex-status` — CTO-level project status
@@ -184,6 +185,7 @@ Every engineering agent detects your stack automatically:
 
 ### Forge (Infrastructure)
 
+- `/forge` — Accept any infrastructure task, route internally
 - `/forge-infra` — Build infrastructure from scratch
 - `/forge-network` — Design and build networking
 - `/forge-audit` — Audit existing infrastructure
@@ -193,6 +195,7 @@ Every engineering agent detects your stack automatically:
 
 ### Relay (DevOps)
 
+- `/relay` — Accept any DevOps task, route internally
 - `/relay-pipeline` — Build CI/CD pipeline from scratch
 - `/relay-docker` — Build production Dockerfiles
 - `/relay-deploy` — Set up deployment strategy
@@ -202,6 +205,7 @@ Every engineering agent detects your stack automatically:
 
 ### Spine (Backend)
 
+- `/spine` — Accept any backend task, route internally
 - `/spine-api` — Design and build an API
 - `/spine-service` — Build a new service from scratch
 - `/spine-design` — System design
@@ -211,6 +215,7 @@ Every engineering agent detects your stack automatically:
 
 ### Flux (Data)
 
+- `/flux` — Accept any data task, route internally
 - `/flux-schema` — Design and build database schema
 - `/flux-migrate` — Build zero-downtime migration
 - `/flux-pipeline` — Build a data pipeline
@@ -220,6 +225,7 @@ Every engineering agent detects your stack automatically:
 
 ### Warden (Security)
 
+- `/warden` — Accept any security task, route internally
 - `/warden-audit` — Full security audit
 - `/warden-harden` — Harden a service
 - `/warden-iam` — Build IAM from scratch
@@ -228,6 +234,7 @@ Every engineering agent detects your stack automatically:
 
 ### Vigil (Observability + Reliability)
 
+- `/vigil` — Accept any observability task, route internally
 - `/vigil-instrument` — Instrument a service
 - `/vigil-alert` — Build alerting and runbooks
 - `/vigil-incident` — Incident response
@@ -236,6 +243,7 @@ Every engineering agent detects your stack automatically:
 
 ### Prism (Frontend/DX)
 
+- `/prism` — Accept any frontend task, route internally
 - `/prism-ui` — Build a UI from scratch
 - `/prism-component` — Build a reusable component
 - `/prism-dashboard` — Build an internal dashboard
@@ -245,6 +253,7 @@ Every engineering agent detects your stack automatically:
 
 ### Cortex (ML/AI)
 
+- `/cortex` — Accept any ML/AI task, route internally
 - `/cortex-model` — Build an ML pipeline
 - `/cortex-prompt` — Build and test prompts
 - `/cortex-integrate` — Integrate LLM into a service
@@ -253,6 +262,7 @@ Every engineering agent detects your stack automatically:
 
 ### Touch (Mobile)
 
+- `/touch` — Accept any mobile task, route internally
 - `/touch-app` — Build mobile app from scratch
 - `/touch-feature` — Build a mobile feature
 - `/touch-ui` — Design and build mobile UI
@@ -262,6 +272,7 @@ Every engineering agent detects your stack automatically:
 
 ### Volt (Embedded/IoT)
 
+- `/volt` — Accept any embedded/IoT task, route internally
 - `/volt-firmware` — Build firmware from scratch
 - `/volt-driver` — Build device driver or protocol handler
 - `/volt-ota` — Build OTA update system
@@ -270,6 +281,7 @@ Every engineering agent detects your stack automatically:
 
 ### Atlas (Knowledge)
 
+- `/atlas` — Accept any knowledge/docs task, route internally
 - `/atlas-map` — Map the system architecture
 - `/atlas-adr` — Write an Architecture Decision Record
 - `/atlas-onboard` — Generate onboarding documentation
@@ -280,6 +292,7 @@ Every engineering agent detects your stack automatically:
 
 ### Lens (Analytics/BI)
 
+- `/lens` — Accept any analytics/BI task, route internally
 - `/lens-dashboard` — Build an analytical dashboard
 - `/lens-metrics` — Define and implement metrics framework
 - `/lens-chart` — Build a data visualization
@@ -289,6 +302,7 @@ Every engineering agent detects your stack automatically:
 
 ### Proof (QA & Testing)
 
+- `/proof` — Accept any QA/testing task, route internally
 - `/proof-strategy` — Design a test strategy for a project
 - `/proof-design` — Design tests before implementation
 - `/proof-e2e` — Build E2E test suites with Playwright/Cypress
@@ -298,6 +312,7 @@ Every engineering agent detects your stack automatically:
 
 ### Pave (Platform Engineering)
 
+- `/pave` — Accept any platform/DX task, route internally
 - `/pave-golden` — Build golden path templates
 - `/pave-env` — Set up local development environments
 - `/pave-catalog` — Build a service catalog
@@ -306,6 +321,7 @@ Every engineering agent detects your stack automatically:
 
 ### Helm (Head of Product)
 
+- `/helm` — Accept any product task, route internally
 - `/helm-plan` — Plan a product sprint or initiative
 - `/helm-brief` — Write a structured product brief for Apex
 - `/helm-handoff` — End-to-end Helm → Apex delivery
@@ -314,6 +330,7 @@ Every engineering agent detects your stack automatically:
 
 ### Echo (User Research)
 
+- `/echo` — Accept any user research task, route internally
 - `/echo-interview` — Run a structured user interview
 - `/echo-feedback` — Synthesize user feedback
 - `/echo-segment` — Define user segments and personas
@@ -322,6 +339,7 @@ Every engineering agent detects your stack automatically:
 
 ### Lumen (Product Analytics)
 
+- `/lumen` — Accept any product analytics task, route internally
 - `/lumen-metrics` — Define a metrics framework
 - `/lumen-funnel` — Analyze and improve a funnel
 - `/lumen-abtest` — Design an A/B test
@@ -330,6 +348,7 @@ Every engineering agent detects your stack automatically:
 
 ### Draft (UX Design)
 
+- `/draft` — Accept any UX design task, route internally
 - `/draft-wireframe` — Wireframe a flow or screen
 - `/draft-flow` — Map a user flow end to end
 - `/draft-ia` — Design information architecture
@@ -340,6 +359,7 @@ Every engineering agent detects your stack automatically:
 
 ### Form (Visual Design)
 
+- `/form` — Accept any visual design task, route internally
 - `/form-brand` — Define or audit brand identity
 - `/form-logo` — Design a logo system
 - `/form-tokens` — Build a design token system
@@ -356,6 +376,7 @@ Every engineering agent detects your stack automatically:
 
 ### Crest (Product Strategy)
 
+- `/crest` — Accept any strategy task, route internally
 - `/crest-roadmap` — Build a product roadmap
 - `/crest-okr` — Define OKRs for a team or product
 - `/crest-compete` — Competitive analysis
@@ -364,6 +385,7 @@ Every engineering agent detects your stack automatically:
 
 ### Pitch (Product Marketing)
 
+- `/pitch` — Accept any marketing task, route internally
 - `/pitch-position` — Define positioning and value prop
 - `/pitch-message` — Write core messaging
 - `/pitch-copy` — Write launch copy
@@ -373,6 +395,7 @@ Every engineering agent detects your stack automatically:
 
 ### Surge (Growth)
 
+- `/surge` — Accept any growth task, route internally
 - `/surge-activation` — Design an activation funnel
 - `/surge-plg` — Build a PLG strategy
 - `/surge-experiment` — Design a growth experiment
