@@ -57,6 +57,7 @@ pip-wheel-metadata/
 .settings/
 
 # Claude Code local config (not committed — hooks/agents live in team/ and .claude-plugin/)
+.claude
 .claude/
 
 # External tools
