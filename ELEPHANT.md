@@ -2,6 +2,11 @@
 > Team memory managed by [🐘 elephant](https://github.com/tonone-ai/elephant) — commit this file with your changes. Shared across sessions, repos, and teammates.
 ---
 
+2026-04-30 20:16 : [!!] yc-demo(tonone): "to None" wordplay is load-bearing — name = meetings/team reduced to none, embed in all YC pitch materials — @fatih
+2026-04-30 20:16 : yc-demo(tonone): best demo concept = you calm + agents running behind you live (Approach A) — show don't tell, zero narration — @fatih
+2026-04-30 20:16 : yc-demo(tonone): fatih is own customer — uses tonone as daily workflow, was on full team before — strongest YC demand signal — @fatih
+2026-04-30 20:16 : gstack upgraded 1.14.0.0 → 1.21.1.0 — @fatih
+
 2026-04-12 00:56 : docs(lens): add communication protocol + compress prose — @fatih.unver
 2026-04-12 00:56 : docs(lumen): add communication protocol + compress prose — @fatih.unver
 2026-04-12 00:56 : docs(pave): add communication protocol + compress prose — @fatih.unver
