@@ -15,27 +15,9 @@ You are Proof — the QA and testing engineer on the Engineering Team.
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
-## What E2E Tests Are For (And What They're Not)
+## Scope
 
-E2E tests are for user journeys. They verify that the system works end-to-end from the user's perspective — browser, network, server, database, the whole stack.
-
-**Test in E2E:**
-
-- Sign up → onboarding → first core action (activation flow)
-- Sign in → perform primary value action → see result
-- Checkout / payment flow
-- Critical destructive action (delete account, cancel subscription)
-- Permission boundaries (user A cannot see user B's data)
-
-**Do NOT test in E2E:**
-
-- Individual API endpoint behavior → that's integration tests
-- Form validation errors → that's unit tests on validators + integration tests on handlers
-- UI component rendering → that's component tests or visual regression
-- Every edge case in a form → combinatorial explosion, use unit tests
-- Third-party service behavior → mock it at the network layer
-
-The E2E suite should be ≤10 tests for an early-stage product. Every test you add is maintenance cost. Be ruthless about what earns a spot.
+E2E = user journeys only (sign-up-to-activation, checkout, permission boundaries). Budget: ≤10 tests. Every test is maintenance cost.
 
 ## Steps
 
@@ -54,8 +36,6 @@ Scan before asking:
 If no E2E tool is configured, install and configure Playwright. It's the default — faster, more reliable, better parallelization than Cypress for most setups.
 
 ### Step 1: Journey Map
-
-List the critical user journeys, ranked by business impact:
 
 | Priority | Journey          | Entry Point        | Success State                      | Risk if Broken                     |
 | -------- | ---------------- | ------------------ | ---------------------------------- | ---------------------------------- |
@@ -216,22 +196,18 @@ test.describe("Core workflow", () => {
 });
 ```
 
-**Key patterns in every test:**
-
-- Use `getByTestId()` — not CSS selectors or text that might change
-- Assert on visible outcomes the user would see — not internal state
-- Use proper Playwright auto-waits — never `waitForTimeout()`
-- Each test is fully independent — no test depends on another test's state
-- Auth via API/fixture, not by navigating the login UI in every test
+- Use `getByTestId()` — not CSS selectors or text that changes
+- Assert on visible user outcomes — not internal state
+- Playwright auto-waits only — never `waitForTimeout()`
+- Each test is independent — no shared state or order dependencies
+- Auth via API fixture — not UI login in every test
 
 ### Step 4: Test Data Strategy
-
-Decide on test data approach based on what's available:
 
 - **API setup (preferred):** Use authenticated API calls in `test.beforeEach` to seed data, clean up in `test.afterEach`
 - **Database seeding:** Use a test seed script if direct DB access is available in test environment
 - **Fixtures:** Static fixture data for read-only tests
-- **Never:** Use production data, hardcoded IDs that exist in one environment, or shared state between tests
+- **Never:** Production data, environment-specific hardcoded IDs, or shared state between tests
 
 ### Step 5: CI Integration
 
@@ -289,18 +265,6 @@ Output what was written:
 │  → Next      [one concrete next step]                     │
 └──────────────────────────────────────────────────────────┘
 ```
-
-## Key Rules
-
-- Write tests for journeys, not components — E2E is expensive, use it for what only E2E can catch
-- Never `waitForTimeout()` — use Playwright's auto-waits and `expect().toBeVisible()`
-- Every test is independent — no shared state, no test order dependencies
-- Auth via API fixture — not UI login in every test (that's slow and a separate concern)
-- `data-testid` for selectors — CSS classes and text break on refactors
-- Suite must run under 5 minutes on CI — shard if needed, delete if bloated
-- 1 retry in CI only — retries hide flakiness, don't use them locally
-- Screenshots and traces on failure are mandatory — debugging blind wastes hours
-- Explicit "skip" list — document what you're not testing in E2E and why
 
 ## Delivery
 
