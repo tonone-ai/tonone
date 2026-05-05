@@ -2,6 +2,9 @@
 > Team memory managed by [🐘 elephant](https://github.com/tonone-ai/elephant) — commit this file with your changes. Shared across sessions, repos, and teammates.
 ---
 
+2026-05-05 21:23 : [!!] strategy(tonone): 100M EUR path locked — deepen 5 agents (Warden/Forge/Cortex/Spine/Apex) with real tool integration, then tonone.ai cloud; CEO plan at ~/.gstack/projects/tonone-ai-tonone/ceo-plans/2026-05-02-depth-5-killer-agents.md — @fatih
+2026-05-05 21:23 : strategy(tonone): 5-week seq — Week1 report schema+Warden, Week2 Forge, Week3 Cortex+Spine parallel, Week4 Apex+demo; use pip-audit not raw NVD API — @fatih
+2026-05-05 21:23 : gstack upgraded 1.14.0.0 → 1.25.1.0 — @fatih
 2026-04-30 20:16 : [!!] yc-demo(tonone): "to None" wordplay is load-bearing — name = meetings/team reduced to none, embed in all YC pitch materials — @fatih
 2026-04-30 20:16 : yc-demo(tonone): best demo concept = you calm + agents running behind you live (Approach A) — show don't tell, zero narration — @fatih
 2026-04-30 20:16 : yc-demo(tonone): fatih is own customer — uses tonone as daily workflow, was on full team before — strongest YC demand signal — @fatih
