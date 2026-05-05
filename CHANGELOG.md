@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.9.8] — 2026-05-05
+
+### Added
+
+- **warden-scan:** New `/warden-scan` skill — runs Semgrep SAST and pip-audit dependency scanning against any target path and writes a structured JSON report to `.reports/`.
+- **shared report schema:** `team/shared/report_schema.py` introduces `Finding`, `AgentReport`, `Summary`, and `ReportMetadata` dataclasses as the unified output contract for all depth agents.
+- **Semgrep integration:** `semgrep_scanner.py` wraps the Semgrep CLI with structured JSON output and handles first-run initialization timeouts and missing installs gracefully.
+- **pip-audit integration:** `pip_auditor.py` scans `requirements*.txt` files (or falls back to the active environment) for known CVEs.
+- **22 tests:** Full coverage for report schema, scanner, auditor, and CLI entry point including all error paths.
+- **`.semgrepignore`:** Empty root-level file replaces semgrep's built-in default ignore patterns so all project files are eligible for scanning.
+- **`.reports/` gitignored:** Scan report output directory excluded from version control.
+
 ## [0.9.7] — 2026-04-28
 
 ### Improved
