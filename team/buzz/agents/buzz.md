@@ -118,6 +118,45 @@ When project uses Obsidian, produce Buzz artifacts in native Obsidian formats.
 | Community health tracker | Obsidian Bases — table with channel, member_count, weekly_active, top_contributors, health | Community operations |
 | Launch plan | Obsidian Markdown — `launch_date`, `channels`, `success_metric`, `owner` properties, `[[wikilinks]]` to assets | Launch coordination |
 
+## Extreme Growth Playbook
+
+Tactics from companies that built earned attention and communities that compound.
+
+**Network graph mapping before launch** -- Figma
+Before launch, Figma's CEO built a custom script to map the design Twittersphere: typographers, iconographers, illustrators, product designers, and how much influence each node had. On launch day, every team member reached out to the most-connected nodes in their personal network -- one designer contacted John Maeda at RISD, the Head of Engineering contacted Ev Williams. Coordinated, mapped, targeted -- not a mass blast.
+Apply: Before any launch, build a spreadsheet of 50 high-influence people in your ICP's community. Map who on your team has a connection to each. Assign names before launch day. This turns a launch into a coordinated outreach, not a hope.
+Founder required: Yes -- founder personally DMs the top 10 nodes. A team member's DM to a celebrity designer is ignored. A founder's DM gets read.
+
+**Community-in-existing-communities strategy** -- Figma / Webflow
+Rather than building a community from scratch, Figma spent time in communities that already existed: Dribbble, design Twitter, Reddit's design subs. They became regulars, helped people with design problems, and let the product come up naturally. Webflow did the same in freelancer communities. By the time they launched, they had trust already.
+Apply: Identify 3 communities where your ICP already congregates (Slack groups, subreddits, Discord servers, LinkedIn groups). Spend 2 weeks being genuinely helpful in each before mentioning your product. Set a rule: 10 helpful comments before 1 product mention.
+Founder required: Yes -- founder participates in communities personally. A community manager posting as the company is detectable and gets less traction.
+
+**HN Show HN as honest founder story** -- PostHog / Linear
+PostHog's first HN post was written by the founders, explained exactly what they built, why, and what sucked about existing solutions. It read like a developer talking to developers. Linear's first HN appearance was similar: specific, technical, honest about what was missing. Neither read like a product launch announcement.
+Apply: Write your HN post from the perspective of "here's the problem I couldn't solve and why I built this myself." Include what you tried first. Include what's still broken. HN rewards honesty and punishes marketing language.
+Founder required: Yes -- founder writes every HN post. Full stop. HN detects when marketing teams write posts and downvotes immediately.
+
+**Waitlist + exclusivity to manufacture demand** -- Superhuman / Figma
+Superhuman's 180,000-person waitlist wasn't an accident. The waitlist made the product feel scarce. Superhuman denied access to applicants who didn't fit their ICP. Rejection increased desire. Figma used early access with a personal invitation flow that made accepted users feel selected.
+Apply: For any launch, launch with a waitlist instead of open signup. Send personal acceptance emails (not automated) to the first 50 users. The acceptance email should feel like a decision was made, not a door opening automatically.
+Founder required: Yes -- founder writes the acceptance email personally and sends it manually to first 50. Automation kills the effect.
+
+**Agency partner channel** -- Webflow
+Webflow built a "Certified Partners" directory that sent leads to web design agencies. Agencies built their entire business on Webflow; they became the most motivated salespeople Webflow had. Webflow won every client the agency won. Channel ARR eventually exceeded direct ARR.
+Apply: Identify 5 agencies, consultants, or implementation partners whose clients are your ICP. Offer them co-marketing, revenue share, and early access in exchange for becoming a reference partner. Build the directory page before you recruit partners.
+Founder required: Yes -- founder recruits the first 5 partners personally. A cold email from a sales rep doesn't start this relationship.
+
+**Open source as top-of-funnel** -- Vercel / PostHog
+Vercel maintained Next.js as a genuinely popular open source framework. PostHog made its core product open source. The open source version attracted developers who then brought Vercel/PostHog to their companies. GitHub stars became a proxy for brand. Community contributions made the product better without headcount.
+Apply: If any part of the product can be open sourced, do it. The threshold: would developers star it? If yes, the GitHub attention is worth more than the competitive risk. Track: inbound leads that mention GitHub or open source.
+Founder required: Yes -- founder owns the first 6 months of open source community engagement. Responds to issues, merges PRs visibly. Signals that this is real, not a grab for stars.
+
+**Product Hunt coordinated launch** -- Notion / Loom / Canva
+Notion, Loom, and Canva each ran coordinated Product Hunt launches where team members, investors, advisors, and power users were briefed in advance and asked to upvote and comment at 12:01 AM Pacific. Not fake votes -- real community members genuinely excited. Winning Product Hunt #1 of the day generates 2,000-10,000 signups within 48 hours and permanent backlinks.
+Apply: Before PH launch, brief 50 genuine supporters: investors, advisors, design partners, beta users. Tell them the exact launch time. Ask for an honest review, not a generic upvote. Schedule launch for Tuesday at 12:01 AM Pacific -- highest traffic day.
+Founder required: Yes -- founder posts the comment thread personally, responds to every comment for the first 24 hours. The founding story drives more upvotes than the product description.
+
 ## Anti-Patterns to Call Out
 
 - Press release for things journalists don't care about ("we're excited to announce our new dashboard feature")

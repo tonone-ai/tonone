@@ -122,6 +122,45 @@ When project uses Obsidian, produce Keep artifacts in native Obsidian formats.
 | Expansion playbook | Obsidian Markdown — `trigger`, `segment`, `motion`, `owner` properties, `[[wikilinks]]` to templates | Expansion system documentation |
 | Customer health tracker | Obsidian Bases — table with customer, health_score, arr, renewal_date, risk_flag, owner | CS operations |
 
+## Extreme Growth Playbook
+
+Tactics from companies that turned CS into their fastest growth lever.
+
+**Concierge onboarding with strategic waitlist** -- Superhuman
+Every single Superhuman user completed a mandatory 30-minute 1:1 onboarding call before getting access. First 30 min: discovery and learning the customer's workflow. Next 60 min: onboarding while capturing every friction point. Waitlist grew to 180,000+ because exclusivity signaled quality. Users who completed onboarding churned at near-zero rates.
+Apply: For first 100 customers, require a live onboarding call before activation. No self-serve. Use the call to learn, not just set up. Script the discovery questions first.
+Founder required: Yes -- founder runs first 20 onboarding calls personally. Not a CS hire. The founder needs to hear the pain directly.
+
+**Survey-based access qualification** -- Superhuman
+Superhuman sent every waitlist applicant a survey about their email habits and pain. If their needs didn't match current features, they denied access -- deliberately. Filtered for users who would succeed and made the product feel curated.
+Apply: Before onboarding any free trial user, send a 3-question qualification survey. Gate activation on completion. Route: high-fit gets white-glove, low-fit gets self-serve or waitlist.
+Founder required: No -- but founder writes the 3 qualification questions. They encode the ICP hypothesis.
+
+**Aha-moment mapping from direct observation** -- Superhuman / Retool
+Superhuman built entire onboarding around getting users to inbox zero via keyboard shortcuts as fast as possible. Retool's founder personally watched users struggle with demos and redesigned onboarding flow 6 times based on observation. Not surveys -- watching.
+Apply: Record 10 live onboarding sessions (with permission). Watch where users pause, re-read, or drop off. Fix the single worst step before writing more onboarding content.
+Founder required: Yes -- founder watches (not runs) 10 sessions. Watching reveals what asking doesn't.
+
+**Template ecosystem as retention moat** -- Notion
+Notion turned user-created templates into a retention flywheel. Users who found a template matching their workflow committed deeply. Templates made switching cost enormous. 95% of Notion traffic is organic, driven heavily by template search.
+Apply: For every customer segment, build 3 starter templates encoding best practice for their use case. Ship templates before onboarding docs. Templates are lower friction and higher retention.
+Founder required: No -- but founder approves first 5 templates. Must reflect real customer workflows, not imagined ones.
+
+**Customer health from product usage, not check-ins** -- PostHog / Retool
+PostHog uses its own product analytics to track customer health. Retool tracks logins, builds, and teammate invitations. No "how are things going?" emails. Product data is the health signal. CSMs act on data, not feelings.
+Apply: Define 3 behavioral signals in the product that predict renewal. Build automated alert when any customer goes 14 days without hitting signal #1. Do this before hiring a CSM.
+Founder required: No -- but founder defines the 3 signals. Ask: "What does a healthy customer do in week 2 that a churned customer doesn't?"
+
+**Expansion through product invitation, not upsell call** -- Loom / Figma
+Loom's expansion needed no sales call. When someone sent a Loom video, the recipient signed up to reply. Figma expanded when a designer shared a file with a teammate. The product invited expansion. Revenue grew because usage spread, not because a rep called.
+Apply: Map the moment in your product where a user naturally involves a second person. Design a friction-free invitation flow at that exact moment. That's the expansion trigger, not a QBR.
+Founder required: No -- but founder must identify the "second-person moment." Interview 5 customers: "When did you first bring a teammate in?"
+
+**Churn autopsy via direct founder call** -- Retool / PostHog
+Retool's founder David Hsu personally called churned customers in year one. Not a survey. A 20-minute call. Learned the exact failure mode each time: price, product gap, wrong ICP, onboarding failure. PostHog founders did the same. These calls reshaped roadmap and ICP definition.
+Apply: Every churned customer in first 12 months gets a founder call within 7 days of cancel. Ask: "What would have had to be true for you to stay?" Log every answer. Run monthly theme review.
+Founder required: Yes -- founder personally calls every churned customer for first 12 months. Non-negotiable.
+
 ## Anti-Patterns to Call Out
 
 - Expansion plays on unhealthy customers — NRR looks good this quarter, destroys churn next quarter

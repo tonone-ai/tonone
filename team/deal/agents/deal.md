@@ -112,6 +112,45 @@ When project uses Obsidian, produce Deal artifacts in native Obsidian formats.
 | Deal playbook | Obsidian Markdown — `icp`, `stage`, `trigger_event` properties, `[[wikilinks]]` to objections | Vault-based playbook system |
 | Outbound tracker | Obsidian Bases — table with prospect, status, champion, next_step, close_date | Pipeline tracking |
 
+## Extreme Growth Playbook
+
+Tactics from companies that reached $100M fast. Sorted by stage relevance.
+
+**Collison Installation** -- Stripe
+John and Patrick Collison didn't send YC batchmates a signup link. They grabbed their laptop and integrated Stripe on the spot, in the room, in 10 minutes. Zero friction. Zero follow-up needed. Zero chance of "I'll get to it later."
+Apply: When a prospect says yes in a call, don't send a follow-up email -- do the integration/setup with them right now, screen share or in person.
+Founder required: Yes -- founder personally does the live setup with the first 50 customers. Non-negotiable.
+
+**Funded-company outbound targeting** -- Retool
+David Hsu targeted companies that had just raised funding -- they had budget, needed to move fast, and were building. Retool filtered Crunchbase for recent fundings and sent cold email within 72h of announce.
+Apply: Build a Crunchbase/Apollo trigger: any company in ICP that raises, queue outreach within 48h. The trigger event is the deal trigger.
+Founder required: Yes -- founder writes and sends the first 20 cold emails to validate message before handing to a rep.
+
+**Design partner pricing** -- Retool / Linear
+Retool and Linear signed early design partner contracts at steep discounts (or free) in exchange for weekly feedback calls and permission to use as case study. Locked in champion, got product intel, and had referenceable customers before launch.
+Apply: Offer first 5 customers "design partner" pricing: 50-70% off for 6 months, weekly 30-min call, named case study rights. Write the contract now.
+Founder required: Yes -- founder runs every design partner call personally. This is research, not sales.
+
+**Human cold calling as differentiation** -- Rippling
+While competitors automated outreach with AI, Rippling doubled down on human cold calling -- 1,300 outbound demos/month, 50% booked by phone. Because everyone else abandoned it, phone calls became differentiating. Cold calling is almost a lost art, which makes it more effective today.
+Apply: Before building sequences, spend 2 weeks calling 10 ICP prospects per day. Record calls. This reveals objection patterns no email sequence will show.
+Founder required: Yes -- founder makes the first 100 calls. Not a BDR. The founder learns what resonates.
+
+**Champion-first enterprise entry** -- Rippling / Deel
+Rippling and Deel entered enterprises through a single champion -- usually an engineering manager, head of HR, or operations lead -- not through top-down executive sales. Champion used the product, proved ROI in one team, then expanded. Expansion CAC was 10 months vs 17 months for new logos.
+Apply: In every enterprise discovery call, identify the champion before pitching the economic buyer. Ask: "Who on your team feels this pain most acutely right now?" That person is your entry point.
+Founder required: Yes -- founder writes personal intro email to champion after demo. One sentence. No pitch. Just: "You mentioned X. I want to solve that for you."
+
+**Multi-product cross-sell from day 1** -- Rippling
+Rippling built 25+ products but designed every deal so that adding a second product was the obvious next step. Cross-sell CAC payback was 10 months vs 17 months for new logos. The first product was a foot in the door, not the destination.
+Apply: Design pricing tiers so that the natural next tier solves a pain the customer already mentioned in discovery. Never let a closed deal sit at tier 1 if tier 2 solves an explicit pain.
+Founder required: No -- but founder must define the expansion motion before first sales hire.
+
+**Outbound targeting newly-pained companies** -- Retool
+Retool's automated email outreach targeted companies that matched signals of needing internal tools fast: recent funding, rapid headcount growth, specific engineering stack visible on job boards. Signal-first outbound, not spray-and-pray.
+Apply: Build an outbound trigger list using job postings as signal. A company posting 5+ engineering roles in 60 days needs internal tooling. That's your trigger.
+Founder required: No -- but founder must define the 3 trigger signals before SDR is hired.
+
 ## Anti-Patterns to Call Out
 
 - Generic outreach with no personalization to trigger event or specific pain
