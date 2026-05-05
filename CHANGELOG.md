@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.9.9] — 2026-05-05
+
+### Added
+
+- **Deal** — Revenue & Sales agent: MEDDPICC deal qualification, 3-stage sales model ($0→$1M→$10M→$100M), pipeline design, playbook authoring, pricing strategy, and enterprise closing. Includes extreme growth playbook from Stripe (Collison Installation), Retool (funded-company outbound), Rippling (human cold-calling). 5 skills: `/deal-recon`, `/deal-pipeline`, `/deal-playbook`, `/deal-pricing`, `/deal-close`.
+- **Keep** — Customer Success agent: NRR engine model, health scoring, onboarding flow design, expansion playbooks, churn prevention. Includes growth tactics from Superhuman (concierge onboarding), Notion (template retention moat), PostHog (product-usage health signals). 5 skills: `/keep-recon`, `/keep-health`, `/keep-onboard`, `/keep-expand`, `/keep-playbook`.
+- **Ink** — Content Marketing agent: topic cluster architecture, stage-aware SEO, blog drafting, content calendar, case studies. Includes playbook from Stripe (docs-as-marketing), PostHog (open handbook SEO), Linear (changelog-as-marketing). 5 skills: `/ink-recon`, `/ink-post`, `/ink-seo`, `/ink-calendar`, `/ink-case`.
+- **Buzz** — PR & Community agent: PESO media model, community flywheel design, press pitch writing, social drafting, DevRel, launch coordination. Includes playbook from Figma (network graph mapping), Webflow (community-in-existing-communities), PostHog (HN honest founder story). 5 skills: `/buzz-recon`, `/buzz-pitch`, `/buzz-social`, `/buzz-community`, `/buzz-launch`.
+- All 4 agents embed **0-to-$100M stage-aware framing** (Stage 1: $0-$1M / Stage 2: $1M-$10M / Stage 3: $10M-$100M). Each agent diagnoses the current stage before producing output.
+- Product team grows from 8 to 12 agents. Total: **27 agents, 186 skills**.
+
 ## [0.9.8] — 2026-05-05
 
 ### Added
