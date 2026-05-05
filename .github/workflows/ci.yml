@@ -90,10 +90,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install uv
-        run: pip install uv
       - name: Run agent tests
         working-directory: team/${{ matrix.agent }}/scripts
         run: |
-          uv sync --quiet
-          uv run --with pytest pytest ../tests/ -v
+          pip install -e ../../../lib/uiux -e . pytest --quiet
+          python -m pytest ../tests/ -v
