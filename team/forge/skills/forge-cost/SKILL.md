@@ -2,7 +2,7 @@
 name: forge-cost
 description: Audit cloud infrastructure costs and produce a concrete optimization plan with specific changes and estimated savings. Use when asked to "how much is this costing", "reduce cloud spend", "cost optimization", "are we overpaying", "cloud bill", or "budget for this infra".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.6.4
+version: 0.9.8
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 ---
@@ -17,7 +17,30 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 ## Steps
 
-### Step 0: Read Everything
+### Step 0: Run Automated Scanners
+
+Run the real cost scanners first. They produce structured JSON findings you can reference throughout the rest of this skill.
+
+```bash
+# Find the cost_scan.py entry point
+find . -path "*/forge_agent/cost_scan.py" -not -path "*/__pycache__/*" 2>/dev/null | head -1
+```
+
+If found, run it:
+
+```bash
+python <path-to-cost_scan.py> <target> --out .reports/forge-cost-latest.json
+```
+
+This runs:
+1. **infracost** — static IaC cost analysis (Terraform/OpenTofu). Requires `infracost` CLI + API key.
+2. **AWS Cost Explorer** / **GCP Billing** — actual cloud spend via `aws ce` or `gcloud billing`.
+
+If infracost is not installed or has no API key, the script prints a setup message and continues. If no cloud CLIs are configured, it continues without spend data.
+
+Read the JSON report if written. Use its findings as ground truth for Steps 2-5 below. If the scanner found 0 findings (no IaC, no cloud CLI), proceed with manual analysis from Step 1.
+
+### Step 1: Read Everything
 
 Scan for all IaC and cloud configuration:
 

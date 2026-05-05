@@ -1,7 +1,7 @@
 {
   "name": "draft-wireframe",
   "version": "0.9.7",
-  "description": "Text and Mermaid wireframes \u2014 produce screen-level layouts with content hierarchy, component placement, and interaction annotations. Use when asked to \"wireframe this\", \"sketch the UI\", \"layout for this screen\", \"lo-fi mockup\", \"screen design\", or \"what should this page look like\".",
+  "description": "Wireframe a screen \u2014 ASCII/text by default, or hand-drawn HTML when the user says sketch/whiteboard/graph-paper. Text mode: buildable spec for Form and Prism. HTML mode: self-contained file with graph-paper background, marker headlines, sticky notes, hatched chart placeholders.",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

@@ -114,4 +114,6 @@
 2026-04-29 14:58 : readme regenerated — version badge 0.9.6 → 0.9.7, skills heading 138 → 161, added 23 entry-point — @fatih
 2026-04-29 15:03 : changelog [Unreleased] section added — no release since 0.9.7, only docs/reformats — @fatih
 2026-04-29 15:03 : elephant restyle complete — 12 of 102 entries compressed, 100-char trims + article drops — @fatih
+2026-05-05 22:16 : docs: shoutout nexu-io/open-design in README — @fatih
 2026-05-05 22:18 : fix(ci): drop uv from agent matrix, use pip install directly — @fatih
+2026-05-05 22:19 : chore: merge main, resolve ELEPHANT.md conflict — @fatih
