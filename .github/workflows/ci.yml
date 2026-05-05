@@ -52,7 +52,23 @@ jobs:
         run: find . -name "setup.sh" -not -path "./.git/*" | xargs shellcheck -S warning
 
   # ---------------------------------------------------------------------------
-  # Job 3: Agent tests (matrix) — DISABLED
+  # Job 3: Version consistency
+  # All plugin.json and pyproject.toml must match the root .claude-plugin/plugin.json.
+  # To bump: python scripts/bump-version.py <new-version>
+  # ---------------------------------------------------------------------------
+  check-versions:
+    name: Check version consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check all versions match root
+        run: python scripts/bump-version.py --check
+
+  # ---------------------------------------------------------------------------
+  # Job 4: Agent tests (matrix) — DISABLED
   #
   # All 23 agent test directories currently contain only an empty __init__.py
   # stub. Running a matrix job over them would produce 23 green "0 tests
