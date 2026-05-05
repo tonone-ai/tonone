@@ -27,6 +27,7 @@ Ask if not clear.
 For journalist pitches, research before writing:
 
 Use WebSearch:
+
 ```
 - "[journalist name] recent articles" — what have they covered recently?
 - "[publication] [your topic]" — what angle does this pub take?
@@ -43,6 +44,7 @@ Bad hook: "We're excited to announce our new product feature"
 Good hook: "Every engineering team loses 8 hours a week to meetings that could be automated — here's a study of 500 teams"
 
 Hook types:
+
 - **Data hook**: surprising statistic or study result
 - **Trend hook**: "First wave of [X] companies are now doing [Y]"
 - **Conflict hook**: "The conventional wisdom about [topic] is wrong"
@@ -138,13 +140,14 @@ Happy to write a draft or provide assets if the angle fits.
 
 For any pitch campaign, produce a prioritized media list:
 
-| Publication / Show | Journalist / Host | Beat | Audience fit | Notes |
-|-------------------|-------------------|------|--------------|-------|
-| [Name] | [Name] | [Topics they cover] | [High/Med/Low] | [Recent article / why they'd care] |
+| Publication / Show | Journalist / Host | Beat                | Audience fit   | Notes                              |
+| ------------------ | ----------------- | ------------------- | -------------- | ---------------------------------- |
+| [Name]             | [Name]            | [Topics they cover] | [High/Med/Low] | [Recent article / why they'd care] |
 
 ### Step 5: Produce All Assets
 
 Deliver:
+
 1. The pitch email(s) — ready to send
 2. Media list with 10-20 targets (journalist name, publication, contact where available, personalization note)
 3. Supporting assets checklist: what to attach/link (product one-pager, data, demo link, founder bio)

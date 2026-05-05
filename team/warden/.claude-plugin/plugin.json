@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "security",
-    "iam",
-    "secrets",
-    "compliance",
-    "threat-modeling"
-  ]
+  "keywords": ["security", "iam", "secrets", "compliance", "threat-modeling"]
 }

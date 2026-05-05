@@ -9,9 +9,5 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": [
-    "tonone",
-    "skill",
-    "onboarding"
-  ]
+  "keywords": ["tonone", "skill", "onboarding"]
 }

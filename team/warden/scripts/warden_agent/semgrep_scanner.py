@@ -17,8 +17,7 @@ def check_semgrep() -> tuple[bool, str]:
     """Return (available, version_string)."""
     try:
         result = subprocess.run(
-            ["semgrep", "--version"],
-            capture_output=True, text=True, timeout=30
+            ["semgrep", "--version"], capture_output=True, text=True, timeout=30
         )
         if result.returncode == 0:
             return True, result.stdout.strip()
@@ -44,24 +43,31 @@ def run_semgrep(target_path: str, config: str = "auto") -> list[Finding]:
 
     cmd = [
         "semgrep",
-        "--config", config,
+        "--config",
+        config,
         "--json",
         "--quiet",
         "--no-git-ignore",
-        "--include", "*.py",
-        "--include", "*.js",
-        "--include", "*.ts",
-        "--include", "*.go",
-        "--include", "*.rb",
+        "--include",
+        "*.py",
+        "--include",
+        "*.js",
+        "--include",
+        "*.ts",
+        "--include",
+        "*.go",
+        "--include",
+        "*.rb",
         target_path,
     ]
 
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120
-        )
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     except subprocess.TimeoutExpired:
-        print("Semgrep timed out after 120s. Try targeting a subdirectory.", file=sys.stderr)
+        print(
+            "Semgrep timed out after 120s. Try targeting a subdirectory.",
+            file=sys.stderr,
+        )
         return []
 
     if result.returncode not in (0, 1):  # 1 = findings found, still ok
@@ -90,14 +96,18 @@ def run_semgrep(target_path: str, config: str = "auto") -> list[Finding]:
         message = r.get("extra", {}).get("message", "No description")
         fix = r.get("extra", {}).get("fix", "")
 
-        findings.append(Finding(
-            id=rule_id,
-            severity=severity,
-            title=rule_id.split(".")[-1].replace("-", " ").title(),
-            detail=message,
-            location=f"{path}:{start_line}",
-            recommendation=fix if fix else "Review and remediate per rule documentation.",
-            effort="S",
-        ))
+        findings.append(
+            Finding(
+                id=rule_id,
+                severity=severity,
+                title=rule_id.split(".")[-1].replace("-", " ").title(),
+                detail=message,
+                location=f"{path}:{start_line}",
+                recommendation=(
+                    fix if fix else "Review and remediate per rule documentation."
+                ),
+                effort="S",
+            )
+        )
 
     return findings

@@ -9,9 +9,9 @@ import sys
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../.."))
-from team.shared.report_schema import AgentReport, ReportMetadata
 from team.cortex.scripts.cortex_agent.llm_usage_scanner import scan_llm_usage
 from team.cortex.scripts.cortex_agent.prompt_evaluator import evaluate_prompts
+from team.shared.report_schema import AgentReport, ReportMetadata
 
 
 def main():
@@ -25,7 +25,9 @@ def main():
         help="Path to scan (default: current directory)",
     )
     parser.add_argument("--skip-usage", action="store_true", help="Skip LLM usage scan")
-    parser.add_argument("--skip-prompts", action="store_true", help="Skip prompt evaluation")
+    parser.add_argument(
+        "--skip-prompts", action="store_true", help="Skip prompt evaluation"
+    )
     parser.add_argument(
         "--out",
         help="Write JSON report to this path (default: .reports/cortex-eval-<ts>.json)",
@@ -79,7 +81,10 @@ def main():
             fh.write(report.to_json())
         print(f"\nReport written: {out_path}")
     except IOError as e:
-        print(f"\nWarning: could not write report ({e}). Printing to stdout:", file=sys.stderr)
+        print(
+            f"\nWarning: could not write report ({e}). Printing to stdout:",
+            file=sys.stderr,
+        )
         print(report.to_json())
 
     s = report.summary

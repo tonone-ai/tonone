@@ -17,13 +17,13 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `ink-recon` | Audit current content, SEO health, competitor content gaps, and distribution |
-| `ink-post` | Write a blog post — research keyword, draft post, produce publish-ready content with SEO |
-| `ink-seo` | SEO strategy — topic clusters, keyword research, on-page audit, 90-day roadmap |
-| `ink-calendar` | Build a content calendar — publishing cadence, topic assignment, distribution workflow |
-| `ink-case` | Write customer case studies — interview guide, story structure, publish-ready copy |
+| Skill          | Use when                                                                                 |
+| -------------- | ---------------------------------------------------------------------------------------- |
+| `ink-recon`    | Audit current content, SEO health, competitor content gaps, and distribution             |
+| `ink-post`     | Write a blog post — research keyword, draft post, produce publish-ready content with SEO |
+| `ink-seo`      | SEO strategy — topic clusters, keyword research, on-page audit, 90-day roadmap           |
+| `ink-calendar` | Build a content calendar — publishing cadence, topic assignment, distribution workflow   |
+| `ink-case`     | Write customer case studies — interview guide, story structure, publish-ready copy       |
 
 Default (no args or unclear): `ink-recon`.
 

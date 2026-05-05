@@ -17,18 +17,18 @@ import pytest
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 sys.path.insert(0, ROOT)
 
-from team.shared.report_schema import AgentReport, Finding, ReportMetadata
-from team.apex.scripts.apex_agent.health_aggregator import (
-    _run_scan,
-    _script_path,
-    aggregate_health,
-)
 from team.apex.scripts.apex_agent.dependency_graph import (
     _collect_modules,
     _detect_cycles,
     _parse_imports,
     analyze_dependencies,
 )
+from team.apex.scripts.apex_agent.health_aggregator import (
+    _run_scan,
+    _script_path,
+    aggregate_health,
+)
+from team.shared.report_schema import AgentReport, Finding, ReportMetadata
 
 FIXTURE_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 
@@ -64,9 +64,7 @@ def cyclic_fixture(tmp_path):
     (pkg / "a.py").write_text(
         "from team.cyclic.scripts.cyclic_agent.b import something\n"
     )
-    (pkg / "b.py").write_text(
-        "from team.cyclic.scripts.cyclic_agent.a import other\n"
-    )
+    (pkg / "b.py").write_text("from team.cyclic.scripts.cyclic_agent.a import other\n")
     return tmp_path
 
 
@@ -101,11 +99,25 @@ class TestReportSchema:
 
     def test_finding_invalid_severity(self):
         with pytest.raises(ValueError):
-            Finding(severity="BAD", title="x", detail="x", location="x", recommendation="x", effort="S")
+            Finding(
+                severity="BAD",
+                title="x",
+                detail="x",
+                location="x",
+                recommendation="x",
+                effort="S",
+            )
 
     def test_finding_invalid_effort(self):
         with pytest.raises(ValueError):
-            Finding(severity="LOW", title="x", detail="x", location="x", recommendation="x", effort="X")
+            Finding(
+                severity="LOW",
+                title="x",
+                detail="x",
+                location="x",
+                recommendation="x",
+                effort="X",
+            )
 
     def test_agent_report_summary(self):
         findings = [
@@ -114,7 +126,9 @@ class TestReportSchema:
             Finding("MEDIUM", "C", "d", "l", "r", "L"),
             Finding("LOW", "D", "d", "l", "r", "S"),
         ]
-        report = AgentReport(agent="apex", skill="apex-review", target=".", findings=findings)
+        report = AgentReport(
+            agent="apex", skill="apex-review", target=".", findings=findings
+        )
         s = report.summary
         assert s.critical == 1
         assert s.high == 1
@@ -150,9 +164,9 @@ class TestRunScan:
 
     def test_success_parses_findings(self, tmp_path):
         script = tmp_path / "scan.py"
-        report_json = _make_report([
-            Finding("HIGH", "Vuln", "detail", "file.py:1", "fix", "S")
-        ])
+        report_json = _make_report(
+            [Finding("HIGH", "Vuln", "detail", "file.py:1", "fix", "S")]
+        )
         # write a script that outputs the report JSON to the --out file
         script.write_text(textwrap.dedent(f"""\
             import sys, json, pathlib
@@ -169,9 +183,7 @@ class TestRunScan:
 
     def test_exit_2_treated_as_findings(self, tmp_path):
         script = tmp_path / "scan.py"
-        report_json = _make_report([
-            Finding("CRITICAL", "X", "d", "l", "r", "S")
-        ])
+        report_json = _make_report([Finding("CRITICAL", "X", "d", "l", "r", "S")])
         script.write_text(textwrap.dedent(f"""\
             import sys, pathlib
             args = sys.argv[1:]
@@ -225,6 +237,7 @@ class TestAggregateHealth:
     def test_merges_findings_from_all_agents(self, tmp_path):
         def fake_run_scan(agent, script, target, extra):
             from team.apex.scripts.apex_agent.health_aggregator import SubScanResult
+
             return SubScanResult(
                 agent=agent,
                 findings=[Finding("LOW", f"{agent}-finding", "d", "l", "r", "S")],
@@ -321,6 +334,7 @@ class TestAnalyzeDependencies:
 class TestApexScanCli:
     def _run_cli(self, *args):
         import team.apex.scripts.apex_agent.apex_scan as apex_scan_mod
+
         with patch.object(sys, "argv", ["apex_scan.py", *args]):
             try:
                 apex_scan_mod.main()
@@ -330,7 +344,9 @@ class TestApexScanCli:
 
     def test_skip_both_tools_writes_empty_report(self, tmp_path):
         out = tmp_path / "report.json"
-        code = self._run_cli(str(tmp_path), "--skip-health", "--skip-deps", "--out", str(out))
+        code = self._run_cli(
+            str(tmp_path), "--skip-health", "--skip-deps", "--out", str(out)
+        )
         assert code in (0, None)
         assert out.exists()
         data = json.loads(out.read_text())

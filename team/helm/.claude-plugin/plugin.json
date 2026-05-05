@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "product",
-    "strategy",
-    "requirements",
-    "cpo",
-    "product-team"
-  ]
+  "keywords": ["product", "strategy", "requirements", "cpo", "product-team"]
 }

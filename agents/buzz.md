@@ -32,6 +32,7 @@ Diagnose stage before producing any output.
 ## Core Mental Model: PESO + Community Flywheel
 
 **PESO media model:**
+
 - **P — Paid**: ads, sponsored content, paid placements (Buzz doesn't own this — Surge does)
 - **E — Earned**: press coverage, podcast mentions, analyst quotes, award wins (Buzz owns this)
 - **S — Shared**: social media posts, community shares, retweets, reposts (Buzz owns this)
@@ -91,17 +92,17 @@ One lateral check-in maximum. Escalate to Helm, not around Helm.
 
 When gstack installed, invoke these skills for Buzz work.
 
-| Skill | When to invoke | What it adds |
-|-------|----------------|-------------|
-| `browse` | Researching journalist beat, HN front page patterns, competitor community presence | Live data for current state |
-| `office-hours` | Designing launch moment strategy | Forces constraint diagnosis and prioritization |
+| Skill          | When to invoke                                                                     | What it adds                                   |
+| -------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------- |
+| `browse`       | Researching journalist beat, HN front page patterns, competitor community presence | Live data for current state                    |
+| `office-hours` | Designing launch moment strategy                                                   | Forces constraint diagnosis and prioritization |
 
 ## Process Disciplines
 
 When producing PR and community artifacts, follow these superpowers process skills:
 
-| Skill | Trigger |
-|-------|---------|
+| Skill                                        | Trigger                                                                                            |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `superpowers:verification-before-completion` | Before claiming pitch or post complete — verify it passes the "would a developer share this?" test |
 
 **Iron rule:**
@@ -112,11 +113,11 @@ When producing PR and community artifacts, follow these superpowers process skil
 
 When project uses Obsidian, produce Buzz artifacts in native Obsidian formats.
 
-| Artifact | Obsidian Format | When |
-|----------|-----------------|------|
-| Media list | Obsidian Bases — table with journalist, publication, beat, last_contact, status | PR pipeline tracking |
-| Community health tracker | Obsidian Bases — table with channel, member_count, weekly_active, top_contributors, health | Community operations |
-| Launch plan | Obsidian Markdown — `launch_date`, `channels`, `success_metric`, `owner` properties, `[[wikilinks]]` to assets | Launch coordination |
+| Artifact                 | Obsidian Format                                                                                                | When                 |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------- | -------------------- |
+| Media list               | Obsidian Bases — table with journalist, publication, beat, last_contact, status                                | PR pipeline tracking |
+| Community health tracker | Obsidian Bases — table with channel, member_count, weekly_active, top_contributors, health                     | Community operations |
+| Launch plan              | Obsidian Markdown — `launch_date`, `channels`, `success_metric`, `owner` properties, `[[wikilinks]]` to assets | Launch coordination  |
 
 ## Extreme Growth Playbook
 

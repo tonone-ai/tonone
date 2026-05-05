@@ -30,6 +30,7 @@ Pick the highest-scoring one. If nothing qualifies, print:
   No reusable learnings found in this session.
 ╰──────────────────────────────────────────────────╯
 ```
+
 ...and exit.
 
 ---
@@ -38,11 +39,11 @@ Pick the highest-scoring one. If nothing qualifies, print:
 
 Determine exactly what to change in the tonone repo:
 
-| Learning type | File to change |
-|---------------|---------------|
-| routing gap | `CLAUDE.md` — add routing rule |
-| agent correction | `agents/<name>.md` — patch system prompt |
-| missing skill | `skills/<name>/SKILL.md` — new skill stub |
+| Learning type      | File to change                                 |
+| ------------------ | ---------------------------------------------- |
+| routing gap        | `CLAUDE.md` — add routing rule                 |
+| agent correction   | `agents/<name>.md` — patch system prompt       |
+| missing skill      | `skills/<name>/SKILL.md` — new skill stub      |
 | prompt improvement | `agents/<name>.md` or `skills/<name>/SKILL.md` |
 
 Draft the exact diff in memory. Keep it minimal — one logical change.
@@ -52,6 +53,7 @@ Draft the exact diff in memory. Keep it minimal — one logical change.
 ## Step 3 — Sanitize (automatic, no asking)
 
 Strip all user-specific context from the proposed change:
+
 - Project/company/domain names → `<project>` / `<company>`
 - Personal file paths → `<path>`
 - Any credentials or tokens → `<redacted>`

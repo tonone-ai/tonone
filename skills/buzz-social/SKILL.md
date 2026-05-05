@@ -24,6 +24,7 @@ Each platform has completely different norms. Mixing them is a credibility probl
 ### Step 1: Platform Rules
 
 **Hacker News:**
+
 - Never sounds like marketing. Developer talking to developers.
 - "Show HN:" prefix for tools and demos. "Ask HN:" for genuine questions. No prefix for discussions.
 - Show HN formula: "Show HN: [What it is in plain English] ([language/tech stack])"
@@ -33,6 +34,7 @@ Each platform has completely different norms. Mixing them is a credibility probl
 - Rule: HN karma <50? Outbound links get shadow-banned. (Already saved in memory for this project)
 
 **Twitter/X:**
+
 - Threads perform better than single tweets for technical content
 - Thread structure: hook tweet → 5-9 content tweets → CTA tweet
 - Hook tweet must work standalone (most people won't read the thread)
@@ -41,6 +43,7 @@ Each platform has completely different norms. Mixing them is a credibility probl
 - Reply to your own tweet with resources rather than cramming into first tweet
 
 **LinkedIn:**
+
 - More formal than Twitter/X but still conversational
 - Enterprise buyers scroll LinkedIn. Write for them.
 - Personal story performs better than company announcement
@@ -49,12 +52,14 @@ Each platform has completely different norms. Mixing them is a credibility probl
 - Avoid hashtag spam (max 3, all relevant)
 
 **Reddit:**
+
 - Read the subreddit rules before posting anything
 - Self-promotion is heavily moderated. Add value first, mention product in context.
 - r/programming, r/devops, r/MachineLearning etc. — developer subs hate overt promotion
 - Best approach: share something genuinely useful, mention product is related in comments if asked
 
 **GitHub:**
+
 - README is a landing page. First 3 lines determine if anyone reads further.
 - Badges (build status, license, stars) signal project health
 - Good README structure: what it does, why it exists, 60-second setup, screenshot/demo, full docs link
@@ -103,12 +108,14 @@ Tweet N (CTA): [What to do next — link, follow, reply, etc. One action.]
 ### Step 3: Timing and Frequency
 
 Platform timing:
+
 - HN: Best times are 6-9 AM EST weekdays (US audience skews east coast tech)
 - Twitter/X: 9 AM, 12 PM, or 5 PM in target timezone
 - LinkedIn: Tuesday-Thursday, 7-8 AM or 12 PM
 - Reddit: Check subreddit analytics or post in morning US time
 
 Frequency:
+
 - Stage 1: Quality over quantity. 2-3 high-quality posts/week.
 - Stage 2: Daily on Twitter/X, 3x/week on LinkedIn, HN for launches
 - Stage 3: Full social calendar across platforms
@@ -116,6 +123,7 @@ Frequency:
 ### Step 4: Produce Social Assets
 
 Deliver all requested posts ready to copy-paste, with:
+
 - Platform-specific version
 - Timing recommendation
 - Engagement note (what to do when people respond: respond within X hours, engage with comments, etc.)

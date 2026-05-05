@@ -434,14 +434,7 @@
         "url": "https://tonone.ai"
       },
       "category": "product",
-      "tags": [
-        "pr",
-        "community",
-        "devrel",
-        "social",
-        "launch",
-        "product-team"
-      ]
+      "tags": ["pr", "community", "devrel", "social", "launch", "product-team"]
     },
     {
       "name": "apex-plan",

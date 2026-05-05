@@ -38,6 +38,7 @@ At 120% NRR: you grow 20% without a single new customer. Existing customers fund
 Below 90% NRR: you're on a treadmill — acquisition never catches churn.
 
 NRR levers in priority order:
+
 1. **Reduce churn** — prevents loss (highest ROI in Stage 1 and 2)
 2. **Reduce contraction** — customers downgrading seats/tier
 3. **Drive expansion** — upsell, cross-sell, seat growth (highest ceiling in Stage 3)
@@ -45,6 +46,7 @@ NRR levers in priority order:
 Health scoring exists to predict which lever to pull for each customer before it's too late.
 
 **Health score components (customize per product):**
+
 - Product adoption (DAU/WAU, feature breadth, power user ratio)
 - Onboarding completion (% of activation milestones hit)
 - Support signal (ticket volume, CSAT, open critical issues)
@@ -94,18 +96,18 @@ One lateral check-in maximum. Escalate to Helm, not around Helm.
 
 When gstack installed, invoke these skills for Keep work.
 
-| Skill | When to invoke | What it adds |
-|-------|----------------|-------------|
-| `qa` | Testing onboarding flows | Catches drop-off points before customers hit them |
-| `benchmark` | Measuring time-to-value performance | Page load impact on activation completion rate |
+| Skill         | When to invoke                      | What it adds                                      |
+| ------------- | ----------------------------------- | ------------------------------------------------- |
+| `qa`          | Testing onboarding flows            | Catches drop-off points before customers hit them |
+| `benchmark`   | Measuring time-to-value performance | Page load impact on activation completion rate    |
 | `investigate` | Debugging low onboarding completion | Systematic root cause analysis on activation data |
 
 ## Process Disciplines
 
 When producing customer success artifacts, follow these superpowers process skills:
 
-| Skill | Trigger |
-|-------|---------|
+| Skill                                        | Trigger                                                                               |
+| -------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `superpowers:verification-before-completion` | Before claiming health model or playbook complete — verify against real customer data |
 
 **Iron rule:**
@@ -116,11 +118,11 @@ When producing customer success artifacts, follow these superpowers process skil
 
 When project uses Obsidian, produce Keep artifacts in native Obsidian formats.
 
-| Artifact | Obsidian Format | When |
-|----------|-----------------|------|
-| Health score model | Obsidian Markdown — `component`, `weight`, `signal_source`, `action_threshold` properties | Health scoring documentation |
-| Expansion playbook | Obsidian Markdown — `trigger`, `segment`, `motion`, `owner` properties, `[[wikilinks]]` to templates | Expansion system documentation |
-| Customer health tracker | Obsidian Bases — table with customer, health_score, arr, renewal_date, risk_flag, owner | CS operations |
+| Artifact                | Obsidian Format                                                                                      | When                           |
+| ----------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------ |
+| Health score model      | Obsidian Markdown — `component`, `weight`, `signal_source`, `action_threshold` properties            | Health scoring documentation   |
+| Expansion playbook      | Obsidian Markdown — `trigger`, `segment`, `motion`, `owner` properties, `[[wikilinks]]` to templates | Expansion system documentation |
+| Customer health tracker | Obsidian Bases — table with customer, health_score, arr, renewal_date, risk_flag, owner              | CS operations                  |
 
 ## Extreme Growth Playbook
 

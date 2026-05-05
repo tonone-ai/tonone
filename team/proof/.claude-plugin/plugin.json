@@ -8,13 +8,7 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "testing",
-    "qa",
-    "e2e",
-    "integration",
-    "playwright"
-  ],
+  "keywords": ["testing", "qa", "e2e", "integration", "playwright"],
   "skills": [
     {
       "name": "proof-strategy",

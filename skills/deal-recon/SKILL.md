@@ -37,12 +37,12 @@ find . -name "*.md" 2>/dev/null | xargs grep -l "churn\|NRR\|MRR\|ARR\|ARPU\|LTV
 
 Determine which stage the company is at based on any available signals:
 
-| Signal | Stage 1 ($0-$1M) | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M) |
-|--------|-----------|------------|------------|
-| Deals closed | <10 | 10-100 | 100+ |
-| Sales motion | Founder-led | First reps | Sales org |
-| Playbook | Informal/none | Written | Formalized |
-| CRM | Spreadsheet | Basic CRM | Full RevOps |
+| Signal       | Stage 1 ($0-$1M) | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M) |
+| ------------ | ---------------- | ------------------ | -------------------- |
+| Deals closed | <10              | 10-100             | 100+                 |
+| Sales motion | Founder-led      | First reps         | Sales org            |
+| Playbook     | Informal/none    | Written            | Formalized           |
+| CRM          | Spreadsheet      | Basic CRM          | Full RevOps          |
 
 ### Step 2: Map the Pipeline
 
@@ -59,28 +59,28 @@ Identify current state of:
 
 Use the MEDDPICC framework to find where deals stall:
 
-| Component | Status | Evidence |
-|-----------|--------|----------|
-| Metrics (ROI defined) | [✓/✗/~] | |
-| Economic Buyer (identified) | [✓/✗/~] | |
-| Decision Criteria (mapped) | [✓/✗/~] | |
-| Decision Process (documented) | [✓/✗/~] | |
-| Paper Process (known) | [✓/✗/~] | |
-| Pain (buyer-level, not user-level) | [✓/✗/~] | |
-| Champion (inside account) | [✓/✗/~] | |
-| Competition (understood) | [✓/✗/~] | |
+| Component                          | Status  | Evidence |
+| ---------------------------------- | ------- | -------- |
+| Metrics (ROI defined)              | [✓/✗/~] |          |
+| Economic Buyer (identified)        | [✓/✗/~] |          |
+| Decision Criteria (mapped)         | [✓/✗/~] |          |
+| Decision Process (documented)      | [✓/✗/~] |          |
+| Paper Process (known)              | [✓/✗/~] |          |
+| Pain (buyer-level, not user-level) | [✓/✗/~] |          |
+| Champion (inside account)          | [✓/✗/~] |          |
+| Competition (understood)           | [✓/✗/~] |          |
 
 ### Step 4: Inventory Sales Assets
 
-| Asset | Exists? | Quality |
-|-------|---------|---------|
-| ICP definition doc | [✓/✗] | |
-| Outbound sequence | [✓/✗] | |
-| Discovery call guide | [✓/✗] | |
-| Pricing tiers | [✓/✗] | |
-| Proposal template | [✓/✗] | |
-| Objection handling guide | [✓/✗] | |
-| Case studies/social proof | [✓/✗] | |
+| Asset                     | Exists? | Quality |
+| ------------------------- | ------- | ------- |
+| ICP definition doc        | [✓/✗]   |         |
+| Outbound sequence         | [✓/✗]   |         |
+| Discovery call guide      | [✓/✗]   |         |
+| Pricing tiers             | [✓/✗]   |         |
+| Proposal template         | [✓/✗]   |         |
+| Objection handling guide  | [✓/✗]   |         |
+| Case studies/social proof | [✓/✗]   |         |
 
 ### Step 5: Present Assessment
 

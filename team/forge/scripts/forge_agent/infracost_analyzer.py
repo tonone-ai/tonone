@@ -12,9 +12,9 @@ from team.shared.report_schema import Finding
 
 _MONTHLY_SEVERITY = [
     (1000.0, "CRITICAL"),
-    (100.0,  "HIGH"),
-    (20.0,   "MEDIUM"),
-    (0.01,   "LOW"),
+    (100.0, "HIGH"),
+    (20.0, "MEDIUM"),
+    (0.01, "LOW"),
 ]
 
 
@@ -30,7 +30,9 @@ def check_infracost() -> tuple[bool, str]:
     try:
         result = subprocess.run(
             ["infracost", "--version"],
-            capture_output=True, text=True, timeout=15,
+            capture_output=True,
+            text=True,
+            timeout=15,
         )
         if result.returncode == 0:
             return True, result.stdout.strip()
@@ -46,10 +48,16 @@ def check_infracost_api_key() -> bool:
     try:
         result = subprocess.run(
             ["infracost", "configure", "get", "api_key"],
-            capture_output=True, text=True, timeout=10,
+            capture_output=True,
+            text=True,
+            timeout=10,
         )
         output = result.stdout.strip() + result.stderr.strip()
-        return result.returncode == 0 and "No API key" not in output and len(result.stdout.strip()) > 10
+        return (
+            result.returncode == 0
+            and "No API key" not in output
+            and len(result.stdout.strip()) > 10
+        )
     except (FileNotFoundError, subprocess.TimeoutExpired):
         return False
 
@@ -69,15 +77,21 @@ def run_infracost(target_path: str) -> list[Finding]:
 
     # infracost breakdown scans for Terraform/OpenTofu configs
     cmd = [
-        "infracost", "breakdown",
-        "--path", target_path,
-        "--format", "json",
+        "infracost",
+        "breakdown",
+        "--path",
+        target_path,
+        "--format",
+        "json",
         "--no-color",
     ]
 
     try:
         result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=180,
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=180,
         )
     except subprocess.TimeoutExpired:
         print("infracost timed out after 180s.", file=sys.stderr)
@@ -85,7 +99,11 @@ def run_infracost(target_path: str) -> list[Finding]:
 
     if result.returncode != 0:
         stderr_lower = result.stderr.lower()
-        if "no terraform" in stderr_lower or "no supported" in stderr_lower or "no resource" in stderr_lower:
+        if (
+            "no terraform" in stderr_lower
+            or "no supported" in stderr_lower
+            or "no resource" in stderr_lower
+        ):
             return []
         if "api_key" in stderr_lower or "infracost_api_key" in stderr_lower:
             print(
@@ -132,40 +150,48 @@ def _parse_infracost_output(data: dict, target_path: str) -> list[Finding]:
                 for c in components[:3]
                 if float(c.get("monthlyCost") or 0) > 0
             ]
-            detail = f"${monthly:.2f}/month. " + (", ".join(detail_parts) if detail_parts else "")
+            detail = f"${monthly:.2f}/month. " + (
+                ", ".join(detail_parts) if detail_parts else ""
+            )
 
-            recommendation = _recommendation_for_resource(resource_type, monthly, resource)
+            recommendation = _recommendation_for_resource(
+                resource_type, monthly, resource
+            )
 
             tf_file = resource.get("filePath", target_path)
             tf_line = resource.get("startLine", 0)
             location = f"{tf_file}:{tf_line}" if tf_line else tf_file
 
-            findings.append(Finding(
-                id=f"COST-{resource_type.upper()}",
-                severity=severity,
-                title=f"High cost: {name}",
-                detail=detail,
-                location=location,
-                recommendation=recommendation,
-                effort=_effort_for_recommendation(recommendation),
-            ))
+            findings.append(
+                Finding(
+                    id=f"COST-{resource_type.upper()}",
+                    severity=severity,
+                    title=f"High cost: {name}",
+                    detail=detail,
+                    location=location,
+                    recommendation=recommendation,
+                    effort=_effort_for_recommendation(recommendation),
+                )
+            )
 
     return findings
 
 
-def _recommendation_for_resource(resource_type: str, monthly: float, resource: dict) -> str:
+def _recommendation_for_resource(
+    resource_type: str, monthly: float, resource: dict
+) -> str:
     recs: dict[str, str] = {
-        "aws_instance":               "Right-size or switch to Reserved/Savings Plan (up to 72% savings).",
-        "aws_db_instance":            "Use Reserved Instance for RDS (up to 69% savings). Consider Aurora Serverless for variable workloads.",
-        "aws_rds_cluster":            "Evaluate Aurora Serverless v2 for variable workloads.",
-        "aws_elasticsearch_domain":   "Right-size data nodes; consider OpenSearch Serverless.",
-        "aws_opensearch_domain":      "Right-size data nodes; consider OpenSearch Serverless.",
-        "aws_nat_gateway":            "Consolidate NAT gateways across AZs if multi-AZ is not required.",
-        "aws_lb":                     "Remove unused load balancers or consolidate behind a single ALB.",
-        "aws_cloudfront_distribution":"Review cache behavior — low hit rate inflates origin transfer costs.",
-        "google_compute_instance":    "Right-size or commit to 1-year CUD (up to 57% savings).",
-        "google_sql_database_instance":"Use committed use discounts or consider Cloud Spanner for scale.",
-        "azurerm_virtual_machine":    "Right-size or switch to Reserved Instance (up to 72% savings).",
+        "aws_instance": "Right-size or switch to Reserved/Savings Plan (up to 72% savings).",
+        "aws_db_instance": "Use Reserved Instance for RDS (up to 69% savings). Consider Aurora Serverless for variable workloads.",
+        "aws_rds_cluster": "Evaluate Aurora Serverless v2 for variable workloads.",
+        "aws_elasticsearch_domain": "Right-size data nodes; consider OpenSearch Serverless.",
+        "aws_opensearch_domain": "Right-size data nodes; consider OpenSearch Serverless.",
+        "aws_nat_gateway": "Consolidate NAT gateways across AZs if multi-AZ is not required.",
+        "aws_lb": "Remove unused load balancers or consolidate behind a single ALB.",
+        "aws_cloudfront_distribution": "Review cache behavior — low hit rate inflates origin transfer costs.",
+        "google_compute_instance": "Right-size or commit to 1-year CUD (up to 57% savings).",
+        "google_sql_database_instance": "Use committed use discounts or consider Cloud Spanner for scale.",
+        "azurerm_virtual_machine": "Right-size or switch to Reserved Instance (up to 72% savings).",
     }
     if resource_type in recs:
         return recs[resource_type]

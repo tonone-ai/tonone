@@ -17,13 +17,13 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `deal-recon` | Audit current sales pipeline, deal patterns, ICP definition, and revenue motion |
+| Skill           | Use when                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------ |
+| `deal-recon`    | Audit current sales pipeline, deal patterns, ICP definition, and revenue motion            |
 | `deal-pipeline` | Design or audit B2B sales pipeline — stage definitions, entry/exit criteria, qualification |
-| `deal-playbook` | Write sales playbooks — outbound sequences, discovery call guides, objection handling |
-| `deal-pricing` | Design pricing strategy — tiers, value metric, enterprise pricing, freemium design |
-| `deal-close` | Close a specific deal — diagnose why it's stalling, write proposal, navigate procurement |
+| `deal-playbook` | Write sales playbooks — outbound sequences, discovery call guides, objection handling      |
+| `deal-pricing`  | Design pricing strategy — tiers, value metric, enterprise pricing, freemium design         |
+| `deal-close`    | Close a specific deal — diagnose why it's stalling, write proposal, navigate procurement   |
 
 Default (no args or unclear): `deal-recon`.
 

@@ -38,6 +38,7 @@ Easiest to rank, most specific to pain. Start here.
 Example: "how to run security audit without security team", "replace standup meetings with AI"
 
 Strategy by stage:
+
 - Stage 1: Focus on Tier 3 exclusively. 10 well-ranking long-tail posts beat 1 barely-ranking head keyword.
 - Stage 2: Own Tier 2 topics. Build Tier 1 pillar pages.
 - Stage 3: Compete for Tier 1. Create category-defining content.
@@ -56,6 +57,7 @@ Queries to run:
 ```
 
 For each competitor, identify:
+
 - Topics they rank for that you don't have content on
 - Topics they rank weakly on (position 4-15) that you could beat
 - Topics they've missed entirely (gaps)
@@ -95,6 +97,7 @@ find . -name "*.tsx" -o -name "*.jsx" -o -name "*.md" 2>/dev/null | xargs grep -
 ```
 
 Common on-page issues:
+
 - Missing or duplicate title tags
 - Missing meta descriptions
 - H1 missing keyword
@@ -114,26 +117,29 @@ Common on-page issues:
 
 ## Priority Keyword Targets (next 90 days)
 
-| Keyword | Volume | Difficulty | Intent | Content to create |
-|---------|--------|------------|--------|------------------|
+| Keyword   | Volume    | Difficulty     | Intent            | Content to create          |
+| --------- | --------- | -------------- | ----------------- | -------------------------- |
 | [keyword] | [est vol] | [low/med/high] | [info/commercial] | [new post/update existing] |
-| ... | | | | |
+| ...       |           |                |                   |                            |
 
 ## Topic Cluster Map
 
 [cluster architecture from Step 3]
 
 ## On-Page Fixes (quick wins)
+
 1. [Fix] — [page] — [impact]
 2. [Fix] — [page] — [impact]
-...
+   ...
 
 ## 90-Day Content Plan
+
 Month 1: [2-3 long-tail posts]
 Month 2: [2-3 posts + pillar outline]
 Month 3: [Pillar page + internal linking pass]
 
 ## What to Measure
+
 - Organic sessions (monthly, not weekly)
 - Keyword rankings for target terms
 - Click-through rate from search (impressions → clicks)

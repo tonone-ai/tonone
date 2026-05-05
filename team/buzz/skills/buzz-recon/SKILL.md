@@ -30,12 +30,12 @@ find . -name "*.md" 2>/dev/null | xargs grep -l "press\|media\|coverage\|techcru
 
 ### Step 1: Diagnose PR Stage
 
-| Signal | Stage 1 ($0-$1M) | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M) |
-|--------|-----------|------------|------------|
-| Press coverage | None / 1-2 pieces | Regular coverage | Company of record in category |
-| Community | None / seed members | Active community | Self-sustaining flywheel |
-| Social presence | Minimal | Growing | Authoritative |
-| Media relationships | None | A few contacts | Proactive inbound |
+| Signal              | Stage 1 ($0-$1M)    | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M)          |
+| ------------------- | ------------------- | ------------------ | ----------------------------- |
+| Press coverage      | None / 1-2 pieces   | Regular coverage   | Company of record in category |
+| Community           | None / seed members | Active community   | Self-sustaining flywheel      |
+| Social presence     | Minimal             | Growing            | Authoritative                 |
+| Media relationships | None                | A few contacts     | Proactive inbound             |
 
 ### Step 2: Press Coverage Inventory
 
@@ -50,27 +50,28 @@ Search queries:
 - "[founder name]" interview OR podcast
 ```
 
-| Coverage type | Count | Quality | Recency |
-|--------------|-------|---------|---------|
-| HN posts | | | |
-| Product Hunt | | | |
-| Media mentions | | | |
-| Podcast appearances | | | |
-| Newsletter features | | | |
+| Coverage type       | Count | Quality | Recency |
+| ------------------- | ----- | ------- | ------- |
+| HN posts            |       |         |         |
+| Product Hunt        |       |         |         |
+| Media mentions      |       |         |         |
+| Podcast appearances |       |         |         |
+| Newsletter features |       |         |         |
 
 ### Step 3: Community Health Audit
 
 For each active community platform:
 
-| Platform | Members | Weekly active | Response time | Quality signal |
-|----------|---------|---------------|---------------|----------------|
-| Discord | | | | |
-| GitHub (stars/issues) | | | | |
-| Twitter/X | | | | |
-| LinkedIn | | | | |
-| Reddit (relevant subs) | | | | |
+| Platform               | Members | Weekly active | Response time | Quality signal |
+| ---------------------- | ------- | ------------- | ------------- | -------------- |
+| Discord                |         |               |               |                |
+| GitHub (stars/issues)  |         |               |               |                |
+| Twitter/X              |         |               |               |                |
+| LinkedIn               |         |               |               |                |
+| Reddit (relevant subs) |         |               |               |                |
 
 Community health indicators:
+
 - Are users helping other users? (not just asking questions)
 - Is there user-generated content? (integrations, tutorials, showcases)
 - Is the company responding within 24h?

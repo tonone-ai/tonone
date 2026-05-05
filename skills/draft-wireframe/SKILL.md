@@ -26,10 +26,10 @@ Default to executing. You know the conventions. Ask only when you're blocked on 
 
 **Choose mode from the request language:**
 
-| User says | Mode |
-|-----------|------|
-| "wireframe", "sketch the UI", "layout for this screen" | Text/ASCII (default) |
-| "hand-drawn", "lo-fi HTML", "whiteboard", "graph paper", "visual sketch", "sketch wireframe" | HTML hand-drawn |
+| User says                                                                                    | Mode                 |
+| -------------------------------------------------------------------------------------------- | -------------------- |
+| "wireframe", "sketch the UI", "layout for this screen"                                       | Text/ASCII (default) |
+| "hand-drawn", "lo-fi HTML", "whiteboard", "graph paper", "visual sketch", "sketch wireframe" | HTML hand-drawn      |
 
 Default is text/ASCII. Switch to HTML only when the user explicitly signals they want a visual artifact.
 

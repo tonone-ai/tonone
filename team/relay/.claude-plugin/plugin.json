@@ -8,13 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "devops",
-    "cicd",
-    "deployments",
-    "gitops",
-    "dx",
-    "ship",
-    "pr"
-  ]
+  "keywords": ["devops", "cicd", "deployments", "gitops", "dx", "ship", "pr"]
 }

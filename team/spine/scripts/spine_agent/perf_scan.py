@@ -11,12 +11,14 @@ import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../.."))
 from team.shared.report_schema import AgentReport, ReportMetadata
-from team.spine.scripts.spine_agent.n_plus_one_detector import scan_directory
 from team.spine.scripts.spine_agent.endpoint_profiler import profile_endpoints
+from team.spine.scripts.spine_agent.n_plus_one_detector import scan_directory
 
 
 def main():
-    parser = argparse.ArgumentParser(description="spine-perf: N+1 detector + endpoint profiler")
+    parser = argparse.ArgumentParser(
+        description="spine-perf: N+1 detector + endpoint profiler"
+    )
     parser.add_argument(
         "target",
         nargs="?",
@@ -34,8 +36,12 @@ def main():
         default=[],
         help="Endpoint paths to profile (e.g. /api/orders /api/users)",
     )
-    parser.add_argument("--skip-n1", action="store_true", help="Skip N+1 static analysis")
-    parser.add_argument("--skip-endpoints", action="store_true", help="Skip endpoint profiling")
+    parser.add_argument(
+        "--skip-n1", action="store_true", help="Skip N+1 static analysis"
+    )
+    parser.add_argument(
+        "--skip-endpoints", action="store_true", help="Skip endpoint profiling"
+    )
     parser.add_argument("--out", help="Write JSON report to this path")
     parser.add_argument(
         "--timeout",
@@ -62,7 +68,9 @@ def main():
 
     if not args.skip_endpoints:
         if args.base_url and args.paths:
-            print(f"  [2/2] Profiling {len(args.paths)} endpoint(s) at {args.base_url}...")
+            print(
+                f"  [2/2] Profiling {len(args.paths)} endpoint(s) at {args.base_url}..."
+            )
             ep_findings = profile_endpoints(
                 base_url=args.base_url,
                 paths=args.paths,
@@ -71,13 +79,16 @@ def main():
             print(f"        {len(ep_findings)} slow endpoints")
             findings.extend(ep_findings)
         else:
-            print("  [2/2] Skipping endpoint profiler (no --base-url / --paths provided)")
+            print(
+                "  [2/2] Skipping endpoint profiler (no --base-url / --paths provided)"
+            )
 
     duration = round(time.time() - start, 1)
 
     # build tool version string
     try:
         import httpx as _hx
+
         httpx_ver = getattr(_hx, "__version__", "?")
     except ImportError:
         httpx_ver = "not installed"
@@ -105,7 +116,10 @@ def main():
             fh.write(report.to_json())
         print(f"\nReport written: {out_path}")
     except IOError as e:
-        print(f"\nWarning: could not write report ({e}). Printing to stdout:", file=sys.stderr)
+        print(
+            f"\nWarning: could not write report ({e}). Printing to stdout:",
+            file=sys.stderr,
+        )
         print(report.to_json())
 
     s = report.summary

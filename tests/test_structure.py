@@ -16,10 +16,13 @@ import json
 from pathlib import Path
 
 REPO = Path(__file__).parent.parent
-AGENTS = sorted([
-    d.name for d in (REPO / "team").iterdir()
-    if d.is_dir() and (d / ".claude-plugin" / "plugin.json").exists()
-])
+AGENTS = sorted(
+    [
+        d.name
+        for d in (REPO / "team").iterdir()
+        if d.is_dir() and (d / ".claude-plugin" / "plugin.json").exists()
+    ]
+)
 
 
 # ---------------------------------------------------------------------------
@@ -111,7 +114,9 @@ def test_marketplace_json_lists_all_agents():
     manifest = json.loads(manifest_path.read_text())
     listed_names = {p["name"] for p in manifest.get("plugins", [])}
     missing = [a for a in AGENTS if a not in listed_names]
-    assert not missing, f"Agents in team/ missing from marketplace.json plugins: {missing}"
+    assert (
+        not missing
+    ), f"Agents in team/ missing from marketplace.json plugins: {missing}"
 
 
 # ---------------------------------------------------------------------------

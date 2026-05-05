@@ -25,6 +25,7 @@ python team/cortex/scripts/cortex_agent/eval_scan.py . --out .reports/cortex-eva
 ```
 
 Or with selective scans:
+
 ```bash
 # LLM usage only (finds missing error handling, unbounded costs, hardcoded models)
 python team/cortex/scripts/cortex_agent/eval_scan.py . --skip-prompts

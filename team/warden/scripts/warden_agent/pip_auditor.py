@@ -27,11 +27,13 @@ def run_pip_audit(target_path: str) -> list[Finding]:
     """
     try:
         subprocess.run(
-            ["pip-audit", "--version"],
-            capture_output=True, timeout=10, check=True
+            ["pip-audit", "--version"], capture_output=True, timeout=10, check=True
         )
     except (FileNotFoundError, subprocess.CalledProcessError):
-        print("pip-audit not installed. Install with: pip install pip-audit", file=sys.stderr)
+        print(
+            "pip-audit not installed. Install with: pip install pip-audit",
+            file=sys.stderr,
+        )
         return []
 
     # find requirements files
@@ -41,7 +43,11 @@ def run_pip_audit(target_path: str) -> list[Finding]:
         if any(p in parts for p in (".venv", "node_modules", ".git")):
             continue
         for f in files:
-            if f in ("requirements.txt", "requirements-dev.txt", "requirements-prod.txt"):
+            if f in (
+                "requirements.txt",
+                "requirements-dev.txt",
+                "requirements-prod.txt",
+            ):
                 req_files.append(os.path.join(root, f))
 
     findings = []
@@ -68,9 +74,7 @@ def _audit_environment() -> list[Finding]:
 
 def _run_and_parse(cmd: list[str], source: str) -> list[Finding]:
     try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120
-        )
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     except subprocess.TimeoutExpired:
         print(f"pip-audit timed out on {source}", file=sys.stderr)
         return []
@@ -100,18 +104,20 @@ def _run_and_parse(cmd: list[str], source: str) -> list[Finding]:
 
             fix = (
                 f"Upgrade {pkg_name} to {fix_versions[0]}"
-                if fix_versions else
-                f"No fix available yet for {pkg_name} {pkg_version}"
+                if fix_versions
+                else f"No fix available yet for {pkg_name} {pkg_version}"
             )
 
-            findings.append(Finding(
-                id=vuln_id,
-                severity=severity,
-                title=f"{vuln_id} in {pkg_name} {pkg_version}",
-                detail=description or f"Vulnerability in {pkg_name} {pkg_version}",
-                location=f"{source} → {pkg_name}=={pkg_version}",
-                recommendation=fix,
-                effort="S",
-            ))
+            findings.append(
+                Finding(
+                    id=vuln_id,
+                    severity=severity,
+                    title=f"{vuln_id} in {pkg_name} {pkg_version}",
+                    detail=description or f"Vulnerability in {pkg_name} {pkg_version}",
+                    location=f"{source} → {pkg_name}=={pkg_version}",
+                    recommendation=fix,
+                    effort="S",
+                )
+            )
 
     return findings

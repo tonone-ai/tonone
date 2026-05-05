@@ -27,24 +27,24 @@ Before building:
 
 Match cadence to capacity — not ambition. Inconsistency destroys SEO signals and audience trust.
 
-| Capacity | Cadence | Format priority |
-|----------|---------|-----------------|
-| Founder only, <4h/week | 2 posts/month | Long-form (evergreen) |
-| Founder + 1 contractor | 4 posts/month | Mix of evergreen + timely |
-| Part-time content hire | 2 posts/week | Cluster-building |
-| Full-time content | 3-5 posts/week | Full editorial calendar |
+| Capacity               | Cadence        | Format priority           |
+| ---------------------- | -------------- | ------------------------- |
+| Founder only, <4h/week | 2 posts/month  | Long-form (evergreen)     |
+| Founder + 1 contractor | 4 posts/month  | Mix of evergreen + timely |
+| Part-time content hire | 2 posts/week   | Cluster-building          |
+| Full-time content      | 3-5 posts/week | Full editorial calendar   |
 
 ### Step 2: Build Content Mix
 
 For each publishing period, balance:
 
-| Content type | % of mix | Why |
-|--------------|----------|-----|
-| Evergreen tutorials | 40% | Compounds over time, best SEO ROI |
-| Thought leadership | 20% | Brand authority, often goes viral |
-| Product use cases | 20% | MOFU conversion, shows product value |
-| Comparison / alternatives | 10% | High commercial intent |
-| Community roundups / curated | 10% | Low effort, builds goodwill |
+| Content type                 | % of mix | Why                                  |
+| ---------------------------- | -------- | ------------------------------------ |
+| Evergreen tutorials          | 40%      | Compounds over time, best SEO ROI    |
+| Thought leadership           | 20%      | Brand authority, often goes viral    |
+| Product use cases            | 20%      | MOFU conversion, shows product value |
+| Comparison / alternatives    | 10%      | High commercial intent               |
+| Community roundups / curated | 10%      | Low effort, builds goodwill          |
 
 ### Step 3: Build the Calendar
 
@@ -52,14 +52,17 @@ Produce a 12-week rolling calendar:
 
 ```markdown
 ## Week 1
+
 - Post 1: [Title] | Keyword: [X] | Type: [tutorial] | Author: [name] | Status: [draft/review/scheduled]
 - Post 2: [Title] | Keyword: [Y] | Type: [thought leadership] | ...
 
 ## Week 2
+
 ...
 ```
 
 For each post include:
+
 - Working title (keyword-forward)
 - Target keyword
 - Content type
@@ -101,6 +104,7 @@ Long-form blog post (2,000w)
 
 ```markdown
 # Content Calendar — [Product Name]
+
 **Period:** [Q1/Q2/etc. YYYY]
 **Publishing cadence:** [N posts per week/month]
 **Primary goal:** [organic traffic / brand / signups attribution]
@@ -108,6 +112,7 @@ Long-form blog post (2,000w)
 ## Editorial Themes by Month
 
 **Month 1 theme:** [e.g., "developer onboarding automation"]
+
 - Focus on: [ICP segment] dealing with [pain]
 - Target cluster: [pillar page + supporting posts]
 
@@ -127,6 +132,7 @@ Long-form blog post (2,000w)
 [map from Step 5]
 
 ## Metrics to Track
+
 - Posts published on schedule (target: 90%+)
 - Posts with internal links (target: 100%)
 - Traffic per post at 30/60/90 days

@@ -89,11 +89,13 @@ Produce all three formats from the same story research.
 ### Step 4: Case Study SEO
 
 Title should target commercial intent:
+
 - "How [Company] [achieved outcome] with [Product]"
 - "[Product] Case Study: [Outcome] for [Company type]"
 - "From [before state] to [after state]: [Company]'s story"
 
 Include in the case study:
+
 - Company name and logo (with approval)
 - Industry and company size
 - Use case / product area
