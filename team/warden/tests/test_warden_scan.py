@@ -5,11 +5,11 @@ import os
 import sys
 import pytest
 
-# path to team/shared and team/warden/scripts
+# path to lib/shared and team/warden/scripts
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 sys.path.insert(0, ROOT)
 
-from team.shared.report_schema import AgentReport, Finding, ReportMetadata
+from lib.shared.report_schema import AgentReport, Finding, ReportMetadata
 from team.warden.scripts.warden_agent.semgrep_scanner import run_semgrep, check_semgrep
 from team.warden.scripts.warden_agent.pip_auditor import run_pip_audit
 

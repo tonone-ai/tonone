@@ -124,3 +124,6 @@ Deliver all requested posts ready to copy-paste, with:
 ## Delivery
 
 All posts are ready to copy-paste. No "insert topic here." Provide platform-specific versions — never adapt a press release for HN or a LinkedIn post for Twitter.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.

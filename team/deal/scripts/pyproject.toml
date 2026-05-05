@@ -1,0 +1,11 @@
+[project]
+name = "deal"
+version = "0.9.9"
+description = "---"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]
+pythonpath = ["."]

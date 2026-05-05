@@ -126,3 +126,4 @@ Close condition: "If we resolve X, can we sign by [date]?"
 ## Delivery
 
 Produce the specific artifact. Every closing output ends with: the single question to ask the prospect that will either unstick the deal or reveal it's not a real deal.
+If output exceeds 40 lines, delegate to /atlas-report.

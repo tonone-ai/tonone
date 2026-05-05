@@ -1,6 +1,6 @@
 [project]
 name = "proof"
-version = "0.9.7"
+version = "0.9.9"
 description = "QA & testing engineer — test strategy, E2E suites, integration testing, test infrastructure"
 license = "MIT"
 requires-python = ">=3.10"

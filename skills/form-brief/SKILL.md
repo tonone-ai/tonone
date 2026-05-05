@@ -292,4 +292,5 @@ Then: defaults list. That's it. Don't dump the full DESIGN.md to CLI — the use
 - Overwriting an existing DESIGN.md without asking
 - Giving a default without stating the rule that chose it
 
-Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose. If output exceeds 40 lines, emit a summary and invoke `/atlas-report` to write the full report.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.

@@ -127,3 +127,4 @@ Enterprise pricing checklist:
 ## Delivery
 
 Produce the complete pricing design document plus a ready-to-ship pricing page skeleton. Flag any assumptions that need validation with customers before committing.
+If output exceeds 40 lines, delegate to /atlas-report.

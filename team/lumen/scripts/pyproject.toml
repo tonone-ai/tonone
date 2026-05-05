@@ -1,6 +1,6 @@
 [project]
 name = "lumen"
-version = "0.9.7"
+version = "0.9.9"
 description = "Product analyst — metrics frameworks, funnel analysis, OKRs, A/B test design, and retention analysis"
 license = "MIT"
 requires-python = ">=3.10"

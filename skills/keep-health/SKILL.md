@@ -130,3 +130,4 @@ Priority: implement signals with highest predictive weight first.
 ## Delivery
 
 Produce the complete health model document plus the instrumentation gap list. Flag which signals are critical (model won't work without them) vs. nice-to-have.
+If output exceeds 40 lines, delegate to /atlas-report.

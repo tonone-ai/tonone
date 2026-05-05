@@ -1,6 +1,6 @@
 {
   "name": "crest-okr",
-  "version": "0.9.7",
+  "version": "0.9.9",
   "description": "OKR design \u2014 create objectives and key results with a North Star metric, input metrics tree, and cadence. Use when asked to \"set OKRs\", \"define our objectives\", \"what should we measure this quarter\", \"design our OKR framework\", \"build a metrics tree\", or \"what's our North Star\".",
   "author": {
     "name": "tonone-ai",

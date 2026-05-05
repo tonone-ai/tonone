@@ -176,3 +176,6 @@ Lurker → [trigger] → First contribution → Regular contributor
 ## Delivery
 
 Produce the complete community playbook and GitHub health checklist. Every section should be immediately actionable — not theory.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.

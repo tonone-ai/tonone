@@ -1,6 +1,6 @@
 {
   "name": "forge",
-  "version": "0.9.7",
+  "version": "0.9.9",
   "description": "Infrastructure engineer \u2014 cloud services, networking, IaC, cost optimization",
   "author": {
     "name": "tonone-ai",
