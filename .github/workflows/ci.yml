@@ -36,10 +36,30 @@ jobs:
         run: python -m pytest tests/test_skill_compliance.py -v
 
   # ---------------------------------------------------------------------------
-  # Job 2: Shell script linting
+  # Job 2: Hook tests
+  # Validates JS syntax, exit-code contracts, and source-level invariants for
+  # all three worktree hooks and bump-version.py. Node.js is pre-installed on
+  # ubuntu-latest; no extra install needed.
+  # ---------------------------------------------------------------------------
+  test-hooks:
+    name: Test hooks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pytest
+        run: pip install pytest
+      - name: Run hook tests
+        run: python -m pytest tests/test_hooks.py -v
+
+  # ---------------------------------------------------------------------------
+  # Job 3: Shell script linting
   # All setup.sh files are linted at WARNING severity. Errors in setup scripts
   # silently fail for end users who run them — shellcheck catches the common
   # pitfalls (unquoted vars, pipefail gaps) before they reach anyone.
+  # Worktrees are excluded — they are copies of the same files, not distinct.
   # ---------------------------------------------------------------------------
   lint-shell:
     name: Lint shell scripts
@@ -49,38 +69,31 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get install -y shellcheck
       - name: Run shellcheck
-        run: find . -name "setup.sh" -not -path "./.git/*" | xargs shellcheck -S warning
+        run: find . -name "setup.sh" -not -path "./.git/*" -not -path "./.claude/*" | xargs shellcheck -S warning
 
   # ---------------------------------------------------------------------------
-  # Job 3: Agent tests (matrix) — DISABLED
+  # Job 4: Agent tests (matrix)
+  # Runs per-agent test suites for agents with real Python functionality.
+  # Each agent uses uv to install its deps (including the shared lib/uiux
+  # package via editable path dep) and runs its own tests/.
   #
-  # All 23 agent test directories currently contain only an empty __init__.py
-  # stub. Running a matrix job over them would produce 23 green "0 tests
-  # collected" runs — misleading signal that wastes CI minutes.
-  #
-  # Activate this job when an agent gains real Python functionality:
-  # 1. Add the agent name to the matrix list below.
-  # 2. Ensure team/<agent>/scripts/ has a pyproject.toml with test deps and at
-  #    least one test_*.py file with substantive tests.
-  #
-  # Template (uncomment and populate matrix.agent when ready):
-  #
-  # agent-tests:
-  #   name: "Agent tests"
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       agent: []  # e.g. [forge, relay, spine]
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-python@v5
-  #       with:
-  #         python-version: "3.11"
-  #     - name: Install uv
-  #       run: pip install uv
-  #     - name: Run agent tests
-  #       working-directory: team/${{ matrix.agent }}/scripts
-  #       run: |
-  #         uv sync --quiet
-  #         uv run pytest ../tests/ -v
+  # Add an agent to the matrix when it gains a test_*.py with substantive tests.
   # ---------------------------------------------------------------------------
+  agent-tests:
+    name: "Agent tests (${{ matrix.agent }})"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        agent: [touch, form, pitch, prism, draft, surge, lens]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install uv
+        run: pip install uv
+      - name: Run agent tests
+        working-directory: team/${{ matrix.agent }}/scripts
+        run: |
+          uv sync --quiet
+          uv run pytest ../tests/ -v
