@@ -114,4 +114,6 @@
 2026-04-29 14:58 : readme regenerated — version badge 0.9.6 → 0.9.7, skills heading 138 → 161, added 23 entry-point — @fatih
 2026-04-29 15:03 : changelog [Unreleased] section added — no release since 0.9.7, only docs/reformats — @fatih
 2026-04-29 15:03 : elephant restyle complete — 12 of 102 entries compressed, 100-char trims + article drops — @fatih
+2026-05-05 21:50 : feat: add 4 revenue and marketing agents — Deal, Keep, Ink, Buzz — @fatih
+2026-05-05 22:11 : feat(agents): embed extreme growth playbooks into Deal, Keep, Ink, Buzz — @fatih
 2026-05-05 22:16 : docs: shoutout nexu-io/open-design in README — @fatih

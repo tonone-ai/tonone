@@ -1,0 +1,20 @@
+{
+  "name": "buzz",
+  "version": "0.1.0",
+  "description": "PR & Community engineer — press pitches, social media, open source community, DevRel, and launch moments",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "pr",
+    "community",
+    "devrel",
+    "social-media",
+    "press",
+    "open-source",
+    "product-team"
+  ]
+}
