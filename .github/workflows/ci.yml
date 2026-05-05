@@ -96,4 +96,4 @@ jobs:
         working-directory: team/${{ matrix.agent }}/scripts
         run: |
           uv sync --quiet
-          uv run pytest ../tests/ -v
+          uv run --with pytest pytest ../tests/ -v
