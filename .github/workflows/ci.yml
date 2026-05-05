@@ -100,7 +100,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        agent: [touch, form, pitch, prism, draft, surge, lens]
+        agent: [touch, form, pitch, prism, draft, surge, lens, apex]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -109,5 +109,5 @@ jobs:
       - name: Run agent tests
         working-directory: team/${{ matrix.agent }}/scripts
         run: |
-          pip install -e ../../../lib/uiux -e . pytest --quiet
+          pip install -e ../../../lib/uiux -e . pytest --quiet 2>/dev/null || pip install -e . pytest --quiet
           python -m pytest ../tests/ -v
