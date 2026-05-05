@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.9.9] — 2026-05-05 (patch 2)
+
+### Changed
+
+- **Version enforcement:** `scripts/bump-version.py` gains `--check` mode (exits 1 if any manifest deviates from root). New CI job `check-versions` runs this on every PR so version drift can never merge again.
+- **Version sync:** All 194 plugin.json and pyproject.toml files synced to 0.9.9. Prior drift: most agents at 0.9.7, warden at 0.9.8, new agents (buzz/deal/ink/keep) at 0.1.0.
+- **Shared library relocated:** `team/shared/` moved to `lib/shared/` — it was a Python library, not an agent. Fixes phantom "shared" agent detection in CI structure tests.
+- **New agent scaffolding:** buzz, deal, ink, keep gain `scripts/setup.sh` and `scripts/pyproject.toml` (required for CI structure gate).
+- **Skill renamed:** `skills/contribute` → `skills/pave-contribute`. Fixes agent-prefix naming rule; now routes to Pave correctly.
+- **forge-cost synced:** Root `skills/forge-cost/SKILL.md` was 2 versions behind team canonical — updated to include real infracost + AWS Cost Explorer scanner steps.
+- **Output-kit compliance:** Added required output-kit and atlas-report contract lines to 10 skills: buzz-community, buzz-launch, buzz-pitch, buzz-social, form-brief, ink-calendar, ink-case, ink-post, ink-seo, warden-scan, and all deal/keep skills.
+- **warden-scan:** Root `skills/warden-scan/` copy created (existed in team/ only).
+- **README badge:** Updated version badge from 0.9.7 to 0.9.9.
+
+All 54 CI structure and compliance tests now pass.
+
 ## [0.9.9] — 2026-05-05
 
 ### Added
