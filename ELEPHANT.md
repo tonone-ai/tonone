@@ -133,3 +133,7 @@
 2026-05-05 22:44 : ci: add version consistency check job (#83) — @fatih
 2026-05-05 22:47 : feat(cortex): add LLM usage scanner + prompt evaluator (#80) — @fatih
 2026-05-05 22:47 : feat(spine): add N+1 detector + HTTP endpoint profiler (#82) — @fatih
+2026-05-05 23:57 : elephant takeover — appended 10 missing commits (2026-04-29 → 2026-05-05) to ELEPHANT.md — @fatih
+2026-05-05 23:57 : fix: trunk.yaml python@3.14.4 → 3.13.3 — version didn't exist, broke all CI Python linters — @fatih
+2026-05-05 23:57 : sync: apex-review, cortex-eval, spine-perf root skills drifted from team/ — missing analyzer step-0 content, fixed — @fatih
+[!!] 2026-05-05 23:57 : PR #85 chore-sync-post-084-updates — 253 files, 2 commits, 54/54 tests pass — @fatih
