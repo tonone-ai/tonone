@@ -72,7 +72,23 @@ jobs:
         run: find . -name "setup.sh" -not -path "./.git/*" -not -path "./.claude/*" | xargs shellcheck -S warning
 
   # ---------------------------------------------------------------------------
-  # Job 4: Agent tests (matrix)
+  # Job 4: Version consistency
+  # All plugin.json and pyproject.toml must match the root .claude-plugin/plugin.json.
+  # To bump: python scripts/bump-version.py <new-version>
+  # ---------------------------------------------------------------------------
+  check-versions:
+    name: Check version consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check all versions match root
+        run: python scripts/bump-version.py --check
+
+  # ---------------------------------------------------------------------------
+  # Job 5: Agent tests (matrix)
   # Runs per-agent test suites for agents with real Python functionality.
   # Each agent uses uv to install its deps (including the shared lib/uiux
   # package via editable path dep) and runs its own tests/.
