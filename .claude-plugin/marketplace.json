@@ -2173,6 +2173,19 @@
       "type": "skill",
       "category": "onboarding",
       "tags": ["tonone", "skill", "onboarding"]
+    },
+    {
+      "name": "contribute",
+      "description": "Contribute a discovery back to the upstream tonone repo — new skill, improved agent prompt, better routing rule. Use when you hit a gap, found a better pattern, or built something reusable that others would benefit from.",
+      "version": "0.1.0",
+      "source": "./skills/contribute",
+      "author": {
+        "name": "tonone-ai",
+        "url": "https://tonone.ai"
+      },
+      "type": "skill",
+      "category": "community",
+      "tags": ["tonone", "skill", "community"]
     }
   ]
 }
