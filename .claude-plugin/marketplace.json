@@ -368,6 +368,82 @@
       ]
     },
     {
+      "name": "deal",
+      "description": "Revenue & sales engineer \u2014 B2B pipeline, deal strategy, pricing, sales playbooks, and enterprise closing",
+      "version": "0.9.9",
+      "source": "./team/deal",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "category": "product",
+      "tags": [
+        "revenue",
+        "sales",
+        "pipeline",
+        "pricing",
+        "enterprise",
+        "product-team"
+      ]
+    },
+    {
+      "name": "keep",
+      "description": "Customer success engineer \u2014 onboarding optimization, health scoring, expansion revenue, and churn prevention",
+      "version": "0.9.9",
+      "source": "./team/keep",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "category": "product",
+      "tags": [
+        "customer-success",
+        "onboarding",
+        "retention",
+        "churn",
+        "expansion",
+        "product-team"
+      ]
+    },
+    {
+      "name": "ink",
+      "description": "Content marketing engineer \u2014 blog strategy, SEO, thought leadership, developer content, and content calendar",
+      "version": "0.9.9",
+      "source": "./team/ink",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "category": "product",
+      "tags": [
+        "content",
+        "seo",
+        "blog",
+        "developer-content",
+        "thought-leadership",
+        "product-team"
+      ]
+    },
+    {
+      "name": "buzz",
+      "description": "PR & community engineer \u2014 press pitches, social media, open source community, DevRel, and launch moments",
+      "version": "0.9.9",
+      "source": "./team/buzz",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "category": "product",
+      "tags": [
+        "pr",
+        "community",
+        "devrel",
+        "social",
+        "launch",
+        "product-team"
+      ]
+    },
+    {
       "name": "apex-plan",
       "description": "Plan and scope a project \u2014 discovery, challenge assumptions, present S/M/L options with token and cost estimates. Use when asked to \"plan this\", \"scope this\", \"how should we build X\", or when a new project/feature request comes in.",
       "version": "0.6.6",

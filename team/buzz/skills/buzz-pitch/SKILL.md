@@ -152,3 +152,6 @@ Deliver:
 ## Delivery
 
 Pitch must be ready to send. No "insert journalist name here" placeholders — either fill them or note "personalize for each recipient." Provide 3 subject line variations for A/B testing.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.

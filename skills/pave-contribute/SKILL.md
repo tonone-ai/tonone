@@ -1,8 +1,8 @@
 ---
-name: contribute
-description: Contribute a session learning back to the upstream tonone repo. Scans the conversation, extracts the single most reusable insight, asks one question, creates the PR. Use when you hit a gap, found a better pattern, or want to share a discovery.
+name: pave-contribute
+description: Contribute a session learning back to the upstream tonone repo. Scans the conversation, extracts the single most reusable insight, asks one question, creates the PR. Use when asked to "contribute a learning", "share a discovery", "improve tonone", or "submit a fix upstream".
 allowed-tools: Read, Write, Edit, Bash, AskUserQuestion
-version: 0.2.0
+version: 0.9.9
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 ---
@@ -134,3 +134,7 @@ rm -rf "$TONONE_TMP"
 - `gh` not authenticated → print "Run `gh auth login` first." Exit.
 - Nothing reusable found → print "No reusable learnings found." Exit.
 - Push fails → print error, `rm -rf "$TONONE_TMP"`, exit.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
+If output exceeds 40 lines, delegate to /atlas-report.

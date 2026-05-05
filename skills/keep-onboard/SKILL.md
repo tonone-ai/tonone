@@ -126,3 +126,4 @@ Length: 3 sentences.
 ## Delivery
 
 Produce: (1) drop-off map, (2) redesigned activation flow, (3) 5-email sequence ready to load into email tool. Every email must have a subject line, body copy, and one CTA.
+If output exceeds 40 lines, delegate to /atlas-report.

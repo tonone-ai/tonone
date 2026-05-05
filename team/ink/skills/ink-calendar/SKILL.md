@@ -136,3 +136,6 @@ Long-form blog post (2,000w)
 ## Delivery
 
 Produce the complete calendar as a table plus the distribution checklist and repurposing plan. Be specific about titles and keywords — not placeholder topics.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.

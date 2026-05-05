@@ -143,3 +143,6 @@ Month 3: [Pillar page + internal linking pass]
 ## Delivery
 
 Produce the complete SEO roadmap with topic cluster map and prioritized 90-day content plan. Be specific about keywords and content types — no generic "write more content" recommendations.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.

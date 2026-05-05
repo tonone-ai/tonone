@@ -137,3 +137,6 @@ Result: [Primary metric] | Time to value: [N days]
 ## Delivery
 
 Produce all three formats (full, spotlight, quote card) and the approval checklist. Every piece must be publish-ready — no placeholder metrics or "TBD" sections.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.

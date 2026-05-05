@@ -1,6 +1,6 @@
 [project]
 name = "volt"
-version = "0.9.7"
+version = "0.9.9"
 description = "Embedded & IoT engineer — firmware, microcontrollers, edge computing, device protocols"
 license = "MIT"
 requires-python = ">=3.10"

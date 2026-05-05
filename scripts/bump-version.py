@@ -10,6 +10,7 @@ Usage:
     python scripts/bump-version.py minor           # 0.6.6 → 0.7.0
     python scripts/bump-version.py major           # 0.6.6 → 1.0.0
     python scripts/bump-version.py --dry-run 0.7.0 # preview without writing
+    python scripts/bump-version.py --check         # exit 1 if any file is out of sync
 """
 
 import argparse
@@ -98,15 +99,61 @@ def find_files():
     return plugin_files, pyproject_files
 
 
+def check_sync():
+    """Exit 1 if any file has a version different from root."""
+    current = read_current_version()
+    plugin_files, pyproject_files = find_files()
+
+    drift = []
+
+    for pf in plugin_files:
+        data = json.loads(pf.read_text())
+        v = data.get("version", "")
+        if v != current:
+            drift.append((pf.relative_to(REPO_ROOT), v))
+
+    for pf in pyproject_files:
+        text = pf.read_text()
+        match = re.search(r'^version\s*=\s*"([^"]*)"', text, re.MULTILINE)
+        if match and match.group(1) != current:
+            drift.append((pf.relative_to(REPO_ROOT), match.group(1)))
+
+    if drift:
+        print(f"Version drift detected (root = {current}):\n", file=sys.stderr)
+        for path, v in drift:
+            print(f"  {v}  {path}", file=sys.stderr)
+        print(
+            f"\nFix: python scripts/bump-version.py {current}",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    print(f"All files at {current}. OK.")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Bump version across all manifests")
     parser.add_argument(
-        "version", help="New version (X.Y.Z) or bump type (patch/minor/major)"
+        "version",
+        nargs="?",
+        help="New version (X.Y.Z) or bump type (patch/minor/major)",
     )
     parser.add_argument(
         "--dry-run", action="store_true", help="Preview changes without writing"
     )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Exit 1 if any file is out of sync with root version",
+    )
     args = parser.parse_args()
+
+    if args.check:
+        check_sync()
+        return
+
+    if not args.version:
+        parser.error("version argument required unless --check is used")
 
     current = read_current_version()
     new_version = resolve_version(args.version, current)

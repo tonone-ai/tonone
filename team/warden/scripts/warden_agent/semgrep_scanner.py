@@ -8,9 +8,9 @@ import subprocess
 import sys
 import time
 
-# reach team/shared from team/warden/scripts/
+# reach lib/shared from repo root
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../.."))
-from team.shared.report_schema import Finding
+from lib.shared.report_schema import Finding
 
 
 def check_semgrep() -> tuple[bool, str]:

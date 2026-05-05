@@ -133,3 +133,4 @@ Probe question: [question that moves conversation forward]
 ## Delivery
 
 Produce the complete playbook artifact as a markdown document, ready to drop into Notion, Confluence, or a sales playbook system. Include a one-line "when to use this" header.
+If output exceeds 40 lines, delegate to /atlas-report.

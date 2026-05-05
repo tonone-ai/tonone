@@ -16,7 +16,10 @@ import json
 from pathlib import Path
 
 REPO = Path(__file__).parent.parent
-AGENTS = sorted([d.name for d in (REPO / "team").iterdir() if d.is_dir()])
+AGENTS = sorted([
+    d.name for d in (REPO / "team").iterdir()
+    if d.is_dir() and (d / ".claude-plugin" / "plugin.json").exists()
+])
 
 
 # ---------------------------------------------------------------------------
@@ -96,27 +99,19 @@ def test_skills_have_minimum_content():
 # ---------------------------------------------------------------------------
 
 
-def test_marketplace_json_skill_count():
+def test_marketplace_json_lists_all_agents():
     """
-    If marketplace.json has a 'skills' array, it must match the actual count of
-    skill directories. A mismatch means the manifest was not updated after adding
-    or removing skills.
-
-    Note: the current marketplace.json uses a 'plugins' array (bundle registry),
-    not a 'skills' array — so this test is a no-op today and activates automatically
-    if a skills index is added later.
+    Every agent in team/ must have a matching entry in marketplace.json plugins.
+    Adding an agent to team/ without registering it means it won't appear in
+    the registry for install by name.
     """
     manifest_path = REPO / ".claude-plugin" / "marketplace.json"
     if not manifest_path.exists():
-        return  # no manifest at all — skip
+        return
     manifest = json.loads(manifest_path.read_text())
-    if "skills" not in manifest:
-        return  # manifest exists but has no skills index — skip
-    actual_skills = len([d for d in (REPO / "skills").iterdir() if d.is_dir()])
-    listed_skills = len(manifest["skills"])
-    assert (
-        listed_skills == actual_skills
-    ), f"marketplace.json lists {listed_skills} skills but skills/ has {actual_skills} dirs"
+    listed_names = {p["name"] for p in manifest.get("plugins", [])}
+    missing = [a for a in AGENTS if a not in listed_names]
+    assert not missing, f"Agents in team/ missing from marketplace.json plugins: {missing}"
 
 
 # ---------------------------------------------------------------------------
