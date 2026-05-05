@@ -118,3 +118,5 @@
 2026-05-05 21:50 : feat: add 4 revenue and marketing agents — Deal, Keep, Ink, Buzz — @fatih
 2026-05-05 22:11 : feat(agents): embed extreme growth playbooks into Deal, Keep, Ink, Buzz — @fatih
 2026-05-05 22:16 : docs: shoutout nexu-io/open-design in README — @fatih
+2026-05-05 22:18 : fix(ci): drop uv from agent matrix, use pip install directly — @fatih
+2026-05-05 22:19 : chore: merge main, resolve ELEPHANT.md conflict — @fatih
