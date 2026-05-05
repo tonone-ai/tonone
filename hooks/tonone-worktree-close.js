@@ -4,9 +4,12 @@
 // If the current session is in a worktree with changes, prints a /ship prompt.
 // Clean worktrees are left in place — pruning happens at SessionStart, not here,
 // because Stop fires after every assistant turn (not just at true session exit).
+// For main-branch sessions, suggests /contribute once per session if agents ran.
 // Silent-fails on any error — never block the user's workflow.
 
 const { execSync } = require("child_process");
+const fs = require("fs");
+const os = require("os");
 const path = require("path");
 
 /** Detect default branch: remote HEAD → fallback to main → master. */
@@ -46,7 +49,25 @@ process.stdin.on("end", () => {
     } catch {
       process.exit(0);
     }
-    if (gitDir === commonDir) process.exit(0); // Not in a worktree
+    if (gitDir === commonDir) {
+      // Main branch session — suggest /contribute once per session if agents ran
+      const sessionAgentsFile = path.join(".claude", "session-agents");
+      let agentsUsed = false;
+      try {
+        agentsUsed = fs.readFileSync(sessionAgentsFile, "utf8").trim().length > 0;
+      } catch {}
+      if (agentsUsed) {
+        const sessionId = ((JSON.parse(input) || {}).session_id || "").replace(/[^a-z0-9]/gi, "");
+        if (sessionId) {
+          const flagFile = path.join(os.tmpdir(), `tonone-contribute-${sessionId}`);
+          if (!fs.existsSync(flagFile)) {
+            fs.writeFileSync(flagFile, "1");
+            console.log("\nSession had agent activity. Run /contribute to share any learnings upstream.");
+          }
+        }
+      }
+      process.exit(0);
+    }
 
     // 2. Gather context
     const branch = execSync("git rev-parse --abbrev-ref HEAD", {
@@ -83,6 +104,7 @@ process.stdin.on("end", () => {
       console.log(
         `\nWorktree: ${branch}\n` +
           `Changes detected. Run /ship to open a PR.\n` +
+          `Discovered something reusable? Run /contribute to PR it upstream.\n` +
           `To discard: git -C "${mainRepoPath}" worktree remove --force "${worktreePath}" ` +
           `&& git -C "${mainRepoPath}" branch -D ${branch}\n`,
       );
