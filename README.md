@@ -452,6 +452,7 @@ Tonone stands on the shoulders of giants. Big thanks to the plugins that shaped 
 | **frontend-design** | Frontend implementation patterns that Prism and Touch draw from                                                                 |
 | **ui-ux-pro-max**   | 161 color palettes, 84 UI styles, 57 font pairings, 99 UX guidelines, and the BM25 design search engine now powering `lib/uiux` |
 | **caveman**         | The communication mode that cuts every response to its bones — no fluff, all signal                                             |
+| **open-design**     | 19 design skills and the I-Lang brief protocol that power `form-brief`, the hand-drawn wireframe mode in `draft-wireframe`, and the HTML radar report in `form-critique` — [nexu-io/open-design](https://github.com/nexu-io/open-design) |
 
 ## License
 
