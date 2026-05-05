@@ -19,7 +19,11 @@ SKILLS_DIR = REPO / "skills"
 SKILL_DIRS = sorted([d for d in SKILLS_DIR.iterdir() if d.is_dir()])
 
 # Valid agent names (skill prefix must be one of these)
-VALID_AGENTS = sorted([d.name for d in (REPO / "team").iterdir() if d.is_dir()])
+_AGENT_DIRS = [
+    d for d in (REPO / "team").iterdir()
+    if d.is_dir() and (d / ".claude-plugin" / "plugin.json").exists()
+]
+VALID_AGENTS = sorted(d.name for d in _AGENT_DIRS)
 
 # The exact output-kit integration line that every skill must include
 OUTPUT_KIT_REFERENCE = "output-kit"
@@ -35,14 +39,14 @@ SHORT_FORM_SKILLS = {"apex-status"}
 # Root-level cross-agent skills — not tied to any single agent in team/.
 # Exempt from the agent-prefix rule and from output-kit/atlas-report refs
 # because they do not produce structured CLI output.
-SPECIAL_SKILLS = {"tonone-onboard"}
+SPECIAL_SKILLS = {"tonone-onboard", "contribute"}
 
 # Agent entry-point skills — single-word names (/apex, /helm, /forge, etc.).
 # These are intake routers: the user hands the agent a task and the skill
 # routes internally to the right sub-skill. They follow different naming
 # rules (no agent-action hyphen required) and different output rules
 # (they delegate output to the sub-skill, never produce CLI output directly).
-AGENT_ENTRY_SKILLS = {d.name for d in (REPO / "team").iterdir() if d.is_dir()}
+AGENT_ENTRY_SKILLS = {d.name for d in _AGENT_DIRS}
 
 # Known severity indicator violations — real drift, tracked for cleanup.
 # Remove entries as they get fixed in the skill definitions.
@@ -128,9 +132,10 @@ def test_frontmatter_name_matches_directory():
 def test_skill_name_is_kebab_case():
     """Skill names must be kebab-case (lowercase with hyphens, alphanumeric segments).
     Agent entry-point skills (single-word: /apex, /helm, etc.) are exempt —
-    they are the agent itself, not an agent-action pair."""
+    they are the agent itself, not an agent-action pair.
+    Special cross-agent meta-skills (tonone-onboard, contribute) are also exempt."""
     for name, _ in _skill_files():
-        if name in AGENT_ENTRY_SKILLS:
+        if name in AGENT_ENTRY_SKILLS or name in SPECIAL_SKILLS:
             continue
         assert re.match(
             r"^[a-z][a-z0-9]*(-[a-z][a-z0-9]*)+$", name
@@ -166,7 +171,7 @@ def test_description_has_trigger_phrases():
     # Match quoted strings in the description
     quote_pattern = re.compile(r'"[^"]{3,}"')
     for name, path in _skill_files():
-        if name in AGENT_ENTRY_SKILLS:
+        if name in AGENT_ENTRY_SKILLS or name in SPECIAL_SKILLS:
             continue
         fm, _ = _parse_frontmatter(path)
         desc = fm.get("description", "")
@@ -238,6 +243,8 @@ def test_skills_have_identity_or_title():
     Without one of these, the LLM has no role context when executing the skill.
     """
     for name, path in _skill_files():
+        if name in SPECIAL_SKILLS:
+            continue
         text = path.read_text()
         prefix = name.split("-")[0].capitalize()
         has_identity = f"You are {prefix}" in text

@@ -12,6 +12,6 @@ def test_rejects_disallowed_domain():
 
 
 def test_query_returns_results():
-    results = query("landing", "SaaS", limit=2)
+    results = query("landing", "hero", limit=2)
     assert isinstance(results, list)
     assert len(results) > 0

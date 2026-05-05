@@ -20,7 +20,10 @@ AGENT_FILES = sorted(AGENTS_DIR.glob("*.md"))
 AGENT_NAMES = [f.stem for f in AGENT_FILES]
 
 # Valid agents from team/ directory (source of truth for the roster)
-TEAM_AGENTS = sorted([d.name for d in (REPO / "team").iterdir() if d.is_dir()])
+TEAM_AGENTS = sorted([
+    d.name for d in (REPO / "team").iterdir()
+    if d.is_dir() and (d / ".claude-plugin" / "plugin.json").exists()
+])
 
 # Only Apex gets opus — everyone else must be sonnet
 OPUS_AGENTS = {"apex"}
