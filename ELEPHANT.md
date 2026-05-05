@@ -122,3 +122,4 @@
 2026-05-05 22:28 : chore: sync all versions to 0.9.9, add CI version gate — @fatih
 2026-05-05 22:35 : docs: update CHANGELOG with version sync and CI gate changes — @fatih
 2026-05-05 22:40 : Merge main: resolve conflicts, add buzz/deal/ink/keep to marketplace — @fatih
+2026-05-05 22:55 : feat(apex): add health aggregator + dependency graph depth layer (#84) — @fatih
