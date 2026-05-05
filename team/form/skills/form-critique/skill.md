@@ -6,8 +6,11 @@ description: |
   good design", "design feedback", or "review this UI". Different from /form-audit (which is
   technical QA for consistency/compliance) — form-critique evaluates design as a craft object:
   philosophy, hierarchy, execution, function, and innovation each scored 0–10 with a punch list.
+  Add "as a report" or "give me a visual report" to produce an HTML file with SVG radar chart,
+  evidence cards, and Keep/Fix/Quick-wins action lists — useful for design reviews and stakeholder
+  presentations instead of CLI output.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 ---
@@ -19,6 +22,20 @@ You are Form — the visual designer on the Product Team. A design critique is n
 Read it cold. Before rationalizing.
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
+---
+
+## Output mode selection
+
+**CLI mode (default):** ASCII radar chart + scored table + punch list. Fast. Fits in a terminal.
+
+**HTML report mode:** Triggered by "as a report", "give me a visual report", "HTML critique", or "critique report". Produces a self-contained `critique-report.html` with:
+- SVG pentagon radar chart (no libraries, inline SVG)
+- Five scored dimension cards with evidence paragraphs
+- Combined Keep / Fix / Quick-wins action lists at bottom
+- Styled with the active DESIGN.md tokens, or a neutral off-white fallback
+
+Choose HTML mode when the critique will be shared with stakeholders, presented in a design review, or discussed async.
 
 ---
 
@@ -195,3 +212,66 @@ Three sections — be specific, not generic:
 - Generic fixes ("improve visual hierarchy") without specifying exactly what to change
 - Praising innovation for novelty alone — a bizarre design choice is not innovative unless it serves the work
 - Skipping the cold read — rationalization ruins honest first impressions
+
+---
+
+## HTML Report Mode — Implementation
+
+When producing the HTML report:
+
+### SVG Radar Chart
+
+Build a pentagon radar with 5 axes (Coherence, Hierarchy, Craft, Function, Innovation). Each axis runs from center (0) to vertex (10). Plot actual scores as a filled polygon.
+
+Construction:
+- Pentagon center: (150, 150). Radius: 100px.
+- Vertices at 5 equal angles starting from top (−90°): 
+  - Coherence: top (90° = −90° from right)
+  - Hierarchy: top-right
+  - Craft: bottom-right
+  - Function: bottom-left
+  - Innovation: top-left
+- Score polygon: scale each vertex by `score/10` from center
+- Fill: accent color at 30% opacity. Stroke: accent color.
+- Axis lines: thin gray from center to each vertex vertex
+- Score labels: small text at each vertex
+
+### Dimension cards
+
+One card per dimension. Each card:
+- Dimension name + score `X / 10` + band label (Broken / Functional / Strong / Exceptional)
+- Evidence paragraph: 30–80 words, naming specific elements. No vague "feels off".
+- One Keep, one Fix, one Quick-win bullet
+
+Bands: 0–4 Broken · 5–6 Functional · 7–8 Strong · 9–10 Exceptional
+
+### Action lists
+
+Three lists at bottom of report:
+- **Keep** (3–5 bullets) — what's working; cite by element/class/section
+- **Fix** (3–6 bullets) — ordered by visual cost saved per minute spent
+- **Quick wins** (3–5 bullets) — 5–15 min each, disproportionate impact
+
+### Output contract
+
+Write `critique-report.html` to the project root.
+
+One sentence before: "Critique complete — report written to critique-report.html."
+
+CLI box as receipt:
+
+```
+┌── form-critique (report) ────────────────────────────────┐
+│ Artifact: [what was reviewed]                            │
+│ Score:    [sum]/50 · [band: shipping / iteration / rethink]│
+│ Report:   critique-report.html                           │
+└──────────────────────────────────────────────────────────┘
+```
+
+### Hard rules for HTML mode
+
+- All 5 dimensions always scored — no partial reports
+- Evidence required per score — "scored 4 because..." not "feels inconsistent"
+- Don't grade-inflate — mean above 8 is suspicious, audit yourself
+- Single-file HTML — no external CSS/JS, inline everything
+- Radar chart is mandatory in HTML mode

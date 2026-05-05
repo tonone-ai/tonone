@@ -81,6 +81,10 @@
     {
       "name": "form-critique",
       "path": "skills/form-critique/skill.md"
+    },
+    {
+      "name": "form-brief",
+      "path": "skills/form-brief/skill.md"
     }
   ]
 }
