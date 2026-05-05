@@ -83,3 +83,5 @@ If only medium/low:
 
 If clean:
 > **Clean scan.** No issues found by Semgrep or pip-audit.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose. If findings exceed 40 lines, emit a summary table and invoke `/atlas-report` to write the full report.
