@@ -1,6 +1,6 @@
 {
   "name": "relay-deploy",
-  "version": "0.9.7",
+  "version": "0.9.9",
   "description": "Set up a complete deployment configuration \u2014 Dockerfile, deployment manifest, environment config, and rollback procedure. Use when asked about \"deployment setup\", \"how do I deploy this\", \"deployment strategy\", or \"rollback plan\".",
   "author": {
     "name": "tonone-ai",

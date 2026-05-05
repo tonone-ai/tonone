@@ -118,3 +118,4 @@
 2026-05-05 21:50 : feat: add 4 revenue and marketing agents — Deal, Keep, Ink, Buzz — @fatih
 2026-05-05 22:11 : feat(agents): embed extreme growth playbooks into Deal, Keep, Ink, Buzz — @fatih
 2026-05-05 22:16 : docs: shoutout nexu-io/open-design in README — @fatih
+2026-05-05 22:28 : chore: sync all versions to 0.9.9, add CI version gate — @fatih

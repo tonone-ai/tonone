@@ -1,6 +1,6 @@
 [project]
 name = "warden"
-version = "0.9.8"
+version = "0.9.9"
 description = "Security engineer — IAM, secrets, compliance, threat modeling"
 license = "MIT"
 requires-python = ">=3.10"
