@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-23 specialists. Engineering executes. Product decides. One session, two commands, zero meetings. 161 skills across every discipline. MIT licensed.
+27 specialists. Engineering executes. Product decides. One session, two commands, zero meetings. 186 skills across every discipline. MIT licensed.
 
 ## The idea
 
@@ -157,7 +157,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `skills/<name>/SKILL.md`). The Claude Code plugin system installs all 23 agents and 161 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `skills/<name>/SKILL.md`). The Claude Code plugin system installs all 27 agents and 186 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 

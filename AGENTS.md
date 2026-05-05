@@ -2,7 +2,7 @@
 
 > Codex users: start here. Claude Code users: see `CLAUDE.md`.
 
-23 specialists just showed up. Engineering executes. Product decides.
+27 specialists just showed up. Engineering executes. Product decides.
 
 ## Engineering Team — 15 agents
 
@@ -24,7 +24,7 @@
 | **Proof**  | QA & Testing                | Test strategy, E2E suites, integration testing, flaky triage  |
 | **Pave**   | Platform Engineering        | Developer experience, golden paths, service catalogs          |
 
-## Product Team — 8 agents
+## Product Team — 12 agents
 
 | Agent     | Hat               | Owns                                                            |
 | --------- | ----------------- | --------------------------------------------------------------- |
@@ -36,6 +36,10 @@
 | **Crest** | Product Strategy  | Roadmap planning, prioritization, competitive analysis          |
 | **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy            |
 | **Surge** | Growth            | Acquisition channels, activation funnels, retention playbooks   |
+| **Deal**  | Revenue & Sales   | B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing |
+| **Keep**  | Customer Success  | Onboarding optimization, health scoring, expansion revenue, churn prevention |
+| **Ink**   | Content Marketing | Blog strategy, SEO, thought leadership, developer content, content calendar |
+| **Buzz**  | PR & Community    | Press pitches, social media, open source community, DevRel, launch moments |
 
 ## Helm↔Apex Interface
 
@@ -48,11 +52,11 @@ tonone/
 ├── agents/           ← agent definitions (read these to embody an agent)
 │   ├── apex.md
 │   ├── forge.md
-│   └── ...           (23 files)
+│   └── ...           (27 files)
 ├── skills/           ← skill workflows (read these to follow a skill)
 │   ├── apex-plan/SKILL.md
 │   ├── forge-audit/SKILL.md
-│   └── ...           (125 directories)
+│   └── ...           (145+ directories)
 ├── team/             ← source of truth per agent (canonical skills, hooks, scripts)
 ├── docs/             ← naming guide, architecture, output kit
 └── templates/        ← scaffolding for new agents

@@ -68,7 +68,7 @@ const banner = [
   "╔" + "═".repeat(W) + "╗",
   row(`tonone v${version} installed!`),
   "╠" + "═".repeat(W) + "╣",
-  row("You have 23 agents and 100+ skills."),
+  row("You have 27 agents and 140+ skills."),
   row(""),
   row("Run /tonone-onboard for a guided tour."),
   row("Takes ~90 sec (expert) or ~8 min (newcomer)."),

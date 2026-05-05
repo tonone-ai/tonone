@@ -1,6 +1,6 @@
 # tonone — Engineering + Product Team
 
-Two AI teams. 23 agents total. Engineering executes. Product decides what to build and why.
+Two AI teams. 27 agents total. Engineering executes. Product decides what to build and why.
 
 ## Engineering Team — 15 agents
 
@@ -22,7 +22,7 @@ Two AI teams. 23 agents total. Engineering executes. Product decides what to bui
 | **Proof** | QA & Testing | Test strategy, E2E suites, integration testing, flaky triage |
 | **Pave** | Platform Engineering | Developer experience, golden paths, service catalogs |
 
-## Product Team — 8 agents
+## Product Team — 12 agents
 
 | Agent | Hat | Owns |
 |-------|-----|------|
@@ -34,6 +34,10 @@ Two AI teams. 23 agents total. Engineering executes. Product decides what to bui
 | **Crest** | Product Strategy | Roadmap planning, prioritization, competitive analysis |
 | **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy |
 | **Surge** | Growth | Acquisition channels, activation funnels, retention playbooks |
+| **Deal** | Revenue & Sales | B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing |
+| **Keep** | Customer Success | Onboarding optimization, health scoring, expansion revenue, churn prevention |
+| **Ink** | Content Marketing | Blog strategy, SEO, thought leadership, developer content, content calendar |
+| **Buzz** | PR & Community | Press pitches, social media, open source community, DevRel, launch moments |
 
 ## Helm↔Apex Interface
 
@@ -44,7 +48,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (23 total: 15 engineering + 8 product)
+├── agents/                 ← all agent definitions (27 total: 15 engineering + 12 product)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

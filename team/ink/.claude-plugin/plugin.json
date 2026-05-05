@@ -1,0 +1,19 @@
+{
+  "name": "ink",
+  "version": "0.1.0",
+  "description": "Content Marketing engineer — blog strategy, SEO, thought leadership, developer content, and content calendar",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "content",
+    "seo",
+    "blog",
+    "thought-leadership",
+    "developer-content",
+    "product-team"
+  ]
+}
