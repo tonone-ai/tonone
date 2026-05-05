@@ -116,3 +116,4 @@ When expansion conversations hit blockers:
 ## Delivery
 
 Produce the complete expansion playbook with triggers, conversation guides, and email templates. Flag which triggers require product instrumentation to detect.
+If output exceeds 40 lines, delegate to /atlas-report.

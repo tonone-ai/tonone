@@ -185,3 +185,6 @@ Deliver all launch assets:
 ## Delivery
 
 Produce the complete launch kit with all assets written out and ready to use. Every piece should be copy-paste ready on launch day — no open questions.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.

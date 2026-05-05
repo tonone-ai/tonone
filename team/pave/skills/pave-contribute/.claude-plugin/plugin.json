@@ -1,0 +1,12 @@
+{
+  "name": "tonone-pave-contribute",
+  "version": "0.9.9",
+  "description": "Contribute a session learning back to the tonone repo",
+  "skills": [
+    {
+      "name": "pave-contribute",
+      "description": "Contribute a session learning back to the upstream tonone repo.",
+      "skill": "SKILL.md"
+    }
+  ]
+}

@@ -108,3 +108,4 @@ Output the complete pipeline design as a markdown document:
 ## Delivery
 
 Produce the complete pipeline document. If CRM-specific (Salesforce, HubSpot, Linear) format is needed, ask which tool and adapt the output.
+If output exceeds 40 lines, delegate to /atlas-report.

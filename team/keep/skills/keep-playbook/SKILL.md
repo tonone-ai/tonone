@@ -130,3 +130,4 @@ Win-back rates: 10-20% is excellent. 5-10% is normal. Under 5% suggests the root
 ## Delivery
 
 Produce complete playbook with all email copy written out, subject lines included, and call guides ready to use. Every piece should be ready to send without editing.
+If output exceeds 40 lines, delegate to /atlas-report.

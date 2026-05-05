@@ -129,3 +129,6 @@ internal_links: [list of URLs to add internal links to]
 ## Delivery
 
 Produce the complete post, SEO metadata, and distribution note. Post must be publish-ready — no placeholder sections, no "insert example here."
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+If output exceeds 40 lines, delegate to /atlas-report.
