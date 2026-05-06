@@ -21,7 +21,7 @@ PLUGINS=(
 	"tonone-proof"
 	"tonone-pave"
 
-	# Product Team (8)
+	# Product Team (12)
 	"tonone-helm"
 	"tonone-echo"
 	"tonone-lumen"
@@ -30,6 +30,10 @@ PLUGINS=(
 	"tonone-crest"
 	"tonone-pitch"
 	"tonone-surge"
+	"tonone-deal"
+	"tonone-keep"
+	"tonone-ink"
+	"tonone-buzz"
 )
 
 echo ""
@@ -42,7 +46,7 @@ if command -v claude &>/dev/null; then
 		claude plugin install "${plugin}@${MARKETPLACE}" || echo "  WARNING: Failed to install ${plugin}, skipping"
 	done
 	echo ""
-	echo "Done! Full team installed — Engineering + Product."
+	echo "Done! Full team installed — Engineering + Product (27 agents)."
 else
 	echo "Run these commands to install each agent:"
 	echo ""
