@@ -2,6 +2,9 @@
 > Team memory managed by [🐘 elephant](https://github.com/tonone-ai/elephant) — commit this file with your changes. Shared across sessions, repos, and teammates.
 ---
 
+2026-05-06 08:36 : feat(bundle): add revenue-team (deal+keep) and marketing-team (ink+buzz) bundles — PR #86 merged, CI green — @fatih
+2026-05-06 08:36 : chore: synced 199 files from 0.9.9 → 1.0.0 (all team/skills/bundles); v1.0.0 release had skipped bump-version, CI version-consistency was failing on main — @fatih
+2026-05-06 08:36 : bundle/product-team and bundle/full-team now include all 4 revenue/marketing agents (deal/keep/ink/buzz) — 27 agents in full-team confirmed — @fatih
 2026-05-05 22:26 : version drift found — root=0.9.9, warden=0.9.8, most team/skills/bundles=0.9.7, new agents (buzz/deal/ink/keep)=0.1.0, README badge=0.9.7 — 194 files need sync; run `python scripts/bump-version.py 0.9.9` + fix README badge manually — @fatih
 2026-05-05 21:23 : [!!] strategy(tonone): 100M EUR path locked — deepen 5 agents (Warden/Forge/Cortex/Spine/Apex) with real tool integration, then tonone.ai cloud; CEO plan at ~/.gstack/projects/tonone-ai-tonone/ceo-plans/2026-05-02-depth-5-killer-agents.md — @fatih
 2026-05-05 21:23 : strategy(tonone): 5-week seq — Week1 report schema+Warden, Week2 Forge, Week3 Cortex+Spine parallel, Week4 Apex+demo; use pip-audit not raw NVD API — @fatih
