@@ -1,6 +1,6 @@
 {
   "name": "vigil-recon",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "Observability reconnaissance \u2014 inventory what monitoring exists, map coverage, highlight blind spots. Use when asked \"what monitoring exists\", \"observability assessment\", or \"what can we see\".",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 {
   "name": "echo-jobs",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "Jobs-to-Be-Done analysis \u2014 given a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces analysis and opportunity ranking. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", \"JTBD framework\", or \"why are users switching\".",
   "author": {
     "name": "tonone-ai",

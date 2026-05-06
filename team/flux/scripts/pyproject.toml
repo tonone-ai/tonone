@@ -1,6 +1,6 @@
 [project]
 name = "flux"
-version = "0.9.9"
+version = "1.0.0"
 description = "Data engineer — databases, migrations, pipelines, data modeling"
 license = "MIT"
 requires-python = ">=3.10"

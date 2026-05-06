@@ -1,6 +1,6 @@
 {
   "name": "draft-review",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "Usability review \u2014 evaluate an existing flow or UI against usability heuristics, flag friction points, and recommend fixes. Use when asked to \"review the UX\", \"usability audit\", \"what's wrong with this flow\", \"UX feedback\", \"critique this design\", or \"why are users dropping off here\".",
   "author": {
     "name": "tonone-ai",

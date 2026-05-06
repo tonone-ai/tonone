@@ -1,6 +1,6 @@
 [project]
 name = "surge"
-version = "0.9.9"
+version = "1.0.0"
 description = "Growth engineer — acquisition channels, activation funnels, retention playbooks, and PLG strategy"
 license = "MIT"
 requires-python = ">=3.10"

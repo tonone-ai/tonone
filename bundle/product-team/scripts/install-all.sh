@@ -12,6 +12,10 @@ PLUGINS=(
 	"tonone-crest"
 	"tonone-pitch"
 	"tonone-surge"
+	"tonone-deal"
+	"tonone-keep"
+	"tonone-ink"
+	"tonone-buzz"
 )
 
 echo ""

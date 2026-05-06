@@ -1,6 +1,6 @@
 [project]
 name = "vigil"
-version = "0.9.9"
+version = "1.0.0"
 description = "Observability & reliability engineer — monitoring, alerting, SRE, incident response, SLOs"
 license = "MIT"
 requires-python = ">=3.10"

@@ -138,3 +138,5 @@
 2026-05-05 23:57 : sync: apex-review, cortex-eval, spine-perf root skills drifted from team/ — missing analyzer step-0 content, fixed — @fatih
 [!!] 2026-05-05 23:57 : PR #85 chore-sync-post-084-updates — 253 files, 2 commits, 54/54 tests pass — @fatih
 [!!] 2026-05-06 07:56 : release 1.0.0 — 6 features, 2 fixes — @fatih
+2026-05-06 08:32 : feat(bundle): add revenue-team and marketing-team bundles, update product/full-team — @fatih
+2026-05-06 08:34 : chore: sync all versions to 1.0.0 — @fatih
