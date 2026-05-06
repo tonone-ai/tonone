@@ -1,6 +1,6 @@
 {
   "name": "cortex",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ML/AI engineer \u2014 model training, MLOps, feature engineering, LLM integration",
   "author": {
     "name": "tonone-ai",

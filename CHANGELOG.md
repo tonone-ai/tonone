@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-05-06
+
+### Added
+
+- **Revenue team expanded** — Deal and Keep each gain 3 new skills: `deal-qualify` (MEDDPICC worksheet), `deal-proposal` (B2B proposal generator), `deal-outreach` (cold outbound sequence builder); `keep-qbr` (QBR template), `keep-churn` (churn risk and intervention), `keep-segment` (customer segmentation model). Revenue-team bundle gains Surge as third agent (6 skills: surge-activation, surge-experiment, surge-landing, surge-plg, surge-recon, surge-retention).
+- **Marketing team expanded** — Ink and Buzz each gain 3 new skills: `ink-brief` (content brief generator), `ink-cluster` (topic cluster architecture), `ink-distribute` (distribution plan per piece); `buzz-devrel` (developer relations playbook), `buzz-outreach` (media/podcast pitch personalizer), `buzz-hn` (HN post crafter with anti-shadowban rules). Marketing-team bundle gains Pitch as third agent (6 skills: pitch-copy, pitch-landing, pitch-launch, pitch-message, pitch-position, pitch-recon).
+- **Python analyzers** — all 4 revenue/marketing agents now have real analyzer modules: `deal_agent/pipeline_scanner.py` (CRM artifact detection, playbook coverage), `keep_agent/health_scorer.py` (onboarding coverage, churn signals), `ink_agent/topic_cluster.py` (content coverage, SEO signals), `buzz_agent/outreach_tracker.py` (press assets, community health). 134 tests, all passing.
+- **Hooks** — `post_install` hooks wired to all 4 agents (deal, keep, ink, buzz), matching engineering-team pattern.
+- **Bundle manifests** — revenue-team and marketing-team bundles gain `.claude-plugin/plugin.json`, making them installable as standalone plugins.
+
 ## [1.0.0] - 2026-05-06
 
 ### Added

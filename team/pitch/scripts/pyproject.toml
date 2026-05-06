@@ -1,6 +1,6 @@
 [project]
 name = "pitch"
-version = "1.0.0"
+version = "1.1.0"
 description = "Product marketer — positioning, messaging, value proposition, GTM strategy, and launch copy"
 license = "MIT"
 requires-python = ">=3.10"

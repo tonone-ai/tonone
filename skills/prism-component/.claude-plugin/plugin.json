@@ -1,6 +1,6 @@
 {
   "name": "prism-component",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Implement a reusable, accessible, typed component from a design spec. Use when asked to \"create a component\", \"build a widget\", \"implement this design\", or \"reusable UI element\".",
   "author": {
     "name": "tonone-ai",

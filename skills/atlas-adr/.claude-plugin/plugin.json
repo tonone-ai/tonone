@@ -1,6 +1,6 @@
 {
   "name": "atlas-adr",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Write an Architecture Decision Record \u2014 document what was decided, why, what alternatives were considered, and what trade-offs were accepted. Use when asked to \"write an ADR\", \"document this decision\", or \"why did we choose X\".",
   "author": {
     "name": "tonone-ai",

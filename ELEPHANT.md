@@ -146,3 +146,7 @@
 2026-05-06 08:34 : chore: sync all versions to 1.0.0 — @fatih
 2026-05-06 22:23 : recon: revenue/marketing teams (deal/keep/ink/buzz) all at v0.1.0 — no Python analyzers, no tests, no hooks vs forge/spine parity — @fatih
 2026-05-06 22:23 : plan: S/M/L options scoped for extending rev+mktg teams — M recommended (12 new skills + pytest + Python analyzers) — awaiting user decision — @fatih
+2026-05-06 22:56 : feat(rev-mktg): extend revenue and marketing teams to production parity — @fatih
+2026-05-06 23:02 : fix: pre-landing review fixes — remove dead sitemap check, tighten dir filter, fix test comment — @fatih
+2026-05-06 23:10 : docs(sitemap): update sitemap for v1.1.0 — 182 skills, 26 install hooks, bundle changes — @fatih
+2026-05-06 23:11 : chore: bump all manifests to 1.1.0 (201 files) — @fatih

@@ -1,6 +1,6 @@
 {
   "name": "touch-audit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Mobile audit \u2014 app size, startup time, crash reporting, store compliance, accessibility, offline behavior. Use when asked for \"mobile review\", \"app store readiness\", \"mobile performance\", or \"crash analysis\".",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 {
   "name": "relay-pipeline",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Build a full CI/CD pipeline from scratch. Use when asked to \"set up CI/CD\", \"create pipeline\", or \"automate deploys\".",
   "author": {
     "name": "tonone-ai",
