@@ -1,6 +1,6 @@
 [project]
 name = "keep"
-version = "0.9.9"
+version = "1.0.0"
 description = "---"
 license = "MIT"
 requires-python = ">=3.10"
