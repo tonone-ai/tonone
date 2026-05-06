@@ -1,6 +1,6 @@
 {
   "name": "pitch-message",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Messaging framework \u2014 produce a full headline, subheadline, proof points, and CTA hierarchy for use across all surfaces. Use when asked to \"write our messaging\", \"messaging framework\", \"what should our headline say\", \"copy hierarchy\", \"tagline and messaging\", or \"how do we talk about the product\".",
   "author": {
     "name": "tonone-ai",

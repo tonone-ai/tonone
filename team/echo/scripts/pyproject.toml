@@ -1,6 +1,6 @@
 [project]
 name = "echo"
-version = "1.0.0"
+version = "1.1.0"
 description = "User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis"
 license = "MIT"
 requires-python = ">=3.10"

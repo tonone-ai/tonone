@@ -1,6 +1,6 @@
 {
   "name": "vigil-check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Verify observability posture \u2014 audit monitoring coverage, find blind spots, prioritize gaps. Use when asked \"is monitoring sufficient\", \"observability review\", \"are we covered\", or \"pre-launch monitoring check\".",
   "author": {
     "name": "tonone-ai",

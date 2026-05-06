@@ -1,6 +1,6 @@
 {
   "name": "prism-audit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Frontend audit \u2014 bundle size, dependencies, accessibility, performance, component quality. Use when asked for \"frontend review\", \"performance audit\", \"accessibility check\", or \"bundle size\".",
   "author": {
     "name": "tonone-ai",

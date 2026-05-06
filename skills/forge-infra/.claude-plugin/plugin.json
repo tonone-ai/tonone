@@ -1,6 +1,6 @@
 {
   "name": "forge-infra",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Build production-grade infrastructure as code for a service or project. Use when asked to \"set up infra\", \"provision infrastructure\", \"create cloud resources\", \"IaC for this project\", \"terraform for this\", or \"deploy this service\".",
   "author": {
     "name": "tonone-ai",

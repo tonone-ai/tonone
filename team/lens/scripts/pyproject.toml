@@ -1,6 +1,6 @@
 [project]
 name = "lens"
-version = "1.0.0"
+version = "1.1.0"
 description = "Data analytics & BI engineer — dashboards, metrics design, reporting, data storytelling"
 license = "MIT"
 requires-python = ">=3.10"

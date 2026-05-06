@@ -1,6 +1,6 @@
 {
   "name": "cortex-recon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ML reconnaissance \u2014 inventory all models, pipelines, data sources, and monitoring. Use when asked \"what ML do we have\", \"model inventory\", or \"ML assessment\".",
   "author": {
     "name": "tonone-ai",

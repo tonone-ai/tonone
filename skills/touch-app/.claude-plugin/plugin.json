@@ -1,6 +1,6 @@
 {
   "name": "touch-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Produce a complete mobile app architecture design \u2014 platform choice, navigation structure, state management, data layer, key screens. Use when asked to \"build a mobile app\", \"new app\", \"create iOS/Android app\", \"app architecture\", or \"cross-platform app\".",
   "author": {
     "name": "tonone-ai",

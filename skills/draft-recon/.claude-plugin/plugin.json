@@ -1,6 +1,6 @@
 {
   "name": "draft-recon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "UI and UX reconnaissance \u2014 scan existing frontend routes, components, navigation, and flows to understand the current UX state before designing. Use when asked to \"understand the current UI\", \"what UX patterns exist\", \"map the navigation\", \"what screens exist\", or before starting any flow or wireframe work.",
   "author": {
     "name": "tonone-ai",

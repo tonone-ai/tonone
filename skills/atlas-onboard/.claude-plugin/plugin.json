@@ -1,6 +1,6 @@
 {
   "name": "atlas-onboard",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generate onboarding documentation \u2014 what this project does, how to set up locally, where things live, key decisions, how to deploy. Written for day-one engineers who know nothing. Use when asked for \"onboarding docs\", \"new engineer guide\", \"how to get started\", or \"developer setup\".",
   "author": {
     "name": "tonone-ai",
