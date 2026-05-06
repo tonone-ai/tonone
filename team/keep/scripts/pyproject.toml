@@ -1,7 +1,7 @@
 [project]
 name = "keep"
 version = "1.0.0"
-description = "---"
+description = "Customer success agent -- onboarding optimization, health scoring, expansion revenue, churn prevention"
 license = "MIT"
 requires-python = ">=3.10"
 dependencies = []

@@ -1,0 +1,9 @@
+{
+  "name": "revenue-team",
+  "version": "1.0.0",
+  "description": "Revenue team — 3 agents: Deal, Keep, Surge",
+  "author": { "name": "tonone-ai", "url": "https://tonone.ai" },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": ["agents", "revenue-team", "bundle"]
+}
