@@ -209,12 +209,11 @@ def scan_seo_signals(root: str) -> list[Finding]:
         if any(kw in combined for kw in _KEYWORD_STRATEGY_KEYWORDS):
             keyword_files.append(fpath)
 
-        if fname_lower == "sitemap.xml":
-            sitemap_found = True
-
-    # Also check for sitemap.xml by name outside the text walk
+    _SKIP_DIRS = {"node_modules", "__pycache__", ".venv", "venv"}
     for dirpath, dirnames, filenames in os.walk(root):
-        dirnames[:] = [d for d in dirnames if not d.startswith(".")]
+        dirnames[:] = [
+            d for d in dirnames if not d.startswith(".") and d not in _SKIP_DIRS
+        ]
         if "sitemap.xml" in filenames:
             sitemap_found = True
             break

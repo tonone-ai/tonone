@@ -193,9 +193,8 @@ class TestOutreachTracker:
     def test_scan_community_health_empty_dir(self, tmp_path):
         findings = scan_community_health(str(tmp_path))
         assert isinstance(findings, list)
-        # Empty dir triggers: no_community_platform (HIGH) + no_contributor_guide (MEDIUM)
-        # community_health check may pass if no "community" keyword found -- exactly 2 or 3
-        assert len(findings) >= 2
+        # Empty dir: 3 findings (BUZZ-004 + BUZZ-005 + BUZZ-006)
+        assert len(findings) == 3
 
     def test_scan_community_health_empty_dir_finding_ids(self, tmp_path):
         findings = scan_community_health(str(tmp_path))
