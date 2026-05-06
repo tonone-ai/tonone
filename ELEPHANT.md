@@ -2,6 +2,7 @@
 > Team memory managed by [🐘 elephant](https://github.com/tonone-ai/elephant) — commit this file with your changes. Shared across sessions, repos, and teammates.
 ---
 
+2026-05-06 22:53 : docs(sitemap): created docs/sitemap.md — 27 agents, 170 skills, 5 runtime hooks mapped; skills all live in root skills/ dir, named /{agent}-{action} — @fatih
 2026-05-06 08:36 : feat(bundle): add revenue-team (deal+keep) and marketing-team (ink+buzz) bundles — PR #86 merged, CI green — @fatih
 2026-05-06 08:36 : chore: synced 199 files from 0.9.9 → 1.0.0 (all team/skills/bundles); v1.0.0 release had skipped bump-version, CI version-consistency was failing on main — @fatih
 2026-05-06 08:36 : bundle/product-team and bundle/full-team now include all 4 revenue/marketing agents (deal/keep/ink/buzz) — 27 agents in full-team confirmed — @fatih
