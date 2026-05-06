@@ -9,16 +9,27 @@ import sys
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../.."))
-from team.shared.report_schema import AgentReport, ReportMetadata
-from team.forge.scripts.forge_agent.infracost_analyzer import run_infracost, check_infracost
 from team.forge.scripts.forge_agent.cloud_cost_fetcher import run_cloud_cost_fetch
+from team.forge.scripts.forge_agent.infracost_analyzer import (
+    check_infracost,
+    run_infracost,
+)
+from team.shared.report_schema import AgentReport, ReportMetadata
 
 
 def main():
-    parser = argparse.ArgumentParser(description="forge-cost: IaC cost analysis + cloud spend audit")
-    parser.add_argument("target", nargs="?", default=".", help="Path to scan (default: .)")
-    parser.add_argument("--skip-infracost", action="store_true", help="Skip infracost IaC analysis")
-    parser.add_argument("--skip-cloud", action="store_true", help="Skip cloud CLI cost fetch")
+    parser = argparse.ArgumentParser(
+        description="forge-cost: IaC cost analysis + cloud spend audit"
+    )
+    parser.add_argument(
+        "target", nargs="?", default=".", help="Path to scan (default: .)"
+    )
+    parser.add_argument(
+        "--skip-infracost", action="store_true", help="Skip infracost IaC analysis"
+    )
+    parser.add_argument(
+        "--skip-cloud", action="store_true", help="Skip cloud CLI cost fetch"
+    )
     parser.add_argument("--out", help="Write JSON report to this path")
     args = parser.parse_args()
 
@@ -47,6 +58,7 @@ def main():
 
     try:
         import infracost as _ic
+
         ic_ver = getattr(_ic, "__version__", "?")
     except ImportError:
         available, ver_str = check_infracost()
@@ -75,7 +87,10 @@ def main():
             f.write(report.to_json())
         print(f"\n✅ Report written: {out_path}")
     except IOError as e:
-        print(f"\nWarning: could not write report ({e}). Printing to stdout:", file=sys.stderr)
+        print(
+            f"\nWarning: could not write report ({e}). Printing to stdout:",
+            file=sys.stderr,
+        )
         print(report.to_json())
 
     s = report.summary
@@ -84,7 +99,9 @@ def main():
         for f in findings
         if "$" in f.detail
     )
-    print(f"\nSummary: {s.critical} critical  {s.high} high  {s.medium} medium  {s.low} low  ({s.total} total)")
+    print(
+        f"\nSummary: {s.critical} critical  {s.high} high  {s.medium} medium  {s.low} low  ({s.total} total)"
+    )
     if total_cost > 0:
         print(f"Estimated monthly cost in findings: ${total_cost:,.2f}")
 

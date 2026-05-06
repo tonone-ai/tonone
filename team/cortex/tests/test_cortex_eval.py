@@ -12,9 +12,9 @@ import pytest
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 sys.path.insert(0, ROOT)
 
-from team.shared.report_schema import AgentReport, Finding, ReportMetadata
 from team.cortex.scripts.cortex_agent.llm_usage_scanner import scan_llm_usage
 from team.cortex.scripts.cortex_agent.prompt_evaluator import evaluate_prompts
+from team.shared.report_schema import AgentReport, Finding, ReportMetadata
 
 FIXTURE_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 
@@ -22,6 +22,7 @@ FIXTURE_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 # ---------------------------------------------------------------------------
 # Report schema — severity mapping
 # ---------------------------------------------------------------------------
+
 
 class TestSeverityMapping:
     def test_high_severity_valid(self):
@@ -62,19 +63,61 @@ class TestSeverityMapping:
 
     def test_invalid_severity_raises(self):
         with pytest.raises(ValueError):
-            Finding(severity="BLOCKER", title="x", detail="x", location="x", recommendation="x", effort="S")
+            Finding(
+                severity="BLOCKER",
+                title="x",
+                detail="x",
+                location="x",
+                recommendation="x",
+                effort="S",
+            )
 
     def test_invalid_effort_raises(self):
         with pytest.raises(ValueError):
-            Finding(severity="HIGH", title="x", detail="x", location="x", recommendation="x", effort="XL")
+            Finding(
+                severity="HIGH",
+                title="x",
+                detail="x",
+                location="x",
+                recommendation="x",
+                effort="XL",
+            )
 
     def test_report_summary_counts(self):
         report = AgentReport(agent="cortex", skill="cortex-eval", target=".")
         report.findings = [
-            Finding(severity="HIGH", title="a", detail="d", location="l", recommendation="r", effort="S"),
-            Finding(severity="HIGH", title="b", detail="d", location="l", recommendation="r", effort="S"),
-            Finding(severity="MEDIUM", title="c", detail="d", location="l", recommendation="r", effort="M"),
-            Finding(severity="LOW", title="e", detail="d", location="l", recommendation="r", effort="L"),
+            Finding(
+                severity="HIGH",
+                title="a",
+                detail="d",
+                location="l",
+                recommendation="r",
+                effort="S",
+            ),
+            Finding(
+                severity="HIGH",
+                title="b",
+                detail="d",
+                location="l",
+                recommendation="r",
+                effort="S",
+            ),
+            Finding(
+                severity="MEDIUM",
+                title="c",
+                detail="d",
+                location="l",
+                recommendation="r",
+                effort="M",
+            ),
+            Finding(
+                severity="LOW",
+                title="e",
+                detail="d",
+                location="l",
+                recommendation="r",
+                effort="L",
+            ),
         ]
         s = report.summary
         assert s.high == 2
@@ -90,7 +133,15 @@ class TestSeverityMapping:
             metadata=ReportMetadata(tool_version="cortex-eval 0.9.8", duration_s=1.5),
         )
         report.findings = [
-            Finding(id="CORTEX-001", severity="MEDIUM", title="t", detail="d", location="f.py:1", recommendation="r", effort="S"),
+            Finding(
+                id="CORTEX-001",
+                severity="MEDIUM",
+                title="t",
+                detail="d",
+                location="f.py:1",
+                recommendation="r",
+                effort="S",
+            ),
         ]
         restored = AgentReport.from_dict(json.loads(report.to_json()))
         assert restored.agent == "cortex"
@@ -102,12 +153,15 @@ class TestSeverityMapping:
 # LLM usage scanner — error paths
 # ---------------------------------------------------------------------------
 
+
 class TestLLMUsageScannerErrorPaths:
     def test_os_walk_failure_returns_empty(self, monkeypatch):
         """When os.walk raises OSError, scanner returns []."""
         import os as _os
+
         def mock_walk(path):
             raise OSError("permission denied")
+
         monkeypatch.setattr(_os, "walk", mock_walk)
         findings = scan_llm_usage("/fake/path")
         assert findings == []
@@ -137,10 +191,12 @@ class TestLLMUsageScannerErrorPaths:
         f = tmp_path / "secret.py"
         f.write_text("import anthropic\n")
         original_open = open
+
         def mock_open(path, *args, **kwargs):
             if str(path) == str(f):
                 raise OSError("permission denied")
             return original_open(path, *args, **kwargs)
+
         monkeypatch.setattr("builtins.open", mock_open)
         findings = scan_llm_usage(str(tmp_path))
         assert isinstance(findings, list)
@@ -217,11 +273,14 @@ class TestLLMUsageScannerFindings:
 # Prompt evaluator
 # ---------------------------------------------------------------------------
 
+
 class TestPromptEvaluator:
     def test_fixture_bad_prompt_triggers_high_length(self):
         """bad_prompt.txt is >8000 tokens and must trigger CORTEX-101 HIGH."""
         findings = evaluate_prompts(FIXTURE_DIR)
-        high_length = [f for f in findings if f.id == "CORTEX-101" and f.severity == "HIGH"]
+        high_length = [
+            f for f in findings if f.id == "CORTEX-101" and f.severity == "HIGH"
+        ]
         assert len(high_length) >= 1, (
             "Expected CORTEX-101 HIGH (length) from bad_prompt.txt. "
             f"Got: {[(f.id, f.severity, f.title) for f in findings]}"
@@ -241,7 +300,7 @@ class TestPromptEvaluator:
         prompts_dir = tmp_path / "prompts"
         prompts_dir.mkdir()
         (prompts_dir / "short.txt").write_text(
-            "You are a helpful assistant. Respond with valid JSON matching: {\"answer\": \"...\"}"
+            'You are a helpful assistant. Respond with valid JSON matching: {"answer": "..."}'
         )
         findings = evaluate_prompts(str(tmp_path))
         bad = [f for f in findings if f.severity in ("HIGH", "CRITICAL")]
@@ -283,8 +342,10 @@ class TestPromptEvaluator:
     def test_os_error_returns_empty(self, monkeypatch):
         """When os.walk raises OSError, evaluator returns []."""
         import os as _os
+
         def mock_walk(path):
             raise OSError("permission denied")
+
         monkeypatch.setattr(_os, "walk", mock_walk)
         findings = evaluate_prompts("/fake/path")
         assert findings == []
@@ -293,6 +354,7 @@ class TestPromptEvaluator:
 # ---------------------------------------------------------------------------
 # CLI: eval_scan.py
 # ---------------------------------------------------------------------------
+
 
 class TestEvalScanCLI:
     def test_nonexistent_target_exits_1(self):
@@ -310,7 +372,9 @@ class TestEvalScanCLI:
         """eval_scan.py writes a JSON report file."""
         out = str(tmp_path / "report.json")
         result = _run_eval_scan([str(tmp_path), "--out", out])
-        assert os.path.exists(out), f"Report not written. returncode={result.returncode}, stderr={result.stderr}"
+        assert os.path.exists(
+            out
+        ), f"Report not written. returncode={result.returncode}, stderr={result.stderr}"
         with open(out) as fh:
             data = json.load(fh)
         assert data["agent"] == "cortex"
@@ -351,9 +415,11 @@ class TestEvalScanCLI:
 # Helpers
 # ---------------------------------------------------------------------------
 
+
 def _run_eval_scan(args: list[str]):
     """Run eval_scan.py as a subprocess and return CompletedProcess."""
     import subprocess
+
     scan_py = os.path.join(ROOT, "team/cortex/scripts/cortex_agent/eval_scan.py")
     return subprocess.run(
         [sys.executable, scan_py] + args,

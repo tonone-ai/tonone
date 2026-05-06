@@ -31,15 +31,16 @@ A health model is only as good as its data. Don't design for signals you can't c
 
 Standard health dimensions for B2B SaaS:
 
-| Dimension | Weight | Signals to Use |
-|-----------|--------|----------------|
-| Product adoption | 35% | DAU/WAU, feature breadth, power user %, API usage |
-| Onboarding completion | 20% | % activation milestones hit, time-to-value |
-| Support health | 20% | Open ticket count, CSAT score, critical issues |
-| Engagement | 15% | Last login recency, email open rate, champion activity |
-| Business signals | 10% | Sponsor still at company, renewal proximity, expansion potential |
+| Dimension             | Weight | Signals to Use                                                   |
+| --------------------- | ------ | ---------------------------------------------------------------- |
+| Product adoption      | 35%    | DAU/WAU, feature breadth, power user %, API usage                |
+| Onboarding completion | 20%    | % activation milestones hit, time-to-value                       |
+| Support health        | 20%    | Open ticket count, CSAT score, critical issues                   |
+| Engagement            | 15%    | Last login recency, email open rate, champion activity           |
+| Business signals      | 10%    | Sponsor still at company, renewal proximity, expansion potential |
 
 Adjust weights based on product type:
+
 - API/infra product: boost usage signal, reduce engagement signal
 - Collaboration tool: boost engagement, add contributor count
 - Enterprise contract: boost business signals, add executive sponsor health
@@ -49,6 +50,7 @@ Adjust weights based on product type:
 For each dimension, score 0-100:
 
 **Product adoption (example):**
+
 ```
 DAU/WAU ratio:
   >40% = 100 pts
@@ -67,6 +69,7 @@ Adoption score = (DAU/WAU score × 0.6) + (Feature breadth × 0.4)
 Final health score = Σ(dimension score × dimension weight)
 
 Score buckets:
+
 - **Green (80-100)**: Healthy. Candidate for expansion conversation.
 - **Yellow (60-79)**: At risk. Trigger proactive outreach.
 - **Red (0-59)**: Churn risk. Immediate intervention.
@@ -75,14 +78,14 @@ Score buckets:
 
 Every score change must trigger a specific action:
 
-| Trigger | Action | Owner | SLA |
-|---------|--------|-------|-----|
-| Drops to Yellow | CSM sends proactive email | CSM | 48h |
-| Drops to Red | CSM calls + intervention plan | CSM + Manager | 24h |
-| Stays Red 14 days | Escalation to Helm | CS Lead | 2 weeks |
-| Rises to Green | Expansion conversation triggered | CSM | 1 week |
-| Power user identified | Champion cultivation | CSM | 1 week |
-| Sponsor leaves company | New sponsor mapping | CSM | Same day |
+| Trigger                | Action                           | Owner         | SLA      |
+| ---------------------- | -------------------------------- | ------------- | -------- |
+| Drops to Yellow        | CSM sends proactive email        | CSM           | 48h      |
+| Drops to Red           | CSM calls + intervention plan    | CSM + Manager | 24h      |
+| Stays Red 14 days      | Escalation to Helm               | CS Lead       | 2 weeks  |
+| Rises to Green         | Expansion conversation triggered | CSM           | 1 week   |
+| Power user identified  | Champion cultivation             | CSM           | 1 week   |
+| Sponsor leaves company | New sponsor mapping              | CSM           | Same day |
 
 ### Step 4: Produce Health Model Document
 
@@ -92,26 +95,33 @@ Every score change must trigger a specific action:
 **Version:** 1.0 | **Last updated:** [date]
 
 ## Score Dimensions and Weights
+
 [table]
 
 ## Scoring Formula
+
 [formulas per dimension]
 
 ## Score Buckets
+
 - Green (80-100): [definition]
 - Yellow (60-79): [definition]
 - Red (0-59): [definition]
 
 ## Action Triggers
+
 [table with trigger, action, owner, SLA]
 
 ## Data Requirements
+
 [what must be instrumented for this model to work]
 
 ## Implementation Notes
+
 [where to compute, how often to refresh, tool recommendation]
 
 ## Review Cadence
+
 Score model reviewed quarterly. Adjust weights based on observed churn/expansion correlation.
 ```
 

@@ -9,10 +9,5 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": [
-    "form",
-    "skill",
-    "design-system",
-    "brief"
-  ]
+  "keywords": ["form", "skill", "design-system", "brief"]
 }

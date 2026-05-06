@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "frontend",
-    "dx",
-    "ui",
-    "developer-tools",
-    "portals"
-  ]
+  "keywords": ["frontend", "dx", "ui", "developer-tools", "portals"]
 }

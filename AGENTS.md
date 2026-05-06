@@ -26,20 +26,20 @@
 
 ## Product Team — 12 agents
 
-| Agent     | Hat               | Owns                                                            |
-| --------- | ----------------- | --------------------------------------------------------------- |
-| **Helm**  | Head of Product   | Orchestrates the product team, writes briefs, hands off to Apex |
-| **Echo**  | User Research     | User interviews, personas, Jobs-to-Be-Done, feedback synthesis  |
-| **Lumen** | Product Analytics | Metrics frameworks, funnel analysis, OKRs, A/B test design      |
-| **Draft** | UX Design         | User flows, information architecture, wireframes                |
-| **Form**  | Visual Design     | Brand identity, color systems, typography, design system        |
-| **Crest** | Product Strategy  | Roadmap planning, prioritization, competitive analysis          |
-| **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy            |
-| **Surge** | Growth            | Acquisition channels, activation funnels, retention playbooks   |
-| **Deal**  | Revenue & Sales   | B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing |
+| Agent     | Hat               | Owns                                                                         |
+| --------- | ----------------- | ---------------------------------------------------------------------------- |
+| **Helm**  | Head of Product   | Orchestrates the product team, writes briefs, hands off to Apex              |
+| **Echo**  | User Research     | User interviews, personas, Jobs-to-Be-Done, feedback synthesis               |
+| **Lumen** | Product Analytics | Metrics frameworks, funnel analysis, OKRs, A/B test design                   |
+| **Draft** | UX Design         | User flows, information architecture, wireframes                             |
+| **Form**  | Visual Design     | Brand identity, color systems, typography, design system                     |
+| **Crest** | Product Strategy  | Roadmap planning, prioritization, competitive analysis                       |
+| **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy                         |
+| **Surge** | Growth            | Acquisition channels, activation funnels, retention playbooks                |
+| **Deal**  | Revenue & Sales   | B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing    |
 | **Keep**  | Customer Success  | Onboarding optimization, health scoring, expansion revenue, churn prevention |
-| **Ink**   | Content Marketing | Blog strategy, SEO, thought leadership, developer content, content calendar |
-| **Buzz**  | PR & Community    | Press pitches, social media, open source community, DevRel, launch moments |
+| **Ink**   | Content Marketing | Blog strategy, SEO, thought leadership, developer content, content calendar  |
+| **Buzz**  | PR & Community    | Press pitches, social media, open source community, DevRel, launch moments   |
 
 ## Helm↔Apex Interface
 

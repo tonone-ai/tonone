@@ -1,6 +1,6 @@
 # Tonone
 
-<img src="https://img.shields.io/badge/version-0.9.9-green"> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue">
+<img src="https://img.shields.io/badge/version-1.0.0-green"> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue">
 
 **Founder + Tonone = whole company.**
 
@@ -445,13 +445,13 @@ See [CHANGELOG.md](CHANGELOG.md) for full release history.
 
 Tonone stands on the shoulders of giants. Big thanks to the plugins that shaped how this team thinks and works:
 
-| Plugin              | What it brought                                                                                                                 |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **superpowers**     | Structured skill workflows, brainstorming loops, TDD discipline, and the worktree-native development model that Tonone runs on  |
-| **impeccable**      | Design critique vocabulary and the polish-first mindset baked into Form and Draft                                               |
-| **frontend-design** | Frontend implementation patterns that Prism and Touch draw from                                                                 |
-| **ui-ux-pro-max**   | 161 color palettes, 84 UI styles, 57 font pairings, 99 UX guidelines, and the BM25 design search engine now powering `lib/uiux` |
-| **caveman**         | The communication mode that cuts every response to its bones — no fluff, all signal                                             |
+| Plugin              | What it brought                                                                                                                                                                                                                          |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **superpowers**     | Structured skill workflows, brainstorming loops, TDD discipline, and the worktree-native development model that Tonone runs on                                                                                                           |
+| **impeccable**      | Design critique vocabulary and the polish-first mindset baked into Form and Draft                                                                                                                                                        |
+| **frontend-design** | Frontend implementation patterns that Prism and Touch draw from                                                                                                                                                                          |
+| **ui-ux-pro-max**   | 161 color palettes, 84 UI styles, 57 font pairings, 99 UX guidelines, and the BM25 design search engine now powering `lib/uiux`                                                                                                          |
+| **caveman**         | The communication mode that cuts every response to its bones — no fluff, all signal                                                                                                                                                      |
 | **open-design**     | 19 design skills and the I-Lang brief protocol that power `form-brief`, the hand-drawn wireframe mode in `draft-wireframe`, and the HTML radar report in `form-critique` — [nexu-io/open-design](https://github.com/nexu-io/open-design) |
 
 ## License

@@ -20,6 +20,7 @@ find . -path "*/warden_agent/scan.py" -not -path "*/__pycache__/*" 2>/dev/null |
 ```
 
 If not found, tell the user:
+
 > `scan.py` not found. Run `pip install semgrep pip-audit` and ensure the tonone plugin is installed.
 
 ## Step 2: Determine target
@@ -33,6 +34,7 @@ python <path-to-scan.py> <target> --out .reports/warden-latest.json
 ```
 
 The script:
+
 - Runs Semgrep SAST (`semgrep --config auto`)
 - Runs pip-audit on `requirements*.txt` files (falls back to current env)
 - Writes a JSON report and prints a summary line
@@ -76,13 +78,15 @@ If 0 findings: show a clean pass banner.
 ## Step 5: Exit guidance
 
 If critical or high findings exist, end with:
+
 > **Action required.** Review findings above. Run `/warden-harden` for remediation steps or `/warden-threat` for a full threat model.
 
 If only medium/low:
+
 > **Passed with warnings.** No critical issues found. Consider `/warden-audit` for a broader manual review.
 
 If clean:
+
 > **Clean scan.** No issues found by Semgrep or pip-audit.
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose. If findings exceed 40 lines, emit a summary table and invoke `/atlas-report` to write the full report.
-

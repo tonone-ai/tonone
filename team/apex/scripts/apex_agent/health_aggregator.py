@@ -20,7 +20,9 @@ class SubScanResult(NamedTuple):
     error: str | None
 
 
-def _run_scan(agent: str, script_path: str, target: str, extra_args: list[str]) -> SubScanResult:
+def _run_scan(
+    agent: str, script_path: str, target: str, extra_args: list[str]
+) -> SubScanResult:
     """Run one depth scan as a subprocess, capture its JSON output."""
     if not os.path.exists(script_path):
         return SubScanResult(
@@ -87,9 +89,9 @@ def aggregate_health(target: str) -> tuple[list[Finding], list[str]]:
     """
     scans = [
         ("warden", _script_path("warden", "scan.py"), ["--skip-semgrep"]),
-        ("forge",  _script_path("forge",  "cost_scan.py"), []),
+        ("forge", _script_path("forge", "cost_scan.py"), []),
         ("cortex", _script_path("cortex", "eval_scan.py"), []),
-        ("spine",  _script_path("spine",  "perf_scan.py"), ["--skip-endpoints"]),
+        ("spine", _script_path("spine", "perf_scan.py"), ["--skip-endpoints"]),
     ]
 
     results: list[SubScanResult] = []

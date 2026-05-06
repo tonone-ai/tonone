@@ -8,10 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "lead",
-    "orchestrator",
-    "tech-lead",
-    "engineering-management"
-  ]
+  "keywords": ["lead", "orchestrator", "tech-lead", "engineering-management"]
 }

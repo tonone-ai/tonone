@@ -63,17 +63,20 @@ Coordination:
 Product Hunt is a snapshot of a day. Votes come in waves. Structure:
 
 **Pre-launch (2-4 weeks before):**
+
 - Create hunter network: ask 20-50 people to upvote on launch day. Real relationships only.
 - Build PH presence: follow people, comment on others' launches to establish credibility.
 - Prepare assets: logo, screenshots (×4), tagline (max 60 chars), description (max 260 chars)
 
 **Launch day:**
+
 - Post at 12:01 AM PST (start of day)
 - Founder posts a personal comment at launch explaining the story
 - Share PH link to: existing customers, email list, community, social — all at once in first 2 hours
 - Monitor comments and respond within 30 minutes during business hours
 
 **PH listing structure:**
+
 ```
 Name: [Product name]
 Tagline: [What it does in 60 chars — no marketing speak]
@@ -95,6 +98,7 @@ First maker comment:
 HN is about authenticity and technical depth. Different audience than PH.
 
 **Show HN checklist:**
+
 - Title format: "Show HN: [Product] – [plain English description]"
 - Post between 6-9 AM EST weekdays
 - First comment (posted by OP): technical details, what you learned building it, what you want feedback on
@@ -102,6 +106,7 @@ HN is about authenticity and technical depth. Different audience than PH.
 - Respond to every comment in the first 2 hours. Especially critical ones.
 
 **Founder's first comment template:**
+
 ```
 [What technical challenge was interesting in building this]
 [What surprised you about the problem]
@@ -153,30 +158,39 @@ Deliver all launch assets:
 **Goal:** [primary metric]
 
 ## Pre-Launch
+
 [Checklist from Step 1]
 
 ## Product Hunt Listing
+
 [Full listing copy]
 
 ## HN Show HN Post
+
 [Title + first comment]
 
 ## Social Posts (all platforms)
+
 [Ready-to-send posts per platform]
 
 ## Email to List
+
 [Subject + body]
 
 ## Community Announcement
+
 [Discord/Slack message]
 
 ## Launch Day Timeline
+
 [Timeline from Step 4]
 
 ## Post-Launch Plan
+
 [Week 1-4 actions]
 
 ## Success Metrics
+
 - Primary: [metric — signups / stars / coverage]
 - Secondary: [metric]
 - How to measure: [specific tool or method]

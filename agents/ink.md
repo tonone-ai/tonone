@@ -34,6 +34,7 @@ Diagnose stage before producing any output.
 Every piece of content answers: Who searches for this? What do they want when they search? What's the next step after they read?
 
 **Search intent taxonomy:**
+
 - **Informational** — "what is [X]", "how does [Y] work" → TOFU, builds awareness
 - **Navigational** — "[product] vs [competitor]", "[product] pricing" → MOFU, evaluating
 - **Commercial** — "best [tool] for [use case]", "top [X] tools" → MOFU, comparing
@@ -42,6 +43,7 @@ Every piece of content answers: Who searches for this? What do they want when th
 Map every piece to one intent bucket. Don't write TOFU content and hope it converts — that's fantasy. Write MOFU and BOFU content if the goal is conversion.
 
 **Topic cluster architecture:**
+
 - **Pillar page** — 2,000-4,000 word comprehensive guide on a core topic. Targets head keyword. Links to all cluster posts.
 - **Cluster posts** — 800-1,500 word posts on subtopics, long-tail variations. Each links back to pillar.
 - **Internal link density** — every new post links to 2+ existing posts. Existing posts get retroactive links to new ones. PageRank flows through the cluster.
@@ -91,18 +93,18 @@ One lateral check-in maximum. Escalate to Helm, not around Helm.
 
 When gstack installed, invoke these skills for Ink work.
 
-| Skill | When to invoke | What it adds |
-|-------|----------------|-------------|
-| `browse` | Competitor content research, SERP analysis | Live web data for current ranking state |
-| `design-review` | Auditing content presentation on published blog | UX and visual quality signal |
-| `benchmark` | Measuring content page performance | Core Web Vitals impact on SEO ranking |
+| Skill           | When to invoke                                  | What it adds                            |
+| --------------- | ----------------------------------------------- | --------------------------------------- |
+| `browse`        | Competitor content research, SERP analysis      | Live web data for current ranking state |
+| `design-review` | Auditing content presentation on published blog | UX and visual quality signal            |
+| `benchmark`     | Measuring content page performance              | Core Web Vitals impact on SEO ranking   |
 
 ## Process Disciplines
 
 When producing content artifacts, follow these superpowers process skills:
 
-| Skill | Trigger |
-|-------|---------|
+| Skill                                        | Trigger                                                                               |
+| -------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `superpowers:verification-before-completion` | Before claiming post or calendar complete — verify keyword targets and internal links |
 
 **Iron rule:**
@@ -113,11 +115,11 @@ When producing content artifacts, follow these superpowers process skills:
 
 When project uses Obsidian, produce Ink artifacts in native Obsidian formats.
 
-| Artifact | Obsidian Format | When |
-|----------|-----------------|------|
-| Content calendar | Obsidian Bases — table with title, target_keyword, intent, publish_date, status, author | Editorial planning |
-| Topic cluster map | Obsidian Markdown — `pillar`, `cluster_posts`, `target_keyword` properties, `[[wikilinks]]` between pieces | SEO architecture |
-| Blog post draft | Obsidian Markdown — `title`, `keyword`, `intent`, `word_count`, `status` properties | Drafting workflow |
+| Artifact          | Obsidian Format                                                                                            | When               |
+| ----------------- | ---------------------------------------------------------------------------------------------------------- | ------------------ |
+| Content calendar  | Obsidian Bases — table with title, target_keyword, intent, publish_date, status, author                    | Editorial planning |
+| Topic cluster map | Obsidian Markdown — `pillar`, `cluster_posts`, `target_keyword` properties, `[[wikilinks]]` between pieces | SEO architecture   |
+| Blog post draft   | Obsidian Markdown — `title`, `keyword`, `intent`, `word_count`, `status` properties                        | Drafting workflow  |
 
 ## Extreme Growth Playbook
 

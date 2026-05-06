@@ -51,6 +51,7 @@ Prospect → Qualified (MEDDPICC) → Technical Eval → Champion Confirmed
 For each stage, produce:
 
 **Stage: [Name]**
+
 - Entry criteria: [What must be true for a deal to enter this stage]
 - Exit criteria (forward): [What must happen to advance]
 - Exit criteria (disqualify): [What signals it's not moving]
@@ -62,15 +63,15 @@ For each stage, produce:
 
 Produce a qualification scorecard:
 
-| Criterion | Must Have | Nice to Have | Disqualify |
-|-----------|-----------|--------------|------------|
-| Company size | | | |
-| Industry/vertical | | | |
-| Budget confirmed | | | |
-| Timeline to decision | | | |
-| Champion identified | | | |
-| Pain articulated | | | |
-| Alternatives evaluating | | | |
+| Criterion               | Must Have | Nice to Have | Disqualify |
+| ----------------------- | --------- | ------------ | ---------- |
+| Company size            |           |              |            |
+| Industry/vertical       |           |              |            |
+| Budget confirmed        |           |              |            |
+| Timeline to decision    |           |              |            |
+| Champion identified     |           |              |            |
+| Pain articulated        |           |              |            |
+| Alternatives evaluating |           |              |            |
 
 ### Step 4: Produce Pipeline Document
 
@@ -84,21 +85,26 @@ Output the complete pipeline design as a markdown document:
 ## Pipeline Stages
 
 ### [Stage 1 Name]
+
 **Entry criteria:** [...]
 **Exit criteria:** [...]
 **Max days in stage:** [N]
 **Required fields:** [...]
 
 ### [Stage 2 Name]
+
 [...]
 
 ## Qualification Scorecard
+
 [table]
 
 ## CRM Field Requirements
+
 [list of fields and why each matters]
 
 ## Pipeline Health Metrics
+
 - Conversion rate by stage (target: [%])
 - Average days per stage (target: [N])
 - Win rate (target: [%])

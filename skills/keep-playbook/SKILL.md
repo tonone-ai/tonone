@@ -29,20 +29,21 @@ Each is a different motion. Don't conflate them.
 
 Before any intervention, classify the churn cause:
 
-| Category | Signals | Intervention |
-|----------|---------|--------------|
-| **Product gap** | Feature requests unfulfilled, workarounds in use | Escalate to Helm. Honest timeline. Find bridge. |
-| **Onboarding failure** | Never reached aha moment, low adoption | Restart onboarding with CSM escort |
-| **Champion departure** | New person in role, unfamiliar with product | Immediate new sponsor mapping |
-| **Budget pressure** | Economic downturn, headcount cuts | Downgrade option, pause option, quarterly payment |
-| **Competitor switch** | Active evaluation of alternative | Understand what the competitor offers that you don't |
-| **External change** | Company acquired, pivoted, shut down | No intervention — accept and learn |
+| Category               | Signals                                          | Intervention                                         |
+| ---------------------- | ------------------------------------------------ | ---------------------------------------------------- |
+| **Product gap**        | Feature requests unfulfilled, workarounds in use | Escalate to Helm. Honest timeline. Find bridge.      |
+| **Onboarding failure** | Never reached aha moment, low adoption           | Restart onboarding with CSM escort                   |
+| **Champion departure** | New person in role, unfamiliar with product      | Immediate new sponsor mapping                        |
+| **Budget pressure**    | Economic downturn, headcount cuts                | Downgrade option, pause option, quarterly payment    |
+| **Competitor switch**  | Active evaluation of alternative                 | Understand what the competitor offers that you don't |
+| **External change**    | Company acquired, pivoted, shut down             | No intervention — accept and learn                   |
 
 Never prescribe an intervention without classifying the root cause first.
 
 ### Step 2: Write Risk Intervention Sequence (Yellow/Red health)
 
 **Yellow (proactive):**
+
 ```
 Touch 1 — Check-in email (Day 0 of Yellow flag)
 Subject: [Quick check-in on [Product] — [their name]]
@@ -59,6 +60,7 @@ Body: Direct ask. What's changed? What would make it more useful?
 ```
 
 **Red (urgent):**
+
 ```
 Day 0: CSM calls (not emails). Leave voicemail if no answer.
 Day 0: Follow-up email with calendar link. Subject: "[Name] — 15 minutes?"
@@ -109,18 +111,23 @@ Win-back rates: 10-20% is excellent. 5-10% is normal. Under 5% suggests the root
 # Churn Prevention and Win-Back Playbook
 
 ## Risk Intervention (Yellow/Red health)
+
 [email sequence + call guide]
 
 ## Save Play (intent to cancel)
+
 [call structure + email template]
 
 ## Win-Back Campaign (churned)
+
 [3-email sequence]
 
 ## Root Cause Classification
+
 [table with categories and interventions]
 
 ## Metrics
+
 - Save rate (target: 30-50% of at-risk, 20-30% of save attempts)
 - Win-back rate (target: 5-15%)
 - Time-to-intervention after health drop

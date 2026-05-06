@@ -13,8 +13,8 @@ from team.shared.report_schema import Finding
 
 
 class Module(NamedTuple):
-    dotted: str   # e.g. "team.spine.scripts.spine_agent.n_plus_one_detector"
-    path: str     # absolute file path
+    dotted: str  # e.g. "team.spine.scripts.spine_agent.n_plus_one_detector"
+    path: str  # absolute file path
 
 
 def _dotted_name(root: str, filepath: str) -> str:
@@ -151,7 +151,11 @@ def analyze_dependencies(repo_root: str) -> list[Finding]:
 
     for mod in modules:
         # skip __init__ and test files
-        if mod.dotted.endswith("__init__") or ".tests." in mod.dotted or "test_" in mod.dotted.split(".")[-1]:
+        if (
+            mod.dotted.endswith("__init__")
+            or ".tests." in mod.dotted
+            or "test_" in mod.dotted.split(".")[-1]
+        ):
             continue
         if mod.dotted not in all_imported and not graph.get(mod.dotted):
             # leaf module never imported by anything else

@@ -1,9 +1,9 @@
 # FIXTURE FILE — intentionally vulnerable for Warden scan tests.
 # DO NOT deploy or import this file in production code.
 
-import subprocess
 import hashlib
 import random
+import subprocess
 
 
 def get_user(user_input):

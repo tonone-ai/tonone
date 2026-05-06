@@ -2,7 +2,7 @@
 name: cortex-eval
 description: Evaluate model performance — check for accuracy drops, data drift, and error patterns. Use when asked about "model accuracy dropped", "evaluate the model", "check for drift", or "model performance".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.6.4
+version: 0.9.8
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 ---
@@ -15,7 +15,28 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 ## Steps
 
-### Step 0: Detect Environment
+### Step 0: Run Static Analysis
+
+Before any LLM-based evaluation, run the static analysis scanner to find LLM usage anti-patterns and prompt quality issues:
+
+```bash
+# From the project root (or team/cortex/scripts/)
+python team/cortex/scripts/cortex_agent/eval_scan.py . --out .reports/cortex-eval-latest.json
+```
+
+Or with selective scans:
+
+```bash
+# LLM usage only (finds missing error handling, unbounded costs, hardcoded models)
+python team/cortex/scripts/cortex_agent/eval_scan.py . --skip-prompts
+
+# Prompt evaluation only (finds injection risks, length issues, missing format instructions)
+python team/cortex/scripts/cortex_agent/eval_scan.py . --skip-usage
+```
+
+Review the JSON report at `.reports/cortex-eval-<ts>.json`. Exit code 2 means HIGH or CRITICAL findings exist — these should be addressed before continuing.
+
+### Step 1: Detect ML Environment
 
 Scan the project to understand the ML stack and current model:
 
@@ -36,7 +57,7 @@ ls -la metrics/ logs/ monitoring/ 2>/dev/null
 
 Note the ML framework, model type, experiment tracking system, and any existing metrics. If nothing is detected, ask the user.
 
-### Step 1: Current Model Metrics vs Baseline
+### Step 2: Current Model Metrics vs Baseline
 
 Establish where things stand:
 
@@ -53,7 +74,7 @@ Report:
 | [metric]  | [value]  | [value] | [+/-]  |
 ```
 
-### Step 2: Data Distribution Shift (Feature Drift)
+### Step 3: Data Distribution Shift (Feature Drift)
 
 Check if the input data has changed:
 
@@ -65,7 +86,7 @@ Check if the input data has changed:
 
 Flag any feature where the distribution has shifted significantly.
 
-### Step 3: Prediction Distribution Changes
+### Step 4: Prediction Distribution Changes
 
 Check if the model's outputs have changed:
 
@@ -76,7 +97,7 @@ Check if the model's outputs have changed:
 
 If predictions shifted but features didn't, the problem is likely in the model or feature pipeline, not the data.
 
-### Step 4: Error Analysis
+### Step 5: Error Analysis
 
 Dig into what the model is getting wrong:
 
@@ -86,7 +107,7 @@ Dig into what the model is getting wrong:
 - **Confusion matrix diff:** for classification, compare current vs baseline confusion matrix
 - **Feature importance shift:** have the most important features changed?
 
-### Step 5: Identify Root Cause
+### Step 6: Identify Root Cause
 
 Based on the evidence from Steps 1-4, determine the root cause:
 
@@ -97,7 +118,7 @@ Based on the evidence from Steps 1-4, determine the root cause:
 - **Upstream dependency change:** a service or data source the model depends on changed
 - **Volume/distribution shift:** the model is seeing a population it wasn't trained on
 
-### Step 6: Recommend Fix
+### Step 7: Recommend Fix
 
 Based on root cause, recommend the appropriate fix:
 

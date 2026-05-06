@@ -17,13 +17,13 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `buzz-recon` | Audit press coverage, social presence, community health, and competitor PR |
-| `buzz-pitch` | Write media pitches — journalist outreach, press releases, podcast pitches |
-| `buzz-social` | Social media content — HN posts, Twitter/X threads, LinkedIn, Reddit |
+| Skill            | Use when                                                                                     |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| `buzz-recon`     | Audit press coverage, social presence, community health, and competitor PR                   |
+| `buzz-pitch`     | Write media pitches — journalist outreach, press releases, podcast pitches                   |
+| `buzz-social`    | Social media content — HN posts, Twitter/X threads, LinkedIn, Reddit                         |
 | `buzz-community` | Build and manage open source community — Discord, contributor onboarding, ambassador program |
-| `buzz-launch` | Design and execute a launch plan — Product Hunt, HN, newsletter, social coordination |
+| `buzz-launch`    | Design and execute a launch plan — Product Hunt, HN, newsletter, social coordination         |
 
 Default (no args or unclear): `buzz-recon`.
 

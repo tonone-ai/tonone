@@ -30,6 +30,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 **CLI mode (default):** ASCII radar chart + scored table + punch list. Fast. Fits in a terminal.
 
 **HTML report mode:** Triggered by "as a report", "give me a visual report", "HTML critique", or "critique report". Produces a self-contained `critique-report.html` with:
+
 - SVG pentagon radar chart (no libraries, inline SVG)
 - Five scored dimension cards with evidence paragraphs
 - Combined Keep / Fix / Quick-wins action lists at bottom
@@ -224,8 +225,9 @@ When producing the HTML report:
 Build a pentagon radar with 5 axes (Coherence, Hierarchy, Craft, Function, Innovation). Each axis runs from center (0) to vertex (10). Plot actual scores as a filled polygon.
 
 Construction:
+
 - Pentagon center: (150, 150). Radius: 100px.
-- Vertices at 5 equal angles starting from top (−90°): 
+- Vertices at 5 equal angles starting from top (−90°):
   - Coherence: top (90° = −90° from right)
   - Hierarchy: top-right
   - Craft: bottom-right
@@ -239,6 +241,7 @@ Construction:
 ### Dimension cards
 
 One card per dimension. Each card:
+
 - Dimension name + score `X / 10` + band label (Broken / Functional / Strong / Exceptional)
 - Evidence paragraph: 30–80 words, naming specific elements. No vague "feels off".
 - One Keep, one Fix, one Quick-win bullet
@@ -248,6 +251,7 @@ Bands: 0–4 Broken · 5–6 Functional · 7–8 Strong · 9–10 Exceptional
 ### Action lists
 
 Three lists at bottom of report:
+
 - **Keep** (3–5 bullets) — what's working; cite by element/class/section
 - **Fix** (3–6 bullets) — ordered by visual cost saved per minute spent
 - **Quick wins** (3–5 bullets) — 5–15 min each, disproportionate impact

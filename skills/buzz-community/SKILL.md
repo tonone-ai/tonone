@@ -52,6 +52,7 @@ Rules:
 ```
 
 **GitHub community health:**
+
 - CONTRIBUTING.md — how to contribute (required)
 - CODE_OF_CONDUCT.md — rules of engagement (required)
 - ISSUE_TEMPLATE/ — bug report and feature request templates
@@ -80,20 +81,24 @@ Design each step to be frictionless. Drop-off at any step = fix that step.
 Ambassadors are your best users who promote the product without being paid to.
 
 Prerequisites before launching:
+
 - 50+ active community members
 - Clear product value for ambassadors (early access, credits, direct line to founders)
 - Bandwidth to support ambassadors with content, assets, and attention
 
 Ambassador program structure:
+
 ```markdown
 ## [Product] Ambassador Program
 
 **Who qualifies:**
+
 - Active community member for [N] months
 - Has shared the product publicly at least once
 - [Role fit — e.g., developer, team lead, OSS contributor]
 
 **What ambassadors get:**
+
 - Early access to features
 - [Product] credits / extended plan
 - Direct Slack channel with team
@@ -101,6 +106,7 @@ Ambassador program structure:
 - LinkedIn / Twitter recognition
 
 **What ambassadors do:**
+
 - Share honest product experiences publicly
 - Run or attend 1 local event / meetup per quarter
 - Provide product feedback monthly
@@ -140,33 +146,41 @@ Identify the current weakest link in the flywheel. That's the one to fix.
 **Primary platform:** [Discord/Slack/GitHub/Reddit]
 
 ## Platform Structure
+
 [channel list and purpose]
 
 ## Community Rules
+
 [3-5 rules, enforced consistently]
 
 ## Onboarding Flow
+
 New member → [Step 1] → [Step 2] → [engaged in 7 days]
 
 ## Contributor Path
+
 Lurker → [trigger] → First contribution → Regular contributor
 
 ## Ambassador Program
+
 [if applicable — criteria, benefits, expectations]
 
 ## Response SLAs
+
 - Help questions: [N] hours
 - Bug reports: [N] hours
 - PR review: [N] hours
 - Feature requests: Acknowledged [N] days, responded to in roadmap cycle
 
 ## Community Health Metrics
+
 - Weekly active members (target: 10% of total)
 - Questions answered by community (not team) (target: 60%+)
 - Contribution rate (% of members who contribute code/content) (target: 5%+)
 - Member churn rate (inactive 30 days) (target: <20%/month)
 
 ## Weekly Community Ops (30 min/week)
+
 [ ] Respond to all unanswered questions
 [ ] Highlight one community member or contribution
 [ ] Share one piece of product news or behind-the-scenes

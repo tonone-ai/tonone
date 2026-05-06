@@ -3,14 +3,23 @@
 import json
 import os
 import sys
+
 import pytest
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 sys.path.insert(0, ROOT)
 
+from team.forge.scripts.forge_agent.cloud_cost_fetcher import (
+    _severity_for_spend,
+    run_cloud_cost_fetch,
+)
+from team.forge.scripts.forge_agent.infracost_analyzer import (
+    _severity_for_cost,
+    check_infracost,
+    check_infracost_api_key,
+    run_infracost,
+)
 from team.shared.report_schema import AgentReport, Finding, ReportMetadata
-from team.forge.scripts.forge_agent.infracost_analyzer import run_infracost, check_infracost, check_infracost_api_key, _severity_for_cost
-from team.forge.scripts.forge_agent.cloud_cost_fetcher import run_cloud_cost_fetch, _severity_for_spend
 
 FIXTURE_DIR = os.path.join(os.path.dirname(__file__), "fixtures/terraform_sample")
 
@@ -78,51 +87,68 @@ class TestInfracostAnalyzer:
 class TestInfracostErrorPaths:
     def test_not_installed(self, monkeypatch):
         import subprocess
+
         def mock_run(*args, **kwargs):
             raise FileNotFoundError("infracost not found")
+
         monkeypatch.setattr(subprocess, "run", mock_run)
         findings = run_infracost("/tmp")
         assert findings == []
 
     def test_timeout(self, monkeypatch):
         import subprocess
+
         call_count = {"n": 0}
+
         def mock_run(cmd, *args, **kwargs):
             call_count["n"] += 1
             if call_count["n"] == 1:
+
                 class R:
                     returncode = 0
                     stdout = "infracost v0.10.0"
+
                 return R()
             raise subprocess.TimeoutExpired(cmd=cmd, timeout=180)
+
         monkeypatch.setattr(subprocess, "run", mock_run)
         findings = run_infracost("/tmp")
         assert findings == []
 
     def test_invalid_json(self, monkeypatch):
         import subprocess
+
         call_count = {"n": 0}
+
         def mock_run(cmd, *args, **kwargs):
             call_count["n"] += 1
+
             class R:
                 returncode = 0
                 stdout = "infracost v0.10.0" if call_count["n"] == 1 else "not-json{"
                 stderr = ""
+
             return R()
+
         monkeypatch.setattr(subprocess, "run", mock_run)
         findings = run_infracost("/tmp")
         assert findings == []
 
     def test_nonzero_exit_no_terraform(self, monkeypatch):
         import subprocess
+
         call_count = {"n": 0}
+
         def mock_run(cmd, *args, **kwargs):
             call_count["n"] += 1
+
             class R:
                 returncode = 0 if call_count["n"] == 1 else 1
                 stdout = "infracost v0.10.0" if call_count["n"] == 1 else ""
                 stderr = "No Terraform files found"
+
             return R()
+
         monkeypatch.setattr(subprocess, "run", mock_run)
         findings = run_infracost("/tmp")
         assert findings == []
@@ -143,34 +169,44 @@ class TestCloudCostFetcher:
 
     def test_aws_not_installed(self, monkeypatch):
         import subprocess
+
         def mock_run(cmd, *args, **kwargs):
             raise FileNotFoundError("aws not found")
+
         monkeypatch.setattr(subprocess, "run", mock_run)
         findings = run_cloud_cost_fetch("/tmp")
         assert findings == []
 
     def test_aws_no_credentials(self, monkeypatch):
         import subprocess
+
         call_count = {"n": 0}
+
         def mock_run(cmd, *args, **kwargs):
             call_count["n"] += 1
+
             class R:
                 returncode = 0 if "version" in cmd else 254
                 stdout = "aws-cli/2.0" if "version" in cmd else ""
                 stderr = "" if "version" in cmd else "Unable to locate credentials"
+
             return R()
+
         monkeypatch.setattr(subprocess, "run", mock_run)
         findings = run_cloud_cost_fetch("/tmp")
         assert isinstance(findings, list)
 
     def test_aws_invalid_json(self, monkeypatch):
         import subprocess
+
         def mock_run(cmd, *args, **kwargs):
             class R:
                 returncode = 0
                 stdout = "aws-cli/2.0" if "--version" in cmd else "not-json{"
                 stderr = ""
+
             return R()
+
         monkeypatch.setattr(subprocess, "run", mock_run)
         findings = run_cloud_cost_fetch("/tmp")
         assert isinstance(findings, list)
@@ -179,11 +215,15 @@ class TestCloudCostFetcher:
 class TestCostScanCLI:
     def test_nonexistent_target_exits(self):
         import subprocess
+
         result = subprocess.run(
-            [sys.executable,
-             os.path.join(ROOT, "team/forge/scripts/forge_agent/cost_scan.py"),
-             "/nonexistent/path/does/not/exist"],
-            capture_output=True, text=True,
+            [
+                sys.executable,
+                os.path.join(ROOT, "team/forge/scripts/forge_agent/cost_scan.py"),
+                "/nonexistent/path/does/not/exist",
+            ],
+            capture_output=True,
+            text=True,
         )
         assert result.returncode == 1
         assert "does not exist" in result.stderr

@@ -29,28 +29,29 @@ If any fail, stop and fix the health problem first.
 
 ### Step 1: Map Expansion Levers
 
-| Lever | Description | Trigger Signal |
-|-------|-------------|----------------|
-| **Seat expansion** | Add more users | Team invite attempts, sharing behavior |
-| **Tier upgrade** | Move to higher plan | Hitting limits, using premium features |
-| **Usage upsell** | More volume/API calls | Approaching usage ceiling |
-| **Add-on purchase** | Adjacent feature | Using workaround for missing capability |
-| **Cross-sell** | Different product | ICP fit + different use case pain |
-| **Multi-year** | Longer contract | Stable, high satisfaction, budget cycle |
+| Lever               | Description           | Trigger Signal                          |
+| ------------------- | --------------------- | --------------------------------------- |
+| **Seat expansion**  | Add more users        | Team invite attempts, sharing behavior  |
+| **Tier upgrade**    | Move to higher plan   | Hitting limits, using premium features  |
+| **Usage upsell**    | More volume/API calls | Approaching usage ceiling               |
+| **Add-on purchase** | Adjacent feature      | Using workaround for missing capability |
+| **Cross-sell**      | Different product     | ICP fit + different use case pain       |
+| **Multi-year**      | Longer contract       | Stable, high satisfaction, budget cycle |
 
 ### Step 2: Design Expansion Trigger System
 
 For each lever, define:
 
-| Lever | Trigger condition | Who detects | When to act | Conversation opener |
-|-------|-------------------|-------------|-------------|---------------------|
-| Seat expansion | 3+ non-user stakeholders mentioned | CSM | Within 1 week | "I noticed you mentioned your team — want to loop them in?" |
-| Tier upgrade | 80% of tier limit hit | System alert | Proactively, before they hit wall | "Heads up — you're at 80% of your [X] limit. Here's what happens next..." |
-| [etc.] | | | | |
+| Lever          | Trigger condition                  | Who detects  | When to act                       | Conversation opener                                                       |
+| -------------- | ---------------------------------- | ------------ | --------------------------------- | ------------------------------------------------------------------------- |
+| Seat expansion | 3+ non-user stakeholders mentioned | CSM          | Within 1 week                     | "I noticed you mentioned your team — want to loop them in?"               |
+| Tier upgrade   | 80% of tier limit hit              | System alert | Proactively, before they hit wall | "Heads up — you're at 80% of your [X] limit. Here's what happens next..." |
+| [etc.]         |                                    |              |                                   |                                                                           |
 
 ### Step 3: Write Expansion Conversation Guides
 
 **Seat expansion conversation:**
+
 ```
 Context: Customer has 3 active users, mentioned 10-person team.
 Opening: "How is the team finding it so far?"
@@ -60,6 +61,7 @@ Close: "If I sent you a link to upgrade, would you share it with [name]?"
 ```
 
 **Tier upgrade conversation:**
+
 ```
 Context: Customer at 85% of Starter limit.
 Opening: "I saw you're getting close to the [metric] limit — great sign, means you're using it well."
@@ -86,16 +88,19 @@ Close: "If the price makes sense, could you make this call this week before you 
 ## Expansion Email Templates
 
 ### Seat expansion email
+
 Subject: [Bring [team name] into [Product]]
 Body: [2-3 sentences specific to their team context]
 CTA: [link to upgrade or "reply to this email"]
 
 ### Tier upgrade email
+
 Subject: [You're at 80% — what happens next?]
 Body: [transparent heads-up + upgrade path]
 CTA: [upgrade link or call invite]
 
 ## Metrics to Track
+
 - Expansion revenue by trigger type
 - Expansion conversion rate by CSM
 - Time from trigger to close
@@ -106,12 +111,12 @@ CTA: [upgrade link or call invite]
 
 When expansion conversations hit blockers:
 
-| Blocker | Response |
-|---------|----------|
-| "No budget right now" | "When does your budget cycle reset? I'll follow up then." |
-| "Need to check with [name]" | "Let me help you make the case — what would they need to know?" |
-| "Not a priority" | Pause for 30 days. Return when health signal changes. |
-| "Price is too high" | Diagnose: ROI unclear, or genuinely wrong tier. Address root cause. |
+| Blocker                     | Response                                                            |
+| --------------------------- | ------------------------------------------------------------------- |
+| "No budget right now"       | "When does your budget cycle reset? I'll follow up then."           |
+| "Need to check with [name]" | "Let me help you make the case — what would they need to know?"     |
+| "Not a priority"            | Pause for 30 days. Return when health signal changes.               |
+| "Price is too high"         | Diagnose: ROI unclear, or genuinely wrong tier. Address root cause. |
 
 ## Delivery
 

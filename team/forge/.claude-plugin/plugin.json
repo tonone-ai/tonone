@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "infrastructure",
-    "cloud",
-    "iac",
-    "networking",
-    "cost"
-  ]
+  "keywords": ["infrastructure", "cloud", "iac", "networking", "cost"]
 }

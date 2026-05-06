@@ -12,10 +12,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../.."))
 from team.shared.report_schema import Finding
 
 _SPEND_SEVERITY = [
-    (5000.0,  "CRITICAL"),
-    (1000.0,  "HIGH"),
-    (200.0,   "MEDIUM"),
-    (0.01,    "LOW"),
+    (5000.0, "CRITICAL"),
+    (1000.0, "HIGH"),
+    (200.0, "MEDIUM"),
+    (0.01, "LOW"),
 ]
 
 
@@ -30,7 +30,9 @@ def _aws_available() -> bool:
     try:
         result = subprocess.run(
             ["aws", "--version"],
-            capture_output=True, text=True, timeout=10,
+            capture_output=True,
+            text=True,
+            timeout=10,
         )
         return result.returncode == 0
     except (FileNotFoundError, subprocess.TimeoutExpired):
@@ -41,7 +43,9 @@ def _gcloud_available() -> bool:
     try:
         result = subprocess.run(
             ["gcloud", "--version"],
-            capture_output=True, text=True, timeout=10,
+            capture_output=True,
+            text=True,
+            timeout=10,
         )
         return result.returncode == 0
     except (FileNotFoundError, subprocess.TimeoutExpired):
@@ -76,12 +80,19 @@ def _fetch_aws_costs() -> list[Finding]:
     end = today.replace(day=1).isoformat()
 
     cmd = [
-        "aws", "ce", "get-cost-and-usage",
-        "--time-period", f"Start={start},End={end}",
-        "--granularity", "MONTHLY",
-        "--metrics", "UnblendedCost",
-        "--group-by", "Type=DIMENSION,Key=SERVICE",
-        "--output", "json",
+        "aws",
+        "ce",
+        "get-cost-and-usage",
+        "--time-period",
+        f"Start={start},End={end}",
+        "--granularity",
+        "MONTHLY",
+        "--metrics",
+        "UnblendedCost",
+        "--group-by",
+        "Type=DIMENSION,Key=SERVICE",
+        "--output",
+        "json",
     ]
 
     try:
@@ -92,8 +103,15 @@ def _fetch_aws_costs() -> list[Finding]:
 
     if result.returncode != 0:
         stderr = result.stderr.lower()
-        if "unable to locate credentials" in stderr or "authfailure" in stderr or "accessdenied" in stderr:
-            print("AWS credentials not configured or missing ce:GetCostAndUsage permission.", file=sys.stderr)
+        if (
+            "unable to locate credentials" in stderr
+            or "authfailure" in stderr
+            or "accessdenied" in stderr
+        ):
+            print(
+                "AWS credentials not configured or missing ce:GetCostAndUsage permission.",
+                file=sys.stderr,
+            )
         else:
             print(f"aws ce error: {result.stderr[:300]}", file=sys.stderr)
         return []
@@ -113,7 +131,9 @@ def _parse_aws_costs(data: dict, start: str, end: str) -> list[Finding]:
     for period in data.get("ResultsByTime", []):
         for group in period.get("Groups", []):
             service = group.get("Keys", ["unknown"])[0]
-            amount = float(group.get("Metrics", {}).get("UnblendedCost", {}).get("Amount", 0))
+            amount = float(
+                group.get("Metrics", {}).get("UnblendedCost", {}).get("Amount", 0)
+            )
 
             if amount < 1.0:
                 continue
@@ -121,37 +141,41 @@ def _parse_aws_costs(data: dict, start: str, end: str) -> list[Finding]:
             severity = _severity_for_spend(amount)
             recommendation = _aws_service_recommendation(service, amount)
 
-            findings.append(Finding(
-                id=f"AWS-{service.upper().replace(' ', '-')[:30]}",
-                severity=severity,
-                title=f"AWS spend: {service}",
-                detail=f"${amount:.2f} in {period_label}.",
-                location=f"aws://cost-explorer/{service}",
-                recommendation=recommendation,
-                effort="S",
-            ))
+            findings.append(
+                Finding(
+                    id=f"AWS-{service.upper().replace(' ', '-')[:30]}",
+                    severity=severity,
+                    title=f"AWS spend: {service}",
+                    detail=f"${amount:.2f} in {period_label}.",
+                    location=f"aws://cost-explorer/{service}",
+                    recommendation=recommendation,
+                    effort="S",
+                )
+            )
 
     return sorted(findings, key=lambda f: -float(f.detail.split("$")[1].split(" ")[0]))
 
 
 def _aws_service_recommendation(service: str, amount: float) -> str:
     recs: dict[str, str] = {
-        "Amazon EC2":                  "Check for idle/oversized instances. Consider Savings Plans (up to 66% off on-demand).",
-        "Amazon RDS":                  "Use Reserved Instances for steady-state workloads (up to 69% savings).",
-        "Amazon S3":                   "Enable Intelligent-Tiering for infrequently accessed data. Audit lifecycle rules.",
-        "AWS Lambda":                  "Review function memory sizing — Lambda bills on GB-seconds.",
-        "Amazon CloudFront":           "Review cache hit rate. Low hit rate = high origin transfer cost.",
-        "Amazon DynamoDB":             "Use on-demand only for spiky workloads; provisioned + auto-scaling is cheaper at steady state.",
-        "AWS Data Transfer":           "Minimize cross-AZ and cross-region traffic. Use VPC endpoints for S3/DynamoDB.",
-        "Amazon Elastic Container":    "Use Fargate Spot for fault-tolerant workloads (up to 70% savings).",
-        "Amazon Elastic Kubernetes":   "Right-size node groups and consider Karpenter for bin packing.",
-        "Amazon Relational Database":  "Use Reserved Instances for steady-state workloads (up to 69% savings).",
+        "Amazon EC2": "Check for idle/oversized instances. Consider Savings Plans (up to 66% off on-demand).",
+        "Amazon RDS": "Use Reserved Instances for steady-state workloads (up to 69% savings).",
+        "Amazon S3": "Enable Intelligent-Tiering for infrequently accessed data. Audit lifecycle rules.",
+        "AWS Lambda": "Review function memory sizing — Lambda bills on GB-seconds.",
+        "Amazon CloudFront": "Review cache hit rate. Low hit rate = high origin transfer cost.",
+        "Amazon DynamoDB": "Use on-demand only for spiky workloads; provisioned + auto-scaling is cheaper at steady state.",
+        "AWS Data Transfer": "Minimize cross-AZ and cross-region traffic. Use VPC endpoints for S3/DynamoDB.",
+        "Amazon Elastic Container": "Use Fargate Spot for fault-tolerant workloads (up to 70% savings).",
+        "Amazon Elastic Kubernetes": "Right-size node groups and consider Karpenter for bin packing.",
+        "Amazon Relational Database": "Use Reserved Instances for steady-state workloads (up to 69% savings).",
     }
     for key, rec in recs.items():
         if key.lower() in service.lower():
             return rec
     if amount >= 1000:
-        return f"Review {service} — top spend driver. Explore Reserved/Committed pricing."
+        return (
+            f"Review {service} — top spend driver. Explore Reserved/Committed pricing."
+        )
     return f"Review {service} usage. Check for unused resources and tagging."
 
 
@@ -165,8 +189,15 @@ def _fetch_gcp_costs() -> list[Finding]:
 
     if result.returncode != 0:
         stderr = result.stderr.lower()
-        if "not authenticated" in stderr or "credentials" in stderr or "permission" in stderr:
-            print("GCP credentials not configured or missing billing.accounts.list permission.", file=sys.stderr)
+        if (
+            "not authenticated" in stderr
+            or "credentials" in stderr
+            or "permission" in stderr
+        ):
+            print(
+                "GCP credentials not configured or missing billing.accounts.list permission.",
+                file=sys.stderr,
+            )
         return []
 
     try:
@@ -182,14 +213,16 @@ def _fetch_gcp_costs() -> list[Finding]:
         account_id = account.get("name", "").split("/")[-1]
         display_name = account.get("displayName", account_id)
         # Billing export via BigQuery is the full path; surface account as INFO for now
-        findings.append(Finding(
-            id=f"GCP-BILLING-{account_id[:20]}",
-            severity="INFO",
-            title=f"GCP billing account: {display_name}",
-            detail=f"Billing account {account_id} found. Detailed spend requires BigQuery billing export.",
-            location=f"gcp://billing/{account_id}",
-            recommendation="Enable BigQuery billing export for per-service cost breakdown. Run `gcloud alpha billing budgets list` to see active budgets.",
-            effort="S",
-        ))
+        findings.append(
+            Finding(
+                id=f"GCP-BILLING-{account_id[:20]}",
+                severity="INFO",
+                title=f"GCP billing account: {display_name}",
+                detail=f"Billing account {account_id} found. Detailed spend requires BigQuery billing export.",
+                location=f"gcp://billing/{account_id}",
+                recommendation="Enable BigQuery billing export for per-service cost breakdown. Run `gcloud alpha billing budgets list` to see active budgets.",
+                effort="S",
+            )
+        )
 
     return findings

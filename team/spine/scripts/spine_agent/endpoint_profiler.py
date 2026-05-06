@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 import os
-import sys
 import statistics
+import sys
 import time
 from typing import Optional
 
@@ -12,11 +12,11 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../.."))
 from team.shared.report_schema import Finding
 
 # Thresholds in seconds
-THRESHOLD_MEDIUM = 0.200   # >200ms p50
-THRESHOLD_HIGH = 0.500     # >500ms p50
+THRESHOLD_MEDIUM = 0.200  # >200ms p50
+THRESHOLD_HIGH = 0.500  # >500ms p50
 THRESHOLD_CRITICAL = 1.000  # >1000ms p50
 
-DEFAULT_TIMEOUT = 5.0      # seconds per request
+DEFAULT_TIMEOUT = 5.0  # seconds per request
 WARMUP_REQUESTS = 3
 MEASURED_REQUESTS = 5
 
@@ -64,8 +64,7 @@ def profile_endpoints(
         import httpx  # noqa: F401 — checked for availability
     except ImportError:
         print(
-            "httpx not installed. Install with:\n"
-            "  pip install httpx",
+            "httpx not installed. Install with:\n" "  pip install httpx",
             file=sys.stderr,
         )
         return []
@@ -125,21 +124,23 @@ def profile_endpoints(
         if severity is None:
             continue
 
-        findings.append(Finding(
-            id="SPINE-PERF-LATENCY",
-            severity=severity,
-            title=f"Slow endpoint: {path}",
-            detail=(
-                f"Endpoint `{url}` has high response times. "
-                f"p50={p50 * 1000:.0f}ms  p95={p95 * 1000:.0f}ms  p99={p99 * 1000:.0f}ms "
-                f"(measured over {measured} requests, {warmup} warmup)."
-            ),
-            location=url,
-            recommendation=(
-                "Profile with cProfile or py-spy. Look for N+1 queries, missing indexes, "
-                "synchronous external calls, or missing caching on hot paths."
-            ),
-            effort="M",
-        ))
+        findings.append(
+            Finding(
+                id="SPINE-PERF-LATENCY",
+                severity=severity,
+                title=f"Slow endpoint: {path}",
+                detail=(
+                    f"Endpoint `{url}` has high response times. "
+                    f"p50={p50 * 1000:.0f}ms  p95={p95 * 1000:.0f}ms  p99={p99 * 1000:.0f}ms "
+                    f"(measured over {measured} requests, {warmup} warmup)."
+                ),
+                location=url,
+                recommendation=(
+                    "Profile with cProfile or py-spy. Look for N+1 queries, missing indexes, "
+                    "synchronous external calls, or missing caching on hot paths."
+                ),
+                effort="M",
+            )
+        )
 
     return findings

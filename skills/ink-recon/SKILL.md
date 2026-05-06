@@ -35,42 +35,43 @@ find . -name "*.ts" -o -name "*.tsx" 2>/dev/null | xargs grep -l "google.analyti
 
 List all current content by type:
 
-| Type | Count | Avg quality | Distribution channel |
-|------|-------|-------------|---------------------|
-| Blog posts | | | |
-| Tutorials/guides | | | |
-| Case studies | | | |
-| Documentation (as marketing) | | | |
-| Landing pages | | | |
-| Email newsletter | | | |
+| Type                         | Count | Avg quality | Distribution channel |
+| ---------------------------- | ----- | ----------- | -------------------- |
+| Blog posts                   |       |             |                      |
+| Tutorials/guides             |       |             |                      |
+| Case studies                 |       |             |                      |
+| Documentation (as marketing) |       |             |                      |
+| Landing pages                |       |             |                      |
+| Email newsletter             |       |             |                      |
 
 ### Step 2: SEO Health Check
 
 Assess current SEO fundamentals:
 
-| Dimension | Status | Notes |
-|-----------|--------|-------|
-| Title tags optimized | [✓/~] | |
-| Meta descriptions set | [✓/~] | |
-| H1 structure clean | [✓/~] | |
-| Internal linking pattern | [✓/~] | |
-| Sitemap.xml exists | [✓/✗] | |
-| Robots.txt configured | [✓/✗] | |
-| Core Web Vitals | [good/needs work/unknown] | |
-| Blog has canonical URLs | [✓/✗] | |
+| Dimension                | Status                    | Notes |
+| ------------------------ | ------------------------- | ----- |
+| Title tags optimized     | [✓/~]                     |       |
+| Meta descriptions set    | [✓/~]                     |       |
+| H1 structure clean       | [✓/~]                     |       |
+| Internal linking pattern | [✓/~]                     |       |
+| Sitemap.xml exists       | [✓/✗]                     |       |
+| Robots.txt configured    | [✓/✗]                     |       |
+| Core Web Vitals          | [good/needs work/unknown] |       |
+| Blog has canonical URLs  | [✓/✗]                     |       |
 
 ### Step 3: Content Stage Diagnosis
 
-| Signal | Stage 1 ($0-$1M) | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M) |
-|--------|-----------|------------|------------|
-| Post count | <20 | 20-100 | 100+ |
-| Organic traffic role | None/minimal | Growing channel | Major channel |
-| Topic cluster design | None | Emerging | Full |
-| Content team | Founder writing | 1-2 writers | Content team |
+| Signal               | Stage 1 ($0-$1M) | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M) |
+| -------------------- | ---------------- | ------------------ | -------------------- |
+| Post count           | <20              | 20-100             | 100+                 |
+| Organic traffic role | None/minimal     | Growing channel    | Major channel        |
+| Topic cluster design | None             | Emerging           | Full                 |
+| Content team         | Founder writing  | 1-2 writers        | Content team         |
 
 ### Step 4: Identify Top Opportunities
 
 Use WebSearch to check:
+
 1. Top 3-5 competitors — what topics are they ranking for?
 2. ICP job titles + problems — what do they search for?
 3. Product category keywords — who owns the top results?

@@ -123,3 +123,18 @@
 2026-05-05 22:35 : docs: update CHANGELOG with version sync and CI gate changes — @fatih
 2026-05-05 22:40 : Merge main: resolve conflicts, add buzz/deal/ink/keep to marketplace — @fatih
 2026-05-05 22:55 : feat(apex): add health aggregator + dependency graph depth layer (#84) — @fatih
+2026-04-29 15:38 : docs: elephant takeover, readme v0.9.7, changelog [Unreleased], gitignore .claude (#73) — @thisisfatih
+2026-05-05 22:03 : feat(warden): real tool integration — Semgrep SAST + pip-audit CVE scanning (#74) — @fatih
+2026-05-05 22:08 : feat: add /contribute skill for community-driven improvements (#75) — @fatih
+2026-05-05 22:16 : feat: add form-brief, upgrade form-critique + draft-wireframe with design skills from open-design (#77) — @fatih
+2026-05-05 22:17 : feat(forge): add infracost + AWS Cost Explorer scanning infrastructure (#78) — @fatih
+2026-05-05 22:30 : fix(ci): wire up missing tests, activate agent matrix, fix no-op test (#76) — @fatih
+2026-05-05 22:41 : chore: sync all versions to 0.9.9, add CI version gate, fix 13 test failures (#81) — @fatih
+2026-05-05 22:44 : ci: add version consistency check job (#83) — @fatih
+2026-05-05 22:47 : feat(cortex): add LLM usage scanner + prompt evaluator (#80) — @fatih
+2026-05-05 22:47 : feat(spine): add N+1 detector + HTTP endpoint profiler (#82) — @fatih
+2026-05-05 23:57 : elephant takeover — appended 10 missing commits (2026-04-29 → 2026-05-05) to ELEPHANT.md — @fatih
+2026-05-05 23:57 : fix: trunk.yaml python@3.14.4 → 3.13.3 — version didn't exist, broke all CI Python linters — @fatih
+2026-05-05 23:57 : sync: apex-review, cortex-eval, spine-perf root skills drifted from team/ — missing analyzer step-0 content, fixed — @fatih
+[!!] 2026-05-05 23:57 : PR #85 chore-sync-post-084-updates — 253 files, 2 commits, 54/54 tests pass — @fatih
+[!!] 2026-05-06 07:56 : release 1.0.0 — 6 features, 2 fixes — @fatih

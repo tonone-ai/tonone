@@ -35,6 +35,7 @@ Research queries:
 ```
 
 Assess keyword:
+
 - Is the target keyword actually what people search, or is there a better variation?
 - What is the word count and depth of current top results?
 - Is there a clear content gap the post can fill?
@@ -44,6 +45,7 @@ Assess keyword:
 Structure based on intent:
 
 **Informational / educational:**
+
 ```
 H1: [Keyword-forward title — concise, no pun]
 Intro: Problem statement, why it matters, what this post covers (3-4 sentences)
@@ -56,6 +58,7 @@ Conclusion: Summary + CTA
 ```
 
 **How-to / tutorial:**
+
 ```
 H1: How to [Achieve Outcome] with [Product/Method]
 Intro: What you'll achieve, prerequisites, time required
@@ -68,6 +71,7 @@ Conclusion: Recap + next steps
 ```
 
 **Comparison / commercial:**
+
 ```
 H1: [Product A] vs [Product B]: [Deciding Factor]
 Intro: Who this comparison is for, criteria used
@@ -81,6 +85,7 @@ Conclusion: Recommendation + CTA
 ### Step 3: Write the Post
 
 Guidelines:
+
 - First sentence must hook — a fact, question, or statement that creates tension
 - Use the target keyword in H1, first 100 words, at least one H2, and meta description
 - Every H2 section must be self-contained — someone skimming can get value from any section

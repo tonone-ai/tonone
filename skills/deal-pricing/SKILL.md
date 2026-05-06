@@ -29,11 +29,13 @@ Capture before designing anything:
 ### Step 1: Choose the Value Metric
 
 The value metric is what you charge for. It should:
+
 1. Scale with customer value (as they get more value, they pay more)
 2. Be understandable (buyers should see why it's fair)
 3. Allow land-and-expand (small start, natural growth)
 
 Common value metrics by product type:
+
 - **Seats/users** — collaboration tools, CRMs, communication platforms
 - **Usage/events** — APIs, analytics, infrastructure, data pipelines
 - **Outcomes** — revenue generated, cost saved (powerful but hard to measure)
@@ -65,6 +67,7 @@ Includes: SSO, audit logs, SLA, dedicated support, custom contracts
 ```
 
 Freemium design rules:
+
 - Free tier must deliver real value — not a crippled demo
 - Upgrade trigger must be natural ceiling, not artificial punishment
 - Free tier users are marketing, not burden (if conversion to paid is >2%)
@@ -72,6 +75,7 @@ Freemium design rules:
 ### Step 3: Price for Value, Not Cost
 
 Pricing methods ranked by effectiveness:
+
 1. **Value-based** — What is solving this worth to the customer? Price at 10-20% of value.
 2. **Competitor-based** — Where are competitors priced? Anchor relative to them.
 3. **Cost-plus** — Cost × margin. Last resort. Leaves money on the table.
@@ -88,6 +92,7 @@ Enterprise deals are different from self-serve. Design enterprise pricing as:
 - **Paper process** — SOC 2, legal review, MSA, custom DPA — budget time and cost
 
 Enterprise pricing checklist:
+
 - [x] Starting price set above self-serve ceiling
 - [x] Custom contract or MSA template exists
 - [x] Security questionnaire response prepared
@@ -106,21 +111,27 @@ Enterprise pricing checklist:
 ## Tiers
 
 ### [Tier 1] — $[price]/[period]
+
 [What it includes and the upgrade trigger]
 
 ### [Tier 2] — $[price]/[period]
+
 [What it includes and what's excluded]
 
 ### [Tier 3] — $[price]/[period] or Contact Sales
+
 [Enterprise differentiators]
 
 ## Pricing Rationale
+
 [Why this value metric? Why these price points?]
 
 ## Upgrade Path
+
 [How a customer naturally grows from Tier 1 to Tier 3]
 
 ## Pricing Page Copy
+
 [Headline, sub-headline, and feature comparison table]
 ```
 

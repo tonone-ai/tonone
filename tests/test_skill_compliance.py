@@ -20,7 +20,8 @@ SKILL_DIRS = sorted([d for d in SKILLS_DIR.iterdir() if d.is_dir()])
 
 # Valid agent names (skill prefix must be one of these)
 _AGENT_DIRS = [
-    d for d in (REPO / "team").iterdir()
+    d
+    for d in (REPO / "team").iterdir()
     if d.is_dir() and (d / ".claude-plugin" / "plugin.json").exists()
 ]
 VALID_AGENTS = sorted(d.name for d in _AGENT_DIRS)

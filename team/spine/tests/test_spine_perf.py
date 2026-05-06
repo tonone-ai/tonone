@@ -13,15 +13,15 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 sys.path.insert(0, ROOT)
 
 from team.shared.report_schema import AgentReport, Finding, ReportMetadata
-from team.spine.scripts.spine_agent.n_plus_one_detector import scan_file, scan_directory
 from team.spine.scripts.spine_agent.endpoint_profiler import (
-    profile_endpoints,
+    THRESHOLD_CRITICAL,
+    THRESHOLD_HIGH,
+    THRESHOLD_MEDIUM,
     _percentile,
     _severity_for_p50,
-    THRESHOLD_MEDIUM,
-    THRESHOLD_HIGH,
-    THRESHOLD_CRITICAL,
+    profile_endpoints,
 )
+from team.spine.scripts.spine_agent.n_plus_one_detector import scan_directory, scan_file
 
 FIXTURE_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 FIXTURE_FILE = os.path.join(FIXTURE_DIR, "n_plus_one_sample.py")
@@ -31,6 +31,7 @@ PERF_SCAN = os.path.join(ROOT, "team/spine/scripts/spine_agent/perf_scan.py")
 # ---------------------------------------------------------------------------
 # Severity mapping helpers
 # ---------------------------------------------------------------------------
+
 
 class TestSeverityMapping:
     def test_below_threshold_returns_none(self):
@@ -56,6 +57,7 @@ class TestSeverityMapping:
 # Percentile helper
 # ---------------------------------------------------------------------------
 
+
 class TestPercentile:
     def test_empty_list(self):
         assert _percentile([], 50) == 0.0
@@ -75,6 +77,7 @@ class TestPercentile:
 # N+1 detector — fixture file
 # ---------------------------------------------------------------------------
 
+
 class TestN1DetectorFixture:
     def test_fixture_file_exists(self):
         assert os.path.isfile(FIXTURE_FILE), f"Fixture not found: {FIXTURE_FILE}"
@@ -86,17 +89,23 @@ class TestN1DetectorFixture:
     def test_detects_orm_query_in_loop(self):
         findings = scan_file(FIXTURE_FILE)
         ids = [f.id for f in findings]
-        assert "SPINE-N1-ORM" in ids, "Expected SPINE-N1-ORM finding (ORM call inside loop)"
+        assert (
+            "SPINE-N1-ORM" in ids
+        ), "Expected SPINE-N1-ORM finding (ORM call inside loop)"
 
     def test_detects_raw_sql_in_loop(self):
         findings = scan_file(FIXTURE_FILE)
         ids = [f.id for f in findings]
-        assert "SPINE-N1-SQL" in ids, "Expected SPINE-N1-SQL finding (cursor.execute in loop)"
+        assert (
+            "SPINE-N1-SQL" in ids
+        ), "Expected SPINE-N1-SQL finding (cursor.execute in loop)"
 
     def test_detects_formatted_sql_in_loop(self):
         findings = scan_file(FIXTURE_FILE)
         ids = [f.id for f in findings]
-        assert "SPINE-N1-FMTSQL" in ids, "Expected SPINE-N1-FMTSQL finding (string-formatted SQL in loop)"
+        assert (
+            "SPINE-N1-FMTSQL" in ids
+        ), "Expected SPINE-N1-FMTSQL finding (string-formatted SQL in loop)"
 
     def test_findings_have_required_fields(self):
         findings = scan_file(FIXTURE_FILE)
@@ -110,7 +119,9 @@ class TestN1DetectorFixture:
     def test_findings_have_location_with_line(self):
         findings = scan_file(FIXTURE_FILE)
         for f in findings:
-            assert ":" in f.location, f"location should include line number, got: {f.location}"
+            assert (
+                ":" in f.location
+            ), f"location should include line number, got: {f.location}"
 
     def test_scan_directory_includes_fixture(self):
         findings = scan_directory(FIXTURE_DIR)
@@ -150,10 +161,7 @@ class TestN1DetectorEdgeCases:
         venv_dir = tmp_path / ".venv" / "lib"
         venv_dir.mkdir(parents=True)
         bad = venv_dir / "bad.py"
-        bad.write_text(
-            "for x in items:\n"
-            "    obj = Model.objects.get(id=x)\n"
-        )
+        bad.write_text("for x in items:\n" "    obj = Model.objects.get(id=x)\n")
         findings = scan_directory(str(tmp_path))
         assert findings == []
 
@@ -162,10 +170,12 @@ class TestN1DetectorEdgeCases:
 # Endpoint profiler — error paths
 # ---------------------------------------------------------------------------
 
+
 class TestEndpointProfilerErrors:
     def test_httpx_not_installed(self, monkeypatch):
         """If httpx is not importable, return [] and print install message."""
         import builtins
+
         real_import = builtins.__import__
 
         def mock_import(name, *args, **kwargs):
@@ -222,6 +232,7 @@ class TestEndpointProfilerErrors:
 # perf_scan CLI
 # ---------------------------------------------------------------------------
 
+
 class TestPerfScanCLI:
     def test_nonexistent_target_exits_1(self):
         result = subprocess.run(
@@ -244,7 +255,14 @@ class TestPerfScanCLI:
     def test_writes_report_json(self, tmp_path):
         out = str(tmp_path / "report.json")
         result = subprocess.run(
-            [sys.executable, PERF_SCAN, str(tmp_path), "--skip-endpoints", "--out", out],
+            [
+                sys.executable,
+                PERF_SCAN,
+                str(tmp_path),
+                "--skip-endpoints",
+                "--out",
+                out,
+            ],
             capture_output=True,
             text=True,
         )
@@ -271,6 +289,7 @@ class TestPerfScanCLI:
 # Report schema round-trip (spine context)
 # ---------------------------------------------------------------------------
 
+
 class TestReportSchema:
     def test_finding_valid_spine(self):
         f = Finding(
@@ -287,9 +306,30 @@ class TestReportSchema:
     def test_report_summary_counts(self):
         report = AgentReport(agent="spine", skill="spine-perf", target=".")
         report.findings = [
-            Finding(severity="CRITICAL", title="a", detail="a", location="a", recommendation="a", effort="S"),
-            Finding(severity="HIGH", title="b", detail="b", location="b", recommendation="b", effort="S"),
-            Finding(severity="MEDIUM", title="c", detail="c", location="c", recommendation="c", effort="M"),
+            Finding(
+                severity="CRITICAL",
+                title="a",
+                detail="a",
+                location="a",
+                recommendation="a",
+                effort="S",
+            ),
+            Finding(
+                severity="HIGH",
+                title="b",
+                detail="b",
+                location="b",
+                recommendation="b",
+                effort="S",
+            ),
+            Finding(
+                severity="MEDIUM",
+                title="c",
+                detail="c",
+                location="c",
+                recommendation="c",
+                effort="M",
+            ),
         ]
         s = report.summary
         assert s.critical == 1

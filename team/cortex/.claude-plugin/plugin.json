@@ -8,12 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "ml",
-    "ai",
-    "mlops",
-    "models",
-    "llm",
-    "feature-engineering"
-  ]
+  "keywords": ["ml", "ai", "mlops", "models", "llm", "feature-engineering"]
 }

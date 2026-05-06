@@ -35,46 +35,46 @@ find . -name "*.md" 2>/dev/null | xargs grep -l "customer.success\|onboarding\|e
 
 ### Step 1: Diagnose CS Stage
 
-| Signal | Stage 1 ($0-$1M) | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M) |
-|--------|-----------|------------|------------|
-| CS motion | Founder-led | First CSM | CS team |
-| Onboarding | Manual calls | Mixed auto/human | Mostly automated |
-| Health scoring | None/informal | Defined | Multi-signal |
-| Expansion | Reactive | Proactive triggers | CS owns quota |
+| Signal         | Stage 1 ($0-$1M) | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M) |
+| -------------- | ---------------- | ------------------ | -------------------- |
+| CS motion      | Founder-led      | First CSM          | CS team              |
+| Onboarding     | Manual calls     | Mixed auto/human   | Mostly automated     |
+| Health scoring | None/informal    | Defined            | Multi-signal         |
+| Expansion      | Reactive         | Proactive triggers | CS owns quota        |
 
 ### Step 2: Map the Customer Journey
 
 Walk each stage:
 
-| Stage | Mechanism | Instrumented? | Completion Rate |
-|-------|-----------|---------------|-----------------|
-| Signup → First login | [auto/manual] | [✓/✗] | [%/?] |
-| First login → Aha moment | [flow steps] | [✓/✗] | [%/?] |
-| Aha moment → Active use | [habit forming] | [✓/✗] | [%/?] |
-| Active use → Expansion | [trigger] | [✓/✗] | [%/?] |
-| Renewal approach | [process] | [✓/✗] | [%/?] |
+| Stage                    | Mechanism       | Instrumented? | Completion Rate |
+| ------------------------ | --------------- | ------------- | --------------- |
+| Signup → First login     | [auto/manual]   | [✓/✗]         | [%/?]           |
+| First login → Aha moment | [flow steps]    | [✓/✗]         | [%/?]           |
+| Aha moment → Active use  | [habit forming] | [✓/✗]         | [%/?]           |
+| Active use → Expansion   | [trigger]       | [✓/✗]         | [%/?]           |
+| Renewal approach         | [process]       | [✓/✗]         | [%/?]           |
 
 ### Step 3: NRR Health Check
 
-| Metric | Current | Target | Gap |
-|--------|---------|--------|-----|
-| Gross Revenue Retention | [%] | 90%+ | |
-| Net Revenue Retention | [%] | 100-120% | |
-| Onboarding completion | [%] | 80%+ | |
-| D30 activation | [%] | 40%+ | |
-| Average churn reason | [category] | | |
+| Metric                  | Current    | Target   | Gap |
+| ----------------------- | ---------- | -------- | --- |
+| Gross Revenue Retention | [%]        | 90%+     |     |
+| Net Revenue Retention   | [%]        | 100-120% |     |
+| Onboarding completion   | [%]        | 80%+     |     |
+| D30 activation          | [%]        | 40%+     |     |
+| Average churn reason    | [category] |          |     |
 
 ### Step 4: Inventory CS Assets
 
-| Asset | Exists? | Quality |
-|-------|---------|---------|
-| Onboarding checklist/flow | [✓/✗] | |
-| Welcome email sequence | [✓/✗] | |
-| Health score model | [✓/✗] | |
-| Churn risk playbook | [✓/✗] | |
-| Expansion playbook | [✓/✗] | |
-| QBR template | [✓/✗] | |
-| Success plan template | [✓/✗] | |
+| Asset                     | Exists? | Quality |
+| ------------------------- | ------- | ------- |
+| Onboarding checklist/flow | [✓/✗]   |         |
+| Welcome email sequence    | [✓/✗]   |         |
+| Health score model        | [✓/✗]   |         |
+| Churn risk playbook       | [✓/✗]   |         |
+| Expansion playbook        | [✓/✗]   |         |
+| QBR template              | [✓/✗]   |         |
+| Success plan template     | [✓/✗]   |         |
 
 ### Step 5: Present Assessment
 

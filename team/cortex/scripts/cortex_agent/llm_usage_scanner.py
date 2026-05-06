@@ -95,69 +95,81 @@ class _LLMCallVisitor(ast.NodeVisitor):
     def visit_Call(self, node: ast.Call):
         if self._is_llm_call(node):
             # 1. Missing max_tokens
-            if not self._has_kwarg(node, "max_tokens") and not self._has_kwarg(node, "max_completion_tokens"):
-                self.findings.append(Finding(
-                    id="CORTEX-001",
-                    severity="MEDIUM",
-                    title="Missing max_tokens on LLM call",
-                    detail=(
-                        "LLM API call has no max_tokens limit. "
-                        "Unbounded responses can cause unexpected costs and latency spikes."
-                    ),
-                    location=self._loc(node),
-                    recommendation="Add max_tokens=<reasonable_limit> to cap response length and cost.",
-                    effort="S",
-                ))
+            if not self._has_kwarg(node, "max_tokens") and not self._has_kwarg(
+                node, "max_completion_tokens"
+            ):
+                self.findings.append(
+                    Finding(
+                        id="CORTEX-001",
+                        severity="MEDIUM",
+                        title="Missing max_tokens on LLM call",
+                        detail=(
+                            "LLM API call has no max_tokens limit. "
+                            "Unbounded responses can cause unexpected costs and latency spikes."
+                        ),
+                        location=self._loc(node),
+                        recommendation="Add max_tokens=<reasonable_limit> to cap response length and cost.",
+                        effort="S",
+                    )
+                )
 
             # 2. Missing timeout
             if not self._has_kwarg(node, "timeout"):
-                self.findings.append(Finding(
-                    id="CORTEX-002",
-                    severity="MEDIUM",
-                    title="Missing timeout on LLM call",
-                    detail=(
-                        "LLM API call has no timeout. Network hangs will block the event loop "
-                        "or thread indefinitely."
-                    ),
-                    location=self._loc(node),
-                    recommendation="Pass timeout=30 (or appropriate value) to the API call.",
-                    effort="S",
-                ))
+                self.findings.append(
+                    Finding(
+                        id="CORTEX-002",
+                        severity="MEDIUM",
+                        title="Missing timeout on LLM call",
+                        detail=(
+                            "LLM API call has no timeout. Network hangs will block the event loop "
+                            "or thread indefinitely."
+                        ),
+                        location=self._loc(node),
+                        recommendation="Pass timeout=30 (or appropriate value) to the API call.",
+                        effort="S",
+                    )
+                )
 
             # 3. No error handling (not wrapped in try/except)
             if not self._is_in_try(node):
-                self.findings.append(Finding(
-                    id="CORTEX-003",
-                    severity="HIGH",
-                    title="LLM call without error handling",
-                    detail=(
-                        "LLM API call is not inside a try/except block. "
-                        "Rate limit errors, network failures, and API errors will crash the caller."
-                    ),
-                    location=self._loc(node),
-                    recommendation=(
-                        "Wrap in try/except catching at minimum APIError, RateLimitError, and Exception."
-                    ),
-                    effort="S",
-                ))
+                self.findings.append(
+                    Finding(
+                        id="CORTEX-003",
+                        severity="HIGH",
+                        title="LLM call without error handling",
+                        detail=(
+                            "LLM API call is not inside a try/except block. "
+                            "Rate limit errors, network failures, and API errors will crash the caller."
+                        ),
+                        location=self._loc(node),
+                        recommendation=(
+                            "Wrap in try/except catching at minimum APIError, RateLimitError, and Exception."
+                        ),
+                        effort="S",
+                    )
+                )
 
             # 4. Missing prompt caching headers
-            if not self._has_kwarg(node, "cache_control") and not self._has_kwarg(node, "extra_headers"):
-                self.findings.append(Finding(
-                    id="CORTEX-004",
-                    severity="LOW",
-                    title="Missing prompt caching headers",
-                    detail=(
-                        "LLM API call does not use cache_control or extra_headers for prompt caching. "
-                        "Repeated identical system prompts incur unnecessary token costs."
-                    ),
-                    location=self._loc(node),
-                    recommendation=(
-                        "Add cache_control={'type': 'ephemeral'} to large, reusable messages "
-                        "to enable prompt caching."
-                    ),
-                    effort="M",
-                ))
+            if not self._has_kwarg(node, "cache_control") and not self._has_kwarg(
+                node, "extra_headers"
+            ):
+                self.findings.append(
+                    Finding(
+                        id="CORTEX-004",
+                        severity="LOW",
+                        title="Missing prompt caching headers",
+                        detail=(
+                            "LLM API call does not use cache_control or extra_headers for prompt caching. "
+                            "Repeated identical system prompts incur unnecessary token costs."
+                        ),
+                        location=self._loc(node),
+                        recommendation=(
+                            "Add cache_control={'type': 'ephemeral'} to large, reusable messages "
+                            "to enable prompt caching."
+                        ),
+                        effort="M",
+                    )
+                )
 
         self.generic_visit(node)
 
@@ -180,21 +192,23 @@ def _find_hardcoded_models(source: str, filepath: str) -> list[Finding]:
     for i, line in enumerate(source.splitlines(), 1):
         for model in _HARDCODED_MODELS:
             if model in line:
-                findings.append(Finding(
-                    id="CORTEX-005",
-                    severity="LOW",
-                    title="Hardcoded model name",
-                    detail=(
-                        f"Model name '{model}' is hardcoded. "
-                        "Hard-wired model strings make it difficult to swap models or A/B test."
-                    ),
-                    location=f"{filepath}:{i}",
-                    recommendation=(
-                        "Move model name to a config file, environment variable, or constant. "
-                        "e.g. MODEL = os.environ.get('LLM_MODEL', 'claude-3-5-sonnet-20241022')"
-                    ),
-                    effort="S",
-                ))
+                findings.append(
+                    Finding(
+                        id="CORTEX-005",
+                        severity="LOW",
+                        title="Hardcoded model name",
+                        detail=(
+                            f"Model name '{model}' is hardcoded. "
+                            "Hard-wired model strings make it difficult to swap models or A/B test."
+                        ),
+                        location=f"{filepath}:{i}",
+                        recommendation=(
+                            "Move model name to a config file, environment variable, or constant. "
+                            "e.g. MODEL = os.environ.get('LLM_MODEL', 'claude-3-5-sonnet-20241022')"
+                        ),
+                        effort="S",
+                    )
+                )
                 break  # one finding per line, even if multiple models
     return findings
 
@@ -212,20 +226,22 @@ def _find_sync_in_async(tree: ast.AST, filepath: str) -> list[Finding]:
                         code,
                         re.IGNORECASE,
                     ):
-                        findings.append(Finding(
-                            id="CORTEX-006",
-                            severity="MEDIUM",
-                            title="Synchronous LLM call inside async function",
-                            detail=(
-                                "A synchronous LLM API call is used inside an async function. "
-                                "This blocks the event loop during the entire API round-trip."
-                            ),
-                            location=f"{filepath}:{getattr(child, 'lineno', 0)}",
-                            recommendation=(
-                                "Use the async client (e.g. AsyncAnthropic) and await the call."
-                            ),
-                            effort="M",
-                        ))
+                        findings.append(
+                            Finding(
+                                id="CORTEX-006",
+                                severity="MEDIUM",
+                                title="Synchronous LLM call inside async function",
+                                detail=(
+                                    "A synchronous LLM API call is used inside an async function. "
+                                    "This blocks the event loop during the entire API round-trip."
+                                ),
+                                location=f"{filepath}:{getattr(child, 'lineno', 0)}",
+                                recommendation=(
+                                    "Use the async client (e.g. AsyncAnthropic) and await the call."
+                                ),
+                                effort="M",
+                            )
+                        )
     return findings
 
 

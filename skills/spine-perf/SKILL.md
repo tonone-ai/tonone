@@ -2,7 +2,7 @@
 name: spine-perf
 description: Find and fix performance bottlenecks — N+1 queries, missing indexes, sync bottlenecks, caching gaps. Use when asked "why is this slow", "performance issue", "optimize this endpoint", or "N+1 queries".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.6.4
+version: 0.9.8
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 ---
@@ -15,7 +15,22 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 ## Steps
 
-### Step 0: Detect Environment
+### Step 0: Run perf_scan.py
+
+```bash
+python team/spine/scripts/spine_agent/perf_scan.py [target] [--base-url http://...] [--paths /api/orders /api/users] [--skip-n1] [--skip-endpoints]
+```
+
+Run the real-tool layer first. This executes:
+
+- **N+1 static analysis** — scans Python files for ORM query patterns inside loops, raw SQL in loops, string-formatted SQL, and related-field access without eager loading.
+- **Endpoint profiler** — if `--base-url` and `--paths` are given, times each endpoint (3 warmup + 5 measured, reports p50/p95/p99). Flags endpoints >200ms (MEDIUM), >500ms (HIGH), >1000ms (CRITICAL).
+
+The tool writes `.reports/spine-perf-<ts>.json` and exits 2 on CRITICAL/HIGH findings (CI gate).
+
+Review the JSON report to seed the investigation in Steps 1-7 below.
+
+### Step 1: Detect Environment
 
 ```bash
 ls -a

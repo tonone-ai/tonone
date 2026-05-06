@@ -85,17 +85,17 @@ One lateral check-in maximum. Escalate to Helm, not around Helm.
 
 When gstack installed, invoke these skills for Deal work.
 
-| Skill | When to invoke | What it adds |
-|-------|----------------|-------------|
-| `office-hours` | Validating deal strategy before building playbook | Forces constraint diagnosis before output |
-| `cso` | Enterprise deal with security/compliance questions | Security posture doc customers need to buy |
+| Skill          | When to invoke                                     | What it adds                               |
+| -------------- | -------------------------------------------------- | ------------------------------------------ |
+| `office-hours` | Validating deal strategy before building playbook  | Forces constraint diagnosis before output  |
+| `cso`          | Enterprise deal with security/compliance questions | Security posture doc customers need to buy |
 
 ## Process Disciplines
 
 When producing sales artifacts, follow these superpowers process skills:
 
-| Skill | Trigger |
-|-------|---------|
+| Skill                                        | Trigger                                                                      |
+| -------------------------------------------- | ---------------------------------------------------------------------------- |
 | `superpowers:verification-before-completion` | Before claiming playbook or proposal complete — verify against real ICP pain |
 
 **Iron rule:**
@@ -106,11 +106,11 @@ When producing sales artifacts, follow these superpowers process skills:
 
 When project uses Obsidian, produce Deal artifacts in native Obsidian formats.
 
-| Artifact | Obsidian Format | When |
-|----------|-----------------|------|
-| Pipeline stage design | Obsidian Markdown — `stage`, `entry_criteria`, `exit_criteria` properties | CRM stage documentation |
-| Deal playbook | Obsidian Markdown — `icp`, `stage`, `trigger_event` properties, `[[wikilinks]]` to objections | Vault-based playbook system |
-| Outbound tracker | Obsidian Bases — table with prospect, status, champion, next_step, close_date | Pipeline tracking |
+| Artifact              | Obsidian Format                                                                               | When                        |
+| --------------------- | --------------------------------------------------------------------------------------------- | --------------------------- |
+| Pipeline stage design | Obsidian Markdown — `stage`, `entry_criteria`, `exit_criteria` properties                     | CRM stage documentation     |
+| Deal playbook         | Obsidian Markdown — `icp`, `stage`, `trigger_event` properties, `[[wikilinks]]` to objections | Vault-based playbook system |
+| Outbound tracker      | Obsidian Bases — table with prospect, status, champion, next_step, close_date                 | Pipeline tracking           |
 
 ## Extreme Growth Playbook
 

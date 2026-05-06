@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-05-06
+
+### Added
+
+- **Apex depth layer** — `health_aggregator.py` runs Warden, Forge, Cortex, and Spine scans in parallel via `ThreadPoolExecutor` and merges findings into a unified `AgentReport`. `dependency_graph.py` AST-walks all Python scripts in `team/*/scripts/`, detects circular imports (DFS), and flags unused internal modules. Entry point: `apex_scan.py` writes `.reports/apex-<ts>.json` and exits 2 on CRITICAL/HIGH findings.
+- **Spine depth layer** — `n_plus_one_detector.py` statically detects ORM query patterns inside loops, raw SQL in loops, and string-formatted SQL across Python files. `endpoint_profiler.py` times HTTP endpoints with configurable warmup runs and reports p50/p95/p99 latency, flagging endpoints above 200 ms (MEDIUM), 500 ms (HIGH), or 1 s (CRITICAL). Entry point: `perf_scan.py`.
+- **Cortex depth layer** — `llm_usage_scanner.py` detects missing error handling on LLM calls, unbounded cost patterns, hardcoded model names, and synchronous calls inside async functions. `prompt_evaluator.py` scores prompt files for injection risk, output format contracts, and token efficiency. Entry point: `eval_scan.py`.
+- **Forge depth layer** — `infracost_analyzer.py` wraps the Infracost CLI to produce per-resource cost diffs. `cloud_cost_fetcher.py` queries AWS Cost Explorer (14-day window, grouped by service) and flags services with >$50 monthly spend or >20% week-over-week growth. Entry point: `cost_scan.py`.
+- **`/contribute` skill** — community contribution workflow for Pave: forks the repo, scaffolds a branch, runs compliance checks, and guides contributors through the PR process.
+- **`/form-brief`** — new Form skill that extracts a structured design brief (audience, goal, constraints, inspiration) before any visual work begins. Reduces brief-less design rewrites.
+- **`/form-critique` and `/draft-wireframe` upgrades** — both skills absorb design principles from the open-design project (information architecture, motion poetry, minimalism schools), adding competitive audit steps and shipability gates.
+
+### Fixed
+
+- **CI test matrix** — agent test jobs were wired to non-existent venv paths; matrix now activates each agent's virtual environment correctly before running pytest. The `no-op` test placeholder was replaced with a real smoke test.
+- **Trunk python runtime** — `python@3.14.4` in `.trunk/trunk.yaml` referenced a non-existent version (Python 3.14 is still pre-release). Downgraded to `3.13.3` to prevent trunk from failing to provision the Python runtime for bandit, ruff, isort, and black.
+
+### Changed
+
+- **CI version gate** — new `check-versions` job runs `scripts/bump-version.py --check` on every PR. Version drift across 194 manifest files can no longer merge undetected.
+
 ## [0.9.9] — 2026-05-05 (patch 2)
 
 ### Changed

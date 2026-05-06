@@ -54,15 +54,24 @@ process.stdin.on("end", () => {
       const sessionAgentsFile = path.join(".claude", "session-agents");
       let agentsUsed = false;
       try {
-        agentsUsed = fs.readFileSync(sessionAgentsFile, "utf8").trim().length > 0;
+        agentsUsed =
+          fs.readFileSync(sessionAgentsFile, "utf8").trim().length > 0;
       } catch {}
       if (agentsUsed) {
-        const sessionId = ((JSON.parse(input) || {}).session_id || "").replace(/[^a-z0-9]/gi, "");
+        const sessionId = ((JSON.parse(input) || {}).session_id || "").replace(
+          /[^a-z0-9]/gi,
+          "",
+        );
         if (sessionId) {
-          const flagFile = path.join(os.tmpdir(), `tonone-contribute-${sessionId}`);
+          const flagFile = path.join(
+            os.tmpdir(),
+            `tonone-contribute-${sessionId}`,
+          );
           if (!fs.existsSync(flagFile)) {
             fs.writeFileSync(flagFile, "1");
-            console.log("\nSession had agent activity. Run /contribute to share any learnings upstream.");
+            console.log(
+              "\nSession had agent activity. Run /contribute to share any learnings upstream.",
+            );
           }
         }
       }

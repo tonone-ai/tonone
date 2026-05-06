@@ -9,8 +9,5 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": [
-    "warden",
-    "skill"
-  ]
+  "keywords": ["warden", "skill"]
 }

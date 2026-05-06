@@ -33,12 +33,12 @@ find . -name "*.ts" -o -name "*.tsx" 2>/dev/null | xargs grep -l "track\|analyti
 Document every step from signup to first value:
 
 | Step | What happens | Who initiates | Tracked? | Drop-off? |
-|------|-------------|---------------|----------|-----------|
-| 1 | Signup | User | [✓/✗] | |
-| 2 | Email verify | System | [✓/✗] | |
-| 3 | [next step] | | | |
-| ... | | | | |
-| N | First value | | | |
+| ---- | ------------ | ------------- | -------- | --------- |
+| 1    | Signup       | User          | [✓/✗]    |           |
+| 2    | Email verify | System        | [✓/✗]    |           |
+| 3    | [next step]  |               |          |           |
+| ...  |              |               |          |           |
+| N    | First value  |               |          |           |
 
 **Time-to-value (TTV):** How long from signup to first value? Minutes / Hours / Days?
 
@@ -70,6 +70,7 @@ Aha moment reached ────────── [%]   ← This is activation r
 ```
 
 Root causes per drop-off type:
+
 - Drop at email verify: friction, users don't trust the product yet
 - Drop at profile setup: too many required fields, unclear value
 - Drop at first action: UX unclear, missing data/context, value not obvious
@@ -78,6 +79,7 @@ Root causes per drop-off type:
 ### Step 4: Design Optimized Onboarding
 
 Principles:
+
 1. **Aha moment as fast as possible.** Every step before it is friction to minimize.
 2. **Show value before asking for information.** Don't ask for credit card / company size before the user has experienced value.
 3. **Progress indicators reduce anxiety.** Users who don't know how long setup takes abandon faster.

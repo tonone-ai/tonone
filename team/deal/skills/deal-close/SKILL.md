@@ -31,16 +31,16 @@ Gather the deal state before prescribing anything:
 
 Score each dimension:
 
-| Component | Status | Evidence | Risk |
-|-----------|--------|----------|------|
-| Metrics (ROI quantified) | [✓/~] | | |
-| Economic Buyer (met) | [✓/~] | | |
-| Decision Criteria (mapped) | [✓/~] | | |
-| Decision Process (documented) | [✓/~] | | |
-| Paper Process (understood) | [✓/~] | | |
-| Identified Pain (buyer-level) | [✓/~] | | |
-| Champion (named, active) | [✓/~] | | |
-| Competition (understood) | [✓/~] | | |
+| Component                     | Status | Evidence | Risk |
+| ----------------------------- | ------ | -------- | ---- |
+| Metrics (ROI quantified)      | [✓/~]  |          |      |
+| Economic Buyer (met)          | [✓/~]  |          |      |
+| Decision Criteria (mapped)    | [✓/~]  |          |      |
+| Decision Process (documented) | [✓/~]  |          |      |
+| Paper Process (understood)    | [✓/~]  |          |      |
+| Identified Pain (buyer-level) | [✓/~]  |          |      |
+| Champion (named, active)      | [✓/~]  |          |      |
+| Competition (understood)      | [✓/~]  |          |      |
 
 The lowest-scored component is the deal constraint. Fix that first.
 
@@ -77,6 +77,7 @@ Fix: "What would need to change for this to be a priority this quarter?" If noth
 Based on diagnosis, produce one of:
 
 **A) Re-engagement email**
+
 ```
 Subject: [specific to deal context — not "checking in"]
 Body:
@@ -86,22 +87,28 @@ Body:
 ```
 
 **B) Tailored proposal**
+
 ```markdown
 # Proposal for [Company Name]
 
 ## What You Told Us
+
 [Their stated pain and success criteria — prove you listened]
 
 ## Our Recommendation
+
 [1-2 options max. Specific, not menu]
 
 ## What This Solves
+
 [Quantified outcome: time, money, or risk]
 
 ## Investment
+
 [Clear pricing with no surprises]
 
 ## Next Steps
+
 Step 1: [Owner: them] [Date: specific]
 Step 2: [Owner: us] [Date: specific]
 Step 3: Contract sent [Date: specific]
@@ -109,12 +116,14 @@ Step 3: Contract sent [Date: specific]
 
 **C) Champion activation guide**
 How to brief your champion to sell internally:
+
 - Key message: [one sentence for their internal pitch]
 - Stakeholders to engage: [roles to loop in]
 - Objections to address: [what their colleagues will ask]
 - Materials to share: [what to send internally]
 
 **D) Negotiation position**
+
 ```
 Our position: [starting point]
 Our walk-away: [minimum acceptable]

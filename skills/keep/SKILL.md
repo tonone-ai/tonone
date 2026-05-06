@@ -17,12 +17,12 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill | Use when |
-|-------|----------|
-| `keep-recon` | Audit onboarding completion, health signals, NRR, and churn patterns |
-| `keep-health` | Design a customer health scoring model — signals, weights, action triggers |
-| `keep-onboard` | Optimize onboarding — map activation sequence, design aha moment, write email sequence |
-| `keep-expand` | Design expansion playbooks — upsell triggers, seat expansion, tier upgrade sequences |
+| Skill           | Use when                                                                               |
+| --------------- | -------------------------------------------------------------------------------------- |
+| `keep-recon`    | Audit onboarding completion, health signals, NRR, and churn patterns                   |
+| `keep-health`   | Design a customer health scoring model — signals, weights, action triggers             |
+| `keep-onboard`  | Optimize onboarding — map activation sequence, design aha moment, write email sequence |
+| `keep-expand`   | Design expansion playbooks — upsell triggers, seat expansion, tier upgrade sequences   |
 | `keep-playbook` | Write churn prevention and win-back playbooks — risk intervention, save play, win-back |
 
 Default (no args or unclear): `keep-recon`.

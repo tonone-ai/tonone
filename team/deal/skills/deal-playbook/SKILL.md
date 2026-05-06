@@ -53,6 +53,7 @@ Touch 5 (Day 12) — Email: Breakup (explicit close)
 ```
 
 Personalization variables to fill per prospect:
+
 - [TRIGGER_EVENT]: specific reason for reaching out
 - [SPECIFIC_PAIN]: their exact problem
 - [OUTCOME]: one concrete customer result
@@ -94,6 +95,7 @@ Next step (5 min): "What would it take for you to move forward?" Then close on s
 **D) Objection handling:**
 
 For each objection, produce:
+
 ```
 Objection: [exact words prospect uses]
 What they really mean: [underlying concern]
@@ -102,25 +104,32 @@ Probe question: [question that moves conversation forward]
 ```
 
 **E) Proposal template:**
+
 ```markdown
 # [Customer Name] — [Product] Proposal
 
 ## Your Situation
+
 [2 sentences summarizing what they told you in discovery. Prove you listened.]
 
 ## What We're Solving
+
 [Specific outcome, not features. Quantified if possible.]
 
 ## Our Recommendation
+
 [1-2 recommended options, not 5]
 
 ## Investment
+
 [Clear pricing. No surprises.]
 
 ## What Happens Next
+
 [3 steps, each with owner and date]
 
 ## Why Now
+
 [Stakes of not acting. Specific to their timeline.]
 ```
 

@@ -33,6 +33,7 @@ python <path-to-cost_scan.py> <target> --out .reports/forge-cost-latest.json
 ```
 
 This runs:
+
 1. **infracost** — static IaC cost analysis (Terraform/OpenTofu). Requires `infracost` CLI + API key.
 2. **AWS Cost Explorer** / **GCP Billing** — actual cloud spend via `aws ce` or `gcloud billing`.
 

@@ -22,6 +22,7 @@ python team/spine/scripts/spine_agent/perf_scan.py [target] [--base-url http://.
 ```
 
 Run the real-tool layer first. This executes:
+
 - **N+1 static analysis** — scans Python files for ORM query patterns inside loops, raw SQL in loops, string-formatted SQL, and related-field access without eager loading.
 - **Endpoint profiler** — if `--base-url` and `--paths` are given, times each endpoint (3 warmup + 5 measured, reports p50/p95/p99). Flags endpoints >200ms (MEDIUM), >500ms (HIGH), >1000ms (CRITICAL).
 

@@ -15,6 +15,15 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 ## Steps
 
+0. **Run the automated health snapshot.** From the repo root:
+
+```bash
+cd team/apex/scripts && pip install -e . --quiet && python apex_agent/apex_scan.py . --skip-health --skip-deps --out /tmp/apex-scan.json 2>/dev/null || true
+python apex_agent/apex_scan.py . --skip-endpoints 2>&1 | tail -20
+```
+
+Read `.reports/apex-<latest>.json` if written. Treat CRITICAL/HIGH findings as blocking issues. Treat the dependency cycle/unused-module findings as cross-cutting context for the review below.
+
 1. **Read git log and recent changes to understand what was built.**
 
 ```bash

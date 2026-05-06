@@ -9,9 +9,9 @@ import sys
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../.."))
-from team.shared.report_schema import AgentReport, ReportMetadata
-from team.apex.scripts.apex_agent.health_aggregator import aggregate_health
 from team.apex.scripts.apex_agent.dependency_graph import analyze_dependencies
+from team.apex.scripts.apex_agent.health_aggregator import aggregate_health
+from team.shared.report_schema import AgentReport, ReportMetadata
 
 
 def main() -> None:
@@ -78,7 +78,10 @@ def main() -> None:
             fh.write(report.to_json())
         print(f"\nReport written: {out_path}")
     except IOError as e:
-        print(f"\nWarning: could not write report ({e}). Printing to stdout:", file=sys.stderr)
+        print(
+            f"\nWarning: could not write report ({e}). Printing to stdout:",
+            file=sys.stderr,
+        )
         print(report.to_json())
 
     s = report.summary

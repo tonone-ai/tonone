@@ -4,10 +4,7 @@ version = "0.9.9"
 description = "Security engineer — IAM, secrets, compliance, threat modeling"
 license = "MIT"
 requires-python = ">=3.10"
-dependencies = [
-    "semgrep>=1.0",
-    "pip-audit>=2.0",
-]
+dependencies = ["semgrep>=1.0", "pip-audit>=2.0"]
 
 [tool.pytest.ini_options]
 testpaths = ["../tests"]

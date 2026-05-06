@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "data",
-    "databases",
-    "migrations",
-    "pipelines",
-    "modeling"
-  ]
+  "keywords": ["data", "databases", "migrations", "pipelines", "modeling"]
 }
