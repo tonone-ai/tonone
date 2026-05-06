@@ -137,3 +137,4 @@
 2026-05-05 23:57 : fix: trunk.yaml python@3.14.4 → 3.13.3 — version didn't exist, broke all CI Python linters — @fatih
 2026-05-05 23:57 : sync: apex-review, cortex-eval, spine-perf root skills drifted from team/ — missing analyzer step-0 content, fixed — @fatih
 [!!] 2026-05-05 23:57 : PR #85 chore-sync-post-084-updates — 253 files, 2 commits, 54/54 tests pass — @fatih
+[!!] 2026-05-06 07:56 : release 1.0.0 — 6 features, 2 fixes — @fatih
