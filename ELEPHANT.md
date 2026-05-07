@@ -153,3 +153,4 @@
 2026-05-07 21:11 : plan: 4 new agents scoped — Mint (Finance), Folk (People/migration), Keel (Operations), Brace (Support) — M recommended ($8, 60min, 8 skills each, full parity) — awaiting S/M/L decision — @fatih
 2026-05-07 21:50 : feat(ops-team): add Operations Team — Mint, Folk, Keel, Brace (31 agents total) — @fatih
 2026-05-08 00:33 : fix: add Mint, Folk, Keel, Brace to marketplace.json — @fatih
+2026-05-08 00:34 : chore: bump ops-team to v1.2.0, update CHANGELOG — @fatih

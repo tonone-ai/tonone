@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-05-08
+
+### Added
+
+- **Operations Team** — 4 new agents completing the company-running stack for 1-founder + tonone teams at $100M ARR scale:
+  - **Mint** (Finance): P&L modeling, runway calculation (3-scenario: base/bull/bear), unit economics (LTV/CAC/payback), board financial packages, fundraising data rooms, monthly close reporting. Skills: `mint-recon`, `mint-model`, `mint-budget`, `mint-runway`, `mint-unit`, `mint-board`, `mint-raise`, `mint-report`.
+  - **Folk** (People): org design with span-of-control analysis, JD writing with comp band gates, compensation frameworks, 30/60/90-day onboarding playbooks, performance review systems, and human-to-agent migration playbooks with automation scoring and offboarding plan. Skills: `folk-recon`, `folk-org`, `folk-hire`, `folk-comp`, `folk-onboard`, `folk-perf`, `folk-migrate`, `folk-culture`.
+  - **Keel** (Operations): process/SOP design with RACI, vendor scorecard and RED/YELLOW/GREEN contract review, compliance gap analysis (SOC2/GDPR/HIPAA), OKR cascade design, meeting cadence with person-hour cost calculation, operational efficiency audit. Skills: `keel-recon`, `keel-process`, `keel-vendor`, `keel-legal`, `keel-comply`, `keel-okr`, `keel-cadence`, `keel-audit`.
+  - **Brace** (Support): ticket triage and routing, knowledge base coverage audit, SLA framework (Tier 1/2/3 with breach escalation), escalation paths to engineering, support metrics dashboard (FRT/TTR/CSAT/deflection rate), and response template playbook. Skills: `brace-recon`, `brace-triage`, `brace-kb`, `brace-sla`, `brace-escalate`, `brace-onboard`, `brace-metrics`, `brace-playbook`.
+- **Python analyzers** — all 4 ops agents ship real analyzer modules: `mint_agent/financial_scanner.py`, `folk_agent/org_scanner.py`, `keel_agent/ops_scanner.py`, `brace_agent/support_scanner.py`. 190 tests total, 244/244 CI passing.
+- **Bundle** — new `bundle/operations-team` installable plugin (Mint + Folk + Keel + Brace).
+- **Marketplace** — all 4 agents registered in `.claude-plugin/marketplace.json` under `operations` category (175 total plugins).
+- **Full-team bundle** updated: 27 to 31 agents, 145 to 177 skills.
+
 ## [1.1.0] - 2026-05-06
 
 ### Added

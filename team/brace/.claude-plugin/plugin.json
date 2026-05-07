@@ -1,6 +1,6 @@
 {
   "name": "brace",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Support engineer -- ticket workflow design, SLA architecture, knowledge base, escalation paths, and support operations at scale",
   "author": {
     "name": "tonone-ai",
