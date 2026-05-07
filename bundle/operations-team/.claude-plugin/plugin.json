@@ -1,7 +1,7 @@
 {
-  "name": "full-team",
+  "name": "operations-team",
   "version": "1.2.0",
-  "description": "Full tonone team \u2014 all 31 agents (Engineering + Product + Operations) with all 177 skills",
+  "description": "Operations team \u2014 4 agents: Mint, Folk, Keel, Brace",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
@@ -10,10 +10,11 @@
   "license": "MIT",
   "keywords": [
     "agents",
-    "full-team",
-    "engineering-team",
-    "product-team",
     "operations-team",
+    "finance",
+    "people",
+    "operations",
+    "support",
     "bundle"
   ]
 }

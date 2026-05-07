@@ -1,6 +1,6 @@
-# tonone — Engineering + Product Team
+# tonone — Engineering + Product + Operations Team
 
-Two AI teams. 27 agents total. Engineering executes. Product decides what to build and why.
+Three AI teams. 31 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running.
 
 ## Engineering Team — 15 agents
 
@@ -39,6 +39,15 @@ Two AI teams. 27 agents total. Engineering executes. Product decides what to bui
 | **Ink** | Content Marketing | Blog strategy, SEO, thought leadership, developer content, content calendar |
 | **Buzz** | PR & Community | Press pitches, social media, open source community, DevRel, launch moments |
 
+## Operations Team — 4 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Mint** | Finance | P&L, runway, unit economics, fundraising, board reporting, cap table |
+| **Folk** | People | Org design, hiring pipelines, comp frameworks, onboarding, performance, human-to-agent migration |
+| **Keel** | Operations | Process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution |
+| **Brace** | Support | Ticket workflow, SLA design, knowledge base, escalation paths, support operations |
+
 ## Helm↔Apex Interface
 
 Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
@@ -48,7 +57,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (27 total: 15 engineering + 12 product)
+├── agents/                 ← all agent definitions (31 total: 15 engineering + 12 product + 4 operations)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md
