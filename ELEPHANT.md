@@ -155,3 +155,5 @@
 2026-05-07 21:50 : feat(ops-team): add Operations Team — Mint, Folk, Keel, Brace (31 agents total) — @fatih
 2026-05-08 00:33 : fix: add Mint, Folk, Keel, Brace to marketplace.json — @fatih
 2026-05-08 00:34 : chore: bump ops-team to v1.2.0, update CHANGELOG — @fatih
+2026-05-08 00:35 : chore: engrave session memory — @fatih
+2026-05-08 00:40 : docs(sitemap): add Operations Team — Mint, Folk, Keel, Brace — @fatih
