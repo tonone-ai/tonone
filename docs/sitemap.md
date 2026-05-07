@@ -1,6 +1,6 @@
 # tonone — Agent, Skill & Hook Sitemap
 
-**27 agents · 182 skills · 5 runtime hooks · 26 install hooks**
+**31 agents · 214 skills · 5 runtime hooks · 30 install hooks**
 
 ---
 
@@ -516,11 +516,89 @@ Press pitches, social media, open source community, DevRel, launch moments.
 
 ---
 
+## Operations Team — 4 agents
+
+### Mint — Finance
+
+P&L, runway, unit economics, fundraising, board reporting, cap table.
+
+| Skill          | Description                                                            |
+| -------------- | ---------------------------------------------------------------------- |
+| `/mint-recon`  | Financial recon — audit burn rate, runway, and unit economics health   |
+| `/mint-model`  | Build or audit a 3-statement financial model with scenario analysis    |
+| `/mint-budget` | Design annual operating budget — headcount, spend, and revenue targets |
+| `/mint-runway` | Calculate runway and map levers available to extend it                 |
+| `/mint-unit`   | Audit unit economics — LTV, CAC, payback period, gross margin          |
+| `/mint-board`  | Produce board financial package — P&L, cash, metrics, variance vs plan |
+| `/mint-raise`  | Prepare fundraising materials — investor model, data room, cap table   |
+| `/mint-report` | Generate monthly close package, variance analysis, management reports  |
+
+**Install hook:** `post_install` → `bash scripts/setup.sh`
+
+---
+
+### Folk — People
+
+Org design, hiring pipelines, comp frameworks, onboarding, performance, human-to-agent migration.
+
+| Skill           | Description                                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| `/folk-recon`   | People recon — audit org design, hiring, comp, onboarding, and perf       |
+| `/folk-org`     | Design or review org structure — spans, reporting lines, headcount plan   |
+| `/folk-hire`    | Build hiring pipeline — JD, sourcing strategy, interview scorecard        |
+| `/folk-comp`    | Design compensation framework — salary bands, equity, total comp          |
+| `/folk-onboard` | Build onboarding playbook — day 1 through week 4, access, milestones      |
+| `/folk-perf`    | Design performance management — review cycles, calibration, career ladder |
+| `/folk-migrate` | Human-to-agent migration — audit roles, design transition playbook        |
+| `/folk-culture` | Document and strengthen company culture — values, norms, health check     |
+
+**Install hook:** `post_install` → `bash scripts/setup.sh`
+
+---
+
+### Keel — Operations
+
+Process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution.
+
+| Skill           | Description                                                             |
+| --------------- | ----------------------------------------------------------------------- |
+| `/keel-recon`   | Ops recon — audit processes, vendors, compliance, OKRs, and friction    |
+| `/keel-process` | Document or redesign a business process — SOP, process map, RACI        |
+| `/keel-vendor`  | Manage vendors — selection scorecard, contract review, renewal tracking |
+| `/keel-legal`   | Draft or review legal ops docs — NDA, MSA, SaaS agreement checklist     |
+| `/keel-comply`  | Build or audit compliance program — SOC2, GDPR, HIPAA gap analysis      |
+| `/keel-okr`     | Design and run OKR program — objectives, key results, cascade, review   |
+| `/keel-cadence` | Design meeting cadence — what to run, how often, who decides what       |
+| `/keel-audit`   | Operational efficiency audit — waste, redundancy, and friction scan     |
+
+**Install hook:** `post_install` → `bash scripts/setup.sh`
+
+---
+
+### Brace — Support
+
+Ticket workflow, SLA design, knowledge base, escalation paths, support operations.
+
+| Skill             | Description                                                             |
+| ----------------- | ----------------------------------------------------------------------- |
+| `/brace-recon`    | Support recon — audit ticket volume, SLA compliance, CSAT, and KB gaps  |
+| `/brace-triage`   | Design ticket triage — routing rules, priority tags, queue structure    |
+| `/brace-kb`       | Build or audit knowledge base — coverage gaps, deflection, maintenance  |
+| `/brace-sla`      | Design SLA framework — response targets, tier definitions, breach paths |
+| `/brace-escalate` | Design escalation path — Tier 1 → Tier 2 → Engineering handoff          |
+| `/brace-onboard`  | Design support onboarding flow — first-contact experience, setup check  |
+| `/brace-metrics`  | Design support metrics dashboard — CSAT, FRT, TTR, deflection, trends   |
+| `/brace-playbook` | Write support playbook — response templates, runbooks, tone guide       |
+
+**Install hook:** `post_install` → `bash scripts/setup.sh`
+
+---
+
 ## Cross-team
 
 | Skill             | Description                                                             |
 | ----------------- | ----------------------------------------------------------------------- |
-| `/tonone-onboard` | First-run onboarding tour — walkthrough of all 27 agents and key skills |
+| `/tonone-onboard` | First-run onboarding tour — walkthrough of all 31 agents and key skills |
 
 ---
 
@@ -534,4 +612,5 @@ Install sets for team deployment. All bundle hooks are empty (install-only).
 | `product-team`     | helm, echo, lumen, draft, form, crest, pitch, surge, deal, keep, ink, buzz                           |
 | `revenue-team`     | deal, keep, surge                                                                                    |
 | `marketing-team`   | ink, buzz, pitch                                                                                     |
-| `full-team`        | All 27 agents                                                                                        |
+| `operations-team`  | mint, folk, keel, brace                                                                              |
+| `full-team`        | All 31 agents                                                                                        |
