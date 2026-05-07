@@ -150,3 +150,4 @@
 2026-05-06 23:02 : fix: pre-landing review fixes — remove dead sitemap check, tighten dir filter, fix test comment — @fatih
 2026-05-06 23:10 : docs(sitemap): update sitemap for v1.1.0 — 182 skills, 26 install hooks, bundle changes — @fatih
 2026-05-06 23:11 : chore: bump all manifests to 1.1.0 (201 files) — @fatih
+2026-05-07 21:11 : plan: 4 new agents scoped — Mint (Finance), Folk (People/migration), Keel (Operations), Brace (Support) — M recommended ($8, 60min, 8 skills each, full parity) — awaiting S/M/L decision — @fatih
