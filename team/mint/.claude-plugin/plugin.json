@@ -1,0 +1,20 @@
+{
+  "name": "mint",
+  "version": "1.1.0",
+  "description": "Finance engineer — P&L, runway, unit economics, fundraising, board reporting, and cap table management",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "finance",
+    "cfp",
+    "runway",
+    "budget",
+    "unit-economics",
+    "fundraising",
+    "operations-team"
+  ]
+}

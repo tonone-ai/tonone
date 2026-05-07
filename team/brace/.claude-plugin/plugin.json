@@ -1,0 +1,21 @@
+{
+  "name": "brace",
+  "version": "1.1.0",
+  "description": "Support engineer -- ticket workflow design, SLA architecture, knowledge base, escalation paths, and support operations at scale",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "support",
+    "helpdesk",
+    "sla",
+    "knowledge-base",
+    "escalation",
+    "triage",
+    "customer-support",
+    "operations-team"
+  ]
+}

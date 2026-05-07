@@ -1,6 +1,6 @@
 {
   "name": "tonone",
-  "description": "Engineering + Product team \u2014 27 agents as Claude Code specialists. Infrastructure, DevOps, backend, security, ML/AI, mobile, UX, analytics, growth, revenue, content, PR, customer success, and more.",
+  "description": "Engineering + Product + Operations team \u2014 31 agents as Claude Code specialists. Infrastructure, DevOps, backend, security, ML/AI, mobile, UX, analytics, growth, revenue, content, PR, customer success, finance, people, operations, support, and more.",
   "version": "1.1.0",
   "author": {
     "name": "tonone-ai",
@@ -28,7 +28,11 @@
     "customer-success",
     "content-marketing",
     "pr",
-    "community"
+    "community",
+    "finance",
+    "people",
+    "operations",
+    "support"
   ],
   "hooks": {
     "SessionStart": [

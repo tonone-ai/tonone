@@ -44,6 +44,19 @@ How to name a new agent for the Tonone team.
 | Crest | Product Strategy  | 1         |
 | Pitch | Product Marketing | 1         |
 | Surge | Growth            | 1         |
+| Deal  | Revenue & Sales   | 1         |
+| Keep  | Customer Success  | 1         |
+| Ink   | Content Marketing | 1         |
+| Buzz  | PR & Community    | 1         |
+
+### Operations Team
+
+| Name  | Hat        | Syllables |
+| ----- | ---------- | --------- |
+| Mint  | Finance    | 1         |
+| Folk  | People     | 1         |
+| Keel  | Operations | 1         |
+| Brace | Support    | 1         |
 
 ## Available Names
 

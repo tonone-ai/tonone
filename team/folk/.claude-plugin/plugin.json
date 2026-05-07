@@ -1,0 +1,21 @@
+{
+  "name": "folk",
+  "version": "1.1.0",
+  "description": "People engineer - org design, hiring pipelines, compensation frameworks, onboarding playbooks, performance management, and human-to-agent migration",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "people",
+    "hr",
+    "hiring",
+    "compensation",
+    "org-design",
+    "onboarding",
+    "migration",
+    "operations-team"
+  ]
+}

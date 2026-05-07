@@ -1,0 +1,12 @@
+{
+  "name": "operations-team",
+  "version": "1.1.0",
+  "description": "Operations team — 4 agents: Mint, Folk, Keel, Brace",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": ["agents", "operations-team", "finance", "people", "operations", "support", "bundle"]
+}
