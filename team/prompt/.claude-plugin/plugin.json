@@ -1,0 +1,37 @@
+{
+  "name": "prompt",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Prompt: System prompt design, few-shot libraries, chain-of-thought patterns, and prompt versioning for production LLM applications.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Prompt",
+      "path": "agents/prompt.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "prompt-design",
+      "path": "skills/prompt-design/SKILL.md"
+    },
+    {
+      "name": "prompt-version",
+      "path": "skills/prompt-version/SKILL.md"
+    },
+    {
+      "name": "prompt-recon",
+      "path": "skills/prompt-recon/SKILL.md"
+    }
+  ]
+}

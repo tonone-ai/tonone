@@ -1,0 +1,37 @@
+{
+  "name": "trace",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Trace: LLM tracing, span capture, prompt/completion logging, cost attribution, and AI system debugging.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Trace",
+      "path": "agents/trace.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "trace-instrument",
+      "path": "skills/trace-instrument/SKILL.md"
+    },
+    {
+      "name": "trace-debug",
+      "path": "skills/trace-debug/SKILL.md"
+    },
+    {
+      "name": "trace-recon",
+      "path": "skills/trace-recon/SKILL.md"
+    }
+  ]
+}

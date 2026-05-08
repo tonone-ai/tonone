@@ -5872,6 +5872,403 @@
         "infrastructure",
         "chaos"
       ]
+    },
+    {
+      "name": "ai-ops-team",
+      "description": "AI Operations Team \u2014 9 agents: Deploy, Eval, Trace, Guard, Budget, Token, Prompt, Embed, Rank",
+      "path": "bundle/ai-ops-team",
+      "version": "1.8.0",
+      "tags": [
+        "bundle",
+        "ai-ops",
+        "llm",
+        "team"
+      ]
+    },
+    {
+      "name": "deploy",
+      "description": "AI Operations Team \u2014 Deploy: Model serving, inference APIs, blue/green deploys, rollback, and canary releases for production ML.",
+      "path": "team/deploy",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
+    },
+    {
+      "name": "deploy-serve",
+      "description": "Design and configure model serving infrastructure \u2014 endpoint scaling, batching, GPU allocation.",
+      "path": "team/deploy/skills/deploy-serve",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "deploy"
+      ]
+    },
+    {
+      "name": "deploy-canary",
+      "description": "Plan and execute canary releases for model updates \u2014 traffic splitting, rollback triggers, success metrics.",
+      "path": "team/deploy/skills/deploy-canary",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "deploy"
+      ]
+    },
+    {
+      "name": "deploy-recon",
+      "description": "Audit current model deployment topology \u2014 serving config, latency profile, version inventory.",
+      "path": "team/deploy/skills/deploy-recon",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "deploy"
+      ]
+    },
+    {
+      "name": "trace",
+      "description": "AI Operations Team \u2014 Trace: LLM tracing, span capture, prompt/completion logging, cost attribution, and AI system debugging.",
+      "path": "team/trace",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
+    },
+    {
+      "name": "trace-instrument",
+      "description": "Instrument LLM calls with tracing \u2014 span structure, token counts, latency, model metadata.",
+      "path": "team/trace/skills/trace-instrument",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "trace"
+      ]
+    },
+    {
+      "name": "trace-debug",
+      "description": "Debug AI system behavior using traces \u2014 prompt reconstruction, output comparison, failure attribution.",
+      "path": "team/trace/skills/trace-debug",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "trace"
+      ]
+    },
+    {
+      "name": "trace-recon",
+      "description": "Audit LLM observability coverage \u2014 trace gaps, logging completeness, cost attribution accuracy.",
+      "path": "team/trace/skills/trace-recon",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "trace"
+      ]
+    },
+    {
+      "name": "guard",
+      "description": "AI Operations Team \u2014 Guard: Input/output safety filters, PII detection, content moderation, and AI policy enforcement at runtime.",
+      "path": "team/guard",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
+    },
+    {
+      "name": "guard-design",
+      "description": "Design guardrail layers \u2014 input classifiers, output validators, PII scrubbers, policy rule engines.",
+      "path": "team/guard/skills/guard-design",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "guard"
+      ]
+    },
+    {
+      "name": "guard-audit",
+      "description": "Audit guardrail coverage \u2014 bypass vectors, false positive rates, policy gap analysis, red-team scenarios.",
+      "path": "team/guard/skills/guard-audit",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "guard"
+      ]
+    },
+    {
+      "name": "guard-recon",
+      "description": "Map current AI safety controls \u2014 filter inventory, coverage gaps, latency impact, incident history.",
+      "path": "team/guard/skills/guard-recon",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "guard"
+      ]
+    },
+    {
+      "name": "budget",
+      "description": "AI Operations Team \u2014 Budget: LLM spend tracking, model cost optimization, budget alerts, and token efficiency audits across AI workloads.",
+      "path": "team/budget",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
+    },
+    {
+      "name": "budget-audit",
+      "description": "Audit AI spend \u2014 per-model cost breakdown, top consumers, waste identification, optimization levers.",
+      "path": "team/budget/skills/budget-audit",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "budget"
+      ]
+    },
+    {
+      "name": "budget-optimize",
+      "description": "Design cost reduction strategies \u2014 model tiering, prompt compression, caching, batch inference.",
+      "path": "team/budget/skills/budget-optimize",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "budget"
+      ]
+    },
+    {
+      "name": "budget-recon",
+      "description": "Map AI cost topology \u2014 billing attribution, team-level spend, forecast vs actuals, alert gaps.",
+      "path": "team/budget/skills/budget-recon",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "budget"
+      ]
+    },
+    {
+      "name": "token",
+      "description": "AI Operations Team \u2014 Token: Context window optimization, token counting, truncation strategies, and chunking patterns for LLM efficiency.",
+      "path": "team/token",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
+    },
+    {
+      "name": "token-budget",
+      "description": "Design token budgets \u2014 system/user/assistant allocation, overflow handling, context compression.",
+      "path": "team/token/skills/token-budget",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "token"
+      ]
+    },
+    {
+      "name": "token-chunk",
+      "description": "Design chunking strategies \u2014 semantic splitting, overlap tuning, retrieval-aware chunk sizing.",
+      "path": "team/token/skills/token-chunk",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "token"
+      ]
+    },
+    {
+      "name": "token-recon",
+      "description": "Audit token usage patterns \u2014 avg context size, waste, truncation frequency, budget adherence.",
+      "path": "team/token/skills/token-recon",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "token"
+      ]
+    },
+    {
+      "name": "prompt",
+      "description": "AI Operations Team \u2014 Prompt: System prompt design, few-shot libraries, chain-of-thought patterns, and prompt versioning for production LLM applications.",
+      "path": "team/prompt",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
+    },
+    {
+      "name": "prompt-design",
+      "description": "Design production prompts \u2014 system prompt architecture, instruction clarity, few-shot selection.",
+      "path": "team/prompt/skills/prompt-design",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "prompt"
+      ]
+    },
+    {
+      "name": "prompt-version",
+      "description": "Build prompt versioning systems \u2014 storage, A/B testing, regression tracking, rollback.",
+      "path": "team/prompt/skills/prompt-version",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "prompt"
+      ]
+    },
+    {
+      "name": "prompt-recon",
+      "description": "Audit prompt library \u2014 duplication, quality, coverage gaps, version drift, eval alignment.",
+      "path": "team/prompt/skills/prompt-recon",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "prompt"
+      ]
+    },
+    {
+      "name": "embed",
+      "description": "AI Operations Team \u2014 Embed: Embedding model selection, vector pipeline design, similarity search, and production index management.",
+      "path": "team/embed",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
+    },
+    {
+      "name": "embed-design",
+      "description": "Design embedding pipelines \u2014 model selection, batching, normalization, index refresh strategy.",
+      "path": "team/embed/skills/embed-design",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "embed"
+      ]
+    },
+    {
+      "name": "embed-search",
+      "description": "Optimize similarity search \u2014 ANN index tuning, hybrid search, reranking, query expansion.",
+      "path": "team/embed/skills/embed-search",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "embed"
+      ]
+    },
+    {
+      "name": "embed-recon",
+      "description": "Audit embedding infrastructure \u2014 model drift, index freshness, query latency, coverage gaps.",
+      "path": "team/embed/skills/embed-recon",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "embed"
+      ]
+    },
+    {
+      "name": "rank",
+      "description": "AI Operations Team \u2014 Rank: Retrieval reranking, relevance scoring, learning-to-rank pipelines, and result quality evaluation for search and RAG.",
+      "path": "team/rank",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
+    },
+    {
+      "name": "rank-design",
+      "description": "Design ranking pipelines \u2014 reranker selection, score fusion, cross-encoder patterns, latency trade-offs.",
+      "path": "team/rank/skills/rank-design",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "rank"
+      ]
+    },
+    {
+      "name": "rank-eval",
+      "description": "Build ranking evaluation \u2014 NDCG/MRR measurement, human relevance labeling, offline eval harness.",
+      "path": "team/rank/skills/rank-eval",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "rank"
+      ]
+    },
+    {
+      "name": "rank-recon",
+      "description": "Audit ranking quality \u2014 metric trends, failure modes, dataset coverage, reranker performance.",
+      "path": "team/rank/skills/rank-recon",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "rank"
+      ]
+    },
+    {
+      "name": "eval-harness",
+      "description": "Design eval harnesses \u2014 task schemas, metrics, dataset versioning, eval-as-code patterns.",
+      "path": "team/evals/skills/eval-harness",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "eval"
+      ]
+    },
+    {
+      "name": "eval-regress",
+      "description": "Build automated regression suites \u2014 golden sets, threshold alerting, CI integration for model changes.",
+      "path": "team/evals/skills/eval-regress",
+      "version": "1.8.0",
+      "tags": [
+        "skill",
+        "ai-ops",
+        "eval"
+      ]
+    },
+    {
+      "name": "evals",
+      "description": "AI Operations Team \u2014 Evals: Eval harness design, benchmark suites, automated regression, human eval orchestration.",
+      "path": "team/evals",
+      "version": "1.8.0",
+      "tags": [
+        "agent",
+        "ai-ops",
+        "llm"
+      ]
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "name": "embed",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Embed: Embedding model selection, vector pipeline design, similarity search, and production index management.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Embed",
+      "path": "agents/embed.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "embed-design",
+      "path": "skills/embed-design/SKILL.md"
+    },
+    {
+      "name": "embed-search",
+      "path": "skills/embed-search/SKILL.md"
+    },
+    {
+      "name": "embed-recon",
+      "path": "skills/embed-recon/SKILL.md"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "rank",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Rank: Retrieval reranking, relevance scoring, learning-to-rank pipelines, and result quality evaluation for search and RAG.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Rank",
+      "path": "agents/rank.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "rank-design",
+      "path": "skills/rank-design/SKILL.md"
+    },
+    {
+      "name": "rank-eval",
+      "path": "skills/rank-eval/SKILL.md"
+    },
+    {
+      "name": "rank-recon",
+      "path": "skills/rank-recon/SKILL.md"
+    }
+  ]
+}

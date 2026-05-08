@@ -1,0 +1,37 @@
+{
+  "name": "token",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Token: Context window optimization, token counting, truncation strategies, and chunking patterns for LLM efficiency.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Token",
+      "path": "agents/token.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "token-budget",
+      "path": "skills/token-budget/SKILL.md"
+    },
+    {
+      "name": "token-chunk",
+      "path": "skills/token-chunk/SKILL.md"
+    },
+    {
+      "name": "token-recon",
+      "path": "skills/token-recon/SKILL.md"
+    }
+  ]
+}
