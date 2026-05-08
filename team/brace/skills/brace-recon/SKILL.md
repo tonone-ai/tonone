@@ -37,13 +37,13 @@ find . -name "*.md" 2>/dev/null | xargs grep -l "escalat\|tier.1\|tier.2\|tier.3
 
 Determine which stage the company is at based on available signals:
 
-| Signal            | Stage 1 ($0-$1M)    | Stage 2 ($1M-$10M)  | Stage 3 ($10M-$100M) |
-| ----------------- | ------------------- | ------------------- | -------------------- |
-| Who handles it    | Founder             | First support hires | Support team         |
-| Ticket system     | Email inbox         | Zendesk / Intercom  | Full helpdesk stack  |
-| KB / docs         | None or ad hoc      | Live, basic         | Structured, owned    |
-| SLAs              | None                | Informal or written | Monitored, enforced  |
-| CSAT tracking     | None                | Manual              | Automated weekly     |
+| Signal         | Stage 1 ($0-$1M) | Stage 2 ($1M-$10M)  | Stage 3 ($10M-$100M) |
+| -------------- | ---------------- | ------------------- | -------------------- |
+| Who handles it | Founder          | First support hires | Support team         |
+| Ticket system  | Email inbox      | Zendesk / Intercom  | Full helpdesk stack  |
+| KB / docs      | None or ad hoc   | Live, basic         | Structured, owned    |
+| SLAs           | None             | Informal or written | Monitored, enforced  |
+| CSAT tracking  | None             | Manual              | Automated weekly     |
 
 ### Step 2: Map Ticket Categories
 
@@ -56,24 +56,24 @@ Identify the top 10 issue types (from existing docs, support history, or founder
 
 ### Step 3: Assess SLA Compliance
 
-| SLA Target                 | Defined? | Monitored? | Met?   |
-| -------------------------- | -------- | ---------- | ------ |
-| First response time        | [Y/N]    | [Y/N]      | [Y/N]  |
-| Resolution time            | [Y/N]    | [Y/N]      | [Y/N]  |
-| Escalation response time   | [Y/N]    | [Y/N]      | [Y/N]  |
-| Enterprise SLA targets     | [Y/N]    | [Y/N]      | [Y/N]  |
+| SLA Target               | Defined? | Monitored? | Met?  |
+| ------------------------ | -------- | ---------- | ----- |
+| First response time      | [Y/N]    | [Y/N]      | [Y/N] |
+| Resolution time          | [Y/N]    | [Y/N]      | [Y/N] |
+| Escalation response time | [Y/N]    | [Y/N]      | [Y/N] |
+| Enterprise SLA targets   | [Y/N]    | [Y/N]      | [Y/N] |
 
 ### Step 4: Find Deflection Opportunities
 
 Assess the self-serve layer:
 
-| Deflection Asset          | Exists? | Coverage |
-| ------------------------- | ------- | -------- |
-| Knowledge base / FAQ      | [Y/N]   |          |
-| In-app tooltips / onboarding | [Y/N] |          |
-| Status page               | [Y/N]   |          |
-| Video tutorials           | [Y/N]   |          |
-| Chatbot / automated triage | [Y/N]  |          |
+| Deflection Asset             | Exists? | Coverage |
+| ---------------------------- | ------- | -------- |
+| Knowledge base / FAQ         | [Y/N]   |          |
+| In-app tooltips / onboarding | [Y/N]   |          |
+| Status page                  | [Y/N]   |          |
+| Video tutorials              | [Y/N]   |          |
+| Chatbot / automated triage   | [Y/N]   |          |
 
 ### Step 5: Present Assessment
 

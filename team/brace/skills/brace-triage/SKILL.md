@@ -30,21 +30,25 @@ Assess the existing state before designing anything:
 Define the tag structure. Every ticket gets at least one tag from each dimension:
 
 **Product area tags** (what part of the product):
+
 - Name the actual product areas (auth, billing, integrations, dashboard, API, mobile, etc.)
 
 **Severity tags** (customer impact):
+
 - `sev-critical` -- production down, data loss, security issue, no workaround
 - `sev-high` -- major feature broken, significant workflow blocked
 - `sev-medium` -- feature degraded, workaround exists
 - `sev-low` -- cosmetic, minor, or question
 
 **Customer tier tags** (who is asking):
+
 - `tier-enterprise` -- named enterprise account, contractual SLA
 - `tier-paid` -- paying customer, standard SLA
 - `tier-free` -- free tier user
 - `tier-trial` -- trial user
 
 **Issue type tags** (what kind of issue):
+
 - `type-bug` -- reproducible defect
 - `type-how-to` -- usage question answerable by KB
 - `type-feature-request` -- request for new functionality
@@ -56,14 +60,14 @@ Define the tag structure. Every ticket gets at least one tag from each dimension
 
 Map tag combinations to queues, tiers, and SLA targets:
 
-| Tag Combination             | Queue         | Tier    | First Response SLA |
-| --------------------------- | ------------- | ------- | ------------------ |
-| sev-critical + any          | Critical      | Tier 2+ | 1 hour             |
-| sev-high + tier-enterprise  | Enterprise    | Tier 1  | 2 hours            |
-| sev-high + tier-paid        | Paid support  | Tier 1  | 4 hours            |
-| type-how-to + sev-low       | Self-serve    | Tier 1  | 8 hours            |
-| type-bug (any tier)         | Bug queue     | Tier 1  | 4 hours            |
-| type-billing (any tier)     | Billing queue | Tier 1  | 4 hours            |
+| Tag Combination            | Queue         | Tier    | First Response SLA |
+| -------------------------- | ------------- | ------- | ------------------ |
+| sev-critical + any         | Critical      | Tier 2+ | 1 hour             |
+| sev-high + tier-enterprise | Enterprise    | Tier 1  | 2 hours            |
+| sev-high + tier-paid       | Paid support  | Tier 1  | 4 hours            |
+| type-how-to + sev-low      | Self-serve    | Tier 1  | 8 hours            |
+| type-bug (any tier)        | Bug queue     | Tier 1  | 4 hours            |
+| type-billing (any tier)    | Billing queue | Tier 1  | 4 hours            |
 
 Adjust targets to the actual support stage and team size.
 

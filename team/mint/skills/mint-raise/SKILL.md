@@ -19,12 +19,12 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 Ask or infer the raise stage:
 
-| Stage   | Typical ARR range | Lead investor type | Key financial asks              |
-| ------- | ----------------- | ------------------ | ------------------------------- |
-| Seed    | $0-$500K          | Angel / seed fund  | Unit economics, burn, use of funds |
-| Series A| $500K-$3M         | Institutional VC   | 3-year model, cohort analysis, NRR |
-| Series B| $3M-$15M          | Growth VC          | Rule of 40, LTV:CAC, S-curve proof |
-| Series C| $15M+             | Late-stage VC      | Audit-ready financials, path to profitability |
+| Stage    | Typical ARR range | Lead investor type | Key financial asks                            |
+| -------- | ----------------- | ------------------ | --------------------------------------------- |
+| Seed     | $0-$500K          | Angel / seed fund  | Unit economics, burn, use of funds            |
+| Series A | $500K-$3M         | Institutional VC   | 3-year model, cohort analysis, NRR            |
+| Series B | $3M-$15M          | Growth VC          | Rule of 40, LTV:CAC, S-curve proof            |
+| Series C | $15M+             | Late-stage VC      | Audit-ready financials, path to profitability |
 
 ```bash
 # Find any existing investor materials
@@ -36,12 +36,14 @@ find . -name "*.md" -o -name "*.pdf" -o -name "*.csv" 2>/dev/null | xargs grep -
 Standard financial data room checklist by stage:
 
 **Seed:**
+
 - [ ] Cap table (clean, with all SAFEs and notes converted)
 - [ ] 12-month financial history (P&L, burn, cash)
 - [ ] Use of funds narrative
 - [ ] Unit economics (even if early)
 
 **Series A:**
+
 - [ ] 3-year financial model (base/bull/bear)
 - [ ] Historical P&L (12-24 months of actuals)
 - [ ] Cohort analysis (logo retention by month of acquisition)
@@ -51,6 +53,7 @@ Standard financial data room checklist by stage:
 - [ ] Use of funds with headcount plan
 
 **Series B:**
+
 - [ ] All Series A items, plus:
 - [ ] Rule of 40 analysis (ARR growth rate + EBITDA margin)
 - [ ] Revenue by customer segment
@@ -106,6 +109,7 @@ Before any fundraising conversation, the cap table must be clean:
 ## Investor Data Room — [Company Name] — [Round]
 
 ### Financial Documents
+
 - [ ] P&L (monthly actuals, last 24 months)
 - [ ] Cash flow statement (actuals)
 - [ ] Balance sheet (current)
@@ -114,17 +118,20 @@ Before any fundraising conversation, the cap table must be clean:
 - [ ] Unit economics summary (CAC, LTV, payback, NRR)
 
 ### Cap Table
+
 - [ ] Current cap table (fully diluted)
 - [ ] SAFE/note conversion scenarios
 - [ ] Pro-forma cap table post-round
 
 ### Legal
+
 - [ ] Articles of incorporation
 - [ ] Board and stockholder resolutions
 - [ ] Customer contracts (representative samples)
 - [ ] Employee agreements
 
 ### Use of Funds
+
 - [ ] Headcount plan (by quarter, 24 months)
 - [ ] Departmental budget tied to headcount plan
 - [ ] Milestone map: what the round buys, when you hit next trigger
@@ -135,6 +142,7 @@ Before any fundraising conversation, the cap table must be clean:
 The use-of-funds section answers one investor question: "What does this money buy, and why is that the right bet?"
 
 Structure:
+
 1. **How much:** [$X raise]
 2. **Runway:** [18-24 months to next milestone]
 3. **Headcount plan:** [X engineers, Y sales, Z customer success — specific roles]

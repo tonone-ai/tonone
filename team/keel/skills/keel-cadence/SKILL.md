@@ -25,6 +25,7 @@ Before designing, understand the current state:
 - What is the average meeting size? (Meetings over 7 people rarely make decisions)
 
 Target for a healthy operating cadence:
+
 - Individual contributor: 4-6 hours of meetings per week max
 - Manager: 8-12 hours per week max
 - Exec: 12-16 hours per week max
@@ -33,14 +34,14 @@ Target for a healthy operating cadence:
 
 Design meetings by purpose, not by tradition:
 
-| Meeting Type         | Frequency     | Max Size | Max Duration | Purpose                              |
-| -------------------- | ------------- | -------- | ------------ | ------------------------------------ |
-| Daily standup        | Daily         | 10       | 15 min       | Unblock, surface dependencies        |
-| Team sync            | Weekly        | 8        | 45 min       | Progress, priorities, decisions      |
-| Leadership sync      | Weekly        | 6        | 60 min       | Cross-functional decisions           |
-| All-hands            | Monthly       | All      | 60 min       | Company updates, culture, Q&A        |
-| Quarterly planning   | Quarterly     | Leads    | Half day     | OKR review, next quarter planning    |
-| 1:1                  | Weekly/biweekly | 2      | 30 min       | Career, feedback, unblocking         |
+| Meeting Type       | Frequency       | Max Size | Max Duration | Purpose                           |
+| ------------------ | --------------- | -------- | ------------ | --------------------------------- |
+| Daily standup      | Daily           | 10       | 15 min       | Unblock, surface dependencies     |
+| Team sync          | Weekly          | 8        | 45 min       | Progress, priorities, decisions   |
+| Leadership sync    | Weekly          | 6        | 60 min       | Cross-functional decisions        |
+| All-hands          | Monthly         | All      | 60 min       | Company updates, culture, Q&A     |
+| Quarterly planning | Quarterly       | Leads    | Half day     | OKR review, next quarter planning |
+| 1:1                | Weekly/biweekly | 2        | 30 min       | Career, feedback, unblocking      |
 
 Not every company needs all of these. Stage 1 ($0-$1M): daily standup + weekly team sync is enough. Stage 3 ($10M-$100M): full cadence.
 
@@ -59,13 +60,16 @@ For every meeting in the cadence, define:
 **Decision rights:** [What can this group decide? What must escalate?]
 
 ### Agenda Template
+
 1. [Item 1] — [X minutes] — [owner]
 2. [Item 2] — [X minutes] — [owner]
 
 ### Pre-work required
+
 - [What attendees must do before the meeting]
 
 ### Output
+
 - [What document or decision is produced by the end]
 ```
 
@@ -83,12 +87,12 @@ Example: Weekly team sync, 8 people, 45 minutes
 
 Produce a meeting cost table:
 
-| Meeting              | Attendees | Duration | Frequency | Hours/week |
-|----------------------|-----------|----------|-----------|------------|
-| Daily standup        | [N]       | 15 min   | 5x/week   | [X]        |
-| Team sync            | [N]       | 45 min   | 1x/week   | [X]        |
-| [other meetings]     | ...       | ...      | ...       | ...        |
-| **Total**            |           |          |           | **[X]**    |
+| Meeting          | Attendees | Duration | Frequency | Hours/week |
+| ---------------- | --------- | -------- | --------- | ---------- |
+| Daily standup    | [N]       | 15 min   | 5x/week   | [X]        |
+| Team sync        | [N]       | 45 min   | 1x/week   | [X]        |
+| [other meetings] | ...       | ...      | ...       | ...        |
+| **Total**        |           |          |           | **[X]**    |
 
 ### Step 5: Produce Meeting Operating Guide
 

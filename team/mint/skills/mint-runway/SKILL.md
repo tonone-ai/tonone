@@ -26,6 +26,7 @@ find . -name "*.md" -o -name "*.csv" 2>/dev/null | xargs grep -l "payroll\|salar
 ```
 
 If no financial data exists, ask the user for:
+
 - Current cash balance in bank (today)
 - Last month's total expenses (gross burn)
 - Last month's revenue collected (cash in)
@@ -51,16 +52,19 @@ Net runway: $[Z] / $[X-Y] = [N] months
 ### Step 2: Project Runway — 3 Scenarios
 
 **Bear case:** Growth stalls. Burn stays flat or increases with existing hiring plan.
+
 - Revenue stays flat (no new customers, existing churn continues)
 - Burn continues at current rate plus committed hires
 - Result: runway = cash / net burn at month 3
 
 **Base case:** Current trajectory continues. Revenue grows at last 3-month rate.
+
 - MRR grows at current rate
 - Burn grows with planned hires
 - Result: runway = month when cash balance hits target floor (usually $0 or 3-month buffer)
 
 **Bull case:** Growth accelerates. Top-of-funnel converts, expansion revenue kicks in.
+
 - MRR grows at bull rate (1.5x current rate)
 - Burn held flat (no acceleration in hiring)
 - Result: when does the company become default alive?

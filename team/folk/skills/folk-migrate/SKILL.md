@@ -40,6 +40,7 @@ Score each role on automation potential (1-5 scale):
 Roles that score 1: keep. Roles that score 5: replace. Roles scoring 2-4: augment or restructure.
 
 **High-automation signal patterns (score 4-5):**
+
 - Handles structured, repetitive data entry or processing
 - Follows documented decision trees without judgment
 - Primary output is text generation (reports, summaries, emails)
@@ -47,6 +48,7 @@ Roles that score 1: keep. Roles that score 5: replace. Roles scoring 2-4: augmen
 - Does not require relationship trust with external parties
 
 **Low-automation signal patterns (score 1-2):**
+
 - Owns relationships with external parties (customers, investors, press)
 - Makes judgment calls with incomplete information
 - Manages or coaches people
@@ -58,10 +60,10 @@ Roles that score 1: keep. Roles that score 5: replace. Roles scoring 2-4: augmen
 ```markdown
 ## Role Migration Audit - [Company Name]
 
-| Role                | Headcount | Auto Score | Disposition     | Rationale                              |
-| ------------------- | --------- | ---------- | --------------- | -------------------------------------- |
-| [Role 1]            | [N]       | [1-5]      | Keep/Augment/Replace | [Why this score]               |
-| [Role 2]            | [N]       | [1-5]      | Keep/Augment/Replace | [Why this score]               |
+| Role     | Headcount | Auto Score | Disposition          | Rationale        |
+| -------- | --------- | ---------- | -------------------- | ---------------- |
+| [Role 1] | [N]       | [1-5]      | Keep/Augment/Replace | [Why this score] |
+| [Role 2] | [N]       | [1-5]      | Keep/Augment/Replace | [Why this score] |
 ```
 
 ### Step 3: Design Migration Sequence
@@ -83,6 +85,7 @@ For each role to be migrated:
 **Current state:** [What this person does today]
 **Target state:** [What the agent handles, what changes]
 **Migration path:**
+
 1. [Step 1: Deploy agent alongside human - parallel run]
 2. [Step 2: Agent handles X%, human handles Y% - validation period]
 3. [Step 3: Full handoff or restructure - with what guardrails]
@@ -102,25 +105,25 @@ Required before any migration is approved. No migration plan is complete without
 
 ### Affected Roles
 
-| Role         | Headcount | Migration Date | Offboarding Type     |
-| ------------ | --------- | -------------- | -------------------- |
-| [Role 1]     | [N]       | [Date]         | Layoff / Redeployment|
+| Role     | Headcount | Migration Date | Offboarding Type      |
+| -------- | --------- | -------------- | --------------------- |
+| [Role 1] | [N]       | [Date]         | Layoff / Redeployment |
 
 ### Severance Framework
 
-| Tenure         | Severance          | COBRA / Benefits Continuation | Outplacement          |
-| -------------- | ------------------ | ----------------------------- | --------------------- |
-| < 1 year       | [N weeks pay]      | [N months]                    | [Resume help / intro] |
-| 1-3 years      | [N weeks pay]      | [N months]                    | [Active referrals]    |
-| 3+ years       | [N weeks pay]      | [N months]                    | [Network + placement] |
+| Tenure    | Severance     | COBRA / Benefits Continuation | Outplacement          |
+| --------- | ------------- | ----------------------------- | --------------------- |
+| < 1 year  | [N weeks pay] | [N months]                    | [Resume help / intro] |
+| 1-3 years | [N weeks pay] | [N months]                    | [Active referrals]    |
+| 3+ years  | [N weeks pay] | [N months]                    | [Network + placement] |
 
 ### Redeployment Options
 
 Before offboarding, evaluate: can any of these people be redeployed into roles that need human judgment?
 
-| Role                | Displaced Person     | Redeployment Path                  | Likelihood |
-| ------------------- | -------------------- | ---------------------------------- | ---------- |
-| [Current role]      | [Name or ID]         | [Target role or "no fit found"]    | [H/M/L]    |
+| Role           | Displaced Person | Redeployment Path               | Likelihood |
+| -------------- | ---------------- | ------------------------------- | ---------- |
+| [Current role] | [Name or ID]     | [Target role or "no fit found"] | [H/M/L]    |
 
 ### Communication Plan
 

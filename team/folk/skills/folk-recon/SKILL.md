@@ -40,13 +40,13 @@ find . -name "*.md" 2>/dev/null | xargs grep -l "performance review\|career ladd
 
 Determine which stage the company is at based on available signals:
 
-| Signal             | Stage 1 ($0-$1M)      | Stage 2 ($1M-$10M)        | Stage 3 ($10M-$100M)     |
-| ------------------ | --------------------- | ------------------------- | ------------------------ |
-| Team size          | 1-5 people            | 5-30 people               | 30-200+ people           |
-| Roles              | All generalists       | First functional leads    | Specialized teams        |
-| Hierarchy          | Flat/none             | 1-2 layers                | Multiple layers          |
-| People ops         | Founder-run, informal | First HR hire or PeopleOps| People ops as a function |
-| Comp system        | Ad hoc                | Bands emerging            | Formalized bands         |
+| Signal      | Stage 1 ($0-$1M)      | Stage 2 ($1M-$10M)         | Stage 3 ($10M-$100M)     |
+| ----------- | --------------------- | -------------------------- | ------------------------ |
+| Team size   | 1-5 people            | 5-30 people                | 30-200+ people           |
+| Roles       | All generalists       | First functional leads     | Specialized teams        |
+| Hierarchy   | Flat/none             | 1-2 layers                 | Multiple layers          |
+| People ops  | Founder-run, informal | First HR hire or PeopleOps | People ops as a function |
+| Comp system | Ad hoc                | Bands emerging             | Formalized bands         |
 
 ### Step 2: Map Current People State
 
@@ -64,13 +64,13 @@ Identify current state of:
 
 Find the single biggest people ops gap:
 
-| Gap                    | Stage 1 Risk          | Stage 2 Risk              | Stage 3 Risk              |
-| ---------------------- | --------------------- | ------------------------- | ------------------------- |
-| No org design          | Low (too small)       | HIGH (conflict + overlap) | CRITICAL (org chaos)      |
-| No JDs                 | Medium (first hires)  | HIGH (inconsistent bar)   | HIGH (manager-dependent)  |
-| No comp bands          | Low                   | HIGH (offer chaos)        | CRITICAL (pay inequity)   |
-| No onboarding          | Medium                | HIGH (slow productivity)  | HIGH (manager bottleneck) |
-| No performance system  | Low                   | Medium                    | HIGH (promotion chaos)    |
+| Gap                   | Stage 1 Risk         | Stage 2 Risk              | Stage 3 Risk              |
+| --------------------- | -------------------- | ------------------------- | ------------------------- |
+| No org design         | Low (too small)      | HIGH (conflict + overlap) | CRITICAL (org chaos)      |
+| No JDs                | Medium (first hires) | HIGH (inconsistent bar)   | HIGH (manager-dependent)  |
+| No comp bands         | Low                  | HIGH (offer chaos)        | CRITICAL (pay inequity)   |
+| No onboarding         | Medium               | HIGH (slow productivity)  | HIGH (manager bottleneck) |
+| No performance system | Low                  | Medium                    | HIGH (promotion chaos)    |
 
 ### Step 4: Inventory People Assets
 

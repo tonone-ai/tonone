@@ -55,14 +55,17 @@ Structure:
 ## What We Need
 
 **Must have:**
+
 - [Specific skill or experience - with reason why it matters for this role]
 - [2-4 must-haves max]
 
 **Nice to have:**
+
 - [Bonus experience - can succeed without it]
 - [1-3 nice-to-haves max]
 
 **Not a fit if:**
+
 - [Clear disqualifying signal - saves time for both sides]
 
 ## 30/60/90-Day Success
@@ -73,6 +76,7 @@ Structure:
 ```
 
 Rules for JD:
+
 - "Competitive compensation" is not a comp band - include the number
 - No more than 6 bullets in "What You'll Do"
 - No more than 4 must-haves - if everything is required, nothing is
@@ -82,19 +86,19 @@ Rules for JD:
 
 5-7 evaluation criteria per role. For each criterion:
 
-| Criterion       | Description                                         | Weight | Pass Signal                      | Fail Signal                         |
-| --------------- | --------------------------------------------------- | ------ | -------------------------------- | ----------------------------------- |
-| [Criterion 1]   | [What this measures]                                | [H/M/L]| [Specific observable signal]     | [Specific observable signal]        |
+| Criterion     | Description          | Weight  | Pass Signal                  | Fail Signal                  |
+| ------------- | -------------------- | ------- | ---------------------------- | ---------------------------- |
+| [Criterion 1] | [What this measures] | [H/M/L] | [Specific observable signal] | [Specific observable signal] |
 
 Interview stages mapped to criteria:
 
-| Stage                   | Duration | Criteria Evaluated     | Who Conducts        |
-| ----------------------- | -------- | ---------------------- | ------------------- |
-| Recruiter screen        | 30 min   | Culture, logistics     | Recruiter / Founder |
-| Hiring manager screen   | 45 min   | Role outcome clarity   | Hiring manager      |
-| Technical / work sample | 60-90 min| Core skill 1, 2        | Peer or lead        |
-| Panel                   | 60 min   | Cross-functional fit   | 2-3 stakeholders    |
-| Reference check         | 30 min   | Verification           | Hiring manager      |
+| Stage                   | Duration  | Criteria Evaluated   | Who Conducts        |
+| ----------------------- | --------- | -------------------- | ------------------- |
+| Recruiter screen        | 30 min    | Culture, logistics   | Recruiter / Founder |
+| Hiring manager screen   | 45 min    | Role outcome clarity | Hiring manager      |
+| Technical / work sample | 60-90 min | Core skill 1, 2      | Peer or lead        |
+| Panel                   | 60 min    | Cross-functional fit | 2-3 stakeholders    |
+| Reference check         | 30 min    | Verification         | Hiring manager      |
 
 ### Step 3: Produce the Offer Process
 

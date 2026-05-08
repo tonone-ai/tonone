@@ -29,6 +29,7 @@ find . -name "*.md" -o -name "*.csv" 2>/dev/null | xargs grep -l "churn\|retenti
 ```
 
 If no data exists, ask the user for:
+
 - Average monthly revenue per customer (ARPU)
 - Monthly customer churn rate
 - Total sales and marketing spend last month
@@ -38,12 +39,14 @@ If no data exists, ask the user for:
 ### Step 1: Calculate LTV, CAC, and Payback
 
 **CAC formula:**
+
 ```
 CAC = Total sales & marketing spend / New customers acquired
     (use same period for both — last month or last quarter)
 ```
 
 **LTV formula (SaaS):**
+
 ```
 LTV = ARPU * Gross margin / Monthly churn rate
     or
@@ -51,12 +54,14 @@ LTV = ARPU * Gross margin * Average customer lifespan (months)
 ```
 
 **Payback period:**
+
 ```
 Payback = CAC / (ARPU * Gross margin %)
           = months to recover acquisition cost at gross margin
 ```
 
 **LTV:CAC ratio:**
+
 ```
 LTV:CAC = LTV / CAC
           Target: >3x for healthy SaaS unit economics
@@ -65,6 +70,7 @@ LTV:CAC = LTV / CAC
 ### Step 2: Assess Gross Margin
 
 **Gross margin formula:**
+
 ```
 Gross margin = (Revenue - COGS) / Revenue * 100
 
@@ -76,6 +82,7 @@ COGS for SaaS includes:
 ```
 
 Benchmarks:
+
 - Pure SaaS: 70-80%+ gross margin
 - SaaS with services: 50-70%
 - Marketplace: 40-60%
@@ -83,14 +90,14 @@ Benchmarks:
 
 ### Step 3: Benchmark vs SaaS Standards
 
-| Metric         | Current | SaaS benchmark | Status    |
-| -------------- | ------- | -------------- | --------- |
-| LTV:CAC ratio  |         | >3x            | [pass/fail]|
-| Payback period |         | <18 months     | [pass/fail]|
-| Gross margin   |         | >70%           | [pass/fail]|
-| NRR            |         | >100%          | [pass/fail]|
-| Logo churn     |         | <2%/month      | [pass/fail]|
-| CAC (absolute) |         | Context-dependent |         |
+| Metric         | Current | SaaS benchmark    | Status      |
+| -------------- | ------- | ----------------- | ----------- |
+| LTV:CAC ratio  |         | >3x               | [pass/fail] |
+| Payback period |         | <18 months        | [pass/fail] |
+| Gross margin   |         | >70%              | [pass/fail] |
+| NRR            |         | >100%             | [pass/fail] |
+| Logo churn     |         | <2%/month         | [pass/fail] |
+| CAC (absolute) |         | Context-dependent |             |
 
 ### Step 4: Identify Biggest Lever
 

@@ -32,17 +32,18 @@ Ask the user these questions if not already answered. Do not design a process wi
 
 Map the failure modes:
 
-| Failure Type         | Symptom                                          |
-| -------------------- | ------------------------------------------------ |
-| Handoff failure      | Step completes but next owner not notified       |
-| Duplicate work       | Multiple people doing the same step              |
-| Missing owner        | Step happens but no one is accountable           |
-| Ambiguous trigger    | Process starts at different times for different people |
-| Missing escalation   | Exceptions have no defined path                  |
+| Failure Type       | Symptom                                                |
+| ------------------ | ------------------------------------------------------ |
+| Handoff failure    | Step completes but next owner not notified             |
+| Duplicate work     | Multiple people doing the same step                    |
+| Missing owner      | Step happens but no one is accountable                 |
+| Ambiguous trigger  | Process starts at different times for different people |
+| Missing escalation | Exceptions have no defined path                        |
 
 ### Step 3: Design the Improved Process
 
 Apply these design principles:
+
 - One owner per step. Never two. Never none.
 - Trigger must be unambiguous — a specific event, not a general condition.
 - Each step produces a defined output. If no output, the step is not real.
@@ -64,15 +65,15 @@ Produce the SOP in this format:
 
 ## Steps
 
-| # | Step | Owner | Tools | Output |
-|---|------|-------|-------|--------|
-| 1 | [step description] | [role] | [tool] | [output] |
-| 2 | ... | ... | ... | ... |
+| #   | Step               | Owner  | Tools  | Output   |
+| --- | ------------------ | ------ | ------ | -------- |
+| 1   | [step description] | [role] | [tool] | [output] |
+| 2   | ...                | ...    | ...    | ...      |
 
 ## Exceptions and Escalation
 
-| Situation | Action | Escalate to |
-|-----------|--------|-------------|
+| Situation   | Action   | Escalate to   |
+| ----------- | -------- | ------------- |
 | [situation] | [action] | [person/role] |
 
 ## Success Metric
@@ -91,13 +92,14 @@ C = Consulted (input required)
 I = Informed (notified when done)
 ```
 
-| Step | [Team A] | [Team B] | [Team C] |
-|------|----------|----------|----------|
-| [step] | R | C | I |
+| Step   | [Team A] | [Team B] | [Team C] |
+| ------ | -------- | -------- | -------- |
+| [step] | R        | C        | I        |
 
 ### Step 6: Define the Success Metric
 
 Every SOP must have one measurable success metric. Examples:
+
 - "New hire completes onboarding checklist in under 3 days"
 - "Vendor invoice processed and paid within 5 business days"
 - "Customer escalation acknowledged within 2 hours"

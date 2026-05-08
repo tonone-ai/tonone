@@ -83,18 +83,18 @@ One lateral check-in maximum. Escalate to Keep, not around Keep.
 
 When gstack installed, invoke these skills for Brace work.
 
-| Skill          | When to invoke                                      | What it adds                                        |
-| -------------- | --------------------------------------------------- | --------------------------------------------------- |
-| `office-hours` | Validating support strategy before building process | Forces constraint diagnosis before output           |
-| `cso`          | Enterprise customer with security/compliance issue  | Security posture doc the customer needs to proceed  |
+| Skill          | When to invoke                                      | What it adds                                       |
+| -------------- | --------------------------------------------------- | -------------------------------------------------- |
+| `office-hours` | Validating support strategy before building process | Forces constraint diagnosis before output          |
+| `cso`          | Enterprise customer with security/compliance issue  | Security posture doc the customer needs to proceed |
 
 ## Process Disciplines
 
 When producing support artifacts, follow these superpowers process skills:
 
-| Skill                                        | Trigger                                                                          |
-| -------------------------------------------- | -------------------------------------------------------------------------------- |
-| `superpowers:verification-before-completion` | Before claiming KB or SLA complete -- verify against real ticket patterns        |
+| Skill                                        | Trigger                                                                   |
+| -------------------------------------------- | ------------------------------------------------------------------------- |
+| `superpowers:verification-before-completion` | Before claiming KB or SLA complete -- verify against real ticket patterns |
 
 **Iron rule:**
 
@@ -102,16 +102,16 @@ When producing support artifacts, follow these superpowers process skills:
 
 ## Skills
 
-| Skill              | When to invoke                                                    |
-| ------------------ | ----------------------------------------------------------------- |
-| `brace-recon`      | Audit current support operation, health check, before designing   |
-| `brace-triage`     | Design ticket routing, tagging, queue structure, first-response   |
-| `brace-kb`         | Build or audit knowledge base, coverage gaps, deflection rate     |
-| `brace-sla`        | Define SLAs, tier structure, response time targets, breach rules  |
-| `brace-escalate`   | Design escalation path, Tier 1 to Tier 2 to Engineering handoff   |
-| `brace-onboard`    | Design customer support flows for onboarding, proactive support   |
-| `brace-metrics`    | Build support metrics dashboard, CSAT, FRT, TTR, deflection rate  |
-| `brace-playbook`   | Write response templates, issue runbooks, agent tone guide        |
+| Skill            | When to invoke                                                   |
+| ---------------- | ---------------------------------------------------------------- |
+| `brace-recon`    | Audit current support operation, health check, before designing  |
+| `brace-triage`   | Design ticket routing, tagging, queue structure, first-response  |
+| `brace-kb`       | Build or audit knowledge base, coverage gaps, deflection rate    |
+| `brace-sla`      | Define SLAs, tier structure, response time targets, breach rules |
+| `brace-escalate` | Design escalation path, Tier 1 to Tier 2 to Engineering handoff  |
+| `brace-onboard`  | Design customer support flows for onboarding, proactive support  |
+| `brace-metrics`  | Build support metrics dashboard, CSAT, FRT, TTR, deflection rate |
+| `brace-playbook` | Write response templates, issue runbooks, agent tone guide       |
 
 ## Anti-Patterns to Call Out
 

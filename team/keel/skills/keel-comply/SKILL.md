@@ -19,14 +19,14 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 Determine which compliance frameworks are required based on customer type and geography:
 
-| Framework  | Required when                                                         |
-| ---------- | --------------------------------------------------------------------- |
-| SOC2       | Selling to enterprise B2B, processing customer data, US market        |
-| GDPR       | Any EU customers or processing data about EU residents                |
-| HIPAA      | Handling protected health information (PHI) in the US                 |
-| ISO 27001  | Government contracts, large enterprise, international markets         |
-| PCI DSS    | Storing, processing, or transmitting credit card data                 |
-| CCPA       | 50,000+ California consumers or $25M+ revenue from CA residents       |
+| Framework | Required when                                                   |
+| --------- | --------------------------------------------------------------- |
+| SOC2      | Selling to enterprise B2B, processing customer data, US market  |
+| GDPR      | Any EU customers or processing data about EU residents          |
+| HIPAA     | Handling protected health information (PHI) in the US           |
+| ISO 27001 | Government contracts, large enterprise, international markets   |
+| PCI DSS   | Storing, processing, or transmitting credit card data           |
+| CCPA      | 50,000+ California consumers or $25M+ revenue from CA residents |
 
 Ask the user: Who are your customers? What data do you process? Which geographies?
 
@@ -35,43 +35,44 @@ Ask the user: Who are your customers? What data do you process? Which geographie
 For SOC2 (most common SaaS requirement), assess the five trust service criteria:
 
 **Security (required):**
-| Control Area           | Evidence Required              | Status     |
+| Control Area | Evidence Required | Status |
 |------------------------|--------------------------------|------------|
-| Access controls        | IAM policy, MFA enforcement    | [gap/ok]   |
-| Encryption at rest     | Database encryption config     | [gap/ok]   |
-| Encryption in transit  | TLS configuration              | [gap/ok]   |
-| Vulnerability mgmt     | Scanning cadence, patch policy | [gap/ok]   |
-| Incident response      | IR plan, on-call runbook       | [gap/ok]   |
-| Change management      | Code review, deployment policy | [gap/ok]   |
-| Vendor management      | Vendor security assessments    | [gap/ok]   |
-| Risk assessment        | Annual risk assessment doc     | [gap/ok]   |
+| Access controls | IAM policy, MFA enforcement | [gap/ok] |
+| Encryption at rest | Database encryption config | [gap/ok] |
+| Encryption in transit | TLS configuration | [gap/ok] |
+| Vulnerability mgmt | Scanning cadence, patch policy | [gap/ok] |
+| Incident response | IR plan, on-call runbook | [gap/ok] |
+| Change management | Code review, deployment policy | [gap/ok] |
+| Vendor management | Vendor security assessments | [gap/ok] |
+| Risk assessment | Annual risk assessment doc | [gap/ok] |
 
 **Availability (if selected):**
-| Control Area           | Evidence Required              | Status     |
+| Control Area | Evidence Required | Status |
 |------------------------|--------------------------------|------------|
-| Uptime monitoring      | Monitoring tool + SLA          | [gap/ok]   |
-| Capacity planning      | Documented capacity reviews    | [gap/ok]   |
-| Business continuity    | BCP / DR plan                  | [gap/ok]   |
+| Uptime monitoring | Monitoring tool + SLA | [gap/ok] |
+| Capacity planning | Documented capacity reviews | [gap/ok] |
+| Business continuity | BCP / DR plan | [gap/ok] |
 
 **GDPR gap assessment:**
-| Requirement            | Evidence Required              | Status     |
+| Requirement | Evidence Required | Status |
 |------------------------|--------------------------------|------------|
-| Lawful basis           | Documented basis per data type | [gap/ok]   |
-| Privacy policy         | Published, accurate policy     | [gap/ok]   |
-| Data subject rights    | Process for access/deletion    | [gap/ok]   |
-| Data processing records| Article 30 record              | [gap/ok]   |
-| DPA with vendors       | DPAs signed with sub-processors| [gap/ok]   |
-| Breach notification    | 72-hour notification process   | [gap/ok]   |
-| Data retention policy  | Documented retention schedule  | [gap/ok]   |
+| Lawful basis | Documented basis per data type | [gap/ok] |
+| Privacy policy | Published, accurate policy | [gap/ok] |
+| Data subject rights | Process for access/deletion | [gap/ok] |
+| Data processing records| Article 30 record | [gap/ok] |
+| DPA with vendors | DPAs signed with sub-processors| [gap/ok] |
+| Breach notification | 72-hour notification process | [gap/ok] |
+| Data retention policy | Documented retention schedule | [gap/ok] |
 
 ### Step 3: Produce Gap List with Severity
 
-| ID     | Framework | Control              | Gap Description          | Severity |
-|--------|-----------|----------------------|--------------------------|----------|
-| C-001  | SOC2      | [control area]       | [what is missing]        | HIGH     |
-| C-002  | GDPR      | [requirement]        | [what is missing]        | HIGH     |
+| ID    | Framework | Control        | Gap Description   | Severity |
+| ----- | --------- | -------------- | ----------------- | -------- |
+| C-001 | SOC2      | [control area] | [what is missing] | HIGH     |
+| C-002 | GDPR      | [requirement]  | [what is missing] | HIGH     |
 
 Severity mapping:
+
 - CRITICAL: Gap that would fail an audit or expose immediate legal risk
 - HIGH: Gap required for certification or regulatory compliance
 - MEDIUM: Gap that creates risk but is not immediately audit-blocking
@@ -80,18 +81,21 @@ Severity mapping:
 ### Step 4: Remediation Roadmap
 
 **30-day quick wins (no external cost):**
+
 - Policies that can be written and published immediately
 - MFA enforcement (existing tool feature)
 - Access review (manual audit)
 - Incident response plan (document what you already do)
 
 **90-day full program:**
+
 - Penetration test (required for SOC2)
 - Security awareness training program
 - Vendor security assessment process
 - Formal risk assessment
 
 **Ongoing (quarterly):**
+
 - Access reviews
 - Policy reviews
 - Vulnerability scans
@@ -100,6 +104,7 @@ Severity mapping:
 ### Step 5: Output Policy Templates
 
 For the most critical missing controls, produce the policy template text directly. Priority order:
+
 1. Information Security Policy (required by all frameworks)
 2. Acceptable Use Policy
 3. Incident Response Plan

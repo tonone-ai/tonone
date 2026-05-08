@@ -19,16 +19,17 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 Determine where the company is in OKR maturity:
 
-| Maturity Level | Characteristics                                      | Recommended Action          |
-| -------------- | ---------------------------------------------------- | --------------------------- |
-| Stage 1        | Informal goals, founder holds them in their head     | Write 3 company goals down  |
-| Stage 2        | Some written goals, but not cascaded or measured     | Formalize OKR structure     |
-| Stage 3        | OKRs exist but not reviewed or updated               | Fix review cadence          |
-| Stage 4        | Full OKR program running, needs optimization         | Tune signal quality          |
+| Maturity Level | Characteristics                                  | Recommended Action         |
+| -------------- | ------------------------------------------------ | -------------------------- |
+| Stage 1        | Informal goals, founder holds them in their head | Write 3 company goals down |
+| Stage 2        | Some written goals, but not cascaded or measured | Formalize OKR structure    |
+| Stage 3        | OKRs exist but not reviewed or updated           | Fix review cadence         |
+| Stage 4        | Full OKR program running, needs optimization     | Tune signal quality        |
 
 ### Step 2: Design Company Objectives
 
 Company objectives are qualitative, inspirational, and time-bound (one quarter). Rules:
+
 - Maximum 3 company objectives per quarter
 - Each objective describes an outcome, not an activity
 - An objective answers: "What does winning this quarter look like?"
@@ -40,6 +41,7 @@ For each objective, ask: "If we achieved this and nothing else, would the quarte
 ### Step 3: Cascade to Team Key Results
 
 For each company objective, produce 2-3 team key results. Rules:
+
 - Each key result is binary (done / not done) or numeric (measured at a specific date)
 - One owner per key result — not a team, a person
 - No key result uses the word "improve" without a number
@@ -47,6 +49,7 @@ For each company objective, produce 2-3 team key results. Rules:
 - Good: "Increase NPS from 32 to 45 by June 30"
 
 Key result format:
+
 ```
 KR: [Measurable outcome] by [date]
 Owner: [Name]
@@ -64,10 +67,10 @@ Produce the full OKR document for the current quarter:
 
 **Company Objective 1:** [Objective statement]
 
-| Key Result | Owner | Baseline | Target | Due | Confidence |
-|------------|-------|----------|--------|-----|------------|
-| KR 1.1: [statement] | [name] | [value] | [value] | [date] | [1-10] |
-| KR 1.2: [statement] | [name] | [value] | [value] | [date] | [1-10] |
+| Key Result          | Owner  | Baseline | Target  | Due    | Confidence |
+| ------------------- | ------ | -------- | ------- | ------ | ---------- |
+| KR 1.1: [statement] | [name] | [value]  | [value] | [date] | [1-10]     |
+| KR 1.2: [statement] | [name] | [value]  | [value] | [date] | [1-10]     |
 
 **Company Objective 2:** [Objective statement]
 
@@ -80,17 +83,19 @@ Produce the full OKR document for the current quarter:
 
 ### Step 5: Design Review Cadence
 
-| Cadence          | Frequency | Purpose                                         | Attendees          |
-| ---------------- | --------- | ----------------------------------------------- | ------------------ |
-| Weekly check-in  | Weekly    | Update confidence scores, surface blockers      | KR owners          |
-| Monthly review   | Monthly   | Progress assessment, resource re-allocation     | Team leads         |
-| Quarterly retro  | Quarterly | Score OKRs, learn from misses, set next quarter | Full company       |
+| Cadence         | Frequency | Purpose                                         | Attendees    |
+| --------------- | --------- | ----------------------------------------------- | ------------ |
+| Weekly check-in | Weekly    | Update confidence scores, surface blockers      | KR owners    |
+| Monthly review  | Monthly   | Progress assessment, resource re-allocation     | Team leads   |
+| Quarterly retro | Quarterly | Score OKRs, learn from misses, set next quarter | Full company |
 
 Weekly check-in format (15 minutes max):
+
 - Each KR owner states: confidence score (1-10), biggest blocker
 - No status theater — only changes from last week
 
 Quarterly retro format (60-90 minutes):
+
 - Score each KR: 0.0 (not started) to 1.0 (fully achieved)
 - 0.7-0.9 = target zone (1.0 means objective was too easy)
 - Below 0.4 = failure to analyze — what did we learn?

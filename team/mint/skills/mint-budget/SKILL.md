@@ -27,13 +27,13 @@ find . -name "*.md" -o -name "*.csv" 2>/dev/null | xargs grep -l "salary\|payrol
 
 ### Step 1: Diagnose Budget Maturity
 
-| Maturity level | Description                                   | Output needed           |
-| -------------- | --------------------------------------------- | ----------------------- |
-| None           | No budget exists, tracking ad hoc             | Full budget from scratch|
-| Informal       | Rough spend tracked, no departmental split    | Structured budget       |
-| Basic          | Departments tracked, no headcount plan        | Add headcount plan      |
-| Standard       | Headcount + departmental budget               | Add variance tracking   |
-| Advanced       | Full FP&A with monthly variance commentary    | Optimize and refine     |
+| Maturity level | Description                                | Output needed            |
+| -------------- | ------------------------------------------ | ------------------------ |
+| None           | No budget exists, tracking ad hoc          | Full budget from scratch |
+| Informal       | Rough spend tracked, no departmental split | Structured budget        |
+| Basic          | Departments tracked, no headcount plan     | Add headcount plan       |
+| Standard       | Headcount + departmental budget            | Add variance tracking    |
+| Advanced       | Full FP&A with monthly variance commentary | Optimize and refine      |
 
 ### Step 2: Map Current Spend by Department
 
