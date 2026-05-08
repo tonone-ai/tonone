@@ -1,0 +1,18 @@
+{
+  "name": "schema",
+  "version": "1.6.0",
+  "description": "Developer Experience Team \u2014 Schema: API schema design \u2014 OpenAPI, GraphQL, gRPC schema quality, and design standards",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "devx-team",
+    "schema",
+    "developer-experience",
+    "devx"
+  ]
+}
