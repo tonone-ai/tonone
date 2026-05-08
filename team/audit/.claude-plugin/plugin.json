@@ -1,0 +1,18 @@
+{
+  "name": "audit",
+  "version": "1.2.0",
+  "description": "Legal compliance audit \u2014 internal controls review, legal risk register, audit trail documentation",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "audit",
+    "compliance",
+    "legal-risk",
+    "internal-controls",
+    "documentation"
+  ]
+}

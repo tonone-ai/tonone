@@ -15,7 +15,10 @@
         "name": "ai",
         "url": "https://tonone.ai"
       },
-      "tags": ["bundle", "full-team"]
+      "tags": [
+        "bundle",
+        "full-team"
+      ]
     },
     {
       "name": "engineering-team",
@@ -26,7 +29,11 @@
         "name": "ai",
         "url": "https://tonone.ai"
       },
-      "tags": ["bundle", "installer", "engineering-team"]
+      "tags": [
+        "bundle",
+        "installer",
+        "engineering-team"
+      ]
     },
     {
       "name": "product-team",
@@ -37,7 +44,11 @@
         "name": "ai",
         "url": "https://tonone.ai"
       },
-      "tags": ["bundle", "installer", "product-team"]
+      "tags": [
+        "bundle",
+        "installer",
+        "product-team"
+      ]
     },
     {
       "name": "full-team",
@@ -48,7 +59,26 @@
         "name": "ai",
         "url": "https://tonone.ai"
       },
-      "tags": ["bundle", "installer", "full-team"]
+      "tags": [
+        "bundle",
+        "installer",
+        "full-team"
+      ]
+    },
+    {
+      "name": "legal-team",
+      "description": "Install all 10 Legal Team agents at once \u2014 contracts, compliance, IP, governance, regulatory",
+      "version": "1.2.0",
+      "source": "./bundle/legal-team",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "bundle",
+        "installer",
+        "legal-team"
+      ]
     },
     {
       "name": "apex",
@@ -60,7 +90,10 @@
         "url": "https://tonone.ai"
       },
       "category": "lead",
-      "tags": ["lead", "orchestrator"]
+      "tags": [
+        "lead",
+        "orchestrator"
+      ]
     },
     {
       "name": "forge",
@@ -72,7 +105,11 @@
         "url": "https://tonone.ai"
       },
       "category": "infrastructure",
-      "tags": ["cloud", "networking", "iac"]
+      "tags": [
+        "cloud",
+        "networking",
+        "iac"
+      ]
     },
     {
       "name": "relay",
@@ -84,7 +121,11 @@
         "url": "https://tonone.ai"
       },
       "category": "devops",
-      "tags": ["cicd", "deployments", "gitops"]
+      "tags": [
+        "cicd",
+        "deployments",
+        "gitops"
+      ]
     },
     {
       "name": "spine",
@@ -96,7 +137,11 @@
         "url": "https://tonone.ai"
       },
       "category": "backend",
-      "tags": ["apis", "system-design", "performance"]
+      "tags": [
+        "apis",
+        "system-design",
+        "performance"
+      ]
     },
     {
       "name": "flux",
@@ -108,7 +153,11 @@
         "url": "https://tonone.ai"
       },
       "category": "data",
-      "tags": ["databases", "migrations", "pipelines"]
+      "tags": [
+        "databases",
+        "migrations",
+        "pipelines"
+      ]
     },
     {
       "name": "warden",
@@ -120,7 +169,11 @@
         "url": "https://tonone.ai"
       },
       "category": "security",
-      "tags": ["iam", "secrets", "compliance"]
+      "tags": [
+        "iam",
+        "secrets",
+        "compliance"
+      ]
     },
     {
       "name": "vigil",
@@ -132,7 +185,11 @@
         "url": "https://tonone.ai"
       },
       "category": "observability",
-      "tags": ["monitoring", "alerting", "sre"]
+      "tags": [
+        "monitoring",
+        "alerting",
+        "sre"
+      ]
     },
     {
       "name": "prism",
@@ -144,7 +201,11 @@
         "url": "https://tonone.ai"
       },
       "category": "frontend",
-      "tags": ["ui", "internal-tools", "dx"]
+      "tags": [
+        "ui",
+        "internal-tools",
+        "dx"
+      ]
     },
     {
       "name": "cortex",
@@ -156,7 +217,11 @@
         "url": "https://tonone.ai"
       },
       "category": "ml",
-      "tags": ["ml", "mlops", "llm"]
+      "tags": [
+        "ml",
+        "mlops",
+        "llm"
+      ]
     },
     {
       "name": "touch",
@@ -168,7 +233,11 @@
         "url": "https://tonone.ai"
       },
       "category": "mobile",
-      "tags": ["ios", "android", "cross-platform"]
+      "tags": [
+        "ios",
+        "android",
+        "cross-platform"
+      ]
     },
     {
       "name": "volt",
@@ -180,7 +249,11 @@
         "url": "https://tonone.ai"
       },
       "category": "embedded",
-      "tags": ["firmware", "iot", "edge"]
+      "tags": [
+        "firmware",
+        "iot",
+        "edge"
+      ]
     },
     {
       "name": "atlas",
@@ -192,7 +265,11 @@
         "url": "https://tonone.ai"
       },
       "category": "knowledge",
-      "tags": ["docs", "adrs", "diagrams"]
+      "tags": [
+        "docs",
+        "adrs",
+        "diagrams"
+      ]
     },
     {
       "name": "lens",
@@ -204,7 +281,11 @@
         "url": "https://tonone.ai"
       },
       "category": "analytics",
-      "tags": ["dashboards", "metrics", "reporting"]
+      "tags": [
+        "dashboards",
+        "metrics",
+        "reporting"
+      ]
     },
     {
       "name": "proof",
@@ -216,7 +297,12 @@
         "url": "https://tonone.ai"
       },
       "category": "testing",
-      "tags": ["testing", "qa", "e2e", "playwright"]
+      "tags": [
+        "testing",
+        "qa",
+        "e2e",
+        "playwright"
+      ]
     },
     {
       "name": "pave",
@@ -228,7 +314,12 @@
         "url": "https://tonone.ai"
       },
       "category": "platform",
-      "tags": ["platform", "dx", "golden-paths", "service-catalog"]
+      "tags": [
+        "platform",
+        "dx",
+        "golden-paths",
+        "service-catalog"
+      ]
     },
     {
       "name": "helm",
@@ -240,7 +331,13 @@
         "url": "https://tonone.ai"
       },
       "category": "product",
-      "tags": ["product", "strategy", "requirements", "cpo", "product-team"]
+      "tags": [
+        "product",
+        "strategy",
+        "requirements",
+        "cpo",
+        "product-team"
+      ]
     },
     {
       "name": "draft",
@@ -252,7 +349,13 @@
         "url": "https://tonone.ai"
       },
       "category": "product",
-      "tags": ["ux", "design", "user-flows", "wireframes", "product-team"]
+      "tags": [
+        "ux",
+        "design",
+        "user-flows",
+        "wireframes",
+        "product-team"
+      ]
     },
     {
       "name": "form",
@@ -434,7 +537,14 @@
         "url": "https://tonone.ai"
       },
       "category": "product",
-      "tags": ["pr", "community", "devrel", "social", "launch", "product-team"]
+      "tags": [
+        "pr",
+        "community",
+        "devrel",
+        "social",
+        "launch",
+        "product-team"
+      ]
     },
     {
       "name": "apex-plan",
@@ -447,7 +557,10 @@
       },
       "type": "skill",
       "category": "lead",
-      "tags": ["apex", "skill"]
+      "tags": [
+        "apex",
+        "skill"
+      ]
     },
     {
       "name": "apex-recon",
@@ -460,7 +573,10 @@
       },
       "type": "skill",
       "category": "lead",
-      "tags": ["apex", "skill"]
+      "tags": [
+        "apex",
+        "skill"
+      ]
     },
     {
       "name": "apex-review",
@@ -473,7 +589,10 @@
       },
       "type": "skill",
       "category": "lead",
-      "tags": ["apex", "skill"]
+      "tags": [
+        "apex",
+        "skill"
+      ]
     },
     {
       "name": "apex-status",
@@ -486,7 +605,10 @@
       },
       "type": "skill",
       "category": "lead",
-      "tags": ["apex", "skill"]
+      "tags": [
+        "apex",
+        "skill"
+      ]
     },
     {
       "name": "apex-takeover",
@@ -499,7 +621,10 @@
       },
       "type": "skill",
       "category": "lead",
-      "tags": ["apex", "skill"]
+      "tags": [
+        "apex",
+        "skill"
+      ]
     },
     {
       "name": "atlas-adr",
@@ -512,7 +637,10 @@
       },
       "type": "skill",
       "category": "knowledge",
-      "tags": ["atlas", "skill"]
+      "tags": [
+        "atlas",
+        "skill"
+      ]
     },
     {
       "name": "atlas-changelog",
@@ -525,7 +653,10 @@
       },
       "type": "skill",
       "category": "knowledge",
-      "tags": ["atlas", "skill"]
+      "tags": [
+        "atlas",
+        "skill"
+      ]
     },
     {
       "name": "atlas-map",
@@ -538,7 +669,10 @@
       },
       "type": "skill",
       "category": "knowledge",
-      "tags": ["atlas", "skill"]
+      "tags": [
+        "atlas",
+        "skill"
+      ]
     },
     {
       "name": "atlas-onboard",
@@ -551,7 +685,10 @@
       },
       "type": "skill",
       "category": "knowledge",
-      "tags": ["atlas", "skill"]
+      "tags": [
+        "atlas",
+        "skill"
+      ]
     },
     {
       "name": "atlas-present",
@@ -564,7 +701,10 @@
       },
       "type": "skill",
       "category": "knowledge",
-      "tags": ["atlas", "skill"]
+      "tags": [
+        "atlas",
+        "skill"
+      ]
     },
     {
       "name": "atlas-recon",
@@ -577,7 +717,10 @@
       },
       "type": "skill",
       "category": "knowledge",
-      "tags": ["atlas", "skill"]
+      "tags": [
+        "atlas",
+        "skill"
+      ]
     },
     {
       "name": "atlas-report",
@@ -590,7 +733,10 @@
       },
       "type": "skill",
       "category": "knowledge",
-      "tags": ["atlas", "skill"]
+      "tags": [
+        "atlas",
+        "skill"
+      ]
     },
     {
       "name": "cortex-eval",
@@ -603,7 +749,10 @@
       },
       "type": "skill",
       "category": "ml",
-      "tags": ["cortex", "skill"]
+      "tags": [
+        "cortex",
+        "skill"
+      ]
     },
     {
       "name": "cortex-integrate",
@@ -616,7 +765,10 @@
       },
       "type": "skill",
       "category": "ml",
-      "tags": ["cortex", "skill"]
+      "tags": [
+        "cortex",
+        "skill"
+      ]
     },
     {
       "name": "cortex-model",
@@ -629,7 +781,10 @@
       },
       "type": "skill",
       "category": "ml",
-      "tags": ["cortex", "skill"]
+      "tags": [
+        "cortex",
+        "skill"
+      ]
     },
     {
       "name": "cortex-prompt",
@@ -642,7 +797,10 @@
       },
       "type": "skill",
       "category": "ml",
-      "tags": ["cortex", "skill"]
+      "tags": [
+        "cortex",
+        "skill"
+      ]
     },
     {
       "name": "cortex-recon",
@@ -655,7 +813,10 @@
       },
       "type": "skill",
       "category": "ml",
-      "tags": ["cortex", "skill"]
+      "tags": [
+        "cortex",
+        "skill"
+      ]
     },
     {
       "name": "crest-compete",
@@ -668,7 +829,10 @@
       },
       "type": "skill",
       "category": "strategy",
-      "tags": ["crest", "skill"]
+      "tags": [
+        "crest",
+        "skill"
+      ]
     },
     {
       "name": "crest-narrative",
@@ -681,7 +845,10 @@
       },
       "type": "skill",
       "category": "strategy",
-      "tags": ["crest", "skill"]
+      "tags": [
+        "crest",
+        "skill"
+      ]
     },
     {
       "name": "crest-okr",
@@ -694,7 +861,10 @@
       },
       "type": "skill",
       "category": "strategy",
-      "tags": ["crest", "skill"]
+      "tags": [
+        "crest",
+        "skill"
+      ]
     },
     {
       "name": "crest-recon",
@@ -707,7 +877,10 @@
       },
       "type": "skill",
       "category": "strategy",
-      "tags": ["crest", "skill"]
+      "tags": [
+        "crest",
+        "skill"
+      ]
     },
     {
       "name": "crest-roadmap",
@@ -720,7 +893,10 @@
       },
       "type": "skill",
       "category": "strategy",
-      "tags": ["crest", "skill"]
+      "tags": [
+        "crest",
+        "skill"
+      ]
     },
     {
       "name": "draft-flow",
@@ -733,7 +909,10 @@
       },
       "type": "skill",
       "category": "ux",
-      "tags": ["draft", "skill"]
+      "tags": [
+        "draft",
+        "skill"
+      ]
     },
     {
       "name": "draft-ia",
@@ -746,7 +925,10 @@
       },
       "type": "skill",
       "category": "ux",
-      "tags": ["draft", "skill"]
+      "tags": [
+        "draft",
+        "skill"
+      ]
     },
     {
       "name": "draft-landing",
@@ -759,7 +941,10 @@
       },
       "type": "skill",
       "category": "ux",
-      "tags": ["draft", "skill"]
+      "tags": [
+        "draft",
+        "skill"
+      ]
     },
     {
       "name": "draft-patterns",
@@ -772,7 +957,10 @@
       },
       "type": "skill",
       "category": "ux",
-      "tags": ["draft", "skill"]
+      "tags": [
+        "draft",
+        "skill"
+      ]
     },
     {
       "name": "draft-recon",
@@ -785,7 +973,10 @@
       },
       "type": "skill",
       "category": "ux",
-      "tags": ["draft", "skill"]
+      "tags": [
+        "draft",
+        "skill"
+      ]
     },
     {
       "name": "draft-review",
@@ -798,7 +989,10 @@
       },
       "type": "skill",
       "category": "ux",
-      "tags": ["draft", "skill"]
+      "tags": [
+        "draft",
+        "skill"
+      ]
     },
     {
       "name": "draft-wireframe",
@@ -811,7 +1005,10 @@
       },
       "type": "skill",
       "category": "ux",
-      "tags": ["draft", "skill"]
+      "tags": [
+        "draft",
+        "skill"
+      ]
     },
     {
       "name": "echo-feedback",
@@ -824,7 +1021,10 @@
       },
       "type": "skill",
       "category": "research",
-      "tags": ["echo", "skill"]
+      "tags": [
+        "echo",
+        "skill"
+      ]
     },
     {
       "name": "echo-interview",
@@ -837,7 +1037,10 @@
       },
       "type": "skill",
       "category": "research",
-      "tags": ["echo", "skill"]
+      "tags": [
+        "echo",
+        "skill"
+      ]
     },
     {
       "name": "echo-jobs",
@@ -850,7 +1053,10 @@
       },
       "type": "skill",
       "category": "research",
-      "tags": ["echo", "skill"]
+      "tags": [
+        "echo",
+        "skill"
+      ]
     },
     {
       "name": "echo-recon",
@@ -863,7 +1069,10 @@
       },
       "type": "skill",
       "category": "research",
-      "tags": ["echo", "skill"]
+      "tags": [
+        "echo",
+        "skill"
+      ]
     },
     {
       "name": "echo-segment",
@@ -876,7 +1085,10 @@
       },
       "type": "skill",
       "category": "research",
-      "tags": ["echo", "skill"]
+      "tags": [
+        "echo",
+        "skill"
+      ]
     },
     {
       "name": "flux-health",
@@ -889,7 +1101,10 @@
       },
       "type": "skill",
       "category": "data",
-      "tags": ["flux", "skill"]
+      "tags": [
+        "flux",
+        "skill"
+      ]
     },
     {
       "name": "flux-migrate",
@@ -902,7 +1117,10 @@
       },
       "type": "skill",
       "category": "data",
-      "tags": ["flux", "skill"]
+      "tags": [
+        "flux",
+        "skill"
+      ]
     },
     {
       "name": "flux-pipeline",
@@ -915,7 +1133,10 @@
       },
       "type": "skill",
       "category": "data",
-      "tags": ["flux", "skill"]
+      "tags": [
+        "flux",
+        "skill"
+      ]
     },
     {
       "name": "flux-query",
@@ -928,7 +1149,10 @@
       },
       "type": "skill",
       "category": "data",
-      "tags": ["flux", "skill"]
+      "tags": [
+        "flux",
+        "skill"
+      ]
     },
     {
       "name": "flux-recon",
@@ -941,7 +1165,10 @@
       },
       "type": "skill",
       "category": "data",
-      "tags": ["flux", "skill"]
+      "tags": [
+        "flux",
+        "skill"
+      ]
     },
     {
       "name": "flux-schema",
@@ -954,7 +1181,10 @@
       },
       "type": "skill",
       "category": "data",
-      "tags": ["flux", "skill"]
+      "tags": [
+        "flux",
+        "skill"
+      ]
     },
     {
       "name": "forge-audit",
@@ -967,7 +1197,10 @@
       },
       "type": "skill",
       "category": "infrastructure",
-      "tags": ["forge", "skill"]
+      "tags": [
+        "forge",
+        "skill"
+      ]
     },
     {
       "name": "forge-cost",
@@ -980,7 +1213,10 @@
       },
       "type": "skill",
       "category": "infrastructure",
-      "tags": ["forge", "skill"]
+      "tags": [
+        "forge",
+        "skill"
+      ]
     },
     {
       "name": "forge-diagnose",
@@ -993,7 +1229,10 @@
       },
       "type": "skill",
       "category": "infrastructure",
-      "tags": ["forge", "skill"]
+      "tags": [
+        "forge",
+        "skill"
+      ]
     },
     {
       "name": "forge-infra",
@@ -1006,7 +1245,10 @@
       },
       "type": "skill",
       "category": "infrastructure",
-      "tags": ["forge", "skill"]
+      "tags": [
+        "forge",
+        "skill"
+      ]
     },
     {
       "name": "forge-network",
@@ -1019,7 +1261,10 @@
       },
       "type": "skill",
       "category": "infrastructure",
-      "tags": ["forge", "skill"]
+      "tags": [
+        "forge",
+        "skill"
+      ]
     },
     {
       "name": "forge-recon",
@@ -1032,7 +1277,10 @@
       },
       "type": "skill",
       "category": "infrastructure",
-      "tags": ["forge", "skill"]
+      "tags": [
+        "forge",
+        "skill"
+      ]
     },
     {
       "name": "form-audit",
@@ -1045,7 +1293,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-brand",
@@ -1058,7 +1309,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-component",
@@ -1071,7 +1325,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-deck",
@@ -1084,7 +1341,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-email",
@@ -1097,7 +1357,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-exam",
@@ -1110,7 +1373,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-logo",
@@ -1123,7 +1389,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-mobile",
@@ -1136,7 +1405,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-palette",
@@ -1149,7 +1421,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-social",
@@ -1162,7 +1437,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-style",
@@ -1175,7 +1453,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-tokens",
@@ -1188,7 +1469,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "form-web",
@@ -1201,7 +1485,10 @@
       },
       "type": "skill",
       "category": "design",
-      "tags": ["form", "skill"]
+      "tags": [
+        "form",
+        "skill"
+      ]
     },
     {
       "name": "helm-arbiter",
@@ -1214,7 +1501,10 @@
       },
       "type": "skill",
       "category": "product",
-      "tags": ["helm", "skill"]
+      "tags": [
+        "helm",
+        "skill"
+      ]
     },
     {
       "name": "helm-brief",
@@ -1227,7 +1517,10 @@
       },
       "type": "skill",
       "category": "product",
-      "tags": ["helm", "skill"]
+      "tags": [
+        "helm",
+        "skill"
+      ]
     },
     {
       "name": "helm-handoff",
@@ -1240,7 +1533,10 @@
       },
       "type": "skill",
       "category": "product",
-      "tags": ["helm", "skill"]
+      "tags": [
+        "helm",
+        "skill"
+      ]
     },
     {
       "name": "helm-plan",
@@ -1253,7 +1549,10 @@
       },
       "type": "skill",
       "category": "product",
-      "tags": ["helm", "skill"]
+      "tags": [
+        "helm",
+        "skill"
+      ]
     },
     {
       "name": "helm-recon",
@@ -1266,7 +1565,10 @@
       },
       "type": "skill",
       "category": "product",
-      "tags": ["helm", "skill"]
+      "tags": [
+        "helm",
+        "skill"
+      ]
     },
     {
       "name": "lens-audit",
@@ -1279,7 +1581,10 @@
       },
       "type": "skill",
       "category": "analytics",
-      "tags": ["lens", "skill"]
+      "tags": [
+        "lens",
+        "skill"
+      ]
     },
     {
       "name": "lens-chart",
@@ -1292,7 +1597,10 @@
       },
       "type": "skill",
       "category": "analytics",
-      "tags": ["lens", "skill"]
+      "tags": [
+        "lens",
+        "skill"
+      ]
     },
     {
       "name": "lens-dashboard",
@@ -1305,7 +1613,10 @@
       },
       "type": "skill",
       "category": "analytics",
-      "tags": ["lens", "skill"]
+      "tags": [
+        "lens",
+        "skill"
+      ]
     },
     {
       "name": "lens-metrics",
@@ -1318,7 +1629,10 @@
       },
       "type": "skill",
       "category": "analytics",
-      "tags": ["lens", "skill"]
+      "tags": [
+        "lens",
+        "skill"
+      ]
     },
     {
       "name": "lens-recon",
@@ -1331,7 +1645,10 @@
       },
       "type": "skill",
       "category": "analytics",
-      "tags": ["lens", "skill"]
+      "tags": [
+        "lens",
+        "skill"
+      ]
     },
     {
       "name": "lens-report",
@@ -1344,7 +1661,10 @@
       },
       "type": "skill",
       "category": "analytics",
-      "tags": ["lens", "skill"]
+      "tags": [
+        "lens",
+        "skill"
+      ]
     },
     {
       "name": "lumen-abtest",
@@ -1357,7 +1677,10 @@
       },
       "type": "skill",
       "category": "product-analytics",
-      "tags": ["lumen", "skill"]
+      "tags": [
+        "lumen",
+        "skill"
+      ]
     },
     {
       "name": "lumen-funnel",
@@ -1370,7 +1693,10 @@
       },
       "type": "skill",
       "category": "product-analytics",
-      "tags": ["lumen", "skill"]
+      "tags": [
+        "lumen",
+        "skill"
+      ]
     },
     {
       "name": "lumen-instrument",
@@ -1383,7 +1709,10 @@
       },
       "type": "skill",
       "category": "product-analytics",
-      "tags": ["lumen", "skill"]
+      "tags": [
+        "lumen",
+        "skill"
+      ]
     },
     {
       "name": "lumen-metrics",
@@ -1396,7 +1725,10 @@
       },
       "type": "skill",
       "category": "product-analytics",
-      "tags": ["lumen", "skill"]
+      "tags": [
+        "lumen",
+        "skill"
+      ]
     },
     {
       "name": "lumen-recon",
@@ -1409,7 +1741,10 @@
       },
       "type": "skill",
       "category": "product-analytics",
-      "tags": ["lumen", "skill"]
+      "tags": [
+        "lumen",
+        "skill"
+      ]
     },
     {
       "name": "pave-audit",
@@ -1422,7 +1757,10 @@
       },
       "type": "skill",
       "category": "platform",
-      "tags": ["pave", "skill"]
+      "tags": [
+        "pave",
+        "skill"
+      ]
     },
     {
       "name": "pave-catalog",
@@ -1435,7 +1773,10 @@
       },
       "type": "skill",
       "category": "platform",
-      "tags": ["pave", "skill"]
+      "tags": [
+        "pave",
+        "skill"
+      ]
     },
     {
       "name": "pave-env",
@@ -1448,7 +1789,10 @@
       },
       "type": "skill",
       "category": "platform",
-      "tags": ["pave", "skill"]
+      "tags": [
+        "pave",
+        "skill"
+      ]
     },
     {
       "name": "pave-golden",
@@ -1461,7 +1805,10 @@
       },
       "type": "skill",
       "category": "platform",
-      "tags": ["pave", "skill"]
+      "tags": [
+        "pave",
+        "skill"
+      ]
     },
     {
       "name": "pave-recon",
@@ -1474,7 +1821,10 @@
       },
       "type": "skill",
       "category": "platform",
-      "tags": ["pave", "skill"]
+      "tags": [
+        "pave",
+        "skill"
+      ]
     },
     {
       "name": "pitch-copy",
@@ -1487,7 +1837,10 @@
       },
       "type": "skill",
       "category": "marketing",
-      "tags": ["pitch", "skill"]
+      "tags": [
+        "pitch",
+        "skill"
+      ]
     },
     {
       "name": "pitch-landing",
@@ -1500,7 +1853,10 @@
       },
       "type": "skill",
       "category": "marketing",
-      "tags": ["pitch", "skill"]
+      "tags": [
+        "pitch",
+        "skill"
+      ]
     },
     {
       "name": "pitch-launch",
@@ -1513,7 +1869,10 @@
       },
       "type": "skill",
       "category": "marketing",
-      "tags": ["pitch", "skill"]
+      "tags": [
+        "pitch",
+        "skill"
+      ]
     },
     {
       "name": "pitch-message",
@@ -1526,7 +1885,10 @@
       },
       "type": "skill",
       "category": "marketing",
-      "tags": ["pitch", "skill"]
+      "tags": [
+        "pitch",
+        "skill"
+      ]
     },
     {
       "name": "pitch-position",
@@ -1539,7 +1901,10 @@
       },
       "type": "skill",
       "category": "marketing",
-      "tags": ["pitch", "skill"]
+      "tags": [
+        "pitch",
+        "skill"
+      ]
     },
     {
       "name": "pitch-recon",
@@ -1552,7 +1917,10 @@
       },
       "type": "skill",
       "category": "marketing",
-      "tags": ["pitch", "skill"]
+      "tags": [
+        "pitch",
+        "skill"
+      ]
     },
     {
       "name": "prism-audit",
@@ -1565,7 +1933,10 @@
       },
       "type": "skill",
       "category": "frontend",
-      "tags": ["prism", "skill"]
+      "tags": [
+        "prism",
+        "skill"
+      ]
     },
     {
       "name": "prism-chart",
@@ -1578,7 +1949,10 @@
       },
       "type": "skill",
       "category": "frontend",
-      "tags": ["prism", "skill"]
+      "tags": [
+        "prism",
+        "skill"
+      ]
     },
     {
       "name": "prism-component",
@@ -1591,7 +1965,10 @@
       },
       "type": "skill",
       "category": "frontend",
-      "tags": ["prism", "skill"]
+      "tags": [
+        "prism",
+        "skill"
+      ]
     },
     {
       "name": "prism-dashboard",
@@ -1604,7 +1981,10 @@
       },
       "type": "skill",
       "category": "frontend",
-      "tags": ["prism", "skill"]
+      "tags": [
+        "prism",
+        "skill"
+      ]
     },
     {
       "name": "prism-recon",
@@ -1617,7 +1997,10 @@
       },
       "type": "skill",
       "category": "frontend",
-      "tags": ["prism", "skill"]
+      "tags": [
+        "prism",
+        "skill"
+      ]
     },
     {
       "name": "prism-stack",
@@ -1630,7 +2013,10 @@
       },
       "type": "skill",
       "category": "frontend",
-      "tags": ["prism", "skill"]
+      "tags": [
+        "prism",
+        "skill"
+      ]
     },
     {
       "name": "prism-ui",
@@ -1643,7 +2029,10 @@
       },
       "type": "skill",
       "category": "frontend",
-      "tags": ["prism", "skill"]
+      "tags": [
+        "prism",
+        "skill"
+      ]
     },
     {
       "name": "proof-api",
@@ -1656,7 +2045,10 @@
       },
       "type": "skill",
       "category": "testing",
-      "tags": ["proof", "skill"]
+      "tags": [
+        "proof",
+        "skill"
+      ]
     },
     {
       "name": "proof-audit",
@@ -1669,7 +2061,10 @@
       },
       "type": "skill",
       "category": "testing",
-      "tags": ["proof", "skill"]
+      "tags": [
+        "proof",
+        "skill"
+      ]
     },
     {
       "name": "proof-design",
@@ -1682,7 +2077,10 @@
       },
       "type": "skill",
       "category": "testing",
-      "tags": ["proof", "skill"]
+      "tags": [
+        "proof",
+        "skill"
+      ]
     },
     {
       "name": "proof-e2e",
@@ -1695,7 +2093,10 @@
       },
       "type": "skill",
       "category": "testing",
-      "tags": ["proof", "skill"]
+      "tags": [
+        "proof",
+        "skill"
+      ]
     },
     {
       "name": "proof-recon",
@@ -1708,7 +2109,10 @@
       },
       "type": "skill",
       "category": "testing",
-      "tags": ["proof", "skill"]
+      "tags": [
+        "proof",
+        "skill"
+      ]
     },
     {
       "name": "proof-strategy",
@@ -1721,7 +2125,10 @@
       },
       "type": "skill",
       "category": "testing",
-      "tags": ["proof", "skill"]
+      "tags": [
+        "proof",
+        "skill"
+      ]
     },
     {
       "name": "relay-audit",
@@ -1734,7 +2141,10 @@
       },
       "type": "skill",
       "category": "devops",
-      "tags": ["relay", "skill"]
+      "tags": [
+        "relay",
+        "skill"
+      ]
     },
     {
       "name": "relay-deploy",
@@ -1747,7 +2157,10 @@
       },
       "type": "skill",
       "category": "devops",
-      "tags": ["relay", "skill"]
+      "tags": [
+        "relay",
+        "skill"
+      ]
     },
     {
       "name": "relay-docker",
@@ -1760,7 +2173,10 @@
       },
       "type": "skill",
       "category": "devops",
-      "tags": ["relay", "skill"]
+      "tags": [
+        "relay",
+        "skill"
+      ]
     },
     {
       "name": "relay-pipeline",
@@ -1773,7 +2189,10 @@
       },
       "type": "skill",
       "category": "devops",
-      "tags": ["relay", "skill"]
+      "tags": [
+        "relay",
+        "skill"
+      ]
     },
     {
       "name": "relay-recon",
@@ -1786,7 +2205,10 @@
       },
       "type": "skill",
       "category": "devops",
-      "tags": ["relay", "skill"]
+      "tags": [
+        "relay",
+        "skill"
+      ]
     },
     {
       "name": "relay-ship",
@@ -1799,7 +2221,10 @@
       },
       "type": "skill",
       "category": "devops",
-      "tags": ["relay", "skill"]
+      "tags": [
+        "relay",
+        "skill"
+      ]
     },
     {
       "name": "spine-api",
@@ -1812,7 +2237,10 @@
       },
       "type": "skill",
       "category": "backend",
-      "tags": ["spine", "skill"]
+      "tags": [
+        "spine",
+        "skill"
+      ]
     },
     {
       "name": "spine-design",
@@ -1825,7 +2253,10 @@
       },
       "type": "skill",
       "category": "backend",
-      "tags": ["spine", "skill"]
+      "tags": [
+        "spine",
+        "skill"
+      ]
     },
     {
       "name": "spine-perf",
@@ -1838,7 +2269,10 @@
       },
       "type": "skill",
       "category": "backend",
-      "tags": ["spine", "skill"]
+      "tags": [
+        "spine",
+        "skill"
+      ]
     },
     {
       "name": "spine-recon",
@@ -1851,7 +2285,10 @@
       },
       "type": "skill",
       "category": "backend",
-      "tags": ["spine", "skill"]
+      "tags": [
+        "spine",
+        "skill"
+      ]
     },
     {
       "name": "spine-review",
@@ -1864,7 +2301,10 @@
       },
       "type": "skill",
       "category": "backend",
-      "tags": ["spine", "skill"]
+      "tags": [
+        "spine",
+        "skill"
+      ]
     },
     {
       "name": "spine-service",
@@ -1877,7 +2317,10 @@
       },
       "type": "skill",
       "category": "backend",
-      "tags": ["spine", "skill"]
+      "tags": [
+        "spine",
+        "skill"
+      ]
     },
     {
       "name": "surge-activation",
@@ -1890,7 +2333,10 @@
       },
       "type": "skill",
       "category": "growth",
-      "tags": ["surge", "skill"]
+      "tags": [
+        "surge",
+        "skill"
+      ]
     },
     {
       "name": "surge-experiment",
@@ -1903,7 +2349,10 @@
       },
       "type": "skill",
       "category": "growth",
-      "tags": ["surge", "skill"]
+      "tags": [
+        "surge",
+        "skill"
+      ]
     },
     {
       "name": "surge-landing",
@@ -1916,7 +2365,10 @@
       },
       "type": "skill",
       "category": "growth",
-      "tags": ["surge", "skill"]
+      "tags": [
+        "surge",
+        "skill"
+      ]
     },
     {
       "name": "surge-plg",
@@ -1929,7 +2381,10 @@
       },
       "type": "skill",
       "category": "growth",
-      "tags": ["surge", "skill"]
+      "tags": [
+        "surge",
+        "skill"
+      ]
     },
     {
       "name": "surge-recon",
@@ -1942,7 +2397,10 @@
       },
       "type": "skill",
       "category": "growth",
-      "tags": ["surge", "skill"]
+      "tags": [
+        "surge",
+        "skill"
+      ]
     },
     {
       "name": "surge-retention",
@@ -1955,7 +2413,10 @@
       },
       "type": "skill",
       "category": "growth",
-      "tags": ["surge", "skill"]
+      "tags": [
+        "surge",
+        "skill"
+      ]
     },
     {
       "name": "touch-app",
@@ -1968,7 +2429,10 @@
       },
       "type": "skill",
       "category": "mobile",
-      "tags": ["touch", "skill"]
+      "tags": [
+        "touch",
+        "skill"
+      ]
     },
     {
       "name": "touch-audit",
@@ -1981,7 +2445,10 @@
       },
       "type": "skill",
       "category": "mobile",
-      "tags": ["touch", "skill"]
+      "tags": [
+        "touch",
+        "skill"
+      ]
     },
     {
       "name": "touch-feature",
@@ -1994,7 +2461,10 @@
       },
       "type": "skill",
       "category": "mobile",
-      "tags": ["touch", "skill"]
+      "tags": [
+        "touch",
+        "skill"
+      ]
     },
     {
       "name": "touch-recon",
@@ -2007,7 +2477,10 @@
       },
       "type": "skill",
       "category": "mobile",
-      "tags": ["touch", "skill"]
+      "tags": [
+        "touch",
+        "skill"
+      ]
     },
     {
       "name": "touch-release",
@@ -2020,7 +2493,10 @@
       },
       "type": "skill",
       "category": "mobile",
-      "tags": ["touch", "skill"]
+      "tags": [
+        "touch",
+        "skill"
+      ]
     },
     {
       "name": "touch-ui",
@@ -2033,7 +2509,10 @@
       },
       "type": "skill",
       "category": "mobile",
-      "tags": ["touch", "skill"]
+      "tags": [
+        "touch",
+        "skill"
+      ]
     },
     {
       "name": "vigil-alert",
@@ -2046,7 +2525,10 @@
       },
       "type": "skill",
       "category": "observability",
-      "tags": ["vigil", "skill"]
+      "tags": [
+        "vigil",
+        "skill"
+      ]
     },
     {
       "name": "vigil-check",
@@ -2059,7 +2541,10 @@
       },
       "type": "skill",
       "category": "observability",
-      "tags": ["vigil", "skill"]
+      "tags": [
+        "vigil",
+        "skill"
+      ]
     },
     {
       "name": "vigil-incident",
@@ -2072,7 +2557,10 @@
       },
       "type": "skill",
       "category": "observability",
-      "tags": ["vigil", "skill"]
+      "tags": [
+        "vigil",
+        "skill"
+      ]
     },
     {
       "name": "vigil-instrument",
@@ -2085,7 +2573,10 @@
       },
       "type": "skill",
       "category": "observability",
-      "tags": ["vigil", "skill"]
+      "tags": [
+        "vigil",
+        "skill"
+      ]
     },
     {
       "name": "vigil-recon",
@@ -2098,7 +2589,10 @@
       },
       "type": "skill",
       "category": "observability",
-      "tags": ["vigil", "skill"]
+      "tags": [
+        "vigil",
+        "skill"
+      ]
     },
     {
       "name": "volt-driver",
@@ -2111,7 +2605,10 @@
       },
       "type": "skill",
       "category": "embedded",
-      "tags": ["volt", "skill"]
+      "tags": [
+        "volt",
+        "skill"
+      ]
     },
     {
       "name": "volt-firmware",
@@ -2124,7 +2621,10 @@
       },
       "type": "skill",
       "category": "embedded",
-      "tags": ["volt", "skill"]
+      "tags": [
+        "volt",
+        "skill"
+      ]
     },
     {
       "name": "volt-ota",
@@ -2137,7 +2637,10 @@
       },
       "type": "skill",
       "category": "embedded",
-      "tags": ["volt", "skill"]
+      "tags": [
+        "volt",
+        "skill"
+      ]
     },
     {
       "name": "volt-power",
@@ -2150,7 +2653,10 @@
       },
       "type": "skill",
       "category": "embedded",
-      "tags": ["volt", "skill"]
+      "tags": [
+        "volt",
+        "skill"
+      ]
     },
     {
       "name": "volt-recon",
@@ -2163,7 +2669,10 @@
       },
       "type": "skill",
       "category": "embedded",
-      "tags": ["volt", "skill"]
+      "tags": [
+        "volt",
+        "skill"
+      ]
     },
     {
       "name": "warden-audit",
@@ -2176,7 +2685,10 @@
       },
       "type": "skill",
       "category": "security",
-      "tags": ["warden", "skill"]
+      "tags": [
+        "warden",
+        "skill"
+      ]
     },
     {
       "name": "warden-harden",
@@ -2189,7 +2701,10 @@
       },
       "type": "skill",
       "category": "security",
-      "tags": ["warden", "skill"]
+      "tags": [
+        "warden",
+        "skill"
+      ]
     },
     {
       "name": "warden-iam",
@@ -2202,7 +2717,10 @@
       },
       "type": "skill",
       "category": "security",
-      "tags": ["warden", "skill"]
+      "tags": [
+        "warden",
+        "skill"
+      ]
     },
     {
       "name": "warden-recon",
@@ -2215,7 +2733,10 @@
       },
       "type": "skill",
       "category": "security",
-      "tags": ["warden", "skill"]
+      "tags": [
+        "warden",
+        "skill"
+      ]
     },
     {
       "name": "warden-threat",
@@ -2228,7 +2749,10 @@
       },
       "type": "skill",
       "category": "security",
-      "tags": ["warden", "skill"]
+      "tags": [
+        "warden",
+        "skill"
+      ]
     },
     {
       "name": "tonone-onboard",
@@ -2241,7 +2765,11 @@
       },
       "type": "skill",
       "category": "onboarding",
-      "tags": ["tonone", "skill", "onboarding"]
+      "tags": [
+        "tonone",
+        "skill",
+        "onboarding"
+      ]
     },
     {
       "name": "contribute",
@@ -2254,7 +2782,11 @@
       },
       "type": "skill",
       "category": "community",
-      "tags": ["tonone", "skill", "community"]
+      "tags": [
+        "tonone",
+        "skill",
+        "community"
+      ]
     },
     {
       "name": "mint",
@@ -2333,6 +2865,596 @@
         "escalation",
         "triage",
         "operations-team"
+      ]
+    },
+    {
+      "name": "brief",
+      "description": "Contract & Policy Drafter \u2014 NDA, MSA, employment agreements, SLAs, vendor contracts",
+      "version": "1.2.0",
+      "source": "./team/brief",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "brief"
+      ]
+    },
+    {
+      "name": "clause",
+      "description": "Contract Clause Analyst \u2014 redlining, risk scoring, negotiation playbooks",
+      "version": "1.2.0",
+      "source": "./team/clause",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "clause"
+      ]
+    },
+    {
+      "name": "bind",
+      "description": "Compliance Framework Engineer \u2014 SOC2, GDPR, HIPAA, ISO 27001 gap analysis",
+      "version": "1.2.0",
+      "source": "./team/bind",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "bind"
+      ]
+    },
+    {
+      "name": "frame",
+      "description": "Corporate Governance Advisor \u2014 board resolutions, cap table, equity plan docs",
+      "version": "1.2.0",
+      "source": "./team/frame",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "frame"
+      ]
+    },
+    {
+      "name": "shield",
+      "description": "Regulatory Risk Advisor \u2014 GDPR, CCPA, FTC, financial regulation, export controls",
+      "version": "1.2.0",
+      "source": "./team/shield",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "shield"
+      ]
+    },
+    {
+      "name": "scope",
+      "description": "IP & Trademark Advisor \u2014 trademark clearance, patent landscape, OSS license compliance",
+      "version": "1.2.0",
+      "source": "./team/scope",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "scope"
+      ]
+    },
+    {
+      "name": "audit",
+      "description": "Legal Compliance Auditor \u2014 internal controls, legal risk register, audit trail",
+      "version": "1.2.0",
+      "source": "./team/audit",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "audit"
+      ]
+    },
+    {
+      "name": "cite",
+      "description": "Legal Researcher \u2014 case law synthesis, statute analysis, jurisdiction comparison",
+      "version": "1.2.0",
+      "source": "./team/cite",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "cite"
+      ]
+    },
+    {
+      "name": "lodge",
+      "description": "Regulatory Filing Advisor \u2014 DMCA, FTC disclosures, GDPR DPAs, government filings",
+      "version": "1.2.0",
+      "source": "./team/lodge",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "lodge"
+      ]
+    },
+    {
+      "name": "terms",
+      "description": "Privacy & ToS Drafter \u2014 GDPR-compliant privacy policies, ToS, cookie policies, DPAs",
+      "version": "1.2.0",
+      "source": "./team/terms",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "terms"
+      ]
+    },
+    {
+      "name": "brief-draft",
+      "description": "Draft a contract or policy document from a description",
+      "version": "1.2.0",
+      "source": "./team/brief/skills/brief-draft",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "brief",
+        "brief-draft"
+      ]
+    },
+    {
+      "name": "brief-review",
+      "description": "Review and redline a contract \u2014 risk and missing clauses",
+      "version": "1.2.0",
+      "source": "./team/brief/skills/brief-review",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "brief",
+        "brief-review"
+      ]
+    },
+    {
+      "name": "brief-recon",
+      "description": "Survey existing contracts and policy documents",
+      "version": "1.2.0",
+      "source": "./team/brief/skills/brief-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "brief",
+        "brief-recon"
+      ]
+    },
+    {
+      "name": "clause-analyze",
+      "description": "Deep clause-by-clause analysis with risk scores",
+      "version": "1.2.0",
+      "source": "./team/clause/skills/clause-analyze",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "clause",
+        "clause-analyze"
+      ]
+    },
+    {
+      "name": "clause-playbook",
+      "description": "Generate negotiation playbook for a contract type",
+      "version": "1.2.0",
+      "source": "./team/clause/skills/clause-playbook",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "clause",
+        "clause-playbook"
+      ]
+    },
+    {
+      "name": "clause-recon",
+      "description": "Scan existing contracts for risk patterns",
+      "version": "1.2.0",
+      "source": "./team/clause/skills/clause-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "clause",
+        "clause-recon"
+      ]
+    },
+    {
+      "name": "bind-gap",
+      "description": "Compliance gap analysis \u2014 SOC2, GDPR, HIPAA, ISO 27001",
+      "version": "1.2.0",
+      "source": "./team/bind/skills/bind-gap",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "bind",
+        "bind-gap"
+      ]
+    },
+    {
+      "name": "bind-policy",
+      "description": "Draft compliance policies required by a framework",
+      "version": "1.2.0",
+      "source": "./team/bind/skills/bind-policy",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "bind",
+        "bind-policy"
+      ]
+    },
+    {
+      "name": "bind-recon",
+      "description": "Survey existing compliance artifacts and certifications",
+      "version": "1.2.0",
+      "source": "./team/bind/skills/bind-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "bind",
+        "bind-recon"
+      ]
+    },
+    {
+      "name": "frame-board",
+      "description": "Draft board resolutions and corporate consent documents",
+      "version": "1.2.0",
+      "source": "./team/frame/skills/frame-board",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "frame",
+        "frame-board"
+      ]
+    },
+    {
+      "name": "frame-equity",
+      "description": "Draft equity plan documents and option grant agreements",
+      "version": "1.2.0",
+      "source": "./team/frame/skills/frame-equity",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "frame",
+        "frame-equity"
+      ]
+    },
+    {
+      "name": "frame-recon",
+      "description": "Survey corporate governance artifacts and flag gaps",
+      "version": "1.2.0",
+      "source": "./team/frame/skills/frame-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "frame",
+        "frame-recon"
+      ]
+    },
+    {
+      "name": "shield-assess",
+      "description": "Regulatory exposure assessment for a product or geography",
+      "version": "1.2.0",
+      "source": "./team/shield/skills/shield-assess",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "shield",
+        "shield-assess"
+      ]
+    },
+    {
+      "name": "shield-respond",
+      "description": "Draft regulatory response letters and regulator comms",
+      "version": "1.2.0",
+      "source": "./team/shield/skills/shield-respond",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "shield",
+        "shield-respond"
+      ]
+    },
+    {
+      "name": "shield-recon",
+      "description": "Map product data flows and identify regulatory triggers",
+      "version": "1.2.0",
+      "source": "./team/shield/skills/shield-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "shield",
+        "shield-recon"
+      ]
+    },
+    {
+      "name": "scope-trademark",
+      "description": "Trademark clearance research and filing preparation",
+      "version": "1.2.0",
+      "source": "./team/scope/skills/scope-trademark",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "scope",
+        "scope-trademark"
+      ]
+    },
+    {
+      "name": "scope-oss",
+      "description": "Open source license compliance audit \u2014 GPL, LGPL, AGPL risks",
+      "version": "1.2.0",
+      "source": "./team/scope/skills/scope-oss",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "scope",
+        "scope-oss"
+      ]
+    },
+    {
+      "name": "scope-recon",
+      "description": "Survey IP assets, license obligations, and assignment gaps",
+      "version": "1.2.0",
+      "source": "./team/scope/skills/scope-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "scope",
+        "scope-recon"
+      ]
+    },
+    {
+      "name": "audit-legal",
+      "description": "Full legal compliance audit and risk register",
+      "version": "1.2.0",
+      "source": "./team/audit/skills/audit-legal",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "audit",
+        "audit-legal"
+      ]
+    },
+    {
+      "name": "audit-controls",
+      "description": "Internal legal controls review \u2014 approval workflows, doc governance",
+      "version": "1.2.0",
+      "source": "./team/audit/skills/audit-controls",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "audit",
+        "audit-controls"
+      ]
+    },
+    {
+      "name": "audit-recon",
+      "description": "Assess legal artifact completeness and audit readiness",
+      "version": "1.2.0",
+      "source": "./team/audit/skills/audit-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "audit",
+        "audit-recon"
+      ]
+    },
+    {
+      "name": "cite-research",
+      "description": "Legal research \u2014 case law, statutes, regulatory guidance",
+      "version": "1.2.0",
+      "source": "./team/cite/skills/cite-research",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "cite",
+        "cite-research"
+      ]
+    },
+    {
+      "name": "cite-compare",
+      "description": "Jurisdiction comparison for a legal requirement or clause",
+      "version": "1.2.0",
+      "source": "./team/cite/skills/cite-compare",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "cite",
+        "cite-compare"
+      ]
+    },
+    {
+      "name": "cite-recon",
+      "description": "Identify open legal questions and research gaps",
+      "version": "1.2.0",
+      "source": "./team/cite/skills/cite-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "cite",
+        "cite-recon"
+      ]
+    },
+    {
+      "name": "lodge-filing",
+      "description": "Prepare regulatory filing, disclosure notice, or government submission",
+      "version": "1.2.0",
+      "source": "./team/lodge/skills/lodge-filing",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "lodge",
+        "lodge-filing"
+      ]
+    },
+    {
+      "name": "lodge-dmca",
+      "description": "Draft DMCA takedown notice or counter-notice",
+      "version": "1.2.0",
+      "source": "./team/lodge/skills/lodge-dmca",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "lodge",
+        "lodge-dmca"
+      ]
+    },
+    {
+      "name": "lodge-recon",
+      "description": "Identify required regulatory filings and their status",
+      "version": "1.2.0",
+      "source": "./team/lodge/skills/lodge-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "lodge",
+        "lodge-recon"
+      ]
+    },
+    {
+      "name": "terms-privacy",
+      "description": "Draft GDPR-compliant privacy policy for the product",
+      "version": "1.2.0",
+      "source": "./team/terms/skills/terms-privacy",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "terms",
+        "terms-privacy"
+      ]
+    },
+    {
+      "name": "terms-tos",
+      "description": "Draft Terms of Service for the product",
+      "version": "1.2.0",
+      "source": "./team/terms/skills/terms-tos",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "terms",
+        "terms-tos"
+      ]
+    },
+    {
+      "name": "terms-recon",
+      "description": "Check privacy policy and ToS for completeness and compliance",
+      "version": "1.2.0",
+      "source": "./team/terms/skills/terms-recon",
+      "author": {
+        "name": "ai",
+        "url": "https://tonone.ai"
+      },
+      "tags": [
+        "legal-team",
+        "terms",
+        "terms-recon"
       ]
     }
   ]

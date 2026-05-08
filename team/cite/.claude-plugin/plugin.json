@@ -1,0 +1,18 @@
+{
+  "name": "cite",
+  "version": "1.2.0",
+  "description": "Legal research \u2014 case law synthesis, statute analysis, regulatory guidance, jurisdiction comparison",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "legal-research",
+    "case-law",
+    "statutes",
+    "regulations",
+    "jurisdiction"
+  ]
+}

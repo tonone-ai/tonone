@@ -1,0 +1,20 @@
+{
+  "name": "shield",
+  "version": "1.2.0",
+  "description": "Regulatory risk assessment \u2014 GDPR exposure, CCPA, FTC rules, financial regulation, export controls",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "regulatory",
+    "gdpr",
+    "ccpa",
+    "ftc",
+    "finreg",
+    "export-controls",
+    "risk"
+  ]
+}

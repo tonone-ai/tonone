@@ -1,0 +1,19 @@
+{
+  "name": "frame",
+  "version": "1.2.0",
+  "description": "Corporate governance \u2014 board resolutions, cap table hygiene, shareholder agreements, equity plan docs",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "governance",
+    "board",
+    "equity",
+    "cap-table",
+    "shareholder",
+    "corporate"
+  ]
+}
