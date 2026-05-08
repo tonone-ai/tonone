@@ -1,0 +1,19 @@
+{
+  "name": "scope",
+  "version": "1.2.0",
+  "description": "IP strategy \u2014 trademark clearance, patent landscape, open source license compliance, IP assignment",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "ip",
+    "trademark",
+    "patent",
+    "open-source",
+    "license",
+    "copyright"
+  ]
+}

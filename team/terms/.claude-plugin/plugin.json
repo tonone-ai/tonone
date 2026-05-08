@@ -1,0 +1,19 @@
+{
+  "name": "terms",
+  "version": "1.2.0",
+  "description": "Privacy policy and Terms of Service \u2014 GDPR-compliant privacy notices, ToS, cookie policies, data processing agreements",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "privacy",
+    "tos",
+    "gdpr",
+    "cookie-policy",
+    "dpa",
+    "terms"
+  ]
+}

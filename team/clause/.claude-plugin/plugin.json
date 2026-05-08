@@ -1,0 +1,18 @@
+{
+  "name": "clause",
+  "version": "1.2.0",
+  "description": "Contract clause analysis \u2014 redlining, risk scoring, negotiation playbooks",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "contracts",
+    "clauses",
+    "redline",
+    "negotiation",
+    "legal"
+  ]
+}

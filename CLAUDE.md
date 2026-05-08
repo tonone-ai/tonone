@@ -1,6 +1,6 @@
-# tonone — Engineering + Product + Operations Team
+# tonone — Engineering + Product + Operations + Legal Team
 
-Three AI teams. 31 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running.
+Four AI teams. 41 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move.
 
 ## Engineering Team — 15 agents
 
@@ -48,6 +48,21 @@ Three AI teams. 31 agents total. Engineering executes. Product decides what to b
 | **Keel** | Operations | Process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution |
 | **Brace** | Support | Ticket workflow, SLA design, knowledge base, escalation paths, support operations |
 
+## Legal Team — 10 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Brief** | Contract & Policy Drafter | NDAs, MSAs, employment agreements, SLAs, vendor contracts |
+| **Clause** | Contract Clause Analyst | Redlining, risk scoring, negotiation playbooks |
+| **Bind** | Compliance Framework Engineer | SOC2, GDPR, HIPAA, ISO 27001 gap analysis and remediation |
+| **Frame** | Corporate Governance Advisor | Board resolutions, cap table hygiene, equity plan docs |
+| **Shield** | Regulatory Risk Advisor | GDPR exposure, CCPA, FTC rules, financial regulation, export controls |
+| **Scope** | IP & Trademark Advisor | Trademark clearance, patent landscape, open source license compliance |
+| **Audit** | Legal Compliance Auditor | Internal controls review, legal risk register, audit trail docs |
+| **Cite** | Legal Researcher | Case law synthesis, statute analysis, jurisdiction comparison |
+| **Lodge** | Regulatory Filing Advisor | DMCA, FTC disclosures, GDPR DPAs, government filings, state registrations |
+| **Terms** | Privacy & ToS Drafter | GDPR-compliant privacy policies, ToS, cookie policies, DPAs |
+
 ## Helm↔Apex Interface
 
 Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
@@ -57,7 +72,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (31 total: 15 engineering + 12 product + 4 operations)
+├── agents/                 ← all agent definitions (41 total: 15 engineering + 12 product + 4 operations + 10 legal)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

@@ -161,3 +161,4 @@
 2026-05-08 00:34 : chore: bump ops-team to v1.2.0, update CHANGELOG — @fatih
 2026-05-08 00:35 : chore: engrave session memory — @fatih
 2026-05-08 00:40 : docs(sitemap): add Operations Team — Mint, Folk, Keel, Brace — @fatih
+2026-05-09 01:00 : feat(legal-team): add Wave 1 Legal Team — 10 agents, 30 skills — @fatih
