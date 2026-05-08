@@ -1,0 +1,18 @@
+{
+  "name": "phish",
+  "version": "1.5.0",
+  "description": "Security Operations Team \u2014 Phish: Security awareness \u2014 phishing simulation design, security training programs, social engineering assessment",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "secops-team",
+    "phish",
+    "security",
+    "secops"
+  ]
+}

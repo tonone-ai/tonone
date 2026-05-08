@@ -1,6 +1,6 @@
-# tonone — Engineering + Product + Operations + Legal + Design + Data Science Team
+# tonone — Engineering + Product + Operations + Legal + Design + Data Science + Security Operations Team
 
-Six AI teams. 61 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions.
+Seven AI teams. 71 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe.
 
 ## Engineering Team — 15 agents
 
@@ -93,6 +93,21 @@ Six AI teams. 61 agents total. Engineering executes. Product decides what to bui
 | **Clean** | Data Quality Engineer | Deduplication, validation, outlier detection, ETL pipelines |
 | **Eval** | Experiment Design Engineer | A/B testing, statistical power, experiment tracking, causal inference |
 
+## Security Operations Team — 10 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Red** | Offensive Security Engineer | Pen testing plans, red team exercises, attack path documentation |
+| **Blue** | Defensive Security Engineer | SOC design, detection engineering, hardening playbooks |
+| **Hunt** | Threat Hunter | Hypothesis-driven hunting, compromise assessment, IOC analysis |
+| **Patch** | Vulnerability Management Engineer | CVE triage, CVSS + EPSS prioritization, patch SLA design |
+| **Chain** | Supply Chain Security Engineer | SBOM generation, dependency scanning, third-party risk |
+| **Sast** | Application Security Engineer | SAST/DAST pipelines, code security review, secure SDLC |
+| **Siem** | Detection & SIEM Engineer | Log pipeline design, SIGMA rules, alert tuning |
+| **Resp** | Incident Response Engineer | IR playbooks, containment runbooks, DFIR, post-incident review |
+| **Zero** | Zero Trust Architect | Zero trust roadmap, network microsegmentation, ZTNA design |
+| **Phish** | Security Awareness Engineer | Phishing simulations, security training programs, culture metrics |
+
 ## Helm↔Apex Interface
 
 Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
@@ -102,7 +117,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (61 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science)
+├── agents/                 ← all agent definitions (71 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science + 10 secops)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

@@ -1,0 +1,18 @@
+{
+  "name": "siem",
+  "version": "1.5.0",
+  "description": "Security Operations Team \u2014 Siem: SIEM engineering \u2014 log pipeline design, detection rule development, alert tuning",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "secops-team",
+    "siem",
+    "security",
+    "secops"
+  ]
+}
