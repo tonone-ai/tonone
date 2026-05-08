@@ -4,6 +4,9 @@
 
 2026-05-08 21:35 : [!!] feat(ops-team): PR #88 merged — 4 new agents (Mint/Folk/Keel/Brace), 32 skills, 244 tests; 27→31 agents, 145→177 skills, v1.2.0, bundle/operations-team added — @fatih
 2026-05-08 23:52 : fix(ci): version-consistency gate failing — ops-team release bumped root to 1.2.0 but skipped bump-version.py for children; 204 files stuck at 1.1.0; fixed with `python scripts/bump-version.py 1.2.0` — @fatih
+2026-05-09 00:35 : chore: gstack upgraded 1.26.3.0 → 1.29.0.0 (worktree-aware gbrain sources, browse SOCKS5+proxy, llms.txt auto-gen) — @fatih
+2026-05-09 00:35 : [!!] strategy(expansion): CEO plan written — Phase 3: SQLite memory layer + composition API (TononeMemory(backend="local"|"cloud") abstraction ships now); Phase 4: tonone.ai cloud backend + $99/mo; Phase 5: ecosystem at $500K ARR — plan at ~/.gstack/projects/tonone-ai-tonone/ceo-plans/2026-05-09-expansion-plan.md — @fatih
+2026-05-09 00:35 : strategy(tonone.ai): website already exists; no product behind it yet — Phase 4 wraps the Phase 3 memory layer, not a greenfield build — @fatih
 2026-05-06 22:53 : docs(sitemap): created docs/sitemap.md — 27 agents, 170 skills, 5 runtime hooks mapped; skills all live in root skills/ dir, named /{agent}-{action} — @fatih
 2026-05-06 08:36 : feat(bundle): add revenue-team (deal+keep) and marketing-team (ink+buzz) bundles — PR #86 merged, CI green — @fatih
 2026-05-06 08:36 : chore: synced 199 files from 0.9.9 → 1.0.0 (all team/skills/bundles); v1.0.0 release had skipped bump-version, CI version-consistency was failing on main — @fatih
