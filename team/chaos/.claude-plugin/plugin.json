@@ -1,0 +1,18 @@
+{
+  "name": "chaos",
+  "version": "1.7.0",
+  "description": "Infrastructure Specialist Team \u2014 Chaos: Chaos engineering \u2014 failure injection design, game days, resilience testing, blast radius control",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "infra-specialist-team",
+    "chaos",
+    "infrastructure",
+    "cloud"
+  ]
+}

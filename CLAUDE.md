@@ -1,6 +1,6 @@
-# tonone — Engineering + Product + Operations + Legal + Design + Data Science + Security Operations + Developer Experience Team
+# tonone — Engineering + Product + Operations + Legal + Design + Data Science + Security Operations + Developer Experience + Infrastructure Specialist Team
 
-Eight AI teams. 81 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe. Developer Experience ensures developers succeed.
+Nine AI teams. 91 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe. Developer Experience ensures developers succeed. Infrastructure Specialist runs the cloud.
 
 ## Engineering Team — 15 agents
 
@@ -123,6 +123,21 @@ Eight AI teams. 81 agents total. Engineering executes. Product decides what to b
 | **Compat** | Backwards Compatibility Engineer | Breaking change detection, deprecation management, semver |
 | **Gate** | API Quality Gate Engineer | Linting, style enforcement, breaking change CI, API governance |
 
+## Infrastructure Specialist Team — 10 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Kube** | Kubernetes Engineer | Cluster design, RBAC, networking policies, operators, Helm charts |
+| **Terra** | Terraform Engineer | IaC modules, state management, provider config, drift detection |
+| **Finop** | FinOps Engineer | Cloud cost optimization, budget alerts, rightsizing, waste elimination |
+| **Serv** | Service Reliability Engineer | SLO design, error budgets, reliability reviews, capacity planning |
+| **Edge** | Edge Computing Engineer | CDN config, edge functions, latency optimization, global routing |
+| **Cache** | Caching Engineer | Redis/Memcached design, cache invalidation, TTL strategy, hit-rate tuning |
+| **Queue** | Message Queue Engineer | Kafka/SQS/RabbitMQ design, consumer groups, DLQs, backpressure |
+| **Mesh** | Service Mesh Engineer | Istio/Linkerd config, mTLS, traffic management, observability |
+| **Multi** | Multi-Cloud Engineer | Cross-cloud architecture, vendor portability, cloud-agnostic patterns |
+| **Chaos** | Chaos Engineering Lead | Failure injection, game days, resilience testing, blast radius control |
+
 ## Helm↔Apex Interface
 
 Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
@@ -132,7 +147,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (81 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science + 10 secops + 10 devx)
+├── agents/                 ← all agent definitions (91 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science + 10 secops + 10 devx + 10 infra-specialist)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

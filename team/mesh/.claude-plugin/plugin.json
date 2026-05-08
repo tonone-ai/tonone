@@ -1,0 +1,18 @@
+{
+  "name": "mesh",
+  "version": "1.7.0",
+  "description": "Infrastructure Specialist Team \u2014 Mesh: Service mesh design \u2014 Istio/Linkerd/Envoy, mTLS, traffic management, observability integration",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "infra-specialist-team",
+    "mesh",
+    "infrastructure",
+    "cloud"
+  ]
+}
