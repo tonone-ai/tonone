@@ -1,0 +1,18 @@
+{
+  "name": "score",
+  "version": "1.4.0",
+  "description": "Data Science Team \u2014 Score: Model evaluation \u2014 metrics design, statistical significance, model comparison, evaluation frameworks",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "data-science-team",
+    "score",
+    "data-science",
+    "ml"
+  ]
+}

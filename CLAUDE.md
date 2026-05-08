@@ -1,6 +1,6 @@
-# tonone — Engineering + Product + Operations + Legal + Design Team
+# tonone — Engineering + Product + Operations + Legal + Design + Data Science Team
 
-Five AI teams. 51 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible.
+Six AI teams. 61 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions.
 
 ## Engineering Team — 15 agents
 
@@ -78,6 +78,21 @@ Five AI teams. 51 agents total. Engineering executes. Product decides what to bu
 | **Tone** | Design Token Engineer | Token architecture, multi-brand theming, style-dictionary pipelines |
 | **Copy** | Content Designer | UX writing, microcopy, error messages, onboarding copy, UI content strategy |
 
+## Data Science Team — 10 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Cast** | Forecasting Engineer | Time series forecasting, demand prediction, seasonal decomposition |
+| **Feat** | Feature Engineer | Feature engineering, encodings, feature stores, pipeline design |
+| **Fit** | Model Training Engineer | Algorithm selection, hyperparameter tuning, training pipelines |
+| **Score** | Model Evaluation Engineer | Metrics design, statistical significance, model comparison |
+| **Drift** | ML Monitoring Engineer | Data drift, concept drift, model degradation, production ML health |
+| **Vect** | Embeddings & Vector Search Engineer | Semantic search, RAG pipelines, vector database design |
+| **Tune** | LLM Fine-tuning Engineer | PEFT/LoRA, RLHF, instruction tuning, prompt optimization |
+| **Plot** | Data Visualization Engineer | Chart design, EDA, visualization libraries, dashboard specs |
+| **Clean** | Data Quality Engineer | Deduplication, validation, outlier detection, ETL pipelines |
+| **Eval** | Experiment Design Engineer | A/B testing, statistical power, experiment tracking, causal inference |
+
 ## Helm↔Apex Interface
 
 Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
@@ -87,7 +102,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (51 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design)
+├── agents/                 ← all agent definitions (61 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

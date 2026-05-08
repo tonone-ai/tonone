@@ -1,7 +1,7 @@
 {
   "name": "tonone",
-  "description": "Engineering + Product + Operations + Legal + Design team \u2014 51 agents as Claude Code specialists. Infrastructure, DevOps, backend, security, ML/AI, mobile, UX, analytics, growth, revenue, content, PR, customer success, finance, people, operations, support, contracts, compliance, IP, governance, regulatory, color systems, typography, motion, accessibility, design tokens, and more.",
-  "version": "1.3.0",
+  "description": "Engineering + Product + Operations + Legal + Design + Data Science team \u2014 61 agents as Claude Code specialists. Infrastructure, DevOps, backend, security, ML/AI, mobile, UX, analytics, growth, revenue, content, PR, customer success, finance, people, operations, support, contracts, compliance, IP, governance, regulatory, color systems, typography, motion, accessibility, design tokens, forecasting, feature engineering, model training, drift monitoring, vector search, LLM fine-tuning, and more.",
+  "version": "1.4.0",
   "author": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"

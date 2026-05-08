@@ -1,0 +1,18 @@
+{
+  "name": "vect",
+  "version": "1.4.0",
+  "description": "Data Science Team \u2014 Vect: Embeddings and vector search \u2014 semantic search, RAG pipelines, vector database design",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "data-science-team",
+    "vect",
+    "data-science",
+    "ml"
+  ]
+}
