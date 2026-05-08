@@ -42,3 +42,5 @@ Output a brief summary:
 - What was produced
 - Key risks or open questions
 - Recommended next steps (including when to involve a real lawyer)
+
+- Follow the output format defined in docs/output-kit.md
