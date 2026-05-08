@@ -36,14 +36,14 @@ Ask for any missing context:
 
 Check signals of culture health:
 
-| Signal                          | Healthy                                     | Unhealthy                                   |
-| ------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| Hiring consistency              | Interviewers agree on candidate quality     | Interviewers frequently disagree            |
-| Decision-making clarity         | People know who decides what                | Decisions revisited after they are made     |
-| Feedback culture                | Feedback given directly and regularly       | Issues surface in exit interviews only      |
-| Psychological safety            | People raise bad news early                 | Problems hidden until they become crises    |
-| Onboarding consistency          | New hires describe culture similarly        | New hires get different answers about norms |
-| Retention pattern               | Strong performers stay                      | Strong performers leave, weak performers stay|
+| Signal                  | Healthy                                 | Unhealthy                                     |
+| ----------------------- | --------------------------------------- | --------------------------------------------- |
+| Hiring consistency      | Interviewers agree on candidate quality | Interviewers frequently disagree              |
+| Decision-making clarity | People know who decides what            | Decisions revisited after they are made       |
+| Feedback culture        | Feedback given directly and regularly   | Issues surface in exit interviews only        |
+| Psychological safety    | People raise bad news early             | Problems hidden until they become crises      |
+| Onboarding consistency  | New hires describe culture similarly    | New hires get different answers about norms   |
+| Retention pattern       | Strong performers stay                  | Strong performers leave, weak performers stay |
 
 ### Step 2: Articulate 3-5 Company Values
 
@@ -61,11 +61,13 @@ For each value, produce:
 **What this means:** [One paragraph of the specific behavior - what does this look like in practice?]
 
 **What this looks like:**
+
 - [Specific observable behavior 1]
 - [Specific observable behavior 2]
 - [Specific observable behavior 3]
 
 **What this does NOT look like:**
+
 - [The misread or misapplication of this value]
 - [The common failure mode]
 
@@ -85,18 +87,19 @@ Norms must be specific enough to resolve a real disagreement.
 
 **Async by default:** [Y/N - which decisions and discussions are async vs. require sync?]
 **Meeting types and rules:**
+
 - Standup: [Cadence, format, who attends, what is in/out of scope]
 - 1:1s: [Cadence, owner, format - manager-run or agenda shared in advance?]
 - All-hands: [Cadence, format, what gets announced here vs. in writing]
 - Decision meetings: [When to call one, how decisions get recorded]
 
 **Channels and their norms:**
-| Channel         | Use for                               | Response time expectation |
+| Channel | Use for | Response time expectation |
 | --------------- | ------------------------------------- | ------------------------- |
-| [Slack #general]| Company-wide announcements            | Read within 24h           |
-| [Slack DM]      | Quick clarifications, informal        | Best effort, same day     |
-| [Email]         | External, formal, or long-form        | 1 business day            |
-| [GitHub / Linear]| Task tracking, technical decisions   | Per ticket priority       |
+| [Slack #general]| Company-wide announcements | Read within 24h |
+| [Slack DM] | Quick clarifications, informal | Best effort, same day |
+| [Email] | External, formal, or long-form | 1 business day |
+| [GitHub / Linear]| Task tracking, technical decisions | Per ticket priority |
 
 **After-hours policy:** [Define expectation clearly - "No expectation to respond after 6pm local" or "On-call rotation for production issues only"]
 
@@ -104,12 +107,12 @@ Norms must be specific enough to resolve a real disagreement.
 
 **Who decides what:** [Decision rights matrix or summary]
 
-| Decision Type            | Single owner      | Input from           | Escalate to  |
-| ------------------------ | ----------------- | -------------------- | ------------ |
-| Product roadmap          | [Role]            | [Roles]              | [Role]       |
-| Hiring approval          | [Role]            | [Roles]              | [Role]       |
-| Budget over $[X]         | [Role]            | [Roles]              | [Role]       |
-| Technical architecture   | [Role]            | [Roles]              | [Role]       |
+| Decision Type          | Single owner | Input from | Escalate to |
+| ---------------------- | ------------ | ---------- | ----------- |
+| Product roadmap        | [Role]       | [Roles]    | [Role]      |
+| Hiring approval        | [Role]       | [Roles]    | [Role]      |
+| Budget over $[X]       | [Role]       | [Roles]    | [Role]      |
+| Technical architecture | [Role]       | [Roles]    | [Role]      |
 
 **How decisions are recorded:** [Where do decisions live? Notion, ADRs, Slack pins?]
 **Reversible vs. irreversible decisions:** [One-way doors require more process; two-way doors should be made fast and revised if wrong.]
@@ -152,6 +155,7 @@ Norms must be specific enough to resolve a real disagreement.
 ## Culture Maintenance
 
 Culture is not set once. It is maintained by:
+
 - **Hiring decisions:** We ask culture-fit questions in every interview. [Which questions?]
 - **Performance calibration:** Culture adherence is evaluated alongside output.
 - **Exit interviews:** Every voluntary departure gets a structured exit interview. Culture signals go to People Ops and Helm.

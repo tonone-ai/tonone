@@ -80,10 +80,10 @@ One lateral check-in maximum. Escalate to Helm, not around Helm.
 
 When gstack installed, invoke these skills for Folk work.
 
-| Skill          | When to invoke                                     | What it adds                               |
-| -------------- | -------------------------------------------------- | ------------------------------------------ |
-| `office-hours` | Validating org design before writing JDs           | Forces constraint diagnosis before output  |
-| `plan-eng-review` | Org design affecting engineering team structure | Architecture-level org design review       |
+| Skill             | When to invoke                                  | What it adds                              |
+| ----------------- | ----------------------------------------------- | ----------------------------------------- |
+| `office-hours`    | Validating org design before writing JDs        | Forces constraint diagnosis before output |
+| `plan-eng-review` | Org design affecting engineering team structure | Architecture-level org design review      |
 
 ## Process Disciplines
 
@@ -101,18 +101,18 @@ When producing people artifacts, follow these superpowers process skills:
 
 When project uses Obsidian, produce Folk artifacts in native Obsidian formats.
 
-| Artifact              | Obsidian Format                                                                                     | When                          |
-| --------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------- |
-| Org chart             | Obsidian Markdown - `role`, `reports_to`, `headcount`, `stage` properties                           | Org design documentation      |
-| Job description       | Obsidian Markdown - `title`, `level`, `comp_band`, `reports_to`, `outcome` properties               | Hiring documentation          |
-| Onboarding playbook   | Obsidian Markdown - `role_type`, `day_1`, `week_1`, `day_30_milestone` properties, checklist tasks  | New hire documentation        |
+| Artifact            | Obsidian Format                                                                                    | When                     |
+| ------------------- | -------------------------------------------------------------------------------------------------- | ------------------------ |
+| Org chart           | Obsidian Markdown - `role`, `reports_to`, `headcount`, `stage` properties                          | Org design documentation |
+| Job description     | Obsidian Markdown - `title`, `level`, `comp_band`, `reports_to`, `outcome` properties              | Hiring documentation     |
+| Onboarding playbook | Obsidian Markdown - `role_type`, `day_1`, `week_1`, `day_30_milestone` properties, checklist tasks | New hire documentation   |
 
 ## Gstack Skills
 
 When gstack is installed, invoke these skills for Folk work.
 
-| Skill          | When to invoke                                    | What it adds                             |
-| -------------- | ------------------------------------------------- | ---------------------------------------- |
+| Skill          | When to invoke                                    | What it adds                              |
+| -------------- | ------------------------------------------------- | ----------------------------------------- |
 | `office-hours` | Validating org design or migration strategy first | Forces constraint diagnosis before output |
 
 ## Anti-Patterns to Call Out
@@ -127,13 +127,13 @@ When gstack is installed, invoke these skills for Folk work.
 
 ## Skill Table
 
-| Skill           | When to invoke                                                                                  |
-| --------------- | ----------------------------------------------------------------------------------------------- |
-| `folk-recon`    | Audit org design, hiring pipeline, comp, onboarding, and performance systems                    |
-| `folk-org`      | Design or review org structure, spans of control, headcount plan                                |
-| `folk-hire`     | Build hiring pipeline: JD, sourcing, scorecard, offer process                                   |
-| `folk-comp`     | Design comp framework: salary bands, equity, offer templates                                    |
-| `folk-onboard`  | Build onboarding playbook: 30/60/90 plan, day 1 checklist, success milestones                   |
-| `folk-perf`     | Design performance management: review cycles, calibration, career ladder, PIP template          |
-| `folk-migrate`  | Run human-to-agent migration: audit replaceability, design transition playbook, offboarding plan |
-| `folk-culture`  | Document and strengthen culture: values, team norms, communication protocols                    |
+| Skill          | When to invoke                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------------ |
+| `folk-recon`   | Audit org design, hiring pipeline, comp, onboarding, and performance systems                     |
+| `folk-org`     | Design or review org structure, spans of control, headcount plan                                 |
+| `folk-hire`    | Build hiring pipeline: JD, sourcing, scorecard, offer process                                    |
+| `folk-comp`    | Design comp framework: salary bands, equity, offer templates                                     |
+| `folk-onboard` | Build onboarding playbook: 30/60/90 plan, day 1 checklist, success milestones                    |
+| `folk-perf`    | Design performance management: review cycles, calibration, career ladder, PIP template           |
+| `folk-migrate` | Run human-to-agent migration: audit replaceability, design transition playbook, offboarding plan |
+| `folk-culture` | Document and strengthen culture: values, team norms, communication protocols                     |

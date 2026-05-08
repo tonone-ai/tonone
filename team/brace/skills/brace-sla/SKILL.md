@@ -30,17 +30,20 @@ Assess the current state:
 Define customer tiers. Each tier gets distinct SLA targets:
 
 **Tier 1 -- All Users (Free and Trial)**
+
 - No contractual SLA commitment
 - Best-effort response
 - Self-serve is primary support channel
 - Human response: business hours only
 
 **Tier 2 -- Paid Customers**
+
 - Committed SLA, standard targets
 - Human response: business hours
 - Email or ticket system
 
 **Tier 3 -- Enterprise Customers**
+
 - Contractual SLA, named in MSA
 - Dedicated queue or named CSM contact
 - Business hours + emergency line for critical severity
@@ -49,12 +52,12 @@ Define customer tiers. Each tier gets distinct SLA targets:
 
 Produce the SLA matrix. Every cell is a commitment, not a goal:
 
-| Severity | Definition                                           | Tier 1 FRT | Tier 2 FRT | Tier 3 FRT | Tier 2 TTR | Tier 3 TTR |
-| -------- | ---------------------------------------------------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| Critical | Production down, data loss, security breach          | Best effort | 2h        | 1h         | 4h         | 2h         |
-| High     | Major feature broken, no workaround                  | Best effort | 4h        | 2h         | 24h        | 8h         |
-| Medium   | Feature degraded, workaround exists                  | Best effort | 8h        | 4h         | 3 days     | 24h        |
-| Low      | Cosmetic, question, minor inconvenience              | Best effort | 1 day     | 8h         | 5 days     | 3 days     |
+| Severity | Definition                                  | Tier 1 FRT  | Tier 2 FRT | Tier 3 FRT | Tier 2 TTR | Tier 3 TTR |
+| -------- | ------------------------------------------- | ----------- | ---------- | ---------- | ---------- | ---------- |
+| Critical | Production down, data loss, security breach | Best effort | 2h         | 1h         | 4h         | 2h         |
+| High     | Major feature broken, no workaround         | Best effort | 4h         | 2h         | 24h        | 8h         |
+| Medium   | Feature degraded, workaround exists         | Best effort | 8h         | 4h         | 3 days     | 24h        |
+| Low      | Cosmetic, question, minor inconvenience     | Best effort | 1 day      | 8h         | 5 days     | 3 days     |
 
 FRT = First Response Time. TTR = Time to Resolution. All times are business hours unless otherwise noted.
 
@@ -65,16 +68,19 @@ Adjust targets to the actual team size and support stage. Do not commit to SLAs 
 Define what happens when an SLA is at risk or breached:
 
 **At 80% of SLA window:**
+
 - Automatic alert to support team lead
 - Ticket flagged in queue as "at risk"
 - Rep assigned if unassigned
 
 **At 100% of SLA window (breach):**
+
 - Alert to support manager
 - Tier 3 (enterprise) breach: alert to customer's named contact at the company
 - Breach logged for monthly SLA report
 
 **At 2x SLA window:**
+
 - Escalate to support lead and engineering manager (for bugs)
 - Executive notification for enterprise accounts
 - Incident review triggered
@@ -84,6 +90,7 @@ Name the owner at each escalation step. "Alert to engineering" without a named p
 ### Step 5: Produce SLA Doc and Monitoring Checklist
 
 Output the full SLA document:
+
 - Tier definitions
 - SLA matrix (response and resolution per severity per tier)
 - Business hours definition (time zone, holidays)
@@ -92,6 +99,7 @@ Output the full SLA document:
 - What counts as "resolved" vs "pending customer"
 
 Output the monitoring checklist:
+
 - What tool tracks SLA timers? (Zendesk, Intercom, Linear, custom)
 - How often are SLA reports reviewed?
 - Who gets the weekly SLA compliance report?

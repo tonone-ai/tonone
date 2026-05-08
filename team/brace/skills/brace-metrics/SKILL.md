@@ -58,15 +58,15 @@ Target: Trending down as self-serve improves.
 
 For each metric, define exactly how it is measured:
 
-| Metric              | Source                  | Calculation                              | Review cadence |
-| ------------------- | ----------------------- | ---------------------------------------- | -------------- |
-| FRT                 | Ticket system timestamp | Median and P90, business hours only      | Weekly         |
-| TTR                 | Ticket system timestamp | Median and P90, exclude pending-customer | Weekly         |
-| CSAT                | Post-resolution survey  | Average of ratings received              | Weekly         |
-| Deflection rate     | KB analytics + tickets  | (KB resolutions) / (KB + tickets)        | Monthly        |
-| Tickets per customer| Ticket count / MAU      | Rolling 30-day window                    | Monthly        |
-| Escalation rate     | Ticket tags             | Escalated tickets / total tickets        | Weekly         |
-| Cost per ticket     | Finance + ticket count  | Support team cost / tickets resolved     | Monthly        |
+| Metric               | Source                  | Calculation                              | Review cadence |
+| -------------------- | ----------------------- | ---------------------------------------- | -------------- |
+| FRT                  | Ticket system timestamp | Median and P90, business hours only      | Weekly         |
+| TTR                  | Ticket system timestamp | Median and P90, exclude pending-customer | Weekly         |
+| CSAT                 | Post-resolution survey  | Average of ratings received              | Weekly         |
+| Deflection rate      | KB analytics + tickets  | (KB resolutions) / (KB + tickets)        | Monthly        |
+| Tickets per customer | Ticket count / MAU      | Rolling 30-day window                    | Monthly        |
+| Escalation rate      | Ticket tags             | Escalated tickets / total tickets        | Weekly         |
+| Cost per ticket      | Finance + ticket count  | Support team cost / tickets resolved     | Monthly        |
 
 Define what "business hours" means for FRT/TTR calculation. State the time zone.
 

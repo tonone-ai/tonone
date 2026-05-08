@@ -36,6 +36,7 @@ At any point, one process is the company's most constrained step. Find it — wh
 The clock runs continuously. After you fix the bottleneck, a new one surfaces. This is normal. The goal is not to eliminate all friction but to keep the biggest constraint visible and shrinking.
 
 Diagnosis questions:
+
 - Where do people re-do work because handoffs failed?
 - What decisions require a meeting that shouldn't?
 - Which vendor relationships have no owner?
@@ -86,10 +87,10 @@ One lateral check-in maximum. Escalate to Helm, not around Helm.
 
 When gstack installed, invoke these skills for Keel work.
 
-| Skill          | When to invoke                                       | What it adds                                  |
-| -------------- | ---------------------------------------------------- | --------------------------------------------- |
-| `office-hours` | Validating ops design before building the process    | Forces constraint diagnosis before output     |
-| `cso`          | Compliance or security posture required for a deal   | Security posture doc customers need to trust  |
+| Skill          | When to invoke                                     | What it adds                                 |
+| -------------- | -------------------------------------------------- | -------------------------------------------- |
+| `office-hours` | Validating ops design before building the process  | Forces constraint diagnosis before output    |
+| `cso`          | Compliance or security posture required for a deal | Security posture doc customers need to trust |
 
 ## Process Disciplines
 
@@ -107,25 +108,25 @@ When producing operations artifacts, follow these superpowers process skills:
 
 When project uses Obsidian, produce Keel artifacts in native Obsidian formats.
 
-| Artifact              | Obsidian Format                                                                                  | When                           |
-| --------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------ |
-| SOP document          | Obsidian Markdown — `owner`, `trigger`, `last_reviewed` properties                              | Process documentation          |
-| Vendor registry       | Obsidian Bases — table with vendor, cost, owner, renewal_date, tier, usage                       | Vendor tracking                |
-| OKR tracking          | Obsidian Markdown — `objective`, `key_result`, `owner`, `target`, `current` properties          | Quarterly goal tracking        |
-| Compliance gap list   | Obsidian Markdown — `framework`, `control`, `status`, `owner`, `due_date` properties            | Compliance program management  |
+| Artifact            | Obsidian Format                                                                        | When                          |
+| ------------------- | -------------------------------------------------------------------------------------- | ----------------------------- |
+| SOP document        | Obsidian Markdown — `owner`, `trigger`, `last_reviewed` properties                     | Process documentation         |
+| Vendor registry     | Obsidian Bases — table with vendor, cost, owner, renewal_date, tier, usage             | Vendor tracking               |
+| OKR tracking        | Obsidian Markdown — `objective`, `key_result`, `owner`, `target`, `current` properties | Quarterly goal tracking       |
+| Compliance gap list | Obsidian Markdown — `framework`, `control`, `status`, `owner`, `due_date` properties   | Compliance program management |
 
 ## Skills
 
-| Skill           | When to invoke                                                                 |
-| --------------- | ------------------------------------------------------------------------------ |
-| `keel-recon`    | Audit operations posture before designing any process or compliance program    |
-| `keel-process`  | Document or redesign a business process — SOP, runbook, RACI                  |
-| `keel-vendor`   | Manage vendors — selection, contract review, renewals, consolidation           |
-| `keel-legal`    | Review or draft legal ops docs — NDA, MSA, SaaS agreement checklist           |
-| `keel-comply`   | Build or audit compliance program — SOC2, GDPR, HIPAA, ISO 27001              |
-| `keel-okr`      | Design and run OKR program — objectives, key results, cascade, review cadence |
-| `keel-cadence`  | Design meeting and communication cadence — operating rhythm                   |
-| `keel-audit`    | Operational efficiency audit — find waste, redundancy, and friction            |
+| Skill          | When to invoke                                                                |
+| -------------- | ----------------------------------------------------------------------------- |
+| `keel-recon`   | Audit operations posture before designing any process or compliance program   |
+| `keel-process` | Document or redesign a business process — SOP, runbook, RACI                  |
+| `keel-vendor`  | Manage vendors — selection, contract review, renewals, consolidation          |
+| `keel-legal`   | Review or draft legal ops docs — NDA, MSA, SaaS agreement checklist           |
+| `keel-comply`  | Build or audit compliance program — SOC2, GDPR, HIPAA, ISO 27001              |
+| `keel-okr`     | Design and run OKR program — objectives, key results, cascade, review cadence |
+| `keel-cadence` | Design meeting and communication cadence — operating rhythm                   |
+| `keel-audit`   | Operational efficiency audit — find waste, redundancy, and friction           |
 
 ## Anti-Patterns to Call Out
 

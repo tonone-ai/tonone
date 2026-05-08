@@ -58,13 +58,13 @@ Identify current state of:
 
 Check health of core metrics:
 
-| Metric         | Current | Benchmark         | Status |
-| -------------- | ------- | ----------------- | ------ |
-| LTV:CAC ratio  |         | Target: >3x       |        |
-| Payback period |         | Target: <18 months|        |
-| Gross margin   |         | Target: >70% SaaS |        |
-| NRR            |         | Target: >100%     |        |
-| Logo churn     |         | Target: <2%/month |        |
+| Metric         | Current | Benchmark          | Status |
+| -------------- | ------- | ------------------ | ------ |
+| LTV:CAC ratio  |         | Target: >3x        |        |
+| Payback period |         | Target: <18 months |        |
+| Gross margin   |         | Target: >70% SaaS  |        |
+| NRR            |         | Target: >100%      |        |
+| Logo churn     |         | Target: <2%/month  |        |
 
 ### Step 4: Identify the Constraint
 
@@ -78,15 +78,15 @@ Map the primary financial constraint:
 
 ### Step 5: Inventory Financial Assets
 
-| Asset                    | Exists? | Quality |
-| ------------------------ | ------- | ------- |
-| P&L / income statement   | [yes/no]|         |
-| Cash flow / runway model | [yes/no]|         |
-| Budget vs actuals        | [yes/no]|         |
-| Unit economics doc       | [yes/no]|         |
-| Revenue forecast         | [yes/no]|         |
-| Cap table                | [yes/no]|         |
-| Board financial package  | [yes/no]|         |
+| Asset                    | Exists?  | Quality |
+| ------------------------ | -------- | ------- |
+| P&L / income statement   | [yes/no] |         |
+| Cash flow / runway model | [yes/no] |         |
+| Budget vs actuals        | [yes/no] |         |
+| Unit economics doc       | [yes/no] |         |
+| Revenue forecast         | [yes/no] |         |
+| Cap table                | [yes/no] |         |
+| Board financial package  | [yes/no] |         |
 
 ### Step 6: Present Assessment
 

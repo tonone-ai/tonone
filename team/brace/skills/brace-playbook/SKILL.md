@@ -59,6 +59,7 @@ Support at [Company]
 ```
 
 **Tone rules:**
+
 - Warm but not effusive. "Thanks for reaching out" is fine. "I'd be absolutely delighted to help!" is not.
 - Direct. State the fix before explaining why it works.
 - Professional but human. No robotic phrasing ("Your query has been received").
@@ -68,18 +69,21 @@ Support at [Company]
 ### Step 3: Define Tone Guide
 
 **Voice characteristics:**
+
 - Professional: no slang, no overfamiliarity
 - Warm: acknowledge the customer's situation before diving into steps
 - Direct: give the answer before the explanation
 - Confident: don't hedge with "it might be" or "possibly" unless genuinely uncertain
 
 **Kill these phrases:**
+
 - "I apologize for any inconvenience" -- too corporate. Use "I can see why that's frustrating."
 - "Please don't hesitate to reach out" -- empty. Use "Reply here and I'll get back to you."
 - "We are currently experiencing higher than normal ticket volumes" -- never blame volume.
 - "Your ticket is important to us" -- meaningless. Show it by responding.
 
 **Use these instead:**
+
 - "Here's what's happening and how to fix it:"
 - "The quickest fix is:"
 - "If that doesn't work, the next step is:"

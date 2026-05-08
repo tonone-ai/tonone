@@ -14,7 +14,7 @@ runtimes:
   enabled:
     - go@1.21.0
     - node@22.16.0
-    - python@3.13.3
+    - python@3.14.4
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
   ignore:
@@ -28,7 +28,7 @@ lint:
     - actionlint@1.7.12
     - bandit@1.9.4
     - black@26.3.1
-    - checkov@3.2.526
+    - checkov@3.2.527
     - git-diff-check
     - isort@8.0.1
     - markdownlint@0.48.0

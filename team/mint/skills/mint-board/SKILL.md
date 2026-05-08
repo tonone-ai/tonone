@@ -26,6 +26,7 @@ find . -name "*.md" 2>/dev/null | xargs grep -l "board\|investor update\|board u
 ```
 
 Collect or ask for:
+
 - Revenue for current month, prior month, and same month last year
 - Gross burn for current month vs plan
 - Current cash balance and runway
@@ -47,19 +48,19 @@ Board financial packages have a specific flow. Follow it:
 
 The board KPI table is the core of every financial update:
 
-| Metric           | This month | Last month | 3-month ago | Plan    | YTD plan |
-| ---------------- | ---------- | ---------- | ----------- | ------- | -------- |
-| ARR ($)          |            |            |             |         |          |
-| MRR ($)          |            |            |             |         |          |
-| MoM growth (%)   |            |            |             |         |          |
-| Gross burn ($)   |            |            |             |         |          |
-| Net burn ($)     |            |            |             |         |          |
-| Cash balance ($) |            |            |             |         |          |
-| Runway (months)  |            |            |             |         |          |
-| Headcount        |            |            |             |         |          |
-| NRR (%)          |            |            |             |         |          |
-| New logos        |            |            |             |         |          |
-| Churn logos      |            |            |             |         |          |
+| Metric           | This month | Last month | 3-month ago | Plan | YTD plan |
+| ---------------- | ---------- | ---------- | ----------- | ---- | -------- |
+| ARR ($)          |            |            |             |      |          |
+| MRR ($)          |            |            |             |      |          |
+| MoM growth (%)   |            |            |             |      |          |
+| Gross burn ($)   |            |            |             |      |          |
+| Net burn ($)     |            |            |             |      |          |
+| Cash balance ($) |            |            |             |      |          |
+| Runway (months)  |            |            |             |      |          |
+| Headcount        |            |            |             |      |          |
+| NRR (%)          |            |            |             |      |          |
+| New logos        |            |            |             |      |          |
+| Churn logos      |            |            |             |      |          |
 
 ### Step 3: Write CFO Commentary
 
@@ -81,11 +82,11 @@ The commentary section tells the story behind the numbers. Structure it as:
 
 For any metric more than 10% off plan, produce a variance table:
 
-| Metric       | Actuals  | Plan     | Variance  | Variance % | Root cause            |
-| ------------ | -------- | -------- | --------- | ---------- | --------------------- |
-| Revenue      |          |          |           |            |                       |
-| Gross burn   |          |          |           |            |                       |
-| New logos    |          |          |           |            |                       |
+| Metric     | Actuals | Plan | Variance | Variance % | Root cause |
+| ---------- | ------- | ---- | -------- | ---------- | ---------- |
+| Revenue    |         |      |          |            |            |
+| Gross burn |         |      |          |            |            |
+| New logos  |         |      |          |            |            |
 
 ### Step 5: Format Board Package
 
@@ -95,30 +96,37 @@ For any metric more than 10% off plan, produce a variance table:
 **Headline:** [One sentence: what happened, what it means]
 
 ## Key Metrics
+
 [KPI table from Step 2]
 
 ## P&L Summary — [Month]
-| Line item       | Actuals | Plan    | Variance |
-|-----------------|---------|---------|----------|
-| Revenue         |         |         |          |
-| Gross margin    |         |         |          |
-| Total opex      |         |         |          |
-| Net burn        |         |         |          |
+
+| Line item    | Actuals | Plan | Variance |
+| ------------ | ------- | ---- | -------- |
+| Revenue      |         |      |          |
+| Gross margin |         |      |          |
+| Total opex   |         |      |          |
+| Net burn     |         |      |          |
 
 ## Cash and Runway
+
 Cash balance: $[X] | Monthly net burn: $[Y] | Runway: [N] months
 
 ## CFO Commentary
+
 [Commentary from Step 3]
 
 ## Variance Analysis
+
 [Variance table from Step 4 — only for metrics >10% off plan]
 
 ## Risks and Flags
+
 - [Risk 1: specific, honest, with mitigation]
 - [Risk 2]
 
 ## Asks from the Board
+
 - [Specific ask with context]
 ```
 

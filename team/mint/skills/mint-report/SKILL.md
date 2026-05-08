@@ -33,24 +33,28 @@ find . -name "*.csv" 2>/dev/null | head -10
 A complete monthly close has these steps, in order:
 
 **Revenue recognition:**
+
 - [ ] All invoices issued for the month confirmed
 - [ ] Cash collected vs invoiced reconciled
 - [ ] Any deferred revenue adjustments made
 - [ ] ARR schedule updated (new, expansion, churn)
 
 **Expense accruals:**
+
 - [ ] Payroll confirmed (final payroll register from HR/payroll system)
 - [ ] Contractor invoices received and recorded
 - [ ] Software and SaaS charged in month confirmed
 - [ ] Any annual contracts prorated correctly (e.g., annual software renewals)
 
 **Payroll:**
+
 - [ ] All employees confirmed on payroll this month
 - [ ] Any new hires prorated
 - [ ] Employer payroll taxes included (not just gross salaries)
 - [ ] Benefits costs included
 
 **Reconciliation:**
+
 - [ ] Bank statement reconciled to P&L cash
 - [ ] Credit card spend captured
 - [ ] Outstanding AP confirmed
@@ -59,21 +63,22 @@ A complete monthly close has these steps, in order:
 
 For each significant line item, calculate and explain variance:
 
-| Line item        | Actuals  | Budget   | Prior month | vs Budget | vs Prior  | Commentary |
-| ---------------- | -------- | -------- | ----------- | --------- | --------- | ---------- |
-| Revenue          |          |          |             |           |           |            |
-| Gross margin     |          |          |             |           |           |            |
-| Engineering HC   |          |          |             |           |           |            |
-| Sales HC         |          |          |             |           |           |            |
-| Marketing HC     |          |          |             |           |           |            |
-| G&A HC           |          |          |             |           |           |            |
-| Software/tools   |          |          |             |           |           |            |
-| Marketing spend  |          |          |             |           |           |            |
-| Other opex       |          |          |             |           |           |            |
-| **Total opex**   |          |          |             |           |           |            |
-| **Net burn**     |          |          |             |           |           |            |
+| Line item       | Actuals | Budget | Prior month | vs Budget | vs Prior | Commentary |
+| --------------- | ------- | ------ | ----------- | --------- | -------- | ---------- |
+| Revenue         |         |        |             |           |          |            |
+| Gross margin    |         |        |             |           |          |            |
+| Engineering HC  |         |        |             |           |          |            |
+| Sales HC        |         |        |             |           |          |            |
+| Marketing HC    |         |        |             |           |          |            |
+| G&A HC          |         |        |             |           |          |            |
+| Software/tools  |         |        |             |           |          |            |
+| Marketing spend |         |        |             |           |          |            |
+| Other opex      |         |        |             |           |          |            |
+| **Total opex**  |         |        |             |           |          |            |
+| **Net burn**    |         |        |             |           |          |            |
 
 Variance commentary rules:
+
 - Explain every variance greater than 5% or $5K, whichever is smaller
 - State whether variance is one-time or recurring
 - If recurring, state what plan change it implies
@@ -103,48 +108,55 @@ The narrative section is what turns numbers into decisions. Structure:
 # Monthly Financial Report — [Month Year]
 
 ## P&L Summary
-| Line item     | Actuals  | Budget   | Variance | Variance % |
-|---------------|----------|----------|----------|------------|
-| Revenue       |          |          |          |            |
-| Gross profit  |          |          |          |            |
-| Total opex    |          |          |          |            |
-| Net burn      |          |          |          |            |
+
+| Line item    | Actuals | Budget | Variance | Variance % |
+| ------------ | ------- | ------ | -------- | ---------- |
+| Revenue      |         |        |          |            |
+| Gross profit |         |        |          |            |
+| Total opex   |         |        |          |            |
+| Net burn     |         |        |          |            |
 
 ## Cash Position
-| Item             | Amount   |
-|------------------|----------|
-| Opening balance  |          |
-| Cash in (revenue)|          |
-| Cash out (burn)  |          |
-| Closing balance  |          |
-| Runway (months)  |          |
+
+| Item              | Amount |
+| ----------------- | ------ |
+| Opening balance   |        |
+| Cash in (revenue) |        |
+| Cash out (burn)   |        |
+| Closing balance   |        |
+| Runway (months)   |        |
 
 ## ARR Schedule
-| Category        | Prior month | This month | Change |
-|-----------------|-------------|------------|--------|
-| New ARR         |             |            |        |
-| Expansion ARR   |             |            |        |
-| Churned ARR     |             |            |        |
-| Net new ARR     |             |            |        |
-| Total ARR       |             |            |        |
+
+| Category      | Prior month | This month | Change |
+| ------------- | ----------- | ---------- | ------ |
+| New ARR       |             |            |        |
+| Expansion ARR |             |            |        |
+| Churned ARR   |             |            |        |
+| Net new ARR   |             |            |        |
+| Total ARR     |             |            |        |
 
 ## Headcount
-| Department      | Prior month | This month | Open reqs |
-|-----------------|-------------|------------|-----------|
-| Engineering     |             |            |           |
-| Sales           |             |            |           |
-| Marketing       |             |            |           |
-| CS              |             |            |           |
-| G&A             |             |            |           |
-| **Total**       |             |            |           |
+
+| Department  | Prior month | This month | Open reqs |
+| ----------- | ----------- | ---------- | --------- |
+| Engineering |             |            |           |
+| Sales       |             |            |           |
+| Marketing   |             |            |           |
+| CS          |             |            |           |
+| G&A         |             |            |           |
+| **Total**   |             |            |           |
 
 ## Management Commentary
+
 [Narrative from Step 3]
 
 ## Variance Analysis
+
 [Variance table for items >5% off plan]
 
 ## Risks and Flags
+
 [Specific items for follow-up]
 ```
 

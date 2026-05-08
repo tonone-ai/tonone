@@ -25,6 +25,7 @@ find . -name "*.md" -o -name "*.csv" -o -name "*.json" 2>/dev/null | xargs grep 
 ```
 
 For each vendor, capture:
+
 - Tool / vendor name
 - Monthly or annual cost
 - Internal owner (who manages this relationship)
@@ -36,30 +37,31 @@ For each vendor, capture:
 
 Apply the vendor tiering framework:
 
-| Tier       | Definition                                            | Action                    |
-| ---------- | ----------------------------------------------------- | ------------------------- |
-| Critical   | Company cannot operate without it                     | Protect, review annually  |
-| Important  | Significant productivity impact if lost               | Negotiate at renewal      |
-| Redundant  | Overlap with another tool, low unique value           | Consolidate or cut        |
-| Unknown    | No clear owner, usage not measured                    | Audit before renewal      |
+| Tier      | Definition                                  | Action                   |
+| --------- | ------------------------------------------- | ------------------------ |
+| Critical  | Company cannot operate without it           | Protect, review annually |
+| Important | Significant productivity impact if lost     | Negotiate at renewal     |
+| Redundant | Overlap with another tool, low unique value | Consolidate or cut       |
+| Unknown   | No clear owner, usage not measured          | Audit before renewal     |
 
 ### Step 3: Flag Upcoming Renewals
 
 Highlight any vendor with renewal in the next 90 days. These require action now:
 
-| Vendor | Cost/yr | Renewal Date | Tier | Action |
-|--------|---------|--------------|------|--------|
+| Vendor | Cost/yr | Renewal Date | Tier   | Action                     |
+| ------ | ------- | ------------ | ------ | -------------------------- |
 | [name] | $[X]    | [date]       | [tier] | Renew / Negotiate / Cancel |
 
 ### Step 4: Identify Consolidation Opportunities
 
 Flag vendors with overlapping functionality:
 
-| Category         | Vendor A | Vendor B | Recommendation        |
-| ---------------- | -------- | -------- | --------------------- |
-| [category]       | [tool]   | [tool]   | Consolidate to [tool] |
+| Category   | Vendor A | Vendor B | Recommendation        |
+| ---------- | -------- | -------- | --------------------- |
+| [category] | [tool]   | [tool]   | Consolidate to [tool] |
 
 Common consolidation targets:
+
 - Multiple project management tools (Asana + Notion + Linear)
 - Multiple communication tools (Slack + Teams + Discord)
 - Multiple analytics tools (Mixpanel + Amplitude + GA4)
@@ -80,14 +82,14 @@ Common consolidation targets:
 
 ## Scoring
 
-| Criterion            | Score (1-5) | Notes |
-|----------------------|-------------|-------|
-| Solves core problem  | [1-5]       |       |
-| Ease of use          | [1-5]       |       |
-| Integration quality  | [1-5]       |       |
-| Support quality      | [1-5]       |       |
-| Price/value          | [1-5]       |       |
-| Vendor stability     | [1-5]       |       |
+| Criterion           | Score (1-5) | Notes |
+| ------------------- | ----------- | ----- |
+| Solves core problem | [1-5]       |       |
+| Ease of use         | [1-5]       |       |
+| Integration quality | [1-5]       |       |
+| Support quality     | [1-5]       |       |
+| Price/value         | [1-5]       |       |
+| Vendor stability    | [1-5]       |       |
 
 **Total:** [X/30]
 
@@ -102,6 +104,7 @@ Common consolidation targets:
 **Contract Review Checklist:**
 
 Before signing any vendor contract, verify:
+
 - [ ] Auto-renewal clause identified and calendar reminder set
 - [ ] Termination notice period noted (typically 30-90 days)
 - [ ] Price increase caps defined or absence noted
