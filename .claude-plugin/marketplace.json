@@ -5420,6 +5420,458 @@
         "gate",
         "developer-experience"
       ]
+    },
+    {
+      "name": "infra-specialist-team",
+      "description": "Infrastructure Specialist Team \u2014 10 agents: Kube, Terra, Finop, Serv, Edge, Cache, Queue, Mesh, Multi, Chaos",
+      "path": "bundle/infra-specialist-team",
+      "version": "1.7.0",
+      "tags": [
+        "bundle",
+        "infrastructure",
+        "cloud",
+        "team"
+      ]
+    },
+    {
+      "name": "kube",
+      "description": "Infrastructure Specialist Team \u2014 Kube: Kubernetes cluster design \u2014 RBAC, networking, operators, workload configuration",
+      "path": "team/kube",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "kube-design",
+      "description": "Kube skill: kube-design",
+      "path": "team/kube/skills/kube-design",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "kube"
+      ]
+    },
+    {
+      "name": "kube-rbac",
+      "description": "Kube skill: kube-rbac",
+      "path": "team/kube/skills/kube-rbac",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "kube"
+      ]
+    },
+    {
+      "name": "kube-recon",
+      "description": "Kube skill: kube-recon",
+      "path": "team/kube/skills/kube-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "kube"
+      ]
+    },
+    {
+      "name": "terra",
+      "description": "Infrastructure Specialist Team \u2014 Terra: Terraform and IaC \u2014 module design, state management, drift detection, and IaC best practices",
+      "path": "team/terra",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "terra-drift",
+      "description": "Terra skill: terra-drift",
+      "path": "team/terra/skills/terra-drift",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "terra"
+      ]
+    },
+    {
+      "name": "terra-module",
+      "description": "Terra skill: terra-module",
+      "path": "team/terra/skills/terra-module",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "terra"
+      ]
+    },
+    {
+      "name": "terra-recon",
+      "description": "Terra skill: terra-recon",
+      "path": "team/terra/skills/terra-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "terra"
+      ]
+    },
+    {
+      "name": "finop",
+      "description": "Infrastructure Specialist Team \u2014 Finop: Cloud cost optimization \u2014 FinOps practices, rightsizing, reservation strategy, cost attribution",
+      "path": "team/finop",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "finop-audit",
+      "description": "Finop skill: finop-audit",
+      "path": "team/finop/skills/finop-audit",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "finop"
+      ]
+    },
+    {
+      "name": "finop-recon",
+      "description": "Finop skill: finop-recon",
+      "path": "team/finop/skills/finop-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "finop"
+      ]
+    },
+    {
+      "name": "finop-reserve",
+      "description": "Finop skill: finop-reserve",
+      "path": "team/finop/skills/finop-reserve",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "finop"
+      ]
+    },
+    {
+      "name": "serv",
+      "description": "Infrastructure Specialist Team \u2014 Serv: Serverless architecture \u2014 Lambda/Cloud Functions/Cloud Run design, cold start optimization, event patterns",
+      "path": "team/serv",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "serv-cold",
+      "description": "Serv skill: serv-cold",
+      "path": "team/serv/skills/serv-cold",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "serv"
+      ]
+    },
+    {
+      "name": "serv-design",
+      "description": "Serv skill: serv-design",
+      "path": "team/serv/skills/serv-design",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "serv"
+      ]
+    },
+    {
+      "name": "serv-recon",
+      "description": "Serv skill: serv-recon",
+      "path": "team/serv/skills/serv-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "serv"
+      ]
+    },
+    {
+      "name": "edge",
+      "description": "Infrastructure Specialist Team \u2014 Edge: Edge computing and CDN \u2014 global distribution, cache strategy, edge functions, latency optimization",
+      "path": "team/edge",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "edge-cdn",
+      "description": "Edge skill: edge-cdn",
+      "path": "team/edge/skills/edge-cdn",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "edge"
+      ]
+    },
+    {
+      "name": "edge-recon",
+      "description": "Edge skill: edge-recon",
+      "path": "team/edge/skills/edge-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "edge"
+      ]
+    },
+    {
+      "name": "edge-route",
+      "description": "Edge skill: edge-route",
+      "path": "team/edge/skills/edge-route",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "edge"
+      ]
+    },
+    {
+      "name": "cache",
+      "description": "Infrastructure Specialist Team \u2014 Cache: Caching strategy \u2014 Redis/Memcached design, cache invalidation, eviction policies, application caching patterns",
+      "path": "team/cache",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "cache-design",
+      "description": "Cache skill: cache-design",
+      "path": "team/cache/skills/cache-design",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "cache"
+      ]
+    },
+    {
+      "name": "cache-evict",
+      "description": "Cache skill: cache-evict",
+      "path": "team/cache/skills/cache-evict",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "cache"
+      ]
+    },
+    {
+      "name": "cache-recon",
+      "description": "Cache skill: cache-recon",
+      "path": "team/cache/skills/cache-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "cache"
+      ]
+    },
+    {
+      "name": "queue",
+      "description": "Infrastructure Specialist Team \u2014 Queue: Message queuing and streaming \u2014 Kafka, SQS, RabbitMQ design, consumer group strategy, dead letter queues",
+      "path": "team/queue",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "queue-design",
+      "description": "Queue skill: queue-design",
+      "path": "team/queue/skills/queue-design",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "queue"
+      ]
+    },
+    {
+      "name": "queue-recon",
+      "description": "Queue skill: queue-recon",
+      "path": "team/queue/skills/queue-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "queue"
+      ]
+    },
+    {
+      "name": "queue-scale",
+      "description": "Queue skill: queue-scale",
+      "path": "team/queue/skills/queue-scale",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "queue"
+      ]
+    },
+    {
+      "name": "mesh",
+      "description": "Infrastructure Specialist Team \u2014 Mesh: Service mesh design \u2014 Istio/Linkerd/Envoy, mTLS, traffic management, observability integration",
+      "path": "team/mesh",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "mesh-design",
+      "description": "Mesh skill: mesh-design",
+      "path": "team/mesh/skills/mesh-design",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "mesh"
+      ]
+    },
+    {
+      "name": "mesh-observe",
+      "description": "Mesh skill: mesh-observe",
+      "path": "team/mesh/skills/mesh-observe",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "mesh"
+      ]
+    },
+    {
+      "name": "mesh-recon",
+      "description": "Mesh skill: mesh-recon",
+      "path": "team/mesh/skills/mesh-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "mesh"
+      ]
+    },
+    {
+      "name": "multi",
+      "description": "Infrastructure Specialist Team \u2014 Multi: Multi-cloud architecture \u2014 provider selection, portability strategy, lock-in avoidance, workload placement",
+      "path": "team/multi",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "multi-design",
+      "description": "Multi skill: multi-design",
+      "path": "team/multi/skills/multi-design",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "multi"
+      ]
+    },
+    {
+      "name": "multi-port",
+      "description": "Multi skill: multi-port",
+      "path": "team/multi/skills/multi-port",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "multi"
+      ]
+    },
+    {
+      "name": "multi-recon",
+      "description": "Multi skill: multi-recon",
+      "path": "team/multi/skills/multi-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "multi"
+      ]
+    },
+    {
+      "name": "chaos",
+      "description": "Infrastructure Specialist Team \u2014 Chaos: Chaos engineering \u2014 failure injection design, game days, resilience testing, blast radius control",
+      "path": "team/chaos",
+      "version": "1.7.0",
+      "tags": [
+        "agent",
+        "infrastructure",
+        "cloud"
+      ]
+    },
+    {
+      "name": "chaos-design",
+      "description": "Chaos skill: chaos-design",
+      "path": "team/chaos/skills/chaos-design",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "chaos"
+      ]
+    },
+    {
+      "name": "chaos-game",
+      "description": "Chaos skill: chaos-game",
+      "path": "team/chaos/skills/chaos-game",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "chaos"
+      ]
+    },
+    {
+      "name": "chaos-recon",
+      "description": "Chaos skill: chaos-recon",
+      "path": "team/chaos/skills/chaos-recon",
+      "version": "1.7.0",
+      "tags": [
+        "skill",
+        "infrastructure",
+        "chaos"
+      ]
     }
   ]
 }

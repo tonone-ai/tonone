@@ -1,0 +1,18 @@
+{
+  "name": "edge",
+  "version": "1.7.0",
+  "description": "Infrastructure Specialist Team \u2014 Edge: Edge computing and CDN \u2014 global distribution, cache strategy, edge functions, latency optimization",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "infra-specialist-team",
+    "edge",
+    "infrastructure",
+    "cloud"
+  ]
+}
