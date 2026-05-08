@@ -1,0 +1,17 @@
+{
+  "name": "hue",
+  "version": "1.3.0",
+  "description": "Design Team \u2014 Hue: Color palette design \u2014 semantic tokens, dark/light mode, WCAG contrast compliance",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "design-team",
+    "hue",
+    "design"
+  ]
+}

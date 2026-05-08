@@ -167,3 +167,4 @@
 2026-05-09 00:40 : docs(ops-team): markdown formatting polish — Brace, Folk, Keel, Mint — @fatih
 2026-05-09 01:00 : feat(legal-team): add Wave 1 Legal Team — 10 agents, 30 skills — @fatih
 2026-05-09 01:04 : fix(legal-team): add output-kit contract line + setup scripts to pass CI — @fatih
+2026-05-09 01:11 : feat(design-team): Wave 2 Design Team — 10 agents, 30 skills, v1.3.0 — @fatih
