@@ -1,0 +1,18 @@
+{
+  "name": "plot",
+  "version": "1.4.0",
+  "description": "Data Science Team \u2014 Plot: Data visualization \u2014 chart design, visualization libraries, exploratory analysis, dashboard specs",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "data-science-team",
+    "plot",
+    "data-science",
+    "ml"
+  ]
+}

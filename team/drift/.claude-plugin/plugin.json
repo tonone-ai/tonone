@@ -1,0 +1,18 @@
+{
+  "name": "drift",
+  "version": "1.4.0",
+  "description": "Data Science Team \u2014 Drift: ML monitoring \u2014 data drift, concept drift, model degradation, production ML health",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "data-science-team",
+    "drift",
+    "data-science",
+    "ml"
+  ]
+}

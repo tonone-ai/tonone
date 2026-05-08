@@ -1,0 +1,18 @@
+{
+  "name": "cast",
+  "version": "1.4.0",
+  "description": "Data Science Team \u2014 Cast: Time series forecasting \u2014 demand prediction, trend analysis, seasonal decomposition",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "data-science-team",
+    "cast",
+    "data-science",
+    "ml"
+  ]
+}

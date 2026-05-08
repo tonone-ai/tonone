@@ -3947,6 +3947,497 @@
         "copy",
         "design"
       ]
+    },
+    {
+      "name": "data-science-team",
+      "description": "Data Science Team bundle \u2014 10 agents: Cast, Feat, Fit, Score, Drift, Vect, Tune, Plot, Clean, Eval",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/bundle/data-science-team",
+      "tags": [
+        "bundle",
+        "data-science-team",
+        "ml"
+      ]
+    },
+    {
+      "name": "cast",
+      "description": "Forecasting Engineer \u2014 Time series forecasting \u2014 demand prediction, trend analysis, seasonal decomposition",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/cast",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "cast",
+        "ml"
+      ]
+    },
+    {
+      "name": "cast-forecast",
+      "description": "Build a forecasting model for a time series",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/cast/skills/cast-forecast",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "cast",
+        "ml"
+      ]
+    },
+    {
+      "name": "cast-validate",
+      "description": "Validate and benchmark a forecasting model",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/cast/skills/cast-validate",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "cast",
+        "ml"
+      ]
+    },
+    {
+      "name": "cast-recon",
+      "description": "Survey existing forecasting code or models",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/cast/skills/cast-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "cast",
+        "ml"
+      ]
+    },
+    {
+      "name": "feat",
+      "description": "Feature Engineer \u2014 Feature engineering \u2014 transformations, encodings, feature stores, pipeline design",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/feat",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "feat",
+        "ml"
+      ]
+    },
+    {
+      "name": "feat-engineer",
+      "description": "Design a feature engineering pipeline for a ML problem",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/feat/skills/feat-engineer",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "feat",
+        "ml"
+      ]
+    },
+    {
+      "name": "feat-store",
+      "description": "Design or audit a feature store",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/feat/skills/feat-store",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "feat",
+        "ml"
+      ]
+    },
+    {
+      "name": "feat-recon",
+      "description": "Audit feature engineering code for leakage and quality issues",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/feat/skills/feat-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "feat",
+        "ml"
+      ]
+    },
+    {
+      "name": "fit",
+      "description": "Model Training Engineer \u2014 Model training \u2014 algorithm selection, hyperparameter tuning, training infrastructure",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/fit",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "fit",
+        "ml"
+      ]
+    },
+    {
+      "name": "fit-train",
+      "description": "Design a model training pipeline",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/fit/skills/fit-train",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "fit",
+        "ml"
+      ]
+    },
+    {
+      "name": "fit-tune",
+      "description": "Design a hyperparameter tuning strategy",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/fit/skills/fit-tune",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "fit",
+        "ml"
+      ]
+    },
+    {
+      "name": "fit-recon",
+      "description": "Audit existing model training code",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/fit/skills/fit-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "fit",
+        "ml"
+      ]
+    },
+    {
+      "name": "score",
+      "description": "Model Evaluation Engineer \u2014 Model evaluation \u2014 metrics design, statistical significance, model comparison",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/score",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "score",
+        "ml"
+      ]
+    },
+    {
+      "name": "score-eval",
+      "description": "Design an evaluation framework for a ML model",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/score/skills/score-eval",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "score",
+        "ml"
+      ]
+    },
+    {
+      "name": "score-compare",
+      "description": "Compare two or more models statistically",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/score/skills/score-compare",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "score",
+        "ml"
+      ]
+    },
+    {
+      "name": "score-recon",
+      "description": "Audit existing model evaluation code",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/score/skills/score-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "score",
+        "ml"
+      ]
+    },
+    {
+      "name": "drift",
+      "description": "ML Monitoring Engineer \u2014 ML monitoring \u2014 data drift, concept drift, model degradation, production ML health",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/drift",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "drift",
+        "ml"
+      ]
+    },
+    {
+      "name": "drift-monitor",
+      "description": "Design a drift monitoring system for a production ML model",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/drift/skills/drift-monitor",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "drift",
+        "ml"
+      ]
+    },
+    {
+      "name": "drift-alert",
+      "description": "Design drift alerts and escalation",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/drift/skills/drift-alert",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "drift",
+        "ml"
+      ]
+    },
+    {
+      "name": "drift-recon",
+      "description": "Audit existing ML monitoring",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/drift/skills/drift-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "drift",
+        "ml"
+      ]
+    },
+    {
+      "name": "vect",
+      "description": "Embeddings & Vector Search Engineer \u2014 Embeddings and vector search \u2014 semantic search, RAG pipelines, vector database design",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/vect",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "vect",
+        "ml"
+      ]
+    },
+    {
+      "name": "vect-embed",
+      "description": "Design an embedding pipeline",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/vect/skills/vect-embed",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "vect",
+        "ml"
+      ]
+    },
+    {
+      "name": "vect-search",
+      "description": "Design a vector search or RAG system",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/vect/skills/vect-search",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "vect",
+        "ml"
+      ]
+    },
+    {
+      "name": "vect-recon",
+      "description": "Audit existing vector search or RAG implementation",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/vect/skills/vect-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "vect",
+        "ml"
+      ]
+    },
+    {
+      "name": "tune",
+      "description": "LLM Fine-tuning Engineer \u2014 LLM fine-tuning \u2014 PEFT/LoRA, RLHF, instruction tuning, prompt optimization",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/tune",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "tune",
+        "ml"
+      ]
+    },
+    {
+      "name": "tune-finetune",
+      "description": "Design a fine-tuning pipeline",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/tune/skills/tune-finetune",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "tune",
+        "ml"
+      ]
+    },
+    {
+      "name": "tune-prompt",
+      "description": "Systematically optimize prompts for a task",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/tune/skills/tune-prompt",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "tune",
+        "ml"
+      ]
+    },
+    {
+      "name": "tune-recon",
+      "description": "Audit existing fine-tuning or prompt engineering work",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/tune/skills/tune-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "tune",
+        "ml"
+      ]
+    },
+    {
+      "name": "plot",
+      "description": "Data Visualization Engineer \u2014 Data visualization \u2014 chart design, visualization libraries, exploratory analysis",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/plot",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "plot",
+        "ml"
+      ]
+    },
+    {
+      "name": "plot-chart",
+      "description": "Design or critique a data visualization",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/plot/skills/plot-chart",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "plot",
+        "ml"
+      ]
+    },
+    {
+      "name": "plot-eda",
+      "description": "Design an exploratory data analysis workflow",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/plot/skills/plot-eda",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "plot",
+        "ml"
+      ]
+    },
+    {
+      "name": "plot-recon",
+      "description": "Audit existing visualizations in a codebase or notebook",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/plot/skills/plot-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "plot",
+        "ml"
+      ]
+    },
+    {
+      "name": "clean",
+      "description": "Data Quality Engineer \u2014 Data quality \u2014 deduplication, validation, outlier detection, ETL pipeline design",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/clean",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "clean",
+        "ml"
+      ]
+    },
+    {
+      "name": "clean-validate",
+      "description": "Design a data validation pipeline",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/clean/skills/clean-validate",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "clean",
+        "ml"
+      ]
+    },
+    {
+      "name": "clean-transform",
+      "description": "Design a data cleaning and transformation pipeline",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/clean/skills/clean-transform",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "clean",
+        "ml"
+      ]
+    },
+    {
+      "name": "clean-recon",
+      "description": "Audit existing data cleaning code",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/clean/skills/clean-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "clean",
+        "ml"
+      ]
+    },
+    {
+      "name": "eval",
+      "description": "Experiment Design Engineer \u2014 Experiment design \u2014 A/B testing, statistical power, experiment tracking, causal inference",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/eval",
+      "tags": [
+        "agent",
+        "data-science-team",
+        "eval",
+        "ml"
+      ]
+    },
+    {
+      "name": "eval-design",
+      "description": "Design an A/B test",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/eval/skills/eval-design",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "eval",
+        "ml"
+      ]
+    },
+    {
+      "name": "eval-analyze",
+      "description": "Analyze A/B test results",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/eval/skills/eval-analyze",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "eval",
+        "ml"
+      ]
+    },
+    {
+      "name": "eval-recon",
+      "description": "Audit existing experimentation infrastructure",
+      "version": "1.4.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/eval/skills/eval-recon",
+      "tags": [
+        "skill",
+        "data-science-team",
+        "eval",
+        "ml"
+      ]
     }
   ]
 }

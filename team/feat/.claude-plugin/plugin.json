@@ -1,0 +1,18 @@
+{
+  "name": "feat",
+  "version": "1.4.0",
+  "description": "Data Science Team \u2014 Feat: Feature engineering \u2014 transformations, encodings, feature stores, pipeline design",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "data-science-team",
+    "feat",
+    "data-science",
+    "ml"
+  ]
+}
