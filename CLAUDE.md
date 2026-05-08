@@ -1,6 +1,6 @@
-# tonone — Engineering + Product + Operations + Legal + Design + Data Science + Security Operations Team
+# tonone — Engineering + Product + Operations + Legal + Design + Data Science + Security Operations + Developer Experience Team
 
-Seven AI teams. 71 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe.
+Eight AI teams. 81 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe. Developer Experience ensures developers succeed.
 
 ## Engineering Team — 15 agents
 
@@ -108,6 +108,21 @@ Seven AI teams. 71 agents total. Engineering executes. Product decides what to b
 | **Zero** | Zero Trust Architect | Zero trust roadmap, network microsegmentation, ZTNA design |
 | **Phish** | Security Awareness Engineer | Phishing simulations, security training programs, culture metrics |
 
+## Developer Experience Team — 10 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Guide** | API Documentation Engineer | API reference docs, integration guides, SDK documentation |
+| **Sample** | Code Sample Engineer | Working examples, quickstarts, language-specific tutorials |
+| **Mock** | API Mocking & Contract Engineer | Mock servers, consumer-driven contract testing, API simulation |
+| **Schema** | API Schema Engineer | OpenAPI, GraphQL, gRPC schema quality and design standards |
+| **Port** | SDK Design Engineer | Multi-language SDK architecture, idiomatic patterns, consistency |
+| **Change** | Changelog & Release Communication Engineer | Breaking change docs, deprecation notices, migration guides |
+| **Onboard** | Developer Onboarding Engineer | Quickstart design, time-to-first-call optimization |
+| **Bench** | API Performance Engineer | Latency profiling, throughput testing, regression detection |
+| **Compat** | Backwards Compatibility Engineer | Breaking change detection, deprecation management, semver |
+| **Gate** | API Quality Gate Engineer | Linting, style enforcement, breaking change CI, API governance |
+
 ## Helm↔Apex Interface
 
 Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
@@ -117,7 +132,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (71 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science + 10 secops)
+├── agents/                 ← all agent definitions (81 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science + 10 secops + 10 devx)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

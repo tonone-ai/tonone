@@ -4929,6 +4929,497 @@
         "phish",
         "security"
       ]
+    },
+    {
+      "name": "devx-team",
+      "description": "Developer Experience Team bundle \u2014 10 agents: Guide, Sample, Mock, Schema, Port, Change, Onboard, Bench, Compat, Gate",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/bundle/devx-team",
+      "tags": [
+        "bundle",
+        "devx-team",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "guide",
+      "description": "API Documentation Engineer \u2014 API and SDK documentation \u2014 reference docs, guides, and documentation architecture",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/guide",
+      "tags": [
+        "agent",
+        "devx-team",
+        "guide",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "guide-write",
+      "description": "Write API reference documentation for an endpoint or SDK method",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/guide/skills/guide-write",
+      "tags": [
+        "skill",
+        "devx-team",
+        "guide",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "guide-audit",
+      "description": "Audit existing API documentation for completeness and accuracy",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/guide/skills/guide-audit",
+      "tags": [
+        "skill",
+        "devx-team",
+        "guide",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "guide-recon",
+      "description": "Survey documentation coverage across an API or SDK",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/guide/skills/guide-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "guide",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "sample",
+      "description": "Code Sample Engineer \u2014 Code samples and tutorials \u2014 working examples, quickstarts, and language-specific guides",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/sample",
+      "tags": [
+        "agent",
+        "devx-team",
+        "sample",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "sample-write",
+      "description": "Write a working code sample or tutorial for an API feature",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/sample/skills/sample-write",
+      "tags": [
+        "skill",
+        "devx-team",
+        "sample",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "sample-review",
+      "description": "Review existing code samples for correctness and developer experience",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/sample/skills/sample-review",
+      "tags": [
+        "skill",
+        "devx-team",
+        "sample",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "sample-recon",
+      "description": "Survey existing code samples \u2014 coverage, language parity, and freshness",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/sample/skills/sample-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "sample",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "mock",
+      "description": "API Mocking & Contract Engineer \u2014 API mocking \u2014 mock server design, contract testing, API simulation",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/mock",
+      "tags": [
+        "agent",
+        "devx-team",
+        "mock",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "mock-design",
+      "description": "Design a mock server for an API",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/mock/skills/mock-design",
+      "tags": [
+        "skill",
+        "devx-team",
+        "mock",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "mock-contract",
+      "description": "Design a consumer-driven contract testing setup",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/mock/skills/mock-contract",
+      "tags": [
+        "skill",
+        "devx-team",
+        "mock",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "mock-recon",
+      "description": "Audit existing mocks for contract drift and missing error cases",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/mock/skills/mock-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "mock",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "schema",
+      "description": "API Schema Engineer \u2014 API schema design \u2014 OpenAPI, GraphQL, gRPC schema quality and design standards",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/schema",
+      "tags": [
+        "agent",
+        "devx-team",
+        "schema",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "schema-design",
+      "description": "Design an API schema \u2014 OpenAPI, GraphQL, or gRPC proto",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/schema/skills/schema-design",
+      "tags": [
+        "skill",
+        "devx-team",
+        "schema",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "schema-review",
+      "description": "Review an API schema for consistency and completeness",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/schema/skills/schema-review",
+      "tags": [
+        "skill",
+        "devx-team",
+        "schema",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "schema-recon",
+      "description": "Audit existing API schemas for inconsistencies and coverage gaps",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/schema/skills/schema-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "schema",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "port",
+      "description": "SDK Design Engineer \u2014 SDK design \u2014 multi-language SDK architecture, idiomatic patterns, cross-language consistency",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/port",
+      "tags": [
+        "agent",
+        "devx-team",
+        "port",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "port-design",
+      "description": "Design an SDK architecture for an API",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/port/skills/port-design",
+      "tags": [
+        "skill",
+        "devx-team",
+        "port",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "port-review",
+      "description": "Review an existing SDK for idiomatic quality and consistency",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/port/skills/port-review",
+      "tags": [
+        "skill",
+        "devx-team",
+        "port",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "port-recon",
+      "description": "Audit multi-language SDK coverage and consistency",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/port/skills/port-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "port",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "change",
+      "description": "Changelog & Release Communication Engineer \u2014 Changelog and release communication \u2014 breaking change docs, deprecation notices, migration guides",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/change",
+      "tags": [
+        "agent",
+        "devx-team",
+        "change",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "change-write",
+      "description": "Write a changelog entry or release notes for an API version",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/change/skills/change-write",
+      "tags": [
+        "skill",
+        "devx-team",
+        "change",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "change-policy",
+      "description": "Design an API versioning and deprecation policy",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/change/skills/change-policy",
+      "tags": [
+        "skill",
+        "devx-team",
+        "change",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "change-recon",
+      "description": "Audit existing changelog and deprecation practices",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/change/skills/change-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "change",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "onboard",
+      "description": "Developer Onboarding Engineer \u2014 Developer onboarding \u2014 quickstart design, time-to-first-call optimization, onboarding funnel audit",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/onboard",
+      "tags": [
+        "agent",
+        "devx-team",
+        "onboard",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "onboard-quickstart",
+      "description": "Write a developer quickstart \u2014 minimal steps to first successful API call",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/onboard/skills/onboard-quickstart",
+      "tags": [
+        "skill",
+        "devx-team",
+        "onboard",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "onboard-audit",
+      "description": "Audit the developer onboarding experience and measure TTFC",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/onboard/skills/onboard-audit",
+      "tags": [
+        "skill",
+        "devx-team",
+        "onboard",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "onboard-recon",
+      "description": "Survey existing onboarding docs and developer portal",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/onboard/skills/onboard-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "onboard",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "bench",
+      "description": "API Performance Engineer \u2014 API performance benchmarking \u2014 latency profiling, throughput testing, regression detection",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/bench",
+      "tags": [
+        "agent",
+        "devx-team",
+        "bench",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "bench-profile",
+      "description": "Design a performance benchmark for an API",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/bench/skills/bench-profile",
+      "tags": [
+        "skill",
+        "devx-team",
+        "bench",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "bench-compare",
+      "description": "Compare API performance across versions for regression detection",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/bench/skills/bench-compare",
+      "tags": [
+        "skill",
+        "devx-team",
+        "bench",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "bench-recon",
+      "description": "Audit existing performance testing for gaps and stale baselines",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/bench/skills/bench-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "bench",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "compat",
+      "description": "Backwards Compatibility Engineer \u2014 Backwards compatibility \u2014 breaking change detection, deprecation management, semver discipline",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/compat",
+      "tags": [
+        "agent",
+        "devx-team",
+        "compat",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "compat-audit",
+      "description": "Audit a proposed API change for breaking changes",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/compat/skills/compat-audit",
+      "tags": [
+        "skill",
+        "devx-team",
+        "compat",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "compat-policy",
+      "description": "Design an API compatibility and deprecation policy",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/compat/skills/compat-policy",
+      "tags": [
+        "skill",
+        "devx-team",
+        "compat",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "compat-recon",
+      "description": "Audit existing API for breaking change risks and missing controls",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/compat/skills/compat-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "compat",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "gate",
+      "description": "API Quality Gate Engineer \u2014 API quality gates \u2014 linting, style enforcement, breaking change CI, and API governance",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/gate",
+      "tags": [
+        "agent",
+        "devx-team",
+        "gate",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "gate-lint",
+      "description": "Design an API linting ruleset with style rules and severity levels",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/gate/skills/gate-lint",
+      "tags": [
+        "skill",
+        "devx-team",
+        "gate",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "gate-ci",
+      "description": "Integrate API quality gates into CI",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/gate/skills/gate-ci",
+      "tags": [
+        "skill",
+        "devx-team",
+        "gate",
+        "developer-experience"
+      ]
+    },
+    {
+      "name": "gate-recon",
+      "description": "Audit existing API quality controls and CI gates",
+      "version": "1.6.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/gate/skills/gate-recon",
+      "tags": [
+        "skill",
+        "devx-team",
+        "gate",
+        "developer-experience"
+      ]
     }
   ]
 }
