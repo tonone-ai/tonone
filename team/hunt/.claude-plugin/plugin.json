@@ -1,0 +1,18 @@
+{
+  "name": "hunt",
+  "version": "1.5.0",
+  "description": "Security Operations Team \u2014 Hunt: Threat hunting \u2014 hypothesis-driven hunting, compromise assessment, IOC analysis",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "secops-team",
+    "hunt",
+    "security",
+    "secops"
+  ]
+}

@@ -4438,6 +4438,497 @@
         "eval",
         "ml"
       ]
+    },
+    {
+      "name": "secops-team",
+      "description": "Security Operations Team bundle \u2014 10 agents: Red, Blue, Hunt, Patch, Chain, Sast, Siem, Resp, Zero, Phish",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/bundle/secops-team",
+      "tags": [
+        "bundle",
+        "secops-team",
+        "security"
+      ]
+    },
+    {
+      "name": "red",
+      "description": "Offensive Security Engineer \u2014 Red team operations \u2014 penetration testing, attack simulation, vulnerability exploitation",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/red",
+      "tags": [
+        "agent",
+        "secops-team",
+        "red",
+        "security"
+      ]
+    },
+    {
+      "name": "red-pentest",
+      "description": "Design a penetration testing plan \u2014 scope, methodology, and rules of engagement",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/red/skills/red-pentest",
+      "tags": [
+        "skill",
+        "secops-team",
+        "red",
+        "security"
+      ]
+    },
+    {
+      "name": "red-report",
+      "description": "Write a penetration test finding report with CVSS scores and remediation",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/red/skills/red-report",
+      "tags": [
+        "skill",
+        "secops-team",
+        "red",
+        "security"
+      ]
+    },
+    {
+      "name": "red-recon",
+      "description": "Design a reconnaissance plan \u2014 OSINT and attack surface mapping",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/red/skills/red-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "red",
+        "security"
+      ]
+    },
+    {
+      "name": "blue",
+      "description": "Defensive Security Engineer \u2014 Blue team operations \u2014 SOC design, detection engineering, hardening playbooks",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/blue",
+      "tags": [
+        "agent",
+        "secops-team",
+        "blue",
+        "security"
+      ]
+    },
+    {
+      "name": "blue-detect",
+      "description": "Design detection rules for a threat \u2014 SIEM queries and MITRE ATT&CK mapping",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/blue/skills/blue-detect",
+      "tags": [
+        "skill",
+        "secops-team",
+        "blue",
+        "security"
+      ]
+    },
+    {
+      "name": "blue-harden",
+      "description": "Write a hardening playbook \u2014 CIS benchmark mapping and implementation steps",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/blue/skills/blue-harden",
+      "tags": [
+        "skill",
+        "secops-team",
+        "blue",
+        "security"
+      ]
+    },
+    {
+      "name": "blue-recon",
+      "description": "Audit existing security controls and detection coverage",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/blue/skills/blue-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "blue",
+        "security"
+      ]
+    },
+    {
+      "name": "hunt",
+      "description": "Threat Hunter \u2014 Threat hunting \u2014 hypothesis-driven hunting, compromise assessment, IOC analysis",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/hunt",
+      "tags": [
+        "agent",
+        "secops-team",
+        "hunt",
+        "security"
+      ]
+    },
+    {
+      "name": "hunt-assess",
+      "description": "Design a compromise assessment \u2014 hunting scope and evidence collection",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/hunt/skills/hunt-assess",
+      "tags": [
+        "skill",
+        "secops-team",
+        "hunt",
+        "security"
+      ]
+    },
+    {
+      "name": "hunt-ioc",
+      "description": "Analyze indicators of compromise \u2014 enrichment and attribution",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/hunt/skills/hunt-ioc",
+      "tags": [
+        "skill",
+        "secops-team",
+        "hunt",
+        "security"
+      ]
+    },
+    {
+      "name": "hunt-recon",
+      "description": "Design a threat hunting program \u2014 maturity assessment and playbook library",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/hunt/skills/hunt-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "hunt",
+        "security"
+      ]
+    },
+    {
+      "name": "patch",
+      "description": "Vulnerability Management Engineer \u2014 Vulnerability management \u2014 CVE triage, CVSS prioritization, patching cadence, SLA design",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/patch",
+      "tags": [
+        "agent",
+        "secops-team",
+        "patch",
+        "security"
+      ]
+    },
+    {
+      "name": "patch-triage",
+      "description": "Triage CVEs \u2014 CVSS + EPSS + KEV scoring and prioritization",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/patch/skills/patch-triage",
+      "tags": [
+        "skill",
+        "secops-team",
+        "patch",
+        "security"
+      ]
+    },
+    {
+      "name": "patch-plan",
+      "description": "Design a vulnerability management program \u2014 SLAs and asset tiers",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/patch/skills/patch-plan",
+      "tags": [
+        "skill",
+        "secops-team",
+        "patch",
+        "security"
+      ]
+    },
+    {
+      "name": "patch-recon",
+      "description": "Audit existing vulnerability management for SLA gaps",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/patch/skills/patch-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "patch",
+        "security"
+      ]
+    },
+    {
+      "name": "chain",
+      "description": "Supply Chain Security Engineer \u2014 Supply chain security \u2014 SBOM generation, dependency scanning, third-party risk, license compliance",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/chain",
+      "tags": [
+        "agent",
+        "secops-team",
+        "chain",
+        "security"
+      ]
+    },
+    {
+      "name": "chain-sbom",
+      "description": "Design an SBOM generation pipeline for CI/CD",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/chain/skills/chain-sbom",
+      "tags": [
+        "skill",
+        "secops-team",
+        "chain",
+        "security"
+      ]
+    },
+    {
+      "name": "chain-scan",
+      "description": "Design a dependency scanning program \u2014 CVE detection and license checks",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/chain/skills/chain-scan",
+      "tags": [
+        "skill",
+        "secops-team",
+        "chain",
+        "security"
+      ]
+    },
+    {
+      "name": "chain-recon",
+      "description": "Audit existing dependency security and supply chain gaps",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/chain/skills/chain-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "chain",
+        "security"
+      ]
+    },
+    {
+      "name": "sast",
+      "description": "Application Security Engineer \u2014 Application security \u2014 SAST/DAST scanning, code security review, secure SDLC design",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/sast",
+      "tags": [
+        "agent",
+        "secops-team",
+        "sast",
+        "security"
+      ]
+    },
+    {
+      "name": "sast-scan",
+      "description": "Design a SAST/DAST scanning pipeline \u2014 tooling and CI integration",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/sast/skills/sast-scan",
+      "tags": [
+        "skill",
+        "secops-team",
+        "sast",
+        "security"
+      ]
+    },
+    {
+      "name": "sast-fix",
+      "description": "Analyze and fix a SAST finding with secure code alternative",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/sast/skills/sast-fix",
+      "tags": [
+        "skill",
+        "secops-team",
+        "sast",
+        "security"
+      ]
+    },
+    {
+      "name": "sast-recon",
+      "description": "Audit application security tooling for OWASP Top 10 coverage",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/sast/skills/sast-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "sast",
+        "security"
+      ]
+    },
+    {
+      "name": "siem",
+      "description": "Detection & SIEM Engineer \u2014 SIEM engineering \u2014 log pipeline design, detection rule development, alert tuning",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/siem",
+      "tags": [
+        "agent",
+        "secops-team",
+        "siem",
+        "security"
+      ]
+    },
+    {
+      "name": "siem-rule",
+      "description": "Write SIEM detection rules in SIGMA format with MITRE mapping",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/siem/skills/siem-rule",
+      "tags": [
+        "skill",
+        "secops-team",
+        "siem",
+        "security"
+      ]
+    },
+    {
+      "name": "siem-alert",
+      "description": "Tune a SIEM alert to reduce false positives",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/siem/skills/siem-alert",
+      "tags": [
+        "skill",
+        "secops-team",
+        "siem",
+        "security"
+      ]
+    },
+    {
+      "name": "siem-recon",
+      "description": "Audit existing SIEM deployment \u2014 log coverage and rule quality",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/siem/skills/siem-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "siem",
+        "security"
+      ]
+    },
+    {
+      "name": "resp",
+      "description": "Incident Response Engineer \u2014 Incident response \u2014 playbook design, containment procedures, DFIR, post-incident review",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/resp",
+      "tags": [
+        "agent",
+        "secops-team",
+        "resp",
+        "security"
+      ]
+    },
+    {
+      "name": "resp-playbook",
+      "description": "Write an incident response playbook for a threat scenario",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/resp/skills/resp-playbook",
+      "tags": [
+        "skill",
+        "secops-team",
+        "resp",
+        "security"
+      ]
+    },
+    {
+      "name": "resp-contain",
+      "description": "Design containment procedures for an active incident",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/resp/skills/resp-contain",
+      "tags": [
+        "skill",
+        "secops-team",
+        "resp",
+        "security"
+      ]
+    },
+    {
+      "name": "resp-recon",
+      "description": "Audit existing incident response capability and playbook coverage",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/resp/skills/resp-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "resp",
+        "security"
+      ]
+    },
+    {
+      "name": "zero",
+      "description": "Zero Trust Architect \u2014 Zero trust architecture \u2014 network segmentation, identity-based access, microsegmentation design",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/zero",
+      "tags": [
+        "agent",
+        "secops-team",
+        "zero",
+        "security"
+      ]
+    },
+    {
+      "name": "zero-design",
+      "description": "Design a zero trust architecture \u2014 phased roadmap and segmentation",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/zero/skills/zero-design",
+      "tags": [
+        "skill",
+        "secops-team",
+        "zero",
+        "security"
+      ]
+    },
+    {
+      "name": "zero-audit",
+      "description": "Audit an environment against zero trust principles",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/zero/skills/zero-audit",
+      "tags": [
+        "skill",
+        "secops-team",
+        "zero",
+        "security"
+      ]
+    },
+    {
+      "name": "zero-recon",
+      "description": "Survey network and identity controls for zero trust readiness",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/zero/skills/zero-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "zero",
+        "security"
+      ]
+    },
+    {
+      "name": "phish",
+      "description": "Security Awareness Engineer \u2014 Security awareness \u2014 phishing simulation design, security training programs, social engineering assessment",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/phish",
+      "tags": [
+        "agent",
+        "secops-team",
+        "phish",
+        "security"
+      ]
+    },
+    {
+      "name": "phish-assess",
+      "description": "Design a phishing simulation program \u2014 scenarios and measurement",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/phish/skills/phish-assess",
+      "tags": [
+        "skill",
+        "secops-team",
+        "phish",
+        "security"
+      ]
+    },
+    {
+      "name": "phish-train",
+      "description": "Design a security awareness training curriculum",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/phish/skills/phish-train",
+      "tags": [
+        "skill",
+        "secops-team",
+        "phish",
+        "security"
+      ]
+    },
+    {
+      "name": "phish-recon",
+      "description": "Audit existing security awareness program \u2014 coverage and effectiveness",
+      "version": "1.5.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/phish/skills/phish-recon",
+      "tags": [
+        "skill",
+        "secops-team",
+        "phish",
+        "security"
+      ]
     }
   ]
 }
