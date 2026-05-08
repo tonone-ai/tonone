@@ -1,6 +1,6 @@
-# tonone — Engineering + Product + Operations + Legal Team
+# tonone — Engineering + Product + Operations + Legal + Design Team
 
-Four AI teams. 41 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move.
+Five AI teams. 51 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible.
 
 ## Engineering Team — 15 agents
 
@@ -63,6 +63,21 @@ Four AI teams. 41 agents total. Engineering executes. Product decides what to bu
 | **Lodge** | Regulatory Filing Advisor | DMCA, FTC disclosures, GDPR DPAs, government filings, state registrations |
 | **Terms** | Privacy & ToS Drafter | GDPR-compliant privacy policies, ToS, cookie policies, DPAs |
 
+## Design Team — 10 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Hue** | Color Systems Designer | Color palettes, semantic tokens, dark/light mode, WCAG contrast |
+| **Grid** | Layout Systems Designer | Spacing systems, responsive grids, breakpoints, layout primitives |
+| **Glyph** | Typography Designer | Font selection, type scale, hierarchy, readability tokens |
+| **Move** | Motion Designer | Animation systems, transitions, micro-interactions, motion tokens |
+| **Wire** | Prototyping Engineer | Interactive prototypes, flow documentation, design handoff specs |
+| **Mark** | Brand Designer | Logo usage, brand guidelines, visual identity, asset library |
+| **Cut** | Illustration & Icon Designer | Custom illustrations, icon systems, SVG optimization |
+| **Axe** | Accessibility Engineer | WCAG audits, keyboard navigation, screen reader testing, ARIA |
+| **Tone** | Design Token Engineer | Token architecture, multi-brand theming, style-dictionary pipelines |
+| **Copy** | Content Designer | UX writing, microcopy, error messages, onboarding copy, UI content strategy |
+
 ## Helm↔Apex Interface
 
 Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
@@ -72,7 +87,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (41 total: 15 engineering + 12 product + 4 operations + 10 legal)
+├── agents/                 ← all agent definitions (51 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

@@ -1,0 +1,17 @@
+{
+  "name": "tone",
+  "version": "1.3.0",
+  "description": "Design Team \u2014 Tone: Design token engineering \u2014 token architecture, theming systems, style-dictionary pipelines",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "design-team",
+    "tone",
+    "design"
+  ]
+}

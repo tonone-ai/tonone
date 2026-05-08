@@ -3456,6 +3456,497 @@
         "terms",
         "terms-recon"
       ]
+    },
+    {
+      "name": "design-team",
+      "description": "Design Team bundle \u2014 10 agents: Hue, Grid, Glyph, Move, Wire, Mark, Cut, Axe, Tone, Copy",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/bundle/design-team",
+      "tags": [
+        "bundle",
+        "design-team",
+        "design"
+      ]
+    },
+    {
+      "name": "hue",
+      "description": "Color Systems Designer \u2014 Color palette design \u2014 semantic tokens, dark/light mode, WCAG contrast",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/hue",
+      "tags": [
+        "agent",
+        "design-team",
+        "hue",
+        "design"
+      ]
+    },
+    {
+      "name": "hue-palette",
+      "description": "Design a color palette with semantic tokens for a brand or product",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/hue/skills/hue-palette",
+      "tags": [
+        "skill",
+        "design-team",
+        "hue",
+        "design"
+      ]
+    },
+    {
+      "name": "hue-token",
+      "description": "Audit or refactor a design token system for color",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/hue/skills/hue-token",
+      "tags": [
+        "skill",
+        "design-team",
+        "hue",
+        "design"
+      ]
+    },
+    {
+      "name": "hue-recon",
+      "description": "Audit existing color usage in a codebase",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/hue/skills/hue-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "hue",
+        "design"
+      ]
+    },
+    {
+      "name": "grid",
+      "description": "Layout Systems Designer \u2014 Layout system design \u2014 spacing scales, responsive grids, layout primitives",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/grid",
+      "tags": [
+        "agent",
+        "design-team",
+        "grid",
+        "design"
+      ]
+    },
+    {
+      "name": "grid-layout",
+      "description": "Design a layout system \u2014 spacing scale, grid columns, and layout primitives",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/grid/skills/grid-layout",
+      "tags": [
+        "skill",
+        "design-team",
+        "grid",
+        "design"
+      ]
+    },
+    {
+      "name": "grid-responsive",
+      "description": "Audit or redesign responsive behavior of a layout",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/grid/skills/grid-responsive",
+      "tags": [
+        "skill",
+        "design-team",
+        "grid",
+        "design"
+      ]
+    },
+    {
+      "name": "grid-recon",
+      "description": "Audit existing layout patterns in a codebase",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/grid/skills/grid-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "grid",
+        "design"
+      ]
+    },
+    {
+      "name": "glyph",
+      "description": "Typography Designer \u2014 Typography system design \u2014 font pairing, type scale, hierarchy tokens",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/glyph",
+      "tags": [
+        "agent",
+        "design-team",
+        "glyph",
+        "design"
+      ]
+    },
+    {
+      "name": "glyph-pair",
+      "description": "Select and pair fonts for a product",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/glyph/skills/glyph-pair",
+      "tags": [
+        "skill",
+        "design-team",
+        "glyph",
+        "design"
+      ]
+    },
+    {
+      "name": "glyph-scale",
+      "description": "Design a type scale and hierarchy",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/glyph/skills/glyph-scale",
+      "tags": [
+        "skill",
+        "design-team",
+        "glyph",
+        "design"
+      ]
+    },
+    {
+      "name": "glyph-recon",
+      "description": "Audit existing typography in a codebase",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/glyph/skills/glyph-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "glyph",
+        "design"
+      ]
+    },
+    {
+      "name": "move",
+      "description": "Motion Designer \u2014 Motion design \u2014 animation principles, transition systems, micro-interaction specs",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/move",
+      "tags": [
+        "agent",
+        "design-team",
+        "move",
+        "design"
+      ]
+    },
+    {
+      "name": "move-animate",
+      "description": "Design an animation spec for a component or interaction",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/move/skills/move-animate",
+      "tags": [
+        "skill",
+        "design-team",
+        "move",
+        "design"
+      ]
+    },
+    {
+      "name": "move-system",
+      "description": "Design a motion system for a product",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/move/skills/move-system",
+      "tags": [
+        "skill",
+        "design-team",
+        "move",
+        "design"
+      ]
+    },
+    {
+      "name": "move-recon",
+      "description": "Audit existing animations in a codebase",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/move/skills/move-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "move",
+        "design"
+      ]
+    },
+    {
+      "name": "wire",
+      "description": "Prototyping Engineer \u2014 Prototyping and handoff \u2014 interactive flow docs, component specs, developer handoff",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/wire",
+      "tags": [
+        "agent",
+        "design-team",
+        "wire",
+        "design"
+      ]
+    },
+    {
+      "name": "wire-prototype",
+      "description": "Document a prototype or user flow",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/wire/skills/wire-prototype",
+      "tags": [
+        "skill",
+        "design-team",
+        "wire",
+        "design"
+      ]
+    },
+    {
+      "name": "wire-spec",
+      "description": "Write a developer handoff spec for a component or feature",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/wire/skills/wire-spec",
+      "tags": [
+        "skill",
+        "design-team",
+        "wire",
+        "design"
+      ]
+    },
+    {
+      "name": "wire-recon",
+      "description": "Audit existing design documentation",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/wire/skills/wire-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "wire",
+        "design"
+      ]
+    },
+    {
+      "name": "mark",
+      "description": "Brand Designer \u2014 Brand identity design \u2014 logo usage rules, brand guidelines, visual identity systems",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/mark",
+      "tags": [
+        "agent",
+        "design-team",
+        "mark",
+        "design"
+      ]
+    },
+    {
+      "name": "mark-brand",
+      "description": "Write brand guidelines \u2014 logo usage, color, typography, voice",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/mark/skills/mark-brand",
+      "tags": [
+        "skill",
+        "design-team",
+        "mark",
+        "design"
+      ]
+    },
+    {
+      "name": "mark-asset",
+      "description": "Design an asset library structure \u2014 naming, formats, delivery specs",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/mark/skills/mark-asset",
+      "tags": [
+        "skill",
+        "design-team",
+        "mark",
+        "design"
+      ]
+    },
+    {
+      "name": "mark-recon",
+      "description": "Audit existing brand assets and usage",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/mark/skills/mark-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "mark",
+        "design"
+      ]
+    },
+    {
+      "name": "cut",
+      "description": "Illustration & Icon Designer \u2014 Illustration and icon design \u2014 custom assets, icon systems, SVG optimization",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/cut",
+      "tags": [
+        "agent",
+        "design-team",
+        "cut",
+        "design"
+      ]
+    },
+    {
+      "name": "cut-icon",
+      "description": "Design an icon system spec or audit existing icons",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/cut/skills/cut-icon",
+      "tags": [
+        "skill",
+        "design-team",
+        "cut",
+        "design"
+      ]
+    },
+    {
+      "name": "cut-illustrate",
+      "description": "Spec or critique custom illustrations",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/cut/skills/cut-illustrate",
+      "tags": [
+        "skill",
+        "design-team",
+        "cut",
+        "design"
+      ]
+    },
+    {
+      "name": "cut-recon",
+      "description": "Audit existing icons and illustrations in a codebase",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/cut/skills/cut-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "cut",
+        "design"
+      ]
+    },
+    {
+      "name": "axe",
+      "description": "Accessibility Engineer \u2014 Accessibility engineering \u2014 WCAG audits, keyboard nav, screen reader testing, ARIA",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/axe",
+      "tags": [
+        "agent",
+        "design-team",
+        "axe",
+        "design"
+      ]
+    },
+    {
+      "name": "axe-audit",
+      "description": "Run a WCAG accessibility audit",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/axe/skills/axe-audit",
+      "tags": [
+        "skill",
+        "design-team",
+        "axe",
+        "design"
+      ]
+    },
+    {
+      "name": "axe-fix",
+      "description": "Write accessibility fixes for specific WCAG failures",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/axe/skills/axe-fix",
+      "tags": [
+        "skill",
+        "design-team",
+        "axe",
+        "design"
+      ]
+    },
+    {
+      "name": "axe-recon",
+      "description": "Survey a codebase for accessibility debt",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/axe/skills/axe-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "axe",
+        "design"
+      ]
+    },
+    {
+      "name": "tone",
+      "description": "Design Token Engineer \u2014 Design token engineering \u2014 token architecture, theming systems, style-dictionary pipelines",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/tone",
+      "tags": [
+        "agent",
+        "design-team",
+        "tone",
+        "design"
+      ]
+    },
+    {
+      "name": "tone-token",
+      "description": "Design or refactor a design token architecture",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/tone/skills/tone-token",
+      "tags": [
+        "skill",
+        "design-team",
+        "tone",
+        "design"
+      ]
+    },
+    {
+      "name": "tone-theme",
+      "description": "Build or fix a theming system",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/tone/skills/tone-theme",
+      "tags": [
+        "skill",
+        "design-team",
+        "tone",
+        "design"
+      ]
+    },
+    {
+      "name": "tone-recon",
+      "description": "Audit existing token usage in a codebase",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/tone/skills/tone-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "tone",
+        "design"
+      ]
+    },
+    {
+      "name": "copy",
+      "description": "Content Designer \u2014 UX writing and content design \u2014 microcopy, error messages, onboarding, UI content strategy",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/copy",
+      "tags": [
+        "agent",
+        "design-team",
+        "copy",
+        "design"
+      ]
+    },
+    {
+      "name": "copy-write",
+      "description": "Write UX copy for a feature, flow, or component",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/copy/skills/copy-write",
+      "tags": [
+        "skill",
+        "design-team",
+        "copy",
+        "design"
+      ]
+    },
+    {
+      "name": "copy-audit",
+      "description": "Audit UX copy in a product or codebase",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/copy/skills/copy-audit",
+      "tags": [
+        "skill",
+        "design-team",
+        "copy",
+        "design"
+      ]
+    },
+    {
+      "name": "copy-recon",
+      "description": "Survey all user-facing strings in a codebase",
+      "version": "1.3.0",
+      "source": "https://github.com/tonone-ai/tonone/tree/main/team/copy/skills/copy-recon",
+      "tags": [
+        "skill",
+        "design-team",
+        "copy",
+        "design"
+      ]
     }
   ]
 }

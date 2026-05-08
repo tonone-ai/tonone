@@ -1,0 +1,17 @@
+{
+  "name": "axe",
+  "version": "1.3.0",
+  "description": "Design Team \u2014 Axe: Accessibility engineering \u2014 WCAG audits, keyboard nav, screen reader testing, ARIA",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "design-team",
+    "axe",
+    "design"
+  ]
+}
