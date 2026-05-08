@@ -1,0 +1,37 @@
+{
+  "name": "evals",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Evals: Eval harness design, benchmark suites, automated regression, and human eval pipeline orchestration.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Evals",
+      "path": "agents/evals.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "eval-harness",
+      "path": "skills/eval-harness/SKILL.md"
+    },
+    {
+      "name": "eval-regress",
+      "path": "skills/eval-regress/SKILL.md"
+    },
+    {
+      "name": "eval-recon",
+      "path": "skills/eval-recon/SKILL.md"
+    }
+  ]
+}

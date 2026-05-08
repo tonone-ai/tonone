@@ -1,0 +1,37 @@
+{
+  "name": "guard",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Guard: Input/output safety filters, PII detection, content moderation, and AI policy enforcement at runtime.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Guard",
+      "path": "agents/guard.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "guard-design",
+      "path": "skills/guard-design/SKILL.md"
+    },
+    {
+      "name": "guard-audit",
+      "path": "skills/guard-audit/SKILL.md"
+    },
+    {
+      "name": "guard-recon",
+      "path": "skills/guard-recon/SKILL.md"
+    }
+  ]
+}

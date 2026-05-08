@@ -1,0 +1,37 @@
+{
+  "name": "deploy",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Deploy: Model serving, inference APIs, blue/green deploys, rollback, and canary releases for production ML.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Deploy",
+      "path": "agents/deploy.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "deploy-serve",
+      "path": "skills/deploy-serve/SKILL.md"
+    },
+    {
+      "name": "deploy-canary",
+      "path": "skills/deploy-canary/SKILL.md"
+    },
+    {
+      "name": "deploy-recon",
+      "path": "skills/deploy-recon/SKILL.md"
+    }
+  ]
+}

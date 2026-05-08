@@ -1,6 +1,6 @@
-# tonone — Engineering + Product + Operations + Legal + Design + Data Science + Security Operations + Developer Experience + Infrastructure Specialist Team
+# tonone — Engineering + Product + Operations + Legal + Design + Data Science + Security Operations + Developer Experience + Infrastructure Specialist + AI Operations Team
 
-Nine AI teams. 91 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe. Developer Experience ensures developers succeed. Infrastructure Specialist runs the cloud.
+Ten AI teams. 100 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe. Developer Experience ensures developers succeed. Infrastructure Specialist runs the cloud. AI Operations ships models to production.
 
 ## Engineering Team — 15 agents
 
@@ -138,6 +138,20 @@ Nine AI teams. 91 agents total. Engineering executes. Product decides what to bu
 | **Multi** | Multi-Cloud Engineer | Cross-cloud architecture, vendor portability, cloud-agnostic patterns |
 | **Chaos** | Chaos Engineering Lead | Failure injection, game days, resilience testing, blast radius control |
 
+## AI Operations Team — 9 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
+| **Deploy** | AI Deployment Engineer | Model serving, inference APIs, blue/green deploys, rollback, canary releases |
+| **Evals** | LLM Evaluation Engineer | Eval harness design, benchmark suites, automated regression, human eval pipelines |
+| **Trace** | LLM Observability Engineer | LLM tracing, span capture, prompt/completion logging, cost attribution, debugging |
+| **Guard** | AI Guardrails Engineer | Input/output safety filters, PII detection, content moderation, policy enforcement |
+| **Budget** | AI Cost Engineer | LLM spend tracking, model cost optimization, budget alerts, token efficiency audits |
+| **Token** | Token Management Engineer | Context window optimization, token counting, truncation strategies, chunking patterns |
+| **Prompt** | Prompt Engineer | System prompt design, few-shot libraries, chain-of-thought patterns, prompt versioning |
+| **Embed** | Embeddings Engineer | Embedding model selection, vector pipeline design, similarity search, index management |
+| **Rank** | AI Ranking Engineer | Retrieval reranking, relevance scoring, learning-to-rank, result quality evaluation |
+
 ## Helm↔Apex Interface
 
 Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md` → `## Helm Handoff` for the full contract.
@@ -147,7 +161,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (91 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science + 10 secops + 10 devx + 10 infra-specialist)
+├── agents/                 ← all agent definitions (100 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science + 10 secops + 10 devx + 10 infra-specialist + 9 ai-ops)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

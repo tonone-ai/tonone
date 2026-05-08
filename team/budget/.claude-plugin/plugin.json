@@ -1,0 +1,37 @@
+{
+  "name": "budget",
+  "version": "1.8.0",
+  "description": "AI Operations Team \u2014 Budget: LLM spend tracking, model cost optimization, budget alerts, and token efficiency audits across AI workloads.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "ai-ops-team",
+    "ai-ops",
+    "llm"
+  ],
+  "agents": [
+    {
+      "name": "Budget",
+      "path": "agents/budget.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "budget-audit",
+      "path": "skills/budget-audit/SKILL.md"
+    },
+    {
+      "name": "budget-optimize",
+      "path": "skills/budget-optimize/SKILL.md"
+    },
+    {
+      "name": "budget-recon",
+      "path": "skills/budget-recon/SKILL.md"
+    }
+  ]
+}
