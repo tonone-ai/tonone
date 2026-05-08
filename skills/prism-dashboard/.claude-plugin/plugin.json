@@ -1,6 +1,6 @@
 {
   "name": "prism-dashboard",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Build an internal dashboard with data tables, filters, detail views, and CRUD. Use when asked to build an \"admin panel\", \"internal dashboard\", \"back office\", or \"data dashboard UI\".",
   "author": {
     "name": "tonone-ai",

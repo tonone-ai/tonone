@@ -1,6 +1,6 @@
 [project]
 name = "folk"
-version = "1.1.0"
+version = "1.2.0"
 description = "People agent -- org design, hiring, compensation, onboarding, performance, migration"
 license = "MIT"
 requires-python = ">=3.10"

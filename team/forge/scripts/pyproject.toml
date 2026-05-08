@@ -1,6 +1,6 @@
 [project]
 name = "forge"
-version = "1.1.0"
+version = "1.2.0"
 description = "Infrastructure engineer — cloud services, networking, IaC, cost optimization"
 license = "MIT"
 requires-python = ">=3.10"

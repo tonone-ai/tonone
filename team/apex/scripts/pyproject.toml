@@ -1,6 +1,6 @@
 [project]
 name = "apex"
-version = "1.1.0"
+version = "1.2.0"
 description = "Engineering lead — orchestrates the team, scopes work, controls depth and budget"
 license = "MIT"
 requires-python = ">=3.10"

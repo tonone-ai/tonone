@@ -1,6 +1,6 @@
 {
   "name": "volt-driver",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Build a device driver or protocol handler \u2014 I2C sensors, BLE services, MQTT clients, SPI peripherals with interrupt-driven I/O and clean HAL abstraction. Use when asked to \"write a driver\", \"I2C device\", \"BLE service\", \"MQTT client\", or \"sensor integration\".",
   "author": {
     "name": "tonone-ai",

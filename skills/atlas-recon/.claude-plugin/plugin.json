@@ -1,6 +1,6 @@
 {
   "name": "atlas-recon",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Documentation reconnaissance for takeover \u2014 find all docs, assess accuracy, freshness, coverage, and discoverability, and identify critical knowledge gaps. Use when asked \"what docs exist\", \"documentation assessment\", or \"knowledge gaps\".",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 {
   "name": "warden-audit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Full security audit \u2014 secrets, dependencies, IAM, auth, injection, XSS, HTTPS, rate limiting, public storage. Use when asked for \"security audit\", \"check for vulnerabilities\", \"security review\", or \"are we secure\".",
   "author": {
     "name": "tonone-ai",

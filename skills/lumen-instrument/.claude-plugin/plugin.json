@@ -1,6 +1,6 @@
 {
   "name": "lumen-instrument",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Instrumentation plan \u2014 design event taxonomy, property schema, and tracking plan for analytics tools. Use when asked to \"what should we track\", \"instrumentation plan\", \"set up analytics events\", \"analytics event schema\", \"tracking plan\", or \"instrument this feature\".",
   "author": {
     "name": "tonone-ai",

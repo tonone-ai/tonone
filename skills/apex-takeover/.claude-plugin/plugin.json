@@ -1,6 +1,6 @@
 {
   "name": "apex-takeover",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "System takeover \u2014 take ownership of an existing codebase or inherited system. Use when \"we acquired this\", \"previous team left\", \"take over this system\", \"inherited this codebase\".",
   "author": {
     "name": "tonone-ai",

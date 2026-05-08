@@ -1,6 +1,6 @@
 {
   "name": "flux-migrate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Build zero-downtime database migrations \u2014 forward SQL, rollback SQL, deployment sequence. Use when asked to \"write migration\", \"schema change\", \"add column\", \"rename table\", \"drop column\", or \"migrate safely\".",
   "author": {
     "name": "tonone-ai",

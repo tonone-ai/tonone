@@ -1,6 +1,6 @@
 {
   "name": "lens-audit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Review existing analytics \u2014 find all dashboards and reports, check who uses them, whether metrics are defined, and whether they drive decisions. Recommend what to keep, kill, or add. Use when asked \"are our dashboards useful\", \"analytics review\", or \"metrics audit\".",
   "author": {
     "name": "tonone-ai",

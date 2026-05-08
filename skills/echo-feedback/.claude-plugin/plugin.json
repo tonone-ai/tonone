@@ -1,6 +1,6 @@
 {
   "name": "echo-feedback",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Feedback synthesis \u2014 cluster support tickets, NPS verbatims, app store reviews, and churn surveys by theme, separate signal from noise, and produce an actionable insight report. Use when asked to \"synthesize this feedback\", \"analyze support tickets\", \"what are users complaining about\", \"NPS analysis\", \"churn feedback synthesis\", or \"what's the feedback telling us\".",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 {
   "name": "form-brief",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Translate a design brief (I-Lang or natural language) into a concrete DESIGN.md and HTML token preview \u2014 resolves palette, typography, mood, density, and constraints to specific CSS tokens.",
   "author": {
     "name": "tonone-ai",

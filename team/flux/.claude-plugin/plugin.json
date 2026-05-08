@@ -1,6 +1,6 @@
 {
   "name": "flux",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Data engineer \u2014 databases, migrations, pipelines, data modeling",
   "author": {
     "name": "tonone-ai",

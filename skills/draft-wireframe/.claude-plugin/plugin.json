@@ -1,6 +1,6 @@
 {
   "name": "draft-wireframe",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Wireframe a screen \u2014 ASCII/text by default, or hand-drawn HTML when the user says sketch/whiteboard/graph-paper. Text mode: buildable spec for Form and Prism. HTML mode: self-contained file with graph-paper background, marker headlines, sticky notes, hatched chart placeholders.",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 {
   "name": "touch-feature",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Produce a mobile feature spec \u2014 user story, technical approach, component breakdown, platform-specific considerations, edge cases. Use when asked to \"add a screen\", \"spec this feature\", \"mobile feature\", \"new tab\", \"push notifications\", or \"deep link\".",
   "author": {
     "name": "tonone-ai",

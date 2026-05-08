@@ -1,6 +1,6 @@
 {
   "name": "vigil-incident",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Incident response \u2014 diagnose production issues, find root cause, propose fix with rollback. Use when asked about \"something is broken\", \"production issue\", \"why is this down\", \"incident\", or \"debug production\".",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 {
   "name": "spine-review",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "API and backend code review \u2014 REST conventions, auth, validation, error handling, pagination, rate limiting, test coverage. Use when asked to \"review this API\", \"code review\", \"review backend\", or \"pre-launch backend check\".",
   "author": {
     "name": "tonone-ai",

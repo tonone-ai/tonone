@@ -1,6 +1,6 @@
 {
   "name": "relay-docker",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Build production-ready Dockerfiles with multi-stage builds, security hardening, and docker-compose for local dev. Use when asked to \"create Dockerfile\", \"optimize container\", or \"dockerize this\".",
   "author": {
     "name": "tonone-ai",

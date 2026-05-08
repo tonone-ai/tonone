@@ -1,6 +1,6 @@
 {
   "name": "spine-recon",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Backend reconnaissance \u2014 map all routes, middleware, models, dependencies, auth, and assess code quality for project takeover. Use when asked to \"understand this backend\", \"map the API\", or \"assess code quality\".",
   "author": {
     "name": "tonone-ai",
