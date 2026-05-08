@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-05-09
+
+### Changed
+
+- Markdown formatting polish across all 4 Operations Team agents (Brace, Folk, Keel, Mint) and their 32 skills — table column alignment, consistent blank-line spacing.
+- Trunk toolchain bumps: Python runtime 3.13.3 to 3.14.4, checkov 3.2.526 to 3.2.527.
+
 ## [1.2.0] - 2026-05-08
 
 ### Added

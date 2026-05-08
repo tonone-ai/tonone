@@ -84,18 +84,18 @@ One lateral check-in maximum. Escalate to Helm, not around Helm.
 
 When gstack installed, invoke these skills for Mint work.
 
-| Skill          | When to invoke                                      | What it adds                                     |
-| -------------- | --------------------------------------------------- | ------------------------------------------------ |
-| `office-hours` | Validating financial strategy before building model | Forces constraint diagnosis before output        |
-| `review`       | Reviewing financial model before sharing with board | Catches assumption errors and missing scenarios  |
+| Skill          | When to invoke                                      | What it adds                                    |
+| -------------- | --------------------------------------------------- | ----------------------------------------------- |
+| `office-hours` | Validating financial strategy before building model | Forces constraint diagnosis before output       |
+| `review`       | Reviewing financial model before sharing with board | Catches assumption errors and missing scenarios |
 
 ## Process Disciplines
 
 When producing financial artifacts, follow these superpowers process skills:
 
-| Skill                                        | Trigger                                                                         |
-| -------------------------------------------- | ------------------------------------------------------------------------------- |
-| `superpowers:verification-before-completion` | Before claiming model or board package complete — verify against source data    |
+| Skill                                        | Trigger                                                                      |
+| -------------------------------------------- | ---------------------------------------------------------------------------- |
+| `superpowers:verification-before-completion` | Before claiming model or board package complete — verify against source data |
 
 **Iron rule:**
 
@@ -105,11 +105,11 @@ When producing financial artifacts, follow these superpowers process skills:
 
 When project uses Obsidian, produce Mint artifacts in native Obsidian formats.
 
-| Artifact           | Obsidian Format                                                                          | When                           |
-| ------------------ | ---------------------------------------------------------------------------------------- | ------------------------------ |
-| P&L model          | Obsidian Markdown — `period`, `revenue`, `burn`, `runway_months` properties              | Monthly financial tracking     |
-| Budget tracker     | Obsidian Bases — table with department, budget, actuals, variance, owner                 | Departmental budget management |
-| Cap table          | Obsidian Markdown — `round`, `investor`, `shares`, `ownership_pct` properties            | Cap table documentation        |
+| Artifact       | Obsidian Format                                                               | When                           |
+| -------------- | ----------------------------------------------------------------------------- | ------------------------------ |
+| P&L model      | Obsidian Markdown — `period`, `revenue`, `burn`, `runway_months` properties   | Monthly financial tracking     |
+| Budget tracker | Obsidian Bases — table with department, budget, actuals, variance, owner      | Departmental budget management |
+| Cap table      | Obsidian Markdown — `round`, `investor`, `shares`, `ownership_pct` properties | Cap table documentation        |
 
 ## Extreme Finance Playbook
 

@@ -88,9 +88,9 @@ Show how key outputs change with input variations:
 
 Also include a burn sensitivity table:
 
-| Monthly burn vs plan | -$50K   | Base    | +$50K   | +$100K  |
-| -------------------- | ------- | ------- | ------- | ------- |
-| Runway months        |         |         |         |         |
+| Monthly burn vs plan | -$50K | Base | +$50K | +$100K |
+| -------------------- | ----- | ---- | ----- | ------ |
+| Runway months        |       |      |       |        |
 
 ### Step 4: Produce 3 Scenarios
 
@@ -107,14 +107,14 @@ What is runway at 12 months? When does the company reach default alive?
 
 Every model must document assumptions:
 
-| Assumption           | Value Used | Source/Basis          |
-| -------------------- | ---------- | --------------------- |
-| Monthly growth rate  |            |                       |
-| Monthly churn rate   |            |                       |
-| Average ACV          |            |                       |
-| Gross margin         |            |                       |
-| Payroll per head     |            |                       |
-| Hiring plan          |            |                       |
+| Assumption          | Value Used | Source/Basis |
+| ------------------- | ---------- | ------------ |
+| Monthly growth rate |            |              |
+| Monthly churn rate  |            |              |
+| Average ACV         |            |              |
+| Gross margin        |            |              |
+| Payroll per head    |            |              |
+| Hiring plan         |            |              |
 
 ## Delivery
 

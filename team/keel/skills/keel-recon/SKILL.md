@@ -37,13 +37,13 @@ find . -name "*.md" 2>/dev/null | xargs grep -l "soc2\|gdpr\|hipaa\|compliance\|
 
 Determine which stage the company is at based on available signals:
 
-| Signal              | Stage 1 ($0-$1M)     | Stage 2 ($1M-$10M)      | Stage 3 ($10M-$100M)   |
-| ------------------- | -------------------- | ----------------------- | ---------------------- |
-| Team size           | 1-5                  | 5-30                    | 30-200                 |
-| Process maturity    | Informal/none        | Written SOPs            | Owned and measured     |
-| Vendor count        | 3-10                 | 10-30                   | 30+                    |
-| Compliance          | None or awareness    | SOC2 in progress        | Active compliance prog |
-| OKRs                | Informal goals       | Team OKRs               | Full cascade           |
+| Signal           | Stage 1 ($0-$1M)  | Stage 2 ($1M-$10M) | Stage 3 ($10M-$100M)   |
+| ---------------- | ----------------- | ------------------ | ---------------------- |
+| Team size        | 1-5               | 5-30               | 30-200                 |
+| Process maturity | Informal/none     | Written SOPs       | Owned and measured     |
+| Vendor count     | 3-10              | 10-30              | 30+                    |
+| Compliance       | None or awareness | SOC2 in progress   | Active compliance prog |
+| OKRs             | Informal goals    | Team OKRs          | Full cascade           |
 
 ### Step 2: Map Current Processes
 
@@ -59,26 +59,26 @@ Identify current state of:
 
 Apply the Bottleneck Clock — where is the single most constrained step?
 
-| Bottleneck Type              | Symptoms                                           |
-| ---------------------------- | -------------------------------------------------- |
-| Process debt                 | Same mistakes repeat, onboarding takes too long    |
-| Vendor sprawl                | Unknown tools, surprise renewals, duplicate spend  |
-| Goal misalignment            | Teams working at cross-purposes, no shared targets |
-| Compliance gap               | Enterprise deals stall, audit risk mounting        |
-| Meeting overhead             | Decisions require too many people or meetings      |
+| Bottleneck Type   | Symptoms                                           |
+| ----------------- | -------------------------------------------------- |
+| Process debt      | Same mistakes repeat, onboarding takes too long    |
+| Vendor sprawl     | Unknown tools, surprise renewals, duplicate spend  |
+| Goal misalignment | Teams working at cross-purposes, no shared targets |
+| Compliance gap    | Enterprise deals stall, audit risk mounting        |
+| Meeting overhead  | Decisions require too many people or meetings      |
 
 ### Step 4: Inventory Ops Assets
 
-| Asset                        | Exists? | Quality |
-| ---------------------------- | ------- | ------- |
-| SOP library (top 3 weekly)   | [y/n]   |         |
-| Vendor registry              | [y/n]   |         |
-| Contract renewal tracker     | [y/n]   |         |
-| OKR document (current Q)     | [y/n]   |         |
-| Compliance gap analysis      | [y/n]   |         |
-| Legal docs (ToS, PP, NDA)    | [y/n]   |         |
-| Business continuity plan     | [y/n]   |         |
-| Meeting cadence guide        | [y/n]   |         |
+| Asset                      | Exists? | Quality |
+| -------------------------- | ------- | ------- |
+| SOP library (top 3 weekly) | [y/n]   |         |
+| Vendor registry            | [y/n]   |         |
+| Contract renewal tracker   | [y/n]   |         |
+| OKR document (current Q)   | [y/n]   |         |
+| Compliance gap analysis    | [y/n]   |         |
+| Legal docs (ToS, PP, NDA)  | [y/n]   |         |
+| Business continuity plan   | [y/n]   |         |
+| Meeting cadence guide      | [y/n]   |         |
 
 ### Step 5: Present Assessment
 

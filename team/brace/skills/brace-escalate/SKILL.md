@@ -31,18 +31,21 @@ A high escalation rate almost always means the KB or Tier 1 training is broken. 
 
 **Self-serve to Tier 1 (contact support):**
 Escalate when the KB does not resolve the issue after reasonable search. Triggers:
+
 - User cannot find answer after 2 KB searches
 - Issue involves account-specific data (KB cannot resolve account-specific problems)
 - Issue is a suspected bug (not a usage question)
 
 **Tier 1 to Tier 2 (specialist):**
 Escalate when Tier 1 cannot resolve within one business day. Criteria:
+
 - Issue requires product depth beyond KB coverage
 - Multiple customers reporting same issue (possible systemic problem)
 - Customer is enterprise tier and issue is Severity High or Critical
 - Issue involves data integrity or security concern
 
 Tier 1 to Tier 2 handoff template:
+
 ```
 **Escalation: T1 to T2**
 Ticket: [ID]
@@ -55,11 +58,13 @@ Time open: [Hours or days]
 
 **Tier 2 to Engineering (bug triage):**
 Escalate when issue is a reproducible product defect or infrastructure failure. Criteria:
+
 - Bug reproduced in staging or production
 - No workaround exists
 - Customer impact: [N]+ customers affected or revenue impact
 
 Engineering handoff template:
+
 ```
 **Bug Report: T2 to Engineering**
 Ticket: [ID]

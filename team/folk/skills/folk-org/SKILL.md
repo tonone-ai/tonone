@@ -34,6 +34,7 @@ Role - Name - Reports to - Direct reports - Primary function
 ```
 
 Calculate current spans of control for each manager:
+
 - Too wide: more than 8 direct reports (management quality collapses)
 - Too narrow: 1-2 direct reports (management overhead without leverage)
 - Healthy: 4-7 direct reports
@@ -44,14 +45,14 @@ Flag: any role without a clear single owner, any role that reports into two peop
 
 Check for common org design failures:
 
-| Anti-Pattern                     | Signal                                          | Fix                                 |
-| -------------------------------- | ----------------------------------------------- | ----------------------------------- |
-| Too-wide span                    | Manager has 9+ direct reports                   | Add a layer or restructure teams    |
-| Too-narrow span                  | Manager has 1-2 reports                         | Flatten or merge teams              |
-| Role overlap                     | Two people own the same outcome                 | Clarify ownership, eliminate one    |
-| Missing decision-maker           | No one owns a critical function                 | Define the role, assign or hire     |
-| Founder bottleneck               | Founder is in all decisions                     | Delegate with clear decision rights |
-| Premature specialization         | Two-person team has five specialized roles      | Generalists first until Stage 2     |
+| Anti-Pattern             | Signal                                     | Fix                                 |
+| ------------------------ | ------------------------------------------ | ----------------------------------- |
+| Too-wide span            | Manager has 9+ direct reports              | Add a layer or restructure teams    |
+| Too-narrow span          | Manager has 1-2 reports                    | Flatten or merge teams              |
+| Role overlap             | Two people own the same outcome            | Clarify ownership, eliminate one    |
+| Missing decision-maker   | No one owns a critical function            | Define the role, assign or hire     |
+| Founder bottleneck       | Founder is in all decisions                | Delegate with clear decision rights |
+| Premature specialization | Two-person team has five specialized roles | Generalists first until Stage 2     |
 
 ### Step 3: Design Target Org
 
@@ -69,11 +70,12 @@ For each team or function, produce:
 
 ### Step 4: Produce Headcount Plan
 
-| Role Title         | Level | Team    | Priority  | Quarter | Comp Band     | Justification                  |
-| ------------------ | ----- | ------- | --------- | ------- | ------------- | ------------------------------ |
-| [Title]            | [L]   | [Team]  | [H/M/L]   | [Q]     | [$X-$Y]       | [What outcome this role owns]  |
+| Role Title | Level | Team   | Priority | Quarter | Comp Band | Justification                 |
+| ---------- | ----- | ------ | -------- | ------- | --------- | ----------------------------- |
+| [Title]    | [L]   | [Team] | [H/M/L]  | [Q]     | [$X-$Y]   | [What outcome this role owns] |
 
 Rules for headcount plan:
+
 - Every open req must have a defined outcome (not just a title)
 - No more than 2 "nice to have" hires in Stage 1
 - Stage 1: generalist roles only - no premature specialists
@@ -97,9 +99,9 @@ Rules for headcount plan:
 
 ## Span of Control Analysis
 
-| Manager Role    | Current Reports | Healthy? | Action         |
-| --------------- | --------------- | -------- | -------------- |
-| [Role]          | [N]             | [Y/N]    | [Action]       |
+| Manager Role | Current Reports | Healthy? | Action   |
+| ------------ | --------------- | -------- | -------- |
+| [Role]       | [N]             | [Y/N]    | [Action] |
 
 ## Open Reqs - Prioritized
 
@@ -107,11 +109,11 @@ Rules for headcount plan:
 
 ## Decision Rights Map
 
-| Decision                    | Owner    | Input from          | Escalate to  |
-| --------------------------- | -------- | ------------------- | ------------ |
-| [Hiring]                    | [Role]   | [Roles]             | [Role]       |
-| [Compensation]              | [Role]   | [Roles]             | [Role]       |
-| [Product roadmap]           | [Role]   | [Roles]             | [Role]       |
+| Decision          | Owner  | Input from | Escalate to |
+| ----------------- | ------ | ---------- | ----------- |
+| [Hiring]          | [Role] | [Roles]    | [Role]      |
+| [Compensation]    | [Role] | [Roles]    | [Role]      |
+| [Product roadmap] | [Role] | [Roles]    | [Role]      |
 ```
 
 ## Delivery

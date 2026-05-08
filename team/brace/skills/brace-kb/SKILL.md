@@ -28,6 +28,7 @@ find . -name "faq*" -o -name "help*" -o -name "kb*" -o -name "docs*" 2>/dev/null
 ```
 
 If no ticket history exists, use these common categories as a starting point and validate with the founder:
+
 1. Setup and initial configuration
 2. Authentication and login issues
 3. Billing and subscription questions
@@ -43,11 +44,11 @@ If no ticket history exists, use these common categories as a starting point and
 
 For each of the top 20 topics, assess:
 
-| Topic                   | Article exists? | Up to date? | Findable via search? | Deflects ticket? |
-| ----------------------- | --------------- | ----------- | -------------------- | ---------------- |
-| [Topic 1]               | [Y/N]           | [Y/N]       | [Y/N]                | [Y/N]            |
-| [Topic 2]               | [Y/N]           | [Y/N]       | [Y/N]                | [Y/N]            |
-| ...                     | ...             | ...         | ...                  | ...              |
+| Topic     | Article exists? | Up to date? | Findable via search? | Deflects ticket? |
+| --------- | --------------- | ----------- | -------------------- | ---------------- |
+| [Topic 1] | [Y/N]           | [Y/N]       | [Y/N]                | [Y/N]            |
+| [Topic 2] | [Y/N]           | [Y/N]       | [Y/N]                | [Y/N]            |
+| ...       | ...             | ...         | ...                  | ...              |
 
 Coverage gap = topic appears in top 20 tickets but has no KB article.
 
@@ -56,6 +57,7 @@ Coverage gap = topic appears in top 20 tickets but has no KB article.
 Deflection rate = tickets closed by self-serve / total ticket volume.
 
 If deflection rate is unknown, estimate from signals:
+
 - What % of tickets are "how-to" questions (the most self-servable category)?
 - Are there KB search logs showing users reaching articles before contacting support?
 - Do ticket tags include a "kb-resolved" or "self-serve" category?
@@ -67,6 +69,7 @@ Target: 50%+ deflection rate for mature support operations.
 Define the category hierarchy and article template:
 
 **Categories (top level):**
+
 - Getting Started
 - Account and Billing
 - Core Features (one per major feature)
@@ -76,6 +79,7 @@ Define the category hierarchy and article template:
 - Security and Privacy
 
 **Article template:**
+
 ```
 # [Issue or Question Title -- written as the user would ask it]
 
@@ -93,6 +97,7 @@ Define the category hierarchy and article template:
 ```
 
 **Search optimization rules:**
+
 - Title = the question users actually ask, not the internal product name
 - First sentence = the answer (KB articles are not blog posts)
 - Use the exact error message text as a section heading if applicable
@@ -101,11 +106,11 @@ Define the category hierarchy and article template:
 
 Output a prioritized article backlog ordered by ticket volume:
 
-| Priority | Topic                 | Ticket volume/week | Effort | Owner |
-| -------- | --------------------- | ------------------ | ------ | ----- |
-| P1       | [highest volume]      | [count]            | S/M/L  |       |
-| P2       | [next]                | [count]            | S/M/L  |       |
-| ...      | ...                   | ...                | ...    | ...   |
+| Priority | Topic            | Ticket volume/week | Effort | Owner |
+| -------- | ---------------- | ------------------ | ------ | ----- |
+| P1       | [highest volume] | [count]            | S/M/L  |       |
+| P2       | [next]           | [count]            | S/M/L  |       |
+| ...      | ...              | ...                | ...    | ...   |
 
 Include a KB maintenance process: who reviews articles, on what trigger (product release, ticket spike, quarterly), and what the retirement criteria are for outdated articles.
 

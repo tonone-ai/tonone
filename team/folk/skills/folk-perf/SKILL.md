@@ -26,6 +26,7 @@ Ask for any missing context:
 - Has a PIP ever been run? If yes, did it work?
 
 **Stage guidance:**
+
 - Stage 1: No formal review system needed. Monthly 1:1s + quarterly goals check is enough. Do not over-engineer.
 - Stage 2: Annual or semi-annual review cycle. Simple rating scale. First calibration session.
 - Stage 3: Structured review cycles, calibration, career ladder, formal PIP process.
@@ -33,6 +34,7 @@ Ask for any missing context:
 ### Step 1: Design Review Cycle
 
 **Cadence options:**
+
 - Annual: simpler, one cycle per year, used at Stage 2+
 - Semi-annual: more feedback loops, higher overhead - use at Stage 3
 - Quarterly: too frequent for meaningful performance change - avoid unless team is <10
@@ -60,6 +62,7 @@ Ask for any missing context:
 5. Overall rating: [Exceeds / Meets / Below / Significantly Below]
 
 ### Calibration Input (for calibration session)
+
 - Proposed rating: [Exceeds / Meets / Below / Significantly Below]
 - Promotion ready: [Yes / No / In 6 months]
 - Retention risk: [High / Medium / Low]
@@ -80,6 +83,7 @@ Calibration prevents grade inflation and manager favoritism. Required at Stage 2
 6. Outputs: final rating, promotion decision, compensation adjustment flag, PIP trigger.
 
 **Distribution guidance (not a forced curve, but a diagnostic):**
+
 - Exceeds: 15-20% of team (if more, ratings are inflated)
 - Meets: 60-70% of team (healthy majority)
 - Below: 10-15% of team (if more, hiring bar or management quality problem)
@@ -92,12 +96,12 @@ Calibration prevents grade inflation and manager favoritism. Required at Stage 2
 
 ### Individual Contributor Track
 
-| Level | Title              | Scope                        | Autonomy                              | Typical Tenure        |
-| ----- | ------------------ | ---------------------------- | ------------------------------------- | --------------------- |
-| IC1   | [Junior Title]     | Task-level                   | Works from specs, needs direction     | 0-2 years             |
-| IC2   | [Mid Title]        | Feature-level                | Owns features end-to-end              | 2-5 years             |
-| IC3   | [Senior Title]     | System-level                 | Defines approach, mentors others      | 5-8 years             |
-| IC4   | [Staff Title]      | Cross-team                   | Drives org-wide decisions             | 8+ years              |
+| Level | Title          | Scope         | Autonomy                          | Typical Tenure |
+| ----- | -------------- | ------------- | --------------------------------- | -------------- |
+| IC1   | [Junior Title] | Task-level    | Works from specs, needs direction | 0-2 years      |
+| IC2   | [Mid Title]    | Feature-level | Owns features end-to-end          | 2-5 years      |
+| IC3   | [Senior Title] | System-level  | Defines approach, mentors others  | 5-8 years      |
+| IC4   | [Staff Title]  | Cross-team    | Drives org-wide decisions         | 8+ years       |
 
 ### Promotion Criteria (IC2 to IC3 example)
 
@@ -110,6 +114,7 @@ Calibration prevents grade inflation and manager favoritism. Required at Stage 2
 **Leadership:** Has led a project involving multiple people or systems without being the manager.
 
 **Anti-patterns that block promotion:**
+
 - "She does great work but hasn't leveled up" = scope problem, not output problem
 - "He's senior-level but only in his lane" = not IC3 until cross-team impact exists
 ```
@@ -130,9 +135,9 @@ Calibration prevents grade inflation and manager favoritism. Required at Stage 2
 
 Specific, observable gaps with evidence:
 
-| Gap                 | Expected Standard             | Actual Performance            | Evidence                           |
-| ------------------- | ----------------------------- | ----------------------------- | ---------------------------------- |
-| [Gap 1]             | [What "meets" looks like]     | [What is actually happening]  | [Specific examples with dates]     |
+| Gap     | Expected Standard         | Actual Performance           | Evidence                       |
+| ------- | ------------------------- | ---------------------------- | ------------------------------ |
+| [Gap 1] | [What "meets" looks like] | [What is actually happening] | [Specific examples with dates] |
 
 ### Improvement Requirements
 
@@ -157,9 +162,10 @@ If requirements are not met by [Review Date], the outcome will be [termination /
 This PIP does not guarantee continued employment. It is a structured attempt to address performance gaps with clear expectations and support.
 
 **Signatures:**
-- Employee (acknowledges receipt, not agreement): _______________
-- Manager: _______________
-- People Ops: _______________
+
+- Employee (acknowledges receipt, not agreement): **\*\***\_\_\_**\*\***
+- Manager: **\*\***\_\_\_**\*\***
+- People Ops: **\*\***\_\_\_**\*\***
 ```
 
 ## Delivery
