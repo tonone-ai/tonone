@@ -3,6 +3,7 @@
 ---
 
 2026-05-08 21:35 : [!!] feat(ops-team): PR #88 merged — 4 new agents (Mint/Folk/Keel/Brace), 32 skills, 244 tests; 27→31 agents, 145→177 skills, v1.2.0, bundle/operations-team added — @fatih
+2026-05-08 23:52 : fix(ci): version-consistency gate failing — ops-team release bumped root to 1.2.0 but skipped bump-version.py for children; 204 files stuck at 1.1.0; fixed with `python scripts/bump-version.py 1.2.0` — @fatih
 2026-05-06 22:53 : docs(sitemap): created docs/sitemap.md — 27 agents, 170 skills, 5 runtime hooks mapped; skills all live in root skills/ dir, named /{agent}-{action} — @fatih
 2026-05-06 08:36 : feat(bundle): add revenue-team (deal+keep) and marketing-team (ink+buzz) bundles — PR #86 merged, CI green — @fatih
 2026-05-06 08:36 : chore: synced 199 files from 0.9.9 → 1.0.0 (all team/skills/bundles); v1.0.0 release had skipped bump-version, CI version-consistency was failing on main — @fatih
