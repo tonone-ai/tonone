@@ -1,6 +1,6 @@
 [project]
 name = "crest"
-version = "0.9.7"
+version = "1.8.0"
 description = "Product strategist — roadmap planning, prioritization frameworks, competitive analysis, and market positioning"
 license = "MIT"
 requires-python = ">=3.10"

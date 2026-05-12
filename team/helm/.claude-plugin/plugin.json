@@ -1,6 +1,6 @@
 {
   "name": "helm",
-  "version": "0.9.7",
+  "version": "1.8.0",
   "description": "Head of Product \u2014 product strategy, requirements, and engineering handoff via the Helm\u2194Apex interface",
   "author": {
     "name": "tonone-ai",

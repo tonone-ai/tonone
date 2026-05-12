@@ -1,6 +1,6 @@
 [project]
 name = "prism"
-version = "0.9.7"
+version = "1.8.0"
 description = "Frontend & DX engineer — UI, internal tools, developer portals"
 license = "MIT"
 requires-python = ">=3.10"
