@@ -1,6 +1,6 @@
 {
   "name": "patch",
-  "version": "1.5.0",
+  "version": "1.8.0",
   "description": "Security Operations Team \u2014 Patch: Vulnerability management \u2014 CVE triage, CVSS prioritization, patching cadence, SLA design",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 [project]
 name = "draft"
-version = "1.2.0"
+version = "1.8.0"
 description = "UX designer — user flows, information architecture, wireframes, and interaction design"
 license = "MIT"
 requires-python = ">=3.10"

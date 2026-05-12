@@ -1,6 +1,6 @@
 {
   "name": "sast",
-  "version": "1.5.0",
+  "version": "1.8.0",
   "description": "Security Operations Team \u2014 Sast: Application security \u2014 SAST/DAST scanning, code security review, secure SDLC design",
   "author": {
     "name": "tonone-ai",

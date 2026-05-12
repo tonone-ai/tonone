@@ -1,6 +1,6 @@
 {
   "name": "schema",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "description": "Developer Experience Team \u2014 Schema: API schema design \u2014 OpenAPI, GraphQL, gRPC schema quality, and design standards",
   "author": {
     "name": "tonone-ai",

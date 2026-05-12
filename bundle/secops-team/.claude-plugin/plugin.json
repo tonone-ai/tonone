@@ -1,6 +1,6 @@
 {
   "name": "secops-team",
-  "version": "1.5.0",
+  "version": "1.8.0",
   "description": "Security Operations Team \u2014 10 agents: Red, Blue, Hunt, Patch, Chain, Sast, Siem, Resp, Zero, Phish",
   "author": {
     "name": "tonone-ai",

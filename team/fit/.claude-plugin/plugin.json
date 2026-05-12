@@ -1,6 +1,6 @@
 {
   "name": "fit",
-  "version": "1.4.0",
+  "version": "1.8.0",
   "description": "Data Science Team \u2014 Fit: Model training \u2014 algorithm selection, hyperparameter tuning, training infrastructure",
   "author": {
     "name": "tonone-ai",

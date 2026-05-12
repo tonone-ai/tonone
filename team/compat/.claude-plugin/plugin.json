@@ -1,6 +1,6 @@
 {
   "name": "compat",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "description": "Developer Experience Team \u2014 Compat: Backwards compatibility \u2014 breaking change detection, deprecation management, semver discipline",
   "author": {
     "name": "tonone-ai",

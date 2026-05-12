@@ -1,6 +1,6 @@
 {
   "name": "queue",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Infrastructure Specialist Team \u2014 Queue: Message queuing and streaming \u2014 Kafka, SQS, RabbitMQ design, consumer group strategy, dead letter queues",
   "author": {
     "name": "tonone-ai",

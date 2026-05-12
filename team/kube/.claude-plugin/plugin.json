@@ -1,6 +1,6 @@
 {
   "name": "kube",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Infrastructure Specialist Team \u2014 Kube: Kubernetes cluster design \u2014 RBAC, networking, operators, workload configuration",
   "author": {
     "name": "tonone-ai",

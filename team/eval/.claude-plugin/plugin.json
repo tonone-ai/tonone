@@ -1,6 +1,6 @@
 {
   "name": "eval",
-  "version": "1.4.0",
+  "version": "1.8.0",
   "description": "Data Science Team \u2014 Eval: Experiment design \u2014 A/B testing, statistical power, experiment tracking, causal inference",
   "author": {
     "name": "tonone-ai",

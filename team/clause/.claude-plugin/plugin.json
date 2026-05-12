@@ -1,6 +1,6 @@
 {
   "name": "clause",
-  "version": "1.2.0",
+  "version": "1.8.0",
   "description": "Contract clause analysis \u2014 redlining, risk scoring, negotiation playbooks",
   "author": {
     "name": "tonone-ai",
