@@ -1,6 +1,6 @@
 [project]
 name = "deal"
-version = "1.2.0"
+version = "1.8.0"
 description = "Revenue and sales agent -- pipeline tracking, deal playbooks, pricing, enterprise closing"
 license = "MIT"
 requires-python = ">=3.10"

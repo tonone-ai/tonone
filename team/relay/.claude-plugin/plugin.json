@@ -1,6 +1,6 @@
 {
   "name": "relay",
-  "version": "1.2.0",
+  "version": "1.8.0",
   "description": "DevOps engineer \u2014 CI/CD, deployments, GitOps, developer experience",
   "author": {
     "name": "tonone-ai",
@@ -8,5 +8,13 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": ["devops", "cicd", "deployments", "gitops", "dx", "ship", "pr"]
+  "keywords": [
+    "devops",
+    "cicd",
+    "deployments",
+    "gitops",
+    "dx",
+    "ship",
+    "pr"
+  ]
 }

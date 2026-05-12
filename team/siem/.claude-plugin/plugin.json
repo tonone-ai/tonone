@@ -1,6 +1,6 @@
 {
   "name": "siem",
-  "version": "1.5.0",
+  "version": "1.8.0",
   "description": "Security Operations Team \u2014 Siem: SIEM engineering \u2014 log pipeline design, detection rule development, alert tuning",
   "author": {
     "name": "tonone-ai",

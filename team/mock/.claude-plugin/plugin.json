@@ -1,6 +1,6 @@
 {
   "name": "mock",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "description": "Developer Experience Team \u2014 Mock: API mocking \u2014 mock server design, contract testing, API simulation for development",
   "author": {
     "name": "tonone-ai",

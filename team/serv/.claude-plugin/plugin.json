@@ -1,6 +1,6 @@
 {
   "name": "serv",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Infrastructure Specialist Team \u2014 Serv: Serverless architecture \u2014 Lambda/Cloud Functions/Cloud Run design, cold start optimization, event patterns",
   "author": {
     "name": "tonone-ai",

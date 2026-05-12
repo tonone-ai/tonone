@@ -1,6 +1,6 @@
 {
   "name": "gate",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "description": "Developer Experience Team \u2014 Gate: API quality gates \u2014 linting, style enforcement, breaking change CI, and API governance",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 {
   "name": "tune",
-  "version": "1.4.0",
+  "version": "1.8.0",
   "description": "Data Science Team \u2014 Tune: LLM fine-tuning \u2014 PEFT/LoRA, RLHF, instruction tuning, prompt optimization",
   "author": {
     "name": "tonone-ai",

@@ -1,6 +1,6 @@
 {
   "name": "mesh",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Infrastructure Specialist Team \u2014 Mesh: Service mesh design \u2014 Istio/Linkerd/Envoy, mTLS, traffic management, observability integration",
   "author": {
     "name": "tonone-ai",

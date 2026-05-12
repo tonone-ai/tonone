@@ -1,6 +1,6 @@
 {
   "name": "cast",
-  "version": "1.4.0",
+  "version": "1.8.0",
   "description": "Data Science Team \u2014 Cast: Time series forecasting \u2014 demand prediction, trend analysis, seasonal decomposition",
   "author": {
     "name": "tonone-ai",

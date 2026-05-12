@@ -1,6 +1,6 @@
 {
   "name": "apex-review",
-  "version": "1.2.0",
+  "version": "1.8.0",
   "description": "Cross-cutting review of recent work \u2014 catches gaps between specialists. Use when asked to \"review what we built\", \"check the work\", \"pre-launch review\", or after completing a significant chunk of work.",
   "author": {
     "name": "tonone-ai",
@@ -9,5 +9,8 @@
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
   "type": "skill",
-  "keywords": ["apex", "skill"]
+  "keywords": [
+    "apex",
+    "skill"
+  ]
 }

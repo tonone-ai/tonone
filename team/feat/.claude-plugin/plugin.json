@@ -1,6 +1,6 @@
 {
   "name": "feat",
-  "version": "1.4.0",
+  "version": "1.8.0",
   "description": "Data Science Team \u2014 Feat: Feature engineering \u2014 transformations, encodings, feature stores, pipeline design",
   "author": {
     "name": "tonone-ai",

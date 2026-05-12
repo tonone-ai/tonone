@@ -1,6 +1,6 @@
 {
   "name": "cache",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Infrastructure Specialist Team \u2014 Cache: Caching strategy \u2014 Redis/Memcached design, cache invalidation, eviction policies, application caching patterns",
   "author": {
     "name": "tonone-ai",

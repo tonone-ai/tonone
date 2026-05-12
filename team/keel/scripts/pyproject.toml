@@ -1,6 +1,6 @@
 [project]
 name = "keel"
-version = "1.2.0"
+version = "1.8.0"
 description = "Operations agent -- process design, vendor management, legal ops, compliance, OKR execution"
 license = "MIT"
 requires-python = ">=3.10"

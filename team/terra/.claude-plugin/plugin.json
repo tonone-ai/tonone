@@ -1,6 +1,6 @@
 {
   "name": "terra",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Infrastructure Specialist Team \u2014 Terra: Terraform and IaC \u2014 module design, state management, drift detection, and IaC best practices",
   "author": {
     "name": "tonone-ai",

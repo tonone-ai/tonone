@@ -1,6 +1,6 @@
 [project]
 name = "buzz"
-version = "1.2.0"
+version = "1.8.0"
 description = "PR and community agent -- press pitches, social media, open source community, DevRel, launch moments"
 license = "MIT"
 requires-python = ">=3.10"

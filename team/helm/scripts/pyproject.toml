@@ -1,6 +1,6 @@
 [project]
 name = "helm"
-version = "1.2.0"
+version = "1.8.0"
 description = "Head of Product — product strategy, requirements, and engineering handoff"
 license = "MIT"
 requires-python = ">=3.10"
