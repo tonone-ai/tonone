@@ -43,8 +43,6 @@ List what an attacker actually wants from this system:
 | ------- | -------------- | ------------------------ | -------------- |
 | [asset] | [High/Med/Low] | [where stored/processed] | [impact]       |
 
-Crown jewels are: user PII, payment data, auth credentials, API keys, business logic that can be abused for financial gain, admin access.
-
 ### Step 2: Map the Attack Surface
 
 Every entry point into the system:
@@ -53,33 +51,23 @@ Every entry point into the system:
 | ----------- | ------------------ | ------------- | ------------------------- | ---------- |
 | [endpoint]  | [HTTP/gRPC/WS/etc] | [Y/N/partial] | [public/internal/partner] | [any gaps] |
 
-Include: REST/GraphQL APIs, WebSockets, admin panels, webhooks, file upload endpoints, background job triggers, message queue consumers, third-party OAuth callbacks.
-
-Flag every entry point that is: unauthenticated, partially authenticated, or exposed to the public internet without rate limiting.
+Flag every entry point that is unauthenticated, partially authenticated, or public without rate limiting.
 
 ### Step 3: Map Trust Boundaries
 
 Draw the data flow as text. Mark where data crosses trust boundaries and whether those crossings are encrypted and authenticated:
 
 ```
-[Public Internet]
-    ↓ HTTPS (TLS 1.2+?)
-[CDN / Load Balancer]          ← boundary: public → edge
-    ↓ internal HTTP (TLS?)
-[API Service]
-    ↓ connection (TLS? auth?)
-[Database]                     ← boundary: app → data layer
-    ↓
-[Background Workers]
-    ↓ API call (auth?)
-[External Services / Webhooks] ← boundary: internal → third-party
+[Public Internet] →HTTPS→ [CDN/LB] →HTTP?→ [API] →conn?→ [DB]
+                                      ↓
+                              [Workers] →API?→ [External Services]
 ```
 
-Flag each crossing where: TLS is absent, auth is absent, or the downstream service is trusted implicitly.
+Flag crossings missing TLS, auth, or relying on implicit trust.
 
 ### Step 4: Rank Threats by Likelihood × Impact
 
-For each significant threat, score it and prescribe the mitigation. Focus on the 90% case — the attacks that actually happen.
+Score and prescribe. Focus on the 90% case — attacks that actually happen.
 
 **Threat ranking criteria:**
 
@@ -100,11 +88,9 @@ Fix: [specific control — exact header value, config setting, code pattern, or 
 Effort: [hours / days]
 ```
 
-Anchor to real attack patterns: credential stuffing on unrate-limited auth, secrets leaked in public repos, SQLi through unvalidated input, IDOR through missing object-level auth, SSRF through unvalidated URLs, dependency CVEs.
-
 ### Step 5: List Accepted Risks
 
-Every threat model has risks the team is consciously accepting. Name them explicitly:
+Name accepted risks explicitly:
 
 | Risk   | Reason Accepted           | Review Trigger                     |
 | ------ | ------------------------- | ---------------------------------- |
@@ -148,7 +134,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 3. [third]
 ```
 
-Do not produce a STRIDE matrix with every cell filled. Produce the ranked threat list with concrete fixes. The output is the artifact, not the methodology.
+Produce the ranked threat list with concrete fixes — not a STRIDE matrix.
 
 ## Delivery
 
