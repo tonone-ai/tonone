@@ -175,3 +175,4 @@
 2026-05-09 01:42 : feat(ai-ops-team): Wave 7 AI Operations Team — 9 agents, 27 skills, v1.8.0 — 100 agents total — @fatih
 2026-06-16 18:30 : [!!] refactor(gate): removed worktree gate entirely — PreToolUse hooks deleted, worktree-session/close hooks removed, CLAUDE.md worktree section gone, 4 JS files deleted (450 lines) — changes now land directly on local branch — @fatih
 2026-06-16 18:46 : refactor: remove worktree gate — changes land directly on local branch — @fatih
+2026-06-16 19:01 : debug(bundle): bundle plugin.json files all have description but CC UI shows none — root cause: bundle dirs are empty (no agents/ subdir), CC skips description render for content-less plugins — individual agent plugins show fine because they have discoverable agent files — @fatih
