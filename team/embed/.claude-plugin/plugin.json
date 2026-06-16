@@ -1,6 +1,6 @@
 {
   "name": "embed",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "AI Operations Team \u2014 Embed: Embedding model selection, vector pipeline design, similarity search, and production index management.",
   "author": {
     "name": "tonone-ai",

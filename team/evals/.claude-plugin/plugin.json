@@ -1,6 +1,6 @@
 {
   "name": "evals",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "AI Operations Team \u2014 Evals: Eval harness design, benchmark suites, automated regression, and human eval pipeline orchestration.",
   "author": {
     "name": "tonone-ai",

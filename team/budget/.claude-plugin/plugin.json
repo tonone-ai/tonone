@@ -1,6 +1,6 @@
 {
   "name": "budget",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "AI Operations Team \u2014 Budget: LLM spend tracking, model cost optimization, budget alerts, and token efficiency audits across AI workloads.",
   "author": {
     "name": "tonone-ai",
