@@ -1,6 +1,6 @@
 {
   "name": "trace",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "AI Operations Team \u2014 Trace: LLM tracing, span capture, prompt/completion logging, cost attribution, and AI system debugging.",
   "author": {
     "name": "tonone-ai",

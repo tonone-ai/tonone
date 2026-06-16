@@ -1,6 +1,6 @@
 {
   "name": "relay",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "DevOps engineer \u2014 CI/CD, deployments, GitOps, developer experience",
   "author": {
     "name": "tonone-ai",
