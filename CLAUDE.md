@@ -210,32 +210,6 @@ cd team/forge/scripts && bash setup.sh
 .venv/bin/python -m pytest ../tests/
 ```
 
-## Worktree sessions
-
-Sessions start clean on main — no worktree is created upfront. When you're about to make your first file change, the gate hook fires and blocks you. **At that point you know what the task is, so create a properly-named worktree:**
-
-```bash
-git worktree add .claude/worktrees/<slug> -b <slug>
-```
-
-Then call `EnterWorktree(".claude/worktrees/<slug>")` and retry the edit.
-
-Max 50 chars. Lowercase. No slashes. Example: `fix-auth-bug`, `add-stripe-webhooks`.
-
-To edit main intentionally (CHANGELOG, version bumps, docs), create `.claude/skip-worktree` first (valid 2 hours).
-
-### Topic drift
-
-If the user shifts to a clearly different task while the current worktree has uncommitted or unpushed changes, say:
-
-> "This looks like a new topic. Want me to open a PR for the current changes first, then start a fresh session for this?"
-
-Do not switch topics silently. Keep sessions focused.
-
-### Session end
-
-When stopping, the hook auto-removes clean worktrees. If changes exist, it prints a `/ship` reminder to the user.
-
 ## gstack
 
 gstack is installed at `~/.claude/skills/gstack`. Use `/browse` for all web browsing — never use `mcp__claude-in-chrome__*` tools.

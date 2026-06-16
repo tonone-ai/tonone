@@ -174,3 +174,4 @@
 2026-05-09 01:34 : feat(infra-specialist-team): Wave 6 Infrastructure Specialist Team — 10 agents, 30 skills, v1.7.0 — @fatih
 2026-05-09 01:42 : feat(ai-ops-team): Wave 7 AI Operations Team — 9 agents, 27 skills, v1.8.0 — 100 agents total — @fatih
 2026-06-16 18:30 : [!!] refactor(gate): removed worktree gate entirely — PreToolUse hooks deleted, worktree-session/close hooks removed, CLAUDE.md worktree section gone, 4 JS files deleted (450 lines) — changes now land directly on local branch — @fatih
+2026-06-16 18:46 : refactor: remove worktree gate — changes land directly on local branch — @fatih
