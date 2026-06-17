@@ -19,7 +19,7 @@ Ask the user for any missing context needed to produce a useful output. If the r
 
 ### Step 1: Gather Context
 
-Grep for aria-*, role=, tabindex, onClick on non-interactive elements, and img without alt. Read key layout and form components.
+Grep for aria-\*, role=, tabindex, onClick on non-interactive elements, and img without alt. Read key layout and form components.
 
 ### Step 2: Produce Output
 
@@ -28,6 +28,7 @@ Report: accessibility debt inventory, severity by WCAG level, and a prioritized 
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

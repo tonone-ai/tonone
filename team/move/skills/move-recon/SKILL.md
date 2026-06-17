@@ -28,6 +28,7 @@ Report: animation inventory, which lack reduced-motion fallback, performance con
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

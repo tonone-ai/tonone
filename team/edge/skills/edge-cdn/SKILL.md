@@ -28,6 +28,7 @@ Output a CDN config design: caching rules by content type, Cache-Control header 
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

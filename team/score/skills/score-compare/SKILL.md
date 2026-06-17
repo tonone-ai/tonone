@@ -28,6 +28,7 @@ Output a comparison report: metric table with CIs, statistical significance test
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

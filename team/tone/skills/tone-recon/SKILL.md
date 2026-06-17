@@ -28,6 +28,7 @@ Report: token coverage (% of values tokenized), hardcoded value inventory, themi
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

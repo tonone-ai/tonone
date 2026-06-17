@@ -1,6 +1,6 @@
 {
   "name": "port",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Developer Experience Team \u2014 Port: SDK design \u2014 multi-language SDK architecture, idiomatic patterns, and cross-language consistency",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "devx-team",
-    "port",
-    "developer-experience",
-    "devx"
-  ]
+  "keywords": ["agents", "devx-team", "port", "developer-experience", "devx"]
 }

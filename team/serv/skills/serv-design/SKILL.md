@@ -28,6 +28,7 @@ Output a serverless design: runtime recommendation, event source wiring, concurr
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

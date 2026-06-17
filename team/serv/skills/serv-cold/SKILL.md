@@ -28,6 +28,7 @@ Output a cold start optimization plan: memory tuning, init code refactor opportu
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

@@ -28,6 +28,7 @@ Output a training curriculum: topic list by role, delivery format (micro-trainin
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

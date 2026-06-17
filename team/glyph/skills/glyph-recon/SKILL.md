@@ -28,6 +28,7 @@ Report: how many distinct sizes/weights in use, which are tokenized vs hardcoded
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

@@ -1,6 +1,6 @@
 {
   "name": "grid",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Design Team \u2014 Grid: Layout system design \u2014 spacing scales, responsive grids, breakpoints, layout primitives",
   "author": {
     "name": "tonone-ai",
@@ -8,10 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "design-team",
-    "grid",
-    "design"
-  ]
+  "keywords": ["agents", "design-team", "grid", "design"]
 }

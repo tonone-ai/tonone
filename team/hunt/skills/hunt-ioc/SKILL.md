@@ -28,6 +28,7 @@ Output IOC analysis: enrichment results, threat actor attribution (if possible),
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

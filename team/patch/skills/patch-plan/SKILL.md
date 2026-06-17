@@ -28,6 +28,7 @@ Output a vuln management program: asset criticality tiers, patch SLA by severity
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

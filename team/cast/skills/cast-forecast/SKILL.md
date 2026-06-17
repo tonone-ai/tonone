@@ -28,6 +28,7 @@ Output a forecasting plan: recommended model stack (baseline → candidate → f
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

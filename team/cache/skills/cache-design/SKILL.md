@@ -28,6 +28,7 @@ Output a caching design: pattern recommendation (cache-aside/write-through/read-
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

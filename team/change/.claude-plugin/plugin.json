@@ -1,6 +1,6 @@
 {
   "name": "change",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Developer Experience Team \u2014 Change: Changelog and release communication \u2014 breaking change documentation, deprecation notices, migration guides",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "devx-team",
-    "change",
-    "developer-experience",
-    "devx"
-  ]
+  "keywords": ["agents", "devx-team", "change", "developer-experience", "devx"]
 }

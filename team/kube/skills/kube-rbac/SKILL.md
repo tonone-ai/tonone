@@ -28,6 +28,7 @@ Output RBAC design: Role/ClusterRole definitions, RoleBinding scope, service acc
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

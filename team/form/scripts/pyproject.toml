@@ -1,6 +1,6 @@
 [project]
 name = "form"
-version = "1.9.0"
+version = "1.9.1"
 description = "Visual designer — brand identity, color systems, typography, UI design, and design systems"
 license = "MIT"
 requires-python = ">=3.10"

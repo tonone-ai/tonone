@@ -28,6 +28,7 @@ Output a mesh design: technology recommendation with rationale, installation app
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

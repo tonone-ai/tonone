@@ -28,6 +28,7 @@ Output a recon plan: passive OSINT sources, active enumeration steps, tooling (S
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

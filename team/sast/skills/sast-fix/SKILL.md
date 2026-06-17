@@ -28,6 +28,7 @@ Output a fix: root cause explanation, exploitability assessment, secure code rep
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

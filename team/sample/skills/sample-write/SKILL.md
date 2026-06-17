@@ -28,6 +28,7 @@ Output a complete, runnable code sample: setup steps, code with inline comments,
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

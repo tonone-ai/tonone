@@ -28,6 +28,7 @@ Output a theming architecture: how themes override the semantic layer, token swa
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

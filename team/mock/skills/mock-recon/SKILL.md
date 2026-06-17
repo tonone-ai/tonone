@@ -28,6 +28,7 @@ Report: contract drift issues, missing error responses, stale fixtures, and reco
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

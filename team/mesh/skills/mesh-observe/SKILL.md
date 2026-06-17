@@ -28,6 +28,7 @@ Output an observability design: golden signals per service, distributed trace sa
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

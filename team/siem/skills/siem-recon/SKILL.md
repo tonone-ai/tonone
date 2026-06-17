@@ -28,6 +28,7 @@ Report: log coverage gaps, rule quality issues (missing MITRE, no test cases), a
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

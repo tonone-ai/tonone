@@ -28,6 +28,7 @@ Report: TTFC measurement, friction points (each one with impact estimate), missi
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

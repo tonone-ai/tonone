@@ -1,6 +1,6 @@
 [project]
 name = "spine"
-version = "1.9.0"
+version = "1.9.1"
 description = "Backend engineer — APIs, system design, performance, distributed systems"
 license = "MIT"
 requires-python = ">=3.10"

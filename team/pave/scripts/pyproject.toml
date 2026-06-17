@@ -1,6 +1,6 @@
 [project]
 name = "pave"
-version = "1.9.0"
+version = "1.9.1"
 description = "Platform engineer — developer experience, service catalogs, golden paths, environment management"
 license = "MIT"
 requires-python = ">=3.10"

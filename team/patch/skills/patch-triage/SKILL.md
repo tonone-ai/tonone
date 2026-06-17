@@ -28,6 +28,7 @@ Output a prioritized CVE list: each CVE with CVSS, EPSS, KEV status, asset tier,
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

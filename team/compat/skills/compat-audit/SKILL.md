@@ -28,6 +28,7 @@ Output a breaking change analysis: is it breaking (yes/no with reasoning), which
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

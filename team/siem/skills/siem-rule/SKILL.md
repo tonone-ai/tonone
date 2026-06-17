@@ -28,6 +28,7 @@ Output detection rules in SIGMA format: rule logic, MITRE mapping, severity, fal
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

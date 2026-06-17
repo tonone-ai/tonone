@@ -1,6 +1,6 @@
 {
   "name": "copy",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Design Team \u2014 Copy: UX writing and content design \u2014 microcopy, error messages, onboarding flows, UI content strategy",
   "author": {
     "name": "tonone-ai",
@@ -8,10 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "design-team",
-    "copy",
-    "design"
-  ]
+  "keywords": ["agents", "design-team", "copy", "design"]
 }

@@ -28,6 +28,7 @@ Output a token architecture: three-tier schema, naming convention, token invento
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

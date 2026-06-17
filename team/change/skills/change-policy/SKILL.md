@@ -28,6 +28,7 @@ Output a versioning policy: semver rules for this API, deprecation timeline, com
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

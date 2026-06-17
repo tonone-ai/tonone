@@ -28,6 +28,7 @@ Output a contract testing setup: Pact consumer and provider config, CI gate, and
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

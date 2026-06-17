@@ -28,6 +28,7 @@ Output alert design: threshold justification, alert grouping, escalation path, r
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

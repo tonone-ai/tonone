@@ -28,6 +28,7 @@ Output production-ready copy for all required text elements: labels, placeholder
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

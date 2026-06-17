@@ -28,6 +28,7 @@ Output an EDA plan: distribution checks, correlation analysis, outlier detection
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

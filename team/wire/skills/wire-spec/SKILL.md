@@ -28,6 +28,7 @@ Output a complete handoff spec: component anatomy, all states (default/hover/foc
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

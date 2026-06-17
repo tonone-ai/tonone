@@ -28,6 +28,7 @@ Report: sample inventory, language coverage gaps, stale samples (pinned to old v
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

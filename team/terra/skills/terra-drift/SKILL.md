@@ -28,6 +28,7 @@ Output a drift detection workflow: scheduled plan CI job, alerting on drift, rem
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

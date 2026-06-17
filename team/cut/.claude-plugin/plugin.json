@@ -1,6 +1,6 @@
 {
   "name": "cut",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Design Team \u2014 Cut: Illustration and icon design \u2014 custom assets, icon systems, SVG optimization",
   "author": {
     "name": "tonone-ai",
@@ -8,10 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "design-team",
-    "cut",
-    "design"
-  ]
+  "keywords": ["agents", "design-team", "cut", "design"]
 }

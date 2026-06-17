@@ -1,6 +1,6 @@
 {
   "name": "move",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Design Team \u2014 Move: Motion design \u2014 animation principles, transition systems, micro-interaction specs",
   "author": {
     "name": "tonone-ai",
@@ -8,10 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "design-team",
-    "move",
-    "design"
-  ]
+  "keywords": ["agents", "design-team", "move", "design"]
 }

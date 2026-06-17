@@ -28,6 +28,7 @@ Output an SDK design: language targets and rationale, generation strategy (OpenA
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

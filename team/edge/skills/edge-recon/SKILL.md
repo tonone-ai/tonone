@@ -28,6 +28,7 @@ Report: cache hit ratio, missing or wrong Cache-Control headers, uncached cachea
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

@@ -28,6 +28,7 @@ Report: string inventory by component, untranslated/hardcoded strings, missing c
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

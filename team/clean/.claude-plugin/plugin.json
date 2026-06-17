@@ -1,6 +1,6 @@
 {
   "name": "clean",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Data Science Team \u2014 Clean: Data quality \u2014 deduplication, validation, outlier detection, ETL pipeline design",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "data-science-team",
-    "clean",
-    "data-science",
-    "ml"
-  ]
+  "keywords": ["agents", "data-science-team", "clean", "data-science", "ml"]
 }

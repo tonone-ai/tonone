@@ -28,6 +28,7 @@ Output a scaling design: consumer scaling trigger (queue depth/lag metric), auto
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

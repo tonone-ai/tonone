@@ -1,6 +1,6 @@
 {
   "name": "mark",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Design Team \u2014 Mark: Brand identity design \u2014 logo usage rules, brand guidelines, visual identity systems",
   "author": {
     "name": "tonone-ai",
@@ -8,10 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "design-team",
-    "mark",
-    "design"
-  ]
+  "keywords": ["agents", "design-team", "mark", "design"]
 }

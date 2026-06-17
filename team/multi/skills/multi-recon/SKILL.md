@@ -28,6 +28,7 @@ Report: lock-in inventory, portability score by tier, highest-risk dependencies,
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

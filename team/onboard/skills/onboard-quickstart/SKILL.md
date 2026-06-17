@@ -28,6 +28,7 @@ Output a quickstart: prerequisite check (language/version), install step, creden
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

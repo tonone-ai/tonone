@@ -28,6 +28,7 @@ Output a cluster design: node pool spec, namespace strategy, RBAC model, network
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

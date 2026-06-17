@@ -28,6 +28,7 @@ Report: OWASP Top 10 coverage gaps, missing SAST rules, unscanned code paths, an
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

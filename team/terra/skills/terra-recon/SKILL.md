@@ -28,6 +28,7 @@ Report: state management issues, security gaps (secrets in code, missing encrypt
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

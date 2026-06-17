@@ -28,6 +28,7 @@ Output an experiment design: sample size calculation, test duration, randomizati
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps
