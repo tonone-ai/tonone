@@ -1,6 +1,6 @@
 {
   "name": "sample",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Developer Experience Team \u2014 Sample: Code samples and tutorials \u2014 working examples, quickstarts, and language-specific guides",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "devx-team",
-    "sample",
-    "developer-experience",
-    "devx"
-  ]
+  "keywords": ["agents", "devx-team", "sample", "developer-experience", "devx"]
 }

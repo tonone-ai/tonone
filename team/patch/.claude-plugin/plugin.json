@@ -1,6 +1,6 @@
 {
   "name": "patch",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Security Operations Team \u2014 Patch: Vulnerability management \u2014 CVE triage, CVSS prioritization, patching cadence, SLA design",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "secops-team",
-    "patch",
-    "security",
-    "secops"
-  ]
+  "keywords": ["agents", "secops-team", "patch", "security", "secops"]
 }

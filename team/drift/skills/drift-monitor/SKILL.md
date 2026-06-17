@@ -28,6 +28,7 @@ Output a monitoring design: drift detection strategy, statistical tests, alert t
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

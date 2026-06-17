@@ -28,6 +28,7 @@ Output a cleaning pipeline: missingness handling strategy, outlier treatment, de
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

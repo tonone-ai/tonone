@@ -28,6 +28,7 @@ Report: what colors are in use, which are hardcoded vs tokenized, which fail con
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

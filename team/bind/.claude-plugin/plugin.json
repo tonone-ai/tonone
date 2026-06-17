@@ -1,6 +1,6 @@
 {
   "name": "bind",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Compliance framework implementation \u2014 SOC2, GDPR, HIPAA, ISO 27001 gap analysis and remediation plans",
   "author": {
     "name": "tonone-ai",
@@ -8,12 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "compliance",
-    "soc2",
-    "gdpr",
-    "hipaa",
-    "iso27001",
-    "regulatory"
-  ]
+  "keywords": ["compliance", "soc2", "gdpr", "hipaa", "iso27001", "regulatory"]
 }

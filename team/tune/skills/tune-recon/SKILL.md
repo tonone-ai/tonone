@@ -28,6 +28,7 @@ Report: methodology gaps, dataset quality issues, missing evaluation, and whethe
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

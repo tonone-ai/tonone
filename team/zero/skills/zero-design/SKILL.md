@@ -28,6 +28,7 @@ Output a zero trust roadmap: current maturity assessment, phased plan (identity 
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

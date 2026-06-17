@@ -28,6 +28,7 @@ Output a feature store design: recommended tool (Feast/Hopsworks/custom), entity
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

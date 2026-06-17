@@ -28,6 +28,7 @@ Report: SLA coverage gaps, missing asset tiers, process failures (no verificatio
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

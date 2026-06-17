@@ -28,6 +28,7 @@ Report: coverage gaps, missing states, undocumented edge cases, and recommended 
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

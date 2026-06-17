@@ -28,6 +28,7 @@ Report: MITRE ATT&CK coverage heatmap (what's detected vs blind spots), hardenin
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

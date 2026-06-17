@@ -28,6 +28,7 @@ Report: security misconfigs (RBAC, network), resource issues (missing limits, no
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

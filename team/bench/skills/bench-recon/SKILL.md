@@ -28,6 +28,7 @@ Report: benchmark coverage gaps, missing p99 metrics, stale baselines, missing C
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

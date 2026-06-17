@@ -28,6 +28,7 @@ Report: zero trust maturity level (CISA model), gap analysis, and recommended fi
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

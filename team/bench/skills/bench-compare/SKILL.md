@@ -28,6 +28,7 @@ Output a comparison report: p50/p95/p99 comparison table, regressions flagged, l
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

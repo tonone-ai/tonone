@@ -28,6 +28,7 @@ Output validation results: walk-forward CV error metrics (MAPE, RMSE, sMAPE), ba
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

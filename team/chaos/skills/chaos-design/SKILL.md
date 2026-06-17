@@ -28,6 +28,7 @@ Output an experiment design: hypothesis statement, steady-state definition, fail
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

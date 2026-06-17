@@ -28,6 +28,7 @@ Output a portability assessment: lock-in inventory by tier (low/medium/high), po
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

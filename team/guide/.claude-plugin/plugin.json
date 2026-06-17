@@ -1,6 +1,6 @@
 {
   "name": "guide",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Developer Experience Team \u2014 Guide: API and SDK documentation \u2014 reference docs, guides, and documentation architecture",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "devx-team",
-    "guide",
-    "developer-experience",
-    "devx"
-  ]
+  "keywords": ["agents", "devx-team", "guide", "developer-experience", "devx"]
 }

@@ -28,6 +28,7 @@ Report: tagging coverage %, missing cost alerts, FinOps maturity level, and reco
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

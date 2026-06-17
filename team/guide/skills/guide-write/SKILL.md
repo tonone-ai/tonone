@@ -28,6 +28,7 @@ Output production-ready docs: description, parameters table (name/type/required/
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

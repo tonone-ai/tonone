@@ -28,6 +28,7 @@ Output a benchmark design: test scenarios (read/write/mixed), tooling (k6/wrk/he
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

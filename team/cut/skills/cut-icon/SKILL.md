@@ -28,6 +28,7 @@ Output icon system spec: grid/viewport rules, stroke conventions, naming schema,
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

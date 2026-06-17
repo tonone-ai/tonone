@@ -28,6 +28,7 @@ Report: leakage risks, encoding issues, missing value problems, and pipeline cor
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

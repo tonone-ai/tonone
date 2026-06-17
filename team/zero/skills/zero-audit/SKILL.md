@@ -28,6 +28,7 @@ Report: implicit trust findings, over-privileged access, missing MFA coverage, s
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

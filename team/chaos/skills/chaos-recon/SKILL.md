@@ -28,6 +28,7 @@ Report: untested failure modes, single points of failure, missing circuit breake
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

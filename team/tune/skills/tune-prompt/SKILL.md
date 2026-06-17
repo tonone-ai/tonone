@@ -28,6 +28,7 @@ Output optimized prompt variants with rationale, few-shot example selection stra
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

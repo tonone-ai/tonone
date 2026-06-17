@@ -28,6 +28,7 @@ Output an invalidation strategy: invalidation trigger design (event-driven vs TT
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

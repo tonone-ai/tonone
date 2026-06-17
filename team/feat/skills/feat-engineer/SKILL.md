@@ -28,6 +28,7 @@ Output a feature engineering plan: feature list with transformation logic, encod
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

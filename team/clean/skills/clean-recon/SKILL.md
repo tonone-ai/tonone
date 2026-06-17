@@ -28,6 +28,7 @@ Report: validation gaps, silent data loss risks, missing quality metrics, and re
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

@@ -28,6 +28,7 @@ Output an asset library spec: folder structure, naming conventions, required for
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

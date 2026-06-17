@@ -28,6 +28,7 @@ Output a tuning plan: search method (Optuna/random/grid), search space definitio
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

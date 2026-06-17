@@ -1,6 +1,6 @@
 {
   "name": "compat",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Developer Experience Team \u2014 Compat: Backwards compatibility \u2014 breaking change detection, deprecation management, semver discipline",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "devx-team",
-    "compat",
-    "developer-experience",
-    "devx"
-  ]
+  "keywords": ["agents", "devx-team", "compat", "developer-experience", "devx"]
 }

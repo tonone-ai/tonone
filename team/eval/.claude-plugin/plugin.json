@@ -1,6 +1,6 @@
 {
   "name": "eval",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Data Science Team \u2014 Eval: Experiment design \u2014 A/B testing, statistical power, experiment tracking, causal inference",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "data-science-team",
-    "eval",
-    "data-science",
-    "ml"
-  ]
+  "keywords": ["agents", "data-science-team", "eval", "data-science", "ml"]
 }

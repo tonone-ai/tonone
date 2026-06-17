@@ -28,6 +28,7 @@ Report: missing breaking change CI gates, existing deprecated fields past sunset
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

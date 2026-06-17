@@ -1,6 +1,6 @@
 {
   "name": "onboard",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Developer Experience Team \u2014 Onboard: Developer onboarding \u2014 quickstart design, time-to-first-call optimization, onboarding funnel audit",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "agents",
-    "devx-team",
-    "onboard",
-    "developer-experience",
-    "devx"
-  ]
+  "keywords": ["agents", "devx-team", "onboard", "developer-experience", "devx"]
 }

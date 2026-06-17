@@ -28,6 +28,7 @@ Report: mTLS coverage gaps, missing traffic policies, observability gaps, sideca
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

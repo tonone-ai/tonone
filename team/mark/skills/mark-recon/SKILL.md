@@ -28,6 +28,7 @@ Report: brand asset inventory, usage inconsistencies, gaps vs a complete brand s
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

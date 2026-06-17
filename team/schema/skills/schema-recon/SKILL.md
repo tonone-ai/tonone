@@ -19,7 +19,7 @@ Ask the user for any missing context needed to produce a useful output. If the r
 
 ### Step 1: Gather Context
 
-Glob for openapi.yaml, schema.graphql, *.proto files. Check for completeness and naming consistency.
+Glob for openapi.yaml, schema.graphql, \*.proto files. Check for completeness and naming consistency.
 
 ### Step 2: Produce Output
 
@@ -28,6 +28,7 @@ Report: schema coverage (% of endpoints with full spec), naming inconsistencies,
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

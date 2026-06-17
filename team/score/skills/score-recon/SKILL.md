@@ -28,6 +28,7 @@ Report: metric misuse, missing calibration, evaluation leakage risks, and recomm
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

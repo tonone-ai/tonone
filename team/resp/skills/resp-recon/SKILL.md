@@ -28,6 +28,7 @@ Report: playbook coverage gaps, missing threat scenarios, tooling gaps (forensic
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

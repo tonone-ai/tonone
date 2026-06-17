@@ -1,6 +1,6 @@
 [project]
 name = "mint"
-version = "1.9.0"
+version = "1.9.1"
 description = "Finance agent -- P&L, runway, unit economics, budget, fundraising, board reporting"
 license = "MIT"
 requires-python = ">=3.10"

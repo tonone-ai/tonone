@@ -28,6 +28,7 @@ Report: language coverage gaps, cross-SDK inconsistencies, stale SDK versions, a
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key decisions or recommendations
 - Recommended next steps

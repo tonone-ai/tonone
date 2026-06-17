@@ -28,6 +28,7 @@ Output a hunting program design: maturity assessment, annual hunting calendar by
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

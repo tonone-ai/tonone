@@ -28,6 +28,7 @@ Output a compromise assessment plan: hunting hypotheses ranked by probability, l
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

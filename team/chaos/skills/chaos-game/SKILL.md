@@ -28,6 +28,7 @@ Output a game day plan: scenario description, timeline, participant roles, simul
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

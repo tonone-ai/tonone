@@ -28,6 +28,7 @@ Report: missing TTLs, key design issues, stampede risks, eviction policy mismatc
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps

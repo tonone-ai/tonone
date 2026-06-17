@@ -28,6 +28,7 @@ Output an SBOM pipeline design: format recommendation (SPDX/CycloneDX), tooling 
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

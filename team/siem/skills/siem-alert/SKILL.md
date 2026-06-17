@@ -28,6 +28,7 @@ Output tuned rule: modified logic, added exclusions, enrichment fields, and expe
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or open questions
 - Recommended next steps

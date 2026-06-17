@@ -28,6 +28,7 @@ Output a reservation strategy: recommended Savings Plan type and coverage %, EC2
 ### Step 3: Summary
 
 Output a brief summary:
+
 - What was produced
 - Key risks or tradeoffs
 - Recommended next steps
