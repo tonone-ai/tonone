@@ -57,8 +57,7 @@ Notes:    idempotency, side effects, rate limit tier
 
 - Resources are plural nouns: `/payments`, `/customers`, `/invoices`
 - Nested resources for ownership: `GET /customers/:id/payment-methods`
-- Use correct HTTP verbs: GET (read), POST (create), PUT/PATCH (update), DELETE (remove)
-- `POST` on a resource creates. `PUT` replaces. `PATCH` partially updates. Be consistent.
+- Use correct HTTP verbs consistently.
 - IDs in path params. Filters and pagination in query params. Mutations in request body.
 - Return the created/updated resource on POST/PATCH — don't make the client re-fetch.
 
@@ -79,14 +78,14 @@ Notes:    idempotency, side effects, rate limit tier
 
 | Status | When                                                                                |
 | ------ | ----------------------------------------------------------------------------------- |
-| 400    | Validation failure — include `param`                                                |
-| 401    | Missing or invalid auth token                                                       |
-| 403    | Auth valid, but not permitted for this resource                                     |
-| 404    | Resource not found                                                                  |
-| 409    | Conflict — resource already exists, duplicate idempotency key with different params |
-| 422    | Semantically invalid request (valid JSON, valid types, invalid logic)               |
-| 429    | Rate limit exceeded — include `Retry-After` header                                  |
-| 500    | Internal error — log it, don't expose details                                       |
+| 400    | Validation failure — include `param`                                |
+| 401    | Missing or invalid auth                                             |
+| 403    | Authenticated but not authorized                                    |
+| 404    | Resource not found                                                  |
+| 409    | Conflict — duplicate resource or idempotency key mismatch           |
+| 422    | Semantically invalid — valid syntax, invalid logic                  |
+| 429    | Rate limited — include `Retry-After` header                         |
+| 500    | Internal error — log, don't expose                                  |
 
 **Pagination (cursor-based, always on list endpoints):**
 
@@ -108,10 +107,10 @@ Accept `Idempotency-Key` header. Return the same response for duplicate keys wit
 
 Specify the auth pattern explicitly:
 
-- **API key:** `Authorization: Bearer sk_live_...` — for server-to-server. Store hashed. Prefix distinguishes live/test.
-- **JWT:** Short-lived access token (15min), long-lived refresh token (7–30d). Validate signature, expiry, and audience.
-- **OAuth2:** For third-party access. Specify scopes per endpoint.
-- **Public:** No auth — document why and what rate limits apply.
+- **API key:** `Authorization: Bearer sk_live_...` — server-to-server, store hashed, prefix distinguishes live/test
+- **JWT:** Access token (15min) + refresh token (7–30d). Validate signature, expiry, audience.
+- **OAuth2:** Third-party access. Specify scopes per endpoint.
+- **Public:** No auth — document rationale and rate limits.
 
 State which endpoints require which auth level. Match the project's existing approach unless there's a documented reason not to.
 
@@ -141,7 +140,7 @@ Return `429 Too Many Requests` with:
 - `Retry-After: <seconds>` header
 - `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset` headers
 
-Use the project's existing rate limiting approach. If none exists, use Redis with a sliding window.
+Match existing rate limiting. If none, use Redis sliding window.
 
 ### Step 6: Write Tests
 

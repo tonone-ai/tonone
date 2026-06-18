@@ -46,15 +46,7 @@ If the user can't provide examples, generate plausible ones and validate before 
 
 ## Step 2: Select the Model Tier
 
-Pick the cheapest model that can reliably do the task:
-
-| Task type                              | Default tier                       |
-| -------------------------------------- | ---------------------------------- |
-| Classification, extraction, formatting | Haiku / GPT-4o mini / Gemini Flash |
-| Reasoning, summarization, generation   | Sonnet / GPT-4o / Gemini Pro       |
-| Nuanced judgment, complex synthesis    | Opus / GPT-4.5 / Gemini Ultra      |
-
-State your choice. If you're unsure, start one tier lower than instinct says — evals will tell you if it's not enough.
+Pick the cheapest model that reliably passes evals. Start one tier lower than instinct — evals confirm if it's enough. State your choice.
 
 ## Step 3: Write the Prompt Package
 
@@ -72,11 +64,11 @@ Structure:
 
 Rules for writing:
 
-- Specific beats vague. "Extract the customer's name, email, and issue category" beats "extract relevant info"
+- Be specific — name the exact fields, formats, and constraints
 - Separate instructions from data — user content goes in a clearly delimited block (`<input>`, `---`, XML tags)
 - State the output format in the system prompt AND show it via few-shot examples
 - If the model should refuse certain inputs, say so explicitly and state what to return instead
-- No "please" or "try to" — imperatives only: "Return", "Extract", "Do not"
+- Imperatives only — "Return", "Extract", "Do not". No "please" or "try to".
 
 ### 3b. User Message Template
 
@@ -105,8 +97,6 @@ Format for each example:
   output: "[expected output]"
   notes: "why this case matters"
 ```
-
-Few-shot examples are the most powerful prompt engineering tool. Use them.
 
 ### 3d. Output Schema
 
@@ -149,12 +139,7 @@ max_tokens: [tight budget — don't leave this open-ended]
 response_format: json_object # if applicable
 ```
 
-Temperature guidance:
-
-- Extraction, classification, structured output → 0.0
-- Summarization, Q&A → 0.1–0.2
-- Generation, creative → 0.3–0.7
-- Never above 0.8 for production tasks
+Set temperature appropriate to the task. Never above 0.8 in production.
 
 ## Step 5: Write Eval Criteria
 
@@ -196,12 +181,7 @@ Monthly at [volume]: $[X.XX]
 Cheaper option: [lower model tier] — saves [X]% if eval score holds
 ```
 
-Prompt optimization for cost:
-
-- Remove redundant instructions (say each thing once)
-- Move static context to the system prompt, not the user message
-- Truncate inputs with a defined strategy if they exceed a token budget
-- Consider caching the system prompt (Anthropic prompt caching = 90% cost reduction on repeated calls)
+Cost optimization: deduplicate instructions, move static context to system prompt, truncate inputs past token budget, enable prompt caching (90% cost reduction on repeated calls).
 
 ## Step 7: Output
 

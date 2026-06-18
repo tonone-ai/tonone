@@ -1,6 +1,6 @@
 ---
 name: forge-audit
-description: Audit existing infrastructure for security issues, waste, and misconfigurations. Use when asked to "audit my infra", "check cloud setup", "infra review", "are we wasting money", "security check on infra", or "review my terraform".
+description: Audit existing infrastructure for security issues, waste, and misconfigurations. Analyzes IAM policies, checks security group rules, identifies unused resources, reviews cost allocation tags, and flags Terraform misconfigurations. Use when asked to "audit my infra", "check cloud setup", "infra review", "are we wasting money", "security check on infra", or "review my terraform".
 allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
@@ -17,33 +17,19 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 ### Step 0: Detect Environment
 
-Scan the project to find all IaC and cloud configuration:
+Scan for all IaC and cloud configuration:
 
 ```bash
-# Terraform
+# IaC files
 find . -name '*.tf' -not -path './.terraform/*' 2>/dev/null
-
-# Pulumi
-ls Pulumi.yaml Pulumi.*.yaml 2>/dev/null
-find . -name '__main__.py' -path '*/pulumi/*' 2>/dev/null
-
-# CDK / CloudFormation
-ls cdk.json template.yaml template.json 2>/dev/null
-
-# Docker / Compose
-ls Dockerfile docker-compose.yml docker-compose.yaml 2>/dev/null
-
-# Cloud CLI configs
-gcloud config get-value project 2>/dev/null
-aws sts get-caller-identity 2>/dev/null
-cat wrangler.toml 2>/dev/null
-cat fly.toml 2>/dev/null
-
-# Kubernetes
+ls Pulumi.yaml cdk.json template.yaml Dockerfile docker-compose.yml 2>/dev/null
 ls k8s/ kubernetes/ manifests/ helmfile.yaml Chart.yaml 2>/dev/null
+
+# Cloud configs
+ls wrangler.toml fly.toml 2>/dev/null
 ```
 
-Read every IaC file found. If no IaC exists, tell the user that's finding #1.
+Read every IaC file found. If no IaC exists, that's finding #1.
 
 ### Step 1: Audit All IaC Files
 
@@ -52,7 +38,7 @@ Read every infrastructure file and check for these categories:
 **Security Issues (report as red circle):**
 
 - Public endpoints that should be private (databases, caches, internal APIs)
-- Overly permissive IAM roles (admin, editor, _._)
+- Overly permissive IAM roles
 - Missing encryption at rest or in transit
 - Hardcoded secrets, API keys, or credentials
 - Security groups with 0.0.0.0/0 on non-443 ports
@@ -71,7 +57,7 @@ Read every infrastructure file and check for these categories:
 
 **Cost and Hygiene Issues (report as blue circle):**
 
-- Over-provisioned resources (4 vCPU for a cron job, 64GB RAM for a small API)
+- Over-provisioned resources
 - Missing tags/labels on resources
 - Hardcoded values that should be variables
 - No remote state backend configured
@@ -79,7 +65,15 @@ Read every infrastructure file and check for these categories:
 - Resources with no clear owner or purpose
 - Unused resources still provisioned
 
-### Step 2: Present Findings
+### Step 2: Verify Findings
+
+Cross-reference each finding against actual resource state:
+
+- Confirm flagged resources exist and are active (not commented out or in disabled modules)
+- Check if apparent misconfigurations are overridden by higher-level policies or variables
+- Drop any finding that doesn't survive verification
+
+### Step 3: Present Findings
 
 Format the report as:
 
@@ -98,13 +92,24 @@ Format the report as:
 
 Use the actual emoji circles in the output: red for critical, yellow for warning, blue for improvement.
 
+**Example findings:**
+
+Red Circle Critical:
+`aws_db_instance.main` in `modules/rds/main.tf:14` — `publicly_accessible = true` on production database. Exposes DB to internet scan attacks. Fix: set `publicly_accessible = false` and access via VPC private subnet.
+
+Yellow Circle Warning:
+`aws_ecs_service.api` in `services/api/main.tf:42` — No autoscaling policy attached. Fixed capacity breaks under load spikes. Fix: add `aws_appautoscaling_target` with min 2, max 10 and a CPU target tracking policy.
+
+Blue Circle Improvement:
+`aws_s3_bucket.logs` in `storage/main.tf:8` — No lifecycle policy. Log bucket grows unbounded. Fix: add `lifecycle_rule` expiring objects after 90 days.
+
 Each finding MUST include:
 
 - The specific resource and file/line where the issue exists
 - Why it's a problem (not just "best practice" — explain the actual risk)
 - A concrete fix (code snippet or specific change, not "consider doing X")
 
-### Step 3: Summary
+### Step 4: Summary
 
 End with:
 
