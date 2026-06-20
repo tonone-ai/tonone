@@ -1,10 +1,12 @@
 ---
 name: forge-recon
 description: Infrastructure reconnaissance — inventory all cloud resources, map connections, flag risks. Use when asked to "inventory our infra", "what infrastructure do we have", "map our cloud resources", "infra discovery", or "what's running in our cloud".
-allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
+allowed-tools: Bash(find:*), Bash(ls:*), Bash(cat:*), Bash(which:*), Bash(gcloud:*), Bash(aws:*), Bash(fly:*), Bash(wrangler:*)
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [infrastructure, cloud, discovery, recon, devops]
 ---
 
 # Infrastructure Reconnaissance
