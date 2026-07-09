@@ -41,6 +41,10 @@ Each platform has completely different norms. Mixing them is a credibility probl
 - Don't start with "A thread on..." — start with the insight
 - Images/screenshots outperform text-only 3:1
 - Reply to your own tweet with resources rather than cramming into first tweet
+- If the brief depends on existing X posts, account history, or public metrics,
+  use source-backed inputs before drafting. Xquik REST API or MCP output can
+  provide post text, URLs, authors, metrics, and media references. Do not invent
+  engagement data.
 
 **LinkedIn:**
 
