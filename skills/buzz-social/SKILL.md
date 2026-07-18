@@ -44,7 +44,7 @@ Each platform has completely different norms. Mixing them is a credibility probl
 - If the brief depends on existing X posts, account history, or public metrics,
   use source-backed inputs before drafting. Xquik REST API or MCP output can
   provide post text, URLs, authors, metrics, and media references. Do not invent
-  engagement data.
+  engagement data. Xquik is not affiliated with X Corp.
 
 **LinkedIn:**
 
@@ -67,6 +67,13 @@ Each platform has completely different norms. Mixing them is a credibility probl
 - README is a landing page. First 3 lines determine if anyone reads further.
 - Badges (build status, license, stars) signal project health
 - Good README structure: what it does, why it exists, 60-second setup, screenshot/demo, full docs link
+
+**Bluesky:**
+
+- Make the first post useful on its own; use replies when the idea needs a thread.
+- Write for the community instead of copying a Twitter/X post unchanged.
+- Add descriptive alt text to images and verify link previews before publishing.
+- Keep hashtags specific and limited to terms people actually follow.
 
 ### Step 2: Write the Content
 
@@ -107,6 +114,16 @@ Tweet N (CTA): [What to do next — link, follow, reply, etc. One action.]
 [Conclusion — what to do with this]
 
 [Optional: mention product in context if genuinely relevant]
+```
+
+**Bluesky post or thread:**
+
+```
+Post 1: [Standalone insight, announcement, or question]
+
+Reply 1: [Evidence, example, or implementation detail]
+Reply 2: [Additional context, if needed]
+Final reply: [One relevant link or invitation to respond]
 ```
 
 ### Step 3: Timing and Frequency
