@@ -1,0 +1,13 @@
+{
+  "name": "keep",
+  "version": "1.10.0",
+  "description": "Customer Success engineer \u2014 onboarding optimization, health scoring, expansion revenue, churn prevention, and NRR growth.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["keep", "skill"]
+}

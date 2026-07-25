@@ -1,0 +1,13 @@
+{
+  "name": "apex",
+  "version": "1.10.0",
+  "description": "Engineering lead \u2014 hand Apex any task and it routes internally. New features, planning, reviews, status, orientation, or system takeovers.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["apex", "skill"]
+}

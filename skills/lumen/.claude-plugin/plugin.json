@@ -1,0 +1,13 @@
+{
+  "name": "lumen",
+  "version": "1.10.0",
+  "description": "Product analyst \u2014 metrics architecture, funnel analysis, A/B test design, retention, and growth measurement.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["lumen", "skill"]
+}

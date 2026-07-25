@@ -1,0 +1,702 @@
+[
+  {
+    "name": "apex",
+    "hat": "Engineering Lead",
+    "team": "Engineering",
+    "owns": "Orchestrates the team, scopes work, controls depth and budget",
+    "agent_path": "agents/apex.md"
+  },
+  {
+    "name": "forge",
+    "hat": "Infrastructure",
+    "team": "Engineering",
+    "owns": "Cloud services, networking, IaC, cost optimization",
+    "agent_path": "agents/forge.md"
+  },
+  {
+    "name": "relay",
+    "hat": "DevOps",
+    "team": "Engineering",
+    "owns": "CI/CD, deployments, GitOps, developer experience",
+    "agent_path": "agents/relay.md"
+  },
+  {
+    "name": "spine",
+    "hat": "Backend",
+    "team": "Engineering",
+    "owns": "APIs, system design, performance, distributed systems",
+    "agent_path": "agents/spine.md"
+  },
+  {
+    "name": "flux",
+    "hat": "Data",
+    "team": "Engineering",
+    "owns": "Databases, migrations, pipelines, data modeling",
+    "agent_path": "agents/flux.md"
+  },
+  {
+    "name": "warden",
+    "hat": "Security",
+    "team": "Engineering",
+    "owns": "IAM, secrets, compliance, threat modeling",
+    "agent_path": "agents/warden.md"
+  },
+  {
+    "name": "vigil",
+    "hat": "Observability + Reliability",
+    "team": "Engineering",
+    "owns": "Monitoring, alerting, SRE, incident response, SLOs",
+    "agent_path": "agents/vigil.md"
+  },
+  {
+    "name": "prism",
+    "hat": "Frontend/DX",
+    "team": "Engineering",
+    "owns": "UI, internal tools, developer portals",
+    "agent_path": "agents/prism.md"
+  },
+  {
+    "name": "cortex",
+    "hat": "ML/AI",
+    "team": "Engineering",
+    "owns": "Model training, MLOps, feature engineering, LLM integration",
+    "agent_path": "agents/cortex.md"
+  },
+  {
+    "name": "touch",
+    "hat": "Mobile",
+    "team": "Engineering",
+    "owns": "Native iOS/Android, cross-platform, app stores",
+    "agent_path": "agents/touch.md"
+  },
+  {
+    "name": "volt",
+    "hat": "Embedded/IoT",
+    "team": "Engineering",
+    "owns": "Firmware, microcontrollers, edge computing, protocols",
+    "agent_path": "agents/volt.md"
+  },
+  {
+    "name": "atlas",
+    "hat": "Knowledge Engineering",
+    "team": "Engineering",
+    "owns": "Architecture docs, ADRs, API specs, system diagrams",
+    "agent_path": "agents/atlas.md"
+  },
+  {
+    "name": "lens",
+    "hat": "Data Analytics & BI",
+    "team": "Engineering",
+    "owns": "Dashboards, metrics design, reporting, data storytelling",
+    "agent_path": "agents/lens.md"
+  },
+  {
+    "name": "proof",
+    "hat": "QA & Testing",
+    "team": "Engineering",
+    "owns": "Test strategy, E2E suites, integration testing, flaky triage",
+    "agent_path": "agents/proof.md"
+  },
+  {
+    "name": "pave",
+    "hat": "Platform Engineering",
+    "team": "Engineering",
+    "owns": "Developer experience, golden paths, service catalogs",
+    "agent_path": "agents/pave.md"
+  },
+  {
+    "name": "helm",
+    "hat": "Head of Product",
+    "team": "Product",
+    "owns": "Orchestrates the product team, writes briefs, hands off to Apex",
+    "agent_path": "agents/helm.md"
+  },
+  {
+    "name": "echo",
+    "hat": "User Research",
+    "team": "Product",
+    "owns": "User interviews, personas, Jobs-to-Be-Done, feedback synthesis",
+    "agent_path": "agents/echo.md"
+  },
+  {
+    "name": "lumen",
+    "hat": "Product Analytics",
+    "team": "Product",
+    "owns": "Metrics frameworks, funnel analysis, OKRs, A/B test design",
+    "agent_path": "agents/lumen.md"
+  },
+  {
+    "name": "draft",
+    "hat": "UX Design",
+    "team": "Product",
+    "owns": "User flows, information architecture, wireframes",
+    "agent_path": "agents/draft.md"
+  },
+  {
+    "name": "form",
+    "hat": "Visual Design",
+    "team": "Product",
+    "owns": "Brand identity, color systems, typography, design system",
+    "agent_path": "agents/form.md"
+  },
+  {
+    "name": "crest",
+    "hat": "Product Strategy",
+    "team": "Product",
+    "owns": "Roadmap planning, prioritization, competitive analysis",
+    "agent_path": "agents/crest.md"
+  },
+  {
+    "name": "pitch",
+    "hat": "Product Marketing",
+    "team": "Product",
+    "owns": "Positioning, messaging, value prop, GTM, launch copy",
+    "agent_path": "agents/pitch.md"
+  },
+  {
+    "name": "surge",
+    "hat": "Growth",
+    "team": "Product",
+    "owns": "Acquisition channels, activation funnels, retention playbooks",
+    "agent_path": "agents/surge.md"
+  },
+  {
+    "name": "deal",
+    "hat": "Revenue & Sales",
+    "team": "Product",
+    "owns": "B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing",
+    "agent_path": "agents/deal.md"
+  },
+  {
+    "name": "keep",
+    "hat": "Customer Success",
+    "team": "Product",
+    "owns": "Onboarding optimization, health scoring, expansion revenue, churn prevention",
+    "agent_path": "agents/keep.md"
+  },
+  {
+    "name": "ink",
+    "hat": "Content Marketing",
+    "team": "Product",
+    "owns": "Blog strategy, SEO, thought leadership, developer content, content calendar",
+    "agent_path": "agents/ink.md"
+  },
+  {
+    "name": "buzz",
+    "hat": "PR & Community",
+    "team": "Product",
+    "owns": "Press pitches, social media, open source community, DevRel, launch moments",
+    "agent_path": "agents/buzz.md"
+  },
+  {
+    "name": "mint",
+    "hat": "Finance",
+    "team": "Operations",
+    "owns": "P&L, runway, unit economics, fundraising, board reporting, cap table",
+    "agent_path": "agents/mint.md"
+  },
+  {
+    "name": "folk",
+    "hat": "People",
+    "team": "Operations",
+    "owns": "Org design, hiring pipelines, comp frameworks, onboarding, performance, human-to-agent migration",
+    "agent_path": "agents/folk.md"
+  },
+  {
+    "name": "keel",
+    "hat": "Operations",
+    "team": "Operations",
+    "owns": "Process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution",
+    "agent_path": "agents/keel.md"
+  },
+  {
+    "name": "brace",
+    "hat": "Support",
+    "team": "Operations",
+    "owns": "Ticket workflow, SLA design, knowledge base, escalation paths, support operations",
+    "agent_path": "agents/brace.md"
+  },
+  {
+    "name": "brief",
+    "hat": "Contract & Policy Drafter",
+    "team": "Legal",
+    "owns": "NDAs, MSAs, employment agreements, SLAs, vendor contracts",
+    "agent_path": "agents/brief.md"
+  },
+  {
+    "name": "clause",
+    "hat": "Contract Clause Analyst",
+    "team": "Legal",
+    "owns": "Redlining, risk scoring, negotiation playbooks",
+    "agent_path": "agents/clause.md"
+  },
+  {
+    "name": "bind",
+    "hat": "Compliance Framework Engineer",
+    "team": "Legal",
+    "owns": "SOC2, GDPR, HIPAA, ISO 27001 gap analysis and remediation",
+    "agent_path": "agents/bind.md"
+  },
+  {
+    "name": "frame",
+    "hat": "Corporate Governance Advisor",
+    "team": "Legal",
+    "owns": "Board resolutions, cap table hygiene, equity plan docs",
+    "agent_path": "agents/frame.md"
+  },
+  {
+    "name": "shield",
+    "hat": "Regulatory Risk Advisor",
+    "team": "Legal",
+    "owns": "GDPR exposure, CCPA, FTC rules, financial regulation, export controls",
+    "agent_path": "agents/shield.md"
+  },
+  {
+    "name": "scope",
+    "hat": "IP & Trademark Advisor",
+    "team": "Legal",
+    "owns": "Trademark clearance, patent landscape, open source license compliance",
+    "agent_path": "agents/scope.md"
+  },
+  {
+    "name": "audit",
+    "hat": "Legal Compliance Auditor",
+    "team": "Legal",
+    "owns": "Internal controls review, legal risk register, audit trail docs",
+    "agent_path": "agents/audit.md"
+  },
+  {
+    "name": "cite",
+    "hat": "Legal Researcher",
+    "team": "Legal",
+    "owns": "Case law synthesis, statute analysis, jurisdiction comparison",
+    "agent_path": "agents/cite.md"
+  },
+  {
+    "name": "lodge",
+    "hat": "Regulatory Filing Advisor",
+    "team": "Legal",
+    "owns": "DMCA, FTC disclosures, GDPR DPAs, government filings, state registrations",
+    "agent_path": "agents/lodge.md"
+  },
+  {
+    "name": "terms",
+    "hat": "Privacy & ToS Drafter",
+    "team": "Legal",
+    "owns": "GDPR-compliant privacy policies, ToS, cookie policies, DPAs",
+    "agent_path": "agents/terms.md"
+  },
+  {
+    "name": "hue",
+    "hat": "Color Systems Designer",
+    "team": "Design",
+    "owns": "Color palettes, semantic tokens, dark/light mode, WCAG contrast",
+    "agent_path": "agents/hue.md"
+  },
+  {
+    "name": "grid",
+    "hat": "Layout Systems Designer",
+    "team": "Design",
+    "owns": "Spacing systems, responsive grids, breakpoints, layout primitives",
+    "agent_path": "agents/grid.md"
+  },
+  {
+    "name": "glyph",
+    "hat": "Typography Designer",
+    "team": "Design",
+    "owns": "Font selection, type scale, hierarchy, readability tokens",
+    "agent_path": "agents/glyph.md"
+  },
+  {
+    "name": "move",
+    "hat": "Motion Designer",
+    "team": "Design",
+    "owns": "Animation systems, transitions, micro-interactions, motion tokens",
+    "agent_path": "agents/move.md"
+  },
+  {
+    "name": "wire",
+    "hat": "Prototyping Engineer",
+    "team": "Design",
+    "owns": "Interactive prototypes, flow documentation, design handoff specs",
+    "agent_path": "agents/wire.md"
+  },
+  {
+    "name": "mark",
+    "hat": "Brand Designer",
+    "team": "Design",
+    "owns": "Logo usage, brand guidelines, visual identity, asset library",
+    "agent_path": "agents/mark.md"
+  },
+  {
+    "name": "cut",
+    "hat": "Illustration & Icon Designer",
+    "team": "Design",
+    "owns": "Custom illustrations, icon systems, SVG optimization",
+    "agent_path": "agents/cut.md"
+  },
+  {
+    "name": "axe",
+    "hat": "Accessibility Engineer",
+    "team": "Design",
+    "owns": "WCAG audits, keyboard navigation, screen reader testing, ARIA",
+    "agent_path": "agents/axe.md"
+  },
+  {
+    "name": "tone",
+    "hat": "Design Token Engineer",
+    "team": "Design",
+    "owns": "Token architecture, multi-brand theming, style-dictionary pipelines",
+    "agent_path": "agents/tone.md"
+  },
+  {
+    "name": "copy",
+    "hat": "Content Designer",
+    "team": "Design",
+    "owns": "UX writing, microcopy, error messages, onboarding copy, UI content strategy",
+    "agent_path": "agents/copy.md"
+  },
+  {
+    "name": "cast",
+    "hat": "Forecasting Engineer",
+    "team": "Data Science",
+    "owns": "Time series forecasting, demand prediction, seasonal decomposition",
+    "agent_path": "agents/cast.md"
+  },
+  {
+    "name": "feat",
+    "hat": "Feature Engineer",
+    "team": "Data Science",
+    "owns": "Feature engineering, encodings, feature stores, pipeline design",
+    "agent_path": "agents/feat.md"
+  },
+  {
+    "name": "fit",
+    "hat": "Model Training Engineer",
+    "team": "Data Science",
+    "owns": "Algorithm selection, hyperparameter tuning, training pipelines",
+    "agent_path": "agents/fit.md"
+  },
+  {
+    "name": "score",
+    "hat": "Model Evaluation Engineer",
+    "team": "Data Science",
+    "owns": "Metrics design, statistical significance, model comparison",
+    "agent_path": "agents/score.md"
+  },
+  {
+    "name": "drift",
+    "hat": "ML Monitoring Engineer",
+    "team": "Data Science",
+    "owns": "Data drift, concept drift, model degradation, production ML health",
+    "agent_path": "agents/drift.md"
+  },
+  {
+    "name": "vect",
+    "hat": "Embeddings & Vector Search Engineer",
+    "team": "Data Science",
+    "owns": "Semantic search, RAG pipelines, vector database design",
+    "agent_path": "agents/vect.md"
+  },
+  {
+    "name": "tune",
+    "hat": "LLM Fine-tuning Engineer",
+    "team": "Data Science",
+    "owns": "PEFT/LoRA, RLHF, instruction tuning, prompt optimization",
+    "agent_path": "agents/tune.md"
+  },
+  {
+    "name": "plot",
+    "hat": "Data Visualization Engineer",
+    "team": "Data Science",
+    "owns": "Chart design, EDA, visualization libraries, dashboard specs",
+    "agent_path": "agents/plot.md"
+  },
+  {
+    "name": "clean",
+    "hat": "Data Quality Engineer",
+    "team": "Data Science",
+    "owns": "Deduplication, validation, outlier detection, ETL pipelines",
+    "agent_path": "agents/clean.md"
+  },
+  {
+    "name": "eval",
+    "hat": "Experiment Design Engineer",
+    "team": "Data Science",
+    "owns": "A/B testing, statistical power, experiment tracking, causal inference",
+    "agent_path": "agents/eval.md"
+  },
+  {
+    "name": "red",
+    "hat": "Offensive Security Engineer",
+    "team": "Security Operations",
+    "owns": "Pen testing plans, red team exercises, attack path documentation",
+    "agent_path": "agents/red.md"
+  },
+  {
+    "name": "blue",
+    "hat": "Defensive Security Engineer",
+    "team": "Security Operations",
+    "owns": "SOC design, detection engineering, hardening playbooks",
+    "agent_path": "agents/blue.md"
+  },
+  {
+    "name": "hunt",
+    "hat": "Threat Hunter",
+    "team": "Security Operations",
+    "owns": "Hypothesis-driven hunting, compromise assessment, IOC analysis",
+    "agent_path": "agents/hunt.md"
+  },
+  {
+    "name": "patch",
+    "hat": "Vulnerability Management Engineer",
+    "team": "Security Operations",
+    "owns": "CVE triage, CVSS + EPSS prioritization, patch SLA design",
+    "agent_path": "agents/patch.md"
+  },
+  {
+    "name": "chain",
+    "hat": "Supply Chain Security Engineer",
+    "team": "Security Operations",
+    "owns": "SBOM generation, dependency scanning, third-party risk",
+    "agent_path": "agents/chain.md"
+  },
+  {
+    "name": "sast",
+    "hat": "Application Security Engineer",
+    "team": "Security Operations",
+    "owns": "SAST/DAST pipelines, code security review, secure SDLC",
+    "agent_path": "agents/sast.md"
+  },
+  {
+    "name": "siem",
+    "hat": "Detection & SIEM Engineer",
+    "team": "Security Operations",
+    "owns": "Log pipeline design, SIGMA rules, alert tuning",
+    "agent_path": "agents/siem.md"
+  },
+  {
+    "name": "resp",
+    "hat": "Incident Response Engineer",
+    "team": "Security Operations",
+    "owns": "IR playbooks, containment runbooks, DFIR, post-incident review",
+    "agent_path": "agents/resp.md"
+  },
+  {
+    "name": "zero",
+    "hat": "Zero Trust Architect",
+    "team": "Security Operations",
+    "owns": "Zero trust roadmap, network microsegmentation, ZTNA design",
+    "agent_path": "agents/zero.md"
+  },
+  {
+    "name": "phish",
+    "hat": "Security Awareness Engineer",
+    "team": "Security Operations",
+    "owns": "Phishing simulations, security training programs, culture metrics",
+    "agent_path": "agents/phish.md"
+  },
+  {
+    "name": "guide",
+    "hat": "API Documentation Engineer",
+    "team": "Developer Experience",
+    "owns": "API reference docs, integration guides, SDK documentation",
+    "agent_path": "agents/guide.md"
+  },
+  {
+    "name": "sample",
+    "hat": "Code Sample Engineer",
+    "team": "Developer Experience",
+    "owns": "Working examples, quickstarts, language-specific tutorials",
+    "agent_path": "agents/sample.md"
+  },
+  {
+    "name": "mock",
+    "hat": "API Mocking & Contract Engineer",
+    "team": "Developer Experience",
+    "owns": "Mock servers, consumer-driven contract testing, API simulation",
+    "agent_path": "agents/mock.md"
+  },
+  {
+    "name": "schema",
+    "hat": "API Schema Engineer",
+    "team": "Developer Experience",
+    "owns": "OpenAPI, GraphQL, gRPC schema quality and design standards",
+    "agent_path": "agents/schema.md"
+  },
+  {
+    "name": "port",
+    "hat": "SDK Design Engineer",
+    "team": "Developer Experience",
+    "owns": "Multi-language SDK architecture, idiomatic patterns, consistency",
+    "agent_path": "agents/port.md"
+  },
+  {
+    "name": "change",
+    "hat": "Changelog & Release Communication Engineer",
+    "team": "Developer Experience",
+    "owns": "Breaking change docs, deprecation notices, migration guides",
+    "agent_path": "agents/change.md"
+  },
+  {
+    "name": "onboard",
+    "hat": "Developer Onboarding Engineer",
+    "team": "Developer Experience",
+    "owns": "Quickstart design, time-to-first-call optimization",
+    "agent_path": "agents/onboard.md"
+  },
+  {
+    "name": "bench",
+    "hat": "API Performance Engineer",
+    "team": "Developer Experience",
+    "owns": "Latency profiling, throughput testing, regression detection",
+    "agent_path": "agents/bench.md"
+  },
+  {
+    "name": "compat",
+    "hat": "Backwards Compatibility Engineer",
+    "team": "Developer Experience",
+    "owns": "Breaking change detection, deprecation management, semver",
+    "agent_path": "agents/compat.md"
+  },
+  {
+    "name": "gate",
+    "hat": "API Quality Gate Engineer",
+    "team": "Developer Experience",
+    "owns": "Linting, style enforcement, breaking change CI, API governance",
+    "agent_path": "agents/gate.md"
+  },
+  {
+    "name": "kube",
+    "hat": "Kubernetes Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "Cluster design, RBAC, networking policies, operators, Helm charts",
+    "agent_path": "agents/kube.md"
+  },
+  {
+    "name": "terra",
+    "hat": "Terraform Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "IaC modules, state management, provider config, drift detection",
+    "agent_path": "agents/terra.md"
+  },
+  {
+    "name": "finop",
+    "hat": "FinOps Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "Cloud cost optimization, budget alerts, rightsizing, waste elimination",
+    "agent_path": "agents/finop.md"
+  },
+  {
+    "name": "serv",
+    "hat": "Service Reliability Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "SLO design, error budgets, reliability reviews, capacity planning",
+    "agent_path": "agents/serv.md"
+  },
+  {
+    "name": "edge",
+    "hat": "Edge Computing Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "CDN config, edge functions, latency optimization, global routing",
+    "agent_path": "agents/edge.md"
+  },
+  {
+    "name": "cache",
+    "hat": "Caching Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "Redis/Memcached design, cache invalidation, TTL strategy, hit-rate tuning",
+    "agent_path": "agents/cache.md"
+  },
+  {
+    "name": "queue",
+    "hat": "Message Queue Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "Kafka/SQS/RabbitMQ design, consumer groups, DLQs, backpressure",
+    "agent_path": "agents/queue.md"
+  },
+  {
+    "name": "mesh",
+    "hat": "Service Mesh Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "Istio/Linkerd config, mTLS, traffic management, observability",
+    "agent_path": "agents/mesh.md"
+  },
+  {
+    "name": "multi",
+    "hat": "Multi-Cloud Engineer",
+    "team": "Infrastructure Specialist",
+    "owns": "Cross-cloud architecture, vendor portability, cloud-agnostic patterns",
+    "agent_path": "agents/multi.md"
+  },
+  {
+    "name": "chaos",
+    "hat": "Chaos Engineering Lead",
+    "team": "Infrastructure Specialist",
+    "owns": "Failure injection, game days, resilience testing, blast radius control",
+    "agent_path": "agents/chaos.md"
+  },
+  {
+    "name": "deploy",
+    "hat": "AI Deployment Engineer",
+    "team": "AI Operations",
+    "owns": "Model serving, inference APIs, blue/green deploys, rollback, canary releases",
+    "agent_path": "agents/deploy.md"
+  },
+  {
+    "name": "evals",
+    "hat": "LLM Evaluation Engineer",
+    "team": "AI Operations",
+    "owns": "Eval harness design, benchmark suites, automated regression, human eval pipelines",
+    "agent_path": "agents/evals.md"
+  },
+  {
+    "name": "trace",
+    "hat": "LLM Observability Engineer",
+    "team": "AI Operations",
+    "owns": "LLM tracing, span capture, prompt/completion logging, cost attribution, debugging",
+    "agent_path": "agents/trace.md"
+  },
+  {
+    "name": "guard",
+    "hat": "AI Guardrails Engineer",
+    "team": "AI Operations",
+    "owns": "Input/output safety filters, PII detection, content moderation, policy enforcement",
+    "agent_path": "agents/guard.md"
+  },
+  {
+    "name": "budget",
+    "hat": "AI Cost Engineer",
+    "team": "AI Operations",
+    "owns": "LLM spend tracking, model cost optimization, budget alerts, token efficiency audits",
+    "agent_path": "agents/budget.md"
+  },
+  {
+    "name": "token",
+    "hat": "Token Management Engineer",
+    "team": "AI Operations",
+    "owns": "Context window optimization, token counting, truncation strategies, chunking patterns",
+    "agent_path": "agents/token.md"
+  },
+  {
+    "name": "prompt",
+    "hat": "Prompt Engineer",
+    "team": "AI Operations",
+    "owns": "System prompt design, few-shot libraries, chain-of-thought patterns, prompt versioning",
+    "agent_path": "agents/prompt.md"
+  },
+  {
+    "name": "embed",
+    "hat": "Embeddings Engineer",
+    "team": "AI Operations",
+    "owns": "Embedding model selection, vector pipeline design, similarity search, index management",
+    "agent_path": "agents/embed.md"
+  },
+  {
+    "name": "rank",
+    "hat": "AI Ranking Engineer",
+    "team": "AI Operations",
+    "owns": "Retrieval reranking, relevance scoring, learning-to-rank, result quality evaluation",
+    "agent_path": "agents/rank.md"
+  }
+]

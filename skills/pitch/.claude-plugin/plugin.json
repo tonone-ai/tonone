@@ -1,0 +1,13 @@
+{
+  "name": "pitch",
+  "version": "1.10.0",
+  "description": "Product marketer \u2014 positioning, messaging, value prop, GTM strategy, and launch copy.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["pitch", "skill"]
+}

@@ -235,3 +235,10 @@ Key routing rules:
 - Architecture review → invoke plan-eng-review
 - Save progress, checkpoint, resume → invoke checkpoint
 - Code quality, health check → invoke health
+
+## Health Stack
+
+- structure: python -m pytest tests/test_structure.py tests/test_agent_compliance.py tests/test_skill_compliance.py -v
+- hooks: python -m pytest tests/test_hooks.py -v
+- shell: find . -name "setup.sh" -not -path "./.git/*" -not -path "./.claude/*" | xargs shellcheck -S warning
+- versions: python scripts/bump-version.py --check

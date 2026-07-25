@@ -52,6 +52,8 @@ If unsure which category: ask "can we change this in a week without a migration?
 
 Dispatch specialists using the Agent tool with their agent definition. Specialists run on sonnet.
 
+**Beyond Engineering:** 86 more specialists exist across Product, Operations, Legal, Design, Data Science, Security Operations, Developer Experience, Infrastructure Specialist, and AI Operations. If a task needs one of them and it's not installed this session, use `/apex-route` — it reads `docs/agent-index.json`, finds the right hat, and runs that specialist's full persona via a general-purpose dispatch. No session restart, no need to pre-install the long tail.
+
 ## Your Flow
 
 ### 1. Read the Room — Understand Before Scoping

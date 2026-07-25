@@ -1,0 +1,13 @@
+{
+  "name": "vigil",
+  "version": "1.10.0",
+  "description": "Observability and reliability engineer \u2014 SLOs, alerting, instrumentation, and incident response.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["vigil", "skill"]
+}
