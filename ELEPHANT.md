@@ -183,3 +183,5 @@
 2026-07-25 19:07 : feat(apex): roster scoping, spawn analytics, and lazy specialist routing — @fatih
 2026-07-25 19:17 : [!!] pr-review(buzz): PR #111 "buzz-social Bluesky guidance" — code clean, no exploit/hidden-unicode, but author kriptoburak = Xquik-dev org (1388 contribs), PR plants own paid X-automation SaaS as recommended source in SKILL.md, no COI disclosure — @fatih
 2026-07-25 19:17 : review-pattern: undisclosed self-promo in doc PRs = check author's org affiliation vs named tool/service before merge, not just diff content — @fatih
+2026-07-25 19:17 : pr-review(buzz): PR #109 "source evidence guard, buzz-social" — 5-agent review, 4 candidate issues (tool-name conflict w/ #111 75, unbolded labels 55, fractional step 25, Key Rules placement 25), none hit 80 threshold — no auto-comment posted, held for @fatih manual call — @fatih
+2026-07-25 19:17 : [!!] confirmed same author (kriptoburak/Xquik-dev, blog xquik.com) on both #109 (names "TweetClaw") and #111 (names own "Xquik") — fix pattern for both: describe tool capability generically (read-only public API/aggregator), don't crown named vendor, require affiliation disclosure in PR body — @fatih
