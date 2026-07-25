@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
-Generate .claude-plugin/plugin.json for every skill in skills/
-and update .claude-plugin/marketplace.json with individual skill entries.
+Backfill .claude-plugin/plugin.json for any skill in skills/ that's missing one,
+and add matching entries to .claude-plugin/marketplace.json.
+
+Idempotent: skills that already have a plugin.json are left untouched (no
+reformatting), and existing marketplace.json entries are preserved as-is —
+only missing skill entries get added. Run with --force to regenerate every
+plugin.json from scratch instead (only use this deliberately; it reformats
+every skill's plugin.json).
 """
 
 import json
@@ -94,12 +100,58 @@ def make_marketplace_entry(name: str, description: str, version: str) -> dict:
     }
 
 
+def render_marketplace_entry(entry: dict) -> str:
+    """Hand-format to match the existing file's style exactly (4-space indent,
+    inline tags array) — json.dumps(indent=2) would reflow tags to multi-line
+    and doesn't match how every other skill entry in the file is written."""
+    return (
+        "    {\n"
+        f'      "name": "{entry["name"]}",\n'
+        f'      "description": {json.dumps(entry["description"])},\n'
+        f'      "version": "{entry["version"]}",\n'
+        f'      "source": "{entry["source"]}",\n'
+        '      "author": {\n'
+        f'        "name": "{entry["author"]["name"]}",\n'
+        f'        "url": "{entry["author"]["url"]}"\n'
+        "      },\n"
+        f'      "type": "{entry["type"]}",\n'
+        f'      "category": "{entry["category"]}",\n'
+        f'      "tags": {json.dumps(entry["tags"])}\n'
+        "    }"
+    )
+
+
+def append_marketplace_entries(entries: list, dry_run: bool) -> None:
+    """Insert new entries at the end of the plugins array via text splice —
+    never json.load/dump the whole file (see update_marketplace_json in
+    bump-version.py for why: it reformats every untouched entry)."""
+    if not entries:
+        return
+    text = MARKETPLACE_FILE.read_text()
+    match = re.search(r"\n(  \]\n\}\n?)$", text)
+    if not match:
+        raise RuntimeError(
+            "marketplace.json: could not find closing ']}' to splice before"
+        )
+    blocks = ",\n".join(render_marketplace_entry(e) for e in entries)
+    new_text = text[: match.start()] + ",\n" + blocks + "\n" + match.group(1)
+    if not dry_run:
+        MARKETPLACE_FILE.write_text(new_text)
+
+
 def main():
+    import sys
+
+    force = "--force" in sys.argv
     version = read_root_version()
     print(f"Using version {version} from root plugin.json\n")
 
     skill_dirs = sorted(p for p in SKILLS_DIR.iterdir() if p.is_dir())
-    new_marketplace_entries = []
+    backfilled_entries = []
+    skipped = 0
+
+    marketplace = json.loads(MARKETPLACE_FILE.read_text())
+    existing_names = {p["name"] for p in marketplace["plugins"]}
 
     for skill_dir in skill_dirs:
         skill_md = skill_dir / "SKILL.md"
@@ -110,27 +162,30 @@ def main():
         name = fm.get("name", skill_dir.name)
         description = fm.get("description", "")
 
-        # Write .claude-plugin/plugin.json
         plugin_dir = skill_dir / ".claude-plugin"
-        plugin_dir.mkdir(exist_ok=True)
         plugin_json = plugin_dir / "plugin.json"
+
+        if plugin_json.exists() and not force:
+            skipped += 1
+            continue
+
+        plugin_dir.mkdir(exist_ok=True)
         plugin_json.write_text(
             json.dumps(make_plugin_json(name, description, version), indent=2) + "\n"
         )
         print(f"  wrote {plugin_json.relative_to(REPO_ROOT)}")
 
-        new_marketplace_entries.append(
-            make_marketplace_entry(name, description, version)
-        )
+        if name not in existing_names:
+            backfilled_entries.append(
+                make_marketplace_entry(name, description, version)
+            )
 
-    # Update marketplace.json — replace any existing skill entries, keep agent/bundle entries
-    marketplace = json.loads(MARKETPLACE_FILE.read_text())
-    non_skill = [p for p in marketplace["plugins"] if p.get("type") != "skill"]
-    marketplace["plugins"] = non_skill + new_marketplace_entries
-    MARKETPLACE_FILE.write_text(json.dumps(marketplace, indent=2) + "\n")
-    print(f"\nUpdated {MARKETPLACE_FILE.relative_to(REPO_ROOT)}")
-    print(f"  {len(non_skill)} agent/bundle entries kept")
-    print(f"  {len(new_marketplace_entries)} skill entries added")
+    append_marketplace_entries(backfilled_entries, dry_run=False)
+
+    print(
+        f"\n{len(backfilled_entries)} plugin.json backfilled, {len(backfilled_entries)} marketplace entries added"
+    )
+    print(f"{skipped} skills already had a plugin.json — left untouched")
 
 
 if __name__ == "__main__":

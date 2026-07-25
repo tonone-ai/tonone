@@ -180,3 +180,4 @@
 2026-07-25 17:37 : mirrored both into team/apex/skills/ so standalone apex@tonone-ai plugin carries them too — @fatih
 2026-07-25 17:37 : [!!] found: 44 skills had zero .claude-plugin/plugin.json (forge/flux/form/helm/lens/pave/prism/proof/relay/spine/surge/touch/vigil/volt/warden family + buzz/deal/ink/keep) — scripts/gen-skill-plugins.py backfills but reformats ~140 unrelated files — reverted, not shipped, needs own pass — @fatih
 2026-07-25 17:37 : ext feedback (6wk usage data): 233 generic-agent spawns vs 90 tonone spawns — catalog weight (100 agents/189 skills) beats specialists on effort-to-choose — pushed back on consolidation (hue/glyph/grid/tone/mark → params) since it kills per-agent memorability, the feedback's own stated strength — @fatih
+2026-07-25 19:07 : feat(apex): roster scoping, spawn analytics, and lazy specialist routing — @fatih

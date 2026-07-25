@@ -21,6 +21,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = str(REPO_ROOT / "templates")
+MARKETPLACE_FILE = REPO_ROOT / ".claude-plugin" / "marketplace.json"
 
 
 def read_current_version() -> str:
@@ -76,6 +77,33 @@ def update_pyproject_toml(path: Path, new_version: str, dry_run: bool) -> str | 
     return old
 
 
+def update_marketplace_json(new_version: str, dry_run: bool) -> int:
+    """Sync every plugin entry's version to new_version.
+
+    Surgical text substitution, not json.load/dump — a full round-trip
+    reformats every entry (unicode-escapes em-dashes, reflows inline arrays
+    to multi-line), producing a multi-thousand-line diff for a version bump.
+    Returns count of entries actually changed.
+    """
+    if not MARKETPLACE_FILE.exists():
+        return 0
+    text = MARKETPLACE_FILE.read_text()
+    pattern = re.compile(r'"version":\s*"([^"]*)"')
+    updated = 0
+
+    def repl(m: re.Match) -> str:
+        nonlocal updated
+        if m.group(1) == new_version:
+            return m.group(0)
+        updated += 1
+        return f'"version": "{new_version}"'
+
+    new_text = pattern.sub(repl, text)
+    if updated and not dry_run:
+        MARKETPLACE_FILE.write_text(new_text)
+    return updated
+
+
 def find_files():
     plugin_files = sorted(REPO_ROOT.glob("**/.claude-plugin/plugin.json"))
     pyproject_files = sorted(REPO_ROOT.glob("**/pyproject.toml"))
@@ -117,6 +145,21 @@ def check_sync():
         match = re.search(r'^version\s*=\s*"([^"]*)"', text, re.MULTILINE)
         if match and match.group(1) != current:
             drift.append((pf.relative_to(REPO_ROOT), match.group(1)))
+
+    if MARKETPLACE_FILE.exists():
+        data = json.loads(MARKETPLACE_FILE.read_text())
+        mismatched = {
+            p.get("version")
+            for p in data.get("plugins", [])
+            if p.get("version") != current
+        }
+        if mismatched:
+            drift.append(
+                (
+                    MARKETPLACE_FILE.relative_to(REPO_ROOT),
+                    f"{len(mismatched)} distinct stale version(s): {sorted(mismatched)}",
+                )
+            )
 
     if drift:
         print(f"Version drift detected (root = {current}):\n", file=sys.stderr)
@@ -183,6 +226,14 @@ def main():
     print(f"\n{prefix}Updated: {updated} files")
     if at_target:
         print(f"Already at {new_version}: {at_target} files")
+
+    marketplace_updated = update_marketplace_json(new_version, args.dry_run)
+    if marketplace_updated:
+        print(
+            f"{prefix}Updated: {marketplace_updated} marketplace.json entries → {new_version}"
+        )
+    else:
+        print("marketplace.json: all entries already at target version")
 
 
 if __name__ == "__main__":

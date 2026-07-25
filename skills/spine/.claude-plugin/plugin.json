@@ -1,0 +1,13 @@
+{
+  "name": "spine",
+  "version": "1.10.0",
+  "description": "Backend engineer \u2014 APIs, system design, performance, distributed systems, and service scaffolding.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["spine", "skill"]
+}
