@@ -73,7 +73,9 @@ Accept:
 
 - Public post URLs, handles, timestamps, metrics, and short approved excerpts.
 - Summaries of repeated themes, objections, questions, and language patterns.
-- Optional read-only packets from public X/Twitter tools such as TweetClaw.
+- Optional read-only packets from a public X/Twitter API or aggregator tool
+  (no specific product endorsed; contributors naming a tool must disclose
+  any affiliation with it in the PR description).
 
 Do not:
 
