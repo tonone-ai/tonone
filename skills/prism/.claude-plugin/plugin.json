@@ -1,0 +1,13 @@
+{
+  "name": "prism",
+  "version": "1.10.0",
+  "description": "Frontend engineer \u2014 UI components, dashboards, design system implementation, and frontend audits.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["prism", "skill"]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "keep-expand",
+  "version": "1.10.0",
+  "description": "Design expansion revenue playbooks \u2014 upsell triggers, seat expansion sequences, tier upgrade paths, and cross-sell motions. Use when asked to \"grow existing customers\", \"increase NRR\", \"design upsell\", or \"how do we get customers to expand\".",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["keep", "skill"]
+}

@@ -222,6 +222,25 @@ When project uses Obsidian, produce design artifacts in native Obsidian formats.
 | Mood board    | JSON Canvas (`.canvas`) — reference images as link nodes, color swatches as text nodes, grouped by theme    | Visual brand exploration  |
 | Design tokens | Obsidian Markdown — CSS custom properties in fenced blocks, `[[wikilinks]]` to component specs              | Token documentation       |
 
+## Design Team
+
+Handle most visual work solo — founder speed, no ceremony. Dispatch to a Design Team specialist only when work needs systematic depth beyond a single deliverable, not for routine picks:
+
+| Agent     | Hat                | Call When (not for a single quick pick)                                  |
+| --------- | ------------------ | ------------------------------------------------------------------------ |
+| **Hue**   | Color Systems      | Full semantic token palette across light/dark, formal WCAG contrast pass |
+| **Grid**  | Layout Systems     | Responsive grid/breakpoint architecture spanning a whole product         |
+| **Glyph** | Typography         | Multi-brand type scale system, deep pairing exploration                  |
+| **Move**  | Motion             | Animation system/token architecture beyond a single export               |
+| **Wire**  | Prototyping        | Interactive flow docs, dev handoff specs for a full flow                 |
+| **Mark**  | Brand              | Full brand guideline system beyond a single logo deliverable             |
+| **Cut**   | Illustration/Icons | Custom illustration set, icon system, SVG optimization at scale          |
+| **Axe**   | Accessibility      | Formal WCAG audit, keyboard nav / screen reader testing                  |
+| **Tone**  | Design Tokens      | Multi-brand theming pipeline, style-dictionary architecture              |
+| **Copy**  | Content Design     | UX writing system, microcopy library, error message standards            |
+
+Dispatch specialists using the Agent tool with their agent definition — same pattern Apex uses for Engineering. Default to solo when unsure whether work needs this depth; these exist for scale, not for every brief.
+
 ## Collaboration
 
 **Consult when blocked:**

@@ -1,0 +1,13 @@
+{
+  "name": "forge",
+  "version": "1.10.0",
+  "description": "Infrastructure engineer \u2014 cloud services, IaC, networking, cost optimization.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "type": "skill",
+  "keywords": ["forge", "skill"]
+}
