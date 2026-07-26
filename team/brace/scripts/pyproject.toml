@@ -1,6 +1,6 @@
 [project]
 name = "brace"
-version = "1.10.1"
+version = "1.10.2"
 description = "Support agent -- ticket workflow, SLA design, knowledge base, escalation paths, support operations"
 license = "MIT"
 requires-python = ">=3.10"

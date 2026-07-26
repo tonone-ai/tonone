@@ -83,3 +83,5 @@ node_modules/
 .npm/
 .yarn/
 .gstack/
+
+.context/*

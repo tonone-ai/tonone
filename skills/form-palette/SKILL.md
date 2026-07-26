@@ -8,6 +8,8 @@ allowed-tools: Read, Bash, Glob, Grep
 version: 0.6.6
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [product, design, visual, palette]
 ---
 
 # form-palette — Color Palette Generation

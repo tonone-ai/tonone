@@ -5,6 +5,8 @@ allowed-tools: Read, Write, Edit, Bash, AskUserQuestion
 version: 0.9.9
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [engineering, platform, devex, contribute]
 ---
 
 # Contribute to tonone

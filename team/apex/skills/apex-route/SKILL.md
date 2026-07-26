@@ -5,6 +5,8 @@ allowed-tools: Read, Bash, Glob, Grep, Task, TodoWrite
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [engineering, orchestration, route]
 ---
 
 # Apex Route

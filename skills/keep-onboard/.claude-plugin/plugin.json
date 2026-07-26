@@ -1,6 +1,6 @@
 {
   "name": "keep-onboard",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "description": "Optimize customer onboarding \u2014 map the activation sequence, identify drop-off points, design the aha moment, and produce the onboarding email sequence. Use when asked to \"fix onboarding\", \"improve activation\", \"time-to-value is too slow\", or \"customers aren't getting started\".",
   "author": {
     "name": "tonone-ai",

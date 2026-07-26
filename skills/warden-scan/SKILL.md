@@ -5,6 +5,8 @@ allowed-tools: Bash, Read, Glob
 version: 0.9.7
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [engineering, security, scan]
 ---
 
 # Warden Scan — Automated SAST + Dependency Audit

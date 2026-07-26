@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.10.2] - 2026-07-26
+
+### Added
+
+- **Marketplace metadata on every skill** — all 613 `SKILL.md` files (team/ source + root mirror) now carry `compatibility` and `tags` frontmatter fields, closing the gap on third-party marketplace grading rubrics (see #107). Tags are drawn from a per-agent domain table plus the skill's own name, so identical skills always get identical tags.
+- `scripts/gen-skill-metadata.py` — the generator behind the backfill above. Idempotent (safe to re-run for any new skill added later), atomic writes (temp file + rename, so a crash mid-run can't truncate a file), and fails loudly instead of guessing if a new agent is added without a tag mapping.
+
+### Fixed
+
+- Stale README version badge (was pinned at 1.2.0, 9 releases behind).
+- `tonone-onboard` — the one cross-agent skill with no owning agent — got a degenerate single-word tag from the new generator; now has a proper fallback tag set.
+
 ## [1.10.1] - 2026-07-26
 
 ### Fixed
