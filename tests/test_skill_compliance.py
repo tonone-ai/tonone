@@ -113,6 +113,17 @@ def test_frontmatter_required_fields():
             assert field in fm, f"skills/{name}: frontmatter missing '{field}'"
 
 
+def test_frontmatter_marketplace_metadata():
+    """Frontmatter must carry compatibility + a non-empty tags list — required
+    by the marketplace grading rubric requested in GitHub issue #107."""
+    for name, path in _skill_files():
+        fm, _ = _parse_frontmatter(path)
+        assert (
+            fm.get("compatibility") == "Designed for Claude Code"
+        ), f"skills/{name}: missing/wrong compatibility field"
+        assert fm.get("tags"), f"skills/{name}: missing or empty tags field"
+
+
 def test_frontmatter_name_matches_directory():
     """Frontmatter 'name' must match the skill directory name."""
     for name, path in _skill_files():

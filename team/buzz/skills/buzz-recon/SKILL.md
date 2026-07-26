@@ -5,6 +5,8 @@ allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [product, pr, community, recon]
 ---
 
 # PR & Community Reconnaissance

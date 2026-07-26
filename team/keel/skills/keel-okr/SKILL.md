@@ -5,6 +5,8 @@ allowed-tools: Read, Bash, Glob, Grep, WebFetch, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [operations, process, vendor, okr]
 ---
 
 # OKR Program Design

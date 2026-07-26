@@ -5,6 +5,8 @@ allowed-tools: Read, Bash, Glob, Grep, Write, WebFetch, WebSearch, AskUserQuesti
 version: 1.5.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [security, zero-trust, design]
 ---
 
 # Zero Design

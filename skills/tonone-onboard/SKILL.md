@@ -5,6 +5,8 @@ allowed-tools: AskUserQuestion
 version: 0.8.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [onboarding, documentation, getting-started]
 ---
 
 # tonone-onboard

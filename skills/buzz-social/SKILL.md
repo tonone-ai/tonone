@@ -5,6 +5,8 @@ allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [product, pr, community, social]
 ---
 
 # Social Media Content
@@ -41,7 +43,7 @@ Each platform has completely different norms. Mixing them is a credibility probl
 - Don't start with "A thread on..." — start with the insight
 - Images/screenshots outperform text-only 3:1
 - Reply to your own tweet with resources rather than cramming into first tweet
-**LinkedIn:**
+  **LinkedIn:**
 
 - More formal than Twitter/X but still conversational
 - Enterprise buyers scroll LinkedIn. Write for them.

@@ -5,6 +5,8 @@ allowed-tools: Read, Bash, Glob, Grep, Write, WebFetch, WebSearch, AskUserQuesti
 version: 1.3.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [design, color, palette]
 ---
 
 # Hue Palette

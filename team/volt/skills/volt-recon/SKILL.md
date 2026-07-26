@@ -5,6 +5,8 @@ allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [engineering, embedded, iot, recon]
 ---
 
 # Firmware Reconnaissance
