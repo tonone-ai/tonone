@@ -190,3 +190,6 @@
 2026-07-26 11:59 : docs(platform): added REPOMAP.md at platform root — route map, data flow (.planning/*.json → lib/\_-data.ts → pages), component dirs, task→file table, noise-dir list — @fatih
 2026-07-26 11:59 : docs(platform): wired REPOMAP.md into platform's CLAUDE.md via @REPOMAP.md so every session auto-loads it — @fatih
 2026-07-26 18:10 : fix: AI Ops skill content, evals naming collision, skill.md case bugs — @fatih
+2026-07-26 18:51 : retro(7d): 8 commits, 2 contributors, 4 PRs (#109/#111/#112/#113), +8.2k/-2.1k LOC, 0% test ratio, v1.10.1 — snapshot at .context/retros/2026-07-26-1.json — @fatih
+2026-07-26 18:51 : [!!] gap found: repo dead 38 days (last commit before this window: 2026-06-17) then 2-day burst — sporadic OSS cadence, no steady cadence yet — @fatih
+2026-07-26 18:51 : todo(oss-ready): CI pipeline still manual — real risk since external PR (#109/#111 from Burak) already merged with zero automated gate — TODOS.md v0.3.0 blocker — @fatih
