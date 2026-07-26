@@ -1,6 +1,6 @@
 {
   "name": "warden",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "Security engineer \u2014 IAM, secrets, threat modeling, hardening, auth, and supply chain security.",
   "author": {
     "name": "tonone-ai",

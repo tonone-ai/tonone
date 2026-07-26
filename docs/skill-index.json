@@ -1,0 +1,2949 @@
+[
+  {
+    "name": "apex-plan",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Plan and scope a project \u2014 discovery, challenge assumptions, present S/M/L options with token and cost estimates. Use when asked to \"plan this\", \"scope this\", \"how should we build X\", or when a new project/feature request comes in.",
+    "path": "team/apex/skills/apex-plan/SKILL.md"
+  },
+  {
+    "name": "apex-profile",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Scope the tonone agent roster for this project \u2014 install a curated subset of agents instead of the full 100-agent bundle. Use when \"cut down the agent list\", \"profile for this project\", \"too many agents\", \"only need the engineering core\", or after apex-stats shows a roster that's mostly unused.",
+    "path": "team/apex/skills/apex-profile/SKILL.md"
+  },
+  {
+    "name": "apex-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Engineering lead reconnaissance \u2014 inventory the project before planning. Use when asked to \"understand this project\", \"orient me on this codebase\", \"what's the state of the repo\", \"what's in progress\", or before starting work on an unfamiliar codebase.",
+    "path": "team/apex/skills/apex-recon/SKILL.md"
+  },
+  {
+    "name": "apex-review",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Cross-cutting review of recent work \u2014 catches gaps between specialists. Use when asked to \"review what we built\", \"check the work\", \"pre-launch review\", or after completing a significant chunk of work.",
+    "path": "team/apex/skills/apex-review/SKILL.md"
+  },
+  {
+    "name": "apex-route",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Reach ANY tonone specialist on demand, even ones not installed in this session's roster \u2014 no restart needed. Use when asked \"which agent handles this\", \"reach a specialist we didn't install\", \"route this to the right agent\", or whenever a scoped apex-profile roster is missing the right hat for the job.",
+    "path": "team/apex/skills/apex-route/SKILL.md"
+  },
+  {
+    "name": "apex-stats",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Spawn-count analytics for the tonone roster \u2014 which agents this project actually uses, from local session transcripts. Use when \"which agents do we actually use\", \"show tonone stats\", \"prune the roster\", or before running apex-profile.",
+    "path": "team/apex/skills/apex-stats/SKILL.md"
+  },
+  {
+    "name": "apex-status",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "CTO-level project status from git and codebase state. Use when asked \"where are we\", \"project status\", \"what's done\", or at the start of a work session.",
+    "path": "team/apex/skills/apex-status/SKILL.md"
+  },
+  {
+    "name": "apex-takeover",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "System takeover \u2014 take ownership of an existing codebase or inherited system. Use when \"we acquired this\", \"previous team left\", \"take over this system\", \"inherited this codebase\".",
+    "path": "team/apex/skills/apex-takeover/SKILL.md"
+  },
+  {
+    "name": "atlas-adr",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write an Architecture Decision Record \u2014 document what was decided, why, what alternatives were considered, and what trade-offs were accepted. Use when asked to \"write an ADR\", \"document this decision\", or \"why did we choose X\".",
+    "path": "team/atlas/skills/atlas-adr/SKILL.md"
+  },
+  {
+    "name": "atlas-changelog",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Maintain per-repo and cross-repo changelogs \u2014 append structured entries after agent work. Use when asked to \"log this change\", \"update changelog\", \"what changed\", \"change history\".",
+    "path": "team/atlas/skills/atlas-changelog/SKILL.md"
+  },
+  {
+    "name": "atlas-map",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Map the system architecture \u2014 read the codebase, identify services and connections, output a C4-level architecture map as Mermaid diagrams with component descriptions. Use when asked to \"map the architecture\", \"system diagram\", \"how does this work\", or \"architecture overview\".",
+    "path": "team/atlas/skills/atlas-map/SKILL.md"
+  },
+  {
+    "name": "atlas-onboard",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Generate onboarding documentation \u2014 what this project does, how to set up locally, where things live, key decisions, how to deploy. Written for day-one engineers who know nothing. Use when asked for \"onboarding docs\", \"new engineer guide\", \"how to get started\", or \"developer setup\".",
+    "path": "team/atlas/skills/atlas-onboard/SKILL.md"
+  },
+  {
+    "name": "atlas-present",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Generate a polished HTML presentation page and Obsidian Canvas for big releases \u2014 new products, takeovers, major migrations. Non-technical audience. Use when asked to \"present this\", \"release announcement\", \"show what we built\", or \"stakeholder update\".",
+    "path": "team/atlas/skills/atlas-present/SKILL.md"
+  },
+  {
+    "name": "atlas-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Documentation reconnaissance for takeover \u2014 find all docs, assess accuracy, freshness, coverage, and discoverability, and identify critical knowledge gaps. Use when asked \"what docs exist\", \"documentation assessment\", or \"knowledge gaps\".",
+    "path": "team/atlas/skills/atlas-recon/SKILL.md"
+  },
+  {
+    "name": "atlas-report",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Render agent findings as a styled HTML report in the browser. Use when asked for \"full report\", \"detailed report\", \"show in browser\", or when CLI output exceeds the 40-line budget.",
+    "path": "team/atlas/skills/atlas-report/SKILL.md"
+  },
+  {
+    "name": "audit-controls",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Internal legal controls review \u2014 approval workflows, contract lifecycle, access to sensitive docs.",
+    "path": "team/audit/skills/audit-controls/SKILL.md"
+  },
+  {
+    "name": "audit-legal",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Full legal compliance audit \u2014 contracts, policies, regulatory, IP, corporate hygiene.",
+    "path": "team/audit/skills/audit-legal/SKILL.md"
+  },
+  {
+    "name": "audit-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey legal artifacts for audit readiness.",
+    "path": "team/audit/skills/audit-recon/SKILL.md"
+  },
+  {
+    "name": "axe-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Run a WCAG accessibility audit against a component, page, or full product.",
+    "path": "team/axe/skills/axe-audit/SKILL.md"
+  },
+  {
+    "name": "axe-fix",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write accessibility fixes for specific WCAG failures \u2014 ARIA, focus management, keyboard patterns.",
+    "path": "team/axe/skills/axe-fix/SKILL.md"
+  },
+  {
+    "name": "axe-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey a codebase for accessibility debt \u2014 missing ARIA, broken keyboard patterns, and contrast issues.",
+    "path": "team/axe/skills/axe-recon/SKILL.md"
+  },
+  {
+    "name": "bench-compare",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Compare API performance across versions \u2014 regression detection and root cause analysis.",
+    "path": "team/bench/skills/bench-compare/SKILL.md"
+  },
+  {
+    "name": "bench-profile",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a performance benchmark for an API \u2014 test scenarios, metrics, and tooling.",
+    "path": "team/bench/skills/bench-profile/SKILL.md"
+  },
+  {
+    "name": "bench-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing performance testing \u2014 find missing benchmarks, stale baselines, and CI gaps.",
+    "path": "team/bench/skills/bench-recon/SKILL.md"
+  },
+  {
+    "name": "bind-gap",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Run a compliance gap analysis against SOC2, GDPR, HIPAA, or ISO 27001.",
+    "path": "team/bind/skills/bind-gap/SKILL.md"
+  },
+  {
+    "name": "bind-policy",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft compliance policies required by a framework (access control, incident response, data retention).",
+    "path": "team/bind/skills/bind-policy/SKILL.md"
+  },
+  {
+    "name": "bind-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing compliance artifacts \u2014 policies, audits, certifications.",
+    "path": "team/bind/skills/bind-recon/SKILL.md"
+  },
+  {
+    "name": "blue-detect",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design detection rules for a threat \u2014 SIEM queries, alert logic, and MITRE ATT&CK mapping.",
+    "path": "team/blue/skills/blue-detect/SKILL.md"
+  },
+  {
+    "name": "blue-harden",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write a hardening playbook for a system or service \u2014 CIS benchmark mapping and implementation steps.",
+    "path": "team/blue/skills/blue-harden/SKILL.md"
+  },
+  {
+    "name": "blue-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing security controls and detection coverage \u2014 find gaps against MITRE ATT&CK.",
+    "path": "team/blue/skills/blue-recon/SKILL.md"
+  },
+  {
+    "name": "brace-escalate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design escalation path -- Tier 1 to Tier 2 to Engineering handoff, decision criteria, and communication templates. Use when asked to \"design our escalation process\", \"when should support escalate to engineering\", \"build an escalation runbook\", or \"reduce escalation rate\".",
+    "path": "team/brace/skills/brace-escalate/SKILL.md"
+  },
+  {
+    "name": "brace-kb",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build or audit knowledge base -- article structure, coverage gaps, deflection rate, and maintenance process. Use when asked to \"build a knowledge base\", \"what docs are missing\", \"improve our self-serve rate\", or \"audit our help center\".",
+    "path": "team/brace/skills/brace-kb/SKILL.md"
+  },
+  {
+    "name": "brace-metrics",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design support metrics dashboard -- CSAT, FRT, TTR, ticket deflection rate, volume trends, and agent efficiency. Use when asked to \"what metrics should support track\", \"build our support dashboard\", \"measure support quality\", or \"audit our support performance\".",
+    "path": "team/brace/skills/brace-metrics/SKILL.md"
+  },
+  {
+    "name": "brace-onboard",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design customer support onboarding flow -- first-contact experience, proactive support touchpoints, and setup success checklist. Use when asked to \"design our onboarding support\", \"how do we support new customers during onboarding\", or \"reduce early churn from setup failures\".",
+    "path": "team/brace/skills/brace-onboard/SKILL.md"
+  },
+  {
+    "name": "brace-playbook",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write support playbook -- response templates, issue-type runbooks, tone guide, and common resolution paths. Use when asked to \"write support templates\", \"build a support playbook\", \"train our support agents\", or \"standardize our support responses\".",
+    "path": "team/brace/skills/brace-playbook/SKILL.md"
+  },
+  {
+    "name": "brace-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Support operations reconnaissance -- audit current ticket volume, SLA compliance, knowledge base coverage, escalation paths, and CSAT to understand where support is the constraint. Use when asked to \"audit our support\", \"why is our response time bad\", \"how healthy is our support operation\", or \"before designing a support system\".",
+    "path": "team/brace/skills/brace-recon/SKILL.md"
+  },
+  {
+    "name": "brace-sla",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design SLA framework -- response time targets, resolution time targets, tier definitions, and breach escalation process. Use when asked to \"define our SLAs\", \"what response times should we commit to\", \"build a support tier structure\", or \"set up SLA monitoring\".",
+    "path": "team/brace/skills/brace-sla/SKILL.md"
+  },
+  {
+    "name": "brace-triage",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design ticket triage system -- routing rules, priority tags, queue structure, and first-response automation. Use when asked to \"design our ticket routing\", \"how should we tag tickets\", \"set up our helpdesk\", or \"reduce time to first response\".",
+    "path": "team/brace/skills/brace-triage/SKILL.md"
+  },
+  {
+    "name": "brief-draft",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft a contract or policy document from a description or template.",
+    "path": "team/brief/skills/brief-draft/SKILL.md"
+  },
+  {
+    "name": "brief-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey the project's existing contracts and policy docs.",
+    "path": "team/brief/skills/brief-recon/SKILL.md"
+  },
+  {
+    "name": "brief-review",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Review and redline a contract \u2014 flag risk, missing clauses, one-sided terms.",
+    "path": "team/brief/skills/brief-review/SKILL.md"
+  },
+  {
+    "name": "budget-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit AI spend \u2014 per-model cost breakdown, top consumers, waste identification, optimization levers.",
+    "path": "team/budget/skills/budget-audit/SKILL.md"
+  },
+  {
+    "name": "budget-optimize",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design cost reduction strategies \u2014 model tiering, prompt compression, caching, batch inference.",
+    "path": "team/budget/skills/budget-optimize/SKILL.md"
+  },
+  {
+    "name": "budget-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Map AI cost topology \u2014 billing attribution, team-level spend, forecast vs actuals, alert gaps.",
+    "path": "team/budget/skills/budget-recon/SKILL.md"
+  },
+  {
+    "name": "buzz-community",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build and manage open source community \u2014 Discord/Slack structure, contributor onboarding, ambassador program, community flywheel design, and GitHub community health. Use when asked to \"build a community\", \"grow our Discord\", \"improve contributor experience\", or \"design a developer ambassador program\".",
+    "path": "team/buzz/skills/buzz-community/SKILL.md"
+  },
+  {
+    "name": "buzz-devrel",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Developer relations playbook builder \u2014 produces a DevRel program design covering community platform, contributor program tiers, ambassador criteria, event strategy, and success metrics. Use when asked to \"build a DevRel program\", \"design our developer community\", \"create a contributor program\", \"start a developer advocacy program\", or \"how do we grow our dev community\".",
+    "path": "team/buzz/skills/buzz-devrel/SKILL.md"
+  },
+  {
+    "name": "buzz-hn",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Hacker News post crafter \u2014 given a product, feature, or story produces a ready-to-post HN submission (title \u226480 chars, no marketing), honest body text with technical depth, no outbound links, predicted reception analysis, and comment-response templates for likely pushback. Use when asked to \"write an HN post\", \"craft a Show HN\", \"prepare our Hacker News launch\", or \"help me post on HN\".",
+    "path": "team/buzz/skills/buzz-hn/SKILL.md"
+  },
+  {
+    "name": "buzz-launch",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and execute a launch plan \u2014 Product Hunt, HN Show HN, newsletter coordination, social posts, and community launch moment. Use when asked to \"launch [feature/product]\", \"plan a launch\", \"help us do a Product Hunt launch\", or \"coordinate the announcement\".",
+    "path": "team/buzz/skills/buzz-launch/SKILL.md"
+  },
+  {
+    "name": "buzz-outreach",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Media and podcast outreach personalizer \u2014 takes a story angle and target journalist or host list and produces personalized pitch emails per target. Use when asked to \"write media pitches\", \"pitch this story to journalists\", \"get us on podcasts\", \"write press outreach\", or \"personalize pitches for these contacts\".",
+    "path": "team/buzz/skills/buzz-outreach/SKILL.md"
+  },
+  {
+    "name": "buzz-pitch",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write media pitches and press releases \u2014 journalist outreach emails, podcast pitch scripts, newsletter sponsor pitches, and press release copy. Use when asked to \"pitch journalists\", \"write a press release\", \"reach out to podcasts\", or \"get media coverage\".",
+    "path": "team/buzz/skills/buzz-pitch/SKILL.md"
+  },
+  {
+    "name": "buzz-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "PR and community reconnaissance \u2014 audit current press coverage, social presence, community health, and competitor PR. Use when asked to \"audit our PR\", \"what's our community state\", \"how do we compare in press\", or before planning a launch or community initiative.",
+    "path": "team/buzz/skills/buzz-recon/SKILL.md"
+  },
+  {
+    "name": "buzz-social",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Social media strategy and post drafting \u2014 HN posts, Twitter/X threads, LinkedIn posts, Reddit comments, and developer community content. Use when asked to \"write a HN post\", \"draft social posts\", \"help us post on Twitter\", or \"create a social launch plan\".",
+    "path": "team/buzz/skills/buzz-social/SKILL.md"
+  },
+  {
+    "name": "cache-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a caching strategy for an application \u2014 pattern selection, key design, TTL, and eviction policy.",
+    "path": "team/cache/skills/cache-design/SKILL.md"
+  },
+  {
+    "name": "cache-evict",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a cache invalidation and eviction strategy \u2014 event-driven invalidation and thundering herd prevention.",
+    "path": "team/cache/skills/cache-evict/SKILL.md"
+  },
+  {
+    "name": "cache-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing caching implementation \u2014 find cache misses, stampedes, and key design issues.",
+    "path": "team/cache/skills/cache-recon/SKILL.md"
+  },
+  {
+    "name": "cast-forecast",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a forecasting model for a time series \u2014 demand, revenue, or usage prediction.",
+    "path": "team/cast/skills/cast-forecast/SKILL.md"
+  },
+  {
+    "name": "cast-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing forecasting code or models in a codebase \u2014 find gaps, stale models, and missing validation.",
+    "path": "team/cast/skills/cast-recon/SKILL.md"
+  },
+  {
+    "name": "cast-validate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Validate and benchmark a forecasting model \u2014 walk-forward CV, error metrics, baseline comparison.",
+    "path": "team/cast/skills/cast-validate/SKILL.md"
+  },
+  {
+    "name": "chain-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing dependency security \u2014 find unscanned packages, license violations, and SBOM gaps.",
+    "path": "team/chain/skills/chain-recon/SKILL.md"
+  },
+  {
+    "name": "chain-sbom",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an SBOM generation pipeline \u2014 format, tooling, and integration into CI/CD.",
+    "path": "team/chain/skills/chain-sbom/SKILL.md"
+  },
+  {
+    "name": "chain-scan",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a dependency scanning program \u2014 CVE detection, license checks, and CI gates.",
+    "path": "team/chain/skills/chain-scan/SKILL.md"
+  },
+  {
+    "name": "change-policy",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an API versioning and deprecation policy \u2014 semver rules, sunset timelines, and communication channels.",
+    "path": "team/change/skills/change-policy/SKILL.md"
+  },
+  {
+    "name": "change-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing changelog and deprecation practices \u2014 find missing entries, undocumented breaks, and stale deprecations.",
+    "path": "team/change/skills/change-recon/SKILL.md"
+  },
+  {
+    "name": "change-write",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write a changelog entry or release notes for an API version \u2014 breaking changes, new features, fixes.",
+    "path": "team/change/skills/change-write/SKILL.md"
+  },
+  {
+    "name": "chaos-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a chaos engineering experiment \u2014 hypothesis, blast radius, steady state, and abort conditions.",
+    "path": "team/chaos/skills/chaos-design/SKILL.md"
+  },
+  {
+    "name": "chaos-game",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a game day \u2014 simulated failure scenario, runbook, and post-event review.",
+    "path": "team/chaos/skills/chaos-game/SKILL.md"
+  },
+  {
+    "name": "chaos-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing resilience \u2014 identify untested failure modes and chaos engineering gaps.",
+    "path": "team/chaos/skills/chaos-recon/SKILL.md"
+  },
+  {
+    "name": "cite-compare",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Jurisdiction comparison for a legal requirement or contract clause.",
+    "path": "team/cite/skills/cite-compare/SKILL.md"
+  },
+  {
+    "name": "cite-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey open legal questions and research gaps in the project.",
+    "path": "team/cite/skills/cite-recon/SKILL.md"
+  },
+  {
+    "name": "cite-research",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Legal research on a specific question \u2014 case law, statutes, regulatory guidance.",
+    "path": "team/cite/skills/cite-research/SKILL.md"
+  },
+  {
+    "name": "clause-analyze",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Deep clause-by-clause analysis of a contract with risk scores.",
+    "path": "team/clause/skills/clause-analyze/SKILL.md"
+  },
+  {
+    "name": "clause-playbook",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Generate negotiation playbook for a specific contract type.",
+    "path": "team/clause/skills/clause-playbook/SKILL.md"
+  },
+  {
+    "name": "clause-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing contracts for common clause patterns and risks.",
+    "path": "team/clause/skills/clause-recon/SKILL.md"
+  },
+  {
+    "name": "clean-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing data cleaning code \u2014 find missing validation, silent data loss, and quality gaps.",
+    "path": "team/clean/skills/clean-recon/SKILL.md"
+  },
+  {
+    "name": "clean-transform",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a data cleaning and transformation pipeline \u2014 missing values, outliers, and deduplication.",
+    "path": "team/clean/skills/clean-transform/SKILL.md"
+  },
+  {
+    "name": "clean-validate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a data validation pipeline \u2014 schema checks, range validation, and quality metrics.",
+    "path": "team/clean/skills/clean-validate/SKILL.md"
+  },
+  {
+    "name": "compat-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit a proposed API change for breaking changes \u2014 classification and impact assessment.",
+    "path": "team/compat/skills/compat-audit/SKILL.md"
+  },
+  {
+    "name": "compat-policy",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an API compatibility and deprecation policy \u2014 stability tiers, sunset timelines, and CI gates.",
+    "path": "team/compat/skills/compat-policy/SKILL.md"
+  },
+  {
+    "name": "compat-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing API for breaking change risks and missing compatibility controls.",
+    "path": "team/compat/skills/compat-recon/SKILL.md"
+  },
+  {
+    "name": "copy-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit UX copy in a product or codebase \u2014 find passive errors, generic labels, missing states.",
+    "path": "team/copy/skills/copy-audit/SKILL.md"
+  },
+  {
+    "name": "copy-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey all user-facing strings in a codebase \u2014 map coverage and find gaps.",
+    "path": "team/copy/skills/copy-recon/SKILL.md"
+  },
+  {
+    "name": "copy-write",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write UX copy for a feature, flow, or component \u2014 buttons, errors, empty states, tooltips.",
+    "path": "team/copy/skills/copy-write/SKILL.md"
+  },
+  {
+    "name": "cortex-eval",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Evaluate model performance \u2014 check for accuracy drops, data drift, and error patterns. Use when asked about \"model accuracy dropped\", \"evaluate the model\", \"check for drift\", or \"model performance\".",
+    "path": "team/cortex/skills/cortex-eval/SKILL.md"
+  },
+  {
+    "name": "cortex-integrate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and implement an AI feature integration \u2014 model selection, architecture pattern, system prompt, data flow, error handling, cost estimate. Use when asked to \"add AI to this\", \"LLM integration\", \"add Claude/GPT\", or \"AI-powered feature\".",
+    "path": "team/cortex/skills/cortex-integrate/SKILL.md"
+  },
+  {
+    "name": "cortex-model",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build an ML pipeline \u2014 from data to trained model to serving endpoint. Use when asked to \"build ML model\", \"train a model\", \"prediction pipeline\", \"classification\", or \"regression\".",
+    "path": "team/cortex/skills/cortex-model/SKILL.md"
+  },
+  {
+    "name": "cortex-prompt",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a production-ready prompt package \u2014 system prompt, few-shot examples, output format, edge case handling, eval criteria. Use when asked to \"prompt engineering\", \"build a prompt\", \"write a system prompt\", or \"improve this prompt\".",
+    "path": "team/cortex/skills/cortex-prompt/SKILL.md"
+  },
+  {
+    "name": "cortex-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "ML reconnaissance \u2014 inventory all models, pipelines, data sources, and monitoring. Use when asked \"what ML do we have\", \"model inventory\", or \"ML assessment\".",
+    "path": "team/cortex/skills/cortex-recon/SKILL.md"
+  },
+  {
+    "name": "crest-compete",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Competitive analysis ending in a clear positioning call \u2014 where to play, how to win. Use when asked to \"analyze competitors\", \"competitive landscape\", \"how do we compare to X\", \"competitive positioning\", \"where should we play\", \"find our white space\", or \"who else does this\".",
+    "path": "team/crest/skills/crest-compete/SKILL.md"
+  },
+  {
+    "name": "crest-narrative",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Strategic narrative \u2014 write a standalone strategy memo that frames product direction, bets, and rationale for a planning horizon. Use when asked to \"write a strategy doc\", \"product vision\", \"strategic narrative\", \"company strategy memo\", \"planning memo\", or \"explain our product direction\".",
+    "path": "team/crest/skills/crest-narrative/SKILL.md"
+  },
+  {
+    "name": "crest-okr",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "OKR design \u2014 create objectives and key results with a North Star metric, input metrics tree, and cadence. Use when asked to \"set OKRs\", \"define our objectives\", \"what should we measure this quarter\", \"design our OKR framework\", \"build a metrics tree\", or \"what's our North Star\".",
+    "path": "team/crest/skills/crest-okr/SKILL.md"
+  },
+  {
+    "name": "crest-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Strategic context reconnaissance \u2014 read existing roadmaps, OKRs, competitive docs, and briefs to establish context before planning. Use when asked to \"understand our strategy\", \"what's the current roadmap\", \"what OKRs do we have\", \"strategic context\", or before starting any prioritization or roadmap work.",
+    "path": "team/crest/skills/crest-recon/SKILL.md"
+  },
+  {
+    "name": "crest-roadmap",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a product roadmap with sequenced bets and explicit tradeoffs. Use when asked to \"build a roadmap\", \"prioritize the backlog strategically\", \"what do we build next quarter\", \"sequence our bets\", \"what should we focus on\", or \"product strategy for the next N months\".",
+    "path": "team/crest/skills/crest-roadmap/SKILL.md"
+  },
+  {
+    "name": "cut-icon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an icon system spec or audit existing icons for consistency and accessibility.",
+    "path": "team/cut/skills/cut-icon/SKILL.md"
+  },
+  {
+    "name": "cut-illustrate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Spec or critique custom illustrations \u2014 style, composition, and brand alignment.",
+    "path": "team/cut/skills/cut-illustrate/SKILL.md"
+  },
+  {
+    "name": "cut-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing icons and illustrations in a codebase \u2014 find inconsistencies, unoptimized SVGs, and accessibility gaps.",
+    "path": "team/cut/skills/cut-recon/SKILL.md"
+  },
+  {
+    "name": "deal-close",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Close a specific deal \u2014 diagnose why a deal is stalling, write a tailored proposal, design the closing sequence, or navigate procurement. Use when a specific deal is stuck, \"how do I close this\", \"write a proposal for this customer\", or \"help me get to yes\".",
+    "path": "team/deal/skills/deal-close/SKILL.md"
+  },
+  {
+    "name": "deal-outreach",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Cold outbound sequence builder \u2014 produces multi-touch email + LinkedIn sequences (5-7 touchpoints) personalized by persona type (technical buyer, economic buyer, champion). Use when asked to \"write cold emails\", \"build an outbound sequence\", \"create prospecting emails\", \"write my LinkedIn outreach\", or \"design a cold email campaign\".",
+    "path": "team/deal/skills/deal-outreach/SKILL.md"
+  },
+  {
+    "name": "deal-pipeline",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design or audit B2B sales pipeline \u2014 define stage names, entry/exit criteria, qualification standards, and CRM field requirements. Use when asked to \"design our pipeline\", \"audit our CRM stages\", \"define what qualified means\", or \"build a sales process\".",
+    "path": "team/deal/skills/deal-pipeline/SKILL.md"
+  },
+  {
+    "name": "deal-playbook",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write sales playbooks \u2014 outbound sequences, discovery call guides, objection handling scripts, and demo frameworks. Use when asked to \"write a sales playbook\", \"build an outbound sequence\", \"help me handle objections\", or \"design a discovery call\".",
+    "path": "team/deal/skills/deal-playbook/SKILL.md"
+  },
+  {
+    "name": "deal-pricing",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design pricing strategy and packaging \u2014 tiers, value metrics, enterprise pricing, freemium design, and pricing page copy. Use when asked to \"design our pricing\", \"should we change our price\", \"how do we package the product\", or \"what should we charge enterprise\".",
+    "path": "team/deal/skills/deal-pricing/SKILL.md"
+  },
+  {
+    "name": "deal-proposal",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "B2B proposal generator \u2014 takes deal context (ICP, pain, pricing tier, timeline) and produces a complete proposal document with executive summary, problem statement, solution, pricing table, implementation timeline, ROI case, and next steps. Use when asked to \"write a proposal\", \"draft our deck for this deal\", \"build a proposal for this customer\", or \"generate a proposal\".",
+    "path": "team/deal/skills/deal-proposal/SKILL.md"
+  },
+  {
+    "name": "deal-qualify",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "MEDDPICC-based deal qualification worksheet \u2014 guide Deal through structured qualification of any opportunity and produce a filled card + recommended next action. Use when asked to \"qualify this deal\", \"run MEDDPICC on this opportunity\", \"should we pursue this\", or \"is this deal real\".",
+    "path": "team/deal/skills/deal-qualify/SKILL.md"
+  },
+  {
+    "name": "deal-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Revenue reconnaissance \u2014 audit current sales pipeline, deal patterns, ICP definition, and revenue motion to understand what's working and where the constraint is. Use when asked to \"audit our sales\", \"where is revenue stuck\", \"what's our pipeline state\", \"before designing a playbook\".",
+    "path": "team/deal/skills/deal-recon/SKILL.md"
+  },
+  {
+    "name": "deploy-canary",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Plan and execute canary releases for model updates \u2014 traffic splitting, rollback triggers, success metrics.",
+    "path": "team/deploy/skills/deploy-canary/SKILL.md"
+  },
+  {
+    "name": "deploy-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit current model deployment topology \u2014 serving config, latency profile, version inventory.",
+    "path": "team/deploy/skills/deploy-recon/SKILL.md"
+  },
+  {
+    "name": "deploy-serve",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and configure model serving infrastructure \u2014 endpoint scaling, batching, GPU allocation.",
+    "path": "team/deploy/skills/deploy-serve/SKILL.md"
+  },
+  {
+    "name": "draft-flow",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/draft/skills/draft-flow/SKILL.md"
+  },
+  {
+    "name": "draft-ia",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Information architecture \u2014 design navigation structure, content hierarchy, sitemap, and taxonomy for a product or feature set. Use when asked to \"organize the navigation\", \"information architecture\", \"how should content be structured\", \"sitemap\", \"nav redesign\", \"where should X live\", or \"content hierarchy\".",
+    "path": "team/draft/skills/draft-ia/SKILL.md"
+  },
+  {
+    "name": "draft-landing",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/draft/skills/draft-landing/SKILL.md"
+  },
+  {
+    "name": "draft-patterns",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/draft/skills/draft-patterns/SKILL.md"
+  },
+  {
+    "name": "draft-proto",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/draft/skills/draft-proto/SKILL.md"
+  },
+  {
+    "name": "draft-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "UI and UX reconnaissance \u2014 scan existing frontend routes, components, navigation, and flows to understand the current UX state before designing. Use when asked to \"understand the current UI\", \"what UX patterns exist\", \"map the navigation\", \"what screens exist\", or before starting any flow or wireframe work.",
+    "path": "team/draft/skills/draft-recon/SKILL.md"
+  },
+  {
+    "name": "draft-review",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Usability review \u2014 evaluate an existing flow or UI against usability heuristics, flag friction points, and recommend fixes. Use when asked to \"review the UX\", \"usability audit\", \"what's wrong with this flow\", \"UX feedback\", \"critique this design\", or \"why are users dropping off here\".",
+    "path": "team/draft/skills/draft-review/SKILL.md"
+  },
+  {
+    "name": "draft-wireframe",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/draft/skills/draft-wireframe/SKILL.md"
+  },
+  {
+    "name": "drift-alert",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design drift alerts and escalation \u2014 thresholds, runbooks, and retrain triggers.",
+    "path": "team/drift/skills/drift-alert/SKILL.md"
+  },
+  {
+    "name": "drift-monitor",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a drift monitoring system for a production ML model.",
+    "path": "team/drift/skills/drift-monitor/SKILL.md"
+  },
+  {
+    "name": "drift-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing ML monitoring \u2014 find gaps in drift coverage and missing alerts.",
+    "path": "team/drift/skills/drift-recon/SKILL.md"
+  },
+  {
+    "name": "echo-feedback",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Feedback synthesis \u2014 cluster support tickets, NPS verbatims, app store reviews, and churn surveys by theme, separate signal from noise, and produce an actionable insight report. Use when asked to \"synthesize this feedback\", \"analyze support tickets\", \"what are users complaining about\", \"NPS analysis\", \"churn feedback synthesis\", or \"what's the feedback telling us\".",
+    "path": "team/echo/skills/echo-feedback/SKILL.md"
+  },
+  {
+    "name": "echo-interview",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Run a user interview \u2014 produce an interview guide and synthesize the output into an actionable insight report. Use when asked to \"run a user interview\", \"synthesize these interview notes\", \"what do users actually want\", \"build a persona from this feedback\", \"find the JTBD in these transcripts\", or \"analyze this interview data\".",
+    "path": "team/echo/skills/echo-interview/SKILL.md"
+  },
+  {
+    "name": "echo-jobs",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Jobs-to-Be-Done analysis \u2014 given a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces analysis and opportunity ranking. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", \"JTBD framework\", or \"why are users switching\".",
+    "path": "team/echo/skills/echo-jobs/SKILL.md"
+  },
+  {
+    "name": "echo-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "User research reconnaissance \u2014 survey existing personas, research docs, interview notes, and feedback artifacts to establish what is already known about users. Use when asked to \"what research exists\", \"review existing personas\", \"what do we know about our users\", or before starting new research or synthesis work.",
+    "path": "team/echo/skills/echo-recon/SKILL.md"
+  },
+  {
+    "name": "echo-segment",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "User segmentation and persona creation from mixed data sources \u2014 analytics, CRM, support tickets, reviews, or any combination. Use when asked to \"build personas\", \"who are our users\", \"segment our users\", \"create user profiles\", \"define user archetypes\", or \"who is the target user\".",
+    "path": "team/echo/skills/echo-segment/SKILL.md"
+  },
+  {
+    "name": "edge-cdn",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a CDN configuration \u2014 caching rules, TTLs, and origin shield setup.",
+    "path": "team/edge/skills/edge-cdn/SKILL.md"
+  },
+  {
+    "name": "edge-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing CDN and edge configuration \u2014 find cache misses, missing headers, and performance gaps.",
+    "path": "team/edge/skills/edge-recon/SKILL.md"
+  },
+  {
+    "name": "edge-route",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an edge routing and geo-distribution strategy \u2014 latency routing, failover, and edge logic.",
+    "path": "team/edge/skills/edge-route/SKILL.md"
+  },
+  {
+    "name": "embed-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design embedding pipelines \u2014 model selection, batching, normalization, index refresh strategy.",
+    "path": "team/embed/skills/embed-design/SKILL.md"
+  },
+  {
+    "name": "embed-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit embedding infrastructure \u2014 model drift, index freshness, query latency, coverage gaps.",
+    "path": "team/embed/skills/embed-recon/SKILL.md"
+  },
+  {
+    "name": "embed-search",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Optimize similarity search \u2014 ANN index tuning, hybrid search, reranking, query expansion.",
+    "path": "team/embed/skills/embed-search/SKILL.md"
+  },
+  {
+    "name": "eval-analyze",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Analyze A/B test results \u2014 statistical significance, practical significance, and segmentation.",
+    "path": "team/eval/skills/eval-analyze/SKILL.md"
+  },
+  {
+    "name": "eval-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an A/B test \u2014 power analysis, randomization, and success metrics.",
+    "path": "team/eval/skills/eval-design/SKILL.md"
+  },
+  {
+    "name": "eval-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing experimentation infrastructure and past experiments for methodology issues.",
+    "path": "team/eval/skills/eval-recon/SKILL.md"
+  },
+  {
+    "name": "evals-analyze",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Analyze LLM eval results \u2014 score breakdowns by category, regression detection vs baseline, failure clustering.",
+    "path": "team/evals/skills/evals-analyze/SKILL.md"
+  },
+  {
+    "name": "evals-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an LLM eval \u2014 task schema, scoring rubric, dataset composition, and pass/fail thresholds.",
+    "path": "team/evals/skills/evals-design/SKILL.md"
+  },
+  {
+    "name": "evals-harness",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design eval harnesses \u2014 task schemas, metrics, dataset versioning, eval-as-code patterns.",
+    "path": "team/evals/skills/evals-harness/SKILL.md"
+  },
+  {
+    "name": "evals-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing eval coverage \u2014 gaps, metric validity, benchmark leakage, dataset freshness.",
+    "path": "team/evals/skills/evals-recon/SKILL.md"
+  },
+  {
+    "name": "evals-regress",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build automated regression suites \u2014 golden sets, threshold alerting, CI integration for model changes.",
+    "path": "team/evals/skills/evals-regress/SKILL.md"
+  },
+  {
+    "name": "feat-engineer",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and implement a feature engineering pipeline for a ML problem.",
+    "path": "team/feat/skills/feat-engineer/SKILL.md"
+  },
+  {
+    "name": "feat-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit feature engineering code for leakage, quality issues, and pipeline correctness.",
+    "path": "team/feat/skills/feat-recon/SKILL.md"
+  },
+  {
+    "name": "feat-store",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design or audit a feature store \u2014 serving, freshness, and sharing across models.",
+    "path": "team/feat/skills/feat-store/SKILL.md"
+  },
+  {
+    "name": "finop-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit cloud spend \u2014 identify waste, rightsizing opportunities, and reservation gaps.",
+    "path": "team/finop/skills/finop-audit/SKILL.md"
+  },
+  {
+    "name": "finop-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing cloud cost controls \u2014 tagging coverage, alerting, and FinOps maturity.",
+    "path": "team/finop/skills/finop-recon/SKILL.md"
+  },
+  {
+    "name": "finop-reserve",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a reservation and savings plan strategy \u2014 commitment level, term, and coverage targets.",
+    "path": "team/finop/skills/finop-reserve/SKILL.md"
+  },
+  {
+    "name": "fit-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing model training code \u2014 find reproducibility issues, data leakage, and missing best practices.",
+    "path": "team/fit/skills/fit-recon/SKILL.md"
+  },
+  {
+    "name": "fit-train",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a model training pipeline \u2014 algorithm selection, cross-validation, and serialization.",
+    "path": "team/fit/skills/fit-train/SKILL.md"
+  },
+  {
+    "name": "fit-tune",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a hyperparameter tuning strategy for a model \u2014 search space, method, and budget.",
+    "path": "team/fit/skills/fit-tune/SKILL.md"
+  },
+  {
+    "name": "flux-health",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Data quality and pipeline health check \u2014 freshness, schema drift, null rates, orphaned records, pipeline status. Use when asked about \"data quality check\", \"pipeline health\", \"is our data fresh\", or \"schema drift\".",
+    "path": "team/flux/skills/flux-health/SKILL.md"
+  },
+  {
+    "name": "flux-migrate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build zero-downtime database migrations \u2014 forward SQL, rollback SQL, deployment sequence. Use when asked to \"write migration\", \"schema change\", \"add column\", \"rename table\", \"drop column\", or \"migrate safely\".",
+    "path": "team/flux/skills/flux-migrate/SKILL.md"
+  },
+  {
+    "name": "flux-pipeline",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a data pipeline \u2014 ETL/ELT with extraction, transformation, loading, error handling, and scheduling. Use when asked to \"build ETL\", \"data pipeline\", \"move data from X to Y\", or \"sync data\".",
+    "path": "team/flux/skills/flux-pipeline/SKILL.md"
+  },
+  {
+    "name": "flux-query",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Optimize slow database queries \u2014 analyze execution plans, add indexes, rewrite queries. Use when asked about \"slow query\", \"optimize SQL\", \"query performance\", or \"explain this query\".",
+    "path": "team/flux/skills/flux-query/SKILL.md"
+  },
+  {
+    "name": "flux-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Database reconnaissance \u2014 full inventory of schema, migrations, data volume, backups, connection pooling, and query patterns. Use when asked to \"assess this database\", \"understand the schema\", or \"database health check\".",
+    "path": "team/flux/skills/flux-recon/SKILL.md"
+  },
+  {
+    "name": "flux-schema",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and build database schema \u2014 tables, columns, types, indexes, constraints, relationships. Given a domain description, output the schema and write the files. Use when asked to \"design schema\", \"database design\", \"create tables\", or \"data model\".",
+    "path": "team/flux/skills/flux-schema/SKILL.md"
+  },
+  {
+    "name": "folk-comp",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design compensation framework - salary bands, equity philosophy, offer templates, and total comp benchmarking. Use when asked to \"design our comp bands\", \"how much equity should we give\", \"is our comp competitive\", or \"write an offer template\".",
+    "path": "team/folk/skills/folk-comp/SKILL.md"
+  },
+  {
+    "name": "folk-culture",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Document and strengthen company culture - values articulation, team norms, communication protocols, and culture health diagnostics. Use when asked to \"define our values\", \"document how we work\", \"diagnose culture health\", or \"write team norms\".",
+    "path": "team/folk/skills/folk-culture/SKILL.md"
+  },
+  {
+    "name": "folk-hire",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a hiring pipeline - job description, sourcing strategy, interview scorecard, and offer process. Use when asked to \"write a job description\", \"build an interview process\", \"design our hiring funnel\", or \"what should we look for in a [role]\".",
+    "path": "team/folk/skills/folk-hire/SKILL.md"
+  },
+  {
+    "name": "folk-migrate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Run human-to-agent migration - audit which roles can be agent-assisted or replaced, design the transition playbook, and manage the offboarding of displaced roles. Use when asked to \"which roles can agents replace\", \"how do we transition to AI-first ops\", or \"build our agent migration plan\".",
+    "path": "team/folk/skills/folk-migrate/SKILL.md"
+  },
+  {
+    "name": "folk-onboard",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build onboarding playbook - day 1 through week 4 checklist, access provisioning, context transfer, and success milestones. Use when asked to \"build an onboarding process\", \"how do we onboard new hires\", or \"reduce time to productivity for new joiners\".",
+    "path": "team/folk/skills/folk-onboard/SKILL.md"
+  },
+  {
+    "name": "folk-org",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design or review org structure - spans of control, reporting lines, role clarity, headcount plan, and team topology. Use when asked to \"design our org\", \"should we restructure\", \"what is the right team structure\", or \"plan headcount for next year\".",
+    "path": "team/folk/skills/folk-org/SKILL.md"
+  },
+  {
+    "name": "folk-perf",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design performance management system - review cycles, calibration process, career ladder, and PIP framework. Use when asked to \"build a performance review process\", \"design career levels\", \"how do we handle underperformers\", or \"run a review cycle\".",
+    "path": "team/folk/skills/folk-perf/SKILL.md"
+  },
+  {
+    "name": "folk-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "People reconnaissance - audit org design, hiring pipeline, comp structure, onboarding, and performance systems to understand what is working and where the constraint is. Use when asked to \"audit our people ops\", \"what is broken in our hiring\", \"review our org structure\", or \"before designing a comp framework\".",
+    "path": "team/folk/skills/folk-recon/SKILL.md"
+  },
+  {
+    "name": "forge-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing infrastructure for security issues, waste, and misconfigurations. Use when asked to \"audit my infra\", \"check cloud setup\", \"infra review\", \"are we wasting money\", \"security check on infra\", or \"review my terraform\".",
+    "path": "team/forge/skills/forge-audit/SKILL.md"
+  },
+  {
+    "name": "forge-cost",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit cloud infrastructure costs and produce a concrete optimization plan with specific changes and estimated savings. Use when asked to \"how much is this costing\", \"reduce cloud spend\", \"cost optimization\", \"are we overpaying\", \"cloud bill\", or \"budget for this infra\".",
+    "path": "team/forge/skills/forge-cost/SKILL.md"
+  },
+  {
+    "name": "forge-diagnose",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Diagnose runtime infrastructure issues \u2014 cold starts, timeouts, scaling problems, network failures. Use when asked about \"infra is slow\", \"cold starts\", \"network issues\", \"why is this timing out\", \"scaling problem\", \"latency spikes\", or \"service is down\".",
+    "path": "team/forge/skills/forge-diagnose/SKILL.md"
+  },
+  {
+    "name": "forge-infra",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build production-grade infrastructure as code for a service or project. Use when asked to \"set up infra\", \"provision infrastructure\", \"create cloud resources\", \"IaC for this project\", \"terraform for this\", or \"deploy this service\".",
+    "path": "team/forge/skills/forge-infra/SKILL.md"
+  },
+  {
+    "name": "forge-network",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and build networking infrastructure \u2014 VPCs, subnets, DNS, load balancers, firewall rules. Use when asked to \"set up networking\", \"VPC design\", \"configure DNS\", \"load balancer setup\", \"network architecture\", or \"firewall rules\".",
+    "path": "team/forge/skills/forge-network/SKILL.md"
+  },
+  {
+    "name": "forge-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Infrastructure reconnaissance \u2014 inventory all cloud resources, map connections, flag risks. Use when asked to \"inventory our infra\", \"what infrastructure do we have\", \"map our cloud resources\", \"infra discovery\", or \"what's running in our cloud\".",
+    "path": "team/forge/skills/forge-recon/SKILL.md"
+  },
+  {
+    "name": "form-animate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-animate/SKILL.md"
+  },
+  {
+    "name": "form-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-audit/SKILL.md"
+  },
+  {
+    "name": "form-brand",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-brand/SKILL.md"
+  },
+  {
+    "name": "form-brief",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-brief/SKILL.md"
+  },
+  {
+    "name": "form-component",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-component/SKILL.md"
+  },
+  {
+    "name": "form-critique",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-critique/SKILL.md"
+  },
+  {
+    "name": "form-deck",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-deck/SKILL.md"
+  },
+  {
+    "name": "form-direction",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-direction/SKILL.md"
+  },
+  {
+    "name": "form-email",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-email/SKILL.md"
+  },
+  {
+    "name": "form-exam",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-exam/SKILL.md"
+  },
+  {
+    "name": "form-logo",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-logo/SKILL.md"
+  },
+  {
+    "name": "form-mobile",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-mobile/SKILL.md"
+  },
+  {
+    "name": "form-palette",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-palette/SKILL.md"
+  },
+  {
+    "name": "form-social",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-social/SKILL.md"
+  },
+  {
+    "name": "form-style",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-style/SKILL.md"
+  },
+  {
+    "name": "form-tokens",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-tokens/SKILL.md"
+  },
+  {
+    "name": "form-web",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/form/skills/form-web/SKILL.md"
+  },
+  {
+    "name": "frame-board",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft board resolutions, consent documents, and meeting minutes.",
+    "path": "team/frame/skills/frame-board/SKILL.md"
+  },
+  {
+    "name": "frame-equity",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft equity plan documents \u2014 option grants, vesting schedules, 409A notes.",
+    "path": "team/frame/skills/frame-equity/SKILL.md"
+  },
+  {
+    "name": "frame-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey corporate documents \u2014 articles, bylaws, cap table, board resolutions.",
+    "path": "team/frame/skills/frame-recon/SKILL.md"
+  },
+  {
+    "name": "gate-ci",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Integrate API quality gates into CI \u2014 linting, breaking change detection, and coverage checks.",
+    "path": "team/gate/skills/gate-ci/SKILL.md"
+  },
+  {
+    "name": "gate-lint",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an API linting ruleset \u2014 style rules, severity levels, and custom organization conventions.",
+    "path": "team/gate/skills/gate-lint/SKILL.md"
+  },
+  {
+    "name": "gate-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing API quality controls \u2014 find missing lint rules, gaps in CI gates, and quality debt.",
+    "path": "team/gate/skills/gate-recon/SKILL.md"
+  },
+  {
+    "name": "glyph-pair",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Select and pair fonts for a product \u2014 brand display, UI body, and monospace.",
+    "path": "team/glyph/skills/glyph-pair/SKILL.md"
+  },
+  {
+    "name": "glyph-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing typography in a codebase \u2014 find inconsistencies, hardcoded sizes, and hierarchy gaps.",
+    "path": "team/glyph/skills/glyph-recon/SKILL.md"
+  },
+  {
+    "name": "glyph-scale",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a type scale and hierarchy \u2014 sizes, weights, line-heights, and named tokens.",
+    "path": "team/glyph/skills/glyph-scale/SKILL.md"
+  },
+  {
+    "name": "grid-layout",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a layout system \u2014 spacing scale, grid columns, and layout primitives.",
+    "path": "team/grid/skills/grid-layout/SKILL.md"
+  },
+  {
+    "name": "grid-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing layout patterns in a codebase \u2014 find ad-hoc spacing, inconsistent grids, and missing primitives.",
+    "path": "team/grid/skills/grid-recon/SKILL.md"
+  },
+  {
+    "name": "grid-responsive",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit or redesign responsive behavior of a layout \u2014 breakpoints, reflow, and content priority.",
+    "path": "team/grid/skills/grid-responsive/SKILL.md"
+  },
+  {
+    "name": "guard-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit guardrail coverage \u2014 bypass vectors, false positive rates, policy gap analysis, red-team scenarios.",
+    "path": "team/guard/skills/guard-audit/SKILL.md"
+  },
+  {
+    "name": "guard-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design guardrail layers \u2014 input classifiers, output validators, PII scrubbers, policy rule engines.",
+    "path": "team/guard/skills/guard-design/SKILL.md"
+  },
+  {
+    "name": "guard-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Map current AI safety controls \u2014 filter inventory, coverage gaps, latency impact, incident history.",
+    "path": "team/guard/skills/guard-recon/SKILL.md"
+  },
+  {
+    "name": "guide-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing API documentation for completeness, accuracy, and developer experience.",
+    "path": "team/guide/skills/guide-audit/SKILL.md"
+  },
+  {
+    "name": "guide-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey documentation coverage across an API or SDK \u2014 find undocumented endpoints and gaps.",
+    "path": "team/guide/skills/guide-recon/SKILL.md"
+  },
+  {
+    "name": "guide-write",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write API reference documentation for an endpoint or SDK method.",
+    "path": "team/guide/skills/guide-write/SKILL.md"
+  },
+  {
+    "name": "helm-arbiter",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Scope arbitration \u2014 resolve disagreements between product and engineering on what is in or out of scope, with a decision log and escalation path. Use when asked to \"resolve this scope disagreement\", \"arbitrate between product and eng\", \"scope is creeping\", \"we can't agree on what's in scope\", or \"help us decide what to cut\".",
+    "path": "team/helm/skills/helm-arbiter/SKILL.md"
+  },
+  {
+    "name": "helm-brief",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/helm/skills/helm-brief/SKILL.md"
+  },
+  {
+    "name": "helm-handoff",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/helm/skills/helm-handoff/SKILL.md"
+  },
+  {
+    "name": "helm-plan",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/helm/skills/helm-plan/SKILL.md"
+  },
+  {
+    "name": "helm-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Product landscape reconnaissance \u2014 survey existing briefs, research, strategy, and team output before writing new briefs or dispatching specialists. Use when asked to \"understand the product state\", \"what briefs exist\", \"what has the team produced\", \"orient me on this product\", or before starting a new product initiative.",
+    "path": "team/helm/skills/helm-recon/SKILL.md"
+  },
+  {
+    "name": "hue-palette",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a color palette with semantic tokens for a brand or product.",
+    "path": "team/hue/skills/hue-palette/SKILL.md"
+  },
+  {
+    "name": "hue-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing color usage in a codebase \u2014 find inconsistencies, hardcoded values, and contrast failures.",
+    "path": "team/hue/skills/hue-recon/SKILL.md"
+  },
+  {
+    "name": "hue-token",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit or refactor a design token system for color \u2014 naming, structure, and coverage.",
+    "path": "team/hue/skills/hue-token/SKILL.md"
+  },
+  {
+    "name": "hunt-assess",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a compromise assessment \u2014 hunting scope, methodology, and evidence collection.",
+    "path": "team/hunt/skills/hunt-assess/SKILL.md"
+  },
+  {
+    "name": "hunt-ioc",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Analyze indicators of compromise \u2014 enrichment, attribution, and response recommendations.",
+    "path": "team/hunt/skills/hunt-ioc/SKILL.md"
+  },
+  {
+    "name": "hunt-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a threat hunting program \u2014 maturity assessment, hunting calendar, and playbook library.",
+    "path": "team/hunt/skills/hunt-recon/SKILL.md"
+  },
+  {
+    "name": "ink-brief",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Content brief generator \u2014 takes a topic or keyword and produces a complete content brief with target keyword, search intent, recommended structure, internal link targets, word count, CTA, and competitive gap analysis. Use when asked to \"write a content brief\", \"brief this blog post\", \"plan this article\", or \"what should we cover for [keyword]\".",
+    "path": "team/ink/skills/ink-brief/SKILL.md"
+  },
+  {
+    "name": "ink-calendar",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a content calendar \u2014 editorial plan, publishing cadence, topic assignment, and distribution workflow. Use when asked to \"build a content calendar\", \"plan our content for the quarter\", \"how often should we publish\", or \"create an editorial schedule\".",
+    "path": "team/ink/skills/ink-calendar/SKILL.md"
+  },
+  {
+    "name": "ink-case",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write customer case studies and success stories \u2014 interview guide, story structure, and publish-ready case study with metrics. Use when asked to \"write a case study\", \"document a customer success story\", \"create social proof content\", or \"write about how [customer] uses the product\".",
+    "path": "team/ink/skills/ink-case/SKILL.md"
+  },
+  {
+    "name": "ink-cluster",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Topic cluster architecture builder \u2014 takes a core topic and maps the full cluster with 1 pillar page, 6-10 supporting posts, internal linking map, keyword targets, and estimated monthly search volume per piece. Use when asked to \"build a content cluster\", \"map our SEO cluster for [topic]\", \"create a topic cluster\", or \"what should our pillar page be about\".",
+    "path": "team/ink/skills/ink-cluster/SKILL.md"
+  },
+  {
+    "name": "ink-distribute",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Content distribution plan \u2014 takes a completed piece and produces a channel-by-channel plan covering HN, Reddit, LinkedIn, newsletter, and Twitter/X, with timing, per-channel framing, and a repurposing plan. Use when asked to \"distribute this post\", \"how do we promote this article\", \"write distribution copy for this piece\", or \"where should we share this\".",
+    "path": "team/ink/skills/ink-distribute/SKILL.md"
+  },
+  {
+    "name": "ink-post",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write a blog post or article \u2014 research the keyword, draft the post, and produce publish-ready content with SEO optimization. Use when asked to \"write a blog post\", \"write about [topic]\", \"draft an article\", or \"write a tutorial\".",
+    "path": "team/ink/skills/ink-post/SKILL.md"
+  },
+  {
+    "name": "ink-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Content marketing reconnaissance \u2014 audit current content, SEO health, competitor content gaps, and content distribution. Use when asked to \"audit our content\", \"what's our SEO state\", \"where are the content gaps\", or before designing a content strategy.",
+    "path": "team/ink/skills/ink-recon/SKILL.md"
+  },
+  {
+    "name": "ink-seo",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "SEO strategy and keyword research \u2014 build topic clusters, keyword gap analysis, on-page audit, and prioritized SEO roadmap. Use when asked to \"improve our SEO\", \"do keyword research\", \"build a topic cluster\", or \"why aren't we ranking\".",
+    "path": "team/ink/skills/ink-seo/SKILL.md"
+  },
+  {
+    "name": "keel-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Operational efficiency audit \u2014 identify waste, redundancy, and friction across processes, tools, and team workflows. Use when asked to \"audit our operations for waste\", \"where are we inefficient\", \"what tools are we paying for but not using\", or \"reduce operational overhead\".",
+    "path": "team/keel/skills/keel-audit/SKILL.md"
+  },
+  {
+    "name": "keel-cadence",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design meeting and communication cadence \u2014 what meetings to run, how often, who attends, and what decisions they make. Use when asked to \"design our meeting structure\", \"what meetings should we have\", \"reduce meeting load\", or \"build our operating rhythm\".",
+    "path": "team/keel/skills/keel-cadence/SKILL.md"
+  },
+  {
+    "name": "keel-comply",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build or audit compliance program \u2014 SOC2, GDPR, HIPAA, or ISO 27001 readiness assessment, gap analysis, and remediation roadmap. Use when asked to \"do we need SOC2\", \"are we GDPR compliant\", \"what does our compliance program need\", or \"build a security policy\".",
+    "path": "team/keel/skills/keel-comply/SKILL.md"
+  },
+  {
+    "name": "keel-legal",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft or review legal ops documents \u2014 NDA, MSA, SaaS agreement review checklist, vendor contract terms. Use when asked to \"review this contract\", \"draft an NDA\", \"what should I look for in this agreement\", or \"build our contract review process\".",
+    "path": "team/keel/skills/keel-legal/SKILL.md"
+  },
+  {
+    "name": "keel-okr",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and run OKR program \u2014 company objectives, team key results, cascade design, and quarterly review cadence. Use when asked to \"design our OKRs\", \"are our OKRs good\", \"cascade goals to teams\", or \"run a quarterly OKR review\".",
+    "path": "team/keel/skills/keel-okr/SKILL.md"
+  },
+  {
+    "name": "keel-process",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Document or redesign a business process \u2014 standard operating procedure (SOP), process map, RACI, and owner assignment. Use when asked to \"document this process\", \"write a runbook\", \"design how we handle X\", or \"map the process for Y\".",
+    "path": "team/keel/skills/keel-process/SKILL.md"
+  },
+  {
+    "name": "keel-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Operations reconnaissance \u2014 audit process documentation, vendor contracts, compliance posture, OKR health, and cross-functional friction points to understand where operations is the bottleneck. Use when asked to \"audit our operations\", \"where are we slow\", \"what processes are broken\", or \"before designing a compliance program\".",
+    "path": "team/keel/skills/keel-recon/SKILL.md"
+  },
+  {
+    "name": "keel-vendor",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Manage vendor relationships \u2014 vendor selection scorecard, contract review checklist, renewal tracking, and vendor consolidation audit. Use when asked to \"evaluate this vendor\", \"review this contract\", \"track vendor renewals\", or \"reduce our SaaS spend\".",
+    "path": "team/keel/skills/keel-vendor/SKILL.md"
+  },
+  {
+    "name": "keep-churn",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Churn risk identification and intervention \u2014 scans health signals for at-risk accounts, classifies risk level (CRITICAL/HIGH/MEDIUM), and produces an intervention sequence per risk type. Use when asked to \"find at-risk accounts\", \"who might churn\", \"build a churn prevention plan\", \"identify churn signals\", or \"rescue this account\".",
+    "path": "team/keep/skills/keep-churn/SKILL.md"
+  },
+  {
+    "name": "keep-expand",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design expansion revenue playbooks \u2014 upsell triggers, seat expansion sequences, tier upgrade paths, and cross-sell motions. Use when asked to \"grow existing customers\", \"increase NRR\", \"design upsell\", or \"how do we get customers to expand\".",
+    "path": "team/keep/skills/keep-expand/SKILL.md"
+  },
+  {
+    "name": "keep-health",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a customer health scoring model \u2014 define signals, weights, thresholds, and action triggers. Use when asked to \"build health scoring\", \"how do we predict churn\", \"what signals indicate a customer is at risk\", or \"design our health model\".",
+    "path": "team/keep/skills/keep-health/SKILL.md"
+  },
+  {
+    "name": "keep-onboard",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Optimize customer onboarding \u2014 map the activation sequence, identify drop-off points, design the aha moment, and produce the onboarding email sequence. Use when asked to \"fix onboarding\", \"improve activation\", \"time-to-value is too slow\", or \"customers aren't getting started\".",
+    "path": "team/keep/skills/keep-onboard/SKILL.md"
+  },
+  {
+    "name": "keep-playbook",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write churn prevention and win-back playbooks \u2014 risk intervention sequences, save conversation guides, and win-back email campaigns. Use when asked to \"prevent churn\", \"save at-risk customers\", \"win back churned customers\", or \"build a save play\".",
+    "path": "team/keep/skills/keep-playbook/SKILL.md"
+  },
+  {
+    "name": "keep-qbr",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Quarterly Business Review template generator \u2014 takes account info (ARR tier, adoption metrics, goals) and produces a complete QBR deck outline and talking points. Use when asked to \"prepare a QBR\", \"build a quarterly review\", \"write our QBR agenda\", or \"create QBR talking points for this account\".",
+    "path": "team/keep/skills/keep-qbr/SKILL.md"
+  },
+  {
+    "name": "keep-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Customer success reconnaissance \u2014 audit current onboarding completion, health signals, NRR, churn patterns, and CS motion. Use when asked to \"audit our customer success\", \"why are customers churning\", \"what's our NRR\", or before designing any CS playbook.",
+    "path": "team/keep/skills/keep-recon/SKILL.md"
+  },
+  {
+    "name": "keep-segment",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Customer segmentation model builder \u2014 tiers customers by ARR, health, and expansion potential; defines CS motion per tier; maps resource allocation. Use when asked to \"segment our customers\", \"define our CS tiers\", \"how should we allocate CS resources\", \"build a customer segmentation model\", or \"who gets high-touch vs. digital\".",
+    "path": "team/keep/skills/keep-segment/SKILL.md"
+  },
+  {
+    "name": "kube-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a Kubernetes cluster architecture \u2014 node pools, RBAC, networking, and workload config.",
+    "path": "team/kube/skills/kube-design/SKILL.md"
+  },
+  {
+    "name": "kube-rbac",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design or audit Kubernetes RBAC \u2014 roles, bindings, service accounts, and least-privilege model.",
+    "path": "team/kube/skills/kube-rbac/SKILL.md"
+  },
+  {
+    "name": "kube-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit an existing Kubernetes cluster \u2014 find misconfigurations, security gaps, and resource issues.",
+    "path": "team/kube/skills/kube-recon/SKILL.md"
+  },
+  {
+    "name": "lens-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Review existing analytics \u2014 find all dashboards and reports, check who uses them, whether metrics are defined, and whether they drive decisions. Recommend what to keep, kill, or add. Use when asked \"are our dashboards useful\", \"analytics review\", or \"metrics audit\".",
+    "path": "team/lens/skills/lens-audit/SKILL.md"
+  },
+  {
+    "name": "lens-chart",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/lens/skills/lens-chart/SKILL.md"
+  },
+  {
+    "name": "lens-dashboard",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and spec an analytical dashboard \u2014 define the question each chart answers, write the SQL queries, spec the layout and refresh cadence. Produces a complete dashboard spec ready to implement. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", \"weekly product health\", or \"visualize this data\".",
+    "path": "team/lens/skills/lens-dashboard/SKILL.md"
+  },
+  {
+    "name": "lens-metrics",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a complete metrics definition doc \u2014 metric name, formula, data source, segmentation, SQL or event tracking spec, and what good/bad looks like. Given a product area, outputs the full metrics spec. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", \"north star metric\", or \"instrument this feature\".",
+    "path": "team/lens/skills/lens-metrics/SKILL.md"
+  },
+  {
+    "name": "lens-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Analytics reconnaissance for takeover \u2014 find all analytics tools, inventory what's tracked and dashboarded, assess data freshness and metric definitions, and present a coverage map. Use when asked \"what analytics exist\", \"BI assessment\", or \"what do we track\".",
+    "path": "team/lens/skills/lens-recon/SKILL.md"
+  },
+  {
+    "name": "lens-report",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a reporting pipeline \u2014 scheduled reports with SQL queries, delivery via Slack or email, threshold alerts, and historical comparison. Use when asked for \"automated reports\", \"scheduled report\", \"email digest\", or \"Slack alerts for metrics\".",
+    "path": "team/lens/skills/lens-report/SKILL.md"
+  },
+  {
+    "name": "lodge-dmca",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft DMCA takedown notice or counter-notice.",
+    "path": "team/lodge/skills/lodge-dmca/SKILL.md"
+  },
+  {
+    "name": "lodge-filing",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Prepare a regulatory filing, disclosure notice, or government submission.",
+    "path": "team/lodge/skills/lodge-filing/SKILL.md"
+  },
+  {
+    "name": "lodge-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey pending and required regulatory filings.",
+    "path": "team/lodge/skills/lodge-recon/SKILL.md"
+  },
+  {
+    "name": "lumen-abtest",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "A/B test design \u2014 produce an experiment spec with hypothesis, primary metric, MDE, sample size, run time, and decision rule. Also determines when NOT to A/B test and what to do instead. Use when asked to \"design an A/B test\", \"should we test this\", \"experiment design\", \"how do we know if this works\", \"what's the sample size\", or \"set up an experiment\".",
+    "path": "team/lumen/skills/lumen-abtest/SKILL.md"
+  },
+  {
+    "name": "lumen-funnel",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/lumen/skills/lumen-funnel/SKILL.md"
+  },
+  {
+    "name": "lumen-instrument",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Instrumentation plan \u2014 design event taxonomy, property schema, and tracking plan for analytics tools. Use when asked to \"what should we track\", \"instrumentation plan\", \"set up analytics events\", \"analytics event schema\", \"tracking plan\", or \"instrument this feature\".",
+    "path": "team/lumen/skills/lumen-instrument/SKILL.md"
+  },
+  {
+    "name": "lumen-metrics",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Metrics architecture \u2014 produce a complete metrics plan given a product description. North Star, input metrics tree, instrumentation spec, action triggers, and counter-metrics. Use when asked to \"design a metrics framework\", \"what should we measure\", \"build a metrics system\", \"define our KPIs\", \"what are our success metrics\", \"metrics strategy\", or \"what do we track\".",
+    "path": "team/lumen/skills/lumen-metrics/SKILL.md"
+  },
+  {
+    "name": "lumen-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Analytics reconnaissance \u2014 scan existing event tracking, metric definitions, dashboards, and analytics configuration to understand what is currently being measured. Use when asked to \"what are we tracking\", \"audit our analytics\", \"what metrics exist\", \"analytics inventory\", or before designing new metrics or instrumentation.",
+    "path": "team/lumen/skills/lumen-recon/SKILL.md"
+  },
+  {
+    "name": "mark-asset",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an asset library structure \u2014 naming conventions, formats, and delivery specs.",
+    "path": "team/mark/skills/mark-asset/SKILL.md"
+  },
+  {
+    "name": "mark-brand",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write brand guidelines \u2014 logo usage, color, typography, voice, and visual principles.",
+    "path": "team/mark/skills/mark-brand/SKILL.md"
+  },
+  {
+    "name": "mark-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing brand assets and usage \u2014 find inconsistencies, off-brand applications, and gaps.",
+    "path": "team/mark/skills/mark-recon/SKILL.md"
+  },
+  {
+    "name": "mesh-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a service mesh deployment \u2014 technology selection, mTLS policy, and traffic management config.",
+    "path": "team/mesh/skills/mesh-design/SKILL.md"
+  },
+  {
+    "name": "mesh-observe",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design service mesh observability \u2014 distributed tracing, service-level metrics, and dashboards.",
+    "path": "team/mesh/skills/mesh-observe/SKILL.md"
+  },
+  {
+    "name": "mesh-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing service mesh configuration \u2014 find mTLS gaps, traffic policy issues, and observability holes.",
+    "path": "team/mesh/skills/mesh-recon/SKILL.md"
+  },
+  {
+    "name": "mint-board",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce board financial package \u2014 monthly or quarterly financial update with P&L, cash position, key metrics, and variance vs plan. Use when asked to \"prepare board materials\", \"write the financial section of the board deck\", or \"what metrics does the board care about\".",
+    "path": "team/mint/skills/mint-board/SKILL.md"
+  },
+  {
+    "name": "mint-budget",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design or review annual operating budget \u2014 headcount plan, departmental spending, revenue targets, and variance tracking. Use when asked to \"build our budget\", \"plan headcount for next year\", or \"review our spending\".",
+    "path": "team/mint/skills/mint-budget/SKILL.md"
+  },
+  {
+    "name": "mint-model",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build or audit a financial model \u2014 3-statement model (P&L, cash flow, balance sheet), scenario analysis, and sensitivity tables. Use when asked to \"build a financial model\", \"model our growth scenarios\", or \"what happens to runway if we hire 5 people\".",
+    "path": "team/mint/skills/mint-model/SKILL.md"
+  },
+  {
+    "name": "mint-raise",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Prepare fundraising financial materials \u2014 investor model, data room financial docs, cap table, and use-of-funds narrative. Use when asked to \"prepare for Series A\", \"build our investor model\", or \"what financials do investors want\".",
+    "path": "team/mint/skills/mint-raise/SKILL.md"
+  },
+  {
+    "name": "mint-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Financial reconnaissance \u2014 audit current P&L, burn rate, runway, unit economics, and financial health to understand where the constraint is. Use when asked to \"audit our finances\", \"what is our runway\", \"are our unit economics healthy\", or \"before building a financial model\".",
+    "path": "team/mint/skills/mint-recon/SKILL.md"
+  },
+  {
+    "name": "mint-report",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Generate financial reports \u2014 monthly close package, variance analysis, and management reporting. Use when asked to \"generate monthly financials\", \"close the books\", or \"write variance commentary\".",
+    "path": "team/mint/skills/mint-report/SKILL.md"
+  },
+  {
+    "name": "mint-runway",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Calculate and extend runway \u2014 current cash, burn rate, runway months, and the levers available to extend it. Use when asked to \"how long is our runway\", \"when do we run out of money\", or \"what cuts extend runway by 6 months\".",
+    "path": "team/mint/skills/mint-runway/SKILL.md"
+  },
+  {
+    "name": "mint-unit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit and improve unit economics \u2014 LTV, CAC, payback period, gross margin, contribution margin. Use when asked to \"are our unit economics good\", \"what is our LTV/CAC\", or \"how do we improve gross margin\".",
+    "path": "team/mint/skills/mint-unit/SKILL.md"
+  },
+  {
+    "name": "mock-contract",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a consumer-driven contract testing setup \u2014 Pact configuration and CI integration.",
+    "path": "team/mock/skills/mock-contract/SKILL.md"
+  },
+  {
+    "name": "mock-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a mock server for an API \u2014 tooling selection, response fixtures, and error scenarios.",
+    "path": "team/mock/skills/mock-design/SKILL.md"
+  },
+  {
+    "name": "mock-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing mocks and test doubles \u2014 find contract drift, missing error cases, and stale fixtures.",
+    "path": "team/mock/skills/mock-recon/SKILL.md"
+  },
+  {
+    "name": "move-animate",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an animation spec for a component or interaction \u2014 timing, easing, and keyframes.",
+    "path": "team/move/skills/move-animate/SKILL.md"
+  },
+  {
+    "name": "move-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing animations in a codebase \u2014 find inconsistencies, missing reduced-motion support, and performance issues.",
+    "path": "team/move/skills/move-recon/SKILL.md"
+  },
+  {
+    "name": "move-system",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a motion system for a product \u2014 duration tokens, easing curves, and animation principles.",
+    "path": "team/move/skills/move-system/SKILL.md"
+  },
+  {
+    "name": "multi-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a multi-cloud or cloud portability strategy \u2014 provider selection, workload placement, and lock-in management.",
+    "path": "team/multi/skills/multi-design/SKILL.md"
+  },
+  {
+    "name": "multi-port",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Assess and improve cloud portability \u2014 identify lock-in, prioritize abstraction, and design migration paths.",
+    "path": "team/multi/skills/multi-port/SKILL.md"
+  },
+  {
+    "name": "multi-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing cloud architecture for lock-in depth and portability gaps.",
+    "path": "team/multi/skills/multi-recon/SKILL.md"
+  },
+  {
+    "name": "onboard-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit the developer onboarding experience \u2014 measure TTFC and find friction points.",
+    "path": "team/onboard/skills/onboard-audit/SKILL.md"
+  },
+  {
+    "name": "onboard-quickstart",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write a developer quickstart \u2014 minimal steps from zero to first successful API call.",
+    "path": "team/onboard/skills/onboard-quickstart/SKILL.md"
+  },
+  {
+    "name": "onboard-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing onboarding docs and developer portal \u2014 find gaps and structural issues.",
+    "path": "team/onboard/skills/onboard-recon/SKILL.md"
+  },
+  {
+    "name": "patch-plan",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a vulnerability management program \u2014 SLAs, asset tiers, escalation, and metrics.",
+    "path": "team/patch/skills/patch-plan/SKILL.md"
+  },
+  {
+    "name": "patch-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing vulnerability management \u2014 find SLA gaps, missing tiers, and process failures.",
+    "path": "team/patch/skills/patch-recon/SKILL.md"
+  },
+  {
+    "name": "patch-triage",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Triage a set of CVEs \u2014 CVSS + EPSS + KEV scoring, prioritization, and recommended remediation order.",
+    "path": "team/patch/skills/patch-triage/SKILL.md"
+  },
+  {
+    "name": "pave-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit developer experience \u2014 measure onboarding time, build speed, deployment friction, and developer satisfaction. Use when asked to \"DX audit\", \"developer experience review\", \"why is development slow\", \"onboarding assessment\", or \"DORA metrics\".",
+    "path": "team/pave/skills/pave-audit/SKILL.md"
+  },
+  {
+    "name": "pave-catalog",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a service catalog \u2014 schema, starter entries, and governance model. Produces what information to capture per service, how it's maintained, and where it lives. Use when asked to \"service catalog\", \"what services do we have\", \"catalog our services\", \"service inventory\", or \"who owns what\".",
+    "path": "team/pave/skills/pave-catalog/SKILL.md"
+  },
+  {
+    "name": "pave-contribute",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Contribute a session learning back to the upstream tonone repo. Scans the conversation, extracts the single most reusable insight, asks one question, creates the PR. Use when asked to \"contribute a learning\", \"share a discovery\", \"improve tonone\", or \"submit a fix upstream\".",
+    "path": "team/pave/skills/pave-contribute/SKILL.md"
+  },
+  {
+    "name": "pave-env",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Set up local development environments \u2014 devcontainers, Docker Compose, one-command setup, dev/prod parity. Use when asked to \"set up dev environment\", \"devcontainer\", \"docker compose for dev\", \"local development setup\", or \"one command to run\".",
+    "path": "team/pave/skills/pave-env/SKILL.md"
+  },
+  {
+    "name": "pave-golden",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Define a golden path \u2014 the opinionated, supported way to do a common developer task (create a new service, set up an environment, deploy a feature). Produces concrete steps, templates, and tooling. Use when asked to \"golden path\", \"create project template\", \"scaffold a new service\", \"how should we create services\", or \"standardize our setup\".",
+    "path": "team/pave/skills/pave-golden/SKILL.md"
+  },
+  {
+    "name": "pave-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Platform reconnaissance \u2014 inventory all developer tooling, environments, build systems, and developer workflows for project takeover. Use when asked to \"understand the dev setup\", \"developer tooling assessment\", \"platform assessment\", or \"how do developers work here\".",
+    "path": "team/pave/skills/pave-recon/SKILL.md"
+  },
+  {
+    "name": "phish-assess",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a phishing simulation program \u2014 scenario selection, difficulty curve, and measurement.",
+    "path": "team/phish/skills/phish-assess/SKILL.md"
+  },
+  {
+    "name": "phish-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing security awareness program \u2014 coverage gaps, effectiveness metrics, and culture indicators.",
+    "path": "team/phish/skills/phish-recon/SKILL.md"
+  },
+  {
+    "name": "phish-train",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a security awareness training curriculum \u2014 topics, format, and effectiveness measurement.",
+    "path": "team/phish/skills/phish-train/SKILL.md"
+  },
+  {
+    "name": "pitch-copy",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Landing page and marketing copy \u2014 write hero section, problem/solution blocks, proof points, and CTAs. Use when asked to \"write landing page copy\", \"write the homepage\", \"marketing copy for this feature\", \"product page copy\", \"write the hero section\", or \"write copy for [surface]\".",
+    "path": "team/pitch/skills/pitch-copy/SKILL.md"
+  },
+  {
+    "name": "pitch-landing",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/pitch/skills/pitch-landing/SKILL.md"
+  },
+  {
+    "name": "pitch-launch",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce an actual launch plan with announcement copy, channel sequence, and day-1 checklist. Use when asked to \"plan a launch\", \"GTM strategy\", \"how do we announce this\", \"launch plan for [feature]\", \"go-to-market\", \"write our Product Hunt post\", or \"how do we get people to notice this\".",
+    "path": "team/pitch/skills/pitch-launch/SKILL.md"
+  },
+  {
+    "name": "pitch-message",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Messaging framework \u2014 produce a full headline, subheadline, proof points, and CTA hierarchy for use across all surfaces. Use when asked to \"write our messaging\", \"messaging framework\", \"what should our headline say\", \"copy hierarchy\", \"tagline and messaging\", or \"how do we talk about the product\".",
+    "path": "team/pitch/skills/pitch-message/SKILL.md"
+  },
+  {
+    "name": "pitch-position",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a complete positioning document using the Dunford framework \u2014 competitive alternatives, unique attributes, value, best-fit customer, market category, positioning statement, and tagline. Use when asked to \"write our positioning\", \"define our value prop\", \"positioning statement\", \"what market are we in\", \"how do we position against X\", \"what's our tagline\", or \"write our messaging foundation\".",
+    "path": "team/pitch/skills/pitch-position/SKILL.md"
+  },
+  {
+    "name": "pitch-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Marketing and messaging reconnaissance \u2014 read existing landing pages, copy, positioning docs, and marketing materials to understand the current messaging state. Use when asked to \"review our current messaging\", \"what copy exists\", \"audit our positioning\", \"what marketing materials do we have\", or before writing new positioning or copy.",
+    "path": "team/pitch/skills/pitch-recon/SKILL.md"
+  },
+  {
+    "name": "plot-chart",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design or critique a data visualization \u2014 chart type selection, encoding, and clarity.",
+    "path": "team/plot/skills/plot-chart/SKILL.md"
+  },
+  {
+    "name": "plot-eda",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an exploratory data analysis workflow for a dataset.",
+    "path": "team/plot/skills/plot-eda/SKILL.md"
+  },
+  {
+    "name": "plot-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing visualizations in a codebase or notebook \u2014 find misleading charts and quality issues.",
+    "path": "team/plot/skills/plot-recon/SKILL.md"
+  },
+  {
+    "name": "port-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an SDK architecture for an API \u2014 language targets, idiomatic patterns, and code generation strategy.",
+    "path": "team/port/skills/port-design/SKILL.md"
+  },
+  {
+    "name": "port-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit multi-language SDK coverage \u2014 find missing languages, inconsistencies, and maintenance gaps.",
+    "path": "team/port/skills/port-recon/SKILL.md"
+  },
+  {
+    "name": "port-review",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Review an existing SDK for idiomatic quality, consistency, and developer ergonomics.",
+    "path": "team/port/skills/port-review/SKILL.md"
+  },
+  {
+    "name": "prism-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Frontend audit \u2014 bundle size, dependencies, accessibility, performance, component quality. Use when asked for \"frontend review\", \"performance audit\", \"accessibility check\", or \"bundle size\".",
+    "path": "team/prism/skills/prism-audit/SKILL.md"
+  },
+  {
+    "name": "prism-chart",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/prism/skills/prism-chart/SKILL.md"
+  },
+  {
+    "name": "prism-component",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Implement a reusable, accessible, typed component from a design spec. Use when asked to \"create a component\", \"build a widget\", \"implement this design\", or \"reusable UI element\".",
+    "path": "team/prism/skills/prism-component/SKILL.md"
+  },
+  {
+    "name": "prism-dashboard",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build an internal dashboard with data tables, filters, detail views, and CRUD. Use when asked to build an \"admin panel\", \"internal dashboard\", \"back office\", or \"data dashboard UI\".",
+    "path": "team/prism/skills/prism-dashboard/SKILL.md"
+  },
+  {
+    "name": "prism-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Frontend reconnaissance \u2014 map the component tree, routing, state management, build config, and assess quality. Use when asked to \"understand this frontend\", \"frontend assessment\", or \"what's the UI built with\".",
+    "path": "team/prism/skills/prism-recon/SKILL.md"
+  },
+  {
+    "name": "prism-stack",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/prism/skills/prism-stack/SKILL.md"
+  },
+  {
+    "name": "prism-ui",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Implement a complete UI screen or feature from a Form visual spec. Use when asked to \"build a page\", \"implement this screen\", \"build the frontend for this feature\", or \"create this UI\".",
+    "path": "team/prism/skills/prism-ui/SKILL.md"
+  },
+  {
+    "name": "prompt-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design production prompts \u2014 system prompt architecture, instruction clarity, few-shot selection.",
+    "path": "team/prompt/skills/prompt-design/SKILL.md"
+  },
+  {
+    "name": "prompt-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit prompt library \u2014 duplication, quality, coverage gaps, version drift, eval alignment.",
+    "path": "team/prompt/skills/prompt-recon/SKILL.md"
+  },
+  {
+    "name": "prompt-version",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build prompt versioning systems \u2014 storage, A/B testing, regression tracking, rollback.",
+    "path": "team/prompt/skills/prompt-version/SKILL.md"
+  },
+  {
+    "name": "proof-api",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build API test suites \u2014 endpoint testing, contract testing, load testing for REST/GraphQL/gRPC APIs. Use when asked to \"test this API\", \"API tests\", \"endpoint testing\", \"contract tests\", or \"load test\".",
+    "path": "team/proof/skills/proof-api/SKILL.md"
+  },
+  {
+    "name": "proof-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit test suite health \u2014 find flaky tests, slow tests, coverage gaps, and testing anti-patterns. Use when asked to \"audit tests\", \"fix flaky tests\", \"why are tests slow\", \"test health\", or \"improve test suite\".",
+    "path": "team/proof/skills/proof-audit/SKILL.md"
+  },
+  {
+    "name": "proof-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/proof/skills/proof-design/SKILL.md"
+  },
+  {
+    "name": "proof-e2e",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build E2E test specs for critical user journeys \u2014 Playwright or Cypress, page objects, setup/teardown, CI config. Use when asked to \"write E2E tests\", \"end-to-end testing\", \"browser tests\", \"UI tests\", or \"Playwright tests\".",
+    "path": "team/proof/skills/proof-e2e/SKILL.md"
+  },
+  {
+    "name": "proof-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Testing reconnaissance \u2014 inventory all tests, frameworks, coverage, CI integration, and assess testing maturity for project takeover. Use when asked to \"understand the tests\", \"testing assessment\", \"what's tested\", or \"test inventory\".",
+    "path": "team/proof/skills/proof-recon/SKILL.md"
+  },
+  {
+    "name": "proof-strategy",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a test strategy for a project or feature \u2014 risk map, test type decisions, coverage targets, CI config. Use when asked to \"create test strategy\", \"what should we test\", \"testing plan\", or \"improve test coverage\".",
+    "path": "team/proof/skills/proof-strategy/SKILL.md"
+  },
+  {
+    "name": "queue-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a message queuing or streaming architecture for a workload.",
+    "path": "team/queue/skills/queue-design/SKILL.md"
+  },
+  {
+    "name": "queue-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing queue and streaming infrastructure \u2014 find missing DLQs, scaling gaps, and reliability issues.",
+    "path": "team/queue/skills/queue-recon/SKILL.md"
+  },
+  {
+    "name": "queue-scale",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a backpressure and scaling strategy for a queue consumer system.",
+    "path": "team/queue/skills/queue-scale/SKILL.md"
+  },
+  {
+    "name": "rank-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design ranking pipelines \u2014 reranker selection, score fusion, cross-encoder patterns, latency trade-offs.",
+    "path": "team/rank/skills/rank-design/SKILL.md"
+  },
+  {
+    "name": "rank-eval",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build ranking evaluation \u2014 NDCG/MRR measurement, human relevance labeling, offline eval harness.",
+    "path": "team/rank/skills/rank-eval/SKILL.md"
+  },
+  {
+    "name": "rank-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit ranking quality \u2014 metric trends, failure modes, dataset coverage, reranker performance.",
+    "path": "team/rank/skills/rank-recon/SKILL.md"
+  },
+  {
+    "name": "red-pentest",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a penetration testing plan \u2014 scope, methodology, attack surface, and rules of engagement.",
+    "path": "team/red/skills/red-pentest/SKILL.md"
+  },
+  {
+    "name": "red-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a reconnaissance plan \u2014 OSINT, attack surface mapping, and enumeration methodology.",
+    "path": "team/red/skills/red-recon/SKILL.md"
+  },
+  {
+    "name": "red-report",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write a penetration test or red team finding report \u2014 CVSS scores, business impact, and remediation.",
+    "path": "team/red/skills/red-report/SKILL.md"
+  },
+  {
+    "name": "relay-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit an existing CI/CD pipeline for slowness, security issues, and reliability gaps. Use when asked to \"audit pipeline\", \"why is CI slow\", \"pipeline review\", or \"deployment review\".",
+    "path": "team/relay/skills/relay-audit/SKILL.md"
+  },
+  {
+    "name": "relay-deploy",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Set up a complete deployment configuration \u2014 Dockerfile, deployment manifest, environment config, and rollback procedure. Use when asked about \"deployment setup\", \"how do I deploy this\", \"deployment strategy\", or \"rollback plan\".",
+    "path": "team/relay/skills/relay-deploy/SKILL.md"
+  },
+  {
+    "name": "relay-docker",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build production-ready Dockerfiles with multi-stage builds, security hardening, and docker-compose for local dev. Use when asked to \"create Dockerfile\", \"optimize container\", or \"dockerize this\".",
+    "path": "team/relay/skills/relay-docker/SKILL.md"
+  },
+  {
+    "name": "relay-pipeline",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a full CI/CD pipeline from scratch. Use when asked to \"set up CI/CD\", \"create pipeline\", or \"automate deploys\".",
+    "path": "team/relay/skills/relay-pipeline/SKILL.md"
+  },
+  {
+    "name": "relay-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Map the full CI/CD pipeline \u2014 triggers, build, test, deploy flow \u2014 with risk assessment. Use when asked \"how does this deploy\", \"map the pipeline\", or \"understand CI/CD\".",
+    "path": "team/relay/skills/relay-recon/SKILL.md"
+  },
+  {
+    "name": "relay-ship",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "End-to-end ship workflow \u2014 merge base, run tests, review diff, bump version, commit, push, create PR. Use when asked to \"ship\", \"push to main\", \"create a PR\", \"get this merged\", or \"deploy this branch\".",
+    "path": "team/relay/skills/relay-ship/SKILL.md"
+  },
+  {
+    "name": "resp-contain",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design containment procedures for an active incident \u2014 isolation, quarantine, and credential rotation.",
+    "path": "team/resp/skills/resp-contain/SKILL.md"
+  },
+  {
+    "name": "resp-playbook",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write an incident response playbook for a threat scenario \u2014 detection, containment, eradication, recovery.",
+    "path": "team/resp/skills/resp-playbook/SKILL.md"
+  },
+  {
+    "name": "resp-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing incident response capability \u2014 playbook coverage, tooling gaps, and readiness.",
+    "path": "team/resp/skills/resp-recon/SKILL.md"
+  },
+  {
+    "name": "sample-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing code samples \u2014 coverage, language parity, and freshness.",
+    "path": "team/sample/skills/sample-recon/SKILL.md"
+  },
+  {
+    "name": "sample-review",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Review existing code samples for correctness, runnability, and developer experience.",
+    "path": "team/sample/skills/sample-review/SKILL.md"
+  },
+  {
+    "name": "sample-write",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write a working code sample or tutorial for an API feature or integration pattern.",
+    "path": "team/sample/skills/sample-write/SKILL.md"
+  },
+  {
+    "name": "sast-fix",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Analyze and fix a SAST finding \u2014 root cause, exploitability, and secure code alternative.",
+    "path": "team/sast/skills/sast-fix/SKILL.md"
+  },
+  {
+    "name": "sast-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing application security tooling and code for OWASP Top 10 coverage.",
+    "path": "team/sast/skills/sast-recon/SKILL.md"
+  },
+  {
+    "name": "sast-scan",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a SAST/DAST scanning pipeline \u2014 tooling selection, CI integration, and triage workflow.",
+    "path": "team/sast/skills/sast-scan/SKILL.md"
+  },
+  {
+    "name": "schema-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an API schema \u2014 OpenAPI spec, GraphQL schema, or gRPC proto for a feature.",
+    "path": "team/schema/skills/schema-design/SKILL.md"
+  },
+  {
+    "name": "schema-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing API schemas across a codebase \u2014 find inconsistencies and coverage gaps.",
+    "path": "team/schema/skills/schema-recon/SKILL.md"
+  },
+  {
+    "name": "schema-review",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Review an API schema for consistency, completeness, and developer ergonomics.",
+    "path": "team/schema/skills/schema-review/SKILL.md"
+  },
+  {
+    "name": "scope-oss",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Open source license compliance audit \u2014 flag GPL, LGPL, AGPL, copyleft risks.",
+    "path": "team/scope/skills/scope-oss/SKILL.md"
+  },
+  {
+    "name": "scope-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey project IP assets \u2014 trademarks, patents, OSS licenses, assignments.",
+    "path": "team/scope/skills/scope-recon/SKILL.md"
+  },
+  {
+    "name": "scope-trademark",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Trademark clearance research and filing preparation for a name or mark.",
+    "path": "team/scope/skills/scope-trademark/SKILL.md"
+  },
+  {
+    "name": "score-compare",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Compare two or more models statistically \u2014 significance testing and error analysis.",
+    "path": "team/score/skills/score-compare/SKILL.md"
+  },
+  {
+    "name": "score-eval",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an evaluation framework for a ML model \u2014 metrics, splits, and reporting.",
+    "path": "team/score/skills/score-eval/SKILL.md"
+  },
+  {
+    "name": "score-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing model evaluation code \u2014 find metric misuse, missing CIs, and evaluation leakage.",
+    "path": "team/score/skills/score-recon/SKILL.md"
+  },
+  {
+    "name": "serv-cold",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Diagnose and optimize Lambda/serverless cold start performance.",
+    "path": "team/serv/skills/serv-cold/SKILL.md"
+  },
+  {
+    "name": "serv-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a serverless architecture for a workload \u2014 runtime selection, event wiring, and scaling config.",
+    "path": "team/serv/skills/serv-design/SKILL.md"
+  },
+  {
+    "name": "serv-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing serverless functions \u2014 find misconfigurations, cold start issues, and cost inefficiencies.",
+    "path": "team/serv/skills/serv-recon/SKILL.md"
+  },
+  {
+    "name": "shield-assess",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Regulatory exposure assessment for a described product or geography.",
+    "path": "team/shield/skills/shield-assess/SKILL.md"
+  },
+  {
+    "name": "shield-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey product features and data flows for regulatory exposure.",
+    "path": "team/shield/skills/shield-recon/SKILL.md"
+  },
+  {
+    "name": "shield-respond",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft regulatory response letter or regulator communication.",
+    "path": "team/shield/skills/shield-respond/SKILL.md"
+  },
+  {
+    "name": "siem-alert",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Tune a SIEM alert \u2014 reduce false positives, add context, and improve analyst experience.",
+    "path": "team/siem/skills/siem-alert/SKILL.md"
+  },
+  {
+    "name": "siem-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing SIEM deployment \u2014 log coverage, rule quality, and alert volume.",
+    "path": "team/siem/skills/siem-recon/SKILL.md"
+  },
+  {
+    "name": "siem-rule",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write SIEM detection rules for a threat or TTP \u2014 SIGMA format, MITRE mapping, and test cases.",
+    "path": "team/siem/skills/siem-rule/SKILL.md"
+  },
+  {
+    "name": "spine-api",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design and spec an API \u2014 endpoints, request/response shapes, error codes, auth pattern, pagination. Applies Stripe's consistency principles. Use when asked to \"design an API\", \"build API endpoints\", \"create REST API\", or \"API for this feature\".",
+    "path": "team/spine/skills/spine-api/SKILL.md"
+  },
+  {
+    "name": "spine-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a system design doc \u2014 components, data flow, decisions made, tradeoffs, failure modes. Not a list of options. An actual design with calls made. Use when asked for \"system design for\", \"architect this\", \"how should we build\", or \"design the backend\".",
+    "path": "team/spine/skills/spine-design/SKILL.md"
+  },
+  {
+    "name": "spine-perf",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Find and fix performance bottlenecks \u2014 N+1 queries, missing indexes, sync bottlenecks, caching gaps. Use when asked \"why is this slow\", \"performance issue\", \"optimize this endpoint\", or \"N+1 queries\".",
+    "path": "team/spine/skills/spine-perf/SKILL.md"
+  },
+  {
+    "name": "spine-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Backend reconnaissance \u2014 map all routes, middleware, models, dependencies, auth, and assess code quality for project takeover. Use when asked to \"understand this backend\", \"map the API\", or \"assess code quality\".",
+    "path": "team/spine/skills/spine-recon/SKILL.md"
+  },
+  {
+    "name": "spine-review",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "API and backend code review \u2014 REST conventions, auth, validation, error handling, pagination, rate limiting, test coverage. Use when asked to \"review this API\", \"code review\", \"review backend\", or \"pre-launch backend check\".",
+    "path": "team/spine/skills/spine-review/SKILL.md"
+  },
+  {
+    "name": "spine-service",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a new production-ready service from scratch \u2014 config management, health checks, graceful shutdown, structured logging. Use when asked to \"new service\", \"scaffold a backend\", \"bootstrap service\", or \"create microservice\".",
+    "path": "team/spine/skills/spine-service/SKILL.md"
+  },
+  {
+    "name": "surge-activation",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/surge/skills/surge-activation/SKILL.md"
+  },
+  {
+    "name": "surge-experiment",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Growth experiment design \u2014 structure a growth hypothesis, define metric, baseline, expected lift, and kill condition for a single experiment. Use when asked to \"design a growth experiment\", \"test this growth idea\", \"experiment framework\", \"how do we test if this works\", or \"growth hypothesis\".",
+    "path": "team/surge/skills/surge-experiment/SKILL.md"
+  },
+  {
+    "name": "surge-landing",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/surge/skills/surge-landing/SKILL.md"
+  },
+  {
+    "name": "surge-plg",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "PLG motion design \u2014 free tier definition, activation sequence, expansion trigger points, viral mechanic assessment. Given a product, output the PLG architecture and make the calls. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", \"how do we add a free tier\", \"upgrade triggers\", or \"viral loop design\".",
+    "path": "team/surge/skills/surge-plg/SKILL.md"
+  },
+  {
+    "name": "surge-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Growth state reconnaissance \u2014 scan existing onboarding flows, acquisition channels, conversion funnels, and growth experiment logs to understand current growth state. Use when asked to \"what's our growth state\", \"audit the funnel\", \"what growth experiments have we run\", \"acquisition channel inventory\", or before designing new growth experiments.",
+    "path": "team/surge/skills/surge-recon/SKILL.md"
+  },
+  {
+    "name": "surge-retention",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Retention diagnosis + intervention plan \u2014 analyze the retention curve, identify the primary drop-off point, and produce a specific intervention plan with expected impact. Use when asked to \"improve retention\", \"why are users churning\", \"build a retention playbook\", \"reduce churn\", \"win-back campaign\", or \"users aren't coming back\".",
+    "path": "team/surge/skills/surge-retention/SKILL.md"
+  },
+  {
+    "name": "terms-privacy",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft a GDPR-compliant privacy policy for the described product and data flows.",
+    "path": "team/terms/skills/terms-privacy/SKILL.md"
+  },
+  {
+    "name": "terms-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing privacy and legal docs for completeness and GDPR compliance.",
+    "path": "team/terms/skills/terms-recon/SKILL.md"
+  },
+  {
+    "name": "terms-tos",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Draft Terms of Service for the described product.",
+    "path": "team/terms/skills/terms-tos/SKILL.md"
+  },
+  {
+    "name": "terra-drift",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a Terraform drift detection and remediation workflow.",
+    "path": "team/terra/skills/terra-drift/SKILL.md"
+  },
+  {
+    "name": "terra-module",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a Terraform module structure \u2014 inputs, outputs, resource organization, and versioning.",
+    "path": "team/terra/skills/terra-module/SKILL.md"
+  },
+  {
+    "name": "terra-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing Terraform code \u2014 find state issues, security gaps, and module quality problems.",
+    "path": "team/terra/skills/terra-recon/SKILL.md"
+  },
+  {
+    "name": "token-budget",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design token budgets \u2014 system/user/assistant allocation, overflow handling, context compression.",
+    "path": "team/token/skills/token-budget/SKILL.md"
+  },
+  {
+    "name": "token-chunk",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design chunking strategies \u2014 semantic splitting, overlap tuning, retrieval-aware chunk sizing.",
+    "path": "team/token/skills/token-chunk/SKILL.md"
+  },
+  {
+    "name": "token-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit token usage patterns \u2014 avg context size, waste, truncation frequency, budget adherence.",
+    "path": "team/token/skills/token-recon/SKILL.md"
+  },
+  {
+    "name": "tone-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing token usage in a codebase \u2014 find literal values, missing tokens, and pipeline gaps.",
+    "path": "team/tone/skills/tone-recon/SKILL.md"
+  },
+  {
+    "name": "tone-theme",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build or fix a theming system \u2014 dark mode, multi-brand, or white-label token swap.",
+    "path": "team/tone/skills/tone-theme/SKILL.md"
+  },
+  {
+    "name": "tone-token",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design or refactor a design token architecture \u2014 naming, tiers, and coverage.",
+    "path": "team/tone/skills/tone-token/SKILL.md"
+  },
+  {
+    "name": "touch-app",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a complete mobile app architecture design \u2014 platform choice, navigation structure, state management, data layer, key screens. Use when asked to \"build a mobile app\", \"new app\", \"create iOS/Android app\", \"app architecture\", or \"cross-platform app\".",
+    "path": "team/touch/skills/touch-app/SKILL.md"
+  },
+  {
+    "name": "touch-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Mobile audit \u2014 app size, startup time, crash reporting, store compliance, accessibility, offline behavior. Use when asked for \"mobile review\", \"app store readiness\", \"mobile performance\", or \"crash analysis\".",
+    "path": "team/touch/skills/touch-audit/SKILL.md"
+  },
+  {
+    "name": "touch-feature",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a mobile feature spec \u2014 user story, technical approach, component breakdown, platform-specific considerations, edge cases. Use when asked to \"add a screen\", \"spec this feature\", \"mobile feature\", \"new tab\", \"push notifications\", or \"deep link\".",
+    "path": "team/touch/skills/touch-feature/SKILL.md"
+  },
+  {
+    "name": "touch-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Mobile reconnaissance \u2014 understand the app's tech stack, architecture, dependencies, and health for takeover. Use when asked to \"understand this app\", \"mobile assessment\", or \"app health\".",
+    "path": "team/touch/skills/touch-recon/SKILL.md"
+  },
+  {
+    "name": "touch-release",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Set up mobile release pipeline \u2014 Fastlane, code signing, CI, beta distribution, versioning. Use when asked about \"app store setup\", \"release pipeline\", \"fastlane\", \"beta distribution\", or \"signing\".",
+    "path": "team/touch/skills/touch-release/SKILL.md"
+  },
+  {
+    "name": "touch-ui",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "|",
+    "path": "team/touch/skills/touch-ui/SKILL.md"
+  },
+  {
+    "name": "trace-debug",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Debug AI system behavior using traces \u2014 prompt reconstruction, output comparison, failure attribution.",
+    "path": "team/trace/skills/trace-debug/SKILL.md"
+  },
+  {
+    "name": "trace-instrument",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Instrument LLM calls with tracing \u2014 span structure, token counts, latency, model metadata.",
+    "path": "team/trace/skills/trace-instrument/SKILL.md"
+  },
+  {
+    "name": "trace-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit LLM observability coverage \u2014 trace gaps, logging completeness, cost attribution accuracy.",
+    "path": "team/trace/skills/trace-recon/SKILL.md"
+  },
+  {
+    "name": "tune-finetune",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a fine-tuning pipeline \u2014 PEFT config, dataset format, training loop, and evaluation.",
+    "path": "team/tune/skills/tune-finetune/SKILL.md"
+  },
+  {
+    "name": "tune-prompt",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Systematically optimize prompts for a task \u2014 few-shot, chain-of-thought, structured output.",
+    "path": "team/tune/skills/tune-prompt/SKILL.md"
+  },
+  {
+    "name": "tune-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing fine-tuning or prompt engineering work \u2014 find quality gaps and optimization opportunities.",
+    "path": "team/tune/skills/tune-recon/SKILL.md"
+  },
+  {
+    "name": "vect-embed",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design an embedding pipeline \u2014 model selection, chunking, and indexing strategy.",
+    "path": "team/vect/skills/vect-embed/SKILL.md"
+  },
+  {
+    "name": "vect-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing vector search or RAG implementation \u2014 find quality gaps and performance issues.",
+    "path": "team/vect/skills/vect-recon/SKILL.md"
+  },
+  {
+    "name": "vect-search",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a vector search or RAG system \u2014 retrieval strategy, reranking, and database selection.",
+    "path": "team/vect/skills/vect-search/SKILL.md"
+  },
+  {
+    "name": "vigil-alert",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write SLO-based alert rules with burn rate thresholds and paired runbooks. Outputs actual alert configs, not a strategy doc. Use when asked to \"set up alerts\", \"create runbooks\", \"define SLOs\", or \"alerting strategy\".",
+    "path": "team/vigil/skills/vigil-alert/SKILL.md"
+  },
+  {
+    "name": "vigil-check",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Verify observability posture \u2014 audit monitoring coverage, find blind spots, prioritize gaps. Use when asked \"is monitoring sufficient\", \"observability review\", \"are we covered\", or \"pre-launch monitoring check\".",
+    "path": "team/vigil/skills/vigil-check/SKILL.md"
+  },
+  {
+    "name": "vigil-incident",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Incident response \u2014 diagnose production issues, find root cause, propose fix with rollback. Use when asked about \"something is broken\", \"production issue\", \"why is this down\", \"incident\", or \"debug production\".",
+    "path": "team/vigil/skills/vigil-incident/SKILL.md"
+  },
+  {
+    "name": "vigil-instrument",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Instrument a service with OpenTelemetry \u2014 RED metrics, structured logs, distributed tracing, and health checks. Outputs actual code and config, not a plan. Use when asked to \"add monitoring\", \"instrument this\", \"add logging\", \"set up tracing\", or \"observability\".",
+    "path": "team/vigil/skills/vigil-instrument/SKILL.md"
+  },
+  {
+    "name": "vigil-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Observability reconnaissance \u2014 inventory what monitoring exists, map coverage, highlight blind spots. Use when asked \"what monitoring exists\", \"observability assessment\", or \"what can we see\".",
+    "path": "team/vigil/skills/vigil-recon/SKILL.md"
+  },
+  {
+    "name": "volt-driver",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build a device driver or protocol handler \u2014 I2C sensors, BLE services, MQTT clients, SPI peripherals with interrupt-driven I/O and clean HAL abstraction. Use when asked to \"write a driver\", \"I2C device\", \"BLE service\", \"MQTT client\", or \"sensor integration\".",
+    "path": "team/volt/skills/volt-driver/SKILL.md"
+  },
+  {
+    "name": "volt-firmware",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a complete firmware architecture spec for a described device \u2014 layer diagram, module responsibilities, HAL interface definitions, key state machines, RTOS decision. Use when asked to \"design firmware architecture\", \"plan embedded firmware\", \"architect an IoT device\", \"how should I structure this firmware\", or given a device description and asked what the firmware should look like.",
+    "path": "team/volt/skills/volt-firmware/SKILL.md"
+  },
+  {
+    "name": "volt-ota",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a complete OTA update system design \u2014 partition layout, update flow, rollback conditions, validation checks, fleet management approach, failure modes and recovery. Use when asked about \"OTA updates\", \"firmware updates over the air\", \"how do I update devices in the field\", \"OTA strategy\", or \"remote firmware update design\".",
+    "path": "team/volt/skills/volt-ota/SKILL.md"
+  },
+  {
+    "name": "volt-power",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Power management audit \u2014 analyze sleep modes, wake sources, power state machines, radio duty cycles, and battery life estimates. Use when asked to \"audit power usage\", \"optimize battery life\", \"review power management\", \"why is my battery draining\", \"power budget analysis\", or \"sleep mode review\".",
+    "path": "team/volt/skills/volt-power/SKILL.md"
+  },
+  {
+    "name": "volt-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Firmware reconnaissance for takeover \u2014 inventory the MCU, peripherals, RTOS, protocols, OTA, power management, and assess code quality with risk flags. Use when asked to \"understand this firmware\", \"device inventory\", or \"embedded assessment\".",
+    "path": "team/volt/skills/volt-recon/SKILL.md"
+  },
+  {
+    "name": "warden-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Full security audit \u2014 secrets, dependencies, IAM, auth, injection, XSS, HTTPS, rate limiting, public storage. Use when asked for \"security audit\", \"check for vulnerabilities\", \"security review\", or \"are we secure\".",
+    "path": "team/warden/skills/warden-audit/SKILL.md"
+  },
+  {
+    "name": "warden-harden",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a hardening spec and implement it \u2014 auth patterns, security headers, rate limiting, input validation, secrets management, dependency hygiene. Use when asked to \"harden this\", \"add security to this service\", \"what security do I need\", or \"secure this before launch\".",
+    "path": "team/warden/skills/warden-harden/SKILL.md"
+  },
+  {
+    "name": "warden-iam",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Build IAM from scratch \u2014 roles, policies, service accounts with least privilege. Use when asked to \"set up IAM\", \"create roles\", \"service accounts\", or \"access control\".",
+    "path": "team/warden/skills/warden-iam/SKILL.md"
+  },
+  {
+    "name": "warden-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Security reconnaissance \u2014 full inventory of secrets management, IAM, dependencies, auth, encryption, audit logging, and compliance gaps. Use when asked about \"security posture\", \"how secure is this\", or \"security assessment\".",
+    "path": "team/warden/skills/warden-recon/SKILL.md"
+  },
+  {
+    "name": "warden-scan",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Automated SAST + dependency vulnerability scan. Runs Semgrep (code vulnerabilities) and pip-audit (CVE-matched dependencies) and writes a structured JSON report. Use when asked to \"scan for vulnerabilities\", \"run a security scan\", \"check for CVEs\", or \"audit dependencies\".",
+    "path": "team/warden/skills/warden-scan/SKILL.md"
+  },
+  {
+    "name": "warden-threat",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Produce a threat model \u2014 assets, ranked threats, mitigations, accepted risks. Use when asked to \"threat model this\", \"what could go wrong security-wise\", \"map our attack surface\", or before designing any security-sensitive feature.",
+    "path": "team/warden/skills/warden-threat/SKILL.md"
+  },
+  {
+    "name": "wire-prototype",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Document a prototype or user flow \u2014 screens, states, transitions, and annotations.",
+    "path": "team/wire/skills/wire-prototype/SKILL.md"
+  },
+  {
+    "name": "wire-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit existing design documentation \u2014 find gaps in specs, missing states, and handoff debt.",
+    "path": "team/wire/skills/wire-recon/SKILL.md"
+  },
+  {
+    "name": "wire-spec",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Write a developer handoff spec for a component or feature \u2014 states, tokens, edge cases.",
+    "path": "team/wire/skills/wire-spec/SKILL.md"
+  },
+  {
+    "name": "zero-audit",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Audit an existing environment against zero trust principles \u2014 find implicit trust and over-privileged access.",
+    "path": "team/zero/skills/zero-audit/SKILL.md"
+  },
+  {
+    "name": "zero-design",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Design a zero trust architecture \u2014 phased roadmap, identity pillar, and network segmentation.",
+    "path": "team/zero/skills/zero-design/SKILL.md"
+  },
+  {
+    "name": "zero-recon",
+    "agent": "skills",
+    "team": "unknown",
+    "description": "Survey existing network and identity controls for zero trust readiness.",
+    "path": "team/zero/skills/zero-recon/SKILL.md"
+  }
+]

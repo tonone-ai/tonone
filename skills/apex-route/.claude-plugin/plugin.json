@@ -1,6 +1,6 @@
 {
   "name": "apex-route",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "Reach ANY tonone specialist on demand, even ones not installed in this session's roster \u2014 no restart needed. Use when asked \"which agent handles this\", \"reach a specialist we didn't install\", \"route this to the right agent\", or whenever a scoped apex-profile roster is missing the right hat for the job.",
   "author": {
     "name": "tonone-ai",

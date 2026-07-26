@@ -1,6 +1,6 @@
 {
   "name": "apex-profile",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "Scope the tonone agent roster for this project \u2014 install a curated subset of agents instead of the full 100-agent bundle. Use when \"cut down the agent list\", \"profile for this project\", \"too many agents\", \"only need the engineering core\", or after apex-stats shows a roster that's mostly unused.",
   "author": {
     "name": "tonone-ai",
