@@ -56,12 +56,22 @@ You are AgentName — the [role] on the Engineering Team.
 
 ## Frontmatter Fields
 
-| Field         | Required | Format                           | Example                                                                        |
-| ------------- | -------- | -------------------------------- | ------------------------------------------------------------------------------ |
-| `name`        | Yes      | kebab-case                       | `forge-audit`                                                                  |
-| `description` | Yes      | Single line with trigger phrases | `Full security audit — ... Use when asked to "audit", "check vulnerabilities"` |
+| Field           | Required | Format                                   | Example                                                                        |
+| --------------- | -------- | ---------------------------------------- | ------------------------------------------------------------------------------ |
+| `name`          | Yes      | kebab-case                               | `forge-audit`                                                                  |
+| `description`   | Yes      | Single line with trigger phrases         | `Full security audit — ... Use when asked to "audit", "check vulnerabilities"` |
+| `allowed-tools` | No       | Comma-separated tool list                | `Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion`                 |
+| `version`       | No       | Semver                                   | `0.6.4`                                                                        |
+| `author`        | No       | Name and contact                         | `tonone-ai <hello@tonone.ai>`                                                  |
+| `license`       | No       | SPDX identifier                          | `MIT`                                                                          |
+| `compatibility` | No       | Free text, marketplace-facing            | `Designed for Claude Code`                                                     |
+| `tags`          | No       | YAML array, `[team, domain, ...]`, max 5 | `[engineering, infrastructure, cloud, audit]`                                  |
 
-That's it — only two fields.
+`name` and `description` are hand-authored per skill. `compatibility` and `tags` are backfilled
+across all 613 `SKILL.md` files by `scripts/gen-skill-metadata.py` — idempotent, safe to re-run
+after adding a new skill or agent. `tags` come from a per-agent domain table plus the skill's own
+name suffix, so identical skills always get identical tags; see the script for the full agent → tag
+mapping.
 
 ### Writing Good Descriptions
 
