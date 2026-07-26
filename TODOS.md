@@ -83,9 +83,10 @@ Last updated: 2026-03-29
 
 ### Plugin marketplace metadata
 
-- **What:** Rich metadata (screenshots, categories, compatibility tags) for marketplace listing.
+- **What:** Rich metadata (screenshots, categories) for marketplace listing. Compatibility tags shipped in v1.10.2 (`scripts/gen-skill-metadata.py`, all 613 skills) — screenshots and categories remain.
 - **Why:** Better discovery when Claude Code plugin ecosystem grows.
 - **Effort:** S
+- **Status:** Partial (compatibility tags done, screenshots/categories todo)
 
 ### Cross-agent memory
 

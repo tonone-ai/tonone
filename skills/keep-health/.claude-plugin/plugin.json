@@ -1,6 +1,6 @@
 {
   "name": "keep-health",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "description": "Design a customer health scoring model \u2014 define signals, weights, thresholds, and action triggers. Use when asked to \"build health scoring\", \"how do we predict churn\", \"what signals indicate a customer is at risk\", or \"design our health model\".",
   "author": {
     "name": "tonone-ai",
