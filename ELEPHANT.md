@@ -195,3 +195,4 @@
 2026-07-26 18:51 : todo(oss-ready): CI pipeline still manual — real risk since external PR (#109/#111 from Burak) already merged with zero automated gate — TODOS.md v0.3.0 blocker — @fatih
 2026-07-26 19:43 : retro(7d) rerun: 9 commits (was 8, +1 memory chore since), same 2 contributors/4 PRs/0% test ratio/v1.10.1/2d streak — snapshot at .context/retros/2026-07-26-2.json — @fatih
 2026-07-26 22:40 : chore: ignore .context/ and fix stale README version badge — @fatih
+2026-07-26 22:41 : feat: add gen-skill-metadata.py — marketplace tags/compatibility generator — @fatih
