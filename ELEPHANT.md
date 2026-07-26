@@ -38,7 +38,7 @@
 2026-04-12 12:59 : fix(elephant): reject git commit-graph false positive in bash filter — @fatih.unver
 2026-04-12 13:01 : feat(elephant): add recall hook — startup summary of local + global memory — @fatih.unver
 2026-04-12 13:03 : fix(elephant): correct box-drawing prefixes and 15-line cap for other repos — @fatih.unver
-2026-04-12 13:05 : fix(statusline): parse resets_at as Unix seconds (#45) — @thisisfatih
+2026-04-12 13:05 : fix(statusline): parse resets*at as Unix seconds (#45) — @thisisfatih
 2026-04-12 13:05 : fix(elephant): guard week-budget negative slice, simplify body.map — @fatih.unver
 2026-04-12 13:06 : feat(elephant): add /elephant skill — save, show, compact commands — @fatih.unver
 2026-04-12 13:07 : feat(elephant): wire recall + writer hooks into plugin.json — @fatih.unver
@@ -185,3 +185,7 @@
 2026-07-25 19:17 : review-pattern: undisclosed self-promo in doc PRs = check author's org affiliation vs named tool/service before merge, not just diff content — @fatih
 2026-07-25 19:17 : pr-review(buzz): PR #109 "source evidence guard, buzz-social" — 5-agent review, 4 candidate issues (tool-name conflict w/ #111 75, unbolded labels 55, fractional step 25, Key Rules placement 25), none hit 80 threshold — no auto-comment posted, held for @fatih manual call — @fatih
 2026-07-25 19:17 : [!!] confirmed same author (kriptoburak/Xquik-dev, blog xquik.com) on both #109 (names "TweetClaw") and #111 (names own "Xquik") — fix pattern for both: describe tool capability generically (read-only public API/aggregator), don't crown named vendor, require affiliation disclosure in PR body — @fatih
+2026-07-25 19:21 : docs(buzz-social): describe source tool generically, not by brand — @fatih
+2026-07-26 11:59 : docs(platform): sibling repo ~/repos/tn/platform (tonone showcase site) hit 6500 files, mostly node_modules/.next/stale worktrees — platform agent got lost — @fatih
+2026-07-26 11:59 : docs(platform): added REPOMAP.md at platform root — route map, data flow (.planning/*.json → lib/\_-data.ts → pages), component dirs, task→file table, noise-dir list — @fatih
+2026-07-26 11:59 : docs(platform): wired REPOMAP.md into platform's CLAUDE.md via @REPOMAP.md so every session auto-loads it — @fatih
