@@ -189,3 +189,4 @@
 2026-07-26 11:59 : docs(platform): sibling repo ~/repos/tn/platform (tonone showcase site) hit 6500 files, mostly node_modules/.next/stale worktrees — platform agent got lost — @fatih
 2026-07-26 11:59 : docs(platform): added REPOMAP.md at platform root — route map, data flow (.planning/*.json → lib/\_-data.ts → pages), component dirs, task→file table, noise-dir list — @fatih
 2026-07-26 11:59 : docs(platform): wired REPOMAP.md into platform's CLAUDE.md via @REPOMAP.md so every session auto-loads it — @fatih
+2026-07-26 18:10 : fix: AI Ops skill content, evals naming collision, skill.md case bugs — @fatih

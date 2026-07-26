@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.10.1] - 2026-07-26
+
+### Fixed
+
+- **AI Operations Team skills** — 27 skills (Deploy, Evals, Trace, Guard, Budget, Token, Prompt, Embed, Rank) shipped with no YAML frontmatter and no real step-by-step content; they were not registering as usable slash commands. All 27 now have proper frontmatter and full instructions.
+- **Evals agent skill naming** — the Evals agent's skills were named `eval-*`, colliding with the unrelated Eval agent (Data Science team). Renamed to `evals-*`; two of them had been accidentally duplicated from the Eval agent's content and are now corrected to cover LLM evaluation instead of A/B testing.
+- **16 skills named `skill.md` instead of `SKILL.md`** (Form, Draft, Relay) — invisible to any case-sensitive filesystem despite working on case-insensitive local checkouts. Renamed to the correct case.
+
+### Added
+
+- `docs/repomap.md` — orientation map for the repo (100 agents, 421 skills) plus a known-drift log.
+- `docs/skill-index.json` and `scripts/gen-skill-index.py` — generated machine-readable skill index, companion to the existing `docs/agent-index.json`.
+
 ## [1.2.1] - 2026-05-09
 
 ### Changed
