@@ -1,6 +1,6 @@
 {
   "name": "bench",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "Developer Experience Team \u2014 Bench: API performance benchmarking \u2014 latency profiling, throughput testing, performance regression detection",
   "author": {
     "name": "tonone-ai",

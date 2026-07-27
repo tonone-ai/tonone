@@ -1,6 +1,6 @@
 {
   "name": "chain",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "Security Operations Team \u2014 Chain: Supply chain security \u2014 SBOM generation, dependency scanning, third-party risk, license compliance",
   "author": {
     "name": "tonone-ai",

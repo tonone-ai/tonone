@@ -1,6 +1,6 @@
 {
   "name": "ink-post",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "Write a blog post or article \u2014 research the keyword, draft the post, and produce publish-ready content with SEO optimization. Use when asked to \"write a blog post\", \"write about [topic]\", \"draft an article\", or \"write a tutorial\".",
   "author": {
     "name": "tonone-ai",

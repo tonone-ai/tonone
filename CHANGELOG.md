@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.10.3] - 2026-07-27
+
+### Changed
+
+- Regenerated README — was badly stale (31 agents, 214 skills, 3 teams), now reflects the actual roster (100 agents, 421 skills, 10 teams: Engineering, Product, Operations, Legal, Design, Data Science, Security Operations, Developer Experience, Infrastructure Specialist, AI Operations). Full skill list, team tables, and usage examples all regenerated from `docs/agent-index.json` and `docs/skill-index.json`.
+
+### Fixed
+
+- 34 skill descriptions that rendered as a literal `|` in `docs/skill-index.json` — the generator didn't parse multi-line YAML block-scalar (`description: |`) frontmatter. Real descriptions pulled directly from each `SKILL.md` for the README regeneration; the underlying index generator bug is still open.
+
 ## [1.10.2] - 2026-07-26
 
 ### Added

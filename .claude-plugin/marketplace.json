@@ -9,7 +9,7 @@
     {
       "name": "tonone",
       "description": "Engineering + Product team — 23 agents, 2 teams. All agents and skills in one install.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./",
       "author": {
         "name": "ai",
@@ -20,7 +20,7 @@
     {
       "name": "engineering-team",
       "description": "Install all 15 Engineering Team agents at once",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./bundle/engineering-team",
       "author": {
         "name": "ai",
@@ -31,7 +31,7 @@
     {
       "name": "product-team",
       "description": "Install all 8 Product Team agents at once",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./bundle/product-team",
       "author": {
         "name": "ai",
@@ -42,7 +42,7 @@
     {
       "name": "full-team",
       "description": "Install all 23 tonone agents at once — Engineering Team + Product Team",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./bundle/full-team",
       "author": {
         "name": "ai",
@@ -53,7 +53,7 @@
     {
       "name": "legal-team",
       "description": "Install all 10 Legal Team agents at once — contracts, compliance, IP, governance, regulatory",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./bundle/legal-team",
       "author": {
         "name": "ai",
@@ -64,7 +64,7 @@
     {
       "name": "apex",
       "description": "Engineering lead — orchestrates the team, scopes work, controls depth and budget",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/apex",
       "author": {
         "name": "ai",
@@ -76,7 +76,7 @@
     {
       "name": "forge",
       "description": "Infrastructure engineer — cloud services, networking, IaC, cost optimization",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/forge",
       "author": {
         "name": "ai",
@@ -88,7 +88,7 @@
     {
       "name": "relay",
       "description": "DevOps engineer — CI/CD, deployments, GitOps, developer experience",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/relay",
       "author": {
         "name": "ai",
@@ -100,7 +100,7 @@
     {
       "name": "spine",
       "description": "Backend engineer — APIs, system design, performance, distributed systems",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/spine",
       "author": {
         "name": "ai",
@@ -112,7 +112,7 @@
     {
       "name": "flux",
       "description": "Data engineer — databases, migrations, pipelines, data modeling",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/flux",
       "author": {
         "name": "ai",
@@ -124,7 +124,7 @@
     {
       "name": "warden",
       "description": "Security engineer — IAM, secrets, compliance, threat modeling",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/warden",
       "author": {
         "name": "ai",
@@ -136,7 +136,7 @@
     {
       "name": "vigil",
       "description": "Observability & reliability engineer — monitoring, alerting, SRE, incident response, SLOs",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/vigil",
       "author": {
         "name": "ai",
@@ -148,7 +148,7 @@
     {
       "name": "prism",
       "description": "Frontend & DX engineer — UI, internal tools, developer portals",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/prism",
       "author": {
         "name": "ai",
@@ -160,7 +160,7 @@
     {
       "name": "cortex",
       "description": "ML/AI engineer — model training, MLOps, feature engineering, LLM integration",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cortex",
       "author": {
         "name": "ai",
@@ -172,7 +172,7 @@
     {
       "name": "touch",
       "description": "Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/touch",
       "author": {
         "name": "ai",
@@ -184,7 +184,7 @@
     {
       "name": "volt",
       "description": "Embedded & IoT engineer — firmware, microcontrollers, edge computing, device protocols",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/volt",
       "author": {
         "name": "ai",
@@ -196,7 +196,7 @@
     {
       "name": "atlas",
       "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/atlas",
       "author": {
         "name": "ai",
@@ -208,7 +208,7 @@
     {
       "name": "lens",
       "description": "Data analytics & BI engineer — dashboards, metrics design, reporting, data storytelling",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/lens",
       "author": {
         "name": "ai",
@@ -220,7 +220,7 @@
     {
       "name": "proof",
       "description": "QA & testing engineer — test strategy, E2E suites, integration testing, test infrastructure, flaky test triage",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/proof",
       "author": {
         "name": "ai",
@@ -232,7 +232,7 @@
     {
       "name": "pave",
       "description": "Platform engineer — developer experience, service catalogs, internal CLIs, golden paths, environment management",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/pave",
       "author": {
         "name": "ai",
@@ -244,7 +244,7 @@
     {
       "name": "helm",
       "description": "Head of Product — product strategy, requirements, and engineering handoff via the Helm↔Apex interface",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/helm",
       "author": {
         "name": "ai",
@@ -256,7 +256,7 @@
     {
       "name": "draft",
       "description": "UX designer — user flows, information architecture, wireframes, and interaction design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/draft",
       "author": {
         "name": "ai",
@@ -268,7 +268,7 @@
     {
       "name": "form",
       "description": "Visual designer — brand identity, color systems, typography, UI design, and design systems",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/form",
       "author": {
         "name": "ai",
@@ -287,7 +287,7 @@
     {
       "name": "echo",
       "description": "User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/echo",
       "author": {
         "name": "ai",
@@ -306,7 +306,7 @@
     {
       "name": "lumen",
       "description": "Product analyst — metrics frameworks, funnel analysis, OKRs, A/B test design, and retention analysis",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/lumen",
       "author": {
         "name": "ai",
@@ -325,7 +325,7 @@
     {
       "name": "surge",
       "description": "Growth engineer — acquisition channels, activation funnels, retention playbooks, and PLG strategy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/surge",
       "author": {
         "name": "ai",
@@ -344,7 +344,7 @@
     {
       "name": "crest",
       "description": "Product strategist — roadmap planning, prioritization frameworks, competitive analysis, and market positioning",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/crest",
       "author": {
         "name": "ai",
@@ -362,7 +362,7 @@
     {
       "name": "pitch",
       "description": "Product marketer — positioning, messaging, value proposition, GTM strategy, and launch copy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/pitch",
       "author": {
         "name": "ai",
@@ -381,7 +381,7 @@
     {
       "name": "deal",
       "description": "Revenue & sales engineer — B2B pipeline, deal strategy, pricing, sales playbooks, and enterprise closing",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/deal",
       "author": {
         "name": "ai",
@@ -400,7 +400,7 @@
     {
       "name": "keep",
       "description": "Customer success engineer — onboarding optimization, health scoring, expansion revenue, and churn prevention",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/keep",
       "author": {
         "name": "ai",
@@ -419,7 +419,7 @@
     {
       "name": "ink",
       "description": "Content marketing engineer — blog strategy, SEO, thought leadership, developer content, and content calendar",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/ink",
       "author": {
         "name": "ai",
@@ -438,7 +438,7 @@
     {
       "name": "buzz",
       "description": "PR & community engineer — press pitches, social media, open source community, DevRel, and launch moments",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/buzz",
       "author": {
         "name": "ai",
@@ -450,7 +450,7 @@
     {
       "name": "apex-plan",
       "description": "Plan and scope a project — discovery, challenge assumptions, present S/M/L options with token and cost estimates. Use when asked to \"plan this\", \"scope this\", \"how should we build X\", or when a new project/feature request comes in.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/apex-plan",
       "author": {
         "name": "tonone-ai",
@@ -463,7 +463,7 @@
     {
       "name": "apex-recon",
       "description": "Engineering lead reconnaissance — inventory the project before planning. Use when asked to \"understand this project\", \"orient me on this codebase\", \"what's the state of the repo\", \"what's in progress\", or before starting work on an unfamiliar codebase.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/apex-recon",
       "author": {
         "name": "tonone-ai",
@@ -476,7 +476,7 @@
     {
       "name": "apex-review",
       "description": "Cross-cutting review of recent work — catches gaps between specialists. Use when asked to \"review what we built\", \"check the work\", \"pre-launch review\", or after completing a significant chunk of work.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/apex-review",
       "author": {
         "name": "tonone-ai",
@@ -489,7 +489,7 @@
     {
       "name": "apex-status",
       "description": "CTO-level project status from git and codebase state. Use when asked \"where are we\", \"project status\", \"what's done\", or at the start of a work session.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/apex-status",
       "author": {
         "name": "tonone-ai",
@@ -502,7 +502,7 @@
     {
       "name": "apex-takeover",
       "description": "System takeover — take ownership of an existing codebase or inherited system. Use when \"we acquired this\", \"previous team left\", \"take over this system\", \"inherited this codebase\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/apex-takeover",
       "author": {
         "name": "tonone-ai",
@@ -515,7 +515,7 @@
     {
       "name": "atlas-adr",
       "description": "Write an Architecture Decision Record — document what was decided, why, what alternatives were considered, and what trade-offs were accepted. Use when asked to \"write an ADR\", \"document this decision\", or \"why did we choose X\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/atlas-adr",
       "author": {
         "name": "tonone-ai",
@@ -528,7 +528,7 @@
     {
       "name": "atlas-changelog",
       "description": "Maintain per-repo and cross-repo changelogs — append structured entries after agent work. Use when asked to \"log this change\", \"update changelog\", \"what changed\", \"change history\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/atlas-changelog",
       "author": {
         "name": "tonone-ai",
@@ -541,7 +541,7 @@
     {
       "name": "atlas-map",
       "description": "Map the system architecture — read the codebase, identify services and connections, output a C4-level architecture map as Mermaid diagrams with component descriptions. Use when asked to \"map the architecture\", \"system diagram\", \"how does this work\", or \"architecture overview\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/atlas-map",
       "author": {
         "name": "tonone-ai",
@@ -554,7 +554,7 @@
     {
       "name": "atlas-onboard",
       "description": "Generate onboarding documentation — what this project does, how to set up locally, where things live, key decisions, how to deploy. Written for day-one engineers who know nothing. Use when asked for \"onboarding docs\", \"new engineer guide\", \"how to get started\", or \"developer setup\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/atlas-onboard",
       "author": {
         "name": "tonone-ai",
@@ -567,7 +567,7 @@
     {
       "name": "atlas-present",
       "description": "Generate a polished HTML presentation page and Obsidian Canvas for big releases — new products, takeovers, major migrations. Non-technical audience. Use when asked to \"present this\", \"release announcement\", \"show what we built\", or \"stakeholder update\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/atlas-present",
       "author": {
         "name": "tonone-ai",
@@ -580,7 +580,7 @@
     {
       "name": "atlas-recon",
       "description": "Documentation reconnaissance for takeover — find all docs, assess accuracy, freshness, coverage, and discoverability, and identify critical knowledge gaps. Use when asked \"what docs exist\", \"documentation assessment\", or \"knowledge gaps\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/atlas-recon",
       "author": {
         "name": "tonone-ai",
@@ -593,7 +593,7 @@
     {
       "name": "atlas-report",
       "description": "Render agent findings as a styled HTML report in the browser. Use when asked for \"full report\", \"detailed report\", \"show in browser\", or when CLI output exceeds the 40-line budget.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/atlas-report",
       "author": {
         "name": "tonone-ai",
@@ -606,7 +606,7 @@
     {
       "name": "cortex-eval",
       "description": "Evaluate model performance — check for accuracy drops, data drift, and error patterns. Use when asked about \"model accuracy dropped\", \"evaluate the model\", \"check for drift\", or \"model performance\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/cortex-eval",
       "author": {
         "name": "tonone-ai",
@@ -619,7 +619,7 @@
     {
       "name": "cortex-integrate",
       "description": "Design and implement an AI feature integration — model selection, architecture pattern, system prompt, data flow, error handling, cost estimate. Use when asked to \"add AI to this\", \"LLM integration\", \"add Claude/GPT\", or \"AI-powered feature\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/cortex-integrate",
       "author": {
         "name": "tonone-ai",
@@ -632,7 +632,7 @@
     {
       "name": "cortex-model",
       "description": "Build an ML pipeline — from data to trained model to serving endpoint. Use when asked to \"build ML model\", \"train a model\", \"prediction pipeline\", \"classification\", or \"regression\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/cortex-model",
       "author": {
         "name": "tonone-ai",
@@ -645,7 +645,7 @@
     {
       "name": "cortex-prompt",
       "description": "Build a production-ready prompt package — system prompt, few-shot examples, output format, edge case handling, eval criteria. Use when asked to \"prompt engineering\", \"build a prompt\", \"write a system prompt\", or \"improve this prompt\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/cortex-prompt",
       "author": {
         "name": "tonone-ai",
@@ -658,7 +658,7 @@
     {
       "name": "cortex-recon",
       "description": "ML reconnaissance — inventory all models, pipelines, data sources, and monitoring. Use when asked \"what ML do we have\", \"model inventory\", or \"ML assessment\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/cortex-recon",
       "author": {
         "name": "tonone-ai",
@@ -671,7 +671,7 @@
     {
       "name": "crest-compete",
       "description": "Competitive analysis ending in a clear positioning call — where to play, how to win. Use when asked to \"analyze competitors\", \"competitive landscape\", \"how do we compare to X\", \"competitive positioning\", \"where should we play\", \"find our white space\", or \"who else does this\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/crest-compete",
       "author": {
         "name": "tonone-ai",
@@ -684,7 +684,7 @@
     {
       "name": "crest-narrative",
       "description": "Strategic narrative — write a standalone strategy memo that frames product direction, bets, and rationale for a planning horizon. Use when asked to \"write a strategy doc\", \"product vision\", \"strategic narrative\", \"company strategy memo\", \"planning memo\", or \"explain our product direction\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/crest-narrative",
       "author": {
         "name": "tonone-ai",
@@ -697,7 +697,7 @@
     {
       "name": "crest-okr",
       "description": "OKR design — create objectives and key results with a North Star metric, input metrics tree, and cadence. Use when asked to \"set OKRs\", \"define our objectives\", \"what should we measure this quarter\", \"design our OKR framework\", \"build a metrics tree\", or \"what's our North Star\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/crest-okr",
       "author": {
         "name": "tonone-ai",
@@ -710,7 +710,7 @@
     {
       "name": "crest-recon",
       "description": "Strategic context reconnaissance — read existing roadmaps, OKRs, competitive docs, and briefs to establish context before planning. Use when asked to \"understand our strategy\", \"what's the current roadmap\", \"what OKRs do we have\", \"strategic context\", or before starting any prioritization or roadmap work.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/crest-recon",
       "author": {
         "name": "tonone-ai",
@@ -723,7 +723,7 @@
     {
       "name": "crest-roadmap",
       "description": "Build a product roadmap with sequenced bets and explicit tradeoffs. Use when asked to \"build a roadmap\", \"prioritize the backlog strategically\", \"what do we build next quarter\", \"sequence our bets\", \"what should we focus on\", or \"product strategy for the next N months\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/crest-roadmap",
       "author": {
         "name": "tonone-ai",
@@ -736,7 +736,7 @@
     {
       "name": "draft-flow",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/draft-flow",
       "author": {
         "name": "tonone-ai",
@@ -749,7 +749,7 @@
     {
       "name": "draft-ia",
       "description": "Information architecture — design navigation structure, content hierarchy, sitemap, and taxonomy for a product or feature set. Use when asked to \"organize the navigation\", \"information architecture\", \"how should content be structured\", \"sitemap\", \"nav redesign\", \"where should X live\", or \"content hierarchy\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/draft-ia",
       "author": {
         "name": "tonone-ai",
@@ -762,7 +762,7 @@
     {
       "name": "draft-landing",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/draft-landing",
       "author": {
         "name": "tonone-ai",
@@ -775,7 +775,7 @@
     {
       "name": "draft-patterns",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/draft-patterns",
       "author": {
         "name": "tonone-ai",
@@ -788,7 +788,7 @@
     {
       "name": "draft-recon",
       "description": "UI and UX reconnaissance — scan existing frontend routes, components, navigation, and flows to understand the current UX state before designing. Use when asked to \"understand the current UI\", \"what UX patterns exist\", \"map the navigation\", \"what screens exist\", or before starting any flow or wireframe work.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/draft-recon",
       "author": {
         "name": "tonone-ai",
@@ -801,7 +801,7 @@
     {
       "name": "draft-review",
       "description": "Usability review — evaluate an existing flow or UI against usability heuristics, flag friction points, and recommend fixes. Use when asked to \"review the UX\", \"usability audit\", \"what's wrong with this flow\", \"UX feedback\", \"critique this design\", or \"why are users dropping off here\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/draft-review",
       "author": {
         "name": "tonone-ai",
@@ -814,7 +814,7 @@
     {
       "name": "draft-wireframe",
       "description": "Text and Mermaid wireframes — produce screen-level layouts with content hierarchy, component placement, and interaction annotations. Use when asked to \"wireframe this\", \"sketch the UI\", \"layout for this screen\", \"lo-fi mockup\", \"screen design\", or \"what should this page look like\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/draft-wireframe",
       "author": {
         "name": "tonone-ai",
@@ -827,7 +827,7 @@
     {
       "name": "echo-feedback",
       "description": "Feedback synthesis — cluster support tickets, NPS verbatims, app store reviews, and churn surveys by theme, separate signal from noise, and produce an actionable insight report. Use when asked to \"synthesize this feedback\", \"analyze support tickets\", \"what are users complaining about\", \"NPS analysis\", \"churn feedback synthesis\", or \"what's the feedback telling us\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/echo-feedback",
       "author": {
         "name": "tonone-ai",
@@ -840,7 +840,7 @@
     {
       "name": "echo-interview",
       "description": "Run a user interview — produce an interview guide and synthesize the output into an actionable insight report. Use when asked to \"run a user interview\", \"synthesize these interview notes\", \"what do users actually want\", \"build a persona from this feedback\", \"find the JTBD in these transcripts\", or \"analyze this interview data\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/echo-interview",
       "author": {
         "name": "tonone-ai",
@@ -853,7 +853,7 @@
     {
       "name": "echo-jobs",
       "description": "Jobs-to-Be-Done analysis — given a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces analysis and opportunity ranking. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", \"JTBD framework\", or \"why are users switching\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/echo-jobs",
       "author": {
         "name": "tonone-ai",
@@ -866,7 +866,7 @@
     {
       "name": "echo-recon",
       "description": "User research reconnaissance — survey existing personas, research docs, interview notes, and feedback artifacts to establish what is already known about users. Use when asked to \"what research exists\", \"review existing personas\", \"what do we know about our users\", or before starting new research or synthesis work.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/echo-recon",
       "author": {
         "name": "tonone-ai",
@@ -879,7 +879,7 @@
     {
       "name": "echo-segment",
       "description": "User segmentation and persona creation from mixed data sources — analytics, CRM, support tickets, reviews, or any combination. Use when asked to \"build personas\", \"who are our users\", \"segment our users\", \"create user profiles\", \"define user archetypes\", or \"who is the target user\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/echo-segment",
       "author": {
         "name": "tonone-ai",
@@ -892,7 +892,7 @@
     {
       "name": "flux-health",
       "description": "Data quality and pipeline health check — freshness, schema drift, null rates, orphaned records, pipeline status. Use when asked about \"data quality check\", \"pipeline health\", \"is our data fresh\", or \"schema drift\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/flux-health",
       "author": {
         "name": "tonone-ai",
@@ -905,7 +905,7 @@
     {
       "name": "flux-migrate",
       "description": "Build zero-downtime database migrations — forward SQL, rollback SQL, deployment sequence. Use when asked to \"write migration\", \"schema change\", \"add column\", \"rename table\", \"drop column\", or \"migrate safely\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/flux-migrate",
       "author": {
         "name": "tonone-ai",
@@ -918,7 +918,7 @@
     {
       "name": "flux-pipeline",
       "description": "Build a data pipeline — ETL/ELT with extraction, transformation, loading, error handling, and scheduling. Use when asked to \"build ETL\", \"data pipeline\", \"move data from X to Y\", or \"sync data\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/flux-pipeline",
       "author": {
         "name": "tonone-ai",
@@ -931,7 +931,7 @@
     {
       "name": "flux-query",
       "description": "Optimize slow database queries — analyze execution plans, add indexes, rewrite queries. Use when asked about \"slow query\", \"optimize SQL\", \"query performance\", or \"explain this query\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/flux-query",
       "author": {
         "name": "tonone-ai",
@@ -944,7 +944,7 @@
     {
       "name": "flux-recon",
       "description": "Database reconnaissance — full inventory of schema, migrations, data volume, backups, connection pooling, and query patterns. Use when asked to \"assess this database\", \"understand the schema\", or \"database health check\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/flux-recon",
       "author": {
         "name": "tonone-ai",
@@ -957,7 +957,7 @@
     {
       "name": "flux-schema",
       "description": "Design and build database schema — tables, columns, types, indexes, constraints, relationships. Given a domain description, output the schema and write the files. Use when asked to \"design schema\", \"database design\", \"create tables\", or \"data model\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/flux-schema",
       "author": {
         "name": "tonone-ai",
@@ -970,7 +970,7 @@
     {
       "name": "forge-audit",
       "description": "Audit existing infrastructure for security issues, waste, and misconfigurations. Use when asked to \"audit my infra\", \"check cloud setup\", \"infra review\", \"are we wasting money\", \"security check on infra\", or \"review my terraform\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/forge-audit",
       "author": {
         "name": "tonone-ai",
@@ -983,7 +983,7 @@
     {
       "name": "forge-cost",
       "description": "Audit cloud infrastructure costs and produce a concrete optimization plan with specific changes and estimated savings. Use when asked to \"how much is this costing\", \"reduce cloud spend\", \"cost optimization\", \"are we overpaying\", \"cloud bill\", or \"budget for this infra\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/forge-cost",
       "author": {
         "name": "tonone-ai",
@@ -996,7 +996,7 @@
     {
       "name": "forge-diagnose",
       "description": "Diagnose runtime infrastructure issues — cold starts, timeouts, scaling problems, network failures. Use when asked about \"infra is slow\", \"cold starts\", \"network issues\", \"why is this timing out\", \"scaling problem\", \"latency spikes\", or \"service is down\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/forge-diagnose",
       "author": {
         "name": "tonone-ai",
@@ -1009,7 +1009,7 @@
     {
       "name": "forge-infra",
       "description": "Build production-grade infrastructure as code for a service or project. Use when asked to \"set up infra\", \"provision infrastructure\", \"create cloud resources\", \"IaC for this project\", \"terraform for this\", or \"deploy this service\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/forge-infra",
       "author": {
         "name": "tonone-ai",
@@ -1022,7 +1022,7 @@
     {
       "name": "forge-network",
       "description": "Design and build networking infrastructure — VPCs, subnets, DNS, load balancers, firewall rules. Use when asked to \"set up networking\", \"VPC design\", \"configure DNS\", \"load balancer setup\", \"network architecture\", or \"firewall rules\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/forge-network",
       "author": {
         "name": "tonone-ai",
@@ -1035,7 +1035,7 @@
     {
       "name": "forge-recon",
       "description": "Infrastructure reconnaissance — inventory all cloud resources, map connections, flag risks. Use when asked to \"inventory our infra\", \"what infrastructure do we have\", \"map our cloud resources\", \"infra discovery\", or \"what's running in our cloud\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/forge-recon",
       "author": {
         "name": "tonone-ai",
@@ -1048,7 +1048,7 @@
     {
       "name": "form-audit",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-audit",
       "author": {
         "name": "tonone-ai",
@@ -1061,7 +1061,7 @@
     {
       "name": "form-brand",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-brand",
       "author": {
         "name": "tonone-ai",
@@ -1074,7 +1074,7 @@
     {
       "name": "form-component",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-component",
       "author": {
         "name": "tonone-ai",
@@ -1087,7 +1087,7 @@
     {
       "name": "form-deck",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-deck",
       "author": {
         "name": "tonone-ai",
@@ -1100,7 +1100,7 @@
     {
       "name": "form-email",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-email",
       "author": {
         "name": "tonone-ai",
@@ -1113,7 +1113,7 @@
     {
       "name": "form-exam",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-exam",
       "author": {
         "name": "tonone-ai",
@@ -1126,7 +1126,7 @@
     {
       "name": "form-logo",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-logo",
       "author": {
         "name": "tonone-ai",
@@ -1139,7 +1139,7 @@
     {
       "name": "form-mobile",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-mobile",
       "author": {
         "name": "tonone-ai",
@@ -1152,7 +1152,7 @@
     {
       "name": "form-palette",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-palette",
       "author": {
         "name": "tonone-ai",
@@ -1165,7 +1165,7 @@
     {
       "name": "form-social",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-social",
       "author": {
         "name": "tonone-ai",
@@ -1178,7 +1178,7 @@
     {
       "name": "form-style",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-style",
       "author": {
         "name": "tonone-ai",
@@ -1191,7 +1191,7 @@
     {
       "name": "form-tokens",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-tokens",
       "author": {
         "name": "tonone-ai",
@@ -1204,7 +1204,7 @@
     {
       "name": "form-web",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/form-web",
       "author": {
         "name": "tonone-ai",
@@ -1217,7 +1217,7 @@
     {
       "name": "helm-arbiter",
       "description": "Scope arbitration — resolve disagreements between product and engineering on what is in or out of scope, with a decision log and escalation path. Use when asked to \"resolve this scope disagreement\", \"arbitrate between product and eng\", \"scope is creeping\", \"we can't agree on what's in scope\", or \"help us decide what to cut\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/helm-arbiter",
       "author": {
         "name": "tonone-ai",
@@ -1230,7 +1230,7 @@
     {
       "name": "helm-brief",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/helm-brief",
       "author": {
         "name": "tonone-ai",
@@ -1243,7 +1243,7 @@
     {
       "name": "helm-handoff",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/helm-handoff",
       "author": {
         "name": "tonone-ai",
@@ -1256,7 +1256,7 @@
     {
       "name": "helm-plan",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/helm-plan",
       "author": {
         "name": "tonone-ai",
@@ -1269,7 +1269,7 @@
     {
       "name": "helm-recon",
       "description": "Product landscape reconnaissance — survey existing briefs, research, strategy, and team output before writing new briefs or dispatching specialists. Use when asked to \"understand the product state\", \"what briefs exist\", \"what has the team produced\", \"orient me on this product\", or before starting a new product initiative.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/helm-recon",
       "author": {
         "name": "tonone-ai",
@@ -1282,7 +1282,7 @@
     {
       "name": "lens-audit",
       "description": "Review existing analytics — find all dashboards and reports, check who uses them, whether metrics are defined, and whether they drive decisions. Recommend what to keep, kill, or add. Use when asked \"are our dashboards useful\", \"analytics review\", or \"metrics audit\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lens-audit",
       "author": {
         "name": "tonone-ai",
@@ -1295,7 +1295,7 @@
     {
       "name": "lens-chart",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lens-chart",
       "author": {
         "name": "tonone-ai",
@@ -1308,7 +1308,7 @@
     {
       "name": "lens-dashboard",
       "description": "Design and spec an analytical dashboard — define the question each chart answers, write the SQL queries, spec the layout and refresh cadence. Produces a complete dashboard spec ready to implement. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", \"weekly product health\", or \"visualize this data\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lens-dashboard",
       "author": {
         "name": "tonone-ai",
@@ -1321,7 +1321,7 @@
     {
       "name": "lens-metrics",
       "description": "Produce a complete metrics definition doc — metric name, formula, data source, segmentation, SQL or event tracking spec, and what good/bad looks like. Given a product area, outputs the full metrics spec. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", \"north star metric\", or \"instrument this feature\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lens-metrics",
       "author": {
         "name": "tonone-ai",
@@ -1334,7 +1334,7 @@
     {
       "name": "lens-recon",
       "description": "Analytics reconnaissance for takeover — find all analytics tools, inventory what's tracked and dashboarded, assess data freshness and metric definitions, and present a coverage map. Use when asked \"what analytics exist\", \"BI assessment\", or \"what do we track\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lens-recon",
       "author": {
         "name": "tonone-ai",
@@ -1347,7 +1347,7 @@
     {
       "name": "lens-report",
       "description": "Build a reporting pipeline — scheduled reports with SQL queries, delivery via Slack or email, threshold alerts, and historical comparison. Use when asked for \"automated reports\", \"scheduled report\", \"email digest\", or \"Slack alerts for metrics\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lens-report",
       "author": {
         "name": "tonone-ai",
@@ -1360,7 +1360,7 @@
     {
       "name": "lumen-abtest",
       "description": "A/B test design — produce an experiment spec with hypothesis, primary metric, MDE, sample size, run time, and decision rule. Also determines when NOT to A/B test and what to do instead. Use when asked to \"design an A/B test\", \"should we test this\", \"experiment design\", \"how do we know if this works\", \"what's the sample size\", or \"set up an experiment\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lumen-abtest",
       "author": {
         "name": "tonone-ai",
@@ -1373,7 +1373,7 @@
     {
       "name": "lumen-funnel",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lumen-funnel",
       "author": {
         "name": "tonone-ai",
@@ -1386,7 +1386,7 @@
     {
       "name": "lumen-instrument",
       "description": "Instrumentation plan — design event taxonomy, property schema, and tracking plan for analytics tools. Use when asked to \"what should we track\", \"instrumentation plan\", \"set up analytics events\", \"analytics event schema\", \"tracking plan\", or \"instrument this feature\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lumen-instrument",
       "author": {
         "name": "tonone-ai",
@@ -1399,7 +1399,7 @@
     {
       "name": "lumen-metrics",
       "description": "Metrics architecture — produce a complete metrics plan given a product description. North Star, input metrics tree, instrumentation spec, action triggers, and counter-metrics. Use when asked to \"design a metrics framework\", \"what should we measure\", \"build a metrics system\", \"define our KPIs\", \"what are our success metrics\", \"metrics strategy\", or \"what do we track\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lumen-metrics",
       "author": {
         "name": "tonone-ai",
@@ -1412,7 +1412,7 @@
     {
       "name": "lumen-recon",
       "description": "Analytics reconnaissance — scan existing event tracking, metric definitions, dashboards, and analytics configuration to understand what is currently being measured. Use when asked to \"what are we tracking\", \"audit our analytics\", \"what metrics exist\", \"analytics inventory\", or before designing new metrics or instrumentation.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/lumen-recon",
       "author": {
         "name": "tonone-ai",
@@ -1425,7 +1425,7 @@
     {
       "name": "pave-audit",
       "description": "Audit developer experience — measure onboarding time, build speed, deployment friction, and developer satisfaction. Use when asked to \"DX audit\", \"developer experience review\", \"why is development slow\", \"onboarding assessment\", or \"DORA metrics\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pave-audit",
       "author": {
         "name": "tonone-ai",
@@ -1438,7 +1438,7 @@
     {
       "name": "pave-catalog",
       "description": "Build a service catalog — schema, starter entries, and governance model. Produces what information to capture per service, how it's maintained, and where it lives. Use when asked to \"service catalog\", \"what services do we have\", \"catalog our services\", \"service inventory\", or \"who owns what\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pave-catalog",
       "author": {
         "name": "tonone-ai",
@@ -1451,7 +1451,7 @@
     {
       "name": "pave-env",
       "description": "Set up local development environments — devcontainers, Docker Compose, one-command setup, dev/prod parity. Use when asked to \"set up dev environment\", \"devcontainer\", \"docker compose for dev\", \"local development setup\", or \"one command to run\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pave-env",
       "author": {
         "name": "tonone-ai",
@@ -1464,7 +1464,7 @@
     {
       "name": "pave-golden",
       "description": "Define a golden path — the opinionated, supported way to do a common developer task (create a new service, set up an environment, deploy a feature). Produces concrete steps, templates, and tooling. Use when asked to \"golden path\", \"create project template\", \"scaffold a new service\", \"how should we create services\", or \"standardize our setup\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pave-golden",
       "author": {
         "name": "tonone-ai",
@@ -1477,7 +1477,7 @@
     {
       "name": "pave-recon",
       "description": "Platform reconnaissance — inventory all developer tooling, environments, build systems, and developer workflows for project takeover. Use when asked to \"understand the dev setup\", \"developer tooling assessment\", \"platform assessment\", or \"how do developers work here\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pave-recon",
       "author": {
         "name": "tonone-ai",
@@ -1490,7 +1490,7 @@
     {
       "name": "pitch-copy",
       "description": "Landing page and marketing copy — write hero section, problem/solution blocks, proof points, and CTAs. Use when asked to \"write landing page copy\", \"write the homepage\", \"marketing copy for this feature\", \"product page copy\", \"write the hero section\", or \"write copy for [surface]\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pitch-copy",
       "author": {
         "name": "tonone-ai",
@@ -1503,7 +1503,7 @@
     {
       "name": "pitch-landing",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pitch-landing",
       "author": {
         "name": "tonone-ai",
@@ -1516,7 +1516,7 @@
     {
       "name": "pitch-launch",
       "description": "Produce an actual launch plan with announcement copy, channel sequence, and day-1 checklist. Use when asked to \"plan a launch\", \"GTM strategy\", \"how do we announce this\", \"launch plan for [feature]\", \"go-to-market\", \"write our Product Hunt post\", or \"how do we get people to notice this\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pitch-launch",
       "author": {
         "name": "tonone-ai",
@@ -1529,7 +1529,7 @@
     {
       "name": "pitch-message",
       "description": "Messaging framework — produce a full headline, subheadline, proof points, and CTA hierarchy for use across all surfaces. Use when asked to \"write our messaging\", \"messaging framework\", \"what should our headline say\", \"copy hierarchy\", \"tagline and messaging\", or \"how do we talk about the product\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pitch-message",
       "author": {
         "name": "tonone-ai",
@@ -1542,7 +1542,7 @@
     {
       "name": "pitch-position",
       "description": "Produce a complete positioning document using the Dunford framework — competitive alternatives, unique attributes, value, best-fit customer, market category, positioning statement, and tagline. Use when asked to \"write our positioning\", \"define our value prop\", \"positioning statement\", \"what market are we in\", \"how do we position against X\", \"what's our tagline\", or \"write our messaging foundation\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pitch-position",
       "author": {
         "name": "tonone-ai",
@@ -1555,7 +1555,7 @@
     {
       "name": "pitch-recon",
       "description": "Marketing and messaging reconnaissance — read existing landing pages, copy, positioning docs, and marketing materials to understand the current messaging state. Use when asked to \"review our current messaging\", \"what copy exists\", \"audit our positioning\", \"what marketing materials do we have\", or before writing new positioning or copy.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pitch-recon",
       "author": {
         "name": "tonone-ai",
@@ -1568,7 +1568,7 @@
     {
       "name": "prism-audit",
       "description": "Frontend audit — bundle size, dependencies, accessibility, performance, component quality. Use when asked for \"frontend review\", \"performance audit\", \"accessibility check\", or \"bundle size\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/prism-audit",
       "author": {
         "name": "tonone-ai",
@@ -1581,7 +1581,7 @@
     {
       "name": "prism-chart",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/prism-chart",
       "author": {
         "name": "tonone-ai",
@@ -1594,7 +1594,7 @@
     {
       "name": "prism-component",
       "description": "Implement a reusable, accessible, typed component from a design spec. Use when asked to \"create a component\", \"build a widget\", \"implement this design\", or \"reusable UI element\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/prism-component",
       "author": {
         "name": "tonone-ai",
@@ -1607,7 +1607,7 @@
     {
       "name": "prism-dashboard",
       "description": "Build an internal dashboard with data tables, filters, detail views, and CRUD. Use when asked to build an \"admin panel\", \"internal dashboard\", \"back office\", or \"data dashboard UI\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/prism-dashboard",
       "author": {
         "name": "tonone-ai",
@@ -1620,7 +1620,7 @@
     {
       "name": "prism-recon",
       "description": "Frontend reconnaissance — map the component tree, routing, state management, build config, and assess quality. Use when asked to \"understand this frontend\", \"frontend assessment\", or \"what's the UI built with\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/prism-recon",
       "author": {
         "name": "tonone-ai",
@@ -1633,7 +1633,7 @@
     {
       "name": "prism-stack",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/prism-stack",
       "author": {
         "name": "tonone-ai",
@@ -1646,7 +1646,7 @@
     {
       "name": "prism-ui",
       "description": "Implement a complete UI screen or feature from a Form visual spec. Use when asked to \"build a page\", \"implement this screen\", \"build the frontend for this feature\", or \"create this UI\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/prism-ui",
       "author": {
         "name": "tonone-ai",
@@ -1659,7 +1659,7 @@
     {
       "name": "proof-api",
       "description": "Build API test suites — endpoint testing, contract testing, load testing for REST/GraphQL/gRPC APIs. Use when asked to \"test this API\", \"API tests\", \"endpoint testing\", \"contract tests\", or \"load test\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/proof-api",
       "author": {
         "name": "tonone-ai",
@@ -1672,7 +1672,7 @@
     {
       "name": "proof-audit",
       "description": "Audit test suite health — find flaky tests, slow tests, coverage gaps, and testing anti-patterns. Use when asked to \"audit tests\", \"fix flaky tests\", \"why are tests slow\", \"test health\", or \"improve test suite\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/proof-audit",
       "author": {
         "name": "tonone-ai",
@@ -1685,7 +1685,7 @@
     {
       "name": "proof-design",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/proof-design",
       "author": {
         "name": "tonone-ai",
@@ -1698,7 +1698,7 @@
     {
       "name": "proof-e2e",
       "description": "Build E2E test specs for critical user journeys — Playwright or Cypress, page objects, setup/teardown, CI config. Use when asked to \"write E2E tests\", \"end-to-end testing\", \"browser tests\", \"UI tests\", or \"Playwright tests\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/proof-e2e",
       "author": {
         "name": "tonone-ai",
@@ -1711,7 +1711,7 @@
     {
       "name": "proof-recon",
       "description": "Testing reconnaissance — inventory all tests, frameworks, coverage, CI integration, and assess testing maturity for project takeover. Use when asked to \"understand the tests\", \"testing assessment\", \"what's tested\", or \"test inventory\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/proof-recon",
       "author": {
         "name": "tonone-ai",
@@ -1724,7 +1724,7 @@
     {
       "name": "proof-strategy",
       "description": "Produce a test strategy for a project or feature — risk map, test type decisions, coverage targets, CI config. Use when asked to \"create test strategy\", \"what should we test\", \"testing plan\", or \"improve test coverage\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/proof-strategy",
       "author": {
         "name": "tonone-ai",
@@ -1737,7 +1737,7 @@
     {
       "name": "relay-audit",
       "description": "Audit an existing CI/CD pipeline for slowness, security issues, and reliability gaps. Use when asked to \"audit pipeline\", \"why is CI slow\", \"pipeline review\", or \"deployment review\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/relay-audit",
       "author": {
         "name": "tonone-ai",
@@ -1750,7 +1750,7 @@
     {
       "name": "relay-deploy",
       "description": "Set up a complete deployment configuration — Dockerfile, deployment manifest, environment config, and rollback procedure. Use when asked about \"deployment setup\", \"how do I deploy this\", \"deployment strategy\", or \"rollback plan\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/relay-deploy",
       "author": {
         "name": "tonone-ai",
@@ -1763,7 +1763,7 @@
     {
       "name": "relay-docker",
       "description": "Build production-ready Dockerfiles with multi-stage builds, security hardening, and docker-compose for local dev. Use when asked to \"create Dockerfile\", \"optimize container\", or \"dockerize this\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/relay-docker",
       "author": {
         "name": "tonone-ai",
@@ -1776,7 +1776,7 @@
     {
       "name": "relay-pipeline",
       "description": "Build a full CI/CD pipeline from scratch. Use when asked to \"set up CI/CD\", \"create pipeline\", or \"automate deploys\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/relay-pipeline",
       "author": {
         "name": "tonone-ai",
@@ -1789,7 +1789,7 @@
     {
       "name": "relay-recon",
       "description": "Map the full CI/CD pipeline — triggers, build, test, deploy flow — with risk assessment. Use when asked \"how does this deploy\", \"map the pipeline\", or \"understand CI/CD\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/relay-recon",
       "author": {
         "name": "tonone-ai",
@@ -1802,7 +1802,7 @@
     {
       "name": "relay-ship",
       "description": "End-to-end ship workflow — merge base, run tests, review diff, bump version, commit, push, create PR. Use when asked to \"ship\", \"push to main\", \"create a PR\", \"get this merged\", or \"deploy this branch\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/relay-ship",
       "author": {
         "name": "tonone-ai",
@@ -1815,7 +1815,7 @@
     {
       "name": "spine-api",
       "description": "Design and spec an API — endpoints, request/response shapes, error codes, auth pattern, pagination. Applies Stripe's consistency principles. Use when asked to \"design an API\", \"build API endpoints\", \"create REST API\", or \"API for this feature\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/spine-api",
       "author": {
         "name": "tonone-ai",
@@ -1828,7 +1828,7 @@
     {
       "name": "spine-design",
       "description": "Produce a system design doc — components, data flow, decisions made, tradeoffs, failure modes. Not a list of options. An actual design with calls made. Use when asked for \"system design for\", \"architect this\", \"how should we build\", or \"design the backend\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/spine-design",
       "author": {
         "name": "tonone-ai",
@@ -1841,7 +1841,7 @@
     {
       "name": "spine-perf",
       "description": "Find and fix performance bottlenecks — N+1 queries, missing indexes, sync bottlenecks, caching gaps. Use when asked \"why is this slow\", \"performance issue\", \"optimize this endpoint\", or \"N+1 queries\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/spine-perf",
       "author": {
         "name": "tonone-ai",
@@ -1854,7 +1854,7 @@
     {
       "name": "spine-recon",
       "description": "Backend reconnaissance — map all routes, middleware, models, dependencies, auth, and assess code quality for project takeover. Use when asked to \"understand this backend\", \"map the API\", or \"assess code quality\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/spine-recon",
       "author": {
         "name": "tonone-ai",
@@ -1867,7 +1867,7 @@
     {
       "name": "spine-review",
       "description": "API and backend code review — REST conventions, auth, validation, error handling, pagination, rate limiting, test coverage. Use when asked to \"review this API\", \"code review\", \"review backend\", or \"pre-launch backend check\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/spine-review",
       "author": {
         "name": "tonone-ai",
@@ -1880,7 +1880,7 @@
     {
       "name": "spine-service",
       "description": "Build a new production-ready service from scratch — config management, health checks, graceful shutdown, structured logging. Use when asked to \"new service\", \"scaffold a backend\", \"bootstrap service\", or \"create microservice\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/spine-service",
       "author": {
         "name": "tonone-ai",
@@ -1893,7 +1893,7 @@
     {
       "name": "surge-activation",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/surge-activation",
       "author": {
         "name": "tonone-ai",
@@ -1906,7 +1906,7 @@
     {
       "name": "surge-experiment",
       "description": "Growth experiment design — structure a growth hypothesis, define metric, baseline, expected lift, and kill condition for a single experiment. Use when asked to \"design a growth experiment\", \"test this growth idea\", \"experiment framework\", \"how do we test if this works\", or \"growth hypothesis\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/surge-experiment",
       "author": {
         "name": "tonone-ai",
@@ -1919,7 +1919,7 @@
     {
       "name": "surge-landing",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/surge-landing",
       "author": {
         "name": "tonone-ai",
@@ -1932,7 +1932,7 @@
     {
       "name": "surge-plg",
       "description": "PLG motion design — free tier definition, activation sequence, expansion trigger points, viral mechanic assessment. Given a product, output the PLG architecture and make the calls. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", \"how do we add a free tier\", \"upgrade triggers\", or \"viral loop design\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/surge-plg",
       "author": {
         "name": "tonone-ai",
@@ -1945,7 +1945,7 @@
     {
       "name": "surge-recon",
       "description": "Growth state reconnaissance — scan existing onboarding flows, acquisition channels, conversion funnels, and growth experiment logs to understand current growth state. Use when asked to \"what's our growth state\", \"audit the funnel\", \"what growth experiments have we run\", \"acquisition channel inventory\", or before designing new growth experiments.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/surge-recon",
       "author": {
         "name": "tonone-ai",
@@ -1958,7 +1958,7 @@
     {
       "name": "surge-retention",
       "description": "Retention diagnosis + intervention plan — analyze the retention curve, identify the primary drop-off point, and produce a specific intervention plan with expected impact. Use when asked to \"improve retention\", \"why are users churning\", \"build a retention playbook\", \"reduce churn\", \"win-back campaign\", or \"users aren't coming back\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/surge-retention",
       "author": {
         "name": "tonone-ai",
@@ -1971,7 +1971,7 @@
     {
       "name": "touch-app",
       "description": "Produce a complete mobile app architecture design — platform choice, navigation structure, state management, data layer, key screens. Use when asked to \"build a mobile app\", \"new app\", \"create iOS/Android app\", \"app architecture\", or \"cross-platform app\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/touch-app",
       "author": {
         "name": "tonone-ai",
@@ -1984,7 +1984,7 @@
     {
       "name": "touch-audit",
       "description": "Mobile audit — app size, startup time, crash reporting, store compliance, accessibility, offline behavior. Use when asked for \"mobile review\", \"app store readiness\", \"mobile performance\", or \"crash analysis\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/touch-audit",
       "author": {
         "name": "tonone-ai",
@@ -1997,7 +1997,7 @@
     {
       "name": "touch-feature",
       "description": "Produce a mobile feature spec — user story, technical approach, component breakdown, platform-specific considerations, edge cases. Use when asked to \"add a screen\", \"spec this feature\", \"mobile feature\", \"new tab\", \"push notifications\", or \"deep link\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/touch-feature",
       "author": {
         "name": "tonone-ai",
@@ -2010,7 +2010,7 @@
     {
       "name": "touch-recon",
       "description": "Mobile reconnaissance — understand the app's tech stack, architecture, dependencies, and health for takeover. Use when asked to \"understand this app\", \"mobile assessment\", or \"app health\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/touch-recon",
       "author": {
         "name": "tonone-ai",
@@ -2023,7 +2023,7 @@
     {
       "name": "touch-release",
       "description": "Set up mobile release pipeline — Fastlane, code signing, CI, beta distribution, versioning. Use when asked about \"app store setup\", \"release pipeline\", \"fastlane\", \"beta distribution\", or \"signing\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/touch-release",
       "author": {
         "name": "tonone-ai",
@@ -2036,7 +2036,7 @@
     {
       "name": "touch-ui",
       "description": "|",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/touch-ui",
       "author": {
         "name": "tonone-ai",
@@ -2049,7 +2049,7 @@
     {
       "name": "vigil-alert",
       "description": "Write SLO-based alert rules with burn rate thresholds and paired runbooks. Outputs actual alert configs, not a strategy doc. Use when asked to \"set up alerts\", \"create runbooks\", \"define SLOs\", or \"alerting strategy\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/vigil-alert",
       "author": {
         "name": "tonone-ai",
@@ -2062,7 +2062,7 @@
     {
       "name": "vigil-check",
       "description": "Verify observability posture — audit monitoring coverage, find blind spots, prioritize gaps. Use when asked \"is monitoring sufficient\", \"observability review\", \"are we covered\", or \"pre-launch monitoring check\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/vigil-check",
       "author": {
         "name": "tonone-ai",
@@ -2075,7 +2075,7 @@
     {
       "name": "vigil-incident",
       "description": "Incident response — diagnose production issues, find root cause, propose fix with rollback. Use when asked about \"something is broken\", \"production issue\", \"why is this down\", \"incident\", or \"debug production\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/vigil-incident",
       "author": {
         "name": "tonone-ai",
@@ -2088,7 +2088,7 @@
     {
       "name": "vigil-instrument",
       "description": "Instrument a service with OpenTelemetry — RED metrics, structured logs, distributed tracing, and health checks. Outputs actual code and config, not a plan. Use when asked to \"add monitoring\", \"instrument this\", \"add logging\", \"set up tracing\", or \"observability\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/vigil-instrument",
       "author": {
         "name": "tonone-ai",
@@ -2101,7 +2101,7 @@
     {
       "name": "vigil-recon",
       "description": "Observability reconnaissance — inventory what monitoring exists, map coverage, highlight blind spots. Use when asked \"what monitoring exists\", \"observability assessment\", or \"what can we see\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/vigil-recon",
       "author": {
         "name": "tonone-ai",
@@ -2114,7 +2114,7 @@
     {
       "name": "volt-driver",
       "description": "Build a device driver or protocol handler — I2C sensors, BLE services, MQTT clients, SPI peripherals with interrupt-driven I/O and clean HAL abstraction. Use when asked to \"write a driver\", \"I2C device\", \"BLE service\", \"MQTT client\", or \"sensor integration\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/volt-driver",
       "author": {
         "name": "tonone-ai",
@@ -2127,7 +2127,7 @@
     {
       "name": "volt-firmware",
       "description": "Produce a complete firmware architecture spec for a described device — layer diagram, module responsibilities, HAL interface definitions, key state machines, RTOS decision. Use when asked to \"design firmware architecture\", \"plan embedded firmware\", \"architect an IoT device\", \"how should I structure this firmware\", or given a device description and asked what the firmware should look like.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/volt-firmware",
       "author": {
         "name": "tonone-ai",
@@ -2140,7 +2140,7 @@
     {
       "name": "volt-ota",
       "description": "Produce a complete OTA update system design — partition layout, update flow, rollback conditions, validation checks, fleet management approach, failure modes and recovery. Use when asked about \"OTA updates\", \"firmware updates over the air\", \"how do I update devices in the field\", \"OTA strategy\", or \"remote firmware update design\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/volt-ota",
       "author": {
         "name": "tonone-ai",
@@ -2153,7 +2153,7 @@
     {
       "name": "volt-power",
       "description": "Power management audit — analyze sleep modes, wake sources, power state machines, radio duty cycles, and battery life estimates. Use when asked to \"audit power usage\", \"optimize battery life\", \"review power management\", \"why is my battery draining\", \"power budget analysis\", or \"sleep mode review\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/volt-power",
       "author": {
         "name": "tonone-ai",
@@ -2166,7 +2166,7 @@
     {
       "name": "volt-recon",
       "description": "Firmware reconnaissance for takeover — inventory the MCU, peripherals, RTOS, protocols, OTA, power management, and assess code quality with risk flags. Use when asked to \"understand this firmware\", \"device inventory\", or \"embedded assessment\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/volt-recon",
       "author": {
         "name": "tonone-ai",
@@ -2179,7 +2179,7 @@
     {
       "name": "warden-audit",
       "description": "Full security audit — secrets, dependencies, IAM, auth, injection, XSS, HTTPS, rate limiting, public storage. Use when asked for \"security audit\", \"check for vulnerabilities\", \"security review\", or \"are we secure\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/warden-audit",
       "author": {
         "name": "tonone-ai",
@@ -2192,7 +2192,7 @@
     {
       "name": "warden-harden",
       "description": "Produce a hardening spec and implement it — auth patterns, security headers, rate limiting, input validation, secrets management, dependency hygiene. Use when asked to \"harden this\", \"add security to this service\", \"what security do I need\", or \"secure this before launch\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/warden-harden",
       "author": {
         "name": "tonone-ai",
@@ -2205,7 +2205,7 @@
     {
       "name": "warden-iam",
       "description": "Build IAM from scratch — roles, policies, service accounts with least privilege. Use when asked to \"set up IAM\", \"create roles\", \"service accounts\", or \"access control\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/warden-iam",
       "author": {
         "name": "tonone-ai",
@@ -2218,7 +2218,7 @@
     {
       "name": "warden-recon",
       "description": "Security reconnaissance — full inventory of secrets management, IAM, dependencies, auth, encryption, audit logging, and compliance gaps. Use when asked about \"security posture\", \"how secure is this\", or \"security assessment\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/warden-recon",
       "author": {
         "name": "tonone-ai",
@@ -2231,7 +2231,7 @@
     {
       "name": "warden-threat",
       "description": "Produce a threat model — assets, ranked threats, mitigations, accepted risks. Use when asked to \"threat model this\", \"what could go wrong security-wise\", \"map our attack surface\", or before designing any security-sensitive feature.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/warden-threat",
       "author": {
         "name": "tonone-ai",
@@ -2244,7 +2244,7 @@
     {
       "name": "tonone-onboard",
       "description": "First-run onboarding tour — guided walkthrough of tonone's 23 agents, key skills, and worktree sessions. Two paths: expert (~90 sec) and newcomer (~8 min). Use when asked \"how do I use tonone\", \"what can tonone do\", \"show me around\", or \"first steps\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/tonone-onboard",
       "author": {
         "name": "tonone-ai",
@@ -2257,7 +2257,7 @@
     {
       "name": "contribute",
       "description": "Contribute a discovery back to the upstream tonone repo — new skill, improved agent prompt, better routing rule. Use when you hit a gap, found a better pattern, or built something reusable that others would benefit from.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/contribute",
       "author": {
         "name": "tonone-ai",
@@ -2270,7 +2270,7 @@
     {
       "name": "mint",
       "description": "Finance engineer — P&L, runway, unit economics, fundraising, board reporting, and cap table management",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mint",
       "author": {
         "name": "tonone-ai",
@@ -2289,7 +2289,7 @@
     {
       "name": "folk",
       "description": "People engineer — org design, hiring pipelines, compensation frameworks, onboarding playbooks, performance management, and human-to-agent migration",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/folk",
       "author": {
         "name": "tonone-ai",
@@ -2309,7 +2309,7 @@
     {
       "name": "keel",
       "description": "Operations engineer — process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution, and cross-functional coordination",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/keel",
       "author": {
         "name": "tonone-ai",
@@ -2329,7 +2329,7 @@
     {
       "name": "brace",
       "description": "Support engineer — ticket workflow design, SLA architecture, knowledge base, escalation paths, and support operations at scale",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/brace",
       "author": {
         "name": "tonone-ai",
@@ -2349,7 +2349,7 @@
     {
       "name": "brief",
       "description": "Contract & Policy Drafter — NDA, MSA, employment agreements, SLAs, vendor contracts",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/brief",
       "author": {
         "name": "ai",
@@ -2360,7 +2360,7 @@
     {
       "name": "clause",
       "description": "Contract Clause Analyst — redlining, risk scoring, negotiation playbooks",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/clause",
       "author": {
         "name": "ai",
@@ -2371,7 +2371,7 @@
     {
       "name": "bind",
       "description": "Compliance Framework Engineer — SOC2, GDPR, HIPAA, ISO 27001 gap analysis",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/bind",
       "author": {
         "name": "ai",
@@ -2382,7 +2382,7 @@
     {
       "name": "frame",
       "description": "Corporate Governance Advisor — board resolutions, cap table, equity plan docs",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/frame",
       "author": {
         "name": "ai",
@@ -2393,7 +2393,7 @@
     {
       "name": "shield",
       "description": "Regulatory Risk Advisor — GDPR, CCPA, FTC, financial regulation, export controls",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/shield",
       "author": {
         "name": "ai",
@@ -2404,7 +2404,7 @@
     {
       "name": "scope",
       "description": "IP & Trademark Advisor — trademark clearance, patent landscape, OSS license compliance",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/scope",
       "author": {
         "name": "ai",
@@ -2415,7 +2415,7 @@
     {
       "name": "audit",
       "description": "Legal Compliance Auditor — internal controls, legal risk register, audit trail",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/audit",
       "author": {
         "name": "ai",
@@ -2426,7 +2426,7 @@
     {
       "name": "cite",
       "description": "Legal Researcher — case law synthesis, statute analysis, jurisdiction comparison",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cite",
       "author": {
         "name": "ai",
@@ -2437,7 +2437,7 @@
     {
       "name": "lodge",
       "description": "Regulatory Filing Advisor — DMCA, FTC disclosures, GDPR DPAs, government filings",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/lodge",
       "author": {
         "name": "ai",
@@ -2448,7 +2448,7 @@
     {
       "name": "terms",
       "description": "Privacy & ToS Drafter — GDPR-compliant privacy policies, ToS, cookie policies, DPAs",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/terms",
       "author": {
         "name": "ai",
@@ -2459,7 +2459,7 @@
     {
       "name": "brief-draft",
       "description": "Draft a contract or policy document from a description",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/brief/skills/brief-draft",
       "author": {
         "name": "ai",
@@ -2470,7 +2470,7 @@
     {
       "name": "brief-review",
       "description": "Review and redline a contract — risk and missing clauses",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/brief/skills/brief-review",
       "author": {
         "name": "ai",
@@ -2481,7 +2481,7 @@
     {
       "name": "brief-recon",
       "description": "Survey existing contracts and policy documents",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/brief/skills/brief-recon",
       "author": {
         "name": "ai",
@@ -2492,7 +2492,7 @@
     {
       "name": "clause-analyze",
       "description": "Deep clause-by-clause analysis with risk scores",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/clause/skills/clause-analyze",
       "author": {
         "name": "ai",
@@ -2503,7 +2503,7 @@
     {
       "name": "clause-playbook",
       "description": "Generate negotiation playbook for a contract type",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/clause/skills/clause-playbook",
       "author": {
         "name": "ai",
@@ -2514,7 +2514,7 @@
     {
       "name": "clause-recon",
       "description": "Scan existing contracts for risk patterns",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/clause/skills/clause-recon",
       "author": {
         "name": "ai",
@@ -2525,7 +2525,7 @@
     {
       "name": "bind-gap",
       "description": "Compliance gap analysis — SOC2, GDPR, HIPAA, ISO 27001",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/bind/skills/bind-gap",
       "author": {
         "name": "ai",
@@ -2536,7 +2536,7 @@
     {
       "name": "bind-policy",
       "description": "Draft compliance policies required by a framework",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/bind/skills/bind-policy",
       "author": {
         "name": "ai",
@@ -2547,7 +2547,7 @@
     {
       "name": "bind-recon",
       "description": "Survey existing compliance artifacts and certifications",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/bind/skills/bind-recon",
       "author": {
         "name": "ai",
@@ -2558,7 +2558,7 @@
     {
       "name": "frame-board",
       "description": "Draft board resolutions and corporate consent documents",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/frame/skills/frame-board",
       "author": {
         "name": "ai",
@@ -2569,7 +2569,7 @@
     {
       "name": "frame-equity",
       "description": "Draft equity plan documents and option grant agreements",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/frame/skills/frame-equity",
       "author": {
         "name": "ai",
@@ -2580,7 +2580,7 @@
     {
       "name": "frame-recon",
       "description": "Survey corporate governance artifacts and flag gaps",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/frame/skills/frame-recon",
       "author": {
         "name": "ai",
@@ -2591,7 +2591,7 @@
     {
       "name": "shield-assess",
       "description": "Regulatory exposure assessment for a product or geography",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/shield/skills/shield-assess",
       "author": {
         "name": "ai",
@@ -2602,7 +2602,7 @@
     {
       "name": "shield-respond",
       "description": "Draft regulatory response letters and regulator comms",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/shield/skills/shield-respond",
       "author": {
         "name": "ai",
@@ -2613,7 +2613,7 @@
     {
       "name": "shield-recon",
       "description": "Map product data flows and identify regulatory triggers",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/shield/skills/shield-recon",
       "author": {
         "name": "ai",
@@ -2624,7 +2624,7 @@
     {
       "name": "scope-trademark",
       "description": "Trademark clearance research and filing preparation",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/scope/skills/scope-trademark",
       "author": {
         "name": "ai",
@@ -2635,7 +2635,7 @@
     {
       "name": "scope-oss",
       "description": "Open source license compliance audit — GPL, LGPL, AGPL risks",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/scope/skills/scope-oss",
       "author": {
         "name": "ai",
@@ -2646,7 +2646,7 @@
     {
       "name": "scope-recon",
       "description": "Survey IP assets, license obligations, and assignment gaps",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/scope/skills/scope-recon",
       "author": {
         "name": "ai",
@@ -2657,7 +2657,7 @@
     {
       "name": "audit-legal",
       "description": "Full legal compliance audit and risk register",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/audit/skills/audit-legal",
       "author": {
         "name": "ai",
@@ -2668,7 +2668,7 @@
     {
       "name": "audit-controls",
       "description": "Internal legal controls review — approval workflows, doc governance",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/audit/skills/audit-controls",
       "author": {
         "name": "ai",
@@ -2679,7 +2679,7 @@
     {
       "name": "audit-recon",
       "description": "Assess legal artifact completeness and audit readiness",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/audit/skills/audit-recon",
       "author": {
         "name": "ai",
@@ -2690,7 +2690,7 @@
     {
       "name": "cite-research",
       "description": "Legal research — case law, statutes, regulatory guidance",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cite/skills/cite-research",
       "author": {
         "name": "ai",
@@ -2701,7 +2701,7 @@
     {
       "name": "cite-compare",
       "description": "Jurisdiction comparison for a legal requirement or clause",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cite/skills/cite-compare",
       "author": {
         "name": "ai",
@@ -2712,7 +2712,7 @@
     {
       "name": "cite-recon",
       "description": "Identify open legal questions and research gaps",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cite/skills/cite-recon",
       "author": {
         "name": "ai",
@@ -2723,7 +2723,7 @@
     {
       "name": "lodge-filing",
       "description": "Prepare regulatory filing, disclosure notice, or government submission",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/lodge/skills/lodge-filing",
       "author": {
         "name": "ai",
@@ -2734,7 +2734,7 @@
     {
       "name": "lodge-dmca",
       "description": "Draft DMCA takedown notice or counter-notice",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/lodge/skills/lodge-dmca",
       "author": {
         "name": "ai",
@@ -2745,7 +2745,7 @@
     {
       "name": "lodge-recon",
       "description": "Identify required regulatory filings and their status",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/lodge/skills/lodge-recon",
       "author": {
         "name": "ai",
@@ -2756,7 +2756,7 @@
     {
       "name": "terms-privacy",
       "description": "Draft GDPR-compliant privacy policy for the product",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/terms/skills/terms-privacy",
       "author": {
         "name": "ai",
@@ -2767,7 +2767,7 @@
     {
       "name": "terms-tos",
       "description": "Draft Terms of Service for the product",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/terms/skills/terms-tos",
       "author": {
         "name": "ai",
@@ -2778,7 +2778,7 @@
     {
       "name": "terms-recon",
       "description": "Check privacy policy and ToS for completeness and compliance",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/terms/skills/terms-recon",
       "author": {
         "name": "ai",
@@ -2789,1694 +2789,1694 @@
     {
       "name": "design-team",
       "description": "Design Team bundle — 10 agents: Hue, Grid, Glyph, Move, Wire, Mark, Cut, Axe, Tone, Copy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./bundle/design-team",
       "tags": ["bundle", "design-team", "design"]
     },
     {
       "name": "hue",
       "description": "Color Systems Designer — Color palette design — semantic tokens, dark/light mode, WCAG contrast",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/hue",
       "tags": ["agent", "design-team", "hue", "design"]
     },
     {
       "name": "hue-palette",
       "description": "Design a color palette with semantic tokens for a brand or product",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/hue/skills/hue-palette",
       "tags": ["skill", "design-team", "hue", "design"]
     },
     {
       "name": "hue-token",
       "description": "Audit or refactor a design token system for color",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/hue/skills/hue-token",
       "tags": ["skill", "design-team", "hue", "design"]
     },
     {
       "name": "hue-recon",
       "description": "Audit existing color usage in a codebase",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/hue/skills/hue-recon",
       "tags": ["skill", "design-team", "hue", "design"]
     },
     {
       "name": "grid",
       "description": "Layout Systems Designer — Layout system design — spacing scales, responsive grids, layout primitives",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/grid",
       "tags": ["agent", "design-team", "grid", "design"]
     },
     {
       "name": "grid-layout",
       "description": "Design a layout system — spacing scale, grid columns, and layout primitives",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/grid/skills/grid-layout",
       "tags": ["skill", "design-team", "grid", "design"]
     },
     {
       "name": "grid-responsive",
       "description": "Audit or redesign responsive behavior of a layout",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/grid/skills/grid-responsive",
       "tags": ["skill", "design-team", "grid", "design"]
     },
     {
       "name": "grid-recon",
       "description": "Audit existing layout patterns in a codebase",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/grid/skills/grid-recon",
       "tags": ["skill", "design-team", "grid", "design"]
     },
     {
       "name": "glyph",
       "description": "Typography Designer — Typography system design — font pairing, type scale, hierarchy tokens",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/glyph",
       "tags": ["agent", "design-team", "glyph", "design"]
     },
     {
       "name": "glyph-pair",
       "description": "Select and pair fonts for a product",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/glyph/skills/glyph-pair",
       "tags": ["skill", "design-team", "glyph", "design"]
     },
     {
       "name": "glyph-scale",
       "description": "Design a type scale and hierarchy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/glyph/skills/glyph-scale",
       "tags": ["skill", "design-team", "glyph", "design"]
     },
     {
       "name": "glyph-recon",
       "description": "Audit existing typography in a codebase",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/glyph/skills/glyph-recon",
       "tags": ["skill", "design-team", "glyph", "design"]
     },
     {
       "name": "move",
       "description": "Motion Designer — Motion design — animation principles, transition systems, micro-interaction specs",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/move",
       "tags": ["agent", "design-team", "move", "design"]
     },
     {
       "name": "move-animate",
       "description": "Design an animation spec for a component or interaction",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/move/skills/move-animate",
       "tags": ["skill", "design-team", "move", "design"]
     },
     {
       "name": "move-system",
       "description": "Design a motion system for a product",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/move/skills/move-system",
       "tags": ["skill", "design-team", "move", "design"]
     },
     {
       "name": "move-recon",
       "description": "Audit existing animations in a codebase",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/move/skills/move-recon",
       "tags": ["skill", "design-team", "move", "design"]
     },
     {
       "name": "wire",
       "description": "Prototyping Engineer — Prototyping and handoff — interactive flow docs, component specs, developer handoff",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/wire",
       "tags": ["agent", "design-team", "wire", "design"]
     },
     {
       "name": "wire-prototype",
       "description": "Document a prototype or user flow",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/wire/skills/wire-prototype",
       "tags": ["skill", "design-team", "wire", "design"]
     },
     {
       "name": "wire-spec",
       "description": "Write a developer handoff spec for a component or feature",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/wire/skills/wire-spec",
       "tags": ["skill", "design-team", "wire", "design"]
     },
     {
       "name": "wire-recon",
       "description": "Audit existing design documentation",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/wire/skills/wire-recon",
       "tags": ["skill", "design-team", "wire", "design"]
     },
     {
       "name": "mark",
       "description": "Brand Designer — Brand identity design — logo usage rules, brand guidelines, visual identity systems",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mark",
       "tags": ["agent", "design-team", "mark", "design"]
     },
     {
       "name": "mark-brand",
       "description": "Write brand guidelines — logo usage, color, typography, voice",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mark/skills/mark-brand",
       "tags": ["skill", "design-team", "mark", "design"]
     },
     {
       "name": "mark-asset",
       "description": "Design an asset library structure — naming, formats, delivery specs",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mark/skills/mark-asset",
       "tags": ["skill", "design-team", "mark", "design"]
     },
     {
       "name": "mark-recon",
       "description": "Audit existing brand assets and usage",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mark/skills/mark-recon",
       "tags": ["skill", "design-team", "mark", "design"]
     },
     {
       "name": "cut",
       "description": "Illustration & Icon Designer — Illustration and icon design — custom assets, icon systems, SVG optimization",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cut",
       "tags": ["agent", "design-team", "cut", "design"]
     },
     {
       "name": "cut-icon",
       "description": "Design an icon system spec or audit existing icons",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cut/skills/cut-icon",
       "tags": ["skill", "design-team", "cut", "design"]
     },
     {
       "name": "cut-illustrate",
       "description": "Spec or critique custom illustrations",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cut/skills/cut-illustrate",
       "tags": ["skill", "design-team", "cut", "design"]
     },
     {
       "name": "cut-recon",
       "description": "Audit existing icons and illustrations in a codebase",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cut/skills/cut-recon",
       "tags": ["skill", "design-team", "cut", "design"]
     },
     {
       "name": "axe",
       "description": "Accessibility Engineer — Accessibility engineering — WCAG audits, keyboard nav, screen reader testing, ARIA",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/axe",
       "tags": ["agent", "design-team", "axe", "design"]
     },
     {
       "name": "axe-audit",
       "description": "Run a WCAG accessibility audit",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/axe/skills/axe-audit",
       "tags": ["skill", "design-team", "axe", "design"]
     },
     {
       "name": "axe-fix",
       "description": "Write accessibility fixes for specific WCAG failures",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/axe/skills/axe-fix",
       "tags": ["skill", "design-team", "axe", "design"]
     },
     {
       "name": "axe-recon",
       "description": "Survey a codebase for accessibility debt",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/axe/skills/axe-recon",
       "tags": ["skill", "design-team", "axe", "design"]
     },
     {
       "name": "tone",
       "description": "Design Token Engineer — Design token engineering — token architecture, theming systems, style-dictionary pipelines",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/tone",
       "tags": ["agent", "design-team", "tone", "design"]
     },
     {
       "name": "tone-token",
       "description": "Design or refactor a design token architecture",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/tone/skills/tone-token",
       "tags": ["skill", "design-team", "tone", "design"]
     },
     {
       "name": "tone-theme",
       "description": "Build or fix a theming system",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/tone/skills/tone-theme",
       "tags": ["skill", "design-team", "tone", "design"]
     },
     {
       "name": "tone-recon",
       "description": "Audit existing token usage in a codebase",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/tone/skills/tone-recon",
       "tags": ["skill", "design-team", "tone", "design"]
     },
     {
       "name": "copy",
       "description": "Content Designer — UX writing and content design — microcopy, error messages, onboarding, UI content strategy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/copy",
       "tags": ["agent", "design-team", "copy", "design"]
     },
     {
       "name": "copy-write",
       "description": "Write UX copy for a feature, flow, or component",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/copy/skills/copy-write",
       "tags": ["skill", "design-team", "copy", "design"]
     },
     {
       "name": "copy-audit",
       "description": "Audit UX copy in a product or codebase",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/copy/skills/copy-audit",
       "tags": ["skill", "design-team", "copy", "design"]
     },
     {
       "name": "copy-recon",
       "description": "Survey all user-facing strings in a codebase",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/copy/skills/copy-recon",
       "tags": ["skill", "design-team", "copy", "design"]
     },
     {
       "name": "data-science-team",
       "description": "Data Science Team bundle — 10 agents: Cast, Feat, Fit, Score, Drift, Vect, Tune, Plot, Clean, Eval",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./bundle/data-science-team",
       "tags": ["bundle", "data-science-team", "ml"]
     },
     {
       "name": "cast",
       "description": "Forecasting Engineer — Time series forecasting — demand prediction, trend analysis, seasonal decomposition",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cast",
       "tags": ["agent", "data-science-team", "cast", "ml"]
     },
     {
       "name": "cast-forecast",
       "description": "Build a forecasting model for a time series",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cast/skills/cast-forecast",
       "tags": ["skill", "data-science-team", "cast", "ml"]
     },
     {
       "name": "cast-validate",
       "description": "Validate and benchmark a forecasting model",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cast/skills/cast-validate",
       "tags": ["skill", "data-science-team", "cast", "ml"]
     },
     {
       "name": "cast-recon",
       "description": "Survey existing forecasting code or models",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/cast/skills/cast-recon",
       "tags": ["skill", "data-science-team", "cast", "ml"]
     },
     {
       "name": "feat",
       "description": "Feature Engineer — Feature engineering — transformations, encodings, feature stores, pipeline design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/feat",
       "tags": ["agent", "data-science-team", "feat", "ml"]
     },
     {
       "name": "feat-engineer",
       "description": "Design a feature engineering pipeline for a ML problem",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/feat/skills/feat-engineer",
       "tags": ["skill", "data-science-team", "feat", "ml"]
     },
     {
       "name": "feat-store",
       "description": "Design or audit a feature store",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/feat/skills/feat-store",
       "tags": ["skill", "data-science-team", "feat", "ml"]
     },
     {
       "name": "feat-recon",
       "description": "Audit feature engineering code for leakage and quality issues",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/feat/skills/feat-recon",
       "tags": ["skill", "data-science-team", "feat", "ml"]
     },
     {
       "name": "fit",
       "description": "Model Training Engineer — Model training — algorithm selection, hyperparameter tuning, training infrastructure",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/fit",
       "tags": ["agent", "data-science-team", "fit", "ml"]
     },
     {
       "name": "fit-train",
       "description": "Design a model training pipeline",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/fit/skills/fit-train",
       "tags": ["skill", "data-science-team", "fit", "ml"]
     },
     {
       "name": "fit-tune",
       "description": "Design a hyperparameter tuning strategy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/fit/skills/fit-tune",
       "tags": ["skill", "data-science-team", "fit", "ml"]
     },
     {
       "name": "fit-recon",
       "description": "Audit existing model training code",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/fit/skills/fit-recon",
       "tags": ["skill", "data-science-team", "fit", "ml"]
     },
     {
       "name": "score",
       "description": "Model Evaluation Engineer — Model evaluation — metrics design, statistical significance, model comparison",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/score",
       "tags": ["agent", "data-science-team", "score", "ml"]
     },
     {
       "name": "score-eval",
       "description": "Design an evaluation framework for a ML model",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/score/skills/score-eval",
       "tags": ["skill", "data-science-team", "score", "ml"]
     },
     {
       "name": "score-compare",
       "description": "Compare two or more models statistically",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/score/skills/score-compare",
       "tags": ["skill", "data-science-team", "score", "ml"]
     },
     {
       "name": "score-recon",
       "description": "Audit existing model evaluation code",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/score/skills/score-recon",
       "tags": ["skill", "data-science-team", "score", "ml"]
     },
     {
       "name": "drift",
       "description": "ML Monitoring Engineer — ML monitoring — data drift, concept drift, model degradation, production ML health",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/drift",
       "tags": ["agent", "data-science-team", "drift", "ml"]
     },
     {
       "name": "drift-monitor",
       "description": "Design a drift monitoring system for a production ML model",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/drift/skills/drift-monitor",
       "tags": ["skill", "data-science-team", "drift", "ml"]
     },
     {
       "name": "drift-alert",
       "description": "Design drift alerts and escalation",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/drift/skills/drift-alert",
       "tags": ["skill", "data-science-team", "drift", "ml"]
     },
     {
       "name": "drift-recon",
       "description": "Audit existing ML monitoring",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/drift/skills/drift-recon",
       "tags": ["skill", "data-science-team", "drift", "ml"]
     },
     {
       "name": "vect",
       "description": "Embeddings & Vector Search Engineer — Embeddings and vector search — semantic search, RAG pipelines, vector database design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/vect",
       "tags": ["agent", "data-science-team", "vect", "ml"]
     },
     {
       "name": "vect-embed",
       "description": "Design an embedding pipeline",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/vect/skills/vect-embed",
       "tags": ["skill", "data-science-team", "vect", "ml"]
     },
     {
       "name": "vect-search",
       "description": "Design a vector search or RAG system",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/vect/skills/vect-search",
       "tags": ["skill", "data-science-team", "vect", "ml"]
     },
     {
       "name": "vect-recon",
       "description": "Audit existing vector search or RAG implementation",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/vect/skills/vect-recon",
       "tags": ["skill", "data-science-team", "vect", "ml"]
     },
     {
       "name": "tune",
       "description": "LLM Fine-tuning Engineer — LLM fine-tuning — PEFT/LoRA, RLHF, instruction tuning, prompt optimization",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/tune",
       "tags": ["agent", "data-science-team", "tune", "ml"]
     },
     {
       "name": "tune-finetune",
       "description": "Design a fine-tuning pipeline",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/tune/skills/tune-finetune",
       "tags": ["skill", "data-science-team", "tune", "ml"]
     },
     {
       "name": "tune-prompt",
       "description": "Systematically optimize prompts for a task",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/tune/skills/tune-prompt",
       "tags": ["skill", "data-science-team", "tune", "ml"]
     },
     {
       "name": "tune-recon",
       "description": "Audit existing fine-tuning or prompt engineering work",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/tune/skills/tune-recon",
       "tags": ["skill", "data-science-team", "tune", "ml"]
     },
     {
       "name": "plot",
       "description": "Data Visualization Engineer — Data visualization — chart design, visualization libraries, exploratory analysis",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/plot",
       "tags": ["agent", "data-science-team", "plot", "ml"]
     },
     {
       "name": "plot-chart",
       "description": "Design or critique a data visualization",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/plot/skills/plot-chart",
       "tags": ["skill", "data-science-team", "plot", "ml"]
     },
     {
       "name": "plot-eda",
       "description": "Design an exploratory data analysis workflow",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/plot/skills/plot-eda",
       "tags": ["skill", "data-science-team", "plot", "ml"]
     },
     {
       "name": "plot-recon",
       "description": "Audit existing visualizations in a codebase or notebook",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/plot/skills/plot-recon",
       "tags": ["skill", "data-science-team", "plot", "ml"]
     },
     {
       "name": "clean",
       "description": "Data Quality Engineer — Data quality — deduplication, validation, outlier detection, ETL pipeline design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/clean",
       "tags": ["agent", "data-science-team", "clean", "ml"]
     },
     {
       "name": "clean-validate",
       "description": "Design a data validation pipeline",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/clean/skills/clean-validate",
       "tags": ["skill", "data-science-team", "clean", "ml"]
     },
     {
       "name": "clean-transform",
       "description": "Design a data cleaning and transformation pipeline",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/clean/skills/clean-transform",
       "tags": ["skill", "data-science-team", "clean", "ml"]
     },
     {
       "name": "clean-recon",
       "description": "Audit existing data cleaning code",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/clean/skills/clean-recon",
       "tags": ["skill", "data-science-team", "clean", "ml"]
     },
     {
       "name": "eval",
       "description": "Experiment Design Engineer — Experiment design — A/B testing, statistical power, experiment tracking, causal inference",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/eval",
       "tags": ["agent", "data-science-team", "eval", "ml"]
     },
     {
       "name": "eval-design",
       "description": "Design an A/B test",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/eval/skills/eval-design",
       "tags": ["skill", "data-science-team", "eval", "ml"]
     },
     {
       "name": "eval-analyze",
       "description": "Analyze A/B test results",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/eval/skills/eval-analyze",
       "tags": ["skill", "data-science-team", "eval", "ml"]
     },
     {
       "name": "eval-recon",
       "description": "Audit existing experimentation infrastructure",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/eval/skills/eval-recon",
       "tags": ["skill", "data-science-team", "eval", "ml"]
     },
     {
       "name": "secops-team",
       "description": "Security Operations Team bundle — 10 agents: Red, Blue, Hunt, Patch, Chain, Sast, Siem, Resp, Zero, Phish",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./bundle/secops-team",
       "tags": ["bundle", "secops-team", "security"]
     },
     {
       "name": "red",
       "description": "Offensive Security Engineer — Red team operations — penetration testing, attack simulation, vulnerability exploitation",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/red",
       "tags": ["agent", "secops-team", "red", "security"]
     },
     {
       "name": "red-pentest",
       "description": "Design a penetration testing plan — scope, methodology, and rules of engagement",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/red/skills/red-pentest",
       "tags": ["skill", "secops-team", "red", "security"]
     },
     {
       "name": "red-report",
       "description": "Write a penetration test finding report with CVSS scores and remediation",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/red/skills/red-report",
       "tags": ["skill", "secops-team", "red", "security"]
     },
     {
       "name": "red-recon",
       "description": "Design a reconnaissance plan — OSINT and attack surface mapping",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/red/skills/red-recon",
       "tags": ["skill", "secops-team", "red", "security"]
     },
     {
       "name": "blue",
       "description": "Defensive Security Engineer — Blue team operations — SOC design, detection engineering, hardening playbooks",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/blue",
       "tags": ["agent", "secops-team", "blue", "security"]
     },
     {
       "name": "blue-detect",
       "description": "Design detection rules for a threat — SIEM queries and MITRE ATT&CK mapping",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/blue/skills/blue-detect",
       "tags": ["skill", "secops-team", "blue", "security"]
     },
     {
       "name": "blue-harden",
       "description": "Write a hardening playbook — CIS benchmark mapping and implementation steps",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/blue/skills/blue-harden",
       "tags": ["skill", "secops-team", "blue", "security"]
     },
     {
       "name": "blue-recon",
       "description": "Audit existing security controls and detection coverage",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/blue/skills/blue-recon",
       "tags": ["skill", "secops-team", "blue", "security"]
     },
     {
       "name": "hunt",
       "description": "Threat Hunter — Threat hunting — hypothesis-driven hunting, compromise assessment, IOC analysis",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/hunt",
       "tags": ["agent", "secops-team", "hunt", "security"]
     },
     {
       "name": "hunt-assess",
       "description": "Design a compromise assessment — hunting scope and evidence collection",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/hunt/skills/hunt-assess",
       "tags": ["skill", "secops-team", "hunt", "security"]
     },
     {
       "name": "hunt-ioc",
       "description": "Analyze indicators of compromise — enrichment and attribution",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/hunt/skills/hunt-ioc",
       "tags": ["skill", "secops-team", "hunt", "security"]
     },
     {
       "name": "hunt-recon",
       "description": "Design a threat hunting program — maturity assessment and playbook library",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/hunt/skills/hunt-recon",
       "tags": ["skill", "secops-team", "hunt", "security"]
     },
     {
       "name": "patch",
       "description": "Vulnerability Management Engineer — Vulnerability management — CVE triage, CVSS prioritization, patching cadence, SLA design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/patch",
       "tags": ["agent", "secops-team", "patch", "security"]
     },
     {
       "name": "patch-triage",
       "description": "Triage CVEs — CVSS + EPSS + KEV scoring and prioritization",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/patch/skills/patch-triage",
       "tags": ["skill", "secops-team", "patch", "security"]
     },
     {
       "name": "patch-plan",
       "description": "Design a vulnerability management program — SLAs and asset tiers",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/patch/skills/patch-plan",
       "tags": ["skill", "secops-team", "patch", "security"]
     },
     {
       "name": "patch-recon",
       "description": "Audit existing vulnerability management for SLA gaps",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/patch/skills/patch-recon",
       "tags": ["skill", "secops-team", "patch", "security"]
     },
     {
       "name": "chain",
       "description": "Supply Chain Security Engineer — Supply chain security — SBOM generation, dependency scanning, third-party risk, license compliance",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/chain",
       "tags": ["agent", "secops-team", "chain", "security"]
     },
     {
       "name": "chain-sbom",
       "description": "Design an SBOM generation pipeline for CI/CD",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/chain/skills/chain-sbom",
       "tags": ["skill", "secops-team", "chain", "security"]
     },
     {
       "name": "chain-scan",
       "description": "Design a dependency scanning program — CVE detection and license checks",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/chain/skills/chain-scan",
       "tags": ["skill", "secops-team", "chain", "security"]
     },
     {
       "name": "chain-recon",
       "description": "Audit existing dependency security and supply chain gaps",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/chain/skills/chain-recon",
       "tags": ["skill", "secops-team", "chain", "security"]
     },
     {
       "name": "sast",
       "description": "Application Security Engineer — Application security — SAST/DAST scanning, code security review, secure SDLC design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/sast",
       "tags": ["agent", "secops-team", "sast", "security"]
     },
     {
       "name": "sast-scan",
       "description": "Design a SAST/DAST scanning pipeline — tooling and CI integration",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/sast/skills/sast-scan",
       "tags": ["skill", "secops-team", "sast", "security"]
     },
     {
       "name": "sast-fix",
       "description": "Analyze and fix a SAST finding with secure code alternative",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/sast/skills/sast-fix",
       "tags": ["skill", "secops-team", "sast", "security"]
     },
     {
       "name": "sast-recon",
       "description": "Audit application security tooling for OWASP Top 10 coverage",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/sast/skills/sast-recon",
       "tags": ["skill", "secops-team", "sast", "security"]
     },
     {
       "name": "siem",
       "description": "Detection & SIEM Engineer — SIEM engineering — log pipeline design, detection rule development, alert tuning",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/siem",
       "tags": ["agent", "secops-team", "siem", "security"]
     },
     {
       "name": "siem-rule",
       "description": "Write SIEM detection rules in SIGMA format with MITRE mapping",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/siem/skills/siem-rule",
       "tags": ["skill", "secops-team", "siem", "security"]
     },
     {
       "name": "siem-alert",
       "description": "Tune a SIEM alert to reduce false positives",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/siem/skills/siem-alert",
       "tags": ["skill", "secops-team", "siem", "security"]
     },
     {
       "name": "siem-recon",
       "description": "Audit existing SIEM deployment — log coverage and rule quality",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/siem/skills/siem-recon",
       "tags": ["skill", "secops-team", "siem", "security"]
     },
     {
       "name": "resp",
       "description": "Incident Response Engineer — Incident response — playbook design, containment procedures, DFIR, post-incident review",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/resp",
       "tags": ["agent", "secops-team", "resp", "security"]
     },
     {
       "name": "resp-playbook",
       "description": "Write an incident response playbook for a threat scenario",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/resp/skills/resp-playbook",
       "tags": ["skill", "secops-team", "resp", "security"]
     },
     {
       "name": "resp-contain",
       "description": "Design containment procedures for an active incident",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/resp/skills/resp-contain",
       "tags": ["skill", "secops-team", "resp", "security"]
     },
     {
       "name": "resp-recon",
       "description": "Audit existing incident response capability and playbook coverage",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/resp/skills/resp-recon",
       "tags": ["skill", "secops-team", "resp", "security"]
     },
     {
       "name": "zero",
       "description": "Zero Trust Architect — Zero trust architecture — network segmentation, identity-based access, microsegmentation design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/zero",
       "tags": ["agent", "secops-team", "zero", "security"]
     },
     {
       "name": "zero-design",
       "description": "Design a zero trust architecture — phased roadmap and segmentation",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/zero/skills/zero-design",
       "tags": ["skill", "secops-team", "zero", "security"]
     },
     {
       "name": "zero-audit",
       "description": "Audit an environment against zero trust principles",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/zero/skills/zero-audit",
       "tags": ["skill", "secops-team", "zero", "security"]
     },
     {
       "name": "zero-recon",
       "description": "Survey network and identity controls for zero trust readiness",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/zero/skills/zero-recon",
       "tags": ["skill", "secops-team", "zero", "security"]
     },
     {
       "name": "phish",
       "description": "Security Awareness Engineer — Security awareness — phishing simulation design, security training programs, social engineering assessment",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/phish",
       "tags": ["agent", "secops-team", "phish", "security"]
     },
     {
       "name": "phish-assess",
       "description": "Design a phishing simulation program — scenarios and measurement",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/phish/skills/phish-assess",
       "tags": ["skill", "secops-team", "phish", "security"]
     },
     {
       "name": "phish-train",
       "description": "Design a security awareness training curriculum",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/phish/skills/phish-train",
       "tags": ["skill", "secops-team", "phish", "security"]
     },
     {
       "name": "phish-recon",
       "description": "Audit existing security awareness program — coverage and effectiveness",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/phish/skills/phish-recon",
       "tags": ["skill", "secops-team", "phish", "security"]
     },
     {
       "name": "devx-team",
       "description": "Developer Experience Team bundle — 10 agents: Guide, Sample, Mock, Schema, Port, Change, Onboard, Bench, Compat, Gate",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./bundle/devx-team",
       "tags": ["bundle", "devx-team", "developer-experience"]
     },
     {
       "name": "guide",
       "description": "API Documentation Engineer — API and SDK documentation — reference docs, guides, and documentation architecture",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/guide",
       "tags": ["agent", "devx-team", "guide", "developer-experience"]
     },
     {
       "name": "guide-write",
       "description": "Write API reference documentation for an endpoint or SDK method",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/guide/skills/guide-write",
       "tags": ["skill", "devx-team", "guide", "developer-experience"]
     },
     {
       "name": "guide-audit",
       "description": "Audit existing API documentation for completeness and accuracy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/guide/skills/guide-audit",
       "tags": ["skill", "devx-team", "guide", "developer-experience"]
     },
     {
       "name": "guide-recon",
       "description": "Survey documentation coverage across an API or SDK",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/guide/skills/guide-recon",
       "tags": ["skill", "devx-team", "guide", "developer-experience"]
     },
     {
       "name": "sample",
       "description": "Code Sample Engineer — Code samples and tutorials — working examples, quickstarts, and language-specific guides",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/sample",
       "tags": ["agent", "devx-team", "sample", "developer-experience"]
     },
     {
       "name": "sample-write",
       "description": "Write a working code sample or tutorial for an API feature",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/sample/skills/sample-write",
       "tags": ["skill", "devx-team", "sample", "developer-experience"]
     },
     {
       "name": "sample-review",
       "description": "Review existing code samples for correctness and developer experience",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/sample/skills/sample-review",
       "tags": ["skill", "devx-team", "sample", "developer-experience"]
     },
     {
       "name": "sample-recon",
       "description": "Survey existing code samples — coverage, language parity, and freshness",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/sample/skills/sample-recon",
       "tags": ["skill", "devx-team", "sample", "developer-experience"]
     },
     {
       "name": "mock",
       "description": "API Mocking & Contract Engineer — API mocking — mock server design, contract testing, API simulation",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mock",
       "tags": ["agent", "devx-team", "mock", "developer-experience"]
     },
     {
       "name": "mock-design",
       "description": "Design a mock server for an API",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mock/skills/mock-design",
       "tags": ["skill", "devx-team", "mock", "developer-experience"]
     },
     {
       "name": "mock-contract",
       "description": "Design a consumer-driven contract testing setup",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mock/skills/mock-contract",
       "tags": ["skill", "devx-team", "mock", "developer-experience"]
     },
     {
       "name": "mock-recon",
       "description": "Audit existing mocks for contract drift and missing error cases",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/mock/skills/mock-recon",
       "tags": ["skill", "devx-team", "mock", "developer-experience"]
     },
     {
       "name": "schema",
       "description": "API Schema Engineer — API schema design — OpenAPI, GraphQL, gRPC schema quality and design standards",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/schema",
       "tags": ["agent", "devx-team", "schema", "developer-experience"]
     },
     {
       "name": "schema-design",
       "description": "Design an API schema — OpenAPI, GraphQL, or gRPC proto",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/schema/skills/schema-design",
       "tags": ["skill", "devx-team", "schema", "developer-experience"]
     },
     {
       "name": "schema-review",
       "description": "Review an API schema for consistency and completeness",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/schema/skills/schema-review",
       "tags": ["skill", "devx-team", "schema", "developer-experience"]
     },
     {
       "name": "schema-recon",
       "description": "Audit existing API schemas for inconsistencies and coverage gaps",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/schema/skills/schema-recon",
       "tags": ["skill", "devx-team", "schema", "developer-experience"]
     },
     {
       "name": "port",
       "description": "SDK Design Engineer — SDK design — multi-language SDK architecture, idiomatic patterns, cross-language consistency",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/port",
       "tags": ["agent", "devx-team", "port", "developer-experience"]
     },
     {
       "name": "port-design",
       "description": "Design an SDK architecture for an API",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/port/skills/port-design",
       "tags": ["skill", "devx-team", "port", "developer-experience"]
     },
     {
       "name": "port-review",
       "description": "Review an existing SDK for idiomatic quality and consistency",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/port/skills/port-review",
       "tags": ["skill", "devx-team", "port", "developer-experience"]
     },
     {
       "name": "port-recon",
       "description": "Audit multi-language SDK coverage and consistency",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/port/skills/port-recon",
       "tags": ["skill", "devx-team", "port", "developer-experience"]
     },
     {
       "name": "change",
       "description": "Changelog & Release Communication Engineer — Changelog and release communication — breaking change docs, deprecation notices, migration guides",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/change",
       "tags": ["agent", "devx-team", "change", "developer-experience"]
     },
     {
       "name": "change-write",
       "description": "Write a changelog entry or release notes for an API version",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/change/skills/change-write",
       "tags": ["skill", "devx-team", "change", "developer-experience"]
     },
     {
       "name": "change-policy",
       "description": "Design an API versioning and deprecation policy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/change/skills/change-policy",
       "tags": ["skill", "devx-team", "change", "developer-experience"]
     },
     {
       "name": "change-recon",
       "description": "Audit existing changelog and deprecation practices",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/change/skills/change-recon",
       "tags": ["skill", "devx-team", "change", "developer-experience"]
     },
     {
       "name": "onboard",
       "description": "Developer Onboarding Engineer — Developer onboarding — quickstart design, time-to-first-call optimization, onboarding funnel audit",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/onboard",
       "tags": ["agent", "devx-team", "onboard", "developer-experience"]
     },
     {
       "name": "onboard-quickstart",
       "description": "Write a developer quickstart — minimal steps to first successful API call",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/onboard/skills/onboard-quickstart",
       "tags": ["skill", "devx-team", "onboard", "developer-experience"]
     },
     {
       "name": "onboard-audit",
       "description": "Audit the developer onboarding experience and measure TTFC",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/onboard/skills/onboard-audit",
       "tags": ["skill", "devx-team", "onboard", "developer-experience"]
     },
     {
       "name": "onboard-recon",
       "description": "Survey existing onboarding docs and developer portal",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/onboard/skills/onboard-recon",
       "tags": ["skill", "devx-team", "onboard", "developer-experience"]
     },
     {
       "name": "bench",
       "description": "API Performance Engineer — API performance benchmarking — latency profiling, throughput testing, regression detection",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/bench",
       "tags": ["agent", "devx-team", "bench", "developer-experience"]
     },
     {
       "name": "bench-profile",
       "description": "Design a performance benchmark for an API",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/bench/skills/bench-profile",
       "tags": ["skill", "devx-team", "bench", "developer-experience"]
     },
     {
       "name": "bench-compare",
       "description": "Compare API performance across versions for regression detection",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/bench/skills/bench-compare",
       "tags": ["skill", "devx-team", "bench", "developer-experience"]
     },
     {
       "name": "bench-recon",
       "description": "Audit existing performance testing for gaps and stale baselines",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/bench/skills/bench-recon",
       "tags": ["skill", "devx-team", "bench", "developer-experience"]
     },
     {
       "name": "compat",
       "description": "Backwards Compatibility Engineer — Backwards compatibility — breaking change detection, deprecation management, semver discipline",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/compat",
       "tags": ["agent", "devx-team", "compat", "developer-experience"]
     },
     {
       "name": "compat-audit",
       "description": "Audit a proposed API change for breaking changes",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/compat/skills/compat-audit",
       "tags": ["skill", "devx-team", "compat", "developer-experience"]
     },
     {
       "name": "compat-policy",
       "description": "Design an API compatibility and deprecation policy",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/compat/skills/compat-policy",
       "tags": ["skill", "devx-team", "compat", "developer-experience"]
     },
     {
       "name": "compat-recon",
       "description": "Audit existing API for breaking change risks and missing controls",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/compat/skills/compat-recon",
       "tags": ["skill", "devx-team", "compat", "developer-experience"]
     },
     {
       "name": "gate",
       "description": "API Quality Gate Engineer — API quality gates — linting, style enforcement, breaking change CI, and API governance",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/gate",
       "tags": ["agent", "devx-team", "gate", "developer-experience"]
     },
     {
       "name": "gate-lint",
       "description": "Design an API linting ruleset with style rules and severity levels",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/gate/skills/gate-lint",
       "tags": ["skill", "devx-team", "gate", "developer-experience"]
     },
     {
       "name": "gate-ci",
       "description": "Integrate API quality gates into CI",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/gate/skills/gate-ci",
       "tags": ["skill", "devx-team", "gate", "developer-experience"]
     },
     {
       "name": "gate-recon",
       "description": "Audit existing API quality controls and CI gates",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./team/gate/skills/gate-recon",
       "tags": ["skill", "devx-team", "gate", "developer-experience"]
     },
     {
       "name": "infra-specialist-team",
       "description": "Infrastructure Specialist Team — 10 agents: Kube, Terra, Finop, Serv, Edge, Cache, Queue, Mesh, Multi, Chaos",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["bundle", "infrastructure", "cloud", "team"],
       "source": "./bundle/infra-specialist-team"
     },
     {
       "name": "kube",
       "description": "Infrastructure Specialist Team — Kube: Kubernetes cluster design — RBAC, networking, operators, workload configuration",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/kube"
     },
     {
       "name": "kube-design",
       "description": "Kube skill: kube-design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "kube"],
       "source": "./team/kube/skills/kube-design"
     },
     {
       "name": "kube-rbac",
       "description": "Kube skill: kube-rbac",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "kube"],
       "source": "./team/kube/skills/kube-rbac"
     },
     {
       "name": "kube-recon",
       "description": "Kube skill: kube-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "kube"],
       "source": "./team/kube/skills/kube-recon"
     },
     {
       "name": "terra",
       "description": "Infrastructure Specialist Team — Terra: Terraform and IaC — module design, state management, drift detection, and IaC best practices",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/terra"
     },
     {
       "name": "terra-drift",
       "description": "Terra skill: terra-drift",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "terra"],
       "source": "./team/terra/skills/terra-drift"
     },
     {
       "name": "terra-module",
       "description": "Terra skill: terra-module",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "terra"],
       "source": "./team/terra/skills/terra-module"
     },
     {
       "name": "terra-recon",
       "description": "Terra skill: terra-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "terra"],
       "source": "./team/terra/skills/terra-recon"
     },
     {
       "name": "finop",
       "description": "Infrastructure Specialist Team — Finop: Cloud cost optimization — FinOps practices, rightsizing, reservation strategy, cost attribution",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/finop"
     },
     {
       "name": "finop-audit",
       "description": "Finop skill: finop-audit",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "finop"],
       "source": "./team/finop/skills/finop-audit"
     },
     {
       "name": "finop-recon",
       "description": "Finop skill: finop-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "finop"],
       "source": "./team/finop/skills/finop-recon"
     },
     {
       "name": "finop-reserve",
       "description": "Finop skill: finop-reserve",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "finop"],
       "source": "./team/finop/skills/finop-reserve"
     },
     {
       "name": "serv",
       "description": "Infrastructure Specialist Team — Serv: Serverless architecture — Lambda/Cloud Functions/Cloud Run design, cold start optimization, event patterns",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/serv"
     },
     {
       "name": "serv-cold",
       "description": "Serv skill: serv-cold",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "serv"],
       "source": "./team/serv/skills/serv-cold"
     },
     {
       "name": "serv-design",
       "description": "Serv skill: serv-design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "serv"],
       "source": "./team/serv/skills/serv-design"
     },
     {
       "name": "serv-recon",
       "description": "Serv skill: serv-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "serv"],
       "source": "./team/serv/skills/serv-recon"
     },
     {
       "name": "edge",
       "description": "Infrastructure Specialist Team — Edge: Edge computing and CDN — global distribution, cache strategy, edge functions, latency optimization",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/edge"
     },
     {
       "name": "edge-cdn",
       "description": "Edge skill: edge-cdn",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "edge"],
       "source": "./team/edge/skills/edge-cdn"
     },
     {
       "name": "edge-recon",
       "description": "Edge skill: edge-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "edge"],
       "source": "./team/edge/skills/edge-recon"
     },
     {
       "name": "edge-route",
       "description": "Edge skill: edge-route",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "edge"],
       "source": "./team/edge/skills/edge-route"
     },
     {
       "name": "cache",
       "description": "Infrastructure Specialist Team — Cache: Caching strategy — Redis/Memcached design, cache invalidation, eviction policies, application caching patterns",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/cache"
     },
     {
       "name": "cache-design",
       "description": "Cache skill: cache-design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "cache"],
       "source": "./team/cache/skills/cache-design"
     },
     {
       "name": "cache-evict",
       "description": "Cache skill: cache-evict",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "cache"],
       "source": "./team/cache/skills/cache-evict"
     },
     {
       "name": "cache-recon",
       "description": "Cache skill: cache-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "cache"],
       "source": "./team/cache/skills/cache-recon"
     },
     {
       "name": "queue",
       "description": "Infrastructure Specialist Team — Queue: Message queuing and streaming — Kafka, SQS, RabbitMQ design, consumer group strategy, dead letter queues",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/queue"
     },
     {
       "name": "queue-design",
       "description": "Queue skill: queue-design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "queue"],
       "source": "./team/queue/skills/queue-design"
     },
     {
       "name": "queue-recon",
       "description": "Queue skill: queue-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "queue"],
       "source": "./team/queue/skills/queue-recon"
     },
     {
       "name": "queue-scale",
       "description": "Queue skill: queue-scale",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "queue"],
       "source": "./team/queue/skills/queue-scale"
     },
     {
       "name": "mesh",
       "description": "Infrastructure Specialist Team — Mesh: Service mesh design — Istio/Linkerd/Envoy, mTLS, traffic management, observability integration",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/mesh"
     },
     {
       "name": "mesh-design",
       "description": "Mesh skill: mesh-design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "mesh"],
       "source": "./team/mesh/skills/mesh-design"
     },
     {
       "name": "mesh-observe",
       "description": "Mesh skill: mesh-observe",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "mesh"],
       "source": "./team/mesh/skills/mesh-observe"
     },
     {
       "name": "mesh-recon",
       "description": "Mesh skill: mesh-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "mesh"],
       "source": "./team/mesh/skills/mesh-recon"
     },
     {
       "name": "multi",
       "description": "Infrastructure Specialist Team — Multi: Multi-cloud architecture — provider selection, portability strategy, lock-in avoidance, workload placement",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/multi"
     },
     {
       "name": "multi-design",
       "description": "Multi skill: multi-design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "multi"],
       "source": "./team/multi/skills/multi-design"
     },
     {
       "name": "multi-port",
       "description": "Multi skill: multi-port",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "multi"],
       "source": "./team/multi/skills/multi-port"
     },
     {
       "name": "multi-recon",
       "description": "Multi skill: multi-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "multi"],
       "source": "./team/multi/skills/multi-recon"
     },
     {
       "name": "chaos",
       "description": "Infrastructure Specialist Team — Chaos: Chaos engineering — failure injection design, game days, resilience testing, blast radius control",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/chaos"
     },
     {
       "name": "chaos-design",
       "description": "Chaos skill: chaos-design",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "chaos"],
       "source": "./team/chaos/skills/chaos-design"
     },
     {
       "name": "chaos-game",
       "description": "Chaos skill: chaos-game",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "chaos"],
       "source": "./team/chaos/skills/chaos-game"
     },
     {
       "name": "chaos-recon",
       "description": "Chaos skill: chaos-recon",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "infrastructure", "chaos"],
       "source": "./team/chaos/skills/chaos-recon"
     },
     {
       "name": "ai-ops-team",
       "description": "AI Operations Team — 9 agents: Deploy, Eval, Trace, Guard, Budget, Token, Prompt, Embed, Rank",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["bundle", "ai-ops", "llm", "team"],
       "source": "./bundle/ai-ops-team"
     },
     {
       "name": "deploy",
       "description": "AI Operations Team — Deploy: Model serving, inference APIs, blue/green deploys, rollback, and canary releases for production ML.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/deploy"
     },
     {
       "name": "deploy-serve",
       "description": "Design and configure model serving infrastructure — endpoint scaling, batching, GPU allocation.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "deploy"],
       "source": "./team/deploy/skills/deploy-serve"
     },
     {
       "name": "deploy-canary",
       "description": "Plan and execute canary releases for model updates — traffic splitting, rollback triggers, success metrics.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "deploy"],
       "source": "./team/deploy/skills/deploy-canary"
     },
     {
       "name": "deploy-recon",
       "description": "Audit current model deployment topology — serving config, latency profile, version inventory.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "deploy"],
       "source": "./team/deploy/skills/deploy-recon"
     },
     {
       "name": "trace",
       "description": "AI Operations Team — Trace: LLM tracing, span capture, prompt/completion logging, cost attribution, and AI system debugging.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/trace"
     },
     {
       "name": "trace-instrument",
       "description": "Instrument LLM calls with tracing — span structure, token counts, latency, model metadata.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "trace"],
       "source": "./team/trace/skills/trace-instrument"
     },
     {
       "name": "trace-debug",
       "description": "Debug AI system behavior using traces — prompt reconstruction, output comparison, failure attribution.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "trace"],
       "source": "./team/trace/skills/trace-debug"
     },
     {
       "name": "trace-recon",
       "description": "Audit LLM observability coverage — trace gaps, logging completeness, cost attribution accuracy.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "trace"],
       "source": "./team/trace/skills/trace-recon"
     },
     {
       "name": "guard",
       "description": "AI Operations Team — Guard: Input/output safety filters, PII detection, content moderation, and AI policy enforcement at runtime.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/guard"
     },
     {
       "name": "guard-design",
       "description": "Design guardrail layers — input classifiers, output validators, PII scrubbers, policy rule engines.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "guard"],
       "source": "./team/guard/skills/guard-design"
     },
     {
       "name": "guard-audit",
       "description": "Audit guardrail coverage — bypass vectors, false positive rates, policy gap analysis, red-team scenarios.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "guard"],
       "source": "./team/guard/skills/guard-audit"
     },
     {
       "name": "guard-recon",
       "description": "Map current AI safety controls — filter inventory, coverage gaps, latency impact, incident history.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "guard"],
       "source": "./team/guard/skills/guard-recon"
     },
     {
       "name": "budget",
       "description": "AI Operations Team — Budget: LLM spend tracking, model cost optimization, budget alerts, and token efficiency audits across AI workloads.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/budget"
     },
     {
       "name": "budget-audit",
       "description": "Audit AI spend — per-model cost breakdown, top consumers, waste identification, optimization levers.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "budget"],
       "source": "./team/budget/skills/budget-audit"
     },
     {
       "name": "budget-optimize",
       "description": "Design cost reduction strategies — model tiering, prompt compression, caching, batch inference.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "budget"],
       "source": "./team/budget/skills/budget-optimize"
     },
     {
       "name": "budget-recon",
       "description": "Map AI cost topology — billing attribution, team-level spend, forecast vs actuals, alert gaps.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "budget"],
       "source": "./team/budget/skills/budget-recon"
     },
     {
       "name": "token",
       "description": "AI Operations Team — Token: Context window optimization, token counting, truncation strategies, and chunking patterns for LLM efficiency.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/token"
     },
     {
       "name": "token-budget",
       "description": "Design token budgets — system/user/assistant allocation, overflow handling, context compression.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "token"],
       "source": "./team/token/skills/token-budget"
     },
     {
       "name": "token-chunk",
       "description": "Design chunking strategies — semantic splitting, overlap tuning, retrieval-aware chunk sizing.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "token"],
       "source": "./team/token/skills/token-chunk"
     },
     {
       "name": "token-recon",
       "description": "Audit token usage patterns — avg context size, waste, truncation frequency, budget adherence.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "token"],
       "source": "./team/token/skills/token-recon"
     },
     {
       "name": "prompt",
       "description": "AI Operations Team — Prompt: System prompt design, few-shot libraries, chain-of-thought patterns, and prompt versioning for production LLM applications.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/prompt"
     },
     {
       "name": "prompt-design",
       "description": "Design production prompts — system prompt architecture, instruction clarity, few-shot selection.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "prompt"],
       "source": "./team/prompt/skills/prompt-design"
     },
     {
       "name": "prompt-version",
       "description": "Build prompt versioning systems — storage, A/B testing, regression tracking, rollback.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "prompt"],
       "source": "./team/prompt/skills/prompt-version"
     },
     {
       "name": "prompt-recon",
       "description": "Audit prompt library — duplication, quality, coverage gaps, version drift, eval alignment.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "prompt"],
       "source": "./team/prompt/skills/prompt-recon"
     },
     {
       "name": "embed",
       "description": "AI Operations Team — Embed: Embedding model selection, vector pipeline design, similarity search, and production index management.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/embed"
     },
     {
       "name": "embed-design",
       "description": "Design embedding pipelines — model selection, batching, normalization, index refresh strategy.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "embed"],
       "source": "./team/embed/skills/embed-design"
     },
     {
       "name": "embed-search",
       "description": "Optimize similarity search — ANN index tuning, hybrid search, reranking, query expansion.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "embed"],
       "source": "./team/embed/skills/embed-search"
     },
     {
       "name": "embed-recon",
       "description": "Audit embedding infrastructure — model drift, index freshness, query latency, coverage gaps.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "embed"],
       "source": "./team/embed/skills/embed-recon"
     },
     {
       "name": "rank",
       "description": "AI Operations Team — Rank: Retrieval reranking, relevance scoring, learning-to-rank pipelines, and result quality evaluation for search and RAG.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/rank"
     },
     {
       "name": "rank-design",
       "description": "Design ranking pipelines — reranker selection, score fusion, cross-encoder patterns, latency trade-offs.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "rank"],
       "source": "./team/rank/skills/rank-design"
     },
     {
       "name": "rank-eval",
       "description": "Build ranking evaluation — NDCG/MRR measurement, human relevance labeling, offline eval harness.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "rank"],
       "source": "./team/rank/skills/rank-eval"
     },
     {
       "name": "rank-recon",
       "description": "Audit ranking quality — metric trends, failure modes, dataset coverage, reranker performance.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "rank"],
       "source": "./team/rank/skills/rank-recon"
     },
     {
       "name": "eval-harness",
       "description": "Design eval harnesses — task schemas, metrics, dataset versioning, eval-as-code patterns.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "eval"],
       "source": "./team/evals/skills/eval-harness"
     },
     {
       "name": "eval-regress",
       "description": "Build automated regression suites — golden sets, threshold alerting, CI integration for model changes.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["skill", "ai-ops", "eval"],
       "source": "./team/evals/skills/eval-regress"
     },
     {
       "name": "evals",
       "description": "AI Operations Team — Evals: Eval harness design, benchmark suites, automated regression, human eval orchestration.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/evals"
     },
     {
       "name": "buzz-community",
       "description": "Build and manage open source community \u2014 Discord/Slack structure, contributor onboarding, ambassador program, community flywheel design, and GitHub community health. Use when asked to \"build a community\", \"grow our Discord\", \"improve contributor experience\", or \"design a developer ambassador program\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/buzz-community",
       "author": {
         "name": "tonone-ai",
@@ -4489,7 +4489,7 @@
     {
       "name": "buzz-launch",
       "description": "Design and execute a launch plan \u2014 Product Hunt, HN Show HN, newsletter coordination, social posts, and community launch moment. Use when asked to \"launch [feature/product]\", \"plan a launch\", \"help us do a Product Hunt launch\", or \"coordinate the announcement\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/buzz-launch",
       "author": {
         "name": "tonone-ai",
@@ -4502,7 +4502,7 @@
     {
       "name": "buzz-pitch",
       "description": "Write media pitches and press releases \u2014 journalist outreach emails, podcast pitch scripts, newsletter sponsor pitches, and press release copy. Use when asked to \"pitch journalists\", \"write a press release\", \"reach out to podcasts\", or \"get media coverage\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/buzz-pitch",
       "author": {
         "name": "tonone-ai",
@@ -4515,7 +4515,7 @@
     {
       "name": "buzz-recon",
       "description": "PR and community reconnaissance \u2014 audit current press coverage, social presence, community health, and competitor PR. Use when asked to \"audit our PR\", \"what's our community state\", \"how do we compare in press\", or before planning a launch or community initiative.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/buzz-recon",
       "author": {
         "name": "tonone-ai",
@@ -4528,7 +4528,7 @@
     {
       "name": "buzz-social",
       "description": "Social media strategy and post drafting \u2014 HN posts, Twitter/X threads, LinkedIn posts, Reddit comments, and developer community content. Use when asked to \"write a HN post\", \"draft social posts\", \"help us post on Twitter\", or \"create a social launch plan\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/buzz-social",
       "author": {
         "name": "tonone-ai",
@@ -4541,7 +4541,7 @@
     {
       "name": "deal-close",
       "description": "Close a specific deal \u2014 diagnose why a deal is stalling, write a tailored proposal, design the closing sequence, or navigate procurement. Use when a specific deal is stuck, \"how do I close this\", \"write a proposal for this customer\", or \"help me get to yes\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/deal-close",
       "author": {
         "name": "tonone-ai",
@@ -4554,7 +4554,7 @@
     {
       "name": "deal-pipeline",
       "description": "Design or audit B2B sales pipeline \u2014 define stage names, entry/exit criteria, qualification standards, and CRM field requirements. Use when asked to \"design our pipeline\", \"audit our CRM stages\", \"define what qualified means\", or \"build a sales process\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/deal-pipeline",
       "author": {
         "name": "tonone-ai",
@@ -4567,7 +4567,7 @@
     {
       "name": "deal-playbook",
       "description": "Write sales playbooks \u2014 outbound sequences, discovery call guides, objection handling scripts, and demo frameworks. Use when asked to \"write a sales playbook\", \"build an outbound sequence\", \"help me handle objections\", or \"design a discovery call\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/deal-playbook",
       "author": {
         "name": "tonone-ai",
@@ -4580,7 +4580,7 @@
     {
       "name": "deal-pricing",
       "description": "Design pricing strategy and packaging \u2014 tiers, value metrics, enterprise pricing, freemium design, and pricing page copy. Use when asked to \"design our pricing\", \"should we change our price\", \"how do we package the product\", or \"what should we charge enterprise\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/deal-pricing",
       "author": {
         "name": "tonone-ai",
@@ -4593,7 +4593,7 @@
     {
       "name": "deal-recon",
       "description": "Revenue reconnaissance \u2014 audit current sales pipeline, deal patterns, ICP definition, and revenue motion to understand what's working and where the constraint is. Use when asked to \"audit our sales\", \"where is revenue stuck\", \"what's our pipeline state\", \"before designing a playbook\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/deal-recon",
       "author": {
         "name": "tonone-ai",
@@ -4606,7 +4606,7 @@
     {
       "name": "ink-calendar",
       "description": "Build a content calendar \u2014 editorial plan, publishing cadence, topic assignment, and distribution workflow. Use when asked to \"build a content calendar\", \"plan our content for the quarter\", \"how often should we publish\", or \"create an editorial schedule\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/ink-calendar",
       "author": {
         "name": "tonone-ai",
@@ -4619,7 +4619,7 @@
     {
       "name": "ink-case",
       "description": "Write customer case studies and success stories \u2014 interview guide, story structure, and publish-ready case study with metrics. Use when asked to \"write a case study\", \"document a customer success story\", \"create social proof content\", or \"write about how [customer] uses the product\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/ink-case",
       "author": {
         "name": "tonone-ai",
@@ -4632,7 +4632,7 @@
     {
       "name": "ink-post",
       "description": "Write a blog post or article \u2014 research the keyword, draft the post, and produce publish-ready content with SEO optimization. Use when asked to \"write a blog post\", \"write about [topic]\", \"draft an article\", or \"write a tutorial\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/ink-post",
       "author": {
         "name": "tonone-ai",
@@ -4645,7 +4645,7 @@
     {
       "name": "ink-recon",
       "description": "Content marketing reconnaissance \u2014 audit current content, SEO health, competitor content gaps, and content distribution. Use when asked to \"audit our content\", \"what's our SEO state\", \"where are the content gaps\", or before designing a content strategy.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/ink-recon",
       "author": {
         "name": "tonone-ai",
@@ -4658,7 +4658,7 @@
     {
       "name": "ink-seo",
       "description": "SEO strategy and keyword research \u2014 build topic clusters, keyword gap analysis, on-page audit, and prioritized SEO roadmap. Use when asked to \"improve our SEO\", \"do keyword research\", \"build a topic cluster\", or \"why aren't we ranking\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/ink-seo",
       "author": {
         "name": "tonone-ai",
@@ -4671,7 +4671,7 @@
     {
       "name": "keep-expand",
       "description": "Design expansion revenue playbooks \u2014 upsell triggers, seat expansion sequences, tier upgrade paths, and cross-sell motions. Use when asked to \"grow existing customers\", \"increase NRR\", \"design upsell\", or \"how do we get customers to expand\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/keep-expand",
       "author": {
         "name": "tonone-ai",
@@ -4684,7 +4684,7 @@
     {
       "name": "keep-health",
       "description": "Design a customer health scoring model \u2014 define signals, weights, thresholds, and action triggers. Use when asked to \"build health scoring\", \"how do we predict churn\", \"what signals indicate a customer is at risk\", or \"design our health model\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/keep-health",
       "author": {
         "name": "tonone-ai",
@@ -4697,7 +4697,7 @@
     {
       "name": "keep-onboard",
       "description": "Optimize customer onboarding \u2014 map the activation sequence, identify drop-off points, design the aha moment, and produce the onboarding email sequence. Use when asked to \"fix onboarding\", \"improve activation\", \"time-to-value is too slow\", or \"customers aren't getting started\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/keep-onboard",
       "author": {
         "name": "tonone-ai",
@@ -4710,7 +4710,7 @@
     {
       "name": "keep-playbook",
       "description": "Write churn prevention and win-back playbooks \u2014 risk intervention sequences, save conversation guides, and win-back email campaigns. Use when asked to \"prevent churn\", \"save at-risk customers\", \"win back churned customers\", or \"build a save play\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/keep-playbook",
       "author": {
         "name": "tonone-ai",
@@ -4723,7 +4723,7 @@
     {
       "name": "keep-recon",
       "description": "Customer success reconnaissance \u2014 audit current onboarding completion, health signals, NRR, churn patterns, and CS motion. Use when asked to \"audit our customer success\", \"why are customers churning\", \"what's our NRR\", or before designing any CS playbook.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/keep-recon",
       "author": {
         "name": "tonone-ai",
@@ -4736,7 +4736,7 @@
     {
       "name": "pave-contribute",
       "description": "Contribute a session learning back to the upstream tonone repo. Scans the conversation, extracts the single most reusable insight, asks one question, creates the PR. Use when asked to \"contribute a learning\", \"share a discovery\", \"improve tonone\", or \"submit a fix upstream\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/pave-contribute",
       "author": {
         "name": "tonone-ai",
@@ -4749,7 +4749,7 @@
     {
       "name": "warden-scan",
       "description": "Automated SAST + dependency vulnerability scan. Runs Semgrep (code vulnerabilities) and pip-audit (CVE-matched dependencies) and writes a structured JSON report. Use when asked to \"scan for vulnerabilities\", \"run a security scan\", \"check for CVEs\", or \"audit dependencies\".",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/warden-scan",
       "author": {
         "name": "tonone-ai",
@@ -4762,7 +4762,7 @@
     {
       "name": "apex-profile",
       "description": "Scope the tonone agent roster for this project \u2014 install a curated subset of agents instead of the full 100-agent bundle. Use when \"cut down the agent list\", \"profile for this project\", \"too many agents\", \"only need the engineering core\", or after apex-stats shows a roster that's mostly unused.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/apex-profile",
       "author": {
         "name": "tonone-ai",
@@ -4775,7 +4775,7 @@
     {
       "name": "apex-route",
       "description": "Reach ANY tonone specialist on demand, even ones not installed in this session's roster \u2014 no restart needed. Use when asked \"which agent handles this\", \"reach a specialist we didn't install\", \"route this to the right agent\", or whenever a scoped apex-profile roster is missing the right hat for the job.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/apex-route",
       "author": {
         "name": "tonone-ai",
@@ -4788,7 +4788,7 @@
     {
       "name": "apex-stats",
       "description": "Spawn-count analytics for the tonone roster \u2014 which agents this project actually uses, from local session transcripts. Use when \"which agents do we actually use\", \"show tonone stats\", \"prune the roster\", or before running apex-profile.",
-      "version": "1.10.2",
+      "version": "1.10.3",
       "source": "./skills/apex-stats",
       "author": {
         "name": "tonone-ai",

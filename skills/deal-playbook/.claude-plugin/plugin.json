@@ -1,6 +1,6 @@
 {
   "name": "deal-playbook",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "Write sales playbooks \u2014 outbound sequences, discovery call guides, objection handling scripts, and demo frameworks. Use when asked to \"write a sales playbook\", \"build an outbound sequence\", \"help me handle objections\", or \"design a discovery call\".",
   "author": {
     "name": "tonone-ai",
