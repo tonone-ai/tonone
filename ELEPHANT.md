@@ -254,3 +254,5 @@
 2026-07-26 19:44 : chore: engrave session memory — @fatih
 2026-07-26 23:46 : v1.10.2 feat: marketplace metadata backfill across all skills (#114) — @fatih
 2026-07-27 09:03 : elephant takeover rerun — appended 57 git-history entries (2026-04-28→2026-07-26), skipped 3 bump-only commits, 0 [!!] — @fatih
+2026-07-27 09:15 : readme updated — mode: full regenerate (31→100 agents, 214→421 skills, 3→10 teams) — @fatih
+[!!] 2026-07-27 09:30 : release 1.10.3 — 0 features, 1 fix, 1 changed (README stale regen + skill.md doc bug) — @fatih

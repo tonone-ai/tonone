@@ -1,6 +1,6 @@
 {
   "name": "apex-stats",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "Spawn-count analytics for the tonone roster \u2014 which agents this project actually uses, from local session transcripts. Use when \"which agents do we actually use\", \"show tonone stats\", \"prune the roster\", or before running apex-profile.",
   "author": {
     "name": "tonone-ai",

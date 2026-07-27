@@ -1,6 +1,6 @@
 {
   "name": "vigil",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "Observability and reliability engineer \u2014 SLOs, alerting, instrumentation, and incident response.",
   "author": {
     "name": "tonone-ai",

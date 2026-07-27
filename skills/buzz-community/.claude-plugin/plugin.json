@@ -1,6 +1,6 @@
 {
   "name": "buzz-community",
-  "version": "1.10.2",
+  "version": "1.10.3",
   "description": "Build and manage open source community \u2014 Discord/Slack structure, contributor onboarding, ambassador program, community flywheel design, and GitHub community health. Use when asked to \"build a community\", \"grow our Discord\", \"improve contributor experience\", or \"design a developer ambassador program\".",
   "author": {
     "name": "tonone-ai",
