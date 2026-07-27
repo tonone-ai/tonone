@@ -196,3 +196,61 @@
 2026-07-26 19:43 : retro(7d) rerun: 9 commits (was 8, +1 memory chore since), same 2 contributors/4 PRs/0% test ratio/v1.10.1/2d streak — snapshot at .context/retros/2026-07-26-2.json — @fatih
 2026-07-26 22:40 : chore: ignore .context/ and fix stale README version badge — @fatih
 2026-07-26 22:41 : feat: add gen-skill-metadata.py — marketplace tags/compatibility generator — @fatih
+2026-04-28 14:03 : chore: elephant memory seeded + bump all plugin manifests — @fatih
+2026-04-28 15:11 : fix(relay-ship): enrich PR footer with Tonone attribution block — @fatih
+2026-04-28 15:15 : chore: commit stale local changes — hook reformats, new form/draft skills, docs, tests — @fatih
+2026-04-28 22:05 : chore: engrave session memory — @fatih
+2026-04-29 15:03 : chore: engrave session memory — @fatih
+2026-04-29 15:38 : docs: elephant takeover, readme v0.9.7, changelog [Unreleased], gitignore .claude (#73) — @fatih
+2026-04-30 20:16 : chore: engrave session memory — @fatih
+2026-05-05 21:24 : chore: engrave session memory — @fatih
+2026-05-05 22:03 : v0.9.8 feat(warden): real tool integration — Semgrep SAST + pip-audit CVE scanning (#74) — @fatih
+2026-05-05 22:08 : feat: add /contribute skill for community-driven improvements (#75) — @fatih
+2026-05-05 22:16 : add form-brief, upgrade form-critique+draft-wireframe from open-design (#77) — @fatih
+2026-05-05 22:17 : feat(forge): add infracost + AWS Cost Explorer scanning infrastructure (#78) — @fatih
+2026-05-05 22:23 : v0.9.9 feat: add 4 revenue and marketing agents (Deal, Keep, Ink, Buzz) (#79) — @fatih
+2026-05-05 22:27 : chore: engrave session memory — @fatih
+2026-05-05 22:30 : fix(ci): wire up missing tests, activate agent matrix, fix no-op test (#76) — @fatih
+2026-05-05 22:41 : chore: sync all versions to 0.9.9, add CI version gate, fix 13 test failures (#81) — @fatih
+2026-05-05 22:44 : ci: add version consistency check job (#83) — @fatih
+2026-05-05 22:47 : feat(cortex): add LLM usage scanner + prompt evaluator (#80) — @fatih
+2026-05-05 22:47 : feat(spine): add N+1 detector + HTTP endpoint profiler (#82) — @fatih
+2026-05-05 23:45 : feat(apex): add health aggregator + dependency graph depth layer (#84) — @fatih
+2026-05-06 08:26 : v1.0.0 chore: sync accumulated drift, add real-tool depth layers, release 1.0.0 (#85) — @fatih
+2026-05-06 08:35 : feat(bundle): add revenue-team and marketing-team bundles (#86) — @fatih
+2026-05-06 08:37 : chore: engrave session memory — @fatih
+2026-05-06 22:24 : chore: engrave session memory — @fatih
+2026-05-06 22:53 : chore: engrave session memory — @fatih
+2026-05-06 23:13 : v1.1.0 feat(rev-mktg): extend revenue and marketing teams to production parity (#87) — @fatih
+2026-05-07 21:11 : chore: engrave session memory — @fatih
+2026-05-08 00:35 : feat(ops-team): add Operations Team — Mint, Folk, Keel, Brace (31 agents, v1.2.0) (#88) — @fatih
+2026-05-08 00:35 : chore: engrave session memory — @fatih
+2026-05-08 00:55 : docs(sitemap): add Operations Team — Mint, Folk, Keel, Brace (#90) — @fatih
+2026-05-08 01:06 : docs(readme): update to v1.2.0 — 31 agents, 214 skills, Operations team (#92) — @fatih
+2026-05-08 23:52 : chore: engrave session memory — @fatih
+2026-05-09 00:35 : chore: engrave session memory — @fatih
+2026-05-09 00:42 : chore(ops-team): markdown formatting polish + trunk dep bumps (v1.2.1) (#93) — @fatih
+2026-05-09 01:05 : feat(legal-team): Wave 1 Legal Team — 10 agents, 30 skills (#94) — @fatih
+2026-05-09 01:12 : feat(design-team): Wave 2 Design Team — 10 agents, 30 skills, v1.3.0 (#95) — @fatih
+2026-05-09 01:17 : feat(data-science-team): Wave 3 Data Science Team — 10 agents, 30 skills, v1.4.0 (#96) — @fatih
+2026-05-09 01:22 : feat(secops-team): Wave 4 Security Operations Team — 10 agents, 30 skills, v1.5.0 (#97) — @fatih
+2026-05-09 01:29 : feat(devx-team): Wave 5 Developer Experience Team — 10 agents, 30 skills, v1.6.0 (#98) — @fatih
+2026-05-09 01:35 : feat(infra-specialist-team): Wave 6 Infrastructure Specialist Team — 10 agents, 30 skills, v1.7.0 (#99) — @fatih
+2026-05-09 01:43 : feat(ai-ops-team): Wave 7 AI Operations Team — 9 agents, 27 skills, v1.8.0 — 100 agents total (#100) — @fatih
+2026-05-12 15:40 : fixing-versions (#102) — @fatih
+2026-06-16 18:30 : chore: engrave session memory — @fatih
+2026-06-16 18:55 : refactor: remove worktree gate (#104) — @fatih
+2026-06-16 19:01 : chore: engrave session memory — @fatih
+2026-06-17 10:02 : fix(marketplace): rename path→source for 77 entries so CC resolves plugin dirs (#106) — @fatih
+2026-07-25 17:37 : chore: engrave session memory — @fatih
+2026-07-25 19:11 : feat(apex): roster scoping, spawn analytics, lazy specialist routing (#112) — @fatih
+2026-07-25 19:18 : chore: engrave session memory — @fatih
+2026-07-25 19:19 : chore: engrave session memory — @fatih
+2026-07-25 19:24 : docs: add source evidence guard to buzz social (#109) — @burakbayir1
+2026-07-25 19:35 : improve buzz-social source context and Bluesky guidance (#111) — @burakbayir1
+2026-07-26 11:59 : chore: engrave session memory — @fatih
+2026-07-26 18:13 : fix: AI Ops skill content, evals naming collision, skill.md case bugs (#113) — @fatih
+2026-07-26 18:52 : chore: engrave session memory — @fatih
+2026-07-26 19:44 : chore: engrave session memory — @fatih
+2026-07-26 23:46 : v1.10.2 feat: marketplace metadata backfill across all skills (#114) — @fatih
+2026-07-27 09:03 : elephant takeover rerun — appended 57 git-history entries (2026-04-28→2026-07-26), skipped 3 bump-only commits, 0 [!!] — @fatih
