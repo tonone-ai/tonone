@@ -1,6 +1,6 @@
 {
   "name": "keep-playbook",
-  "version": "1.10.3",
+  "version": "1.11.0",
   "description": "Write churn prevention and win-back playbooks \u2014 risk intervention sequences, save conversation guides, and win-back email campaigns. Use when asked to \"prevent churn\", \"save at-risk customers\", \"win back churned customers\", or \"build a save play\".",
   "author": {
     "name": "tonone-ai",

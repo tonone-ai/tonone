@@ -259,3 +259,4 @@
 2026-07-29 15:27 : apex-plan XS-XXL depth tiers added (was S/M/L only), same tiers ported to helm-plan as new Step 0 — @fatih
 2026-07-29 15:27 : decided: other 8 teams (Ops/Legal/Design/DS/SecOps/DevEx/Infra/AIOps) have no lead agent — depth-scoping stays Apex+Helm only, user picked "skip for now" — @fatih
 2026-07-29 15:27 : confirmed: bundle/\*/skills/apex-plan and helm-plan are symlinks to root skills/ — only 2 real files per skill (team/ canonical + skills/ mirror), no separate bundle copy to sync — @fatih
+[!!] 2026-07-29 15:31 : release 1.11.0 — 2 features, 0 fixes, 1 changed (apex-plan+helm-plan XS-XXL depth tiers) — @fatih

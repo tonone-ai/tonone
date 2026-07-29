@@ -1,6 +1,6 @@
 {
   "name": "deal-recon",
-  "version": "1.10.3",
+  "version": "1.11.0",
   "description": "Revenue reconnaissance \u2014 audit current sales pipeline, deal patterns, ICP definition, and revenue motion to understand what's working and where the constraint is. Use when asked to \"audit our sales\", \"where is revenue stuck\", \"what's our pipeline state\", \"before designing a playbook\".",
   "author": {
     "name": "tonone-ai",
