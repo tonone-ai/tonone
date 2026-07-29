@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.11.0] - 2026-07-29
+
+### Added
+
+- **XS/XL/XXL depth tiers for `apex-plan`** — the S/M/L scoping menu is now six tiers (XS through XXL), from a single-specialist no-review spike up to full-team parallel dispatch with an adversarial review pass for major builds/migrations.
+- **Depth-tier selection for `helm-plan`** — new Step 0 mirrors the same XS-XXL tiers on the product side (Helm alone at XS/S, up to the full Product team in parallel at XXL), so product scoping asks "how deep" the same way engineering scoping does.
+
+### Changed
+
+- Reviewed the other 8 teams (Operations, Legal, Design, Data Science, Security Operations, Developer Experience, Infrastructure Specialist, AI Operations) for an equivalent lead/orchestrator role — none exists today (flat peer rosters, no designated lead), so depth-tier scoping stays Apex + Helm only for now.
+
 ## [1.10.3] - 2026-07-27
 
 ### Changed

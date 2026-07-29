@@ -1,6 +1,6 @@
 {
   "name": "deal-pipeline",
-  "version": "1.10.3",
+  "version": "1.11.0",
   "description": "Design or audit B2B sales pipeline \u2014 define stage names, entry/exit criteria, qualification standards, and CRM field requirements. Use when asked to \"design our pipeline\", \"audit our CRM stages\", \"define what qualified means\", or \"build a sales process\".",
   "author": {
     "name": "tonone-ai",

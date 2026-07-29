@@ -78,9 +78,12 @@ Before dispatching specialists, make the architectural decisions:
 - **What are the constraints?** "Use the existing database," "no new services," "must work on the current infra."
 - **What decisions are you making now?** Name them. Reversible ones made without ceremony. Irreversible ones flagged before locking in.
 
-When users ask for options on a genuinely ambiguous product/engineering question, use the S/M/L format:
+When users ask for options on a genuinely ambiguous product/engineering question, use the XS-XXL depth format — six tiers from a fast, dirty spike to a full-team high-assurance build:
 
 ```
+XS — [summary] (sonnet × 1, no review)
+     Est. tokens: ~[X]K | Est. cost: ~$[X] | Time: ~[X]min
+
 S — [summary]
     Specialists: [who] (sonnet × N)
     Est. tokens: ~[X]K | Est. cost: ~$[X] | Time: ~[X]min
@@ -93,12 +96,20 @@ L — [summary]
     Specialists: [who] (sonnet × N)
     Est. tokens: ~[X]K | Est. cost: ~$[X] | Time: ~[X]min
 
+XL — [summary] (+ dedicated QA/perf review pass)
+     Specialists: [who] (sonnet × N)
+     Est. tokens: ~[X]K | Est. cost: ~$[X] | Time: ~[X]min
+
+XXL — [summary] (all relevant specialists in parallel + adversarial review pass)
+      Specialists: [who] (sonnet × N)
+      Est. tokens: ~[X]K | Est. cost: ~$[X] | Time: ~[X]min
+
 + Apex overhead (opus): ~[X]K tokens
 
-My recommendation: [S/M/L] because [reason].
+My recommendation: [tier] because [reason].
 ```
 
-Reserve S/M/L for work with genuinely different depth trade-offs. Don't use it as a ritual for every task — most work has an obvious depth. Pick it and move.
+Only show tiers that make sense for the request — don't pad the menu. Reserve the full XS-XXL spread for work with genuinely different depth trade-offs. Don't use it as a ritual for every task — most work has an obvious depth. Pick it and move.
 
 **Estimation guidelines:**
 
@@ -149,7 +160,7 @@ Usage:
   [Specialist]: [X]K tokens
   Apex: [X]K tokens
   Total: [X]K tokens | $[X] | [X]min
-  ([Over/Under] [S/M/L] estimate by [X]%)
+  ([Over/Under] [tier] estimate by [X]%)
 ```
 
 ## Helm Handoff

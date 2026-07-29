@@ -48,7 +48,7 @@ Codex reads `AGENTS.md` automatically. Invoke agents and skills by describing wh
 
 ```text
 > Read agents/forge.md and act as Forge — audit this infrastructure
-> Read agents/apex.md — plan this project with S/M/L options
+> Read agents/apex.md — plan this project with XS-XXL depth options
 > Follow the workflow in skills/warden-audit/SKILL.md
 ```
 
