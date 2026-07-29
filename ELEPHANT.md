@@ -256,3 +256,6 @@
 2026-07-27 09:03 : elephant takeover rerun — appended 57 git-history entries (2026-04-28→2026-07-26), skipped 3 bump-only commits, 0 [!!] — @fatih
 2026-07-27 09:15 : readme updated — mode: full regenerate (31→100 agents, 214→421 skills, 3→10 teams) — @fatih
 [!!] 2026-07-27 09:30 : release 1.10.3 — 0 features, 1 fix, 1 changed (README stale regen + skill.md doc bug) — @fatih
+2026-07-29 15:27 : apex-plan XS-XXL depth tiers added (was S/M/L only), same tiers ported to helm-plan as new Step 0 — @fatih
+2026-07-29 15:27 : decided: other 8 teams (Ops/Legal/Design/DS/SecOps/DevEx/Infra/AIOps) have no lead agent — depth-scoping stays Apex+Helm only, user picked "skip for now" — @fatih
+2026-07-29 15:27 : confirmed: bundle/\*/skills/apex-plan and helm-plan are symlinks to root skills/ — only 2 real files per skill (team/ canonical + skills/ mirror), no separate bundle copy to sync — @fatih
