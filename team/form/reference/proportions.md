@@ -42,16 +42,17 @@ A type scale built on the 3:4 ratio (perfect fourth), rounded to whole pixels:
 Each step is approximately 1.333× the previous. This scale provides enough steps for complex interfaces while maintaining clear contrast between non-adjacent steps.
 
 Usage mapping:
-| Size | Role |
-|------|------|
-| 67px | Display / hero heading |
-| 50px | Page title |
-| 37px | Section heading |
-| 28px | Subsection heading |
-| 21px | Large body / lead paragraph |
-| 16px | Body text (base) |
-| 12px | Small text / captions |
-| 9px | Micro text / legal (minimum for readability) |
+
+| Size | Role                                         |
+| ---- | -------------------------------------------- |
+| 67px | Display / hero heading                       |
+| 50px | Page title                                   |
+| 37px | Section heading                              |
+| 28px | Subsection heading                           |
+| 21px | Large body / lead paragraph                  |
+| 16px | Body text (base)                             |
+| 12px | Small text / captions                        |
+| 9px  | Micro text / legal (minimum for readability) |
 
 Never use adjacent steps for different hierarchy levels — the contrast is too weak. Skip at least one step: body at 16px pairs with headings at 28px or 37px, not 21px.
 
