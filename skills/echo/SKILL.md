@@ -1,6 +1,6 @@
 ---
 name: echo
-description: User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis.
+description: User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis. Use when asked to "run user interviews", "build personas", "synthesize feedback", or "find the job-to-be-done".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

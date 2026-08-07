@@ -1,6 +1,6 @@
 ---
 name: draft
-description: UX designer — user flows, information architecture, wireframes, and interaction design.
+description: UX designer — user flows, information architecture, wireframes, and interaction design. Use when asked to "design a user flow", "map the IA", "wireframe this screen", or "review UX before shipping".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

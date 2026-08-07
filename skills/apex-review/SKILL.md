@@ -53,12 +53,14 @@ Read the key changed files to understand the shape of the work.
    - Gaps in the request/response flow
    - Configuration that exists in one environment but not others
 
-4. **Present findings prioritized by risk.** For each issue:
-   - What's wrong (one sentence)
+4. **Score each candidate finding before it earns a place in the output.** Rate 0-100: 0-25 likely false positive or pre-existing issue; 26-50 minor nitpick not required by any doc; 51-75 valid but low-impact; 76-90 important; 91-100 critical or an explicit CLAUDE.md/spec violation. Discard anything below 80. Before scoring, run each candidate against this false-positive checklist — if any apply, it's a false positive regardless of how real it looks: pre-existing (not introduced by this change), would be caught by a linter/typechecker/CI, a pedantic nitpick a senior engineer wouldn't raise, not required by any doc in the repo, on a line the user didn't touch, or already explicitly justified/silenced in a comment. For a high-stakes review (blocking a ship decision), dispatch a separate Task agent per surviving finding to independently re-score it — a different, cheaper pass catches self-confirmation bias that scoring your own find never will.
+
+5. **Present findings prioritized by risk.** For each surviving issue:
+   - What's wrong (one sentence) with confidence score
    - Which specialist should fix it
    - Estimated effort (quick fix / medium / significant)
    - Risk level (critical / moderate / minor)
 
-5. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
+6. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
 
-6. **Delivery:** If findings exceed the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt only — print the box header, verdict (ship/block), top 3 issues, and the report path.
+7. **Delivery:** If findings exceed the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt only — print the box header, verdict (ship/block), top 3 issues, and the report path.

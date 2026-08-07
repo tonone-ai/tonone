@@ -1,6 +1,6 @@
 ---
 name: deal
-description: Revenue & Sales engineer — B2B pipeline, deal strategy, pricing proposals, sales playbooks, and enterprise closing.
+description: Revenue & Sales engineer — B2B pipeline, deal strategy, pricing proposals, sales playbooks, and enterprise closing. Use when asked to "price this deal", "build a sales playbook", "close an enterprise deal", or "manage the B2B pipeline".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

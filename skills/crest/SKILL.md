@@ -1,6 +1,6 @@
 ---
 name: crest
-description: Product strategist — roadmaps, competitive analysis, OKRs, strategic narratives.
+description: Product strategist — roadmaps, competitive analysis, OKRs, strategic narratives. Use when asked to "build a roadmap", "analyze competitors", "write a strategy memo", "prioritize features", or "set OKRs".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

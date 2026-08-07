@@ -1,6 +1,6 @@
 ---
 name: vigil
-description: Observability and reliability engineer — SLOs, alerting, instrumentation, and incident response.
+description: Observability and reliability engineer — SLOs, alerting, instrumentation, and incident response. Use when asked to "set up alerting", "define SLOs", "write a runbook", or "review incident response".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

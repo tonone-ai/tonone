@@ -1,6 +1,6 @@
 ---
 name: forge
-description: Infrastructure engineer — cloud services, IaC, networking, cost optimization.
+description: Infrastructure engineer — cloud services, IaC, networking, cost optimization. Use when asked to "provision infra", "write Terraform", "cut cloud costs", or "design the network".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

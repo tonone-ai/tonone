@@ -1,6 +1,6 @@
 ---
 name: flux
-description: Data engineer — databases, migrations, pipelines, schema design, and query optimization.
+description: Data engineer — databases, migrations, pipelines, schema design, and query optimization. Use when asked to "design a schema", "write a migration", "build a data pipeline", or "optimize this query".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

@@ -1,6 +1,6 @@
 ---
 name: form
-description: Visual designer — brand identity, color systems, typography, design tokens, and UI design.
+description: Visual designer — brand identity, color systems, typography, design tokens, and UI design. Use when asked to "design our brand", "pick colors and fonts", "build a design system", or "design a logo".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

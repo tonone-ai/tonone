@@ -1,6 +1,6 @@
 ---
 name: surge
-description: Growth engineer — acquisition channels, activation funnels, retention playbooks, and PLG strategy.
+description: Growth engineer — acquisition channels, activation funnels, retention playbooks, and PLG strategy. Use when asked to "design an activation funnel", "plan a growth experiment", "build a PLG loop", or "improve retention".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

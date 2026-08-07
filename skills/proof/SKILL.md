@@ -1,6 +1,6 @@
 ---
 name: proof
-description: QA and testing engineer — test strategy, E2E suites, API tests, flaky test triage, coverage.
+description: QA and testing engineer — test strategy, E2E suites, API tests, flaky test triage, coverage. Use when asked to "write E2E tests", "design a test strategy", "triage flaky tests", or "check test coverage".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

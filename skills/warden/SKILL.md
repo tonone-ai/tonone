@@ -1,6 +1,6 @@
 ---
 name: warden
-description: Security engineer — IAM, secrets, threat modeling, hardening, auth, and supply chain security.
+description: Security engineer — IAM, secrets, threat modeling, hardening, auth, and supply chain security. Use when asked to "review IAM", "harden this system", "manage secrets", or "audit supply chain security".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

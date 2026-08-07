@@ -1,6 +1,6 @@
 ---
 name: pitch
-description: Product marketer — positioning, messaging, value prop, GTM strategy, and launch copy.
+description: Product marketer — positioning, messaging, value prop, GTM strategy, and launch copy. Use when asked to "write launch copy", "position this product", "build a GTM plan", or "write messaging".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

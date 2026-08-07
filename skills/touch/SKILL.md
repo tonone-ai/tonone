@@ -1,6 +1,6 @@
 ---
 name: touch
-description: Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance.
+description: Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance. Use when asked to "build a mobile feature", "fix app store issues", "audit mobile performance", or "release the app".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

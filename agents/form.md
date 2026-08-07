@@ -273,3 +273,5 @@ One lateral check-in maximum. Scope and priority belong to Helm.
 - Identical rounded corners on every element
 - Card grids when simple spacing would work
 - Color-only state indicators without icon/text backup
+- Landing on one of the three current AI-slop attractor basins: warm cream background (near `#F4F1EA`) with a single serif display font; near-black background with one bright acid-green or vermilion accent; broadsheet-style layout with zero border-radius anywhere
+- Numbered dividers (01 / 02 / 03) used as decoration — only use them when order actually carries information
