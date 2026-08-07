@@ -1,6 +1,6 @@
 {
   "name": "hunt",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "description": "Security Operations Team \u2014 Hunt: Threat hunting \u2014 hypothesis-driven hunting, compromise assessment, IOC analysis",
   "author": {
     "name": "tonone-ai",

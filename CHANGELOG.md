@@ -4,6 +4,35 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.13.0] - 2026-08-07
+
+### Removed
+
+- **371 per-skill entries dropped from `.claude-plugin/marketplace.json`** — the registry is now 111 entries (root bundle + 10 team bundles + 100 agents) instead of 482. Skills were never installable in a useful way: they shipped inside their agent's plugin and, since 1.12.0, inside the root bundle as well, so every per-skill entry only added noise to the install pick list. The entries had also drifted into two source roots for no functional reason — 165 pointed at `./skills/<name>`, 206 at `./team/<agent>/skills/<name>`, depending on when they were added.
+- **192 generated `skills/*/.claude-plugin/plugin.json` files** — dead weight once nothing in the registry pointed at them. Root skill directories now hold `SKILL.md` and reference files only, which removes the 192-of-449 asymmetry that made the mirror's state hard to reason about.
+- **`scripts/gen-skill-plugins.py`** — its whole job was minting the per-skill plugins and registry entries this release removes. Left in place it would silently recreate them on the next run.
+
+### Fixed
+
+- **`bump-version.py` reflowed every agent manifest it touched** — `update_plugin_json` did a `json.load`/`json.dumps` round-trip, so bumping the version rewrote the inline `keywords` array to one entry per line in all 100 `team/<agent>/.claude-plugin/plugin.json` files. That shape is also not what prettier emits, so the pre-commit formatter reverted it on whichever copy happened to be staged — the same staged-file-only mechanism that desyncs the root/team skill mirrors. Now uses the surgical text substitution `update_marketplace_json` already used, and a bump is a one-line diff per file.
+
+### Changed
+
+- `docs/architecture.md` — documents the 111-entry registry shape and states that skills are not installable at skill granularity. Also corrects the install-flow example, which still said 23 agents and used the pre-rename `forge-infra` plugin name.
+- `docs/skill-guide.md` and `scripts/sync-skills.py` — dropped the guidance about root skill dirs carrying a generated `plugin.json`; a skill directory is now `SKILL.md` plus reference files, nothing else.
+
+## [1.12.0] - 2026-08-07
+
+### Fixed
+
+- **Bundle plugin shipped 192 of 421 skills** — `claude plugin install tonone@tonone-ai` installed all 100 agents but carried skills for only 27 of them, because the bundle discovers skills from root `skills/` and only from there. Root mirror is now 449 dirs (421 mirrored + 28 root-only hub skills).
+- **7 teams had never been compliance-checked** — `tests/test_skill_compliance.py` reads root `skills/`, so the 257 unmirrored skills escaped every contract test. Syncing them surfaced 233 skills missing the `atlas-report` overflow clause and 209 descriptions with fewer than 2 quoted trigger phrases, both fixed at the `team/` source.
+
+### Added
+
+- `scripts/sync-skills.py` (with `--check`) — mirrors `SKILL.md` only, hard errors on duplicate skill names or lowercase `skill.md`.
+- `tests/test_structure.py::test_root_skills_mirror_is_complete` — fails the build if the mirror regresses.
+
 ## [1.11.1] - 2026-08-07
 
 ### Added

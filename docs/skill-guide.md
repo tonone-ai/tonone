@@ -26,7 +26,9 @@ python scripts/sync-skills.py --check  # verify only; exits 1 if stale
 
 Both must stay in sync. The root mirror is not a convenience copy — the bundle plugin (`tonone`, source `./`) discovers its skills from root `skills/` and only from there, so a skill left unmirrored ships to nobody who installs the bundle. `tests/test_structure.py` enforces this in both directions: `test_root_skills_mirror_is_complete` (nothing missing) and `test_root_skills_match_team_skills` (no content drift).
 
-Do not hand-copy. Root `skills/<skill>/` may also hold a generated `.claude-plugin/plugin.json` (see `scripts/gen-skill-plugins.py`) with no `team/` counterpart; the sync script syncs `SKILL.md` only and never deletes.
+Do not hand-copy. The sync script syncs `SKILL.md` only and never deletes.
+
+Skills are not individually installable plugins. They ship inside the agent and bundle plugins, so a skill directory holds `SKILL.md` (plus any reference files) and nothing else — no `.claude-plugin/plugin.json`, no `marketplace.json` entry.
 
 ## Format
 

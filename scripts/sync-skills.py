@@ -9,10 +9,10 @@ skills from root skills/ and *only* from there. Any skill missing from the
 mirror is invisible to everyone who installs the bundle, even though the agent
 that owns it installs fine.
 
-Root skills/<skill>/ may also hold a generated .claude-plugin/plugin.json (see
-gen-skill-plugins.py) that turns the directory into a standalone per-skill
-plugin. That file has no counterpart under team/, so this script syncs SKILL.md
-only and never removes anything.
+Skills ship inside the agent and bundle plugins, never as standalone per-skill
+plugins, so a mirrored directory holds SKILL.md and nothing else. This script
+syncs SKILL.md only and never removes anything, so reference files that live
+alongside a skill are left alone.
 
 A handful of root skills are root-only by design — the per-agent hub skills
 (skills/apex, skills/form, ...) and tonone-onboard. They have no team/

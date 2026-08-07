@@ -112,7 +112,7 @@ The marketplace registry (`.claude-plugin/marketplace.json`) lists all installab
       "tags": ["bundle", "full-team"]
     },
     {
-      "name": "forge-infra",
+      "name": "forge",
       "source": "./team/forge",
       "category": "infrastructure",
       "tags": ["infrastructure", "cloud"]
@@ -123,12 +123,16 @@ The marketplace registry (`.claude-plugin/marketplace.json`) lists all installab
 
 The `source` field points to the directory containing the plugin's `.claude-plugin/plugin.json`.
 
+The registry holds 111 entries: the root bundle, 10 team bundles, and 100 agents.
+Skills are not listed individually — they ship inside whichever agent or bundle
+owns them, so there is nothing to install at skill granularity.
+
 ### Install Flow
 
 ```
 /plugin marketplace add tonone-ai/tonone     ← registers the marketplace
-/plugin install tonone@tonone-ai              ← installs root bundle (all 23 agents)
-/plugin install forge-infra@tonone-ai         ← or install one agent
+/plugin install tonone@tonone-ai              ← installs root bundle (all 100 agents)
+/plugin install forge@tonone-ai               ← or install one agent
 ```
 
 ## Agent Model
