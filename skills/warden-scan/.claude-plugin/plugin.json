@@ -1,6 +1,6 @@
 {
   "name": "warden-scan",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "description": "Automated SAST + dependency vulnerability scan. Runs Semgrep (code vulnerabilities) and pip-audit (CVE-matched dependencies) and writes a structured JSON report. Use when asked to \"scan for vulnerabilities\", \"run a security scan\", \"check for CVEs\", or \"audit dependencies\".",
   "author": {
     "name": "tonone-ai",

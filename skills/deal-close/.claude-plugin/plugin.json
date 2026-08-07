@@ -1,6 +1,6 @@
 {
   "name": "deal-close",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "description": "Close a specific deal \u2014 diagnose why a deal is stalling, write a tailored proposal, design the closing sequence, or navigate procurement. Use when a specific deal is stuck, \"how do I close this\", \"write a proposal for this customer\", or \"help me get to yes\".",
   "author": {
     "name": "tonone-ai",
