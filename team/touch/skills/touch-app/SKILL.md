@@ -210,10 +210,11 @@ _(Repeat for each key screen — typically 4–8 screens for an MVP)_
 **Permission request timing:** [After user completes first key action — not on launch]
 
 **Notification types:**
-| Type | Trigger | Deep link target |
-|------|---------|-----------------|
-| [Type 1] | [server event] | `[route]` |
-| [Type 2] | [server event] | `[route]` |
+
+| Type     | Trigger        | Deep link target |
+| -------- | -------------- | ---------------- |
+| [Type 1] | [server event] | `[route]`        |
+| [Type 2] | [server event] | `[route]`        |
 
 **Foreground handling:** [Show in-app banner / silent update / badge only]
 

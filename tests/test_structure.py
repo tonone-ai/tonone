@@ -139,30 +139,66 @@ def test_team_agents_match_agents_directory():
     ), f"In agents/ but missing team/ dir: {sorted(only_in_agents_dir)}"
 
 
+def _team_skills():
+    """Map skill name -> canonical team/<agent>/skills/<name>/SKILL.md.
+
+    Walks the tree instead of deriving the agent from the skill-name prefix:
+    the prefix split is wrong for any skill whose name isn't <agent>-<verb>
+    (tonone-onboard, the per-agent hub skills), which silently skipped those
+    from the comparison.
+    """
+    skills = {}
+    for agent in sorted((REPO / "team").iterdir()):
+        skills_dir = agent / "skills"
+        if not skills_dir.is_dir():
+            continue  # e.g. team/shared holds no skills
+        for d in sorted(skills_dir.iterdir()):
+            if d.is_dir() and (d / "SKILL.md").exists():
+                skills[d.name] = d / "SKILL.md"
+    return skills
+
+
+def test_root_skills_mirror_is_complete():
+    """
+    Every team/<agent>/skills/<name> must have a root skills/<name> mirror.
+
+    The bundle plugin ("tonone", source "./" in marketplace.json) discovers its
+    skills from root skills/ and only from there, so a skill missing from the
+    mirror is invisible to everyone who installs the bundle — the owning agent
+    installs, its skills don't. This is exactly how 257 skills across 73 agents
+    went missing while every per-agent plugin kept working.
+
+    Fix drift with: python scripts/sync-skills.py
+    """
+    missing = sorted(
+        name
+        for name in _team_skills()
+        if not (REPO / "skills" / name / "SKILL.md").exists()
+    )
+    assert not missing, (
+        f"{len(missing)} team skill(s) missing from the root skills/ mirror — "
+        f"they will not ship in the bundle plugin. "
+        f"Run: python scripts/sync-skills.py\n  " + "\n  ".join(missing)
+    )
+
+
 def test_root_skills_match_team_skills():
     """
     Every root skills/<name>/SKILL.md must be identical to its canonical copy in
     team/<agent>/skills/<name>/SKILL.md.  Drift means the root copy is missing
     features that the team copy gained (or vice versa).
     """
-    skills_dir = REPO / "skills"
+    team = _team_skills()
     drifted = []
-    for skill_dir in sorted(skills_dir.iterdir()):
-        if not skill_dir.is_dir():
-            continue
-        root_file = skill_dir / "SKILL.md"
+    for name, team_file in sorted(team.items()):
+        root_file = REPO / "skills" / name / "SKILL.md"
         if not root_file.exists():
-            continue
-        agent = skill_dir.name.split("-")[0]
-        team_file = REPO / "team" / agent / "skills" / skill_dir.name / "SKILL.md"
-        if not team_file.exists():
-            continue  # team-only or root-only mismatches caught elsewhere
+            continue  # completeness is test_root_skills_mirror_is_complete's job
         if root_file.read_text() != team_file.read_text():
-            drifted.append(skill_dir.name)
-    assert (
-        not drifted
-    ), f"{len(drifted)} root skill(s) drifted from team/ canonical copy: " + ", ".join(
-        drifted
+            drifted.append(name)
+    assert not drifted, (
+        f"{len(drifted)} root skill(s) drifted from team/ canonical copy — "
+        f"run: python scripts/sync-skills.py\n  " + "\n  ".join(drifted)
     )
 
 

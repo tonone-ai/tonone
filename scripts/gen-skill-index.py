@@ -74,7 +74,10 @@ def parse():
     entries = []
     no_frontmatter = []
     for skill_md in sorted(found):
-        agent = skill_md.parent.parent.name
+        # team/<agent>/skills/<skill>/SKILL.md — three levels up, not two.
+        # .parent.parent lands on the literal "skills" dir, which made every
+        # row read agent="skills" and (via the lookup below) team="unknown".
+        agent = skill_md.parent.parent.parent.name
         name, desc = parse_frontmatter(skill_md.read_text())
         if not name:
             no_frontmatter.append(skill_md.relative_to(REPO_ROOT))

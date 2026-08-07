@@ -1,6 +1,6 @@
 {
   "name": "resp",
-  "version": "1.11.1",
+  "version": "1.12.0",
   "description": "Security Operations Team \u2014 Resp: Incident response \u2014 playbook design, containment procedures, DFIR, post-incident review",
   "author": {
     "name": "tonone-ai",

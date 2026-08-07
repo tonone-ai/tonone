@@ -1,6 +1,6 @@
 {
   "name": "ai-ops-team",
-  "version": "1.11.1",
+  "version": "1.12.0",
   "description": "AI Operations Team \u2014 9 agents: Deploy, Eval, Trace, Guard, Budget, Token, Prompt, Embed, Rank",
   "author": {
     "name": "tonone-ai",

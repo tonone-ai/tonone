@@ -17,7 +17,16 @@ skills/<skill-name>/SKILL.md          ← root (what users install)
 team/<agent>/skills/<skill-name>/SKILL.md  ← source (where you edit)
 ```
 
-When adding or editing a skill, update the source in `team/<agent>/skills/` and copy to `skills/` at the root. Both must stay in sync.
+When adding or editing a skill, update the source in `team/<agent>/skills/` and run:
+
+```bash
+python scripts/sync-skills.py          # mirror team/ → root skills/
+python scripts/sync-skills.py --check  # verify only; exits 1 if stale
+```
+
+Both must stay in sync. The root mirror is not a convenience copy — the bundle plugin (`tonone`, source `./`) discovers its skills from root `skills/` and only from there, so a skill left unmirrored ships to nobody who installs the bundle. `tests/test_structure.py` enforces this in both directions: `test_root_skills_mirror_is_complete` (nothing missing) and `test_root_skills_match_team_skills` (no content drift).
+
+Do not hand-copy. Root `skills/<skill>/` may also hold a generated `.claude-plugin/plugin.json` (see `scripts/gen-skill-plugins.py`) with no `team/` counterpart; the sync script syncs `SKILL.md` only and never deletes.
 
 ## Format
 
