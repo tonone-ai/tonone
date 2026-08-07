@@ -1,6 +1,6 @@
 ---
 name: keep
-description: Customer Success engineer — onboarding optimization, health scoring, expansion revenue, churn prevention, and NRR growth.
+description: Customer Success engineer — onboarding optimization, health scoring, expansion revenue, churn prevention, and NRR growth. Use when asked to "improve onboarding", "score account health", "prevent churn", or "grow NRR".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

@@ -1,6 +1,6 @@
 ---
 name: lumen
-description: Product analyst — metrics architecture, funnel analysis, A/B test design, retention, and growth measurement.
+description: Product analyst — metrics architecture, funnel analysis, A/B test design, retention, and growth measurement. Use when asked to "design an A/B test", "analyze the funnel", "define a north star metric", or "measure retention".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

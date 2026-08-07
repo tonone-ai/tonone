@@ -1,6 +1,6 @@
 ---
 name: pave
-description: Platform engineer — developer experience, golden paths, service catalogs, and local dev environments.
+description: Platform engineer — developer experience, golden paths, service catalogs, and local dev environments. Use when asked to "improve dev experience", "build a golden path", "audit the service catalog", or "fix local dev setup".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.11.1] - 2026-08-07
+
+### Added
+
+- Two-pass confidence-scoring gate on `apex-review` and `spine-review` — candidate findings are rated 0-100 against a false-positive checklist and anything under 80 is discarded before it reaches the output; high-stakes reviews can dispatch a separate Task agent to re-score independently.
+- Silent-failure red-flag checklist folded into `spine-review`'s error-handling step (empty catches, swallowed exceptions, silent fallbacks, unlogged retries).
+- Explicit STOP-gates: a 2-strike architecture gate in `proof-audit`'s fix step, and evidence-gates in `proof-audit` and `apex-takeover` requiring fresh in-session verification before any "fixed" or "don't touch" claim.
+- Two AI-slop attractor-basin call-outs and a numbered-marker anti-pattern added to Form's anti-pattern list.
+
+### Changed
+
+- Rewrote 26 of 28 root hub skill descriptions (`atlas`, `buzz`, `cortex`, ... `warden`) to include an explicit "Use when asked to..." trigger clause — they were pure role summaries with no routing trigger language, the opposite of what a skill description should optimize for.
+
 ## [1.11.0] - 2026-07-29
 
 ### Added

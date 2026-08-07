@@ -1,6 +1,6 @@
 ---
 name: ink
-description: Content Marketing engineer — blog strategy, SEO, thought leadership, developer content, case studies, and content calendar.
+description: Content Marketing engineer — blog strategy, SEO, thought leadership, developer content, case studies, and content calendar. Use when asked to "write a blog post", "plan our SEO", "build a content calendar", or "write a case study".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

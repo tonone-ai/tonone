@@ -1,6 +1,6 @@
 ---
 name: prism
-description: Frontend engineer — UI components, dashboards, design system implementation, and frontend audits.
+description: Frontend engineer — UI components, dashboards, design system implementation, and frontend audits. Use when asked to "build this UI component", "audit the frontend", "implement the design system", or "build a dashboard".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

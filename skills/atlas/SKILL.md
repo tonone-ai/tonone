@@ -1,6 +1,6 @@
 ---
 name: atlas
-description: Knowledge engineer — architecture docs, ADRs, diagrams, changelogs, onboarding, and reports.
+description: Knowledge engineer — architecture docs, ADRs, diagrams, changelogs, onboarding, and reports. Use when asked to "write an ADR", "map the architecture", "document this decision", "onboarding docs", or "what changed".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

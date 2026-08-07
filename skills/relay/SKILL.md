@@ -1,6 +1,6 @@
 ---
 name: relay
-description: DevOps engineer — CI/CD pipelines, deployments, GitOps, Docker, and developer experience.
+description: DevOps engineer — CI/CD pipelines, deployments, GitOps, Docker, and developer experience. Use when asked to "set up CI/CD", "fix the deploy pipeline", "containerize this", or "improve GitOps".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.9.1
 author: tonone-ai <hello@tonone.ai>

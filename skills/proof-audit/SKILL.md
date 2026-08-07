@@ -77,7 +77,11 @@ For each issue:
 - If requires discussion: explain options with trade-offs
 - If systemic: recommend architectural changes to the test setup
 
+**STOP-gate:** if the same fix approach fails twice on tests in the same category, do not try a third variation. That is not a failed hypothesis, it's a wrong architecture — stop and reclassify the issue as systemic instead of attempting a third fix.
+
 ### Step 4: Deliver Report
+
+**Evidence gate:** no fix counts as done and no health score updates until the affected test command has been re-run in this session and its fresh output confirms the fix. A test claimed fixed without a fresh rerun is not fixed.
 
 Output a test health report:
 

@@ -75,6 +75,17 @@ Verify:
 - Unhandled exceptions are caught by global error middleware
 - Errors are logged with request ID and context
 
+Silent-failure red flags — any of these is a finding on its own:
+
+- Empty catch blocks, or catch blocks that only log and continue
+- Returning null/undefined/a default value on error without logging it
+- Optional chaining (`?.`) silently skipping an operation that can fail
+- Fallback chains that try multiple approaches without explaining why the first failed
+- Retry logic that exhausts attempts without surfacing that to the caller
+- Catch blocks broad enough to swallow unrelated error types
+- Fallback to a mock/stub implementation outside test code
+- Errors caught at a layer that skips required cleanup or resource release
+
 ### Step 6: Check Pagination, Rate Limiting, and Timeouts
 
 Verify:
@@ -95,7 +106,11 @@ Verify:
 - Tests actually assert on response body and status code, not just "no error"
 - Integration tests exist for critical flows
 
-### Step 8: Present the Review
+### Step 8: Score Findings Before Reporting
+
+Rate each candidate finding 0-100 before it earns a place in the review: 0-25 likely false positive or pre-existing issue; 26-50 minor nitpick not required by any doc; 51-75 valid but low-impact; 76-90 important; 91-100 critical or an explicit spec/CLAUDE.md violation. Discard anything below 80. First check each candidate against this false-positive list — any match means discard regardless of how real it looks: pre-existing (not introduced by this change), would be caught by a linter/typechecker/CI, a pedantic nitpick a senior engineer wouldn't raise, not required by any doc in the repo, on a line the user didn't touch, or already explicitly justified/silenced in a comment.
+
+### Step 9: Present the Review
 
 Format by severity:
 
