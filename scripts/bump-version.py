@@ -53,14 +53,22 @@ def resolve_version(arg: str, current: str) -> str:
 
 
 def update_plugin_json(path: Path, new_version: str, dry_run: bool) -> str | None:
-    """Returns old version if updated, None if already current."""
-    data = json.loads(path.read_text())
-    old = data.get("version", "")
-    if old == new_version:
+    """Returns old version if updated, None if already current.
+
+    Surgical text substitution for the same reason update_marketplace_json uses
+    it: a json.load/dump round-trip reflows every inline array to one entry per
+    line, so a version bump rewrote the "keywords" array in all 100 agent
+    manifests. Worse, that shape is not what prettier produces, so the
+    pre-commit formatter reformats the file back on whichever side happens to
+    be staged — which is exactly how the root/team mirrors drift apart.
+    """
+    text = path.read_text()
+    match = re.search(r'"version":\s*"([^"]*)"', text)
+    if not match or match.group(1) == new_version:
         return None
-    data["version"] = new_version
+    old = match.group(1)
     if not dry_run:
-        path.write_text(json.dumps(data, indent=2) + "\n")
+        path.write_text(text[: match.start(1)] + new_version + text[match.end(1) :])
     return old
 
 
