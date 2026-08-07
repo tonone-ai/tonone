@@ -37,34 +37,37 @@ Ask the user: Who are your customers? What data do you process? Which geographie
 For SOC2 (most common SaaS requirement), assess the five trust service criteria:
 
 **Security (required):**
-| Control Area | Evidence Required | Status |
-|------------------------|--------------------------------|------------|
-| Access controls | IAM policy, MFA enforcement | [gap/ok] |
-| Encryption at rest | Database encryption config | [gap/ok] |
-| Encryption in transit | TLS configuration | [gap/ok] |
-| Vulnerability mgmt | Scanning cadence, patch policy | [gap/ok] |
-| Incident response | IR plan, on-call runbook | [gap/ok] |
-| Change management | Code review, deployment policy | [gap/ok] |
-| Vendor management | Vendor security assessments | [gap/ok] |
-| Risk assessment | Annual risk assessment doc | [gap/ok] |
+
+| Control Area          | Evidence Required              | Status   |
+| --------------------- | ------------------------------ | -------- |
+| Access controls       | IAM policy, MFA enforcement    | [gap/ok] |
+| Encryption at rest    | Database encryption config     | [gap/ok] |
+| Encryption in transit | TLS configuration              | [gap/ok] |
+| Vulnerability mgmt    | Scanning cadence, patch policy | [gap/ok] |
+| Incident response     | IR plan, on-call runbook       | [gap/ok] |
+| Change management     | Code review, deployment policy | [gap/ok] |
+| Vendor management     | Vendor security assessments    | [gap/ok] |
+| Risk assessment       | Annual risk assessment doc     | [gap/ok] |
 
 **Availability (if selected):**
-| Control Area | Evidence Required | Status |
-|------------------------|--------------------------------|------------|
-| Uptime monitoring | Monitoring tool + SLA | [gap/ok] |
-| Capacity planning | Documented capacity reviews | [gap/ok] |
-| Business continuity | BCP / DR plan | [gap/ok] |
+
+| Control Area        | Evidence Required           | Status   |
+| ------------------- | --------------------------- | -------- |
+| Uptime monitoring   | Monitoring tool + SLA       | [gap/ok] |
+| Capacity planning   | Documented capacity reviews | [gap/ok] |
+| Business continuity | BCP / DR plan               | [gap/ok] |
 
 **GDPR gap assessment:**
-| Requirement | Evidence Required | Status |
-|------------------------|--------------------------------|------------|
-| Lawful basis | Documented basis per data type | [gap/ok] |
-| Privacy policy | Published, accurate policy | [gap/ok] |
-| Data subject rights | Process for access/deletion | [gap/ok] |
-| Data processing records| Article 30 record | [gap/ok] |
-| DPA with vendors | DPAs signed with sub-processors| [gap/ok] |
-| Breach notification | 72-hour notification process | [gap/ok] |
-| Data retention policy | Documented retention schedule | [gap/ok] |
+
+| Requirement             | Evidence Required               | Status   |
+| ----------------------- | ------------------------------- | -------- |
+| Lawful basis            | Documented basis per data type  | [gap/ok] |
+| Privacy policy          | Published, accurate policy      | [gap/ok] |
+| Data subject rights     | Process for access/deletion     | [gap/ok] |
+| Data processing records | Article 30 record               | [gap/ok] |
+| DPA with vendors        | DPAs signed with sub-processors | [gap/ok] |
+| Breach notification     | 72-hour notification process    | [gap/ok] |
+| Data retention policy   | Documented retention schedule   | [gap/ok] |
 
 ### Step 3: Produce Gap List with Severity
 

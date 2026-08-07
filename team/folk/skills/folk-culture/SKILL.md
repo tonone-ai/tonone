@@ -96,12 +96,13 @@ Norms must be specific enough to resolve a real disagreement.
 - Decision meetings: [When to call one, how decisions get recorded]
 
 **Channels and their norms:**
-| Channel | Use for | Response time expectation |
-| --------------- | ------------------------------------- | ------------------------- |
-| [Slack #general]| Company-wide announcements | Read within 24h |
-| [Slack DM] | Quick clarifications, informal | Best effort, same day |
-| [Email] | External, formal, or long-form | 1 business day |
-| [GitHub / Linear]| Task tracking, technical decisions | Per ticket priority |
+
+| Channel           | Use for                            | Response time expectation |
+| ----------------- | ---------------------------------- | ------------------------- |
+| [Slack #general]  | Company-wide announcements         | Read within 24h           |
+| [Slack DM]        | Quick clarifications, informal     | Best effort, same day     |
+| [Email]           | External, formal, or long-form     | 1 business day            |
+| [GitHub / Linear] | Task tracking, technical decisions | Per ticket priority       |
 
 **After-hours policy:** [Define expectation clearly - "No expectation to respond after 6pm local" or "On-call rotation for production issues only"]
 
