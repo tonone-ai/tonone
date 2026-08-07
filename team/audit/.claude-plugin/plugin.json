@@ -1,6 +1,6 @@
 {
   "name": "audit",
-  "version": "1.11.1",
+  "version": "1.12.0",
   "description": "Legal compliance audit \u2014 internal controls review, legal risk register, audit trail documentation",
   "author": {
     "name": "tonone-ai",
