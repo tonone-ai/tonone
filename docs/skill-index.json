@@ -1,5 +1,12 @@
 [
   {
+    "name": "apex-gate",
+    "agent": "apex",
+    "team": "Engineering",
+    "description": "Inspect and tune the skill-manifest gate \u2014 which of the 421 tonone skills keep their description in this project's context, and what that costs in tokens. Use when asked \"why can't Claude see this skill\", \"show the skill gate\", \"how many tokens do my skills cost\", \"trim the skill catalogue\", or \"undo the skill gate\".",
+    "path": "team/apex/skills/apex-gate/SKILL.md"
+  },
+  {
     "name": "apex-plan",
     "agent": "apex",
     "team": "Engineering",
@@ -2002,6 +2009,13 @@
     "path": "team/pave/skills/pave-golden/SKILL.md"
   },
   {
+    "name": "pave-lsp",
+    "agent": "pave",
+    "team": "Engineering",
+    "description": "Detect which languages a project actually uses and wire the matching LSP and semantic-code plugins into the developer's Claude Code setup, so the agent gets go-to-definition, find-references, rename-symbol and real type errors instead of grep. Use when asked to \"set up LSP\", \"wire up language servers\", \"install typescript-lsp\", \"give Claude type awareness\", \"add Serena\", or \"why is Claude grepping instead of using types\".",
+    "path": "team/pave/skills/pave-lsp/SKILL.md"
+  },
+  {
     "name": "pave-recon",
     "agent": "pave",
     "team": "Engineering",
@@ -2562,6 +2576,13 @@
     "path": "team/spine/skills/spine-service/SKILL.md"
   },
   {
+    "name": "spine-simplify",
+    "agent": "spine",
+    "team": "Engineering",
+    "description": "Post-feature clarity pass \u2014 collapse needless indirection, delete dead code, flatten nesting, surface duplicated logic, fix altitude mismatches. Behavior-preserving only. Use when asked to \"simplify this\", \"clean up this code\", \"reduce complexity\", \"this feels over-engineered\", or \"tidy up after the feature\".",
+    "path": "team/spine/skills/spine-simplify/SKILL.md"
+  },
+  {
     "name": "surge-activation",
     "agent": "surge",
     "team": "Product",
@@ -2658,6 +2679,13 @@
     "team": "AI Operations",
     "description": "Design chunking strategies \u2014 semantic splitting, overlap tuning, retrieval-aware chunk sizing. Use when asked \"how should we chunk documents\", \"what chunk size for retrieval\", or \"set up semantic splitting\".",
     "path": "team/token/skills/token-chunk/SKILL.md"
+  },
+  {
+    "name": "token-compact",
+    "agent": "token",
+    "team": "AI Operations",
+    "description": "Plan a verbatim compaction of a Claude Code transcript \u2014 score every tool call and result, drop or elide the stale ones, keep the rest byte-for-byte. Use when asked to \"compact the transcript\", \"what can we drop from context\", \"trim this session\", or \"shrink the context window without summarizing\".",
+    "path": "team/token/skills/token-compact/SKILL.md"
   },
   {
     "name": "token-recon",

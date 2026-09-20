@@ -2,20 +2,20 @@
 > Team memory managed by [🐘 elephant](https://github.com/tonone-ai/elephant) — commit this file with your changes. Shared across sessions, repos, and teammates.
 ---
 
-2026-05-08 21:35 : [!!] feat(ops-team): PR #88 merged — 4 new agents (Mint/Folk/Keel/Brace), 32 skills, 244 tests; 27→31 agents, 145→177 skills, v1.2.0, bundle/operations-team added — @fatih
+[!!] 2026-05-08 21:35 : feat(ops-team): PR #88 merged — 4 new agents (Mint/Folk/Keel/Brace), 32 skills, 244 tests; 27→31 agents, 145→177 skills, v1.2.0, bundle/operations-team added — @fatih
 2026-05-08 23:52 : fix(ci): version-consistency gate failing — ops-team release bumped root to 1.2.0 but skipped bump-version.py for children; 204 files stuck at 1.1.0; fixed with `python scripts/bump-version.py 1.2.0` — @fatih
 2026-05-09 00:35 : chore: gstack upgraded 1.26.3.0 → 1.29.0.0 (worktree-aware gbrain sources, browse SOCKS5+proxy, llms.txt auto-gen) — @fatih
-2026-05-09 00:35 : [!!] strategy(expansion): CEO plan written — Phase 3: SQLite memory layer + composition API (TononeMemory(backend="local"|"cloud") abstraction ships now); Phase 4: tonone.ai cloud backend + $99/mo; Phase 5: ecosystem at $500K ARR — plan at ~/.gstack/projects/tonone-ai-tonone/ceo-plans/2026-05-09-expansion-plan.md — @fatih
+[!!] 2026-05-09 00:35 : strategy(expansion): CEO plan written — Phase 3: SQLite memory layer + composition API (TononeMemory(backend="local"|"cloud") abstraction ships now); Phase 4: tonone.ai cloud backend + $99/mo; Phase 5: ecosystem at $500K ARR — plan at ~/.gstack/projects/tonone-ai-tonone/ceo-plans/2026-05-09-expansion-plan.md — @fatih
 2026-05-09 00:35 : strategy(tonone.ai): website already exists; no product behind it yet — Phase 4 wraps the Phase 3 memory layer, not a greenfield build — @fatih
 2026-05-06 22:53 : docs(sitemap): created docs/sitemap.md — 27 agents, 170 skills, 5 runtime hooks mapped; skills all live in root skills/ dir, named /{agent}-{action} — @fatih
 2026-05-06 08:36 : feat(bundle): add revenue-team (deal+keep) and marketing-team (ink+buzz) bundles — PR #86 merged, CI green — @fatih
 2026-05-06 08:36 : chore: synced 199 files from 0.9.9 → 1.0.0 (all team/skills/bundles); v1.0.0 release had skipped bump-version, CI version-consistency was failing on main — @fatih
 2026-05-06 08:36 : bundle/product-team and bundle/full-team now include all 4 revenue/marketing agents (deal/keep/ink/buzz) — 27 agents in full-team confirmed — @fatih
 2026-05-05 22:26 : version drift found — root=0.9.9, warden=0.9.8, most team/skills/bundles=0.9.7, new agents (buzz/deal/ink/keep)=0.1.0, README badge=0.9.7 — 194 files need sync; run `python scripts/bump-version.py 0.9.9` + fix README badge manually — @fatih
-2026-05-05 21:23 : [!!] strategy(tonone): 100M EUR path locked — deepen 5 agents (Warden/Forge/Cortex/Spine/Apex) with real tool integration, then tonone.ai cloud; CEO plan at ~/.gstack/projects/tonone-ai-tonone/ceo-plans/2026-05-02-depth-5-killer-agents.md — @fatih
+[!!] 2026-05-05 21:23 : strategy(tonone): 100M EUR path locked — deepen 5 agents (Warden/Forge/Cortex/Spine/Apex) with real tool integration, then tonone.ai cloud; CEO plan at ~/.gstack/projects/tonone-ai-tonone/ceo-plans/2026-05-02-depth-5-killer-agents.md — @fatih
 2026-05-05 21:23 : strategy(tonone): 5-week seq — Week1 report schema+Warden, Week2 Forge, Week3 Cortex+Spine parallel, Week4 Apex+demo; use pip-audit not raw NVD API — @fatih
 2026-05-05 21:23 : gstack upgraded 1.14.0.0 → 1.25.1.0 — @fatih
-2026-04-30 20:16 : [!!] yc-demo(tonone): "to None" wordplay is load-bearing — name = meetings/team reduced to none, embed in all YC pitch materials — @fatih
+[!!] 2026-04-30 20:16 : yc-demo(tonone): "to None" wordplay is load-bearing — name = meetings/team reduced to none, embed in all YC pitch materials — @fatih
 2026-04-30 20:16 : yc-demo(tonone): best demo concept = you calm + agents running behind you live (Approach A) — show don't tell, zero narration — @fatih
 2026-04-30 20:16 : yc-demo(tonone): fatih is own customer — uses tonone as daily workflow, was on full team before — strongest YC demand signal — @fatih
 2026-04-30 20:16 : gstack upgraded 1.14.0.0 → 1.21.1.0 — @fatih
@@ -90,7 +90,7 @@
 2026-04-26 18:28 : readme updated — mode: full regenerate — @fatih
 2026-04-26 18:29 : chore: v0.9.1 changelog, README regenerate, badges — @fatih
 2026-04-26 21:34 : apex-takeover run — full recon complete, report at docs/takeover-report.html — @fatih
-[!!] 2026-04-26 21:34 : active bug: tonone-pr-attribution.js:49 String(object) breaks URL extraction every PR — unfixed — @fatih
+2026-04-26 21:34 : active bug: tonone-pr-attribution.js:49 String(object) breaks URL extraction every PR — unfixed — @fatih
 2026-04-26 21:34 : lib/uiux install story broken for 7 agents — no declared dep, manual setup required — @fatih
 2026-04-26 21:34 : outbound POST to second.tonone.ai on every PR — verify domain ownership — @fatih
 2026-04-26 21:43 : fix(atlas-report): copy buttons pre-only hover-reveal, no inline code buttons, no Tonone branding in — @fatih
@@ -102,9 +102,9 @@
 2026-04-26 22:05 : fix(atlas-report): redesign UI tokens + gitignore .reports/ — @fatih
 2026-04-26 22:07 : chore: resolve ELEPHANT.md merge conflict — @fatih
 [!!] 2026-04-26 22:26 : apex-takeover rerun — 6 parallel agents, deeper recon — report at — @fatih
-[!!] 2026-04-26 22:26 : confirmed: pr-attribution.js + session-tracker.js not in plugin.json — dead since merge, never fired — @fatih
-[!!] 2026-04-26 22:26 : confirmed: bump-version.py globs worktrees — corrupts all active worktrees on every version bump, — @fatih
-[!!] 2026-04-26 22:26 : confirmed: tonone-git-gate.js:77 EnterWorktree arg wrong (slug not path) — core recovery broken — @fatih
+2026-04-26 22:26 : confirmed: pr-attribution.js + session-tracker.js not in plugin.json — dead since merge, never fired — @fatih
+2026-04-26 22:26 : confirmed: bump-version.py globs worktrees — corrupts all active worktrees on every version bump, — @fatih
+2026-04-26 22:26 : confirmed: tonone-git-gate.js:77 EnterWorktree arg wrong (slug not path) — core recovery broken — @fatih
 2026-04-26 22:26 : confirmed: second.tonone.ai not outbound POST — URL string in PR body copy, no HTTP call — false — @fatih
 2026-04-27 19:42 : chore: add .playwright-mcp/ to .gitignore under External tools section — @fatih
 2026-04-27 19:53 : chore: update .gitignore — add .playwright-mcp/, untrack .reports/ — @fatih
@@ -163,7 +163,7 @@
 2026-05-08 00:40 : docs(sitemap): add Operations Team — Mint, Folk, Keel, Brace — @fatih
 2026-05-09 00:40 : chore(trunk): bump python 3.13.3→3.14.4, checkov 3.2.526→3.2.527 — @fatih
 2026-05-09 00:41 : chore(ops-team): markdown polish — table alignment + blank-line spacing across Brace/Folk/Keel/Mint (41 files, no content change) — PR #93 — @fatih
-2026-05-09 00:41 : [!!] warn(trunk): python 3.14.4 was previously reverted (fix: 6b3c43e, "non-existent version") — watch CI on PR #93 — @fatih
+[!!] 2026-05-09 00:41 : warn(trunk): python 3.14.4 was previously reverted (fix: 6b3c43e, "non-existent version") — watch CI on PR #93 — @fatih
 2026-05-09 00:40 : docs(ops-team): markdown formatting polish — Brace, Folk, Keel, Mint — @fatih
 2026-05-09 01:00 : feat(legal-team): add Wave 1 Legal Team — 10 agents, 30 skills — @fatih
 2026-05-09 01:04 : fix(legal-team): add output-kit contract line + setup scripts to pass CI — @fatih
@@ -173,25 +173,25 @@
 2026-05-09 01:27 : feat(devx-team): Wave 5 Developer Experience Team — 10 agents, 30 skills, v1.6.0 — @fatih
 2026-05-09 01:34 : feat(infra-specialist-team): Wave 6 Infrastructure Specialist Team — 10 agents, 30 skills, v1.7.0 — @fatih
 2026-05-09 01:42 : feat(ai-ops-team): Wave 7 AI Operations Team — 9 agents, 27 skills, v1.8.0 — 100 agents total — @fatih
-2026-06-16 18:30 : [!!] refactor(gate): removed worktree gate entirely — PreToolUse hooks deleted, worktree-session/close hooks removed, CLAUDE.md worktree section gone, 4 JS files deleted (450 lines) — changes now land directly on local branch — @fatih
+[!!] 2026-06-16 18:30 : refactor(gate): removed worktree gate entirely — PreToolUse hooks deleted, worktree-session/close hooks removed, CLAUDE.md worktree section gone, 4 JS files deleted (450 lines) — changes now land directly on local branch — @fatih
 2026-06-16 18:46 : refactor: remove worktree gate — changes land directly on local branch — @fatih
 2026-06-16 19:01 : debug(bundle): bundle plugin.json files all have description but CC UI shows none — root cause: bundle dirs are empty (no agents/ subdir), CC skips description render for content-less plugins — individual agent plugins show fine because they have discoverable agent files — @fatih
 2026-07-25 17:37 : feat(apex): add apex-profile + apex-stats skills — profile writes enabledPlugins in .claude/settings.json to scope roster to per-agent plugins (spine@tonone-ai etc), already self-contained per team/<agent> dir — stats tallies Agent tool subagent_type spawns from local transcripts — @fatih
 2026-07-25 17:37 : mirrored both into team/apex/skills/ so standalone apex@tonone-ai plugin carries them too — @fatih
-2026-07-25 17:37 : [!!] found: 44 skills had zero .claude-plugin/plugin.json (forge/flux/form/helm/lens/pave/prism/proof/relay/spine/surge/touch/vigil/volt/warden family + buzz/deal/ink/keep) — scripts/gen-skill-plugins.py backfills but reformats ~140 unrelated files — reverted, not shipped, needs own pass — @fatih
+[!!] 2026-07-25 17:37 : found: 44 skills had zero .claude-plugin/plugin.json (forge/flux/form/helm/lens/pave/prism/proof/relay/spine/surge/touch/vigil/volt/warden family + buzz/deal/ink/keep) — scripts/gen-skill-plugins.py backfills but reformats ~140 unrelated files — reverted, not shipped, needs own pass — @fatih
 2026-07-25 17:37 : ext feedback (6wk usage data): 233 generic-agent spawns vs 90 tonone spawns — catalog weight (100 agents/189 skills) beats specialists on effort-to-choose — pushed back on consolidation (hue/glyph/grid/tone/mark → params) since it kills per-agent memorability, the feedback's own stated strength — @fatih
 2026-07-25 19:07 : feat(apex): roster scoping, spawn analytics, and lazy specialist routing — @fatih
-2026-07-25 19:17 : [!!] pr-review(buzz): PR #111 "buzz-social Bluesky guidance" — code clean, no exploit/hidden-unicode, but author kriptoburak = Xquik-dev org (1388 contribs), PR plants own paid X-automation SaaS as recommended source in SKILL.md, no COI disclosure — @fatih
+[!!] 2026-07-25 19:17 : pr-review(buzz): PR #111 "buzz-social Bluesky guidance" — code clean, no exploit/hidden-unicode, but author kriptoburak = Xquik-dev org (1388 contribs), PR plants own paid X-automation SaaS as recommended source in SKILL.md, no COI disclosure — @fatih
 2026-07-25 19:17 : review-pattern: undisclosed self-promo in doc PRs = check author's org affiliation vs named tool/service before merge, not just diff content — @fatih
 2026-07-25 19:17 : pr-review(buzz): PR #109 "source evidence guard, buzz-social" — 5-agent review, 4 candidate issues (tool-name conflict w/ #111 75, unbolded labels 55, fractional step 25, Key Rules placement 25), none hit 80 threshold — no auto-comment posted, held for @fatih manual call — @fatih
-2026-07-25 19:17 : [!!] confirmed same author (kriptoburak/Xquik-dev, blog xquik.com) on both #109 (names "TweetClaw") and #111 (names own "Xquik") — fix pattern for both: describe tool capability generically (read-only public API/aggregator), don't crown named vendor, require affiliation disclosure in PR body — @fatih
+[!!] 2026-07-25 19:17 : confirmed same author (kriptoburak/Xquik-dev, blog xquik.com) on both #109 (names "TweetClaw") and #111 (names own "Xquik") — fix pattern for both: describe tool capability generically (read-only public API/aggregator), don't crown named vendor, require affiliation disclosure in PR body — @fatih
 2026-07-25 19:21 : docs(buzz-social): describe source tool generically, not by brand — @fatih
 2026-07-26 11:59 : docs(platform): sibling repo ~/repos/tn/platform (tonone showcase site) hit 6500 files, mostly node_modules/.next/stale worktrees — platform agent got lost — @fatih
 2026-07-26 11:59 : docs(platform): added REPOMAP.md at platform root — route map, data flow (.planning/*.json → lib/\_-data.ts → pages), component dirs, task→file table, noise-dir list — @fatih
 2026-07-26 11:59 : docs(platform): wired REPOMAP.md into platform's CLAUDE.md via @REPOMAP.md so every session auto-loads it — @fatih
 2026-07-26 18:10 : fix: AI Ops skill content, evals naming collision, skill.md case bugs — @fatih
 2026-07-26 18:51 : retro(7d): 8 commits, 2 contributors, 4 PRs (#109/#111/#112/#113), +8.2k/-2.1k LOC, 0% test ratio, v1.10.1 — snapshot at .context/retros/2026-07-26-1.json — @fatih
-2026-07-26 18:51 : [!!] gap found: repo dead 38 days (last commit before this window: 2026-06-17) then 2-day burst — sporadic OSS cadence, no steady cadence yet — @fatih
+[!!] 2026-07-26 18:51 : gap found: repo dead 38 days (last commit before this window: 2026-06-17) then 2-day burst — sporadic OSS cadence, no steady cadence yet — @fatih
 2026-07-26 18:51 : todo(oss-ready): CI pipeline still manual — real risk since external PR (#109/#111 from Burak) already merged with zero automated gate — TODOS.md v0.3.0 blocker — @fatih
 2026-07-26 19:43 : retro(7d) rerun: 9 commits (was 8, +1 memory chore since), same 2 contributors/4 PRs/0% test ratio/v1.10.1/2d streak — snapshot at .context/retros/2026-07-26-2.json — @fatih
 2026-07-26 22:40 : chore: ignore .context/ and fix stale README version badge — @fatih
@@ -261,3 +261,6 @@
 2026-07-29 15:27 : confirmed: bundle/\*/skills/apex-plan and helm-plan are symlinks to root skills/ — only 2 real files per skill (team/ canonical + skills/ mirror), no separate bundle copy to sync — @fatih
 [!!] 2026-07-29 15:31 : release 1.11.0 — 2 features, 0 fixes, 1 changed (apex-plan+helm-plan XS-XXL depth tiers) — @fatih
 2026-08-05 17:07 : off-topic research ask (Claude Code plugin install rankings via WebFetch claude.com/plugins) — no repo change — @fatih
+[!!] 2026-09-20 14:11 : measured: 421 skills = ~94k manifest chars ≈ 23.5k tokens loaded every session — biggest standing token tax in repo — @fatih
+2026-09-20 14:11 : researched Jev (TypeSafe decision-only model, choice/noul/score, $0.000013 + 325ms per decision) and 3 MIT plugins: lazniak/jevskill, trinq/jev-skill-gate (SessionStart hook writes skillOverrides, 217 skills 12750→3185 tokens), imadcat/fast-jev-compaction (verbatim drop instead of lossy summary) — @fatih
+2026-09-20 14:11 : proposed utilization — skill-gate port into hooks/ (gate by team then skill, TF-IDF fallback if no API key), Jev choice/score for apex-route + helm-arbiter depth picks, plus non-Jev steals: Code Simplifier, Security Guidance hook for Warden, Serena — no code written yet, awaiting go on prototype — @fatih

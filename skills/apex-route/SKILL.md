@@ -2,7 +2,7 @@
 name: apex-route
 description: Reach ANY tonone specialist on demand, even ones not installed in this session's roster — no restart needed. Use when asked "which agent handles this", "reach a specialist we didn't install", "route this to the right agent", or whenever a scoped apex-profile roster is missing the right hat for the job.
 allowed-tools: Read, Bash, Glob, Grep, Task, TodoWrite
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -29,7 +29,41 @@ Claude Code loads the full description of every installed agent plugin into ever
 
    If it's missing or stale (an agent in `agents/*.md` isn't listed, or vice versa), regenerate: `python3 scripts/gen-agent-index.py`.
 
-2. **Match the task to a specialist.** Compare the user's request against each entry's `hat` + `owns`. Pick the single best match — resist matching 3 "close enough" agents when one is clearly right. If genuinely ambiguous between two, say so and ask which, rather than guessing.
+2. **Match the task to a specialist.** This is a 1-of-100 classification over a list that is already in hand — exactly the shape a typed decision call answers for a fraction of a cent. Try the decision layer first, then reason in prose.
+
+   a. **Locate the layer and ask the question — in one Bash call.** Run the whole block below as a single `Bash` invocation. Shell variables do not survive from one `Bash` tool call to the next, so splitting the probe from the call leaves `$JEV` unset in the second shell and silently skips the decision entirely. The layer itself is optional: if it is not installed, the block prints nothing and you go straight to (c). Options come from the same index Step 1 already read, so this costs no extra context. `unclear` is in the option list on purpose — a choice can only return a key you offered, so without an escape hatch the model confidently picks the nearest of 100 wrong answers.
+
+   ```bash
+   JEV="${CLAUDE_PLUGIN_ROOT:-.}/lib/jev/cli.js"
+   [ -f "$JEV" ] || JEV="lib/jev/cli.js"
+   [ -f "$JEV" ] || JEV=""
+
+   if [ -n "$JEV" ]; then
+     python3 -c 'import json;i=json.load(open("docs/agent-index.json"));o={a["name"]:a["hat"]+" — "+a["owns"] for a in i};o["unclear"]="No single specialist owns this — it spans teams or names no domain";print(json.dumps(o))' > /tmp/jev-route-options.json
+
+     # $REQUEST = the user request, verbatim, with any context they gave
+     printf '%s' "$REQUEST" > /tmp/jev-route-state.txt
+
+     node "$JEV" choice \
+       --state-file /tmp/jev-route-state.txt \
+       --question "Which tonone specialist owns this task?" \
+       --options-file /tmp/jev-route-options.json
+   fi
+   ```
+
+   The CLI always exits 0 and always prints one JSON object. There is no error path to handle: no key, no network, a dead endpoint and a timeout all come back as a well-formed result with `"source": "local"`. Empty output means only one thing: the layer is not installed.
+
+   b. **Gate the answer.** Accept the Jev pick only when all three hold:
+
+   - `source` is `"jev"` — a hosted decision model answered, not the lexical fallback
+   - `confidence` >= 0.6
+   - `answer` is not `"unclear"`
+
+   Accepting it does not end the step: check the winning entry's `hat` + `owns` against the request yourself. If it reads wrong, override it and say you did. A machine pick with a confidence number is an input to your judgment, never a replacement for it.
+
+   c. **Reason in prose** whenever the gate rejects the answer or the decision layer is absent. Compare the request against each entry's `hat` + `owns`. Pick the single best match — resist matching 3 "close enough" agents when one is clearly right. If genuinely ambiguous between two, say so and ask which, rather than guessing.
+
+   **What the default actually does.** With no `JEV_API_KEY`, `TYPESAFE_API_KEY` or `OPENROUTER_API_KEY` in the environment, the layer performs no network I/O and falls back to a local TF-IDF scorer. Over 100 options described in one line each, that scorer is not decisive — measured confidence on a real routing request is around `0.005`, far under the 0.6 gate. So the key-free path rejects the machine answer every time and this step runs exactly as it did before Jev existed. That is the designed default, not a failure. With a key set, a route costs roughly $0.000013 and about 325ms, against the hundreds of reasoning tokens the prose path spends comparing 100 entries.
 
 3. **Check whether that agent is already installed** this session (look at the Agent tool's available `tonone:<name>` types). Two paths:
 
@@ -53,6 +87,33 @@ Claude Code loads the full description of every installed agent plugin into ever
      c. Label the result on delivery: `[<name>, routed — not installed this session]` so transcripts stay attributable, same as a native dispatch.
 
 4. **Report.** One line: which specialist, installed vs routed. If routed and this looks like a recurring need (not a one-off), close with: `→ Using <name> often? /apex-profile to install it natively.` If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, and the report path.
+
+## Key Rules
+
+- Jev is an assist with a stated confidence, never an authority. The gate in Step 2b is the whole contract — a `local` or low-confidence answer is discarded, silently, and the prose path runs.
+- Never route on an answer whose `source` is not `"jev"`. `"local"` and `"fallback"` mean lexical overlap, not a decision.
+- Never surface raw probabilities to the user. Report the specialist and, when Jev decided it, one parenthetical: `(jev, 0.82)`.
+- Credentials are environment-only and opt-in. Do not prompt for a key, do not write one anywhere, do not suggest setting one mid-task.
+- One specialist per task unless the task genuinely splits. `unclear` at high confidence means ask, not guess.
+
+## Output Format
+
+One line per routed specialist: the name, `installed` or `routed`, and the decision source when Jev decided it.
+
+```
+╭─ APEX ── apex-route ─────────────────────────────────────╮
+
+  ## Routed to Touch — mobile release blocker
+
+  - ● INFO — Touch not installed this session; persona loaded from agents/touch.md
+  - ● INFO — Match: jev choice, confidence 0.82
+
+  → Using Touch often? /apex-profile to install it natively.
+
+╰──────────────────────────────────────────────────────────╯
+```
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. CLI is the receipt.
 
 ## Notes
 

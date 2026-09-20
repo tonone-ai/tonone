@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-100 specialists across 10 teams. Engineering executes. Product decides. Operations runs. Legal de-risks. Design polishes. Data Science decides with data. Security Operations defends. Developer Experience ships good APIs. Infrastructure Specialist runs the cloud. AI Operations ships models. One session, a handful of commands, zero meetings. 421 skills across every discipline. MIT licensed.
+100 specialists across 10 teams. Engineering executes. Product decides. Operations runs. Legal de-risks. Design polishes. Data Science decides with data. Security Operations defends. Developer Experience ships good APIs. Infrastructure Specialist runs the cloud. AI Operations ships models. One session, a handful of commands, zero meetings. 425 skills across every discipline. MIT licensed.
 
 ## The idea
 
@@ -286,7 +286,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 421 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 425 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 

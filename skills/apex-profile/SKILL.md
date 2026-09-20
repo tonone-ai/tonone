@@ -2,7 +2,7 @@
 name: apex-profile
 description: Scope the tonone agent roster for this project — install a curated subset of agents instead of the full 100-agent bundle. Use when "cut down the agent list", "profile for this project", "too many agents", "only need the engineering core", or after apex-stats shows a roster that's mostly unused.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -24,6 +24,29 @@ Each tonone agent is registered as its own plugin (`<agent>@tonone-ai`) in `.cla
 1. **Read current state.** Check for an existing `.claude/settings.json` and `.claude/settings.local.json` in the project root. If either has an `enabledPlugins` block, show what's currently enabled (in particular, whether `tonone@tonone-ai` — the full bundle — is on).
 
 2. **Ask how to pick the roster** (AskUserQuestion, single-select):
+   - **Detected shape** — let the project pick. Run the shared detector and offer its `agents` array as the roster. `CLAUDE_PLUGIN_ROOT` is not exported into the Bash tool's environment, so locate the detector first — plugin root if set, then the repository checkout you are standing in, then the installed plugin cache:
+
+     ```bash
+     shape=""
+     for c in "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/lib/signals/project-shape.js" \
+              "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/../../lib/signals/project-shape.js" \
+              "$PWD/lib/signals/project-shape.js"; do
+       [ -f "$c" ] && shape="$c" && break
+     done
+     if [ -z "$shape" ]; then
+       found=$(find "$HOME/.claude/plugins/cache" -maxdepth 6 \
+         -path "*/lib/signals/project-shape.js" 2>/dev/null | head -1)
+       [ -n "$found" ] && shape="$found"
+     fi
+     if [ -n "$shape" ]; then
+       node "$shape" --pretty --cwd "$PWD"
+     else
+       echo '{"ok":false,"error":"detector not on disk","source":"default"}'
+     fi
+     ```
+
+     Written this way the block exits 0 and prints one JSON object on every path, under bash, zsh and sh alike (`ok`, `label`, `agents`, `evidence`, `source`, `alternate`). Show `label` and `evidence` so the user can see what it read. A `source` of `default` means nothing matched — say so rather than presenting the starter roster as a match. An `ok` of `false` means the detector is not installed here at all (a single-agent install ships no `lib/`); fall through to **Preset** rather than presenting its placeholder roster.
+
    - **Preset** — pick from a named project-type roster (below)
    - **Custom list** — user names the agents directly
    - **From apex-stats** — run `/apex-stats` first, then default the roster to every agent with at least one spawn in the lookback window
@@ -79,5 +102,6 @@ Each tonone agent is registered as its own plugin (`<agent>@tonone-ai`) in `.cla
 
 - This scopes the **Agent tool menu**, not this skill itself or other gstack/root skills — `apex-status`, `apex-profile`, etc. stay available regardless of roster.
 - Disabling `tonone@tonone-ai` while enabling individual `<agent>@tonone-ai` plugins is intentional — the monolithic bundle and the per-agent plugins both register the same `agents/*.md` files, so leaving the bundle on defeats the scoping.
-- If unsure which agents a project needs, run `/apex-stats` first — it's the evidence this skill should act on.
+- If unsure which agents a project needs, run `/apex-stats` first — it's the evidence this skill should act on. On a repository with no usage history yet, the **Detected shape** option is the substitute: `apex-stats` reads what has been used, the detector reads what the project _is_.
+- `/tonone-onboard` calls this skill with an already-detected roster as a **Custom list**. It recommends; this skill writes. Neither writes `enabledPlugins` twice, and the roster is never negotiated in both places.
 - **Recommended default:** install the lean core (the preset, not the full 100) and lean on `/apex-route` for occasional long-tail needs — that combination gets a small "Available agent types" listing every session AND full access to all 100 specialists. Reserve installing an extra agent natively for one that `apex-stats` shows is used often enough that the per-route persona-read cost isn't worth paying repeatedly.
