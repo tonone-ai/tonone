@@ -4,15 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [1.14.0] - 2026-09-20
+## [1.15.0] - 2026-09-20
 
 ### Added
 
 - **`lib/jev/` — typed decision layer.** A dependency-free CommonJS client exposing `noul` (yes/no), `choice` (1-of-N), `score` (ordered scale) and a batch form that carries many named questions in one request. Provider resolution is env-only and opt-in: `JEV_API_KEY`/`TYPESAFE_API_KEY` to TypeSafe, `OPENROUTER_API_KEY` to OpenRouter, neither to a local TF-IDF scorer. Nothing in the public API throws — missing credentials, dead endpoints, timeouts, HTTP errors, malformed bodies and empty option lists all degrade to the local path. The API adapters are tested against a local HTTP server only; no real provider has been contacted.
-- **`hooks/tonone-skill-gate.js` — SessionStart skill-manifest gate.** A full install loads 425 skill descriptions, **23,078 tokens, into every session before the user types anything**. The gate scores the 10 teams first, then skills within surviving teams, and merges `skillOverrides` into `.claude/settings.local.json`. Measured on the key-free scorer: **23,078 → 1,859 tokens on this repo (−92%)**, 2,040 on a frontend fixture, 1,755 on an infra fixture, all in roughly 120 ms with no network. It never writes `off` — hiding a skill from Claude is reversible by typing `/skill-name`, hiding it from the user is not — and it records its own provenance so `--reset` retracts exactly what it added. Companion skill `/apex-gate`.
+- **`hooks/tonone-skill-gate.js` — SessionStart skill-manifest gate.** A full install loads 426 skill descriptions, **23,078 tokens, into every session before the user types anything**. The gate scores the 10 teams first, then skills within surviving teams, and merges `skillOverrides` into `.claude/settings.local.json`. Measured on the key-free scorer: **23,078 → 1,859 tokens on this repo (−92%)**, 2,040 on a frontend fixture, 1,755 on an infra fixture, all in roughly 120 ms with no network. It never writes `off` — hiding a skill from Claude is reversible by typing `/skill-name`, hiding it from the user is not — and it records its own provenance so `--reset` retracts exactly what it added. Companion skill `/apex-gate`.
 - **`team/warden/hooks/warden-guard.js` — PreToolUse security advisory.** 21 risk patterns (command injection, `eval`, XSS sinks, hardcoded secrets behind an entropy gate, SQL concatenation, path traversal, unsafe deserialization, destructive shell). Warns and always exits 0; no permission decision is ever emitted. Rules are data in `rules.json`. Warden previously shipped no hook at all.
 - **`lib/compact/` — verbatim transcript selection** plus `/token-compact`. Drops or truncates stale tool calls and results; everything kept stays byte-for-byte, and user and assistant text is never touched.
-- **`/spine-simplify`** — a behavior-preserving clarity pass. The repo had no simplification skill across 425.
+- **`/spine-simplify`** — a behavior-preserving clarity pass. The repo had no simplification skill across 426.
 - **`/pave-lsp`** — detects a project's languages and wires the published TypeScript, Pyright, Go and Rust LSP plugins plus Serena, rather than implementing semantic analysis.
 - **Onboarding roster recommender** — `lib/signals/project-shape.js` plus a rewritten `/tonone-onboard` banner proposing four or five agents instead of all 100, feeding `apex-profile` rather than competing with it.
 - **`docs/memory-audit.md`** — elephant versus the Remember plugin, measured against this repo's own history. Verdict: keep elephant, because its file is committed and shared where Remember's sidecar is per-developer; fix the recall window, which the critical tier has outgrown.
@@ -22,11 +22,42 @@ All notable changes to this project will be documented in this file.
 
 - **Typed decisions wired into `apex-route`, `apex-plan`, `helm-plan` and `helm-arbiter`** as gated assists — a `choice` over the agent index, a `score` over the six depth tiers that proposes but never auto-selects, and a `noul` that is one input to the arbitration rather than the decider. Each is discarded unless a hosted model answered above a confidence floor, so every skill runs unchanged on the key-free path. On that path the `apex-route` assist measures roughly 0.005 confidence over one-line hat descriptions and is rejected on every request by design; it only pays out with a key.
 - **`ELEPHANT.md`** — four `[!!]` entries demoted to routine. Each asserted a bug fixed in April or June, one naming a file deleted three months earlier, and they had been priming every session in this repo for five months.
-- **`docs/repomap.md`, `README.md`** — skill count 421 → 425, root mirror 449 → 453 dirs.
+- **`docs/repomap.md`, `README.md`** — skill count 422 → 426, root mirror 450 → 454 dirs.
 
 ### Fixed
 
 - **The PreCompact surface does not exist as assumed.** Claude Code 2.1.278 exposes a PreCompact hook that can read the transcript and block compaction, but cannot modify what gets compacted: `hookSpecificOutput` has no PreCompact member, and compaction reads in-memory messages rather than the transcript file. Recorded in `docs/adr/0001-no-precompact-transcript-rewrite.md`; the on-demand path ships instead of a hook that would silently do nothing.
+
+## [1.14.0] - 2026-09-20
+
+Upstream sweep: read the current release of every plugin tonone borrows from and absorbed what applies. Ledger in `docs/upstream.md`, pins in `docs/upstream.json`, drift detection in `scripts/check-upstream.py`.
+
+### Added
+
+- **`docs/upstream.md` + `docs/upstream.json` + `scripts/check-upstream.py`** — the six upstreams tonone borrows from were tracked nowhere, so "are we behind?" was unanswerable without a manual sweep. The ledger records what was taken from which release and what was deliberately left; the script compares each pin against GitHub's latest release and exits 1 on drift. Wired into the Health Stack in `CLAUDE.md`.
+- **`/apex-diagnose`** — session postmortem from local transcripts: why a run repeated work, ignored the plan, took too long, or cost more than expected. Every finding cites `path:line`; no theory without transcript evidence. From superpowers' `diagnosing-superpowers`, reusing `apex-stats`' transcript parsing.
+- **`motion` domain in `lib/uiux`** — 17 GSAP presets with trigger, duration, easing, snippet, framework notes, and performance notes, tiered by intensity. Granted to Form and Prism; reachable from any agent via `python -m uiux search --domain motion`.
+- **`uiux stacks` and `uiux stack` CLI verbs** — the 1,260 stack-specific guideline rows were only reachable through a Python import, which put them out of reach of the prompt-only design agents.
+- **`lib/uiux/NOTICE.md`** — the vendored CSV corpus is MIT-licensed data from ui-ux-pro-max and had been shipping without the upstream copyright notice MIT requires. Also documents the refresh procedure.
+- **`tests/test_structure.py::test_agent_definitions_mirror_team_copies`** — guards the `agents/` ↔ `team/*/agents/` mirror the way the skills mirror is already guarded.
+
+### Changed
+
+- **`lib/uiux` corpus refreshed to ui-ux-pro-max v2.15.0** — color palettes 161 → 192, UX guidelines 99 → 119, product types 161 → 192, UI reasoning rules 161 → 192, styles 84 → 88, Google Fonts 1,923 → 1,934, stack guideline sets 16 files/841 rows → 22 files/1,260 rows (javafx, wpf, winui, avalonia, uno, uwp added). Every stack row now carries the upstream freshness contract (`Applies To`, `Status`, `Verified At`), surfaced in search output and guarded by a test. `shadcn-ui` was renamed `shadcn` upstream; `STACK_ALIASES` keeps the old key working.
+- **Plan rigor in `apex-plan`** — plans at M depth and above carry a Review Focus (the input classes the brief implies but no task tests, each handed to the specialist who owns that code), the user reviews the saved plan before any specialist starts, and the execution path is a stated choice with a price: dispatched versus inline.
+- **Review rigor in `apex-review`** — the diff base is `git merge-base origin/main HEAD`, not a bare branch name; where a spec is silent, a reasonable user's expectation is the requirement; and the reviewer lists what it declined to judge instead of dropping it silently.
+- **Whole-suite green** — all 10 agents carrying `test-driven-development` now have the iron rule that green means the project's own test command, with every failure reported by name including ones the agent did not cause.
+- **`helm-brief` writes the understanding back** — outcome, audience, and success criteria reflected for correction, with what the user said kept separate from what was assumed, before the brief is drafted.
+- **`form-brief` splits references** — Keep / Change / Do-not-copy with evidence labeled `observed`, `provided`, or `inferred`, plus an `implementation-handoff.md` artifact so the next builder executes the direction instead of re-deriving it. From open-design's reference-design-contract.
+- **Form's craft floor** — 14 named bans added (eyebrow labels, gradient text, glass as decoration, side-stripe borders, hard offset shadows, the ghost card, glyph icons, system display faces, nested card grids, geometric occlusion masks, theme by category) plus the rule for the surfaces nobody themes: selection, caret, scrollbars, focus rings, underline offset, tabular numerals. From impeccable skill-v4.3.1.
+- **Refinement preserves, redesign replaces** — a key rule for Form and Draft, with its corollary that a missing design file is not proof of a greenfield.
+- **`draft-proto` verifies in bounded passes** — build fully, one batched inspection round across viewports, fix in one batch, at most one confirm round, stop. Open-ended self-QA spends the user's budget doing worse what a critique pass does better.
+- **`docs/output-kit.md` compression rules corrected** against caveman v2.7.0's own measurements: invented abbreviations and prose arrows save zero tokens, compression never grows the output, and negations, numbers, units, and correct verb forms are never compressed away.
+- **`docs/agent-guide.md`** — lists superpowers' four newer process skills and carries a table of the v6.4.1 discipline changes with the eval failure that motivated each one.
+
+### Fixed
+
+- **`agents/form.md` and `team/form/agents/form.md` had drifted apart**, as had Draft's two copies — Form's anti-pattern list was edited only in the root copy, Draft's skills table only in the team copy. Both ship, so the same agent behaved differently depending on which plugin installed it. Reconciled and now covered by a test.
 
 ## [1.13.0] - 2026-08-07
 

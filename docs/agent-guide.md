@@ -342,51 +342,69 @@ Agents whose work benefits from structured process discipline should include `##
 
 ### Available Skills
 
-| Skill                            | Domain        | Use when the agent                                                       |
-| -------------------------------- | ------------- | ------------------------------------------------------------------------ |
-| `test-driven-development`        | Code quality  | Writes production code — enforces RED→GREEN→REFACTOR                     |
-| `systematic-debugging`           | Investigation | Investigates bugs or incidents — enforces root cause before fixes        |
-| `verification-before-completion` | Quality gate  | Claims any work is complete — enforces evidence before assertions        |
-| `brainstorming`                  | Creative work | Explores design or product ideas — enforces design before implementation |
-| `writing-plans`                  | Planning      | Plans multi-step implementation — enforces detailed plans before code    |
-| `dispatching-parallel-agents`    | Orchestration | Dispatches 2+ independent subagents                                      |
-| `subagent-driven-development`    | Orchestration | Executes plans with spec + quality review cycles                         |
-| `executing-plans`                | Orchestration | Executes written plans in separate sessions                              |
-| `using-git-worktrees`            | Workspace     | Needs isolation for feature work                                         |
-| `finishing-a-development-branch` | Completion    | Implementation complete, ready to integrate                              |
-| `writing-skills`                 | Documentation | Creates or edits skills — TDD for process documentation                  |
+| Skill                            | Domain        | Use when the agent                                                                                     |
+| -------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------ |
+| `test-driven-development`        | Code quality  | Writes production code — enforces RED→GREEN→REFACTOR                                                   |
+| `systematic-debugging`           | Investigation | Investigates bugs or incidents — enforces root cause before fixes                                      |
+| `verification-before-completion` | Quality gate  | Claims any work is complete — enforces evidence before assertions                                      |
+| `brainstorming`                  | Creative work | Explores design or product ideas — enforces design before implementation                               |
+| `writing-plans`                  | Planning      | Plans multi-step implementation — enforces detailed plans before code                                  |
+| `dispatching-parallel-agents`    | Orchestration | Dispatches 2+ independent subagents                                                                    |
+| `subagent-driven-development`    | Orchestration | Executes plans with spec + quality review cycles                                                       |
+| `executing-plans`                | Orchestration | Executes written plans in separate sessions                                                            |
+| `using-git-worktrees`            | Workspace     | Needs isolation for feature work                                                                       |
+| `finishing-a-development-branch` | Completion    | Implementation complete, ready to integrate                                                            |
+| `writing-skills`                 | Documentation | Creates or edits skills — TDD for process documentation                                                |
+| `requesting-code-review`         | Review        | Finished a task or feature — dispatches a reviewer with crafted context, never session history         |
+| `receiving-code-review`          | Review        | Got review findings back — rules on each one instead of silently dropping it                           |
+| `diagnosing-superpowers`         | Diagnosis     | A session went wrong — repeated work, ignored plan, surprising cost — and needs evidence, not a theory |
+| `using-superpowers`              | Routing       | Needs to know which process skill a request calls for                                                  |
 
 ### Mapping Table
 
-| Agent  | Process skills                                                                                                                                                                | Rationale                               |
-| ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| Apex   | writing-plans, dispatching-parallel-agents, subagent-driven-development, executing-plans, using-git-worktrees, finishing-a-development-branch, verification-before-completion | Full orchestration toolkit              |
-| Helm   | brainstorming, writing-plans, dispatching-parallel-agents, verification-before-completion                                                                                     | Product orchestration + ideation        |
-| Spine  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Prism  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Flux   | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Forge  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Relay  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Cortex | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Touch  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Volt   | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Pave   | test-driven-development, systematic-debugging, writing-skills, verification-before-completion                                                                                 | Code builder + skill authoring          |
-| Proof  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                 | Code builder — TDD + debugging          |
-| Warden | systematic-debugging, verification-before-completion                                                                                                                          | Investigation — root cause discipline   |
-| Vigil  | systematic-debugging, verification-before-completion                                                                                                                          | Investigation — root cause discipline   |
-| Atlas  | writing-skills, verification-before-completion                                                                                                                                | Documentation — TDD for docs            |
-| Draft  | brainstorming, verification-before-completion                                                                                                                                 | Creative — design before implementation |
-| Form   | brainstorming, verification-before-completion                                                                                                                                 | Creative — design before implementation |
-| Crest  | brainstorming, verification-before-completion                                                                                                                                 | Creative — strategy before commitment   |
-| Echo   | verification-before-completion                                                                                                                                                | Verification — evidence before claims   |
-| Lumen  | verification-before-completion                                                                                                                                                | Verification — evidence before claims   |
-| Lens   | verification-before-completion                                                                                                                                                | Verification — evidence before claims   |
-| Pitch  | verification-before-completion                                                                                                                                                | Verification — evidence before claims   |
-| Surge  | verification-before-completion                                                                                                                                                | Verification — evidence before claims   |
+| Agent  | Process skills                                                                                                                                                                                                                | Rationale                                                         |
+| ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Apex   | writing-plans, dispatching-parallel-agents, subagent-driven-development, executing-plans, requesting-code-review, diagnosing-superpowers, using-git-worktrees, finishing-a-development-branch, verification-before-completion | Full orchestration toolkit + review dispatch + session postmortem |
+| Helm   | brainstorming, writing-plans, dispatching-parallel-agents, verification-before-completion                                                                                                                                     | Product orchestration + ideation                                  |
+| Spine  | test-driven-development, systematic-debugging, receiving-code-review, verification-before-completion                                                                                                                          | Code builder — TDD + debugging + review intake                    |
+| Prism  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                                                                 | Code builder — TDD + debugging                                    |
+| Flux   | test-driven-development, systematic-debugging, verification-before-completion                                                                                                                                                 | Code builder — TDD + debugging                                    |
+| Forge  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                                                                 | Code builder — TDD + debugging                                    |
+| Relay  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                                                                 | Code builder — TDD + debugging                                    |
+| Cortex | test-driven-development, systematic-debugging, verification-before-completion                                                                                                                                                 | Code builder — TDD + debugging                                    |
+| Touch  | test-driven-development, systematic-debugging, verification-before-completion                                                                                                                                                 | Code builder — TDD + debugging                                    |
+| Volt   | test-driven-development, systematic-debugging, verification-before-completion                                                                                                                                                 | Code builder — TDD + debugging                                    |
+| Pave   | test-driven-development, systematic-debugging, writing-skills, verification-before-completion                                                                                                                                 | Code builder + skill authoring                                    |
+| Proof  | test-driven-development, systematic-debugging, requesting-code-review, verification-before-completion                                                                                                                         | Test strategy + review dispatch                                   |
+| Warden | systematic-debugging, verification-before-completion                                                                                                                                                                          | Investigation — root cause discipline                             |
+| Vigil  | systematic-debugging, verification-before-completion                                                                                                                                                                          | Investigation — root cause discipline                             |
+| Atlas  | writing-skills, verification-before-completion                                                                                                                                                                                | Documentation — TDD for docs                                      |
+| Draft  | brainstorming, verification-before-completion                                                                                                                                                                                 | Creative — design before implementation                           |
+| Form   | brainstorming, verification-before-completion                                                                                                                                                                                 | Creative — design before implementation                           |
+| Crest  | brainstorming, verification-before-completion                                                                                                                                                                                 | Creative — strategy before commitment                             |
+| Echo   | verification-before-completion                                                                                                                                                                                                | Verification — evidence before claims                             |
+| Lumen  | verification-before-completion                                                                                                                                                                                                | Verification — evidence before claims                             |
+| Lens   | verification-before-completion                                                                                                                                                                                                | Verification — evidence before claims                             |
+| Pitch  | verification-before-completion                                                                                                                                                                                                | Verification — evidence before claims                             |
+| Surge  | verification-before-completion                                                                                                                                                                                                | Verification — evidence before claims                             |
 
 ### Universal Skill
 
 `verification-before-completion` applies to ALL agents. Every agent must have at least this one in its Process Disciplines section.
+
+### Rules carried over from superpowers v6.4.1
+
+These are the discipline changes upstream shipped after evals caught agents failing them. Embed them as iron rules in the agents that own the work — subagents cannot invoke the Skill tool, so the rule has to live in the persona.
+
+| Rule                                                                                                                                      | Belongs to                                            | Why upstream added it                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Green means the project's whole suite, not just the test you wrote; report every failure by name, including ones you did not cause        | every agent with `test-driven-development`            | In 11 of 12 probe runs sessions ran only the one test file their task named, and a broken test next door went unseen |
+| A reasonable person's expectation is a requirement; a spec's silence is not permission                                                    | reviewing agents (Apex, Proof, Spine)                 | Every implementer in the eval shipped the same crash on an input the spec implied but never named                    |
+| List what you declined to judge, one line each, before the verdict — the requester rules on each line, nothing is dropped silently        | reviewing agents                                      | Reviewers were burying out-of-scope observations instead of handing them back                                        |
+| Plans carry a Review Focus section: the uncovered input classes most likely to bite, each pinned to a test in the task that owns the code | planning agents (Apex, Helm)                          | Same eval — the gap is visible at plan time, not at review time                                                      |
+| The human reviews the saved plan before anything runs; approving an idea is not approving a plan they have not seen                       | planning agents                                       | A session took "that scope is ok" as permission to scaffold                                                          |
+| Ask why the person wants the thing before proposing features, write the understanding back for correction                                 | brainstorming agents (Helm, Crest, Echo, Draft, Form) | Knowing the genre of an app does not tell you why your partner wants it                                              |
+| Multi-commit diff base is `git merge-base origin/main HEAD`, never bare `origin/main`                                                     | reviewing agents                                      | A bare `origin/main` shows main's newer files as phantom deletions once main moves past the branch point             |
 
 ### Section Format
 

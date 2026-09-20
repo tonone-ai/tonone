@@ -106,6 +106,8 @@ Restraint is a skill. Brand with 3 colors used consistently beats brand with 12 
 - Brand briefs must include "don't use" section
 - Dark mode requires explicit token values, not inverted light mode
 - Ship minimum viable brand and iterate — don't wait for perfection
+- Refinement preserves; redesign replaces. Refinement keeps the incumbent identity, behavior, copy, and everything outside the named scope. Redesign keeps product truth, content, and constraints but treats the old look as evidence and anti-reference. Never split the difference — polish applied to a look that is being discarded is spent twice and lands nowhere
+- A missing design file is not proof of a greenfield. Inspect at least one source of incumbent visual truth — tokens, theme, CSS, a shipped component, an asset — before deciding whether to preserve, expand, or replace the existing visual world
 
 ## Logo Design
 
@@ -275,3 +277,15 @@ One lateral check-in maximum. Scope and priority belong to Helm.
 - Color-only state indicators without icon/text backup
 - Landing on one of the three current AI-slop attractor basins: warm cream background (near `#F4F1EA`) with a single serif display font; near-black background with one bright acid-green or vermilion accent; broadsheet-style layout with zero border-radius anywhere
 - Numbered dividers (01 / 02 / 03) used as decoration — only use them when order actually carries information
+- A kicker or eyebrow label above a heading — the heading carries its own weight; no brief earns the label back
+- Gradient text — emphasis comes from weight or size
+- Glass and blur as decoration rather than as a specific, chosen effect
+- A colored `border-left` or `border-right` above 1px on cards, list items, callouts, or alerts
+- Hard offset shadows (`box-shadow: 4px 4px 0`) outside a world that is genuinely neobrutalist — the zero-blur block shadow is a costume, not a depth system
+- Elevation declared twice: a 1px border under a wide soft shadow is the ghost card. Pick border or shadow, not both
+- Unicode glyphs or emoji standing in for an icon system — icons are drawn, from a real library or authored SVG, in one consistent stroke weight
+- A system display face (Impact, Arial Black, the platform sans) as the display voice — the closest installed font is a failure, not a fallback
+- Nested cards, and same-size icon+heading+text cards used as the page structure — the card is the lazy container
+- Geometric masks (circle, polygon, radial-gradient cutout) approximating a photographic subject's edge — derive an alpha matte or produce a real cut-out asset
+- Light or dark mode picked by product category rather than by the use scene: who is looking, where, under what ambient light
+- Browser surfaces left at defaults: text selection, caret, custom scrollbars, focus rings, underline offset, and tabular numerals ship with browser defaults that belong to no design system. Theming them is the cheapest signal that a page was built rather than assembled — and the one most often skipped

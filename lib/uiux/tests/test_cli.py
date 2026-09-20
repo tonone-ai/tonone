@@ -100,3 +100,44 @@ def test_design_system_contains_pattern():
 def test_design_system_contains_colors():
     result = _run("design-system", "--product-type", "fintech")
     assert "COLORS" in result.stdout
+
+
+# ── stacks / stack subcommands ────────────────────────────────────────────────
+
+
+def test_stacks_lists_22_stacks():
+    result = _run("stacks")
+    assert result.returncode == 0
+    data = json.loads(result.stdout)
+    assert len(data) == 22
+    assert "shadcn" in data
+
+
+def test_stack_search_returns_results():
+    result = _run("stack", "--stack", "react", "--query", "state management")
+    assert result.returncode == 0
+    data = json.loads(result.stdout)
+    assert data["stack"] == "react"
+    assert len(data["results"]) > 0
+
+
+def test_stack_alias_resolves_to_canonical_name():
+    result = _run("stack", "--stack", "shadcn-ui", "--query", "form")
+    assert result.returncode == 0
+    data = json.loads(result.stdout)
+    assert data["stack"] == "shadcn"
+
+
+def test_stack_results_carry_freshness_contract():
+    result = _run("stack", "--stack", "nextjs", "--query", "routing", "--limit", "1")
+    row = json.loads(result.stdout)["results"][0]
+    for col in ("Applies To", "Status", "Verified At"):
+        assert col in row
+
+
+def test_motion_domain_is_searchable():
+    result = _run("search", "--domain", "motion", "--query", "page transition")
+    assert result.returncode == 0
+    data = json.loads(result.stdout)
+    assert len(data["results"]) > 0
+    assert "GSAP Snippet" in data["results"][0]
