@@ -26,14 +26,15 @@ python apex_agent/apex_scan.py . --skip-endpoints 2>&1 | tail -20
 
 Read `.reports/apex-<latest>.json` if written. Treat CRITICAL/HIGH findings as blocking issues. Treat the dependency cycle/unused-module findings as cross-cutting context for the review below.
 
-1. **Read git log and recent changes to understand what was built.**
+1. **Read git log and recent changes to understand what was built.** Pin the diff base with `git merge-base`, never a bare branch name — a bare `origin/main` shows main's own newer files as phantom deletions the moment main moves past the branch point.
 
 ```bash
 git log --oneline -30
 ```
 
 ```bash
-git diff HEAD~10 --stat
+BASE_SHA=$(git merge-base origin/main HEAD)
+git diff --stat "$BASE_SHA"..HEAD
 ```
 
 Read the key changed files to understand the shape of the work.
@@ -45,6 +46,8 @@ Read the key changed files to understand the shape of the work.
    - **Data integrity** (Flux): Migration safety, backup coverage, schema consistency, data validation
    - **Infrastructure** (Forge): Resource sizing, cost implications, networking gaps
    - **CI/CD** (Relay): Test coverage, deployment safety, rollback capability
+
+2b. **Judge silence by what a reasonable user expects.** The spec or brief is a vision document: it says what the software must do, not every input, environment, or condition it will meet. Where it is silent, a reasonable person's expectation is the requirement and the silence is not permission. Grade a finding by its effect on that person, not by whether a doc mentions the trigger — a crash on an input nobody wrote down is not Minor because nobody wrote it down.
 
 3. **Check for consistency** — do the pieces fit together? Look for:
    - Naming mismatches between components
@@ -60,6 +63,8 @@ Read the key changed files to understand the shape of the work.
    - Which specialist should fix it
    - Estimated effort (quick fix / medium / significant)
    - Risk level (critical / moderate / minor)
+
+5b. **List what you declined to judge.** Before the verdict, name every behavior you considered and set aside as out of scope — one line each, with the reason. The person who asked for the review rules on each line; nothing you set aside disappears silently. An empty list means you checked and set nothing aside, not that you skipped the step.
 
 6. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
 

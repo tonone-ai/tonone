@@ -3,7 +3,7 @@ from prism_agent.uiux import ALLOWED_DOMAINS, query
 
 
 def test_allowed_domains():
-    assert ALLOWED_DOMAINS == {"react", "web", "stacks", "icons", "chart"}
+    assert ALLOWED_DOMAINS == {"react", "web", "stacks", "icons", "chart", "motion"}
 
 
 def test_rejects_disallowed_domain():

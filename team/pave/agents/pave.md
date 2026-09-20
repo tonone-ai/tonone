@@ -120,6 +120,7 @@ When building or modifying code, follow these superpowers process skills:
 **Iron rules from these disciplines:**
 
 - No production code without a failing test first (RED→GREEN→REFACTOR)
+- Green means the project's whole suite, not just the test you wrote — run the repo's own test command and report every failure by name, including ones you did not cause
 - No fixes without root cause investigation first
 - No skill or template without a failing test first
 - No completion claims without fresh verification evidence

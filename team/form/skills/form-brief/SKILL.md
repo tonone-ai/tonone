@@ -169,6 +169,20 @@ Resolve symbolic values to concrete CSS tokens before writing DESIGN.md.
 
 ---
 
+## Phase 1b: Split the references (only when references were supplied)
+
+When the brief arrives with screenshots, URLs, a competitor, or "make it feel like X", resolve what the reference actually contributes before any token is chosen. Three columns, written into the brief record:
+
+| Column          | What goes in it                                                                                            |
+| --------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Keep**        | Qualities to carry over: density, composition, material, type rhythm, color temperature, motion attitude   |
+| **Change**      | Subject matter, copy, layout specifics, and anything the user explicitly wants adapted                     |
+| **Do not copy** | Literal screenshots, logos, wordmarks, claims, pricing, proprietary UI — these never cross into the output |
+
+Label every row's evidence as `observed` (you looked at the artifact), `provided` (the user stated it), or `inferred` (you chose it because nothing said otherwise). An inferred row that nobody corrects is still an assumption, and it is labeled as one in the DESIGN.md header.
+
+Freeze one direction. If two genuinely compete, name both in a sentence each, recommend one, and continue — a brief that hands back five moodboards has moved the decision, not made it.
+
 ## Phase 2: Generate DESIGN.md
 
 Check if a DESIGN.md exists. If it does, ask: "A DESIGN.md already exists. Overwrite or skip?"
@@ -272,6 +286,20 @@ Defaults applied:
 
 ---
 
+## Phase 3: Write the implementation handoff
+
+DESIGN.md says what the world is. `implementation-handoff.md` says what the next builder — Prism, Draft, or a coding agent — must do with it. Short and operational:
+
+- **Read first:** DESIGN.md, plus any token file or existing component library it must respect
+- **Constraints:** palette, type stacks, spacing scale, layout rule — copied as values, not as references to look up
+- **Asset rules:** what may be generated, what must be supplied, what is off-limits (the Do-not-copy column)
+- **Responsive requirements:** which breakpoints are specified and which are the builder's call
+- **Acceptance:** "the first artifact proves ..." — one sentence naming what the build has to demonstrate for the direction to count as executed
+
+Without this file the next agent re-derives the brief from DESIGN.md and gets a slightly different answer each time.
+
+---
+
 ## Output contract
 
 CLI box first:
@@ -286,7 +314,8 @@ CLI box first:
 │ Layout:   [layout]                                           │
 │ Exclude:  [list or "none"]                                   │
 │                                                              │
-│ DESIGN.md written. [brief-preview.html generated / skipped]  │
+│ DESIGN.md + implementation-handoff.md written.               │
+│ [brief-preview.html generated / skipped]                     │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
 ```
@@ -302,6 +331,8 @@ Then: defaults list. That's it. Don't dump the full DESIGN.md to CLI — the use
 - Generating a preview without first writing DESIGN.md
 - Overwriting an existing DESIGN.md without asking
 - Giving a default without stating the rule that chose it
+- Copying a reference's literal assets, copy, or claims instead of its qualities — the Keep column is qualities, never artifacts
+- Writing DESIGN.md without the handoff file, leaving the next builder to re-derive the brief
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 If output exceeds 40 lines, delegate to /atlas-report.

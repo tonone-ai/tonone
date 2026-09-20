@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.14.0] - 2026-09-20
+
+Upstream sweep: read the current release of every plugin tonone borrows from and absorbed what applies. Ledger in `docs/upstream.md`, pins in `docs/upstream.json`, drift detection in `scripts/check-upstream.py`.
+
+### Added
+
+- **`docs/upstream.md` + `docs/upstream.json` + `scripts/check-upstream.py`** — the six upstreams tonone borrows from were tracked nowhere, so "are we behind?" was unanswerable without a manual sweep. The ledger records what was taken from which release and what was deliberately left; the script compares each pin against GitHub's latest release and exits 1 on drift. Wired into the Health Stack in `CLAUDE.md`.
+- **`/apex-diagnose`** — session postmortem from local transcripts: why a run repeated work, ignored the plan, took too long, or cost more than expected. Every finding cites `path:line`; no theory without transcript evidence. From superpowers' `diagnosing-superpowers`, reusing `apex-stats`' transcript parsing.
+- **`motion` domain in `lib/uiux`** — 17 GSAP presets with trigger, duration, easing, snippet, framework notes, and performance notes, tiered by intensity. Granted to Form and Prism; reachable from any agent via `python -m uiux search --domain motion`.
+- **`uiux stacks` and `uiux stack` CLI verbs** — the 1,260 stack-specific guideline rows were only reachable through a Python import, which put them out of reach of the prompt-only design agents.
+- **`lib/uiux/NOTICE.md`** — the vendored CSV corpus is MIT-licensed data from ui-ux-pro-max and had been shipping without the upstream copyright notice MIT requires. Also documents the refresh procedure.
+- **`tests/test_structure.py::test_agent_definitions_mirror_team_copies`** — guards the `agents/` ↔ `team/*/agents/` mirror the way the skills mirror is already guarded.
+
+### Changed
+
+- **`lib/uiux` corpus refreshed to ui-ux-pro-max v2.15.0** — color palettes 161 → 192, UX guidelines 99 → 119, product types 161 → 192, UI reasoning rules 161 → 192, styles 84 → 88, Google Fonts 1,923 → 1,934, stack guideline sets 16 files/841 rows → 22 files/1,260 rows (javafx, wpf, winui, avalonia, uno, uwp added). Every stack row now carries the upstream freshness contract (`Applies To`, `Status`, `Verified At`), surfaced in search output and guarded by a test. `shadcn-ui` was renamed `shadcn` upstream; `STACK_ALIASES` keeps the old key working.
+- **Plan rigor in `apex-plan`** — plans at M depth and above carry a Review Focus (the input classes the brief implies but no task tests, each handed to the specialist who owns that code), the user reviews the saved plan before any specialist starts, and the execution path is a stated choice with a price: dispatched versus inline.
+- **Review rigor in `apex-review`** — the diff base is `git merge-base origin/main HEAD`, not a bare branch name; where a spec is silent, a reasonable user's expectation is the requirement; and the reviewer lists what it declined to judge instead of dropping it silently.
+- **Whole-suite green** — all 10 agents carrying `test-driven-development` now have the iron rule that green means the project's own test command, with every failure reported by name including ones the agent did not cause.
+- **`helm-brief` writes the understanding back** — outcome, audience, and success criteria reflected for correction, with what the user said kept separate from what was assumed, before the brief is drafted.
+- **`form-brief` splits references** — Keep / Change / Do-not-copy with evidence labeled `observed`, `provided`, or `inferred`, plus an `implementation-handoff.md` artifact so the next builder executes the direction instead of re-deriving it. From open-design's reference-design-contract.
+- **Form's craft floor** — 14 named bans added (eyebrow labels, gradient text, glass as decoration, side-stripe borders, hard offset shadows, the ghost card, glyph icons, system display faces, nested card grids, geometric occlusion masks, theme by category) plus the rule for the surfaces nobody themes: selection, caret, scrollbars, focus rings, underline offset, tabular numerals. From impeccable skill-v4.3.1.
+- **Refinement preserves, redesign replaces** — a key rule for Form and Draft, with its corollary that a missing design file is not proof of a greenfield.
+- **`draft-proto` verifies in bounded passes** — build fully, one batched inspection round across viewports, fix in one batch, at most one confirm round, stop. Open-ended self-QA spends the user's budget doing worse what a critique pass does better.
+- **`docs/output-kit.md` compression rules corrected** against caveman v2.7.0's own measurements: invented abbreviations and prose arrows save zero tokens, compression never grows the output, and negations, numbers, units, and correct verb forms are never compressed away.
+- **`docs/agent-guide.md`** — lists superpowers' four newer process skills and carries a table of the v6.4.1 discipline changes with the eval failure that motivated each one.
+
+### Fixed
+
+- **`agents/form.md` and `team/form/agents/form.md` had drifted apart**, as had Draft's two copies — Form's anti-pattern list was edited only in the root copy, Draft's skills table only in the team copy. Both ship, so the same agent behaved differently depending on which plugin installed it. Reconciled and now covered by a test.
+
 ## [1.13.0] - 2026-08-07
 
 ### Removed

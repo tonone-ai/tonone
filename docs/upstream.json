@@ -1,0 +1,54 @@
+{
+  "_comment": "Pinned upstream plugin versions tonone's borrowed patterns were absorbed from. Checked by scripts/check-upstream.py. Bump 'version' and 'checked' only after actually reading the upstream diff and recording it in docs/upstream.md.",
+  "upstreams": [
+    {
+      "name": "superpowers",
+      "repo": "obra/superpowers",
+      "release_prefix": "v",
+      "version": "v6.4.1",
+      "checked": "2026-09-20",
+      "gives": "Process skill workflows, TDD discipline, plan structure, review rigor, worktree model"
+    },
+    {
+      "name": "impeccable",
+      "repo": "pbakaus/impeccable",
+      "release_prefix": "skill-v",
+      "version": "skill-v4.3.1",
+      "checked": "2026-09-20",
+      "gives": "Design craft floor, named anti-pattern bans, bounded verification passes, refinement-vs-redesign"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "release_prefix": "v",
+      "version": "v2.15.0",
+      "checked": "2026-09-20",
+      "gives": "The CSV design corpus and BM25 search engine behind lib/uiux"
+    },
+    {
+      "name": "caveman",
+      "repo": "JuliusBrussee/caveman",
+      "release_prefix": "v",
+      "version": "v2.7.0",
+      "checked": "2026-09-20",
+      "gives": "The compressed communication protocol in docs/output-kit.md"
+    },
+    {
+      "name": "open-design",
+      "repo": "nexu-io/open-design",
+      "release_prefix": "open-design-v",
+      "version": "open-design-v0.23.0",
+      "checked": "2026-09-20",
+      "gives": "I-Lang brief protocol, reference-to-contract workflow, design critique report shape"
+    },
+    {
+      "name": "frontend-design",
+      "repo": "anthropics/claude-code",
+      "release_prefix": null,
+      "version": "bundled-with-claude-code",
+      "checked": "2026-09-20",
+      "gives": "Frontend implementation patterns for Prism and Touch",
+      "note": "Ships inside the official claude-plugins marketplace (plugins/frontend-design), not as its own release. Version tracking is manual."
+    }
+  ]
+}

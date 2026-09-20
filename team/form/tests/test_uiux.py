@@ -9,6 +9,7 @@ def test_allowed_domains():
         "typography",
         "google-fonts",
         "product",
+        "motion",
     }
 
 

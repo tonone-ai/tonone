@@ -1,5 +1,12 @@
 [
   {
+    "name": "apex-diagnose",
+    "agent": "apex",
+    "team": "Engineering",
+    "description": "Session postmortem from local transcripts \u2014 why a run repeated work, ignored the plan, took too long, or cost more than expected. Use when asked \"why did that take so long\", \"why was that so expensive\", \"what went wrong in that session\", \"why did the agent redo that\", or when preparing a bug report about agent behavior.",
+    "path": "team/apex/skills/apex-diagnose/SKILL.md"
+  },
+  {
     "name": "apex-plan",
     "agent": "apex",
     "team": "Engineering",

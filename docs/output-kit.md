@@ -114,6 +114,20 @@ Fragments are fine. Short synonyms preferred: "fix" not "implement a solution fo
 
 Resume compressed style after clear part done.
 
+**Never compress away:**
+
+- Negations — `not`, `never`, `no`, `only`, `except`. Dropping one inverts the meaning; no token saved is worth that
+- Numbers and units — exact, always
+- A correct verb form when the correct form costs the same. "sees" and "see" are one token each, so mangling the grammar buys nothing and reads worse
+
+**Compression that does not compress** — these look terse and are not, measured against the tokenizer:
+
+- **Invented abbreviations** (`cfg`, `impl`, `req`, `res`, `fn`, `auth`). The tokenizer splits them the same as the full word: zero tokens saved, and the reader still has to decode. The full word is cheaper _and_ clearer. Standard acronyms — DB, API, HTTP, IAM — are fine; they are single known tokens
+- **Causal arrows in prose** (`cache miss → 500`). The arrow is its own token, so it saves nothing over `cache miss causes 500`. `→` stays in the CLI skeleton as a structural indicator; it is not a prose connector
+- **Added words that sound terse.** Compression never grows the output. An inserted pronoun or copula to fake broken grammar — "when it not" over "when not" — costs a token and says the same thing
+
+The point of this protocol is signal density, not a token bill: prose is a small fraction of a session's tokens, so compressing it well changes how fast output is read far more than what it costs.
+
 **Boundaries** — always normal English for:
 
 - Code blocks, commits, PR descriptions

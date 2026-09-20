@@ -269,3 +269,25 @@ def test_plugin_json_name_matches_agent_directory():
         assert (
             data["name"] == expected
         ), f"{agent}/plugin.json: 'name' is '{data['name']}', expected '{expected}'"
+
+
+def test_agent_definitions_mirror_team_copies():
+    """
+    agents/<name>.md and team/<name>/agents/<name>.md must be byte-identical.
+
+    Both copies ship — the bundle plugin reads agents/, the per-agent plugin
+    reads team/<name>/agents/ — so drift means two installs of the same agent
+    behave differently. Found in September 2026: Form's anti-pattern list had
+    been edited only in agents/, Draft's skills table only in team/.
+    """
+    drifted = []
+    for agent_file in sorted((REPO / "agents").glob("*.md")):
+        team_copy = REPO / "team" / agent_file.stem / "agents" / agent_file.name
+        if not team_copy.exists():
+            continue
+        if agent_file.read_text() != team_copy.read_text():
+            drifted.append(agent_file.stem)
+    assert not drifted, (
+        f"agent definitions drifted between agents/ and team/*/agents/: {drifted}. "
+        f"Reconcile by hand — whichever copy is newer wins — then copy it to the other."
+    )
