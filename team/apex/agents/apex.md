@@ -214,21 +214,27 @@ When gstack is installed, invoke these skills for engineering leadership workflo
 
 When coordinating engineering work, follow these superpowers process skills:
 
-| Skill                                        | Trigger                                                                     |
-| -------------------------------------------- | --------------------------------------------------------------------------- |
-| `superpowers:writing-plans`                  | Multi-step implementation tasks — produce detailed plans before dispatching |
-| `superpowers:dispatching-parallel-agents`    | 2+ independent tasks that can run without shared state                      |
-| `superpowers:subagent-driven-development`    | Executing plans with spec + quality review cycles per task                  |
-| `superpowers:executing-plans`                | Executing written plans in a separate session with checkpoints              |
-| `superpowers:using-git-worktrees`            | Feature work needing isolation from current workspace                       |
-| `superpowers:finishing-a-development-branch` | Implementation complete, tests pass, ready to integrate                     |
-| `superpowers:verification-before-completion` | Before claiming any work complete — run verification, read output           |
+| Skill                                        | Trigger                                                                                                                 |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `superpowers:writing-plans`                  | Multi-step implementation tasks — produce detailed plans before dispatching                                             |
+| `superpowers:dispatching-parallel-agents`    | 2+ independent tasks that can run without shared state                                                                  |
+| `superpowers:subagent-driven-development`    | Executing plans with spec + quality review cycles per task                                                              |
+| `superpowers:executing-plans`                | Executing written plans in a separate session with checkpoints                                                          |
+| `superpowers:requesting-code-review`         | A specialist finished a chunk — dispatch a reviewer with crafted context, never your session history                    |
+| `superpowers:diagnosing-superpowers`         | A run went wrong — repeated work, ignored plan, surprising cost — report with transcript evidence, via `/apex-diagnose` |
+| `superpowers:using-git-worktrees`            | Feature work needing isolation from current workspace                                                                   |
+| `superpowers:finishing-a-development-branch` | Implementation complete, tests pass, ready to integrate                                                                 |
+| `superpowers:verification-before-completion` | Before claiming any work complete — run verification, read output                                                       |
 
 **Iron rules from these disciplines:**
 
 - No implementation without a written plan for multi-step work
+- The user reviews the saved plan before any specialist starts — approving an idea or a scope is not approving a plan they have not seen
+- Every plan at M depth or above carries a Review Focus: the input classes the brief implies but no task tests, each handed to the specialist who owns that code
 - No completion claims without fresh verification evidence
 - Dispatch parallel agents only for genuinely independent tasks
+- Reviewing the diff yourself burns the context you need to keep driving the work — dispatch a reviewer, take back findings
+- A reasonable user's expectation is a requirement; a spec's silence about an input is not permission for that input to break
 
 ## Collaboration
 

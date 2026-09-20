@@ -1,4 +1,4 @@
-"""Prism agent design intelligence — react, web, stacks, icons, and chart domains."""
+"""Prism agent design intelligence — react, web, stacks, icons, chart, and motion domains."""
 
 try:
     from uiux.search import search, search_stack
@@ -13,7 +13,7 @@ except ImportError:
     search = _missing
     search_stack = _missing
 
-ALLOWED_DOMAINS = {"react", "web", "stacks", "icons", "chart"}
+ALLOWED_DOMAINS = {"react", "web", "stacks", "icons", "chart", "motion"}
 
 
 def query(domain: str, terms: str, limit: int = 5) -> list[dict]:

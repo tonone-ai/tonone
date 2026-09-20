@@ -49,7 +49,16 @@ My recommendation: [tier] because [reason].
 
 Lead with your recommendation and why. Fill in real specialists and numbers for the actual request — the block above is the template, not literal output.
 
-4. **Wait for the user to pick a level.** Do not proceed until they choose a tier (XS, S, M, L, XL, or XXL).
+4. **Wait for the user to pick a level.** Do not proceed until they choose a tier (XS, S, M, L, XL, or XXL). Approving the idea, or the scope, is not approving a plan they have not seen yet — if the tier calls for a written plan, they read that plan before any specialist starts building.
+
+4b. **Write the Review Focus before dispatching (M and up).** Name the five input classes or failure modes the brief implies but no task's tests exercise — the ones most likely to bite the person using this, most likely first, one line each with the behavior a reasonable person would expect. The brief is a vision document: it says what the thing must do, not everything it will meet, and its silence about an input is not permission for that input to break. Hand each line to the specialist who owns that code as an explicit test to write. An empty Review Focus means you checked and found nothing, not that you skipped the check.
+
+4c. **Say how the work will execute, and what each path costs.** Two paths, and the user picks:
+
+- **Dispatched** — a fresh specialist per chunk plus an independent review pass. Most thorough; costs a fresh context per specialist and per review.
+- **Inline** — you implement the tasks in this session under the same scope and stopping rules, then dispatch one review of the whole branch at the end. Cheapest and fastest; no independent check until the end, and it needs the plan to carry the design.
+
+Recommend one, in a sentence drawn from the plan itself: how much the tasks depend on each other's interfaces, how many there are, what a shipped mistake would cost. The XS and S tiers are inline by definition; XL and XXL are dispatched by definition; M and L are a real choice.
 
 5. **Dispatch specialists at the chosen depth.** Run independent specialists in parallel. Run dependent specialists sequentially. Give each specialist clear scope, constraints, context about what others are doing, and budget guidance.
 

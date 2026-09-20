@@ -261,3 +261,8 @@
 2026-07-29 15:27 : confirmed: bundle/\*/skills/apex-plan and helm-plan are symlinks to root skills/ — only 2 real files per skill (team/ canonical + skills/ mirror), no separate bundle copy to sync — @fatih
 [!!] 2026-07-29 15:31 : release 1.11.0 — 2 features, 0 fixes, 1 changed (apex-plan+helm-plan XS-XXL depth tiers) — @fatih
 2026-08-05 17:07 : off-topic research ask (Claude Code plugin install rankings via WebFetch claude.com/plugins) — no repo change — @fatih
+[!!] 2026-09-20 13:59 : upstream sweep — read superpowers v6.4.1, impeccable skill-v4.3.1, ui-ux-pro-max v2.15.0, caveman v2.7.0, open-design v0.23.0; absorbed into agents/skills, bumped 1.13.0 → 1.14.0, uncommitted — @fatih
+2026-09-20 13:59 : new tracking layer — docs/upstream.md ledger + docs/upstream.json pins + scripts/check-upstream.py (gh-first, exit 1 on drift), added to CLAUDE.md Health Stack — @fatih
+[!!] 2026-09-20 13:59 : confirmed bug: agents/form.md and team/form/agents/form.md had two-way drift (Form bans root-only, Draft skills table team-only) — fixed + guarded by tests/test_structure.py::test_agent_definitions_mirror_team_copies — @fatih
+2026-09-20 13:59 : lib/uiux corpus refreshed — palettes 161→192, UX guidelines 99→119, stacks 16/841→22/1260, new motion domain (17 GSAP presets), shadcn-ui→shadcn alias, uiux stacks/stack CLI verbs, NOTICE.md added (MIT notice was missing) — @fatih
+2026-09-20 13:59 : left on table: ui-ux-pro-max BM25 query rewriting + version-aware abstain routing — highest remaining value, conflicts with zero-dependency stdlib constraint — @fatih

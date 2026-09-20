@@ -1,4 +1,4 @@
-"""Form agent design intelligence — style, color, typography, fonts, and product domains."""
+"""Form agent design intelligence — style, color, typography, fonts, product, and motion domains."""
 
 try:
     from uiux.search import search
@@ -24,7 +24,7 @@ except ImportError:
 
     generate_design_system = _missing
 
-ALLOWED_DOMAINS = {"style", "color", "typography", "google-fonts", "product"}
+ALLOWED_DOMAINS = {"style", "color", "typography", "google-fonts", "product", "motion"}
 
 
 def query(domain: str, terms: str, limit: int = 5) -> list[dict]:

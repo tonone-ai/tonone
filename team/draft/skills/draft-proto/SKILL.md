@@ -198,6 +198,8 @@ const { chromium } = require("playwright");
 
 Zero `pageerror` events = ready to deliver.
 
+**Verify in bounded passes, not a loop.** Build the prototype fully, then inspect once in a batched round — every screen, mobile and desktop viewport together, in the same pass. Fix everything that round shows in one batch. Confirm with at most one more round, then stop. The ceiling covers the whole cycle: screenshots, error scans, micro-edits, and rebuilds all count against it. Open-ended self-QA spends the user's budget doing worse what a critique (`/form-critique`) or a review pass does better, and each extra unprompted round makes the prototype less like the one that was approved.
+
 ---
 
 ## Phase 7: Delivery

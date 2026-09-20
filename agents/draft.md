@@ -116,6 +116,21 @@ Don't design for happy paths only. The error state, the empty state, and the edg
 - When in doubt, remove a step — friction compounds
 - Never present IA work without a navigation pattern recommendation
 - The job-to-be-done is a prerequisite — flows without a clear job are screen maps, not UX
+- Refinement preserves; redesign replaces. Refinement keeps the incumbent identity, behavior, copy, and everything outside the named scope. Redesign keeps product truth, content, and constraints but treats the old look as evidence and anti-reference. Never split the difference — polish applied to a look that is being discarded is spent twice and lands nowhere
+- A missing design file is not proof of a greenfield. Inspect at least one source of incumbent visual truth — tokens, theme, CSS, a shipped component, an asset — before deciding whether to preserve, expand, or replace the existing visual world
+
+## Draft Skills
+
+Invoke these skills for specialized UX design workflows:
+
+| Skill             | When to invoke                                              | What it delivers                                                                                  |
+| ----------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `draft-wireframe` | Lo-fi screen layout, structure, content hierarchy           | ASCII wireframe + interaction annotations + responsive behavior, handoff-ready for Form and Prism |
+| `draft-proto`     | Hi-fi clickable prototype, stakeholder demo, usability test | Single-file HTML, device-framed, Playwright-verified, real images — double-click to open          |
+| `draft-flow`      | Mapping a multi-step user journey or task flow              | Mermaid flowchart or numbered step list with branching states                                     |
+| `draft-ia`        | Information architecture, navigation structure, sitemap     | Card sort output analysis, sitemap, breadcrumb logic                                              |
+
+**Routing:** `draft-wireframe` for lo-fi/structure; `draft-proto` when stakeholders need to click through it or when a usability test requires interaction.
 
 ## Gstack Skills
 

@@ -177,6 +177,24 @@ CSV_CONFIG = {
             "Usage",
             "Best For",
             "Style",
+            "Semantic Role",
+            "Allowed Contexts",
+        ],
+    },
+    "motion": {
+        "file": "motion.csv",
+        "search_cols": ["Category", "Intensity Tier", "Keywords", "Trigger"],
+        "output_cols": [
+            "Category",
+            "Intensity Tier",
+            "Trigger",
+            "Duration",
+            "Easing",
+            "GSAP Snippet",
+            "Framework Notes",
+            "Do",
+            "Don't",
+            "Performance Notes",
         ],
     },
     "react": {
@@ -266,6 +284,8 @@ CSV_CONFIG = {
             "Anti_Patterns",
             "Decision_Rules",
             "Severity",
+            "Reasoning",
+            "Confidence",
         ],
     },
 }
@@ -280,7 +300,7 @@ STACK_CONFIG = {
     "svelte": {"file": "stacks/svelte.csv"},
     "astro": {"file": "stacks/astro.csv"},
     "html-tailwind": {"file": "stacks/html-tailwind.csv"},
-    "shadcn-ui": {"file": "stacks/shadcn-ui.csv"},
+    "shadcn": {"file": "stacks/shadcn.csv"},
     "swiftui": {"file": "stacks/swiftui.csv"},
     "react-native": {"file": "stacks/react-native.csv"},
     "flutter": {"file": "stacks/flutter.csv"},
@@ -288,6 +308,18 @@ STACK_CONFIG = {
     "angular": {"file": "stacks/angular.csv"},
     "laravel": {"file": "stacks/laravel.csv"},
     "threejs": {"file": "stacks/threejs.csv"},
+    "javafx": {"file": "stacks/javafx.csv"},
+    "wpf": {"file": "stacks/wpf.csv"},
+    "winui": {"file": "stacks/winui.csv"},
+    "avalonia": {"file": "stacks/avalonia.csv"},
+    "uno": {"file": "stacks/uno.csv"},
+    "uwp": {"file": "stacks/uwp.csv"},
+}
+
+# Alias → canonical stack key. Upstream renamed shadcn-ui → shadcn in v2.15.0;
+# the old key keeps working so callers pinned to it don't break.
+STACK_ALIASES = {
+    "shadcn-ui": "shadcn",
 }
 
 _STACK_COLS = {
@@ -302,6 +334,9 @@ _STACK_COLS = {
         "Code Bad",
         "Severity",
         "Docs URL",
+        "Applies To",
+        "Status",
+        "Verified At",
     ],
 }
 
@@ -444,16 +479,22 @@ def search_stack(stack: str, query: str, limit: int = 3) -> list[dict]:
     Search stack-specific guidelines.
 
     Args:
-        stack:  One of AVAILABLE_STACKS (e.g. "react", "nextjs", "shadcn-ui").
+        stack:  One of AVAILABLE_STACKS (e.g. "react", "nextjs", "shadcn"), or
+                an alias from STACK_ALIASES.
         query:  Free-text search query.
         limit:  Maximum number of results to return (default 3).
 
     Returns:
-        List of result dicts with stack guideline columns.
+        List of result dicts with stack guideline columns. Rows carry the
+        upstream freshness contract — "Applies To" (which major versions the
+        guideline holds for), "Status" (current or legacy) and "Verified At"
+        (the date it was last checked against official docs). A row with
+        Status "legacy" describes an older major; say so when quoting it.
 
     Raises:
         ValueError: If stack is not recognised.
     """
+    stack = STACK_ALIASES.get(stack, stack)
     if stack not in STACK_CONFIG:
         raise ValueError(
             f"Unknown stack: {stack!r}. Available stacks: {AVAILABLE_STACKS}"

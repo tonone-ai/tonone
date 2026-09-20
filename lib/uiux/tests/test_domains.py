@@ -5,8 +5,9 @@ from pathlib import Path
 DATA_DIR = Path(__file__).parent.parent / "uiux" / "data"
 STACKS_DIR = DATA_DIR / "stacks"
 
-# Expected top-level CSV files (12 total)
+# Expected top-level CSV files (13 total)
 TOP_LEVEL_CSVS = [
+    "motion.csv",
     "styles.csv",
     "colors.csv",
     "typography.csv",
@@ -21,7 +22,7 @@ TOP_LEVEL_CSVS = [
     "icons.csv",
 ]
 
-# Expected stack CSV files (16 total)
+# Expected stack CSV files (22 total)
 STACK_CSVS = [
     "react.csv",
     "nextjs.csv",
@@ -31,7 +32,7 @@ STACK_CSVS = [
     "svelte.csv",
     "astro.csv",
     "html-tailwind.csv",
-    "shadcn-ui.csv",
+    "shadcn.csv",
     "swiftui.csv",
     "react-native.csv",
     "flutter.csv",
@@ -39,6 +40,12 @@ STACK_CSVS = [
     "angular.csv",
     "laravel.csv",
     "threejs.csv",
+    "javafx.csv",
+    "wpf.csv",
+    "winui.csv",
+    "avalonia.csv",
+    "uno.csv",
+    "uwp.csv",
 ]
 
 
@@ -53,12 +60,12 @@ def test_stacks_dir_exists():
     assert STACKS_DIR.exists(), f"Stacks directory not found: {STACKS_DIR}"
 
 
-def test_12_top_level_csvs_exist():
+def test_13_top_level_csvs_exist():
     missing = [f for f in TOP_LEVEL_CSVS if not (DATA_DIR / f).exists()]
     assert not missing, f"Missing top-level CSVs: {missing}"
 
 
-def test_16_stack_csvs_exist():
+def test_22_stack_csvs_exist():
     missing = [f for f in STACK_CSVS if not (STACKS_DIR / f).exists()]
     assert not missing, f"Missing stack CSVs: {missing}"
 
@@ -66,8 +73,8 @@ def test_16_stack_csvs_exist():
 def test_total_csv_count():
     top = list(DATA_DIR.glob("*.csv"))
     stacks = list(STACKS_DIR.glob("*.csv"))
-    assert len(top) >= 12, f"Expected at least 12 top-level CSVs, found {len(top)}"
-    assert len(stacks) >= 16, f"Expected at least 16 stack CSVs, found {len(stacks)}"
+    assert len(top) >= 13, f"Expected at least 13 top-level CSVs, found {len(top)}"
+    assert len(stacks) >= 22, f"Expected at least 22 stack CSVs, found {len(stacks)}"
 
 
 # ── data row checks ───────────────────────────────────────────────────────────
@@ -141,3 +148,24 @@ def test_stack_csvs_have_expected_headers():
         headers = _read_header(STACKS_DIR / fname)
         for col in expected_cols:
             assert col in headers, f"{fname} missing column: {col}"
+
+
+def test_motion_csv_has_expected_headers():
+    headers = _read_header(DATA_DIR / "motion.csv")
+    for col in [
+        "Category",
+        "Intensity Tier",
+        "Trigger",
+        "Duration",
+        "Easing",
+        "GSAP Snippet",
+    ]:
+        assert col in headers, f"motion.csv missing column: {col}"
+
+
+def test_stack_csvs_carry_freshness_contract():
+    """Upstream v2.15.0 pins every stack guideline to a version and a check date."""
+    for fname in STACK_CSVS:
+        headers = _read_header(STACKS_DIR / fname)
+        for col in ["Applies To", "Status", "Verified At"]:
+            assert col in headers, f"{fname} missing freshness column: {col}"

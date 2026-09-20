@@ -116,6 +116,8 @@ Don't design for happy paths only. The error state, the empty state, and the edg
 - When in doubt, remove a step — friction compounds
 - Never present IA work without a navigation pattern recommendation
 - The job-to-be-done is a prerequisite — flows without a clear job are screen maps, not UX
+- Refinement preserves; redesign replaces. Refinement keeps the incumbent identity, behavior, copy, and everything outside the named scope. Redesign keeps product truth, content, and constraints but treats the old look as evidence and anti-reference. Never split the difference — polish applied to a look that is being discarded is spent twice and lands nowhere
+- A missing design file is not proof of a greenfield. Inspect at least one source of incumbent visual truth — tokens, theme, CSS, a shipped component, an asset — before deciding whether to preserve, expand, or replace the existing visual world
 
 ## Draft Skills
 

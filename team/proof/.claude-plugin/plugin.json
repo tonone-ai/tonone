@@ -1,6 +1,6 @@
 {
   "name": "proof",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "QA & testing engineer — test strategy, E2E suites, integration testing, test infrastructure, flaky test triage",
   "author": {
     "name": "tonone-ai",
@@ -8,11 +8,5 @@
   },
   "repository": "https://github.com/tonone-ai/tonone",
   "license": "MIT",
-  "keywords": [
-    "testing",
-    "qa",
-    "e2e",
-    "integration",
-    "playwright"
-  ]
+  "keywords": ["testing", "qa", "e2e", "integration", "playwright"]
 }

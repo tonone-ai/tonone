@@ -198,6 +198,8 @@ Hierarchy check:
 - **Spacing from scale only.** Every padding, margin, and gap value must be a valid stop on the 8px scale. "Approximately 20px" is not a valid spec.
 - **Typography max 3 sizes per section.** Display, heading, body — and only when all three are needed.
 - **Every section has one dominant element.** Name it explicitly. If the spec does not name the dominant element, the hierarchy is unresolved.
+- **Spec the surfaces you did not draw.** Text selection colors, the caret, scrollbars, focus rings, link underline offset, and tabular numerals in any data column all ship with browser defaults that belong to no design system. One block at the end of the spec assigns each of them a token from the palette. This is a few lines of spec and it is the difference between a page that was built and one that was assembled.
+- **The brief outranks this list.** A pinned aesthetic, era, material, font, or palette wins over any default here. Redirecting a clear brief toward safer taste is a failure, not a save.
 
 ---
 
