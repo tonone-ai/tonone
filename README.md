@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-100 specialists across 10 teams. Engineering executes. Product decides. Operations runs. Legal de-risks. Design polishes. Data Science decides with data. Security Operations defends. Developer Experience ships good APIs. Infrastructure Specialist runs the cloud. AI Operations ships models. One session, a handful of commands, zero meetings. 422 skills across every discipline. MIT licensed.
+100 specialists across 10 teams. Engineering executes. Product decides. Operations runs. Legal de-risks. Design polishes. Data Science decides with data. Security Operations defends. Developer Experience ships good APIs. Infrastructure Specialist runs the cloud. AI Operations ships models. One session, a handful of commands, zero meetings. 426 skills across every discipline. MIT licensed.
 
 ## The idea
 
@@ -286,7 +286,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 422 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 426 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 
@@ -298,16 +298,15 @@ Every engineering agent detects your stack automatically:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-## All 422 Skills
+## All 421 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
 
-#### Engineering Team (15 agents, 92 skills)
+#### Engineering Team (15 agents, 91 skills)
 
 **Apex** (Engineering Lead)
 
-- `/apex-diagnose` — Session postmortem from local transcripts
 - `/apex-plan` — Plan and scope a project
 - `/apex-profile` — Scope the tonone agent roster for this project
 - `/apex-recon` — Engineering lead reconnaissance
@@ -1088,16 +1087,16 @@ See [CHANGELOG.md](CHANGELOG.md) for full release history.
 
 ## Shoutouts
 
-Tonone stands on the shoulders of giants. Big thanks to the plugins that shaped how this team thinks and works. Each row names the release we last read and absorbed from — `docs/upstream.md` records exactly what was taken, and `python scripts/check-upstream.py` says when one of them has moved since.
+Tonone stands on the shoulders of giants. Big thanks to the plugins that shaped how this team thinks and works:
 
-| Plugin                                                                       | Last absorbed         | What it brought                                                                                                                                                                            |
-| ---------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **[superpowers](https://github.com/obra/superpowers)**                       | `v6.4.1`              | Structured skill workflows, TDD discipline, the worktree-native development model, and the plan/review rigor behind `apex-plan`, `apex-review`, and `apex-diagnose`                        |
-| **[impeccable](https://github.com/pbakaus/impeccable)**                      | `skill-v4.3.1`        | Design critique vocabulary, the polish-first mindset in Form and Draft, and the named craft floor — from browser-surface theming down to the specific bans that keep AI-default design out |
-| **frontend-design**                                                          | bundled               | Frontend implementation patterns that Prism and Touch draw from                                                                                                                            |
-| **[ui-ux-pro-max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)** | `v2.15.0`             | 192 color palettes, 88 UI styles, 74 font pairings, 119 UX guidelines, 17 motion presets, 1,260 stack-specific rules, and the BM25 design search engine powering `lib/uiux`                |
-| **[caveman](https://github.com/JuliusBrussee/caveman)**                      | `v2.7.0`              | The communication mode that cuts every response to its bones — and the measurements showing which compression tricks actually pay                                                          |
-| **[open-design](https://github.com/nexu-io/open-design)**                    | `open-design-v0.23.0` | The I-Lang brief protocol and reference-to-contract discipline in `form-brief`, the hand-drawn wireframe mode in `draft-wireframe`, and the HTML radar report in `form-critique`           |
+| Plugin              | What it brought                                                                                                                                                                                                                          |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **superpowers**     | Structured skill workflows, brainstorming loops, TDD discipline, and the worktree-native development model that Tonone runs on                                                                                                           |
+| **impeccable**      | Design critique vocabulary and the polish-first mindset baked into Form and Draft                                                                                                                                                        |
+| **frontend-design** | Frontend implementation patterns that Prism and Touch draw from                                                                                                                                                                          |
+| **ui-ux-pro-max**   | 161 color palettes, 84 UI styles, 57 font pairings, 99 UX guidelines, and the BM25 design search engine now powering `lib/uiux`                                                                                                          |
+| **caveman**         | The communication mode that cuts every response to its bones — no fluff, all signal                                                                                                                                                      |
+| **open-design**     | 19 design skills and the I-Lang brief protocol that power `form-brief`, the hand-drawn wireframe mode in `draft-wireframe`, and the HTML radar report in `form-critique` — [nexu-io/open-design](https://github.com/nexu-io/open-design) |
 
 ## License
 

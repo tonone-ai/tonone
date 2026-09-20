@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.15.0] - 2026-09-20
+
+### Added
+
+- **`lib/jev/` — typed decision layer.** A dependency-free CommonJS client exposing `noul` (yes/no), `choice` (1-of-N), `score` (ordered scale) and a batch form that carries many named questions in one request. Provider resolution is env-only and opt-in: `JEV_API_KEY`/`TYPESAFE_API_KEY` to TypeSafe, `OPENROUTER_API_KEY` to OpenRouter, neither to a local TF-IDF scorer. Nothing in the public API throws — missing credentials, dead endpoints, timeouts, HTTP errors, malformed bodies and empty option lists all degrade to the local path. The API adapters are tested against a local HTTP server only; no real provider has been contacted.
+- **`hooks/tonone-skill-gate.js` — SessionStart skill-manifest gate.** A full install loads 426 skill descriptions, **23,078 tokens, into every session before the user types anything**. The gate scores the 10 teams first, then skills within surviving teams, and merges `skillOverrides` into `.claude/settings.local.json`. Measured on the key-free scorer: **23,078 → 1,859 tokens on this repo (−92%)**, 2,040 on a frontend fixture, 1,755 on an infra fixture, all in roughly 120 ms with no network. It never writes `off` — hiding a skill from Claude is reversible by typing `/skill-name`, hiding it from the user is not — and it records its own provenance so `--reset` retracts exactly what it added. Companion skill `/apex-gate`.
+- **`team/warden/hooks/warden-guard.js` — PreToolUse security advisory.** 21 risk patterns (command injection, `eval`, XSS sinks, hardcoded secrets behind an entropy gate, SQL concatenation, path traversal, unsafe deserialization, destructive shell). Warns and always exits 0; no permission decision is ever emitted. Rules are data in `rules.json`. Warden previously shipped no hook at all.
+- **`lib/compact/` — verbatim transcript selection** plus `/token-compact`. Drops or truncates stale tool calls and results; everything kept stays byte-for-byte, and user and assistant text is never touched.
+- **`/spine-simplify`** — a behavior-preserving clarity pass. The repo had no simplification skill across 426.
+- **`/pave-lsp`** — detects a project's languages and wires the published TypeScript, Pyright, Go and Rust LSP plugins plus Serena, rather than implementing semantic analysis.
+- **Onboarding roster recommender** — `lib/signals/project-shape.js` plus a rewritten `/tonone-onboard` banner proposing four or five agents instead of all 100, feeding `apex-profile` rather than competing with it.
+- **`docs/memory-audit.md`** — elephant versus the Remember plugin, measured against this repo's own history. Verdict: keep elephant, because its file is committed and shared where Remember's sidecar is per-developer; fix the recall window, which the critical tier has outgrown.
+- **`docs/jev-browser-eval.md`** — jev-browser and playjev assessed against every browser-driven surface. One go, one conditional go, no-go on the rest. Specs only, no integration code.
+
+### Changed
+
+- **Typed decisions wired into `apex-route`, `apex-plan`, `helm-plan` and `helm-arbiter`** as gated assists — a `choice` over the agent index, a `score` over the six depth tiers that proposes but never auto-selects, and a `noul` that is one input to the arbitration rather than the decider. Each is discarded unless a hosted model answered above a confidence floor, so every skill runs unchanged on the key-free path. On that path the `apex-route` assist measures roughly 0.005 confidence over one-line hat descriptions and is rejected on every request by design; it only pays out with a key.
+- **`ELEPHANT.md`** — four `[!!]` entries demoted to routine. Each asserted a bug fixed in April or June, one naming a file deleted three months earlier, and they had been priming every session in this repo for five months.
+- **`docs/repomap.md`, `README.md`** — skill count 422 → 426, root mirror 450 → 454 dirs.
+
+### Fixed
+
+- **The PreCompact surface does not exist as assumed.** Claude Code 2.1.278 exposes a PreCompact hook that can read the transcript and block compaction, but cannot modify what gets compacted: `hookSpecificOutput` has no PreCompact member, and compaction reads in-memory messages rather than the transcript file. Recorded in `docs/adr/0001-no-precompact-transcript-rewrite.md`; the on-demand path ships instead of a hook that would silently do nothing.
+
 ## [1.14.0] - 2026-09-20
 
 Upstream sweep: read the current release of every plugin tonone borrows from and absorbed what applies. Ledger in `docs/upstream.md`, pins in `docs/upstream.json`, drift detection in `scripts/check-upstream.py`.

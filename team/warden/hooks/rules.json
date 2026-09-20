@@ -1,0 +1,382 @@
+{
+  "$comment": "warden-guard rule set. Data, not code — add a rule here, never in warden-guard.js. Fields: id, title, severity (CRITICAL|WARNING|INFO), targets (code|shell), ext (optional extension allowlist), needle (cheap lowercase substring prefilter), all/any/none (regex lists evaluated per line), capture (value gate: pattern + group, reject regex list, minEntropy floor — reject is tested first), advice, i (case-insensitive). A single pattern may override the rule's casing with a leading (?i) or (?-i).",
+  "version": 1,
+  "macros": {
+    "PLACEHOLDER": "(example|sample|dummy|fake|placeholder|changeme|change_me|redacted|your[-_ ]|my[-_ ]|xxx|\\.\\.\\.|<[^>]*>|\\{\\{|\\$\\{|%[sd]\\b|process\\.env|import\\.meta\\.env|os\\.environ|getenv|secrets\\.|vault|keyring|argv|todo|test|mock|foobar|abcdef|1234567890|lorem|null|undefined|\\*{3,})",
+    "CODE_EXT": "js",
+    "UNTRUSTED": "(req\\.(?:query|params|body|headers|cookies)|request\\.(?:args|form|json|GET|POST|body)|process\\.argv|sys\\.argv|event\\.(?:queryStringParameters|pathParameters|body)|ctx\\.(?:query|params|request)|userInput|user_input|searchParams|payload\\.|\\bflask\\b)",
+    "SECRET_LOWER": "(?:pass(?:wd|word)?|secret|token|api[_-]?key|apikey|access[_-]?key|auth[_-]?token|client[_-]?secret|private[_-]?key|credentials?)",
+    "SECRET_HUMP": "(?:Pass(?:wd|word)?|PASS(?:WD|WORD)?|Secret|SECRET|Token|TOKEN|Api[_-]?Key|ApiKey|API[_-]?KEY|APIKEY|Access[_-]?Key|AccessKey|ACCESS[_-]?KEY|Auth[_-]?Token|AuthToken|AUTH[_-]?TOKEN|Client[_-]?Secret|ClientSecret|CLIENT[_-]?SECRET|Private[_-]?Key|PrivateKey|PRIVATE[_-]?KEY|Credentials?|CREDENTIALS?)",
+    "SECRET_NAME": "(?:(?<![A-Za-z])(?:{{SECRET_LOWER}}|{{SECRET_MIXED}}|{{SECRET_HUMP}})|(?<=[A-Za-z]){{SECRET_HUMP}})",
+    "SECRET_MIXED": "(?:api[_-]?Key|apiKey|access[_-]?Key|accessKey|auth[_-]?Token|authToken|client[_-]?Secret|clientSecret|private[_-]?Key|privateKey)",
+    "WORD_SHAPED": "^[A-Za-z]+(?:[-_. ][A-Za-z]+)+$"
+  },
+  "rules": [
+    {
+      "id": "cmd-injection-node-exec-untrusted",
+      "title": "Shell command built from request input",
+      "severity": "CRITICAL",
+      "targets": ["code"],
+      "ext": ["js", "jsx", "ts", "tsx", "mjs", "cjs"],
+      "needle": ["exec(", "execsync("],
+      "any": [
+        "\\b(?:exec|execSync)\\s*\\(\\s*`[^`]*\\$\\{",
+        "\\b(?:exec|execSync)\\s*\\(\\s*[\"'][^\"']*[\"']\\s*\\+",
+        "\\b(?:exec|execSync)\\s*\\(\\s*[A-Za-z_$][\\w$.]*\\s*\\+"
+      ],
+      "advice": "Request data reaching a shell is command injection. Use execFile/spawn with an argument array.",
+      "all": ["{{UNTRUSTED}}"]
+    },
+    {
+      "id": "cmd-injection-node-exec",
+      "title": "Shell command built by interpolation",
+      "severity": "WARNING",
+      "targets": ["code"],
+      "ext": ["js", "jsx", "ts", "tsx", "mjs", "cjs"],
+      "needle": ["exec(", "execsync("],
+      "any": [
+        "\\b(?:exec|execSync)\\s*\\(\\s*`[^`]*\\$\\{",
+        "\\b(?:exec|execSync)\\s*\\(\\s*[\"'][^\"']*[\"']\\s*\\+",
+        "\\b(?:exec|execSync)\\s*\\(\\s*[A-Za-z_$][\\w$.]*\\s*\\+"
+      ],
+      "advice": "Interpolated text reaching a shell is command injection if any part is user-controlled. Prefer execFile/spawn with an argument array.",
+      "none": ["{{UNTRUSTED}}"]
+    },
+    {
+      "id": "cmd-injection-python-shell",
+      "title": "Python shell call built by interpolation",
+      "severity": "WARNING",
+      "targets": ["code"],
+      "ext": ["py"],
+      "needle": ["os.system", "subprocess", "popen"],
+      "any": [
+        "\\bos\\.system\\s*\\(\\s*(?:f[\"']|[^)]*(?:\\+|%|\\.format\\s*\\())",
+        "\\bos\\.popen\\s*\\(\\s*(?:f[\"']|[^)]*(?:\\+|%|\\.format\\s*\\())",
+        "\\bsubprocess\\.\\w+\\s*\\(\\s*(?:f[\"']|[^)]*\\+)[^)]*shell\\s*=\\s*True",
+        "shell\\s*=\\s*True[^)]*(?:f[\"']|\\+\\s*\\w)"
+      ],
+      "advice": "Interpolated text reaching a shell is command injection if any part is user-controlled. Pass an argument list and drop shell=True.",
+      "none": ["{{UNTRUSTED}}"]
+    },
+    {
+      "id": "cmd-injection-python-shell-untrusted",
+      "title": "Python shell call built from request input",
+      "severity": "CRITICAL",
+      "targets": ["code"],
+      "ext": ["py"],
+      "needle": ["os.system", "subprocess", "popen"],
+      "any": [
+        "\\bos\\.system\\s*\\(\\s*(?:f[\"']|[^)]*(?:\\+|%|\\.format\\s*\\())",
+        "\\bos\\.popen\\s*\\(\\s*(?:f[\"']|[^)]*(?:\\+|%|\\.format\\s*\\())",
+        "\\bsubprocess\\.\\w+\\s*\\(\\s*(?:f[\"']|[^)]*\\+)[^)]*shell\\s*=\\s*True",
+        "shell\\s*=\\s*True[^)]*(?:f[\"']|\\+\\s*\\w)"
+      ],
+      "advice": "Request data reaching a shell is command injection. Pass an argument list and drop shell=True.",
+      "all": ["{{UNTRUSTED}}"]
+    },
+    {
+      "id": "dynamic-code-eval",
+      "title": "Dynamic code evaluation",
+      "severity": "WARNING",
+      "targets": ["code"],
+      "ext": ["js", "jsx", "ts", "tsx", "mjs", "cjs", "py", "rb", "php"],
+      "needle": ["eval(", "new function("],
+      "any": [
+        "(?<![.\\w])eval\\s*\\([^)]*(?:\\$\\{|\\+|[A-Za-z_$][\\w$]*\\s*[,)])",
+        "\\bnew\\s+Function\\s*\\(\\s*[^)]+\\)"
+      ],
+      "none": [
+        "literal_eval",
+        "(?<![.\\w])eval\\s*\\(\\s*[\"'`][^\"'`]*[\"'`]\\s*\\)"
+      ],
+      "advice": "eval on a value turns data into code. Use JSON.parse, a lookup table, or ast.literal_eval."
+    },
+    {
+      "id": "xss-inner-html",
+      "title": "innerHTML assigned a value",
+      "severity": "WARNING",
+      "targets": ["code"],
+      "ext": ["js", "jsx", "ts", "tsx", "mjs", "cjs", "vue", "svelte", "html"],
+      "needle": ["innerhtml", "outerhtml"],
+      "all": [
+        "\\.(?:inner|outer)HTML\\s*\\+?=",
+        "=\\s*(?:`[^`]*\\$\\{|[^\"'`;]*[A-Za-z_$][\\w$]*|[\"'][^\"']*[\"']\\s*\\+)"
+      ],
+      "none": [
+        "=\\s*[\"'`]{2}\\s*;?\\s*$",
+        "DOMPurify|sanitiz|escapeHtml|textContent"
+      ],
+      "advice": "Use textContent, or sanitize with DOMPurify before assigning HTML."
+    },
+    {
+      "id": "xss-dangerously-set-html",
+      "title": "dangerouslySetInnerHTML",
+      "severity": "WARNING",
+      "targets": ["code"],
+      "ext": ["js", "jsx", "ts", "tsx", "mjs", "cjs"],
+      "needle": ["dangerouslysetinnerhtml"],
+      "all": ["dangerouslySetInnerHTML"],
+      "none": ["DOMPurify|sanitiz|escapeHtml"],
+      "advice": "Sanitize the HTML (DOMPurify) before handing it to React, or render it as text."
+    },
+    {
+      "id": "xss-document-write",
+      "title": "document.write with a value",
+      "severity": "WARNING",
+      "targets": ["code"],
+      "ext": ["js", "jsx", "ts", "tsx", "mjs", "cjs", "html"],
+      "needle": ["document.write"],
+      "any": [
+        "document\\.write(?:ln)?\\s*\\(\\s*`[^`]*\\$\\{",
+        "document\\.write(?:ln)?\\s*\\(\\s*[^)\"'`]*[A-Za-z_$][\\w$]*",
+        "document\\.write(?:ln)?\\s*\\(\\s*[\"'][^\"']*[\"']\\s*\\+"
+      ],
+      "advice": "document.write injects raw HTML. Build nodes with createElement/textContent."
+    },
+    {
+      "id": "secret-known-prefix",
+      "title": "Credential with a known key prefix",
+      "severity": "CRITICAL",
+      "targets": ["code", "shell"],
+      "needle": [
+        "akia",
+        "sk-",
+        "ghp_",
+        "gho_",
+        "ghs_",
+        "xox",
+        "aiza",
+        "private key",
+        "glpat-",
+        "npm_",
+        "sg."
+      ],
+      "any": [
+        "\\bAKIA[0-9A-Z]{16}\\b",
+        "\\bsk-(?:live|proj|ant|or)?-?[A-Za-z0-9_\\-]{24,}",
+        "\\bgh[pousr]_[A-Za-z0-9]{30,}",
+        "\\bxox[baprs]-[A-Za-z0-9-]{12,}",
+        "\\bAIza[0-9A-Za-z_\\-]{35}\\b",
+        "-----BEGIN [A-Z ]*PRIVATE KEY-----",
+        "\\bglpat-[A-Za-z0-9_\\-]{20,}",
+        "\\bnpm_[A-Za-z0-9]{36}\\b",
+        "\\bSG\\.[A-Za-z0-9_\\-]{16,}\\.[A-Za-z0-9_\\-]{16,}"
+      ],
+      "none": ["(?i){{PLACEHOLDER}}"],
+      "advice": "Live credential in source. Move it to an env var or secret manager and rotate the key."
+    },
+    {
+      "id": "secret-assigned-literal",
+      "title": "Secret assigned a high-entropy literal",
+      "severity": "CRITICAL",
+      "targets": ["code", "shell"],
+      "i": true,
+      "needle": [
+        "password",
+        "passwd",
+        "secret",
+        "token",
+        "apikey",
+        "api_key",
+        "api-key",
+        "access_key",
+        "credential",
+        "private_key"
+      ],
+      "all": ["(?-i){{SECRET_NAME}}[\"']?\\s*[:=]\\s*[\"'][^\"']{16,}[\"']"],
+      "none": [
+        "(?i){{PLACEHOLDER}}",
+        "[\"']\\s*\\+",
+        "\\bdescription\\b",
+        "\\bmessage\\b"
+      ],
+      "capture": {
+        "pattern": "(?-i){{SECRET_NAME}}[\"']?\\s*[:=]\\s*[\"']([^\"']{16,})[\"']",
+        "group": 1,
+        "reject": ["(?i){{WORD_SHAPED}}"],
+        "minEntropy": 3.4
+      },
+      "advice": "Hardcoded credential. Read it from the environment and rotate the value that leaked."
+    },
+    {
+      "id": "sql-string-concat",
+      "title": "SQL built by string concatenation",
+      "severity": "CRITICAL",
+      "targets": ["code"],
+      "ext": [
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "mjs",
+        "cjs",
+        "py",
+        "go",
+        "rb",
+        "php",
+        "java",
+        "cs",
+        "sql"
+      ],
+      "i": true,
+      "needle": ["select ", "insert into", "update ", "delete from"],
+      "all": [
+        "[\"'`][^\"'`]*\\b(?:select\\b[^\"'`]*\\bfrom\\b|insert\\s+into\\b|update\\b[^\"'`]*\\bset\\b|delete\\s+from\\b)",
+        "(?:\\$\\{|[\"']\\s*\\+|\\+\\s*[\"']|\\.format\\s*\\(|\\bf[\"'])"
+      ],
+      "none": ["\\bquery\\s*\\(\\s*sql\\s*,", "sqlalchemy\\.text"],
+      "advice": "SQL injection. Use bound parameters ($1, ?, :name) instead of building the query string."
+    },
+    {
+      "id": "path-traversal-user-input",
+      "title": "Filesystem path built from request input",
+      "severity": "WARNING",
+      "targets": ["code"],
+      "ext": ["js", "jsx", "ts", "tsx", "mjs", "cjs", "py", "go", "rb", "php"],
+      "needle": ["req.", "request.", "params", "argv", "querystringparameters"],
+      "all": [
+        "\\b(?:req\\.(?:query|params|body)|request\\.(?:args|form|json|GET|POST)|process\\.argv|sys\\.argv|event\\.(?:queryStringParameters|pathParameters))\\b",
+        "\\b(?:path\\.(?:join|resolve)|os\\.path\\.join|fs\\.(?:readFile|readFileSync|writeFile|writeFileSync|createReadStream|createWriteStream)|sendFile|open\\s*\\()"
+      ],
+      "none": [
+        "basename|sanitiz|normalize\\s*\\(|allowlist|whitelist|path\\.relative"
+      ],
+      "advice": "Path traversal. Resolve the path and confirm it stays inside the allowed root, or index by id."
+    },
+    {
+      "id": "unsafe-deserialization",
+      "title": "Unsafe deserialization",
+      "severity": "WARNING",
+      "targets": ["code"],
+      "ext": [
+        "py",
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "mjs",
+        "cjs",
+        "rb",
+        "php",
+        "java"
+      ],
+      "needle": [
+        "pickle",
+        "marshal.loads",
+        "yaml.load",
+        "unserialize",
+        "jsonpickle",
+        "runinthiscontext"
+      ],
+      "any": [
+        "\\b(?:c?[Pp]ickle)\\.loads?\\s*\\(",
+        "\\bmarshal\\.loads\\s*\\(",
+        "\\byaml\\.load\\s*\\((?![^)]*Safe)",
+        "\\bjsonpickle\\.decode\\s*\\(",
+        "\\bunserialize\\s*\\(",
+        "\\bvm\\.runInThisContext\\s*\\("
+      ],
+      "none": ["safe_load|SafeLoader|pickle\\.dumps"],
+      "advice": "Deserializing untrusted bytes runs code. Use JSON, or yaml.safe_load."
+    },
+    {
+      "id": "shell-rm-rf-expanded",
+      "title": "rm -rf on a variable, glob, or root path",
+      "severity": "CRITICAL",
+      "targets": ["shell"],
+      "all": [
+        "\\brm\\s+(?:-[a-zA-Z]*r[a-zA-Z]*f|-[a-zA-Z]*f[a-zA-Z]*r|-r\\s+-f|-f\\s+-r|--recursive\\s+--force)\\b",
+        "(?:\\$\\{?[A-Za-z_]|`|~|/\\*|\\s/\\s*(?:$|[;&|])|\\.\\.)"
+      ],
+      "advice": "An empty or unexpected variable turns this into a wipe. Guard the value, or use a literal path."
+    },
+    {
+      "id": "shell-force-push",
+      "title": "Force push",
+      "severity": "WARNING",
+      "targets": ["shell"],
+      "needle": ["git push"],
+      "all": ["\\bgit\\s+push\\b[^\\n]*(?:--force\\b|\\s-f\\b)"],
+      "none": ["--force-with-lease"],
+      "advice": "Force push overwrites other people's commits. Use --force-with-lease, never on a shared branch."
+    },
+    {
+      "id": "sql-destructive-statement",
+      "title": "Destructive SQL statement",
+      "severity": "CRITICAL",
+      "targets": ["shell", "code"],
+      "ext": ["sql", "py", "js", "ts", "rb", "go", "sh", "bash"],
+      "i": true,
+      "needle": [
+        "drop table",
+        "drop database",
+        "drop schema",
+        "truncate",
+        "delete from"
+      ],
+      "any": [
+        "\\bdrop\\s+(?:table|database|schema)\\b",
+        "\\btruncate\\s+table\\b",
+        "\\bdelete\\s+from\\s+[\\w.\"`]+\\s*(?:;|$)"
+      ],
+      "none": [
+        "if\\s+exists\\s+\\w*_?(?:tmp|temp)",
+        "create\\s+table",
+        "--\\s*warden"
+      ],
+      "advice": "Irreversible against a live database. Confirm the target, take a backup, add a WHERE clause."
+    },
+    {
+      "id": "shell-curl-pipe-shell",
+      "title": "Remote script piped into a shell",
+      "severity": "CRITICAL",
+      "targets": ["shell"],
+      "needle": ["curl", "wget"],
+      "all": ["\\b(?:curl|wget)\\b[^|]*\\|\\s*(?:sudo\\s+)?(?:ba|z|k)?sh\\b"],
+      "advice": "Whoever controls that URL controls this machine. Download, read, then run."
+    },
+    {
+      "id": "shell-insecure-tls",
+      "title": "TLS verification disabled",
+      "severity": "WARNING",
+      "targets": ["shell"],
+      "needle": ["curl", "wget"],
+      "any": [
+        "\\bcurl\\b[^\\n]*(?:\\s-k\\b|--insecure\\b)",
+        "\\bwget\\b[^\\n]*--no-check-certificate"
+      ],
+      "advice": "Skipping certificate checks invites a man in the middle. Fix the trust store instead."
+    },
+    {
+      "id": "shell-world-writable",
+      "title": "World-writable permissions",
+      "severity": "WARNING",
+      "targets": ["shell"],
+      "needle": ["chmod"],
+      "all": ["\\bchmod\\s+(?:-R\\s+)?0?777\\b"],
+      "advice": "777 lets any local user rewrite the file. Use 755, or 700 for secrets."
+    },
+    {
+      "id": "shell-disk-destructive",
+      "title": "Raw disk write",
+      "severity": "CRITICAL",
+      "targets": ["shell"],
+      "needle": ["dd ", "mkfs", "/dev/sd", "/dev/nvme"],
+      "any": [
+        "\\bdd\\b[^\\n]*\\bof=/dev/",
+        "\\bmkfs(?:\\.[a-z0-9]+)?\\s",
+        ">\\s*/dev/(?:sd[a-z]|nvme\\d)"
+      ],
+      "advice": "This destroys a device, not a file. Re-read the target before running it."
+    },
+    {
+      "id": "shell-eval-expansion",
+      "title": "eval on an expanded variable",
+      "severity": "CRITICAL",
+      "targets": ["shell"],
+      "needle": ["eval"],
+      "all": ["\\beval\\s+[\"']?\\$"],
+      "advice": "eval on an expansion executes whatever is in the variable. Use an array and \"${cmd[@]}\"."
+    }
+  ]
+}

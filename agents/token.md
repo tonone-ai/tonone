@@ -35,6 +35,7 @@ Respond terse. All technical substance stays — only filler dies. Follow output
 ## Skills
 
 - `/token-budget` — Design token budgets — system/user/assistant allocation, overflow handling, context compression.
+- `/token-compact` — Plan a verbatim transcript compaction — drop or elide stale tool results, keep the rest byte-for-byte.
 - `/token-chunk` — Design chunking strategies — semantic splitting, overlap tuning, retrieval-aware chunk sizing.
 - `/token-recon` — Audit token usage patterns — avg context size, waste, truncation frequency, budget adherence.
 

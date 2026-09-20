@@ -3,7 +3,7 @@ name: helm-plan
 description: |
   Use when asked to build a product roadmap, prioritize a backlog, decide what to build next, or sequence a list of feature ideas. Examples: "what should we build next", "prioritize this backlog", "make a roadmap", "RICE score these features".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.6.4
+version: 0.7.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -18,7 +18,39 @@ You are Helm — the Head of Product on the Product Team.
 
 ### Step 0: Choose Depth
 
-Before gathering input, present depth tiers so the user picks how much product-team involvement this needs — fast gut-check vs. full cross-functional rigor. Only show tiers that make sense for the request. Use this format:
+Before gathering input, present depth tiers so the user picks how much product-team involvement this needs — fast gut-check vs. full cross-functional rigor. Only show tiers that make sense for the request.
+
+**Optional tier proposal.** The pick is a position on a 6-level ordered rubric, which is a `score` question. Run it as an assist that proposes; the user still chooses.
+
+```bash
+JEV="${CLAUDE_PLUGIN_ROOT:-.}/lib/jev/cli.js"
+[ -f "$JEV" ] || JEV="lib/jev/cli.js"
+[ -f "$JEV" ] || JEV=""
+
+python3 -c 'import json;print(json.dumps(["XS — gut check, no scoring and no research, Helm alone","S — fast RICE pass over the given items with stated or default inputs, Helm alone","M — researched roadmap, RICE grounded in real metrics plus a strategic filter pass","L — full roadmap, adds user research validation and a flow sanity check","XL — strategic roadmap, adds competitive positioning and messaging alignment","XXL — full product strategy overhaul, entire team in parallel with adversarial review"]))' > /tmp/jev-helm-tiers.json
+
+# $REQUEST = what the user asked for, plus any backlog or context they pasted
+printf '%s' "$REQUEST" > /tmp/jev-helm-state.txt
+
+if [ -n "$JEV" ]; then
+  node "$JEV" score \
+    --state-file /tmp/jev-helm-state.txt \
+    --question "How much product-team involvement does this request need?" \
+    --levels-file /tmp/jev-helm-tiers.json
+fi
+```
+
+`answer` is a weighted mean of the level indices — index 0 is XS through index 5 is XXL — so `3.6` means "L, leaning XL", not "L". The CLI always exits 0 and always prints one JSON object; no credentials, no network and a dead endpoint all return a well-formed local result instead of an error.
+
+**Surface the proposal only when `source` is `"jev"` and `confidence` >= 0.5.** Then add one line above the menu:
+
+```
+Jev proposes L (3.6 of 0-5, confidence 0.68) — advisory, you pick.
+```
+
+Otherwise say nothing about it. With no API key set the layer uses a local lexical scorer, whose measured confidence on this question is around `0.01`, so the key-free default is silence and this step behaves exactly as it did before. Form your own recommendation first and keep it if the two disagree — show both rather than splitting the difference.
+
+Use this format for the menu:
 
 ```
 XS — Gut check (Helm, ~10K tokens, ~$0.02)
@@ -108,6 +140,15 @@ Usage:
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
-## Delivery
+## Key Rules
+
+- Jev proposes a tier. It never picks one. The wait for the user's choice is unconditional — a high-confidence proposal is not a decision.
+- Discard any proposal whose `source` is not `"jev"`. `"local"` and `"fallback"` mean lexical overlap, not judgment about scope.
+- The decision layer is optional. If `lib/jev/cli.js` is absent, every step here runs unchanged.
+- Credentials are environment-only and opt-in. Never prompt for a key or suggest setting one mid-plan.
+- RICE is arithmetic, not a verdict. Step 3 judgment filters override the raw ranking, and so does a stated dependency.
+- Name every deprioritized item and why. The NOT NOW list is the part people act on.
+
+## Output Format
 
 If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.
