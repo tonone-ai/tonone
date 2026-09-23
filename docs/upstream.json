@@ -49,6 +49,14 @@
       "checked": "2026-09-20",
       "gives": "Frontend implementation patterns for Prism and Touch",
       "note": "Ships inside the official claude-plugins marketplace (plugins/frontend-design), not as its own release. Version tracking is manual."
+    },
+    {
+      "name": "open-seo",
+      "repo": "every-app/open-seo",
+      "release_prefix": "v",
+      "version": "v0.1.9",
+      "checked": "2026-09-24",
+      "gives": "Evidence-first SEO audit discipline, SERP-overlap keyword clustering, link-prospecting and local-SEO guardrails for Ink"
     }
   ]
 }

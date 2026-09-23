@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- **`/ink-links`** — link prospecting: pick a linkable asset, qualify prospects (unlinked mentions, competitor linkers, resource pages, broken links), source every contact path, draft outreach. Never invents contacts; flags paid placements.
+- **`/ink-local`** — local SEO audit: Business Profile against the top local competitors, local-pack and Maps visibility, location-page signals. Matches by `place_id`, warns about cost before grid checks, never recommends review gating or keyword-stuffed names.
+
+### Changed
+
+- **Ink SEO skills are evidence-first** (patterns from [every-app/open-seo](https://github.com/every-app/open-seo) v0.1.9, MIT; see `docs/upstream.md`).
+  - `/ink-seo` rewritten as an audit: state a data tier (SEO data MCP, Search Console, or web-only), shortlist five to ten candidates, recommend one to three, list the rest under "What else we checked" with reasons, review the strongest rejected candidate before writing, size benefits honestly.
+  - `/ink-cluster` clusters by SERP overlap instead of word similarity, maps each cluster to an existing or proposed page, and reports cannibalization only with evidence.
+  - `/ink-cluster`, `/ink-seo`, `/ink-brief` no longer ask for estimated search volume: a metric comes from a tool or is written `unknown`.
+  - SEO skills share a small research log in `.tonone/seo/` so recent results are reused.
+  - `ink` agent gains two hard rules: never invent SEO metrics, recommend one to three changes.
+
 ## [1.16.1] - 2026-09-24
 
 ### Changed

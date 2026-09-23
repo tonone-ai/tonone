@@ -19,13 +19,17 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill          | Use when                                                                                 |
-| -------------- | ---------------------------------------------------------------------------------------- |
-| `ink-recon`    | Audit current content, SEO health, competitor content gaps, and distribution             |
-| `ink-post`     | Write a blog post — research keyword, draft post, produce publish-ready content with SEO |
-| `ink-seo`      | SEO strategy — topic clusters, keyword research, on-page audit, 90-day roadmap           |
-| `ink-calendar` | Build a content calendar — publishing cadence, topic assignment, distribution workflow   |
-| `ink-case`     | Write customer case studies — interview guide, story structure, publish-ready copy       |
+| Skill          | Use when                                                                                  |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| `ink-recon`    | Audit current content, SEO health, competitor content gaps, and distribution              |
+| `ink-post`     | Write a blog post — research keyword, draft post, produce publish-ready content with SEO  |
+| `ink-seo`      | SEO audit — evidence-first shortlist, 1-3 recommendations, honest benefit sizing          |
+| `ink-cluster`  | Map keywords to pages by SERP overlap, flag cannibalization, pillar + internal links      |
+| `ink-links`    | Link prospecting — linkable asset, qualified prospects, sourced contacts, outreach drafts |
+| `ink-local`    | Local SEO — Business Profile vs competitors, local-pack visibility, location pages        |
+| `ink-brief`    | Content brief for one page — keyword, intent, structure, internal links, CTA              |
+| `ink-calendar` | Build a content calendar — publishing cadence, topic assignment, distribution workflow    |
+| `ink-case`     | Write customer case studies — interview guide, story structure, publish-ready copy        |
 
 Default (no args or unclear): `ink-recon`.
 
