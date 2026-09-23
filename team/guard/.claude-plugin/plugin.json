@@ -1,6 +1,6 @@
 {
   "name": "guard",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "description": "AI Operations Team — Guard: Input/output safety filters, PII detection, content moderation, and AI policy enforcement at runtime.",
   "author": {
     "name": "tonone-ai",

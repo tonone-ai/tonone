@@ -2233,6 +2233,13 @@
     "path": "team/proof/skills/proof-e2e/SKILL.md"
   },
   {
+    "name": "proof-explore",
+    "agent": "proof",
+    "team": "Engineering",
+    "description": "Walk a running frontend with a real browser and produce a flow transcript that E2E specs are written from. Use when asked to \"explore the app\", \"test the frontend in a browser\", \"map the user flows\", \"browser exploration\", or \"what does this flow actually do\".",
+    "path": "team/proof/skills/proof-explore/SKILL.md"
+  },
+  {
     "name": "proof-recon",
     "agent": "proof",
     "team": "Engineering",

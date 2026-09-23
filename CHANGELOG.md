@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.16.0] - 2026-09-23
+
+### Added
+
+- **`lib/jev-ultrafast/` + `/proof-explore` — browser-driven frontend exploration.** The §3.1 go in `docs/jev-browser-eval.md`, built against a third candidate: [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) (MIT, Browser Use), pinned at `1231850`. `cli.py preflight` answers whether the live path is available from the environment alone — no network, no import, no prompt — and `cli.py explore` runs one flow and returns a transcript of executed actions, URLs and confidences. Standard library only; tonone gains no dependency, and `runner.py` is the single file that imports the driver, inside the driver's own environment. The new skill plans flows, runs them, reads the transcript, and hands off to `/proof-e2e`, which gained one sentence in Step 0 and behaves exactly as before when no transcript exists.
+- **Deny-default targets for that bridge.** jev-ultrafast attaches to the user's existing Chrome profile through Browser Harness, so exploration is confined to `localhost`, `*.localhost`, `file://` and hosts named in `TONONE_JEV_ULTRAFAST_HOSTS`. Production is a refusal, not a warning. The agent never types a credential, no irreversible action runs without a confirmation in the same run, and the transcript carries no page text, screenshots or DOM. Behind `TONONE_JEV_ULTRAFAST=1` plus a checkout the user names; unset, the skill announces the fallback and drives gstack `/browse`, then reads source.
+- **`docs/jev-ultrafast.md`** — the integration decision: what changed against the jev-browser evaluation (real sessions instead of a cookieless Chromium, a thinner status vocabulary, no published package), what shipped, and what stays no-go.
+- **`tests/test_jev_ultrafast.py`** — 15 offline tests covering the never-throws contract, the host allowlist including suffix-match lookalikes, the `JEV_API_KEY`/`TYPESAFE_API_KEY` bridging trap, and the runner's behaviour with no driver installed.
+
+### Changed
+
+- **`docs/repomap.md`, `README.md`, `CLAUDE.md`** — skill count 426 → 427.
+
 ## [1.15.0] - 2026-09-20
 
 ### Added
