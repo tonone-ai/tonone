@@ -55,6 +55,8 @@ Scan before asking:
 
 If no E2E tool is configured, install and configure Playwright. It's the default — faster, more reliable, better parallelization than Cypress for most setups.
 
+If a live URL is available and `/proof-explore` has produced a flow transcript (`<report-dir>/flow-transcript.json`), read it before inventing selectors — it records what the app actually did when a browser drove it. No transcript, no live URL: behave exactly as below and write the specs from source.
+
 ### Step 1: Journey Map
 
 List the critical user journeys, ranked by business impact:

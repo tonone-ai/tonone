@@ -1,6 +1,6 @@
 # Repomap
 
-Orientation map for this repo — 100 agents, 10 teams, 426 skills across `team/`. Read this first, then drill into the specific `agents/<name>.md` or `team/<agent>/skills/<skill>/SKILL.md` the task needs. Don't crawl the whole tree; use the indexes below.
+Orientation map for this repo — 100 agents, 10 teams, 427 skills across `team/`. Read this first, then drill into the specific `agents/<name>.md` or `team/<agent>/skills/<skill>/SKILL.md` the task needs. Don't crawl the whole tree; use the indexes below.
 
 This map exists because the [platform repo](https://github.com/tonone-ai/platform) (`~/repos/tn/platform`, the tonone.ai showcase site) reads its catalog content from this repo, and that sync has drifted badly — see **Known drift** below. This file is the map platform's sync should follow to catch up, and the one any agent working in this repo should read before exploring.
 
@@ -9,7 +9,7 @@ This map exists because the [platform repo](https://github.com/tonone-ai/platfor
 | File                    | What                                                     | Rows | Generator                                                                   |
 | ----------------------- | -------------------------------------------------------- | ---- | --------------------------------------------------------------------------- |
 | `docs/agent-index.json` | name, hat, team, owns, path — one row per agent          | 100  | `scripts/gen-agent-index.py` (reads `CLAUDE.md` team tables)                |
-| `docs/skill-index.json` | name, agent, team, description, path — one row per skill | 426  | `scripts/gen-skill-index.py` (reads `team/*/skills/*/SKILL.md` frontmatter) |
+| `docs/skill-index.json` | name, agent, team, description, path — one row per skill | 427  | `scripts/gen-skill-index.py` (reads `team/*/skills/*/SKILL.md` frontmatter) |
 
 Both are the "sitemap" — look a name up here, then open the one file it points to. Regenerate after adding/renaming an agent or skill (neither runs in CI yet).
 
@@ -48,7 +48,7 @@ Fixed 2026-08-07:
 
 Still open:
 
-- **Platform repo is stale against all of the above.** `~/repos/tn/platform/.planning/skills-data.json` currently has 23 agents / 138 skills, vs the 100 agents / 426 skills actually in this repo. Platform's `REPOMAP.md` (in that repo) documents its own file layout; it does not yet explain how to pull fresh data from here. See **Briefing for the platform-side sync agent** below.
+- **Platform repo is stale against all of the above.** `~/repos/tn/platform/.planning/skills-data.json` currently has 23 agents / 138 skills, vs the 100 agents / 427 skills actually in this repo. Platform's `REPOMAP.md` (in that repo) documents its own file layout; it does not yet explain how to pull fresh data from here. See **Briefing for the platform-side sync agent** below.
 
 ## Briefing for the platform-side sync agent
 
@@ -62,7 +62,7 @@ Give the agent working in `~/repos/tn/platform` this:
    - `Skill.command` → `/${name}` (skill-index.json's `name` is already the bare command, e.g. `apex-plan`).
    - `Skill.category` → not in the index; derive from the naming convention in `docs/skill-guide.md`'s Skill Categories table: name ends in `-audit`/`-check` → `review`, ends in `-recon` → `recon`, otherwise → `build`.
    - `Skill.whenToUse` → not in the index. `skill-index.json`'s `description` field often already embeds "Use when asked to..." trigger phrases (per the frontmatter convention in `skill-guide.md`) — extract that clause if present, otherwise summarize the SKILL.md body's `## Steps`.
-3. **Do a full resync, not a diff-and-patch** — going from 23→100 agents and 138→426 skills, a merge is more error-prone than regenerating `.planning/skills-data.json` and `.planning/hooks-data.json` from scratch against the two indexes above.
+3. **Do a full resync, not a diff-and-patch** — going from 23→100 agents and 138→427 skills, a merge is more error-prone than regenerating `.planning/skills-data.json` and `.planning/hooks-data.json` from scratch against the two indexes above.
 4. **`.planning/hooks-data.json`** (hooks catalog) has no equivalent index here yet — for that one, still read `~/repos/tn/tonone/hooks/hooks.json` directly.
 5. Everything above was broken until today (frontmatter-less skills, a skill-name collision, wrong-case filenames) — all fixed as of this session, so a fresh pull now is safe. If a future pull looks wrong again, check `docs/repomap.md`'s "Known drift" section here first before assuming the platform-side code is at fault.
 

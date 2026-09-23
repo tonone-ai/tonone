@@ -286,6 +286,8 @@ There is also a practical objection that is larger than the policy one. gstack's
 
 ## 7. References
 
+- `docs/jev-ultrafast.md` — the third candidate, assessed against this same frame on 2026-09-20 and **built**: `github.com/browser-use/jev-ultrafast` (MIT, Python, existing Chrome profile through Browser Harness) shipped as `lib/jev-ultrafast/` behind `TONONE_JEV_ULTRAFAST=1`, driving the §3.1 skill — named `/proof-explore`
+
 - `github.com/Ying-Kai-Liao/jev-browser` — MIT, library + CLI + MCP, `TYPESAFE_API_KEY` required
 - `github.com/filedcom/playjev` — MIT, TypeScript, published as `@filed/playjev@0.1.0` on npm (integrity hash, provenance, Playwright as a peer dependency), `check`/`choose`/`rate`/`act`, Chromium/CDP, `TYPESAFE_API_KEY` required
 - `lib/jev/README.md` — tonone's key-free decision layer; the contract every integration here defers to

@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-100 specialists across 10 teams. Engineering executes. Product decides. Operations runs. Legal de-risks. Design polishes. Data Science decides with data. Security Operations defends. Developer Experience ships good APIs. Infrastructure Specialist runs the cloud. AI Operations ships models. One session, a handful of commands, zero meetings. 426 skills across every discipline. MIT licensed.
+100 specialists across 10 teams. Engineering executes. Product decides. Operations runs. Legal de-risks. Design polishes. Data Science decides with data. Security Operations defends. Developer Experience ships good APIs. Infrastructure Specialist runs the cloud. AI Operations ships models. One session, a handful of commands, zero meetings. 427 skills across every discipline. MIT licensed.
 
 ## The idea
 
@@ -286,7 +286,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 426 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 427 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 
@@ -429,6 +429,7 @@ Every engineering agent detects your stack automatically:
 - `/proof-audit` — Audit test suite health
 - `/proof-design` — Design QA audit — visual bugs, severity classification, quality scorecard
 - `/proof-e2e` — Build E2E test specs for critical user journeys
+- `/proof-explore` — Walk a running frontend in a real browser, produce the flow transcript specs are written from
 - `/proof-recon` — Testing reconnaissance
 - `/proof-strategy` — Produce a test strategy for a project or feature
 
