@@ -1515,7 +1515,7 @@
     "name": "ink-cluster",
     "agent": "ink",
     "team": "Product",
-    "description": "Topic cluster architecture builder \u2014 takes a core topic and maps the full cluster with 1 pillar page, 6-10 supporting posts, internal linking map, keyword targets, and estimated monthly search volume per piece. Use when asked to \"build a content cluster\", \"map our SEO cluster for [topic]\", \"create a topic cluster\", or \"what should our pillar page be about\".",
+    "description": "Topic cluster and keyword-to-page mapping \u2014 group keywords by search intent (validated by SERP overlap, not word similarity), map each cluster to an existing or proposed page, flag cannibalization, and lay out pillar, supporting posts, and internal links. Use when asked to \"build a content cluster\", \"map our SEO cluster for [topic]\", \"which page should target these keywords\", \"create a topic cluster\", or \"what should our pillar page be about\".",
     "path": "team/ink/skills/ink-cluster/SKILL.md"
   },
   {
@@ -1524,6 +1524,20 @@
     "team": "Product",
     "description": "Content distribution plan \u2014 takes a completed piece and produces a channel-by-channel plan covering HN, Reddit, LinkedIn, newsletter, and Twitter/X, with timing, per-channel framing, and a repurposing plan. Use when asked to \"distribute this post\", \"how do we promote this article\", \"write distribution copy for this piece\", or \"where should we share this\".",
     "path": "team/ink/skills/ink-distribute/SKILL.md"
+  },
+  {
+    "name": "ink-links",
+    "agent": "ink",
+    "team": "Product",
+    "description": "Link prospecting \u2014 pick the site's most linkable asset, find pages that plausibly link to it (resource pages, competitor linkers, unlinked mentions, broken links), verify real contact paths, and draft personalized outreach. Never invents contacts. Use when asked to \"find backlink opportunities\", \"who should link to us\", \"build links to this page\", \"link prospecting\", or \"draft outreach for backlinks\".",
+    "path": "team/ink/skills/ink-links/SKILL.md"
+  },
+  {
+    "name": "ink-local",
+    "agent": "ink",
+    "team": "Product",
+    "description": "Local SEO audit \u2014 assess a location-based business's Google Business Profile against local competitors, check Maps and local-pack visibility for its main queries, and recommend the few fixes that win nearby searches. Use when asked to \"improve our local SEO\", \"why don't we show up on Google Maps\", \"audit our Google Business Profile\", \"rank in the local pack\", or \"local search for [city]\".",
+    "path": "team/ink/skills/ink-local/SKILL.md"
   },
   {
     "name": "ink-post",
@@ -1543,7 +1557,7 @@
     "name": "ink-seo",
     "agent": "ink",
     "team": "Product",
-    "description": "SEO strategy and keyword research \u2014 build topic clusters, keyword gap analysis, on-page audit, and prioritized SEO roadmap. Use when asked to \"improve our SEO\", \"do keyword research\", \"build a topic cluster\", or \"why aren't we ranking\".",
+    "description": "SEO audit and keyword strategy \u2014 investigate a site's real search opportunities, shortlist candidates, and recommend the one to three changes most likely to grow organic traffic that converts. Evidence-first \u2014 metrics come from a tool or are written as unknown. Use when asked to \"improve our SEO\", \"do keyword research\", \"audit our SEO\", \"why aren't we ranking\", or \"what should we fix first for search\".",
     "path": "team/ink/skills/ink-seo/SKILL.md"
   },
   {

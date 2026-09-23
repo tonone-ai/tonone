@@ -1,6 +1,6 @@
 # Upstream ledger
 
-tonone borrows from six public Claude Code plugins. This file records what was taken from each one, which release it was taken from, and what upstream has since shipped that we deliberately did not take. The machine-readable pins live in `docs/upstream.json`; `scripts/check-upstream.py` compares those pins against each project's latest release and exits non-zero when one has moved.
+tonone borrows from seven public Claude Code plugins. This file records what was taken from each one, which release it was taken from, and what upstream has since shipped that we deliberately did not take. The machine-readable pins live in `docs/upstream.json`; `scripts/check-upstream.py` compares those pins against each project's latest release and exits non-zero when one has moved.
 
 ```bash
 python scripts/check-upstream.py          # human-readable drift report
@@ -10,6 +10,24 @@ python scripts/check-upstream.py --json   # for CI or a hook
 The one vendored artifact is the `lib/uiux` CSV corpus, which is MIT-licensed data from ui-ux-pro-max; its copyright notice ships in `lib/uiux/NOTICE.md`, as MIT requires.
 
 Borrowing is one-directional and by hand: we read the upstream diff, decide what applies to a 100-agent team, and write it into tonone's own agents and skills in tonone's own voice. Nothing here is vendored code except the `lib/uiux` CSV corpus, which is data.
+
+## open-seo v0.1.9 (read 2026-09-24)
+
+[every-app/open-seo](https://github.com/every-app/open-seo) is an MIT, self-hostable Semrush/Ahrefs alternative built on DataForSEO. The app itself is not useful to us; its ten agent skills in `plugins/openseo/skills/` are. Read at commit `0ffff93` on main, just after the `v0.1.9` release.
+
+**Taken (into Ink):**
+
+- **Metrics come from a tool or are `unknown`.** `ink-cluster`, `ink-seo`, and `ink-brief` all asked for an estimated monthly search volume with no data source, which invited invented numbers. Every Ink SEO skill now labels numbers by source and states a data tier (SEO data MCP / Search Console / web-only), and web-only runs are marked directional. WebSearch result order is never reported as a Google position.
+- **Audit discipline.** `ink-seo` was rewritten around open-seo's `seo-audit`: read page families from the sitemap, shortlist five to ten candidates across at least three kinds of opportunity, recommend one to three, put every other row in "What else we checked" with a real reason, adversarially review the strongest rejected row before writing.
+- **Honest benefit sizing.** Volume is not visits; a ranking page already gets part of the volume; variants overlap; position-one scenarios are labeled hypothetical; no invented conversion rates.
+- **Rank-reporting conventions.** Organic listings only, `#10 (page 1)`, depth 20, a failed lookup is `unknown`, same-day disagreement is not a trend.
+- **Protect winners.** Never recommend rewriting a page that already ranks near the top.
+- **Search Console striking-distance first** (position 5–20, 50+ impressions) before broad keyword discovery.
+- **Clustering by SERP overlap, not word similarity**, plus evidence-only cannibalization checks (`ink-cluster`).
+- **Two new skills:** `ink-links` (never invent contacts, flag paid placements) and `ink-local` (match by `place_id`, cost warning before grid checks, no review gating, no keyword-stuffed names).
+- **A light shared research log.** `.tonone/seo/context.md` and `.tonone/seo/research-log.md` so SEO runs reuse results under 30 days old instead of re-buying data.
+
+**Not taken:** the OpenSEO MCP server, hosted reports, and HTML report template (tonone delivers through the output kit and `/atlas-report`); `seo-coach` mode; `competitor-analysis` and `competitive-landscape` (Crest owns competitive strategy; candidates for a later SEO-specific pass); the "AI visibility" workflow, which lives in the app, not in a skill. The skills name SEO data providers only as examples of a capability, never as a recommended vendor.
 
 ## Sweep of 2026-09-20
 

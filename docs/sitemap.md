@@ -488,9 +488,11 @@ Blog strategy, SEO, thought leadership, developer content, case studies.
 | `/ink-case`       | Write customer case studies and success stories                            |
 | `/ink-cluster`    | Topic cluster architect — pillar + supporting posts + internal linking map |
 | `/ink-distribute` | Distribution plan per piece — channels, timing, framing, repurposing       |
+| `/ink-links`      | Link prospecting — qualified prospects, sourced contacts, outreach drafts  |
+| `/ink-local`      | Local SEO audit — Business Profile, local-pack visibility, location pages  |
 | `/ink-post`       | Write a blog post — keyword research, draft, publish-ready output          |
 | `/ink-recon`      | Audit current content, SEO health, and competitor coverage                 |
-| `/ink-seo`        | SEO strategy — topic clusters, keyword gap analysis, prioritization        |
+| `/ink-seo`        | SEO audit — evidence-first shortlist, 1-3 recommendations                  |
 
 **Install hook:** `post_install` → `bash scripts/setup.sh`
 
