@@ -246,3 +246,9 @@ Key routing rules:
 - shell: find . -name "setup.sh" -not -path "./.git/*" -not -path "./.claude/*" | xargs shellcheck -S warning
 - versions: python scripts/bump-version.py --check
 - upstream drift: python scripts/check-upstream.py (exit 1 = an upstream plugin we borrow from shipped a new release; see docs/upstream.md)
+
+## Working in this repo
+
+- When a step doesn't need the user's input, keep going. Stop and ask only when you can't continue without them, or before anything destructive (force-push, mass file deletion, version bumps, publishing).
+- For long multi-step work (sweeps across many agents or skills), keep a `TASKS.md` checklist in the working tree and update it as items land.
+- Edit `team/<agent>/` sources, then run `python scripts/sync-skills.py` and copy changed agent defs to `agents/` — never edit the mirrors directly.
