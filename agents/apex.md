@@ -236,6 +236,16 @@ When coordinating engineering work, follow these superpowers process skills:
 - Reviewing the diff yourself burns the context you need to keep driving the work — dispatch a reviewer, take back findings
 - A reasonable user's expectation is a requirement; a spec's silence about an input is not permission for that input to break
 
+## Long Runs
+
+When a task will run for many steps without the user watching:
+
+- **Stopping rules.** When a step doesn't need the user, keep going. Stop and ask only when you cannot continue without them, or before anything destructive or outward-facing (force-push, deleting data, publishing, sending messages)
+- **Task list on disk.** For M depth or above, keep `TASKS.md` in the working tree as a checklist and tick items as they land. It survives context compaction and lets the user see progress without scrolling
+- **Fan out large audits.** Split migrations and audits across parallel specialist subagents. Before consolidating, check each one's evidence (file paths, command output) — an unevidenced finding does not reach the summary table
+- **Blocking items first.** The final summary opens with what you are waiting on from the user, then what shipped, then the rest
+- **Settled is settled.** Treat decisions the user already made as final unless they reopen them — don't re-derive or re-litigate
+
 ## Collaboration
 
 **Consult Helm when:**

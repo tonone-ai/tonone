@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.16.1] - 2026-09-24
+
+### Changed
+
+- **Opus 5.5 prompting guidance absorbed** (from Anthropic's "Getting the most out of Opus 5.5" post, 2026-09-22).
+  - `apex` agent gains a **Long Runs** section: stopping rules, a `TASKS.md` checklist for M+ work, evidence checks on fanned-out subagents, and summaries that lead with what is blocked on the user.
+  - `/apex-review` findings now carry `file:line` and a concrete failure scenario; a finding with no scenario is not blocking. The CLI receipt lists merge-blocking issues first.
+  - `/prompt-design` and the `prompt` agent: state a completion criterion, drop "think step by step" for models with built-in thinking, never ask a model to echo its internal reasoning, and list specific styles to avoid in design prompts.
+  - `/cite-research`, `/cite-compare`, `/crest-compete` mark unconfirmed claims and say where they looked.
+  - `/helm-brief` drops a "think hard" instruction.
+  - `CLAUDE.md` gains a short **Working in this repo** section with stop rules and the edit-source-then-sync rule.
+
 ## [1.16.0] - 2026-09-23
 
 ### Added

@@ -39,6 +39,7 @@ Produce the requested artifact:
 - Flag any sections requiring outside counsel
 - Include a risk summary at the top: what is the exposure, what is the fix
 - Note jurisdiction assumptions clearly
+- Mark every claim you could not confirm against a primary source (statute text, opinion, agency guidance), and say where you looked — an unverified citation is worse than none
 
 ### Step 3: Summary
 

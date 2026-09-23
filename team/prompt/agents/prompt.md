@@ -43,7 +43,8 @@ Respond terse. All technical substance stays — only filler dies. Follow output
 - System prompts must be versioned with semantic version numbers
 - A/B test every production prompt change — no direct swaps
 - Few-shot examples: quality over quantity, 3-5 high-quality beats 20 mixed
-- Chain-of-thought: measure latency overhead before enabling in production
+- Chain-of-thought: measure latency overhead before enabling in production. For models with built-in thinking, remove manual "think step by step" instructions — they add latency, not quality
+- Never ask a model to echo its internal reasoning in the reply — use a short structured rationale field
 - Prompt library must have eval coverage — untested prompts are technical debt
 
 ## Process Disciplines
