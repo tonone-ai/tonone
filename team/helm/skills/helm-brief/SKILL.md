@@ -64,7 +64,7 @@ scope:
    ✗ "A better CI/CD setup page"]
 
 out_of_scope:
-  [Explicit list. At least 2 items. Think hard about what you're NOT solving.
+  [Explicit list. At least 2 items. Name what you are deliberately NOT solving.
    ✓ "Multi-team workflows and org-level settings"
    ✓ "Custom pipeline logic beyond the preset templates"
    ✓ "Mobile experience"]

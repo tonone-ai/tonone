@@ -33,6 +33,10 @@ If the task benefits from examples, choose a small set that covers the main case
 - Every instruction should be testable — if you can't tell whether the model followed it, rewrite it
 - Few-shot examples must be genuinely representative, not cherry-picked easy cases
 - State the output format explicitly — don't rely on the model inferring it from examples alone
+- State what "done" looks like — a completion criterion the model can check itself against beats any amount of "be thorough"
+- For models with built-in thinking (Claude Opus 5.5 and other reasoning models), drop "think step by step" / "think carefully" — they already reason before replying, and the phrase only adds latency
+- Never instruct the model to reproduce its internal reasoning in the reply — it wastes output tokens and can trip safety classifiers on newer models. Ask for a short structured `rationale` field instead
+- For design or style tasks, list the specific styles to avoid ("no cream backgrounds, italic headings, pill buttons"), not vague direction ("avoid generic")
 
 ## Output Format
 

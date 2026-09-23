@@ -60,6 +60,8 @@ Read the key changed files to understand the shape of the work.
 
 5. **Present findings prioritized by risk.** For each surviving issue:
    - What's wrong (one sentence) with confidence score
+   - Location — `file:line`, not "somewhere in the auth module"
+   - Failure scenario — the concrete input or state and the wrong result it produces. A finding with no scenario you can state is not blocking; demote it or drop it
    - Which specialist should fix it
    - Estimated effort (quick fix / medium / significant)
    - Risk level (critical / moderate / minor)
@@ -68,4 +70,4 @@ Read the key changed files to understand the shape of the work.
 
 6. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
 
-7. **Delivery:** If findings exceed the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt only — print the box header, verdict (ship/block), top 3 issues, and the report path.
+7. **Delivery:** If findings exceed the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt only — print the box header, verdict (ship/block), merge-blocking issues first (each with location and failure scenario), then top remaining issues, and the report path.

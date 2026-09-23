@@ -151,6 +151,8 @@ Translate the analysis into concrete actions:
 
 Output: competitive set → landscape grid → positioning map → white space statement → positioning call → strategic implications.
 
+Mark every competitor claim you could not confirm (pricing, feature, positioning) and say where you looked — marketing pages, docs, changelog, reviews. Unconfirmed claims do not drive the positioning call.
+
 One page. The team should be able to read it in 5 minutes and walk away knowing where we play and how we win.
 
 ## Delivery
