@@ -1,6 +1,6 @@
 # Tonone
 
-<img src="https://img.shields.io/badge/version-1.10.3-green"> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue">
+<a href="https://github.com/tonone-ai/tonone/releases/latest"><img src="https://img.shields.io/github/v/release/tonone-ai/tonone?label=version&color=green"></a> <img src="https://img.shields.io/badge/license-MIT-green"> <img src="https://img.shields.io/badge/platform-Claude%20Code-blue"> <a href="https://github.com/tonone-ai/tonone/stargazers"><img src="https://img.shields.io/github/stars/tonone-ai/tonone?style=social"></a>
 
 **Founder + Tonone = whole company.**
 
