@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.17.2] - 2026-09-26
+
 ### Changed
 
 - **PR attribution is opt-in.** `hooks/tonone-pr-attribution.js` used to append a tonone credit to the description of every PR created with `gh pr create`, in any repository, without saying so. It now does nothing unless `TONONE_PR_ATTRIBUTION=1` is set.
