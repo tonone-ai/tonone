@@ -329,3 +329,17 @@ def test_no_symlinks_and_bundles_in_sync():
         text=True,
     )
     assert check.returncode == 0, check.stdout
+
+
+def test_bundle_omit_blocks():
+    """<!-- bundle:omit X --> blocks drop for bundle X and unwrap elsewhere."""
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "sync_bundles", REPO / "scripts" / "sync-bundles.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    text = "a\n<!-- bundle:omit tonone-core -->\nb\n<!-- /bundle:omit -->\nc\n"
+    assert mod.omit_blocks("tonone-core", text) == "a\nc\n"
+    assert mod.omit_blocks("engineering-team", text) == "a\nb\nc\n"
