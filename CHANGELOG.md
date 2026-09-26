@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **One-time star ask** (`hooks/tonone-star-ask.js`). Most installs come through the plugin marketplace and never see the repo page, so on the fifth fresh session the hook shows a single message asking for a GitHub star, then never again. Counts only `startup` sessions by `session_id`, so resumes and duplicate hook declarations do not advance it. Off with `TONONE_NO_STAR_ASK=1`; skipped under `CI`. Tests in `tests/test_star_ask.js`.
 - **`/ink-links`** — link prospecting: pick a linkable asset, qualify prospects (unlinked mentions, competitor linkers, resource pages, broken links), source every contact path, draft outreach. Never invents contacts; flags paid placements.
 - **`/ink-local`** — local SEO audit: Business Profile against the top local competitors, local-pack and Maps visibility, location-page signals. Matches by `place_id`, warns about cost before grid checks, never recommends review gating or keyword-stuffed names.
 
