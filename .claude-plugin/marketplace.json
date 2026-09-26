@@ -9,7 +9,7 @@
     {
       "name": "tonone",
       "description": "Full company team — 100 agents, 10 teams. All agents and skills in one install.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./",
       "author": {
         "name": "ai",
@@ -20,7 +20,7 @@
     {
       "name": "engineering-team",
       "description": "Install all 15 Engineering Team agents at once",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./bundle/engineering-team",
       "author": {
         "name": "ai",
@@ -31,7 +31,7 @@
     {
       "name": "product-team",
       "description": "Install all 12 Product Team agents at once",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./bundle/product-team",
       "author": {
         "name": "ai",
@@ -42,7 +42,7 @@
     {
       "name": "full-team",
       "description": "Install all 27 Engineering Team + Product Team agents at once",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./bundle/full-team",
       "author": {
         "name": "ai",
@@ -53,7 +53,7 @@
     {
       "name": "legal-team",
       "description": "Install all 10 Legal Team agents at once — contracts, compliance, IP, governance, regulatory",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./bundle/legal-team",
       "author": {
         "name": "ai",
@@ -64,7 +64,7 @@
     {
       "name": "apex",
       "description": "Engineering lead — orchestrates the team, scopes work, controls depth and budget",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/apex",
       "author": {
         "name": "ai",
@@ -76,7 +76,7 @@
     {
       "name": "forge",
       "description": "Infrastructure engineer — cloud services, networking, IaC, cost optimization",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/forge",
       "author": {
         "name": "ai",
@@ -88,7 +88,7 @@
     {
       "name": "relay",
       "description": "DevOps engineer — CI/CD, deployments, GitOps, developer experience",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/relay",
       "author": {
         "name": "ai",
@@ -100,7 +100,7 @@
     {
       "name": "spine",
       "description": "Backend engineer — APIs, system design, performance, distributed systems",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/spine",
       "author": {
         "name": "ai",
@@ -112,7 +112,7 @@
     {
       "name": "flux",
       "description": "Data engineer — databases, migrations, pipelines, data modeling",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/flux",
       "author": {
         "name": "ai",
@@ -124,7 +124,7 @@
     {
       "name": "warden",
       "description": "Security engineer — IAM, secrets, compliance, threat modeling",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/warden",
       "author": {
         "name": "ai",
@@ -136,7 +136,7 @@
     {
       "name": "vigil",
       "description": "Observability & reliability engineer — monitoring, alerting, SRE, incident response, SLOs",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/vigil",
       "author": {
         "name": "ai",
@@ -148,7 +148,7 @@
     {
       "name": "prism",
       "description": "Frontend & DX engineer — UI, internal tools, developer portals",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/prism",
       "author": {
         "name": "ai",
@@ -160,7 +160,7 @@
     {
       "name": "cortex",
       "description": "ML/AI engineer — model training, MLOps, feature engineering, LLM integration",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/cortex",
       "author": {
         "name": "ai",
@@ -172,7 +172,7 @@
     {
       "name": "touch",
       "description": "Mobile engineer — native iOS/Android, cross-platform, app stores, mobile performance",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/touch",
       "author": {
         "name": "ai",
@@ -184,7 +184,7 @@
     {
       "name": "volt",
       "description": "Embedded & IoT engineer — firmware, microcontrollers, edge computing, device protocols",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/volt",
       "author": {
         "name": "ai",
@@ -196,7 +196,7 @@
     {
       "name": "atlas",
       "description": "Knowledge engineer — architecture docs, ADRs, API specs, system diagrams, onboarding",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/atlas",
       "author": {
         "name": "ai",
@@ -208,7 +208,7 @@
     {
       "name": "lens",
       "description": "Data analytics & BI engineer — dashboards, metrics design, reporting, data storytelling",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/lens",
       "author": {
         "name": "ai",
@@ -220,7 +220,7 @@
     {
       "name": "proof",
       "description": "QA & testing engineer — test strategy, E2E suites, integration testing, test infrastructure, flaky test triage",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/proof",
       "author": {
         "name": "ai",
@@ -232,7 +232,7 @@
     {
       "name": "pave",
       "description": "Platform engineer — developer experience, service catalogs, internal CLIs, golden paths, environment management",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/pave",
       "author": {
         "name": "ai",
@@ -244,7 +244,7 @@
     {
       "name": "helm",
       "description": "Head of Product — product strategy, requirements, and engineering handoff via the Helm↔Apex interface",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/helm",
       "author": {
         "name": "ai",
@@ -256,7 +256,7 @@
     {
       "name": "draft",
       "description": "UX designer — user flows, information architecture, wireframes, and interaction design",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/draft",
       "author": {
         "name": "ai",
@@ -268,7 +268,7 @@
     {
       "name": "form",
       "description": "Visual designer — brand identity, color systems, typography, UI design, and design systems",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/form",
       "author": {
         "name": "ai",
@@ -287,7 +287,7 @@
     {
       "name": "echo",
       "description": "User researcher — interviews, personas, Jobs-to-Be-Done, and customer feedback synthesis",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/echo",
       "author": {
         "name": "ai",
@@ -306,7 +306,7 @@
     {
       "name": "lumen",
       "description": "Product analyst — metrics frameworks, funnel analysis, OKRs, A/B test design, and retention analysis",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/lumen",
       "author": {
         "name": "ai",
@@ -325,7 +325,7 @@
     {
       "name": "surge",
       "description": "Growth engineer — acquisition channels, activation funnels, retention playbooks, and PLG strategy",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/surge",
       "author": {
         "name": "ai",
@@ -344,7 +344,7 @@
     {
       "name": "crest",
       "description": "Product strategist — roadmap planning, prioritization frameworks, competitive analysis, and market positioning",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/crest",
       "author": {
         "name": "ai",
@@ -362,7 +362,7 @@
     {
       "name": "pitch",
       "description": "Product marketer — positioning, messaging, value proposition, GTM strategy, and launch copy",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/pitch",
       "author": {
         "name": "ai",
@@ -381,7 +381,7 @@
     {
       "name": "deal",
       "description": "Revenue & sales engineer — B2B pipeline, deal strategy, pricing, sales playbooks, and enterprise closing",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/deal",
       "author": {
         "name": "ai",
@@ -400,7 +400,7 @@
     {
       "name": "keep",
       "description": "Customer success engineer — onboarding optimization, health scoring, expansion revenue, and churn prevention",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/keep",
       "author": {
         "name": "ai",
@@ -419,7 +419,7 @@
     {
       "name": "ink",
       "description": "Content marketing engineer — blog strategy, SEO, thought leadership, developer content, and content calendar",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/ink",
       "author": {
         "name": "ai",
@@ -438,7 +438,7 @@
     {
       "name": "buzz",
       "description": "PR & community engineer — press pitches, social media, open source community, DevRel, and launch moments",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/buzz",
       "author": {
         "name": "ai",
@@ -450,7 +450,7 @@
     {
       "name": "mint",
       "description": "Finance engineer — P&L, runway, unit economics, fundraising, board reporting, and cap table management",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/mint",
       "author": {
         "name": "tonone-ai",
@@ -469,7 +469,7 @@
     {
       "name": "folk",
       "description": "People engineer — org design, hiring pipelines, compensation frameworks, onboarding playbooks, performance management, and human-to-agent migration",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/folk",
       "author": {
         "name": "tonone-ai",
@@ -489,7 +489,7 @@
     {
       "name": "keel",
       "description": "Operations engineer — process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution, and cross-functional coordination",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/keel",
       "author": {
         "name": "tonone-ai",
@@ -509,7 +509,7 @@
     {
       "name": "brace",
       "description": "Support engineer — ticket workflow design, SLA architecture, knowledge base, escalation paths, and support operations at scale",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/brace",
       "author": {
         "name": "tonone-ai",
@@ -529,7 +529,7 @@
     {
       "name": "brief",
       "description": "Contract & Policy Drafter — NDA, MSA, employment agreements, SLAs, vendor contracts",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/brief",
       "author": {
         "name": "ai",
@@ -540,7 +540,7 @@
     {
       "name": "clause",
       "description": "Contract Clause Analyst — redlining, risk scoring, negotiation playbooks",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/clause",
       "author": {
         "name": "ai",
@@ -551,7 +551,7 @@
     {
       "name": "bind",
       "description": "Compliance Framework Engineer — SOC2, GDPR, HIPAA, ISO 27001 gap analysis",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/bind",
       "author": {
         "name": "ai",
@@ -562,7 +562,7 @@
     {
       "name": "frame",
       "description": "Corporate Governance Advisor — board resolutions, cap table, equity plan docs",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/frame",
       "author": {
         "name": "ai",
@@ -573,7 +573,7 @@
     {
       "name": "shield",
       "description": "Regulatory Risk Advisor — GDPR, CCPA, FTC, financial regulation, export controls",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/shield",
       "author": {
         "name": "ai",
@@ -584,7 +584,7 @@
     {
       "name": "scope",
       "description": "IP & Trademark Advisor — trademark clearance, patent landscape, OSS license compliance",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/scope",
       "author": {
         "name": "ai",
@@ -595,7 +595,7 @@
     {
       "name": "audit",
       "description": "Legal Compliance Auditor — internal controls, legal risk register, audit trail",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/audit",
       "author": {
         "name": "ai",
@@ -606,7 +606,7 @@
     {
       "name": "cite",
       "description": "Legal Researcher — case law synthesis, statute analysis, jurisdiction comparison",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/cite",
       "author": {
         "name": "ai",
@@ -617,7 +617,7 @@
     {
       "name": "lodge",
       "description": "Regulatory Filing Advisor — DMCA, FTC disclosures, GDPR DPAs, government filings",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/lodge",
       "author": {
         "name": "ai",
@@ -628,7 +628,7 @@
     {
       "name": "terms",
       "description": "Privacy & ToS Drafter — GDPR-compliant privacy policies, ToS, cookie policies, DPAs",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/terms",
       "author": {
         "name": "ai",
@@ -639,455 +639,455 @@
     {
       "name": "design-team",
       "description": "Design Team bundle — 10 agents: Hue, Grid, Glyph, Move, Wire, Mark, Cut, Axe, Tone, Copy",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./bundle/design-team",
       "tags": ["bundle", "design-team", "design"]
     },
     {
       "name": "hue",
       "description": "Color Systems Designer — Color palette design — semantic tokens, dark/light mode, WCAG contrast",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/hue",
       "tags": ["agent", "design-team", "hue", "design"]
     },
     {
       "name": "grid",
       "description": "Layout Systems Designer — Layout system design — spacing scales, responsive grids, layout primitives",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/grid",
       "tags": ["agent", "design-team", "grid", "design"]
     },
     {
       "name": "glyph",
       "description": "Typography Designer — Typography system design — font pairing, type scale, hierarchy tokens",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/glyph",
       "tags": ["agent", "design-team", "glyph", "design"]
     },
     {
       "name": "move",
       "description": "Motion Designer — Motion design — animation principles, transition systems, micro-interaction specs",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/move",
       "tags": ["agent", "design-team", "move", "design"]
     },
     {
       "name": "wire",
       "description": "Prototyping Engineer — Prototyping and handoff — interactive flow docs, component specs, developer handoff",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/wire",
       "tags": ["agent", "design-team", "wire", "design"]
     },
     {
       "name": "mark",
       "description": "Brand Designer — Brand identity design — logo usage rules, brand guidelines, visual identity systems",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/mark",
       "tags": ["agent", "design-team", "mark", "design"]
     },
     {
       "name": "cut",
       "description": "Illustration & Icon Designer — Illustration and icon design — custom assets, icon systems, SVG optimization",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/cut",
       "tags": ["agent", "design-team", "cut", "design"]
     },
     {
       "name": "axe",
       "description": "Accessibility Engineer — Accessibility engineering — WCAG audits, keyboard nav, screen reader testing, ARIA",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/axe",
       "tags": ["agent", "design-team", "axe", "design"]
     },
     {
       "name": "tone",
       "description": "Design Token Engineer — Design token engineering — token architecture, theming systems, style-dictionary pipelines",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/tone",
       "tags": ["agent", "design-team", "tone", "design"]
     },
     {
       "name": "copy",
       "description": "Content Designer — UX writing and content design — microcopy, error messages, onboarding, UI content strategy",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/copy",
       "tags": ["agent", "design-team", "copy", "design"]
     },
     {
       "name": "data-science-team",
       "description": "Data Science Team bundle — 10 agents: Cast, Feat, Fit, Score, Drift, Vect, Tune, Plot, Clean, Eval",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./bundle/data-science-team",
       "tags": ["bundle", "data-science-team", "ml"]
     },
     {
       "name": "cast",
       "description": "Forecasting Engineer — Time series forecasting — demand prediction, trend analysis, seasonal decomposition",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/cast",
       "tags": ["agent", "data-science-team", "cast", "ml"]
     },
     {
       "name": "feat",
       "description": "Feature Engineer — Feature engineering — transformations, encodings, feature stores, pipeline design",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/feat",
       "tags": ["agent", "data-science-team", "feat", "ml"]
     },
     {
       "name": "fit",
       "description": "Model Training Engineer — Model training — algorithm selection, hyperparameter tuning, training infrastructure",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/fit",
       "tags": ["agent", "data-science-team", "fit", "ml"]
     },
     {
       "name": "score",
       "description": "Model Evaluation Engineer — Model evaluation — metrics design, statistical significance, model comparison",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/score",
       "tags": ["agent", "data-science-team", "score", "ml"]
     },
     {
       "name": "drift",
       "description": "ML Monitoring Engineer — ML monitoring — data drift, concept drift, model degradation, production ML health",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/drift",
       "tags": ["agent", "data-science-team", "drift", "ml"]
     },
     {
       "name": "vect",
       "description": "Embeddings & Vector Search Engineer — Embeddings and vector search — semantic search, RAG pipelines, vector database design",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/vect",
       "tags": ["agent", "data-science-team", "vect", "ml"]
     },
     {
       "name": "tune",
       "description": "LLM Fine-tuning Engineer — LLM fine-tuning — PEFT/LoRA, RLHF, instruction tuning, prompt optimization",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/tune",
       "tags": ["agent", "data-science-team", "tune", "ml"]
     },
     {
       "name": "plot",
       "description": "Data Visualization Engineer — Data visualization — chart design, visualization libraries, exploratory analysis",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/plot",
       "tags": ["agent", "data-science-team", "plot", "ml"]
     },
     {
       "name": "clean",
       "description": "Data Quality Engineer — Data quality — deduplication, validation, outlier detection, ETL pipeline design",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/clean",
       "tags": ["agent", "data-science-team", "clean", "ml"]
     },
     {
       "name": "eval",
       "description": "Experiment Design Engineer — Experiment design — A/B testing, statistical power, experiment tracking, causal inference",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/eval",
       "tags": ["agent", "data-science-team", "eval", "ml"]
     },
     {
       "name": "secops-team",
       "description": "Security Operations Team bundle — 10 agents: Red, Blue, Hunt, Patch, Chain, Sast, Siem, Resp, Zero, Phish",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./bundle/secops-team",
       "tags": ["bundle", "secops-team", "security"]
     },
     {
       "name": "red",
       "description": "Offensive Security Engineer — Red team operations — penetration testing, attack simulation, vulnerability exploitation",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/red",
       "tags": ["agent", "secops-team", "red", "security"]
     },
     {
       "name": "blue",
       "description": "Defensive Security Engineer — Blue team operations — SOC design, detection engineering, hardening playbooks",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/blue",
       "tags": ["agent", "secops-team", "blue", "security"]
     },
     {
       "name": "hunt",
       "description": "Threat Hunter — Threat hunting — hypothesis-driven hunting, compromise assessment, IOC analysis",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/hunt",
       "tags": ["agent", "secops-team", "hunt", "security"]
     },
     {
       "name": "patch",
       "description": "Vulnerability Management Engineer — Vulnerability management — CVE triage, CVSS prioritization, patching cadence, SLA design",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/patch",
       "tags": ["agent", "secops-team", "patch", "security"]
     },
     {
       "name": "chain",
       "description": "Supply Chain Security Engineer — Supply chain security — SBOM generation, dependency scanning, third-party risk, license compliance",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/chain",
       "tags": ["agent", "secops-team", "chain", "security"]
     },
     {
       "name": "sast",
       "description": "Application Security Engineer — Application security — SAST/DAST scanning, code security review, secure SDLC design",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/sast",
       "tags": ["agent", "secops-team", "sast", "security"]
     },
     {
       "name": "siem",
       "description": "Detection & SIEM Engineer — SIEM engineering — log pipeline design, detection rule development, alert tuning",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/siem",
       "tags": ["agent", "secops-team", "siem", "security"]
     },
     {
       "name": "resp",
       "description": "Incident Response Engineer — Incident response — playbook design, containment procedures, DFIR, post-incident review",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/resp",
       "tags": ["agent", "secops-team", "resp", "security"]
     },
     {
       "name": "zero",
       "description": "Zero Trust Architect — Zero trust architecture — network segmentation, identity-based access, microsegmentation design",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/zero",
       "tags": ["agent", "secops-team", "zero", "security"]
     },
     {
       "name": "phish",
       "description": "Security Awareness Engineer — Security awareness — phishing simulation design, security training programs, social engineering assessment",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/phish",
       "tags": ["agent", "secops-team", "phish", "security"]
     },
     {
       "name": "devx-team",
       "description": "Developer Experience Team bundle — 10 agents: Guide, Sample, Mock, Schema, Port, Change, Onboard, Bench, Compat, Gate",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./bundle/devx-team",
       "tags": ["bundle", "devx-team", "developer-experience"]
     },
     {
       "name": "guide",
       "description": "API Documentation Engineer — API and SDK documentation — reference docs, guides, and documentation architecture",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/guide",
       "tags": ["agent", "devx-team", "guide", "developer-experience"]
     },
     {
       "name": "sample",
       "description": "Code Sample Engineer — Code samples and tutorials — working examples, quickstarts, and language-specific guides",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/sample",
       "tags": ["agent", "devx-team", "sample", "developer-experience"]
     },
     {
       "name": "mock",
       "description": "API Mocking & Contract Engineer — API mocking — mock server design, contract testing, API simulation",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/mock",
       "tags": ["agent", "devx-team", "mock", "developer-experience"]
     },
     {
       "name": "schema",
       "description": "API Schema Engineer — API schema design — OpenAPI, GraphQL, gRPC schema quality and design standards",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/schema",
       "tags": ["agent", "devx-team", "schema", "developer-experience"]
     },
     {
       "name": "port",
       "description": "SDK Design Engineer — SDK design — multi-language SDK architecture, idiomatic patterns, cross-language consistency",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/port",
       "tags": ["agent", "devx-team", "port", "developer-experience"]
     },
     {
       "name": "change",
       "description": "Changelog & Release Communication Engineer — Changelog and release communication — breaking change docs, deprecation notices, migration guides",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/change",
       "tags": ["agent", "devx-team", "change", "developer-experience"]
     },
     {
       "name": "onboard",
       "description": "Developer Onboarding Engineer — Developer onboarding — quickstart design, time-to-first-call optimization, onboarding funnel audit",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/onboard",
       "tags": ["agent", "devx-team", "onboard", "developer-experience"]
     },
     {
       "name": "bench",
       "description": "API Performance Engineer — API performance benchmarking — latency profiling, throughput testing, regression detection",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/bench",
       "tags": ["agent", "devx-team", "bench", "developer-experience"]
     },
     {
       "name": "compat",
       "description": "Backwards Compatibility Engineer — Backwards compatibility — breaking change detection, deprecation management, semver discipline",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/compat",
       "tags": ["agent", "devx-team", "compat", "developer-experience"]
     },
     {
       "name": "gate",
       "description": "API Quality Gate Engineer — API quality gates — linting, style enforcement, breaking change CI, and API governance",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "source": "./team/gate",
       "tags": ["agent", "devx-team", "gate", "developer-experience"]
     },
     {
       "name": "infra-specialist-team",
       "description": "Infrastructure Specialist Team — 10 agents: Kube, Terra, Finop, Serv, Edge, Cache, Queue, Mesh, Multi, Chaos",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["bundle", "infrastructure", "cloud", "team"],
       "source": "./bundle/infra-specialist-team"
     },
     {
       "name": "kube",
       "description": "Infrastructure Specialist Team — Kube: Kubernetes cluster design — RBAC, networking, operators, workload configuration",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/kube"
     },
     {
       "name": "terra",
       "description": "Infrastructure Specialist Team — Terra: Terraform and IaC — module design, state management, drift detection, and IaC best practices",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/terra"
     },
     {
       "name": "finop",
       "description": "Infrastructure Specialist Team — Finop: Cloud cost optimization — FinOps practices, rightsizing, reservation strategy, cost attribution",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/finop"
     },
     {
       "name": "serv",
       "description": "Infrastructure Specialist Team — Serv: Serverless architecture — Lambda/Cloud Functions/Cloud Run design, cold start optimization, event patterns",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/serv"
     },
     {
       "name": "edge",
       "description": "Infrastructure Specialist Team — Edge: Edge computing and CDN — global distribution, cache strategy, edge functions, latency optimization",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/edge"
     },
     {
       "name": "cache",
       "description": "Infrastructure Specialist Team — Cache: Caching strategy — Redis/Memcached design, cache invalidation, eviction policies, application caching patterns",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/cache"
     },
     {
       "name": "queue",
       "description": "Infrastructure Specialist Team — Queue: Message queuing and streaming — Kafka, SQS, RabbitMQ design, consumer group strategy, dead letter queues",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/queue"
     },
     {
       "name": "mesh",
       "description": "Infrastructure Specialist Team — Mesh: Service mesh design — Istio/Linkerd/Envoy, mTLS, traffic management, observability integration",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/mesh"
     },
     {
       "name": "multi",
       "description": "Infrastructure Specialist Team — Multi: Multi-cloud architecture — provider selection, portability strategy, lock-in avoidance, workload placement",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/multi"
     },
     {
       "name": "chaos",
       "description": "Infrastructure Specialist Team — Chaos: Chaos engineering — failure injection design, game days, resilience testing, blast radius control",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "infrastructure", "cloud"],
       "source": "./team/chaos"
     },
     {
       "name": "ai-ops-team",
       "description": "AI Operations Team — 9 agents: Deploy, Eval, Trace, Guard, Budget, Token, Prompt, Embed, Rank",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["bundle", "ai-ops", "llm", "team"],
       "source": "./bundle/ai-ops-team"
     },
     {
       "name": "deploy",
       "description": "AI Operations Team — Deploy: Model serving, inference APIs, blue/green deploys, rollback, and canary releases for production ML.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/deploy"
     },
     {
       "name": "trace",
       "description": "AI Operations Team — Trace: LLM tracing, span capture, prompt/completion logging, cost attribution, and AI system debugging.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/trace"
     },
     {
       "name": "guard",
       "description": "AI Operations Team — Guard: Input/output safety filters, PII detection, content moderation, and AI policy enforcement at runtime.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/guard"
     },
     {
       "name": "budget",
       "description": "AI Operations Team — Budget: LLM spend tracking, model cost optimization, budget alerts, and token efficiency audits across AI workloads.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/budget"
     },
     {
       "name": "token",
       "description": "AI Operations Team — Token: Context window optimization, token counting, truncation strategies, and chunking patterns for LLM efficiency.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/token"
     },
     {
       "name": "prompt",
       "description": "AI Operations Team — Prompt: System prompt design, few-shot libraries, chain-of-thought patterns, and prompt versioning for production LLM applications.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/prompt"
     },
     {
       "name": "embed",
       "description": "AI Operations Team — Embed: Embedding model selection, vector pipeline design, similarity search, and production index management.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/embed"
     },
     {
       "name": "rank",
       "description": "AI Operations Team — Rank: Retrieval reranking, relevance scoring, learning-to-rank pipelines, and result quality evaluation for search and RAG.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/rank"
     },
     {
       "name": "evals",
       "description": "AI Operations Team — Evals: Eval harness design, benchmark suites, automated regression, human eval orchestration.",
-      "version": "1.16.1",
+      "version": "1.17.0",
       "tags": ["agent", "ai-ops", "llm"],
       "source": "./team/evals"
     }
