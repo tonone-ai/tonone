@@ -1,7 +1,6 @@
 ---
 name: apex-plan
 description: Plan and scope a project — discovery, challenge assumptions, present XS-XXL depth options with token and cost estimates. Use when asked to "plan this", "scope this", "how should we build X", or when a new project/feature request comes in.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.7.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT

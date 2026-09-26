@@ -1,7 +1,6 @@
 ---
 name: vigil-instrument
 description: Instrument a service with OpenTelemetry — RED metrics, structured logs, distributed tracing, and health checks. Outputs actual code and config, not a plan. Use when asked to "add monitoring", "instrument this", "add logging", "set up tracing", or "observability".
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
 license: MIT

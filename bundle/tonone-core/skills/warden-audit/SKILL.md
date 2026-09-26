@@ -1,7 +1,6 @@
 ---
 name: warden-audit
 description: Full security audit — secrets, dependencies, IAM, auth, injection, XSS, HTTPS, rate limiting, public storage. Use when asked for "security audit", "check for vulnerabilities", "security review", or "are we secure".
-allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
 license: MIT

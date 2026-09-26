@@ -1,7 +1,6 @@
 ---
 name: apex-status
 description: CTO-level project status from git and codebase state. Use when asked "where are we", "project status", "what's done", or at the start of a work session.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
 license: MIT

@@ -1,7 +1,6 @@
 ---
 name: touch-recon
 description: Mobile reconnaissance — understand the app's tech stack, architecture, dependencies, and health for takeover. Use when asked to "understand this app", "mobile assessment", or "app health".
-allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
 license: MIT
