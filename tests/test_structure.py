@@ -343,3 +343,34 @@ def test_bundle_omit_blocks():
     text = "a\n<!-- bundle:omit tonone-core -->\nb\n<!-- /bundle:omit -->\nc\n"
     assert mod.omit_blocks("tonone-core", text) == "a\nc\n"
     assert mod.omit_blocks("engineering-team", text) == "a\nb\nc\n"
+
+
+def test_headline_counts_match_tree():
+    """Agent and skill totals quoted in public copy match the tree.
+
+    README, CLAUDE.md and the plugin manifests hardcode the totals, and
+    directories, plugin browsers and awesome lists copy them verbatim. They
+    drifted before (marketplace.json said 23 agents at 100). Only totals are
+    checked: per-team counts are below 50 agents, and the skill total is the
+    only three-digit skill count, so both are ignored by the thresholds.
+    """
+    import re
+
+    agents = len(AGENTS)
+    skills = len(_team_skills())
+    files = [
+        "README.md",
+        "CLAUDE.md",
+        ".claude-plugin/plugin.json",
+        ".claude-plugin/marketplace.json",
+    ]
+    wrong = []
+    for rel in files:
+        text = (REPO / rel).read_text()
+        for m in re.finditer(r"\b(\d+) (?:agents|specialists)\b", text, re.I):
+            if int(m.group(1)) >= 50 and int(m.group(1)) != agents:
+                wrong.append(f"{rel}: '{m.group(0)}' (tree has {agents} agents)")
+        for m in re.finditer(r"\b(\d{3}) skills\b", text, re.I):
+            if int(m.group(1)) != skills:
+                wrong.append(f"{rel}: '{m.group(0)}' (tree has {skills} skills)")
+    assert not wrong, "\n".join(wrong)

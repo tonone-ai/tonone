@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="629" height="716" viewBox="0 0 629 716" role="img" aria-label="Apex, the tonone engineering lead, answering /apex-plan with S, M, L and XL depth options, each listing the specialist agents, token budget and cost">
+<rect width="100%" height="100%" rx="10" fill="#0d1117"/>
+<rect width="100%" height="32" rx="10" fill="#161b22"/><rect y="22" width="100%" height="10" fill="#161b22"/>
+<circle cx="20" cy="16" r="6" fill="#ff5f56"/><circle cx="40" cy="16" r="6" fill="#ffbd2e"/><circle cx="60" cy="16" r="6" fill="#27c93f"/>
+<text x="314.5" y="20" fill="#8b949e" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" text-anchor="middle">claude — tonone</text>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" xml:space="preserve">
+<text x="22" y="52" fill="#7ee787">&gt; /apex-plan Add user authentication to our SaaS (Next.js + Postgres)</text>
+<text x="22" y="71" fill="#e6edf3"> </text>
+<text x="22" y="90" fill="#c9d1d9">┌─ Apex Plan: user auth (Next.js + Postgres) ───────────────</text>
+<text x="22" y="109" fill="#c9d1d9">│</text>
+<text x="22" y="128" fill="#8b949e">│ <tspan fill="#e6edf3">My recommendation: M. Auth is security-critical and touches</tspan></text>
+<text x="22" y="147" fill="#c9d1d9">│ DB, API, and UI. Use a maintained library (Auth.js / Better</text>
+<text x="22" y="166" fill="#c9d1d9">│ Auth / Lucia-style) rather than writing crypto yourself.</text>
+<text x="22" y="185" fill="#c9d1d9">│</text>
+<text x="22" y="204" fill="#8b949e">│ <tspan fill="#79c0ff" font-weight="bold">S — Quick &amp; focused (Spine + Warden, ~40K tokens, ~$0.25)</tspan></text>
+<text x="22" y="223" fill="#c9d1d9">│     Library-based email+password or OAuth login, sessions,</text>
+<text x="22" y="242" fill="#c9d1d9">│     protected routes. One security pass. No reset flow or CI.</text>
+<text x="22" y="261" fill="#c9d1d9">│</text>
+<text x="22" y="280" fill="#8b949e">│ <tspan fill="#79c0ff" font-weight="bold">M — Solid implementation (Spine + Warden + Flux + Prism,</tspan></text>
+<text x="22" y="299" fill="#c9d1d9">│     ~130K tokens, ~$0.80)</text>
+<text x="22" y="318" fill="#c9d1d9">│     Schema and migrations (users, sessions, accounts, tokens),</text>
+<text x="22" y="337" fill="#c9d1d9">│     signup/login/logout, password reset, email verify, OAuth</text>
+<text x="22" y="356" fill="#c9d1d9">│     provider, middleware route guards, UI forms, rate limit on</text>
+<text x="22" y="375" fill="#c9d1d9">│     auth endpoints, reviewed.</text>
+<text x="22" y="394" fill="#c9d1d9">│</text>
+<text x="22" y="413" fill="#8b949e">│ <tspan fill="#79c0ff" font-weight="bold">L — Full build-out (+ Relay + Vigil + Atlas, ~260K, ~$1.60)</tspan></text>
+<text x="22" y="432" fill="#c9d1d9">│     M plus CI with auth tests, login/failure metrics and alerts,</text>
+<text x="22" y="451" fill="#c9d1d9">│     auth-flow ADR and docs.</text>
+<text x="22" y="470" fill="#c9d1d9">│</text>
+<text x="22" y="489" fill="#8b949e">│ <tspan fill="#79c0ff" font-weight="bold">XL — Production-hardened (+ Proof + Forge, ~450K, ~$2.70)</tspan></text>
+<text x="22" y="508" fill="#c9d1d9">│      L plus E2E suite for every auth path, MFA/TOTP, account</text>
+<text x="22" y="527" fill="#c9d1d9">│      lockout, secrets/infra review, session-store perf check.</text>
+<text x="22" y="546" fill="#c9d1d9">│</text>
+<text x="22" y="565" fill="#c9d1d9">│ + Apex overhead (opus): ~15K tokens</text>
+<text x="22" y="584" fill="#c9d1d9">│</text>
+<text x="22" y="603" fill="#c9d1d9">│ Not shown: XS (a skipped security review isn&#x27;t acceptable for</text>
+<text x="22" y="622" fill="#c9d1d9">│ auth) and XXL (this isn&#x27;t a system migration).</text>
+<text x="22" y="641" fill="#c9d1d9">│</text>
+<text x="22" y="660" fill="#c9d1d9">│ Pick when ready: S / M / L / XL</text>
+<text x="22" y="679" fill="#c9d1d9">└───────────────────────────────────────────────────────────</text>
+</g></svg>

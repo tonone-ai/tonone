@@ -1,6 +1,6 @@
 # HN Post
 
-**Status:** Draft — not yet posted
+**Status:** Superseded. Still says 23 agents and 138 skills; see `reddit-claudeai.md`, `devto-apex-plan.md` and `x-thread-v1.17.md`.
 
 ## Title
 

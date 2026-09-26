@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- **README opens with a real `/apex-plan` run.** `assets/demo-apex-plan.svg` renders Apex's actual tier menu for a user-auth request, and the install commands move up to sit next to it. The ten-team roster moves below the fold.
+- **`test_headline_counts_match_tree`** fails CI when the agent or skill totals quoted in `README.md`, `CLAUDE.md` or the plugin manifests stop matching the tree. `marketplace.json` said 23 agents for months while the tree had 100.
+
 ### Changed
 
 - **`tonone-core` drops the optional Jev tier proposal from `/apex-plan`.** tonone-core does not ship `lib/jev`, so the step could never run there, and the Anthropic directory held the plugin because the step's shell snippet read as sending data off the machine. Root skills can now wrap a section in `<!-- bundle:omit NAME -->` … `<!-- /bundle:omit -->`; `scripts/sync-bundles.py` drops it for the named bundle and unwraps it everywhere else.
