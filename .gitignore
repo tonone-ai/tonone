@@ -85,3 +85,6 @@ node_modules/
 .gstack/
 
 .context/*
+
+# Marketing drafts live outside this public repo
+launch/
