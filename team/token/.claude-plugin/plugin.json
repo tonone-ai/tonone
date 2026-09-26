@@ -1,6 +1,6 @@
 {
   "name": "token",
-  "version": "1.17.0",
+  "version": "1.17.1",
   "description": "AI Operations Team — Token: Context window optimization, token counting, truncation strategies, and chunking patterns for LLM efficiency.",
   "author": {
     "name": "tonone-ai",

@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.17.1] - 2026-09-26
+
+### Fixed
+
+- **Shared hooks ran twice per event.** Root hooks were declared in both `hooks/hooks.json` and an inline `hooks` key in `.claude-plugin/plugin.json`, and Claude Code loads both. The status-line installer, update check, desktop notifications (Stop and Notification) and agent tracker each fired twice, so update notices and notifications doubled. All root hooks now live in `hooks/hooks.json` only; `tests/test_structure.py` fails if the inline key comes back.
+
 ## [1.17.0] - 2026-09-26
 
 ### Added
