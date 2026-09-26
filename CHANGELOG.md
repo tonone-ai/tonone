@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.17.0] - 2026-09-26
+
 ### Added
 
 - **One-time star ask** (`hooks/tonone-star-ask.js`). Most installs come through the plugin marketplace and never see the repo page, so on the fifth fresh session the hook shows a single message asking for a GitHub star, then never again. Counts only `startup` sessions by `session_id`, so resumes and duplicate hook declarations do not advance it. Off with `TONONE_NO_STAR_ASK=1`; skipped under `CI`. Tests in `tests/test_star_ask.js`.
@@ -18,6 +20,11 @@ All notable changes to this project will be documented in this file.
   - `/ink-cluster`, `/ink-seo`, `/ink-brief` no longer ask for estimated search volume: a metric comes from a tool or is written `unknown`.
   - SEO skills share a small research log in `.tonone/seo/` so recent results are reused.
   - `ink` agent gains two hard rules: never invent SEO metrics, recommend one to three changes.
+
+### Fixed
+
+- **Marketplace listing undersold the plugin.** `.claude-plugin/marketplace.json` still described tonone as 23 agents and 2 teams; plugin browsers and indexes show that text. Now 100 agents and 10 teams, with the product (12) and full-team (27) bundle counts corrected.
+- **README version badge** was hardcoded to 1.10.3; it now reads the latest GitHub release. Skill-list heading corrected from 421 to 429.
 
 ## [1.16.1] - 2026-09-24
 
