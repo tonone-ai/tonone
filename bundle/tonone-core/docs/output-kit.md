@@ -1,0 +1,194 @@
+# Output Kit
+
+Shared CLI design system for all tonone agent skills. Every skill references this document for consistent, scannable output.
+
+## The 40-Line Rule
+
+CLI output must not exceed **40 lines**. Period.
+
+If the analysis produces more than 40 lines, summarize in the CLI and point to the full report:
+
+```
+→ Full report: /atlas-report
+```
+
+The 40-line budget includes the box header and footer. Plan accordingly: header (1) + verdict (2) + findings (5-7) + metrics table (6) + next steps (3-4) + footer (1) = ~20 lines. You have headroom, but not much.
+
+## CLI Skeleton
+
+Every agent output follows this box-drawing structure:
+
+```
+╭─ AGENT NAME ── skill-name ──────────────────╮
+
+  ## One-line verdict
+
+  ### Key Findings (3-5 bullets max)
+  - ■ CRITICAL — Finding description
+  - ▲ WARNING — Finding description
+  - ● INFO — Finding description
+
+  ### Metrics (if applicable)
+  ┌──────────┬───────┬────────┐
+  │ Metric   │ Value │ Status │
+  └──────────┴───────┴────────┘
+
+  ### Next Steps (2-3 max)
+  → Action one
+  → Action two
+
+╰─ Full report: /atlas-report ────────────────╯
+```
+
+**Adapt to domain.** Not every section is required. A simple audit might skip metrics. A status check might skip findings. But every output **must** include:
+
+1. Box header with agent name and skill name
+2. One-line verdict
+3. Key findings with severity indicators
+
+## Severity Indicators
+
+| Indicator    | Level     | When to use                                   |
+| ------------ | --------- | --------------------------------------------- |
+| `■ CRITICAL` | Fix now   | Security holes, data loss, broken production  |
+| `▲ WARNING`  | Fix soon  | Performance issues, tech debt with a timeline |
+| `● INFO`     | Awareness | Observations, suggestions, nice-to-haves      |
+
+Use these consistently. No other severity levels. No custom indicators.
+
+## Tables
+
+Use box-drawing characters for tables:
+
+```
+┌──────────────┬───────┬────────┐
+│ Metric       │ Value │ Status │
+├──────────────┼───────┼────────┤
+│ Response p99 │  340ms│ ▲      │
+│ Error rate   │  0.02%│ ●      │
+│ Uptime       │ 99.97%│ ●      │
+└──────────────┴───────┴────────┘
+```
+
+Rules:
+
+- **Max 4 columns.** If you need more, split into two tables or summarize.
+- **Truncate cell content at 30 characters.** Append `...` if truncated.
+- **Right-align numbers.** Left-align text.
+- **No empty tables.** If there is no data, skip the section.
+
+## Communication Protocol
+
+Applies to all agent output: conversation, CLI, reports, skill responses. Not just CLI formatting — this governs how every agent communicates.
+
+**Active every response.** No revert after many turns. No filler drift. If unsure whether still active: it is.
+
+Write like an elite engineer who has no time to waste. Technical accuracy is non-negotiable. Filler is.
+
+**Kill on sight:**
+
+- Pleasantries: "Sure, I'd be happy to", "Great question", "Certainly"
+- Hedging: "It might be worth considering", "You could potentially", "It would be good to"
+- Filler articles: a, an, the (where removal doesn't change meaning)
+- Redundant phrasing: "in order to" → "to", "make sure to" → just state it, "the reason is because" → "because"
+- Throat-clearing: "Let me take a look at", "I'll go ahead and", "What I'm seeing here is"
+
+**Keep exact:**
+
+- Technical terms (polymorphism stays polymorphism, IAM stays IAM)
+- Error messages and stack traces (quoted verbatim)
+- Code, commands, file paths, URLs — never modify these
+
+**Pattern:** `[thing] [action] [result]. [next].`
+
+Not: _"I'd recommend that you consider implementing rate limiting on the auth endpoint, as this would help prevent potential brute-force attacks."_
+Yes: _"No rate limiting on auth endpoint. Brute-force risk. Add `express-rate-limit` with 10 req/min."_
+
+Fragments are fine. Short synonyms preferred: "fix" not "implement a solution for", "use" not "utilize", "big" not "extensive".
+
+**Auto-clarity exceptions** — drop compressed style for:
+
+- Security warnings and irreversible action confirmations
+- Multi-step sequences where fragment order risks misread
+- User confused or repeating question
+
+Resume compressed style after clear part done.
+
+**Never compress away:**
+
+- Negations — `not`, `never`, `no`, `only`, `except`. Dropping one inverts the meaning; no token saved is worth that
+- Numbers and units — exact, always
+- A correct verb form when the correct form costs the same. "sees" and "see" are one token each, so mangling the grammar buys nothing and reads worse
+
+**Compression that does not compress** — these look terse and are not, measured against the tokenizer:
+
+- **Invented abbreviations** (`cfg`, `impl`, `req`, `res`, `fn`, `auth`). The tokenizer splits them the same as the full word: zero tokens saved, and the reader still has to decode. The full word is cheaper _and_ clearer. Standard acronyms — DB, API, HTTP, IAM — are fine; they are single known tokens
+- **Causal arrows in prose** (`cache miss → 500`). The arrow is its own token, so it saves nothing over `cache miss causes 500`. `→` stays in the CLI skeleton as a structural indicator; it is not a prose connector
+- **Added words that sound terse.** Compression never grows the output. An inserted pronoun or copula to fake broken grammar — "when it not" over "when not" — costs a token and says the same thing
+
+The point of this protocol is signal density, not a token bill: prose is a small fraction of a session's tokens, so compressing it well changes how fast output is read far more than what it costs.
+
+**Boundaries** — always normal English for:
+
+- Code blocks, commits, PR descriptions
+- Documentation files (README, CHANGELOG, ADRs)
+- Error messages quoted verbatim
+
+## Formatting Rules
+
+- **No emoji.** Use box-drawing characters (`╭╮╰╯│─┌┐└┘├┤┬┴┼`) and unicode indicators (`■ ▲ ● →`).
+- **No walls of text.** Bullets, not paragraphs. If you need a paragraph, you need a report.
+- **No raw data dumps.** Summarize and offer the full report via `/atlas-report`.
+- **Bold for labels:** `**Files:** 4 modified`, `**Coverage:** 87%`
+- **Code formatting** for paths, commands, and identifiers: `` `src/api/handler.ts` ``, `` `npm run build` ``
+
+## Browser-First Reporting
+
+Any skill that produces a substantial analysis (takeover, plan, review, audit, recon) **must deliver its findings as an HTML report, not as CLI text.**
+
+The rule:
+
+- **CLI** = conversation. Brief verdicts, counts, confirmations. Max 40 lines.
+- **HTML report** = findings. Everything detailed lives there. Saved to `.agent-logs/reports/`.
+
+Flow:
+
+1. Skill gathers all findings.
+2. Skill invokes `atlas-report` with the full data.
+3. `atlas-report` generates the HTML, saves it, and opens it in the browser immediately.
+4. The skill prints a brief CLI receipt (path, counts) — nothing else.
+
+**Never print analysis to CLI and then also generate a report. The report is the output. CLI is the receipt.**
+
+## Progressive Disclosure
+
+When output exceeds 40 lines, apply progressive disclosure:
+
+1. **CLI output** — Summary verdict, top findings, key metrics. Fits in 40 lines.
+2. **Full report** — Everything. Generated by `atlas-report`.
+
+The CLI output is the executive summary. The atlas report is the appendix. Never dump the appendix into the CLI.
+
+Pattern for overflow:
+
+```
+  ### Key Findings (showing 3 of 12)
+  - ■ CRITICAL — SQL injection in /api/users endpoint
+  - ■ CRITICAL — Secrets committed to repository
+  - ▲ WARNING — No rate limiting on auth endpoints
+  → 9 more findings in full report
+
+╰─ Full report: .agent-logs/reports/{filename}.html ─╯
+```
+
+## Skill Integration
+
+Every skill prompt must include this line:
+
+```
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+```
+
+This is the contract. If a skill does not include this line, its output is not guaranteed to match the team standard.
+
+The Communication Protocol section above applies to all agent output — not just CLI skill output. Agents must follow compressed prose rules in conversation, reports, and all other communication.

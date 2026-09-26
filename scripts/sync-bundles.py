@@ -10,8 +10,9 @@ directory rejects repositories with that many symlinks, so the bundles now hold
 plain copies and this script keeps them in step with the root.
 
 Membership is whatever is already in the bundle: bundle/<team>/agents/<name>.md
-is refreshed from agents/<name>.md, and bundle/<team>/skills/<name>/ from
-skills/<name>/. Add or remove a member by adding or removing it in the bundle,
+is refreshed from agents/<name>.md, bundle/<team>/skills/<name>/ from
+skills/<name>/, and any file under bundle/<team>/docs/ or bundle/<team>/team/
+from the same path at the root. Add or remove a member by adding or removing it in the bundle,
 then run this script. Any symlink still in a bundle is replaced by a copy.
 
 Usage:
@@ -37,6 +38,12 @@ def members(bundle):
     if skills.is_dir():
         for entry in sorted(skills.iterdir()):
             yield entry, REPO_ROOT / "skills" / entry.name
+    # Shared reference files a bundle ships so its skills' repo-relative
+    # paths (docs/output-kit.md, team/prism/reference/...) still resolve.
+    for sub in ("docs", "team"):
+        for entry in sorted((bundle / sub).rglob("*")):
+            if entry.is_file():
+                yield entry, REPO_ROOT / entry.relative_to(bundle)
 
 
 def same_tree(a, b):

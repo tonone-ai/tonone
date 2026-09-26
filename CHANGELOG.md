@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **`tonone-core` plugin** (`bundle/tonone-core`). Apex plus the 14 engineering specialists and their 80 skills, with the `docs/output-kit.md` and `team/prism/reference/` files those skills cite. 104 files and no hooks, so it fits the Anthropic plugin directory's 512-file limit, which the full plugin (2,000+ files) cannot. Kept current by `scripts/sync-bundles.py`, which now also mirrors bundle `docs/` and `team/` files. Install with `claude plugin install tonone-core@tonone-ai`.
 - **README "Privacy and data" section** listing every network call tonone can make, when, and what is sent. By default the only one is the daily update check.
 
 ## [1.17.1] - 2026-09-26

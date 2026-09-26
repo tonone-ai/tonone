@@ -1,0 +1,22 @@
+{
+  "name": "tonone-core",
+  "version": "1.17.1",
+  "description": "An engineering team for Claude Code: 15 specialist agents (lead, infrastructure, DevOps, backend, data, security, reliability, frontend, ML, mobile, embedded, docs, analytics, QA, platform) and 80 skills that build, review and survey real codebases.",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "homepage": "https://github.com/tonone-ai/tonone",
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "engineering",
+    "subagents",
+    "skills",
+    "code-review",
+    "devops",
+    "security",
+    "architecture"
+  ]
+}
