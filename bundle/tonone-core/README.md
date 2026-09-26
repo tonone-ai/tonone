@@ -11,7 +11,7 @@ claude plugin marketplace add tonone-ai/tonone
 claude plugin install tonone-core@tonone-ai
 ```
 
-The standalone copy at [tonone-ai/tonone-core](https://github.com/tonone-ai/tonone-core) is generated from `bundle/tonone-core` in the main repo every day. Open issues and pull requests there.
+The standalone copy at [tonone-ai/tonone-core](https://github.com/tonone-ai/tonone-core) is generated from `bundle/tonone-core` in the main repo every day. Open issues and pull requests against [tonone-ai/tonone](https://github.com/tonone-ai/tonone).
 
 ## What you get
 
