@@ -54,6 +54,15 @@ Codex reads `AGENTS.md` automatically. Invoke agents and skills by describing wh
 
 Skills are markdown workflow documents in `skills/<name>/SKILL.md`. Read them and follow the steps — no slash commands needed.
 
+### Pairs well with
+
+[elephant](https://github.com/tonone-ai/elephant) gives Claude Code persistent per-repo memory in a committed `ELEPHANT.md`, so decisions and traps from one session carry into the next. Same authors, separate plugin:
+
+```bash
+claude plugin marketplace add tonone-ai/elephant
+claude plugin install elephant@elephant
+```
+
 ## Usage
 
 ```text
@@ -298,7 +307,7 @@ Every engineering agent detects your stack automatically:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-## All 421 Skills
+## All 429 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
