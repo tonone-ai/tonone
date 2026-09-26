@@ -1,6 +1,6 @@
 {
   "name": "tonone-ai",
-  "description": "Engineering + Product Teams — 23 Claude Code agents covering engineering and product functions",
+  "description": "Full company team for Claude Code — 100 specialist agents across engineering, product, operations, legal, design, data science, security, developer experience, infrastructure and AI operations",
   "owner": {
     "name": "tonone-ai",
     "url": "https://tonone.ai"
@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "tonone",
-      "description": "Engineering + Product team — 23 agents, 2 teams. All agents and skills in one install.",
+      "description": "Full company team — 100 agents, 10 teams. All agents and skills in one install.",
       "version": "1.16.1",
       "source": "./",
       "author": {
@@ -30,7 +30,7 @@
     },
     {
       "name": "product-team",
-      "description": "Install all 8 Product Team agents at once",
+      "description": "Install all 12 Product Team agents at once",
       "version": "1.16.1",
       "source": "./bundle/product-team",
       "author": {
@@ -41,7 +41,7 @@
     },
     {
       "name": "full-team",
-      "description": "Install all 23 tonone agents at once — Engineering Team + Product Team",
+      "description": "Install all 27 Engineering Team + Product Team agents at once",
       "version": "1.16.1",
       "source": "./bundle/full-team",
       "author": {
