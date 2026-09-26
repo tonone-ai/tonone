@@ -20,7 +20,8 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 2. **Assess which specialists are needed and at what depth.** Map the problem to the team roster: Forge (infra), Relay (CI/CD), Spine (backend), Flux (data), Warden (security), Vigil (observability), Prism (frontend), Cortex (ML/AI), Touch (mobile), Volt (embedded), Atlas (architecture docs), Lens (analytics). Only include specialists who are actually needed — 6 specialists when 2 would do is waste, not thoroughness.
 
-3. **Present options across six depth tiers (XS/S/M/L/XL/XXL)** — only show tiers that make sense for the request (a typo fix doesn't need an XXL row, a system migration doesn't need XS). Use this format:
+
+4. **Present options across six depth tiers (XS/S/M/L/XL/XXL)** — only show tiers that make sense for the request (a typo fix doesn't need an XXL row, a system migration doesn't need XS). Use this format:
 
 ```
 XS — Fast & dirty (Spine, ~10K tokens, ~$0.02)
@@ -75,6 +76,7 @@ Usage:
 ```
 
 ## Key Rules
+
 
 - Only show tiers that make sense for the request. Only name specialists that are actually needed.
 

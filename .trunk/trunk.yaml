@@ -21,6 +21,12 @@ lint:
     - linters: [ALL]
       paths:
         - "**/CLAUDE.md"
+        # Generated copies, written by scripts/sync-bundles.py. Formatting
+        # them makes them drift from what the script produces.
+        - bundle/**/agents/**
+        - bundle/**/skills/**
+        - bundle/**/docs/**
+        - bundle/**/team/**
   enabled:
     - pinact@4.1.0
     - tflint@0.63.1
