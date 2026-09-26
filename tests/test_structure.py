@@ -304,3 +304,28 @@ def test_root_hooks_declared_once():
         "declare root hooks in hooks/hooks.json only; an inline 'hooks' key in "
         ".claude-plugin/plugin.json makes shared hooks run twice"
     )
+
+
+def test_no_symlinks_and_bundles_in_sync():
+    """Bundles hold real copies, not symlinks, and match the root sources.
+
+    The Anthropic plugin directory rejects repositories with symlinks.
+    """
+    import subprocess
+
+    staged = subprocess.run(
+        ["git", "ls-files", "-s"], cwd=REPO, capture_output=True, text=True
+    ).stdout
+    links = [
+        line.split("\t", 1)[1]
+        for line in staged.splitlines()
+        if line.startswith("120000")
+    ]
+    assert not links, f"symlinks tracked: {links[:5]}"
+    check = subprocess.run(
+        ["python3", "scripts/sync-bundles.py", "--check"],
+        cwd=REPO,
+        capture_output=True,
+        text=True,
+    )
+    assert check.returncode == 0, check.stdout

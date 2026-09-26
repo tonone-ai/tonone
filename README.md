@@ -1110,6 +1110,19 @@ Tonone stands on the shoulders of giants. Big thanks to the plugins that shaped 
 | **caveman**         | The communication mode that cuts every response to its bones — no fluff, all signal                                                                                                                                                      |
 | **open-design**     | 19 design skills and the I-Lang brief protocol that power `form-brief`, the hand-drawn wireframe mode in `draft-wireframe`, and the HTML radar report in `form-critique` — [nexu-io/open-design](https://github.com/nexu-io/open-design) |
 
+## Privacy and data
+
+Tonone is markdown prompts plus a few local hooks. It has no server, no account, and no telemetry. By default the only network request it makes is the update check.
+
+| What                                                        | When                                                 | What leaves your machine                                                                                                                                                                                                                            |
+| ----------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Update check (`hooks/tonone-update-check.js`)               | Session start, at most once per 24 hours             | A plain GET for `https://raw.githubusercontent.com/tonone-ai/tonone/main/.claude-plugin/plugin.json`. Nothing about you or your project is sent.                                                                                                    |
+| Skill gate decision layer (`hooks/tonone-skill-gate.js`)    | Only with `TONONE_GATE_JEV=1`                        | Project signals (dependency names, directory shape, package description) sent to TypeSafe (`api.typesafe.ai`) or OpenRouter, using your own API key. Without the flag the gate scores locally and makes no network call, even if a key is exported. |
+| PR attribution (`hooks/tonone-pr-attribution.js`)           | Only with `TONONE_PR_ATTRIBUTION=1`                  | After `gh pr create`, appends a one-line credit to that PR's description through your own `gh` login.                                                                                                                                               |
+| Browser exploration (`lib/jev-ultrafast`, `/proof-explore`) | Only with `TONONE_JEV_ULTRAFAST=1` and your own keys | Descriptions of the pages it visits go to TypeSafe. Limited to `localhost` unless you add hosts.                                                                                                                                                    |
+
+Local state lives in `~/.config/tonone/` (update cache, onboarding and star-prompt markers), `.claude/` in your project (skill-gate overrides, session agent list), and your temp directory. Delete those to reset. Skills themselves run inside Claude Code and follow its data handling.
+
 ## License
 
 MIT. Fork it. Ship it. Use it anywhere. [LICENSE](LICENSE)

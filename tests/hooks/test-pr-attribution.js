@@ -7,12 +7,13 @@ const path = require("path");
 
 const HOOK = path.join(__dirname, "../../hooks/tonone-pr-attribution.js");
 
-function runHook(input, cwd) {
+function runHook(input, cwd, env) {
   return spawnSync("node", [HOOK], {
     input: JSON.stringify(input),
     encoding: "utf8",
     cwd,
     timeout: 5000,
+    env: { ...process.env, TONONE_PR_ATTRIBUTION: "1", ...env },
   });
 }
 
@@ -200,6 +201,29 @@ test("getPrUrl — tool_output object with no .output field — falls back to gh
       0,
       "hook must exit 0 even when URL not found",
     );
+  } finally {
+    cleanup(dir);
+  }
+});
+
+test("opt-in off by default — gh pr create leaves the PR and session-agents alone", () => {
+  const dir = makeTempDir(["spine"]);
+  try {
+    const r = runHook(
+      {
+        tool_name: "Bash",
+        tool_input: { command: "gh pr create --title test --body test" },
+        tool_output: { output: "https://github.com/owner/repo/pull/1" },
+      },
+      dir,
+      { TONONE_PR_ATTRIBUTION: "" },
+    );
+    assert.strictEqual(r.status, 0);
+    const content = fs.readFileSync(
+      path.join(dir, ".claude", "session-agents"),
+      "utf8",
+    );
+    assert.strictEqual(content.trim(), "spine");
   } finally {
     cleanup(dir);
   }

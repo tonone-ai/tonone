@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 // tonone-pr-attribution — PostToolUse Bash hook
 // Detects `gh pr create`, appends agent credits to the PR description.
+//
+// Opt-in: does nothing unless TONONE_PR_ATTRIBUTION=1. Editing a pull request
+// in someone's repository is a public, outward-facing change, so it never
+// happens by default.
 
 const fs = require("fs");
 const path = require("path");
@@ -96,6 +100,8 @@ if (require.main !== module) {
   module.exports = { formatAttribution };
   return;
 }
+
+if (process.env.TONONE_PR_ATTRIBUTION !== "1") process.exit(0);
 
 let input = "";
 const timeout = setTimeout(() => process.exit(0), 3000);
