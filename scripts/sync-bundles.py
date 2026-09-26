@@ -53,21 +53,42 @@ def members(bundle):
                 yield entry, REPO_ROOT / entry.relative_to(bundle)
 
 
+OMIT_BLOCK = re.compile(
+    r"<!-- bundle:omit ([^>]*?) -->\n(.*?)<!-- /bundle:omit -->\n", re.S
+)
+
+
+def omit_blocks(bundle_name, text):
+    """Resolve <!-- bundle:omit NAME ... --> ... <!-- /bundle:omit --> blocks.
+
+    Lets a root skill carry a section a slim bundle cannot use, such as the
+    optional decision-layer step whose code tonone-core does not ship. The
+    block is dropped for the bundles it names and kept, without its markers,
+    everywhere else.
+    """
+
+    def repl(m):
+        return "" if bundle_name in m.group(1).split() else m.group(2)
+
+    return OMIT_BLOCK.sub(repl, text)
+
+
 def transformed(bundle, src):
     """Bytes a bundle should hold for SKILL.md src, or None to copy verbatim."""
-    keys = STRIP_FRONTMATTER.get(bundle.name)
-    if not keys or src.name != "SKILL.md":
+    if src.name != "SKILL.md":
         return None
     text = src.read_text()
-    m = re.match(r"---\n(.*?\n)---\n", text, re.S)
-    if not m:
-        return None
-    kept = [
-        line
-        for line in m.group(1).splitlines(keepends=True)
-        if not any(line.startswith(k + ":") for k in keys)
-    ]
-    return ("---\n" + "".join(kept) + "---\n" + text[m.end() :]).encode()
+    out = omit_blocks(bundle.name, text)
+    keys = STRIP_FRONTMATTER.get(bundle.name)
+    m = re.match(r"---\n(.*?\n)---\n", out, re.S) if keys else None
+    if m:
+        kept = [
+            line
+            for line in m.group(1).splitlines(keepends=True)
+            if not any(line.startswith(k + ":") for k in keys)
+        ]
+        out = "---\n" + "".join(kept) + "---\n" + out[m.end() :]
+    return None if out == text else out.encode()
 
 
 def same_file(bundle, dest, src):

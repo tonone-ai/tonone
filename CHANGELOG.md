@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+- **`tonone-core` drops the optional Jev tier proposal from `/apex-plan`.** tonone-core does not ship `lib/jev`, so the step could never run there, and the Anthropic directory held the plugin because the step's shell snippet read as sending data off the machine. Root skills can now wrap a section in `<!-- bundle:omit NAME -->` … `<!-- /bundle:omit -->`; `scripts/sync-bundles.py` drops it for the named bundle and unwraps it everywhere else.
+
+### Changed
+
 - **`tonone-core` skills carry no `allowed-tools`.** The Anthropic plugin directory holds skills that pre-approve unscoped `Bash`, `Write`, `WebFetch` or `WebSearch`. `scripts/sync-bundles.py` now strips that frontmatter key when copying skills into `bundle/tonone-core`; the tools still work there, with Claude Code's normal permission prompts. The full plugin and other bundles are unchanged.
 
 ## [1.17.2] - 2026-09-26

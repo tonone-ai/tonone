@@ -20,39 +20,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 2. **Assess which specialists are needed and at what depth.** Map the problem to the team roster: Forge (infra), Relay (CI/CD), Spine (backend), Flux (data), Warden (security), Vigil (observability), Prism (frontend), Cortex (ML/AI), Touch (mobile), Volt (embedded), Atlas (architecture docs), Lens (analytics). Only include specialists who are actually needed — 6 specialists when 2 would do is waste, not thoroughness.
 
-3. **Optional: get a tier proposal from the decision layer.** The depth pick is a position on a 6-level ordered rubric — a `score` question. Run it as an assist that _proposes_. It never selects, and Step 5 still waits for the user.
-
-```bash
-JEV="${CLAUDE_PLUGIN_ROOT:-.}/lib/jev/cli.js"
-[ -f "$JEV" ] || JEV="lib/jev/cli.js"
-[ -f "$JEV" ] || JEV=""
-
-python3 -c 'import json;print(json.dumps(["XS — one specialist, single pass, no review; a throwaway spike or a typo-scale fix","S — one or two specialists, basic implementation plus a single review pass","M — three or four specialists, feature plus data layer plus CI, reviewed","L — everything in M plus monitoring, documentation and a reliability pass","XL — production-hardened: dedicated QA pass, infrastructure and performance review","XXL — full team in parallel, adversarial review rounds, major system build or migration"]))' > /tmp/jev-tiers.json
-
-# $BRIEF = the request plus what Step 1 discovery established
-printf '%s' "$BRIEF" > /tmp/jev-plan-state.txt
-
-if [ -n "$JEV" ]; then
-  node "$JEV" score \
-    --state-file /tmp/jev-plan-state.txt \
-    --question "How much engineering depth does this request need?" \
-    --levels-file /tmp/jev-tiers.json
-fi
-```
-
-`answer` is a weighted mean of the level indices, so it lands between tiers on purpose: `2.4` is "M, leaning L", not "M". Index 0 is XS through index 5 is XXL.
-
-**Surface it only when `source` is `"jev"` and `confidence` >= 0.5.** Then add one line above the tier menu:
-
-```
-Jev proposes M (2.4 of 0-5, confidence 0.71) — advisory, you pick.
-```
-
-Otherwise say nothing about it and present the menu as always. With no API key set the layer uses a local lexical scorer whose confidence on this question measures around `0.01`, so the key-free default is silence — the step is unchanged from before Jev existed, which is the point.
-
-Your own recommendation in the block below is independent. Write it first, then read the Jev number. If they disagree, keep yours and say both: the user is choosing how to spend their own money and deserves to see the disagreement, not an averaged answer.
-
-4. **Present options across six depth tiers (XS/S/M/L/XL/XXL)** — only show tiers that make sense for the request (a typo fix doesn't need an XXL row, a system migration doesn't need XS). Use this format:
+3. **Present options across six depth tiers (XS/S/M/L/XL/XXL)** — only show tiers that make sense for the request (a typo fix doesn't need an XXL row, a system migration doesn't need XS). Use this format:
 
 ```
 XS — Fast & dirty (Spine, ~10K tokens, ~$0.02)
@@ -108,11 +76,6 @@ Usage:
 
 ## Key Rules
 
-- Jev proposes a tier. It never picks one. Step 5 waits for the user, unconditionally — a high-confidence proposal is not consent.
-- Ignore any tier proposal whose `source` is not `"jev"`. `"local"` and `"fallback"` are lexical overlap, not a judgment about scope.
-- Write your own recommendation before reading the Jev number, and never silently revise it to match.
-- The decision layer is optional. If `lib/jev/cli.js` is absent, every step here works unchanged.
-- Credentials are environment-only and opt-in. Never prompt for a key or suggest setting one mid-plan.
 - Only show tiers that make sense for the request. Only name specialists that are actually needed.
 
 ## Output Format
