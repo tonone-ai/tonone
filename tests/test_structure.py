@@ -291,3 +291,16 @@ def test_agent_definitions_mirror_team_copies():
         f"agent definitions drifted between agents/ and team/*/agents/: {drifted}. "
         f"Reconcile by hand — whichever copy is newer wins — then copy it to the other."
     )
+
+
+def test_root_hooks_declared_once():
+    """Root plugin hooks live only in hooks/hooks.json.
+
+    Claude Code loads hooks/hooks.json AND an inline "hooks" key in
+    plugin.json together, so any hook listed in both runs twice.
+    """
+    root_manifest = json.loads((REPO / ".claude-plugin" / "plugin.json").read_text())
+    assert "hooks" not in root_manifest, (
+        "declare root hooks in hooks/hooks.json only; an inline 'hooks' key in "
+        ".claude-plugin/plugin.json makes shared hooks run twice"
+    )
