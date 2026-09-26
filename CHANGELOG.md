@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- **PR attribution is opt-in.** `hooks/tonone-pr-attribution.js` used to append a tonone credit to the description of every PR created with `gh pr create`, in any repository, without saying so. It now does nothing unless `TONONE_PR_ATTRIBUTION=1` is set.
+- **Team bundles hold real files instead of symlinks.** `bundle/*/agents` and `bundle/*/skills` were 358 symlinks into the root; the Anthropic plugin directory rejects repositories with symlinks. `scripts/sync-bundles.py` refreshes the copies from the root (`--check` reports drift), and `tests/test_structure.py` fails on any tracked symlink or out-of-date bundle.
+
+### Added
+
+- **README "Privacy and data" section** listing every network call tonone can make, when, and what is sent. By default the only one is the daily update check.
+
 ## [1.17.1] - 2026-09-26
 
 ### Fixed

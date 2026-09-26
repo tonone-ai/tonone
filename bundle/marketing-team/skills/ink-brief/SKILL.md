@@ -5,6 +5,8 @@ allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
+compatibility: Designed for Claude Code
+tags: [product, content, marketing, brief]
 ---
 
 # Content Brief Generator
@@ -36,15 +38,15 @@ find . -name "*.md" 2>/dev/null | xargs grep -l "ICP\|audience\|persona\|reader\
 
 Primary keyword: `[exact phrase]`
 
-- Estimated monthly search volume: [X] (use judgment or WebSearch if available)
-- Keyword difficulty: [Low / Medium / High]
-- SERP intent: [Informational / Navigational / Commercial / Transactional]
+- Monthly search volume: [X, with source] — from an SEO data tool or Search Console only; otherwise `unknown`. Never guess a number.
+- Keyword difficulty: [tool value, or `unknown`]
+- SERP intent: [Informational / Navigational / Commercial / Transactional] — read from the live results, not assumed from the wording
 
 Keyword variants (include all in the brief):
 
-- `[variant 1]` — [search volume estimate]
-- `[variant 2]` — [search volume estimate]
-- `[variant 3]` — [search volume estimate]
+- `[variant 1]` — [volume with source, or `unknown`]
+- `[variant 2]` — [volume with source, or `unknown`]
+- `[variant 3]` — [volume with source, or `unknown`]
 
 LSI / semantic terms to include naturally:
 `[term]`, `[term]`, `[term]`
