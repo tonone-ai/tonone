@@ -1,7 +1,6 @@
 ---
 name: cortex-integrate
 description: Design and implement an AI feature integration — model selection, architecture pattern, system prompt, data flow, error handling, cost estimate. Use when asked to "add AI to this", "LLM integration", "add Claude/GPT", or "AI-powered feature".
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
 license: MIT

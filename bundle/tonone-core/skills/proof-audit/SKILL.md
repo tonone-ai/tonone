@@ -1,7 +1,6 @@
 ---
 name: proof-audit
 description: Audit test suite health — find flaky tests, slow tests, coverage gaps, and testing anti-patterns. Use when asked to "audit tests", "fix flaky tests", "why are tests slow", "test health", or "improve test suite".
-allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
 license: MIT

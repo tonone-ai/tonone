@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- **`tonone-core` skills carry no `allowed-tools`.** The Anthropic plugin directory holds skills that pre-approve unscoped `Bash`, `Write`, `WebFetch` or `WebSearch`. `scripts/sync-bundles.py` now strips that frontmatter key when copying skills into `bundle/tonone-core`; the tools still work there, with Claude Code's normal permission prompts. The full plugin and other bundles are unchanged.
+
 ## [1.17.2] - 2026-09-26
 
 ### Changed
