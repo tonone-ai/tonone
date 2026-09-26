@@ -4,7 +4,16 @@
 
 **Founder + Tonone = whole company.**
 
-100 specialists across 10 teams. Engineering executes. Product decides. Operations runs. Legal de-risks. Design polishes. Data Science decides with data. Security Operations defends. Developer Experience ships good APIs. Infrastructure Specialist runs the cloud. AI Operations ships models. One session, a handful of commands, zero meetings. 429 skills across every discipline. MIT licensed.
+100 specialist agents in 10 teams for Claude Code, plus 429 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
+
+```bash
+claude plugin marketplace add tonone-ai/tonone
+claude plugin install tonone@tonone-ai
+```
+
+<p align="center"><img src="assets/demo-apex-plan.svg" alt="Apex, the engineering lead, answering /apex-plan for user authentication with S, M, L and XL options, each listing the specialists involved, the token budget and the cost" width="640"></p>
+
+<p align="center"><sub>Real <code>/apex-plan</code> output. Engineering, product, operations, legal, design, data science, security operations, developer experience, infrastructure and AI operations each have their own team.</sub></p>
 
 ## The idea
 
