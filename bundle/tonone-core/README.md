@@ -4,6 +4,15 @@ An engineering team for Claude Code. Fifteen specialist agents and 80 skills, le
 
 This is the core of [tonone](https://github.com/tonone-ai/tonone). The full plugin adds product, design, legal, operations, data science, security operations, developer experience, infrastructure and AI operations teams (100 agents, 429 skills).
 
+## Install
+
+```bash
+claude plugin marketplace add tonone-ai/tonone
+claude plugin install tonone-core@tonone-ai
+```
+
+The standalone copy at [tonone-ai/tonone-core](https://github.com/tonone-ai/tonone-core) is generated from `bundle/tonone-core` in the main repo every day. Open issues and pull requests there.
+
 ## What you get
 
 | Agent  | Owns                                                                                                  |
