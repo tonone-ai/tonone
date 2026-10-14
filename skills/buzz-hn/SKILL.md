@@ -2,7 +2,7 @@
 name: buzz-hn
 description: Hacker News post crafter — given a product, feature, or story produces a ready-to-post HN submission (title ≤80 chars, no marketing), honest body text with technical depth, no outbound links, predicted reception analysis, and comment-response templates for likely pushback. Use when asked to "write an HN post", "craft a Show HN", "prepare our Hacker News launch", or "help me post on HN".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -162,6 +162,24 @@ First 2 hours after posting:
 [ ] If the thread goes well, share the HN link (not the product link) on Twitter/LinkedIn
 [ ] If you get a "flagged" warning — do not repost. Address it in the thread.
 ```
+
+### Step 7: Run the Copy Gate
+
+Prompts tell the writer what not to do; the gate checks that it didn't. Write the submission to `.tonone/buzz/hn-draft.md` as one block: `=== hn`, then `Title: ...`, then the body text. Check it:
+
+```bash
+gate=""
+for c in "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/lib/copy-gate/gate.py" \
+         "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/../../lib/copy-gate/gate.py" \
+         "$PWD/lib/copy-gate/gate.py"; do
+  [ -f "$c" ] && gate="$c" && break
+done
+[ -z "$gate" ] && gate=$(find "$HOME/.claude/plugins/cache" -maxdepth 6 \
+  -path "*/lib/copy-gate/gate.py" 2>/dev/null | sort | tail -1)
+if [ -n "$gate" ]; then python3 "$gate" --profile hn .tonone/buzz/hn-draft.md; else echo "copy-gate not found"; fi
+```
+
+Any `FAIL` (exit 1), such as a title over 80 characters, a hype word, or a link in the body: rewrite and run again. HN readers flag marketing language on sight, so treat `WARN` items as rewrites too unless there's a clear reason. If the gate isn't found, check those by hand and say the gate didn't run.
 
 ## Delivery
 

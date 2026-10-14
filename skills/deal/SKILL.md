@@ -19,13 +19,17 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill           | Use when                                                                                   |
-| --------------- | ------------------------------------------------------------------------------------------ |
-| `deal-recon`    | Audit current sales pipeline, deal patterns, ICP definition, and revenue motion            |
-| `deal-pipeline` | Design or audit B2B sales pipeline — stage definitions, entry/exit criteria, qualification |
-| `deal-playbook` | Write sales playbooks — outbound sequences, discovery call guides, objection handling      |
-| `deal-pricing`  | Design pricing strategy — tiers, value metric, enterprise pricing, freemium design         |
-| `deal-close`    | Close a specific deal — diagnose why it's stalling, write proposal, navigate procurement   |
+| Skill           | Use when                                                                                        |
+| --------------- | ----------------------------------------------------------------------------------------------- |
+| `deal-recon`    | Audit current sales pipeline, deal patterns, ICP definition, and revenue motion                 |
+| `deal-pipeline` | Design or audit B2B sales pipeline — stage definitions, entry/exit criteria, qualification      |
+| `deal-playbook` | Write sales playbooks — outbound sequences, discovery call guides, objection handling           |
+| `deal-pricing`  | Design pricing strategy — tiers, value metric, enterprise pricing, freemium design              |
+| `deal-close`    | Close a stalled deal or answer an objection reply (LAARC), write proposal, navigate procurement |
+| `deal-signals`  | Read target companies' websites for buying signals with evidence, build an explainable cohort   |
+| `deal-outreach` | Write a cold outbound sequence (email + LinkedIn), checked by the copy gate                     |
+| `deal-qualify`  | MEDDPICC qualification worksheet for a specific opportunity                                     |
+| `deal-proposal` | Generate a B2B proposal from deal context                                                       |
 
 Default (no args or unclear): `deal-recon`.
 

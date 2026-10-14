@@ -49,6 +49,18 @@ Organize the gathered data into sections. Only include sections that have conten
 6. **Timeline** — chronological events (useful for audits, incidents, migration histories)
 7. **Actions** — prioritized next steps, ordered by impact
 
+#### Write Each Section Evidence-First
+
+When a section needs prose you write (summary, findings narrative, actions), not just data passed in from the session:
+
+- **Outline first.** Commit to 2-5 sections, each with a one-line purpose, before writing any of them.
+- **Gather, then write.** For each section make at least 3 and at most 5 lookups (file reads, greps, queries, tool calls) and mix source types; three greps of the same directory count as one view.
+- **Cite every substantive claim** with `path:line`, the query, a URL, or a direct quote. A claim with no source is cut.
+- **Carry prior sections forward.** Re-read what is already written and do not restate it; each section adds something new.
+- **Empty is honest.** If a section's lookups return nothing usable, write "insufficient evidence" and what would settle it, instead of filling.
+- **Only real tool output.** Never write, simulate, or paraphrase a result you did not actually receive.
+- **Numbers come from a source or are marked unknown.** No estimates presented as measurements.
+
 ### Step 2: Generate the HTML Report
 
 Generate a single self-contained HTML file with the following requirements:

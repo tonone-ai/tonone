@@ -2,7 +2,7 @@
 
 An engineering team for Claude Code. Fifteen specialist agents and 80 skills, led by **Apex**, the engineering lead, which scopes each request and routes it to the right specialists.
 
-This is the core of [tonone](https://github.com/tonone-ai/tonone). The full plugin adds product, design, legal, operations, data science, security operations, developer experience, infrastructure and AI operations teams (100 agents, 429 skills).
+This is the core of [tonone](https://github.com/tonone-ai/tonone). The full plugin adds product, design, legal, operations, data science, security operations, developer experience, infrastructure and AI operations teams (100 agents, 431 skills).
 
 ## Install
 

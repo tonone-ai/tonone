@@ -2,7 +2,7 @@
 name: buzz-outreach
 description: Media and podcast outreach personalizer — takes a story angle and target journalist or host list and produces personalized pitch emails per target. Use when asked to "write media pitches", "pitch this story to journalists", "get us on podcasts", "write press outreach", or "personalize pitches for these contacts".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -148,6 +148,24 @@ Prepare for two responses:
 **"Tell me more"** — Have a press release draft, a one-pager, and a key contact list ready within 2 hours.
 
 **"Not the right fit"** — Reply: "No problem — is there anyone on your team who covers [adjacent beat]?" One ask, then done.
+
+### Step 7: Run the Copy Gate
+
+Prompts tell the writer what not to do; the gate checks that it didn't. Write each pitch to `.tonone/buzz/pitch-drafts.md`, one `=== <journalist or host>` block per target with its `Subject:` line, and check it:
+
+```bash
+gate=""
+for c in "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/lib/copy-gate/gate.py" \
+         "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/../../lib/copy-gate/gate.py" \
+         "$PWD/lib/copy-gate/gate.py"; do
+  [ -f "$c" ] && gate="$c" && break
+done
+[ -z "$gate" ] && gate=$(find "$HOME/.claude/plugins/cache" -maxdepth 6 \
+  -path "*/lib/copy-gate/gate.py" 2>/dev/null | sort | tail -1)
+if [ -n "$gate" ]; then python3 "$gate" --profile press-pitch --allow-tokens .tonone/buzz/pitch-drafts.md; else echo "copy-gate not found"; fi
+```
+
+Any `FAIL` (exit 1): rewrite that pitch and run again; never show a failing draft. Fix each `WARN` or say in one line why it stays. If the gate isn't found, apply the pitch rules above as a manual checklist and say the gate didn't run.
 
 ## Delivery
 

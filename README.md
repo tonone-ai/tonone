@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-100 specialist agents in 10 teams for Claude Code, plus 429 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
+100 specialist agents in 10 teams for Claude Code, plus 431 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
 
 ```bash
 claude plugin marketplace add tonone-ai/tonone
@@ -304,7 +304,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 429 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 431 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 
@@ -316,7 +316,7 @@ Every engineering agent detects your stack automatically:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-## All 429 Skills
+## All 431 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
@@ -475,6 +475,7 @@ Every engineering agent detects your stack automatically:
 - `/echo-feedback` — Feedback synthesis
 - `/echo-interview` — Run a user interview
 - `/echo-jobs` — Jobs-to-Be-Done analysis
+- `/echo-panel` — Synthetic stakeholder panel to pressure-test a launch or message (hypotheses, not evidence)
 - `/echo-recon` — User research reconnaissance
 - `/echo-segment` — User segmentation and persona creation from mixed data sources
 
@@ -553,6 +554,7 @@ Every engineering agent detects your stack automatically:
 - `/deal-proposal` — B2B proposal generator
 - `/deal-qualify` — MEDDPICC-based deal qualification worksheet
 - `/deal-recon` — Revenue reconnaissance
+- `/deal-signals` — Buying signals from target companies' websites, with evidence, and an explainable cohort
 
 **Keep** (Customer Success)
 
