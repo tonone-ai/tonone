@@ -1,6 +1,6 @@
 # Upstream ledger
 
-tonone borrows from seven public Claude Code plugins. This file records what was taken from each one, which release it was taken from, and what upstream has since shipped that we deliberately did not take. The machine-readable pins live in `docs/upstream.json`; `scripts/check-upstream.py` compares those pins against each project's latest release and exits non-zero when one has moved.
+tonone borrows from seven public Claude Code plugins and two open-source agent projects. This file records what was taken from each one, which release it was taken from, and what upstream has since shipped that we deliberately did not take. The machine-readable pins live in `docs/upstream.json`; `scripts/check-upstream.py` compares those pins against each project's latest release and exits non-zero when one has moved.
 
 ```bash
 python scripts/check-upstream.py          # human-readable drift report
@@ -9,7 +9,37 @@ python scripts/check-upstream.py --json   # for CI or a hook
 
 The one vendored artifact is the `lib/uiux` CSV corpus, which is MIT-licensed data from ui-ux-pro-max; its copyright notice ships in `lib/uiux/NOTICE.md`, as MIT requires.
 
-Borrowing is one-directional and by hand: we read the upstream diff, decide what applies to a 100-agent team, and write it into tonone's own agents and skills in tonone's own voice. Nothing here is vendored code except the `lib/uiux` CSV corpus, which is data.
+Borrowing is one-directional and by hand: we read the upstream diff, decide what applies to a 100-agent team, and write it into tonone's own agents and skills in tonone's own voice. Nothing here is vendored code except the `lib/uiux` CSV corpus, which is data. `lib/copy-gate` and `lib/site-signals` are tonone code that adapts Harvey's detectors and phrase list; their MIT notice ships in each directory's `NOTICE.md`.
+
+## harvey v0.3.0 and MiroFish v0.1.2 (read 2026-10-14)
+
+Two autonomous-agent apps rather than plugins. Neither app is useful to us as a dependency. What's worth having is the discipline each one built around a model.
+
+### harvey v0.3.0 (MIT)
+
+[ethanplusai/harvey](https://github.com/ethanplusai/harvey) is an autonomous cold-email agent that runs on a Claude Code or Codex subscription. Read at commit `e2632eb`, the `v0.3.0` tag (its README still says 0.2.1).
+
+**Taken:**
+
+- **Verification in code, not just the prompt.** `harvey/gate.py` blocks an email before it sends: banned phrases, leftover merge tags, length, links, HTML, a recipient that doesn't match the record. Generalised into `lib/copy-gate/gate.py` with one profile per channel (cold email, LinkedIn note, press pitch, press release, HN, marketing copy, microcopy), plus checks Harvey lacked: unfilled `[slot]` placeholders, TODO markers, fake `Re:`/`Fwd:` subjects. It is the last step of `deal-outreach`, `deal-close` (objection replies), `buzz-outreach`, `buzz-pitch`, `buzz-hn`, `pitch-copy` and `copy-write`. A failing draft is never shown.
+- **The cold-email playbook** (`skills/email_frameworks.md`, `signal_playbook.md`) into `deal-outreach`: compliance rules that override every style rule (CAN-SPAM, honest subjects, opt-out is final, GDPR legitimate interest, honest about automation); deliverability first; per-touch word ceilings; the four reply triggers; signal → opening-line map with a ranking; a ban list on AI tells. It also removed tonone's own "Worth a quick chat?" CTA, which the playbook bans.
+- **Objection handling** (`skills/objection_handling.md`) into `deal-close` Step 2b: diagnose the reply type before answering (brush-off, condition, smokescreen, genuine), LAARC, and hard lines on opt-outs, anger and fabrication.
+- **Signals, confirmed by the user, stored one fact per row.** Harvey's free HTTP profiler and its observation table became `lib/site-signals/` (`profile.py`, `cohort.py`) and the new `deal-signals` skill. Nothing is collected until the user picks signals; every fact carries confidence and an evidence URL; a cohort is a query; `--changes` turns re-observation into triggers; failures are reported, never silent.
+
+**Changed on the way in:** the profiler sends an honest user agent and respects `robots.txt` (Harvey rotates Chrome user agents). "Powered by" no longer counts as an agency credit, after it labelled a partner badge as an incumbent agency on a live test. Job-title detection requires a role noun and reports when roles load from an ATS (Greenhouse, Ashby) instead of returning nothing.
+
+**Not taken:** the always-on heartbeat loop, the approval dashboard, the Gmail/SMTP/Instantly senders and bounce kill switch (tonone is a plugin, not a daemon); paid discovery providers; email-pattern finding and verification; the Claude subscription quota gauge, which reads the OAuth token from the keychain and calls an undocumented endpoint.
+
+### MiroFish v0.1.2 (AGPL-3.0, ideas only)
+
+[666ghj/MiroFish](https://github.com/666ghj/MiroFish) builds a simulated social world from a seed document (OASIS for the simulation, Zep for graph memory) and writes a forecast from it. Read at main commit `7657031` (2026-10-02), ahead of the `v0.1.2` release. **The license is AGPL-3.0, so no code or prompt text was copied.** Everything below was written fresh.
+
+**Taken, as ideas:**
+
+- **A synthetic stakeholder panel** became `echo-panel`: groups extracted from the stimulus (actors only, plus catch-all buckets); grounded archetype personas, with a mix forced on purpose (champion, skeptic, neutral, expert, the person who loses); an independent round, then a cross-reaction round; follow-up interviews chosen for diversity. Unlike MiroFish, tonone treats the output as hypotheses, not a forecast: it is labelled synthetic everywhere, ends in a "What this is not" box, and hands seeds to `echo-interview`.
+- **Evidence-first section writing** from its report agent became a short rule block in `atlas-report`, `lens-report` and `apex-review`: outline first, 3-5 mixed lookups per section, cite every claim, don't restate earlier sections, "insufficient evidence" instead of filler, never write a tool result you didn't receive.
+
+**Not taken:** OASIS, Zep, the Vue frontend, simulations with hundreds of agents, and the forecasting claims, which are unvalidated.
 
 ## open-seo v0.1.9 (read 2026-09-24)
 
