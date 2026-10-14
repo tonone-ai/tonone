@@ -682,7 +682,7 @@
     "name": "deal-close",
     "agent": "deal",
     "team": "Product",
-    "description": "Close a specific deal \u2014 diagnose why a deal is stalling, write a tailored proposal, design the closing sequence, or navigate procurement. Use when a specific deal is stuck, \"how do I close this\", \"write a proposal for this customer\", or \"help me get to yes\".",
+    "description": "Close a specific deal \u2014 diagnose why a deal is stalling, answer an objection reply, write a tailored proposal, design the closing sequence, or navigate procurement. Use when a specific deal is stuck, \"how do I close this\", \"write a proposal for this customer\", \"help me get to yes\", or \"how do I answer this objection\".",
     "path": "team/deal/skills/deal-close/SKILL.md"
   },
   {
@@ -733,6 +733,13 @@
     "team": "Product",
     "description": "Revenue reconnaissance \u2014 audit current sales pipeline, deal patterns, ICP definition, and revenue motion to understand what's working and where the constraint is. Use when asked to \"audit our sales\", \"where is revenue stuck\", \"what's our pipeline state\", \"before designing a playbook\".",
     "path": "team/deal/skills/deal-recon/SKILL.md"
+  },
+  {
+    "name": "deal-signals",
+    "agent": "deal",
+    "team": "Product",
+    "description": "Signal-based prospecting \u2014 read target companies' public websites for buying signals (ads running, incumbent agency, tech stack, hiring, stale content, missing booking) with evidence URLs, then build a cohort you can explain. Use when asked to \"find buying signals\", \"profile these companies\", \"which accounts should we target\", \"build a target list from these domains\", or \"what changed at these accounts\".",
+    "path": "team/deal/skills/deal-signals/SKILL.md"
   },
   {
     "name": "deploy-canary",
@@ -852,6 +859,13 @@
     "team": "Product",
     "description": "Jobs-to-Be-Done analysis \u2014 given a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces analysis and opportunity ranking. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", \"JTBD framework\", or \"why are users switching\".",
     "path": "team/echo/skills/echo-jobs/SKILL.md"
+  },
+  {
+    "name": "echo-panel",
+    "agent": "echo",
+    "team": "Product",
+    "description": "Synthetic stakeholder panel \u2014 build a mixed panel of grounded personas, run independent and cross-reaction rounds against a launch, pricing change, PRD, or message, and return ranked objections and messages to test. Use when asked to \"simulate how users will react\", \"test this launch with a synthetic panel\", \"focus group this\", \"how will people react to this pricing change\", or \"pressure-test this message\".",
+    "path": "team/echo/skills/echo-panel/SKILL.md"
   },
   {
     "name": "echo-recon",

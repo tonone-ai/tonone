@@ -2,7 +2,7 @@
 name: buzz-pitch
 description: Write media pitches and press releases — journalist outreach emails, podcast pitch scripts, newsletter sponsor pitches, and press release copy. Use when asked to "pitch journalists", "write a press release", "reach out to podcasts", or "get media coverage".
 allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -62,7 +62,7 @@ Subject: [Specific — references their beat or recent article]
 
 [Their name],
 
-[One sentence why I'm reaching out — reference their recent work to prove you did research.]
+[One sentence on why this fits their beat — reference their recent work to prove you did research. Never "reaching out because".]
 
 [The hook — one sentence. The most interesting thing about this story.]
 
@@ -153,6 +153,24 @@ Deliver:
 1. The pitch email(s) — ready to send
 2. Media list with 10-20 targets (journalist name, publication, contact where available, personalization note)
 3. Supporting assets checklist: what to attach/link (product one-pager, data, demo link, founder bio)
+
+### Step 6: Run the Copy Gate
+
+Prompts tell the writer what not to do; the gate checks that it didn't. Write each pitch email to `.tonone/buzz/pitch-drafts.md` as `=== <label>` blocks with a `Subject:` line; put a press release in its own block marked `[profile=press-release]`. Then check it:
+
+```bash
+gate=""
+for c in "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/lib/copy-gate/gate.py" \
+         "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/../../lib/copy-gate/gate.py" \
+         "$PWD/lib/copy-gate/gate.py"; do
+  [ -f "$c" ] && gate="$c" && break
+done
+[ -z "$gate" ] && gate=$(find "$HOME/.claude/plugins/cache" -maxdepth 6 \
+  -path "*/lib/copy-gate/gate.py" 2>/dev/null | sort | tail -1)
+if [ -n "$gate" ]; then python3 "$gate" --profile press-pitch .tonone/buzz/pitch-drafts.md; else echo "copy-gate not found"; fi
+```
+
+Any `FAIL` (exit 1): rewrite and run again; never show a failing draft. Fix each `WARN` or say in one line why it stays. If the gate isn't found, check for hype words, unfilled `[slots]`, em dashes and exclamation marks by hand and say the gate didn't run.
 
 ## Delivery
 

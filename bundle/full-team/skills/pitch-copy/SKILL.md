@@ -2,7 +2,7 @@
 name: pitch-copy
 description: Landing page and marketing copy — write hero section, problem/solution blocks, proof points, and CTAs. Use when asked to "write landing page copy", "write the homepage", "marketing copy for this feature", "product page copy", "write the hero section", or "write copy for [surface]".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.6.4
+version: 0.7.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -122,7 +122,25 @@ If requested, also write:
 **In-product empty state:** "[Friendly observation]. [What to do]. [CTA button]"
 **Tooltip:** 1 sentence, imperative voice, tells user what this does or what to do
 
-### Step 8: Present Copy
+### Step 8: Run the Copy Gate
+
+Prompts tell the writer what not to do; the gate checks that it didn't. Before presenting, write the copy to `.tonone/pitch/copy-drafts.md`, one `=== <section>` block per section (hero, problem, solution, proof, CTA). An email subject line goes in its own block with a `Subject:` line. Check it:
+
+```bash
+gate=""
+for c in "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/lib/copy-gate/gate.py" \
+         "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/../../lib/copy-gate/gate.py" \
+         "$PWD/lib/copy-gate/gate.py"; do
+  [ -f "$c" ] && gate="$c" && break
+done
+[ -z "$gate" ] && gate=$(find "$HOME/.claude/plugins/cache" -maxdepth 6 \
+  -path "*/lib/copy-gate/gate.py" 2>/dev/null | sort | tail -1)
+if [ -n "$gate" ]; then python3 "$gate" --profile marketing-copy .tonone/pitch/copy-drafts.md; else echo "copy-gate not found"; fi
+```
+
+Any `FAIL` (exit 1), such as an unfilled `[Customer X]` slot, a TODO, or a spam phrase: fix it and run again. `WARN` items (hype words like "seamless", em dashes) are edits, not blockers: cut them or keep them deliberately and say why. If the gate isn't found, check those by hand and say the gate didn't run.
+
+### Step 9: Present Copy
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 

@@ -119,6 +119,17 @@ For critical metrics, add separate alerts (not just in the report):
 - **Cooldown** — don't alert again for N hours after firing
 - **Context** — include enough data in alert to understand the issue
 
+### Step 5b: Write the Narrative Evidence-First
+
+Most reports carry commentary next to the numbers ("signups dipped because..."). Write it, and any template for it, under these rules:
+
+- **Outline first** — 2-5 sections, each with a one-line purpose (e.g. headline movement, drivers, risks, actions).
+- **Query before prose** — each section runs at least 3 and at most 5 lookups before a sentence is written: the metric query, a breakdown by segment, a comparison period, a deploy or incident log. Mix sources; three cuts of the same table are one view.
+- **Every claim cites its query or source** — the SQL file and line, the dashboard URL, or the log entry. An explanation with no query behind it is a guess and is labeled as one or cut.
+- **Don't restate earlier sections** — each one adds a new fact.
+- **No data, say so** — a section whose queries return nothing usable reads "insufficient evidence" plus the query that would settle it.
+- **Numbers only from query results** — never from memory, never from a result you did not actually run; otherwise mark `unknown`.
+
 ### Step 6: Present Summary
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.

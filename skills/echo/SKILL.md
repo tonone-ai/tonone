@@ -19,13 +19,14 @@ Read the request and invoke the right skill with the Skill tool.
 
 ## Skills
 
-| Skill            | Use when                                                              |
-| ---------------- | --------------------------------------------------------------------- |
-| `echo-feedback`  | Synthesize support tickets, NPS verbatims, or app reviews into themes |
-| `echo-interview` | Run a user interview or synthesize interview notes into insights      |
-| `echo-jobs`      | Jobs-to-Be-Done analysis — what jobs are users hiring the product for |
-| `echo-recon`     | Survey existing personas, research docs, and feedback artifacts       |
-| `echo-segment`   | Build user personas and segments from analytics, CRM, or reviews      |
+| Skill            | Use when                                                                                                   |
+| ---------------- | ---------------------------------------------------------------------------------------------------------- |
+| `echo-feedback`  | Synthesize support tickets, NPS verbatims, or app reviews into themes                                      |
+| `echo-interview` | Run a user interview or synthesize interview notes into insights                                           |
+| `echo-jobs`      | Jobs-to-Be-Done analysis — what jobs are users hiring the product for                                      |
+| `echo-recon`     | Survey existing personas, research docs, and feedback artifacts                                            |
+| `echo-panel`     | Synthetic stakeholder panel: pressure-test a launch, pricing change, or message (hypotheses, not evidence) |
+| `echo-segment`   | Build user personas and segments from analytics, CRM, or reviews                                           |
 
 Default (no args or unclear): `echo-recon`.
 

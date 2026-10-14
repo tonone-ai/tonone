@@ -57,6 +57,22 @@
       "version": "v0.1.9",
       "checked": "2026-09-24",
       "gives": "Evidence-first SEO audit discipline, SERP-overlap keyword clustering, link-prospecting and local-SEO guardrails for Ink"
+    },
+    {
+      "name": "harvey",
+      "repo": "ethanplusai/harvey",
+      "release_prefix": "v",
+      "version": "v0.3.0",
+      "checked": "2026-10-14",
+      "gives": "Deterministic copy gate (lib/copy-gate), cold-email playbook in deal-outreach, LAARC in deal-close, site-signals profiler and observation model behind deal-signals (MIT)"
+    },
+    {
+      "name": "mirofish",
+      "repo": "666ghj/MiroFish",
+      "release_prefix": "v",
+      "version": "v0.1.2",
+      "checked": "2026-10-14",
+      "gives": "Ideas only (AGPL-3.0, no text or code taken): synthetic stakeholder panel behind echo-panel, evidence-first section writing in atlas-report, lens-report, apex-review"
     }
   ]
 }

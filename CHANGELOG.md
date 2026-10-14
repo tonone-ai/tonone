@@ -4,17 +4,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.18.0] - 2026-10-14
+
 ### Added
 
+- **`/deal-signals`** — signal-based prospecting. Reads target companies' public websites (homepage, `robots.txt`, `sitemap.xml`, team, careers and contact pages) for buying signals: ads running, the agency credited in the footer, tech stack, missing schema or booking, content age, open roles, decision makers. Every fact is one row with a confidence and the URL that proves it; nothing is collected until the user confirms which signals to gather; a target list is a query (`cohort.py --require ... --exclude ...`), and `--changes` turns re-profiling into triggers. Unreachable sites, missing pages and roles that load from Greenhouse or Ashby are reported as failures, never as empty results. Backed by `lib/site-signals/` (stdlib Python, honest user agent, reads `robots.txt` first and respects it on every page, refuses IPs, internal hosts and names or redirects that resolve to private addresses).
+- **`/echo-panel`** — synthetic stakeholder panel. A deliberately mixed cast of 6-12 grounded archetype personas (always including a skeptic and the person who loses) reacts to a launch, pricing change or message independently, then to each other, then in follow-up interviews. Output is ranked objections, misreadings, message changes to test and interview seeds for `/echo-interview`, labelled synthetic throughout: hypotheses, not evidence.
+- **`lib/copy-gate`** — deterministic checks on outbound copy, no model involved. Fails drafts with unfilled `[Customer X]` slots, TODOs, leftover merge tags, spam phrases and AI tells, em dashes, fake `Re:`/`Fwd:` subjects, or over the channel's length and link budget. One profile per channel: cold email, thread reply, LinkedIn note, press pitch, press release, HN, marketing copy, microcopy. It is now the last step of `/deal-outreach`, `/deal-close`, `/buzz-outreach`, `/buzz-pitch`, `/buzz-hn`, `/pitch-copy` and `/copy-write`; a failing draft is rewritten, never shown.
+- **Upstream ledger entries for Harvey (MIT) and MiroFish (AGPL-3.0, ideas only).** `docs/upstream.md` records what was taken, what was changed on the way in, and what was left; `docs/upstream.json` pins `v0.3.0` and `v0.1.2`.
 - **README opens with a real `/apex-plan` run.** `assets/demo-apex-plan.svg` renders Apex's actual tier menu for a user-auth request, and the install commands move up to sit next to it. The ten-team roster moves below the fold.
 - **`test_headline_counts_match_tree`** fails CI when the agent or skill totals quoted in `README.md`, `CLAUDE.md` or the plugin manifests stop matching the tree. `marketplace.json` said 23 agents for months while the tree had 100.
 
 ### Changed
 
+- **`/deal-outreach` rewritten around Harvey's cold-email playbook.** Compliance rules that override every style rule (CAN-SPAM, honest subjects, opt-out is final, GDPR legitimate interest, honest about automation), deliverability before copy, per-touch word ceilings (75 / 60 / 40), the four reply triggers, a signal-to-opening-line map, and a ban list on AI tells. Drops tonone's own "Worth a quick chat?" CTA, which the playbook bans.
+- **`/deal-close` answers objection replies.** New Step 2b classifies the reply (brush-off, condition, smokescreen, genuine) before responding, runs LAARC on genuine objections, and holds hard lines on opt-outs, anger and fabrication.
+- **Evidence-first section writing** in `/atlas-report`, `/lens-report` and `/apex-review`: outline first, 3-5 mixed lookups per section, every claim cited, no restating earlier sections, "insufficient evidence" instead of filler.
+- **`scripts/sync-bundles.py` mirrors `lib/` into team bundles**, so `revenue-team`, `product-team`, `marketing-team` and `full-team` installs carry `lib/copy-gate` and `lib/site-signals` instead of always falling back to a manual checklist.
+- **Deal hub routes to all its skills.** `skills/deal` was missing `/deal-outreach`, `/deal-qualify` and `/deal-proposal`.
 - **`tonone-core` drops the optional Jev tier proposal from `/apex-plan`.** tonone-core does not ship `lib/jev`, so the step could never run there, and the Anthropic directory held the plugin because the step's shell snippet read as sending data off the machine. Root skills can now wrap a section in `<!-- bundle:omit NAME -->` … `<!-- /bundle:omit -->`; `scripts/sync-bundles.py` drops it for the named bundle and unwraps it everywhere else.
-
-### Changed
-
 - **`tonone-core` skills carry no `allowed-tools`.** The Anthropic plugin directory holds skills that pre-approve unscoped `Bash`, `Write`, `WebFetch` or `WebSearch`. `scripts/sync-bundles.py` now strips that frontmatter key when copying skills into `bundle/tonone-core`; the tools still work there, with Claude Code's normal permission prompts. The full plugin and other bundles are unchanged.
 
 ## [1.17.2] - 2026-09-26
