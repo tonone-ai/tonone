@@ -57,6 +57,14 @@ Read the key changed files to understand the shape of the work.
 
 4. **Score each candidate finding before it earns a place in the output.** Rate 0-100: 0-25 likely false positive or pre-existing issue; 26-50 minor nitpick not required by any doc; 51-75 valid but low-impact; 76-90 important; 91-100 critical or an explicit CLAUDE.md/spec violation. Discard anything below 80. Before scoring, run each candidate against this false-positive checklist — if any apply, it's a false positive regardless of how real it looks: pre-existing (not introduced by this change), would be caught by a linter/typechecker/CI, a pedantic nitpick a senior engineer wouldn't raise, not required by any doc in the repo, on a line the user didn't touch, or already explicitly justified/silenced in a comment. For a high-stakes review (blocking a ship decision), dispatch a separate Task agent per surviving finding to independently re-score it — a different, cheaper pass catches self-confirmation bias that scoring your own find never will.
 
+4b. **Write the review evidence-first.** Before writing, outline the review in 2-5 sections, each with a one-line purpose (e.g. blocking issues, cross-cutting gaps, consistency, declined-to-judge). For each section:
+
+- Make at least 3 and at most 5 lookups before writing it (file reads, greps, test or scan output, git history), mixing source types rather than repeating one
+- Cite every substantive claim with `file:line`, the command, or a quote from its output
+- Re-read the sections already written and do not restate them
+- If the lookups turn up nothing, write "insufficient evidence" and what would settle it; never fill the gap
+- Never write or paraphrase tool output you did not actually receive; numbers come from a run or are marked unknown
+
 5. **Present findings prioritized by risk.** For each surviving issue:
    - What's wrong (one sentence) with confidence score
    - Location — `file:line`, not "somewhere in the auth module"

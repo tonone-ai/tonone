@@ -1,8 +1,8 @@
 ---
 name: deal-close
-description: Close a specific deal — diagnose why a deal is stalling, write a tailored proposal, design the closing sequence, or navigate procurement. Use when a specific deal is stuck, "how do I close this", "write a proposal for this customer", or "help me get to yes".
+description: Close a specific deal — diagnose why a deal is stalling, answer an objection reply, write a tailored proposal, design the closing sequence, or navigate procurement. Use when a specific deal is stuck, "how do I close this", "write a proposal for this customer", "help me get to yes", or "how do I answer this objection".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -73,6 +73,39 @@ Fix: "What can I do to help move this through faster? Do you need our security d
 **"Let's revisit next quarter"**
 Real meaning: Not a priority now.
 Fix: "What would need to change for this to be a priority this quarter?" If nothing: mark lost, follow up next quarter. Don't chase a non-priority.
+
+### Step 2b: Answer an Objection Reply (LAARC)
+
+When the input is a prospect's reply rather than a stalled deal, diagnose before you respond. The stated objection is rarely the real one:
+
+| Reply type        | Looks like                                             | Response                                                                                                            |
+| ----------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| Reflex brush-off  | "Not interested", sent within minutes                  | Don't rebut what they didn't read. Close gracefully, or offer one specific piece of value with zero ask.            |
+| Condition         | "Under contract until March"                           | Not an objection, a fact. Log the date, ask permission to reconnect then, and actually stop until then.             |
+| Smokescreen       | "Too expensive" from someone who never asked the price | Answer the hidden concern (priority or trust): "If cost weren't a factor, would this be worth your time right now?" |
+| Genuine objection | Specific, engaged, about their situation               | The only kind worth a full answer. It is a buying signal.                                                           |
+
+Reply length is the tell: long reply, respond with substance; one-liner, respond shorter than they did.
+
+For a genuine objection, run **LAARC**: **Listen** (read the whole reply, name the real concern), **Acknowledge** ("that makes sense"), **Assess** (one clarifying question if it's vague), **Respond** (evidence, a reframe, or flexibility), **Confirm** ("does that cover it?").
+
+By family:
+
+- **Budget:** reframe around the cost of the problem they told you about. Never invent a consequence they didn't mention.
+- **Authority:** ask who owns it, or offer a one-paragraph summary they can forward.
+- **Need:** "What's the one thing you wish your current setup did better?" or "What would need to change for this to matter?"
+- **Timing:** respect it; agree a specific date to reconnect.
+- **Lukewarm after two exchanges:** disqualify honestly ("doesn't sound like a burning problem, should I close the file?"). Never as fake reverse psychology on a clear no.
+
+Hard lines, which override every technique above:
+
+- Opt-out wording in any form ("remove me", "stop emailing") is not an objection. Confirm removal in one line, suppress the contact, no pitch.
+- Anger or "this is spam" / "how did you get my email": one short factual note (data source, removal done), suppress, flag to the human owner. No rebuttal.
+- One response per objection. If they push back again, respect it.
+- Never fabricate customers, stats, deadlines or scarcity. Never claim a prior conversation or referral that didn't happen.
+- If asked whether the reply is automated or AI-written, say yes.
+
+Run the reply through the copy gate before showing it with `--profile reply` (located as in `/deal-outreach` Step 7; `Re:` subjects are fine there, and a missing subject is allowed). Reply framework adapted from Harvey's objection playbook (MIT).
 
 ### Step 3: Produce Closing Artifact
 

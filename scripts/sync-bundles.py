@@ -46,11 +46,34 @@ def members(bundle):
         for entry in sorted(skills.iterdir()):
             yield entry, REPO_ROOT / "skills" / entry.name
     # Shared reference files a bundle ships so its skills' repo-relative
-    # paths (docs/output-kit.md, team/prism/reference/...) still resolve.
+    # paths (docs/output-kit.md, team/prism/reference/...) still resolve, and
+    # lib/ scripts its skills run (lib/copy-gate, lib/site-signals), which
+    # they locate under ${CLAUDE_PLUGIN_ROOT}/lib.
     for sub in ("docs", "team"):
         for entry in sorted((bundle / sub).rglob("*")):
             if entry.is_file():
                 yield entry, REPO_ROOT / entry.relative_to(bundle)
+    # lib/ membership is by directory: a bundle that ships lib/<name> gets
+    # every file in it, so a file added to lib/<name> later is not skipped.
+    lib = bundle / "lib"
+    if lib.is_dir():
+        for pkg in sorted(p for p in lib.iterdir() if p.is_dir()):
+            src_pkg = REPO_ROOT / "lib" / pkg.name
+            seen = set()
+            for src in sorted(src_pkg.rglob("*")):
+                if src.is_file() and "__pycache__" not in src.parts:
+                    seen.add(src.relative_to(src_pkg))
+                    yield lib / pkg.name / src.relative_to(src_pkg), src
+            # A file removed from lib/<name> at the root shows up as a
+            # missing source instead of lingering in the bundle.
+            for dest in sorted(pkg.rglob("*")):
+                rel = dest.relative_to(pkg)
+                if (
+                    dest.is_file()
+                    and "__pycache__" not in dest.parts
+                    and rel not in seen
+                ):
+                    yield dest, src_pkg / rel
 
 
 OMIT_BLOCK = re.compile(
@@ -127,6 +150,7 @@ def copy(bundle, dest, src):
             if want is not None:
                 f.write_bytes(want)
     else:
+        dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, dest)
         want = transformed(bundle, src)
         if want is not None:
