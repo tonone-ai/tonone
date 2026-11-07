@@ -1,0 +1,21 @@
+{
+  "name": "hire",
+  "version": "1.19.0",
+  "description": "Talent acquisition and recruiting — sourcing, structured interviews, scorecards, offer and close, pipeline metrics, employer brand",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "recruiting",
+    "sourcing",
+    "interviews",
+    "scorecards",
+    "offers",
+    "pipeline",
+    "employer-brand",
+    "people-team"
+  ]
+}

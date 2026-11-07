@@ -1,0 +1,22 @@
+{
+  "name": "reach",
+  "version": "1.19.0",
+  "description": "Demand Generation & Paid Acquisition — paid search, paid social, ABM, CAC and payback modeling, budget pacing, creative testing",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "demand-generation",
+    "paid-acquisition",
+    "cac",
+    "payback",
+    "abm",
+    "paid-search",
+    "paid-social",
+    "creative-testing",
+    "marketing-team"
+  ]
+}

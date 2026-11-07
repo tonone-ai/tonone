@@ -1,0 +1,21 @@
+{
+  "name": "wage",
+  "version": "1.19.0",
+  "description": "Compensation and total rewards — pay bands, market benchmarking, equity refresh, pay equity audits, offer approvals, comp cycles",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "compensation",
+    "pay-bands",
+    "benchmarking",
+    "equity",
+    "pay-equity",
+    "offers",
+    "comp-cycles",
+    "people-team"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "visa",
+  "version": "1.19.0",
+  "description": "Global mobility and remote hiring — immigration and visas, employer-of-record vs entity decisions, international payroll and compliance, relocation, remote-work tax risk",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "immigration",
+    "visas",
+    "eor",
+    "global-mobility",
+    "relocation",
+    "remote-tax",
+    "international-payroll",
+    "people-team"
+  ]
+}

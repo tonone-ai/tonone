@@ -1,0 +1,22 @@
+{
+  "name": "rev",
+  "version": "1.19.0",
+  "description": "Chief Revenue Officer — revenue strategy, GTM org design, quota capacity, board revenue narrative, Revenue team orchestration",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "cro",
+    "revenue-strategy",
+    "gtm",
+    "org-design",
+    "capacity",
+    "board",
+    "quota",
+    "orchestration",
+    "revenue-team"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "bond",
+  "version": "1.19.0",
+  "description": "Employee relations and HR business partnering — investigations, conflict resolution, performance improvement plans, policy interpretation, manager coaching, terminations",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "employee-relations",
+    "investigations",
+    "pip",
+    "terminations",
+    "hrbp",
+    "policy",
+    "coaching",
+    "people-team"
+  ]
+}

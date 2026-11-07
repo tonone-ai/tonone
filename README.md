@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-100 specialist agents in 10 teams for Claude Code, plus 431 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
+140 specialist agents in 15 teams for Claude Code, plus 551 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
 
 ```bash
 claude plugin marketplace add tonone-ai/tonone
@@ -41,7 +41,7 @@ Or inside an active Claude Code session:
 /plugin install tonone@tonone-ai
 ```
 
-Installing the full roster pulls in all 100 agents. If that's more than a given project needs, run `/apex-profile` after install to scope the roster down to a curated subset (e.g. just the engineering core).
+Installing the full roster pulls in all 140 agents. If that's more than a given project needs, run `/apex-profile` after install to scope the roster down to a curated subset (e.g. just the engineering core).
 
 ### Codex CLI
 
@@ -125,7 +125,7 @@ Apex: I see 3 ways to approach this:
 
 **Helm** is the head of product. It orchestrates research, strategy, design, and marketing — then hands off a structured brief to Apex when it's time to build.
 
-Beyond the two leads, `/apex-route` reaches any specialist on demand — even ones not currently installed in a scoped roster — so a `/apex-profile`-trimmed project never loses access to the full 100-agent bench.
+Beyond the two leads, `/apex-route` reaches any specialist on demand — even ones not currently installed in a scoped roster — so a `/apex-profile`-trimmed project never loses access to the full 140-agent bench.
 
 ### System Takeover
 
@@ -304,7 +304,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 100 agents and 431 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 140 agents and 551 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 
@@ -316,7 +316,7 @@ Every engineering agent detects your stack automatically:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-## All 431 Skills
+## All 551 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>

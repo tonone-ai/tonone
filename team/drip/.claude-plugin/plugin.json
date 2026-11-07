@@ -1,0 +1,21 @@
+{
+  "name": "drip",
+  "version": "1.19.0",
+  "description": "Lifecycle & Email Marketing — nurture programs, onboarding flows, deliverability, segmentation, win-back",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "lifecycle",
+    "email-marketing",
+    "nurture",
+    "deliverability",
+    "onboarding-emails",
+    "segmentation",
+    "win-back",
+    "marketing-team"
+  ]
+}

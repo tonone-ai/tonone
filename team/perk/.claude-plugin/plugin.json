@@ -1,0 +1,20 @@
+{
+  "name": "perk",
+  "version": "1.19.0",
+  "description": "Benefits, payroll and HR operations — benefits design and renewal, payroll accuracy, leave administration, HRIS hygiene, HR compliance calendar",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "benefits",
+    "payroll",
+    "leave",
+    "hris",
+    "compliance-calendar",
+    "renewals",
+    "people-team"
+  ]
+}

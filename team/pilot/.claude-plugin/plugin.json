@@ -1,0 +1,21 @@
+{
+  "name": "pilot",
+  "version": "1.19.0",
+  "description": "Program & Project Management — program charters, dependency maps, RAID logs, milestone tracking, launch coordination, delivery risk",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "program-management",
+    "project-management",
+    "raid-log",
+    "dependencies",
+    "milestones",
+    "launch",
+    "delivery-risk",
+    "operations-team"
+  ]
+}

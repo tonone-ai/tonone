@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.19.0] - 2026-11-07
+
+### Added
+
+- **Six full business teams: 40 new agents, 120 new skills.** Revenue, Marketing, Finance, People, Operations and Support were one or two agents each. Each is now an eight-agent team with the titles a larger company staffs, and every new agent ships a persona plus three skills (a read-only `-recon` audit and two domain skills).
+  - **Revenue (+6):** Rev (CRO), Quota (RevOps), Scout (sales development), Demo (solutions engineering), Coach (sales enablement), Bridge (partnerships and channel).
+  - **Marketing (+6):** Vox (CMO), Reach (demand gen and paid), Drip (lifecycle and email), Stage (events and field), Attrib (marketing analytics and attribution), Stack (marketing ops).
+  - **Finance (+7):** Ledger (controller), Tally (FP&A), Levy (tax), Remit (accounts payable), Bill (billing and collections), Vault (treasury), Spend (procurement and spend management).
+  - **People (+7):** Hire (talent acquisition), Wage (compensation), Grow (learning and development), Pulse (people analytics), Bond (employee relations and HRBP), Perk (benefits and payroll), Visa (global mobility).
+  - **Operations (+7):** Staff (chief of staff), Gauge (business operations), Pilot (program management), Hedge (enterprise risk and continuity), Kit (IT and internal systems), Dock (workplace and facilities), Flow (process automation).
+  - **Support (+7):** Swat (tier 2/3 support engineering), Wiki (knowledge management), Voice (voice of customer), Mirror (support QA and coaching), Shift (workforce management), Beacon (incident communications), Reply (customer communication and macros).
+
+### Changed
+
+- **Roster is 140 agents, 551 skills, 15 teams.** `CLAUDE.md` splits the old Product and Operations tables into Product, Revenue, Marketing, Finance, People, Operations and Support, so `docs/agent-index.json` reports the real team for every agent. Mint, Folk, Keel and Brace lead Finance, People, Operations and Support; Deal and Keep join Revenue, Ink and Buzz join Marketing.
+- **`revenue-team` and `marketing-team` bundles include their new agents and skills.**
+
 ## [1.18.0] - 2026-10-14
 
 ### Added

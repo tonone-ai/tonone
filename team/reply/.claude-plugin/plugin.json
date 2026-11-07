@@ -1,0 +1,21 @@
+{
+  "name": "reply",
+  "version": "1.19.0",
+  "description": "Customer communication and macros — response templates, tone guides, de-escalation scripts, multilingual and regional response, AI draft-assist rules and guardrails",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "macros",
+    "templates",
+    "tone",
+    "de-escalation",
+    "multilingual",
+    "ai-draft",
+    "guardrails",
+    "support-team"
+  ]
+}

@@ -1,8 +1,8 @@
-# tonone — Engineering + Product + Operations + Legal + Design + Data Science + Security Operations + Developer Experience + Infrastructure Specialist + AI Operations Team
+# tonone — Engineering + Product + Revenue + Marketing + Finance + People + Operations + Support + Legal + Design + Data Science + Security Operations + Developer Experience + Infrastructure Specialist + AI Operations Team
 
-Ten AI teams. 100 agents total. Engineering executes. Product decides what to build and why. Operations keeps the company running. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe. Developer Experience ensures developers succeed. Infrastructure Specialist runs the cloud. AI Operations ships models to production.
+Fifteen AI teams. 140 agents total. Engineering executes. Product decides what to build and why. Revenue closes and grows accounts. Marketing builds demand and brand. Finance keeps the books and the runway. People hires and develops the team. Operations keeps the company running. Support keeps customers successful. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe. Developer Experience ensures developers succeed. Infrastructure Specialist runs the cloud. AI Operations ships models to production.
 
-**Read `docs/repomap.md` first** — this repo is too big to crawl by hand (100 agents, 431 skills). It points to `docs/agent-index.json` and `docs/skill-index.json` for lookups, and lists known content drift to watch for.
+**Read `docs/repomap.md` first** — this repo is too big to crawl by hand (140 agents, 551 skills). It points to `docs/agent-index.json` and `docs/skill-index.json` for lookups, and lists known content drift to watch for.
 
 ## Engineering Team — 15 agents
 
@@ -24,7 +24,7 @@ Ten AI teams. 100 agents total. Engineering executes. Product decides what to bu
 | **Proof** | QA & Testing | Test strategy, E2E suites, integration testing, flaky triage |
 | **Pave** | Platform Engineering | Developer experience, golden paths, service catalogs |
 
-## Product Team — 12 agents
+## Product Team — 8 agents
 
 | Agent | Hat | Owns |
 |-------|-----|------|
@@ -36,19 +36,84 @@ Ten AI teams. 100 agents total. Engineering executes. Product decides what to bu
 | **Crest** | Product Strategy | Roadmap planning, prioritization, competitive analysis |
 | **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy |
 | **Surge** | Growth | Acquisition channels, activation funnels, retention playbooks |
+
+## Revenue Team — 8 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
 | **Deal** | Revenue & Sales | B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing |
 | **Keep** | Customer Success | Onboarding optimization, health scoring, expansion revenue, churn prevention |
+| **Rev** | Chief Revenue Officer | Revenue strategy, GTM org design, quota and capacity planning, board revenue narrative, team orchestration |
+| **Quota** | Revenue Operations | Forecasting, pipeline hygiene, CRM architecture, territory and quota design, sales-to-finance reconciliation |
+| **Scout** | Sales Development Representative | ICP and persona definition, prospect lists, outbound sequences, lead qualification, SDR-to-AE handoff |
+| **Demo** | Solutions Engineer | Technical discovery, demo design, POCs and pilots, security questionnaires, RFP technical responses |
+| **Coach** | Sales Enablement | Onboarding ramps, call coaching, battlecards, talk tracks, win/loss analysis, sales training |
+| **Bridge** | Partnerships & Channel | Partner program design, reseller/referral/alliance deals, co-sell motions, marketplace listings |
+
+## Marketing Team — 8 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
 | **Ink** | Content Marketing | Blog strategy, SEO, thought leadership, developer content, content calendar |
 | **Buzz** | PR & Community | Press pitches, social media, open source community, DevRel, launch moments |
+| **Vox** | Chief Marketing Officer | Marketing strategy, budget allocation, brand-vs-demand balance, marketing org design, team orchestration |
+| **Reach** | Demand Generation & Paid Acquisition Lead | Paid search, paid social, ABM, CAC and payback modeling, budget pacing, creative testing |
+| **Drip** | Lifecycle & Email Marketing Lead | Nurture programs, onboarding and lifecycle flows, deliverability, segmentation, win-back |
+| **Stage** | Events & Field Marketing Lead | Conferences, webinars, roadshows, event ROI, speaker programs, sponsorship selection |
+| **Attrib** | Marketing Analytics & Attribution Lead | Multi-touch and MMM attribution, channel ROI, campaign reporting, incrementality tests |
+| **Stack** | Marketing Operations Lead | Martech stack, lead routing and scoring, CRM-automation integration, data hygiene, UTM governance |
 
-## Operations Team — 4 agents
+## Finance Team — 8 agents
 
 | Agent | Hat | Owns |
 |-------|-----|------|
 | **Mint** | Finance | P&L, runway, unit economics, fundraising, board reporting, cap table |
+| **Ledger** | Controller | General ledger, month-end close, revenue recognition (ASC 606), reconciliations, accruals, audit readiness |
+| **Tally** | FP&A Lead | Annual operating plan, driver-based forecast, variance analysis, headcount plan, scenario models |
+| **Levy** | Tax Lead | Entity and nexus strategy, sales tax/VAT, R&D credits, transfer pricing basics, tax calendar, provisions |
+| **Remit** | AP & Procure-to-Pay Lead | Vendor onboarding, three-way match, payment runs, approval matrices, duplicate and fraud controls, AP aging |
+| **Bill** | Billing, AR & Collections Lead | Invoicing, dunning, DSO and aging, credit policy, subscription billing ops, cash application |
+| **Vault** | Treasurer | Cash positioning, bank structure, FX exposure, investment policy, debt facilities, liquidity forecasting |
+| **Spend** | Spend Management & Procurement Lead | Purchasing policy, contract renewals, vendor consolidation, approval workflows, SaaS and T&E spend control |
+
+## People Team — 8 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
 | **Folk** | People | Org design, hiring pipelines, comp frameworks, onboarding, performance, human-to-agent migration |
+| **Hire** | Talent Acquisition Lead | Sourcing, structured interviews, scorecards, offer and close, pipeline metrics, employer brand |
+| **Wage** | Compensation & Total Rewards Lead | Pay bands, market benchmarking, equity refresh, pay equity audits, offer approvals, comp cycles |
+| **Grow** | Learning & Development Lead | Skills matrices, career ladders, leadership programs, manager training, internal mobility |
+| **Pulse** | People Analytics Lead | Attrition modeling, engagement surveys, eNPS, headcount reporting, workforce planning data |
+| **Bond** | Employee Relations & HR Business Partner | Investigations, conflict resolution, PIPs, policy interpretation, manager coaching, terminations |
+| **Perk** | Benefits, Payroll & HR Operations Lead | Benefits design and renewal, payroll accuracy, leave administration, HRIS hygiene, HR compliance calendar |
+| **Visa** | Global Mobility & Remote Hiring Lead | Immigration and visas, EOR vs entity decisions, international payroll, relocation, remote-work tax risk |
+
+## Operations Team — 8 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
 | **Keel** | Operations | Process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution |
+| **Staff** | Chief of Staff | Executive agenda, decision logs, cross-functional initiatives, board prep, meeting systems |
+| **Gauge** | Business Operations & Strategy Ops Lead | Operating metrics, planning cycles, QBR/MBR machinery, strategic project analysis, org-wide dashboards |
+| **Pilot** | Program & Project Manager | Program charters, dependency maps, RAID logs, milestone tracking, launch coordination, delivery risk |
+| **Hedge** | Enterprise Risk & Business Continuity Lead | Risk register, BCP/DR planning, vendor concentration risk, insurance, crisis playbooks |
+| **Kit** | IT & Internal Systems Lead | Device/SSO/SaaS provisioning, access reviews, onboarding/offboarding automation, SaaS inventory, helpdesk |
+| **Dock** | Workplace & Facilities Lead | Workplace policy, space planning, equipment logistics, events logistics, safety compliance |
+| **Flow** | Process Automation & Internal Tooling Ops Lead | Workflow automation (Zapier/n8n/scripts), no-code ops tools, automation ROI, runbook-to-automation conversion |
+
+## Support Team — 8 agents
+
+| Agent | Hat | Owns |
+|-------|-----|------|
 | **Brace** | Support | Ticket workflow, SLA design, knowledge base, escalation paths, support operations |
+| **Swat** | Tier-2/3 Support Engineer | Bug reproduction, log/trace diagnosis, engineering escalation packets, workarounds, bug-to-fix loop |
+| **Wiki** | Knowledge Manager | KB content lifecycle, freshness audits, search tuning, deflection tracking, content gaps |
+| **Voice** | Voice of Customer & CX Insights | Ticket tagging taxonomy, CSAT/NPS/CES analysis, theme mining, product feedback reporting |
+| **Mirror** | Support Quality & Coaching | QA scorecards, review sampling, calibration, coaching plans, tone and accuracy standards |
+| **Shift** | Workforce Management | Volume forecasting, staffing models, scheduling, capacity planning, occupancy, shrinkage, BPO |
+| **Beacon** | Incident Communications Lead | Status page, incident comms templates, outage notifications, comms cadence, post-incident updates |
+| **Reply** | Customer Communication & Macros | Response templates, macros, tone guides, de-escalation scripts, multilingual replies, AI draft guardrails |
 
 ## Legal Team — 10 agents
 
@@ -163,7 +228,7 @@ Helm hands off to Apex using a 6-field product brief schema. See `agents/apex.md
 ```
 tonone/
 ├── .claude-plugin/         ← root plugin (installs full team)
-├── agents/                 ← all agent definitions (100 total: 15 engineering + 12 product + 4 operations + 10 legal + 10 design + 10 data-science + 10 secops + 10 devx + 10 infra-specialist + 9 ai-ops)
+├── agents/                 ← all agent definitions (140 total: 15 engineering + 8 product + 8 revenue + 8 marketing + 8 finance + 8 people + 8 operations + 8 support + 10 legal + 10 design + 10 data-science + 10 secops + 10 devx + 10 infra-specialist + 9 ai-ops)
 │   ├── apex.md
 │   ├── forge.md
 │   ├── relay.md

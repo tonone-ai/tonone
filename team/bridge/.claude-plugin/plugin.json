@@ -1,0 +1,22 @@
+{
+  "name": "bridge",
+  "version": "1.19.0",
+  "description": "Partnerships & Channel — partner program design, reseller/referral/alliance deals, co-sell motions, marketplace listings",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "partnerships",
+    "channel",
+    "reseller",
+    "referral",
+    "alliances",
+    "co-sell",
+    "marketplace",
+    "partner-program",
+    "revenue-team"
+  ]
+}

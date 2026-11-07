@@ -1,0 +1,21 @@
+{
+  "name": "ledger",
+  "version": "1.19.0",
+  "description": "Controller and accounting — general ledger, month-end close, revenue recognition (ASC 606), reconciliations, audit readiness",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "controller",
+    "general-ledger",
+    "month-end-close",
+    "asc-606",
+    "reconciliation",
+    "accruals",
+    "audit-readiness",
+    "finance-team"
+  ]
+}

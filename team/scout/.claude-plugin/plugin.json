@@ -1,0 +1,22 @@
+{
+  "name": "scout",
+  "version": "1.19.0",
+  "description": "Sales Development — outbound prospecting, ICP and list building, sequences, lead qualification, handoff to AEs",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "sdr",
+    "outbound",
+    "prospecting",
+    "icp",
+    "sequences",
+    "cold-email",
+    "lead-qualification",
+    "list-building",
+    "revenue-team"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "remit",
+  "version": "1.19.0",
+  "description": "Accounts payable and procure-to-pay — vendor onboarding, three-way match, payment runs, approvals, duplicate and fraud controls",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "accounts-payable",
+    "procure-to-pay",
+    "three-way-match",
+    "payment-run",
+    "vendor-onboarding",
+    "fraud-controls",
+    "ap-aging",
+    "finance-team"
+  ]
+}

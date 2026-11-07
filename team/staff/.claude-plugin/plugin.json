@@ -1,0 +1,21 @@
+{
+  "name": "staff",
+  "version": "1.19.0",
+  "description": "Chief of Staff — executive agenda, decision logs, cross-functional initiatives, board and leadership prep, meeting systems",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "chief-of-staff",
+    "decision-log",
+    "board-prep",
+    "exec-agenda",
+    "meeting-systems",
+    "leadership",
+    "initiatives",
+    "operations-team"
+  ]
+}

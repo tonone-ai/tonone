@@ -1,0 +1,21 @@
+{
+  "name": "dock",
+  "version": "1.19.0",
+  "description": "Workplace & Facilities — office/remote workplace policy, space planning, equipment logistics, events logistics, safety compliance",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "workplace",
+    "facilities",
+    "space-planning",
+    "hybrid-policy",
+    "equipment",
+    "events",
+    "safety",
+    "operations-team"
+  ]
+}

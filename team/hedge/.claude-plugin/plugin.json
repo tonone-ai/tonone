@@ -1,0 +1,21 @@
+{
+  "name": "hedge",
+  "version": "1.19.0",
+  "description": "Enterprise Risk & Business Continuity — risk register, BCP/DR planning, vendor concentration risk, insurance, crisis playbooks",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "risk-management",
+    "business-continuity",
+    "disaster-recovery",
+    "risk-register",
+    "insurance",
+    "crisis",
+    "concentration-risk",
+    "operations-team"
+  ]
+}

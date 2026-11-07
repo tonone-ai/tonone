@@ -1,0 +1,20 @@
+{
+  "name": "beacon",
+  "version": "1.19.0",
+  "description": "Incident communications and status — status page practice, incident comms templates, proactive outage notifications, severity-linked cadence, post-incident customer updates",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "status-page",
+    "incident-comms",
+    "outage",
+    "cadence",
+    "notifications",
+    "postmortem",
+    "support-team"
+  ]
+}

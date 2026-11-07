@@ -1,0 +1,20 @@
+{
+  "name": "mirror",
+  "version": "1.19.0",
+  "description": "Support quality and coaching — QA scorecards, ticket review sampling, calibration, agent coaching plans, tone and accuracy standards",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "qa",
+    "scorecard",
+    "calibration",
+    "coaching",
+    "review",
+    "quality",
+    "support-team"
+  ]
+}

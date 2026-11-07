@@ -1,0 +1,22 @@
+{
+  "name": "levy",
+  "version": "1.19.0",
+  "description": "Tax — entity and nexus strategy, sales tax/VAT, R&D credits, transfer pricing basics, tax calendar and provisions",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "tax",
+    "nexus",
+    "sales-tax",
+    "vat",
+    "r&d-credit",
+    "transfer-pricing",
+    "tax-provision",
+    "entity-structure",
+    "finance-team"
+  ]
+}
