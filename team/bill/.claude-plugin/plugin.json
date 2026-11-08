@@ -1,0 +1,22 @@
+{
+  "name": "bill",
+  "version": "1.19.0",
+  "description": "Billing, AR and collections — invoicing, dunning, DSO, credit policy, subscription billing ops, cash application",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "billing",
+    "accounts-receivable",
+    "collections",
+    "dunning",
+    "dso",
+    "credit-policy",
+    "cash-application",
+    "subscription-billing",
+    "finance-team"
+  ]
+}

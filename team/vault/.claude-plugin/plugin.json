@@ -1,0 +1,22 @@
+{
+  "name": "vault",
+  "version": "1.19.0",
+  "description": "Treasury and cash management — cash positioning, bank structure, FX exposure, investment policy, debt and credit facilities, liquidity forecasting",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "treasury",
+    "cash-management",
+    "fx",
+    "investment-policy",
+    "venture-debt",
+    "liquidity",
+    "13-week-cash",
+    "bank-structure",
+    "finance-team"
+  ]
+}

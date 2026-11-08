@@ -1,0 +1,21 @@
+{
+  "name": "shift",
+  "version": "1.19.0",
+  "description": "Workforce management — volume forecasting, Erlang-style staffing models, scheduling, capacity planning, occupancy and shrinkage, BPO decisions",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "forecasting",
+    "staffing",
+    "erlang",
+    "scheduling",
+    "capacity",
+    "occupancy",
+    "bpo",
+    "support-team"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "voice",
+  "version": "1.19.0",
+  "description": "Voice of Customer and CX insights — ticket tagging taxonomy, CSAT/NPS/CES analysis, theme mining, product feedback reporting",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "voc",
+    "csat",
+    "nps",
+    "ces",
+    "tagging",
+    "themes",
+    "feedback",
+    "support-team"
+  ]
+}

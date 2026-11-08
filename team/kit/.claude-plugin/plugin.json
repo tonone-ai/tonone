@@ -1,0 +1,22 @@
+{
+  "name": "kit",
+  "version": "1.19.0",
+  "description": "IT & Internal Systems — device/SSO/SaaS provisioning, access reviews, onboarding/offboarding automation, SaaS inventory, helpdesk",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "corporate-it",
+    "sso",
+    "saas-inventory",
+    "access-review",
+    "onboarding",
+    "offboarding",
+    "helpdesk",
+    "mdm",
+    "operations-team"
+  ]
+}

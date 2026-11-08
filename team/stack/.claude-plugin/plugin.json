@@ -1,0 +1,22 @@
+{
+  "name": "stack",
+  "version": "1.19.0",
+  "description": "Marketing Operations — martech stack, lead routing and scoring, CRM-marketing automation integration, data hygiene, UTM governance",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "marketing-operations",
+    "martech",
+    "lead-routing",
+    "lead-scoring",
+    "crm",
+    "utm-governance",
+    "data-hygiene",
+    "marketing-automation",
+    "marketing-team"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "quota",
+  "version": "1.19.0",
+  "description": "Revenue Operations — forecasting, pipeline hygiene, CRM architecture, territory and quota design, sales-to-finance reconciliation",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "revops",
+    "forecast",
+    "crm",
+    "pipeline-hygiene",
+    "territory",
+    "quota",
+    "reconciliation",
+    "salesforce",
+    "revenue-team"
+  ]
+}

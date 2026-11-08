@@ -1,0 +1,22 @@
+{
+  "name": "gauge",
+  "version": "1.19.0",
+  "description": "Business Operations & Strategy Ops — operating metrics, planning cycles, QBR/MBR machinery, strategic project analysis, org-wide dashboards",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "business-ops",
+    "strategy-ops",
+    "operating-metrics",
+    "planning",
+    "qbr",
+    "mbr",
+    "kpi",
+    "dashboards",
+    "operations-team"
+  ]
+}

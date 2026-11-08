@@ -1,0 +1,21 @@
+{
+  "name": "attrib",
+  "version": "1.19.0",
+  "description": "Marketing Analytics & Attribution — multi-touch and marketing-mix attribution, channel ROI, campaign reporting, incrementality tests",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "attribution",
+    "marketing-analytics",
+    "channel-roi",
+    "incrementality",
+    "mmm",
+    "multi-touch",
+    "campaign-reporting",
+    "marketing-team"
+  ]
+}

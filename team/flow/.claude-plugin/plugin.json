@@ -1,0 +1,22 @@
+{
+  "name": "flow",
+  "version": "1.19.0",
+  "description": "Process Automation & Internal Tooling Ops — workflow automation (Zapier/n8n/scripts), no-code ops tools, automation ROI, runbook-to-automation conversion",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "automation",
+    "zapier",
+    "n8n",
+    "no-code",
+    "internal-tools",
+    "runbooks",
+    "roi",
+    "workflows",
+    "operations-team"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "coach",
+  "version": "1.19.0",
+  "description": "Sales Enablement — onboarding ramps, call coaching, battlecards, talk tracks, win/loss-driven training",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "enablement",
+    "coaching",
+    "onboarding",
+    "ramp",
+    "battlecards",
+    "talk-tracks",
+    "win-loss",
+    "training",
+    "revenue-team"
+  ]
+}

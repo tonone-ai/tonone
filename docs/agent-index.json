@@ -163,44 +163,226 @@
   {
     "name": "deal",
     "hat": "Revenue & Sales",
-    "team": "Product",
+    "team": "Revenue",
     "owns": "B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing",
     "agent_path": "agents/deal.md"
   },
   {
     "name": "keep",
     "hat": "Customer Success",
-    "team": "Product",
+    "team": "Revenue",
     "owns": "Onboarding optimization, health scoring, expansion revenue, churn prevention",
     "agent_path": "agents/keep.md"
   },
   {
+    "name": "rev",
+    "hat": "Chief Revenue Officer",
+    "team": "Revenue",
+    "owns": "Revenue strategy, GTM org design, quota and capacity planning, board revenue narrative, team orchestration",
+    "agent_path": "agents/rev.md"
+  },
+  {
+    "name": "quota",
+    "hat": "Revenue Operations",
+    "team": "Revenue",
+    "owns": "Forecasting, pipeline hygiene, CRM architecture, territory and quota design, sales-to-finance reconciliation",
+    "agent_path": "agents/quota.md"
+  },
+  {
+    "name": "scout",
+    "hat": "Sales Development Representative",
+    "team": "Revenue",
+    "owns": "ICP and persona definition, prospect lists, outbound sequences, lead qualification, SDR-to-AE handoff",
+    "agent_path": "agents/scout.md"
+  },
+  {
+    "name": "demo",
+    "hat": "Solutions Engineer",
+    "team": "Revenue",
+    "owns": "Technical discovery, demo design, POCs and pilots, security questionnaires, RFP technical responses",
+    "agent_path": "agents/demo.md"
+  },
+  {
+    "name": "coach",
+    "hat": "Sales Enablement",
+    "team": "Revenue",
+    "owns": "Onboarding ramps, call coaching, battlecards, talk tracks, win/loss analysis, sales training",
+    "agent_path": "agents/coach.md"
+  },
+  {
+    "name": "bridge",
+    "hat": "Partnerships & Channel",
+    "team": "Revenue",
+    "owns": "Partner program design, reseller/referral/alliance deals, co-sell motions, marketplace listings",
+    "agent_path": "agents/bridge.md"
+  },
+  {
     "name": "ink",
     "hat": "Content Marketing",
-    "team": "Product",
+    "team": "Marketing",
     "owns": "Blog strategy, SEO, thought leadership, developer content, content calendar",
     "agent_path": "agents/ink.md"
   },
   {
     "name": "buzz",
     "hat": "PR & Community",
-    "team": "Product",
+    "team": "Marketing",
     "owns": "Press pitches, social media, open source community, DevRel, launch moments",
     "agent_path": "agents/buzz.md"
   },
   {
+    "name": "vox",
+    "hat": "Chief Marketing Officer",
+    "team": "Marketing",
+    "owns": "Marketing strategy, budget allocation, brand-vs-demand balance, marketing org design, team orchestration",
+    "agent_path": "agents/vox.md"
+  },
+  {
+    "name": "reach",
+    "hat": "Demand Generation & Paid Acquisition Lead",
+    "team": "Marketing",
+    "owns": "Paid search, paid social, ABM, CAC and payback modeling, budget pacing, creative testing",
+    "agent_path": "agents/reach.md"
+  },
+  {
+    "name": "drip",
+    "hat": "Lifecycle & Email Marketing Lead",
+    "team": "Marketing",
+    "owns": "Nurture programs, onboarding and lifecycle flows, deliverability, segmentation, win-back",
+    "agent_path": "agents/drip.md"
+  },
+  {
+    "name": "stage",
+    "hat": "Events & Field Marketing Lead",
+    "team": "Marketing",
+    "owns": "Conferences, webinars, roadshows, event ROI, speaker programs, sponsorship selection",
+    "agent_path": "agents/stage.md"
+  },
+  {
+    "name": "attrib",
+    "hat": "Marketing Analytics & Attribution Lead",
+    "team": "Marketing",
+    "owns": "Multi-touch and MMM attribution, channel ROI, campaign reporting, incrementality tests",
+    "agent_path": "agents/attrib.md"
+  },
+  {
+    "name": "stack",
+    "hat": "Marketing Operations Lead",
+    "team": "Marketing",
+    "owns": "Martech stack, lead routing and scoring, CRM-automation integration, data hygiene, UTM governance",
+    "agent_path": "agents/stack.md"
+  },
+  {
     "name": "mint",
     "hat": "Finance",
-    "team": "Operations",
+    "team": "Finance",
     "owns": "P&L, runway, unit economics, fundraising, board reporting, cap table",
     "agent_path": "agents/mint.md"
   },
   {
+    "name": "ledger",
+    "hat": "Controller",
+    "team": "Finance",
+    "owns": "General ledger, month-end close, revenue recognition (ASC 606), reconciliations, accruals, audit readiness",
+    "agent_path": "agents/ledger.md"
+  },
+  {
+    "name": "tally",
+    "hat": "FP&A Lead",
+    "team": "Finance",
+    "owns": "Annual operating plan, driver-based forecast, variance analysis, headcount plan, scenario models",
+    "agent_path": "agents/tally.md"
+  },
+  {
+    "name": "levy",
+    "hat": "Tax Lead",
+    "team": "Finance",
+    "owns": "Entity and nexus strategy, sales tax/VAT, R&D credits, transfer pricing basics, tax calendar, provisions",
+    "agent_path": "agents/levy.md"
+  },
+  {
+    "name": "remit",
+    "hat": "AP & Procure-to-Pay Lead",
+    "team": "Finance",
+    "owns": "Vendor onboarding, three-way match, payment runs, approval matrices, duplicate and fraud controls, AP aging",
+    "agent_path": "agents/remit.md"
+  },
+  {
+    "name": "bill",
+    "hat": "Billing, AR & Collections Lead",
+    "team": "Finance",
+    "owns": "Invoicing, dunning, DSO and aging, credit policy, subscription billing ops, cash application",
+    "agent_path": "agents/bill.md"
+  },
+  {
+    "name": "vault",
+    "hat": "Treasurer",
+    "team": "Finance",
+    "owns": "Cash positioning, bank structure, FX exposure, investment policy, debt facilities, liquidity forecasting",
+    "agent_path": "agents/vault.md"
+  },
+  {
+    "name": "spend",
+    "hat": "Spend Management & Procurement Lead",
+    "team": "Finance",
+    "owns": "Purchasing policy, contract renewals, vendor consolidation, approval workflows, SaaS and T&E spend control",
+    "agent_path": "agents/spend.md"
+  },
+  {
     "name": "folk",
     "hat": "People",
-    "team": "Operations",
+    "team": "People",
     "owns": "Org design, hiring pipelines, comp frameworks, onboarding, performance, human-to-agent migration",
     "agent_path": "agents/folk.md"
+  },
+  {
+    "name": "hire",
+    "hat": "Talent Acquisition Lead",
+    "team": "People",
+    "owns": "Sourcing, structured interviews, scorecards, offer and close, pipeline metrics, employer brand",
+    "agent_path": "agents/hire.md"
+  },
+  {
+    "name": "wage",
+    "hat": "Compensation & Total Rewards Lead",
+    "team": "People",
+    "owns": "Pay bands, market benchmarking, equity refresh, pay equity audits, offer approvals, comp cycles",
+    "agent_path": "agents/wage.md"
+  },
+  {
+    "name": "grow",
+    "hat": "Learning & Development Lead",
+    "team": "People",
+    "owns": "Skills matrices, career ladders, leadership programs, manager training, internal mobility",
+    "agent_path": "agents/grow.md"
+  },
+  {
+    "name": "pulse",
+    "hat": "People Analytics Lead",
+    "team": "People",
+    "owns": "Attrition modeling, engagement surveys, eNPS, headcount reporting, workforce planning data",
+    "agent_path": "agents/pulse.md"
+  },
+  {
+    "name": "bond",
+    "hat": "Employee Relations & HR Business Partner",
+    "team": "People",
+    "owns": "Investigations, conflict resolution, PIPs, policy interpretation, manager coaching, terminations",
+    "agent_path": "agents/bond.md"
+  },
+  {
+    "name": "perk",
+    "hat": "Benefits, Payroll & HR Operations Lead",
+    "team": "People",
+    "owns": "Benefits design and renewal, payroll accuracy, leave administration, HRIS hygiene, HR compliance calendar",
+    "agent_path": "agents/perk.md"
+  },
+  {
+    "name": "visa",
+    "hat": "Global Mobility & Remote Hiring Lead",
+    "team": "People",
+    "owns": "Immigration and visas, EOR vs entity decisions, international payroll, relocation, remote-work tax risk",
+    "agent_path": "agents/visa.md"
   },
   {
     "name": "keel",
@@ -210,11 +392,109 @@
     "agent_path": "agents/keel.md"
   },
   {
+    "name": "staff",
+    "hat": "Chief of Staff",
+    "team": "Operations",
+    "owns": "Executive agenda, decision logs, cross-functional initiatives, board prep, meeting systems",
+    "agent_path": "agents/staff.md"
+  },
+  {
+    "name": "gauge",
+    "hat": "Business Operations & Strategy Ops Lead",
+    "team": "Operations",
+    "owns": "Operating metrics, planning cycles, QBR/MBR machinery, strategic project analysis, org-wide dashboards",
+    "agent_path": "agents/gauge.md"
+  },
+  {
+    "name": "pilot",
+    "hat": "Program & Project Manager",
+    "team": "Operations",
+    "owns": "Program charters, dependency maps, RAID logs, milestone tracking, launch coordination, delivery risk",
+    "agent_path": "agents/pilot.md"
+  },
+  {
+    "name": "hedge",
+    "hat": "Enterprise Risk & Business Continuity Lead",
+    "team": "Operations",
+    "owns": "Risk register, BCP/DR planning, vendor concentration risk, insurance, crisis playbooks",
+    "agent_path": "agents/hedge.md"
+  },
+  {
+    "name": "kit",
+    "hat": "IT & Internal Systems Lead",
+    "team": "Operations",
+    "owns": "Device/SSO/SaaS provisioning, access reviews, onboarding/offboarding automation, SaaS inventory, helpdesk",
+    "agent_path": "agents/kit.md"
+  },
+  {
+    "name": "dock",
+    "hat": "Workplace & Facilities Lead",
+    "team": "Operations",
+    "owns": "Workplace policy, space planning, equipment logistics, events logistics, safety compliance",
+    "agent_path": "agents/dock.md"
+  },
+  {
+    "name": "flow",
+    "hat": "Process Automation & Internal Tooling Ops Lead",
+    "team": "Operations",
+    "owns": "Workflow automation (Zapier/n8n/scripts), no-code ops tools, automation ROI, runbook-to-automation conversion",
+    "agent_path": "agents/flow.md"
+  },
+  {
     "name": "brace",
     "hat": "Support",
-    "team": "Operations",
+    "team": "Support",
     "owns": "Ticket workflow, SLA design, knowledge base, escalation paths, support operations",
     "agent_path": "agents/brace.md"
+  },
+  {
+    "name": "swat",
+    "hat": "Tier-2/3 Support Engineer",
+    "team": "Support",
+    "owns": "Bug reproduction, log/trace diagnosis, engineering escalation packets, workarounds, bug-to-fix loop",
+    "agent_path": "agents/swat.md"
+  },
+  {
+    "name": "wiki",
+    "hat": "Knowledge Manager",
+    "team": "Support",
+    "owns": "KB content lifecycle, freshness audits, search tuning, deflection tracking, content gaps",
+    "agent_path": "agents/wiki.md"
+  },
+  {
+    "name": "voice",
+    "hat": "Voice of Customer & CX Insights",
+    "team": "Support",
+    "owns": "Ticket tagging taxonomy, CSAT/NPS/CES analysis, theme mining, product feedback reporting",
+    "agent_path": "agents/voice.md"
+  },
+  {
+    "name": "mirror",
+    "hat": "Support Quality & Coaching",
+    "team": "Support",
+    "owns": "QA scorecards, review sampling, calibration, coaching plans, tone and accuracy standards",
+    "agent_path": "agents/mirror.md"
+  },
+  {
+    "name": "shift",
+    "hat": "Workforce Management",
+    "team": "Support",
+    "owns": "Volume forecasting, staffing models, scheduling, capacity planning, occupancy, shrinkage, BPO",
+    "agent_path": "agents/shift.md"
+  },
+  {
+    "name": "beacon",
+    "hat": "Incident Communications Lead",
+    "team": "Support",
+    "owns": "Status page, incident comms templates, outage notifications, comms cadence, post-incident updates",
+    "agent_path": "agents/beacon.md"
+  },
+  {
+    "name": "reply",
+    "hat": "Customer Communication & Macros",
+    "team": "Support",
+    "owns": "Response templates, macros, tone guides, de-escalation scripts, multilingual replies, AI draft guardrails",
+    "agent_path": "agents/reply.md"
   },
   {
     "name": "brief",

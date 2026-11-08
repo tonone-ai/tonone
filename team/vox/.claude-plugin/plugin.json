@@ -1,0 +1,21 @@
+{
+  "name": "vox",
+  "version": "1.19.0",
+  "description": "Chief Marketing Officer — marketing strategy, budget allocation, brand-vs-demand balance, marketing org design, team orchestration",
+  "author": {
+    "name": "tonone-ai",
+    "url": "https://tonone.ai"
+  },
+  "repository": "https://github.com/tonone-ai/tonone",
+  "license": "MIT",
+  "keywords": [
+    "cmo",
+    "marketing-strategy",
+    "budget",
+    "brand",
+    "demand",
+    "org-design",
+    "orchestration",
+    "marketing-team"
+  ]
+}

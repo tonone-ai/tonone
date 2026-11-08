@@ -119,6 +119,27 @@
     "path": "team/atlas/skills/atlas-report/SKILL.md"
   },
   {
+    "name": "attrib-model",
+    "agent": "attrib",
+    "team": "Marketing",
+    "description": "Build multi-touch attribution and incrementality-calibrated channel ROI, and assess marketing-mix model readiness. Use when asked to \"build a multi-touch attribution model\", \"calculate channel ROI\", \"should we do marketing mix modeling\".",
+    "path": "team/attrib/skills/attrib-model/SKILL.md"
+  },
+  {
+    "name": "attrib-recon",
+    "agent": "attrib",
+    "team": "Marketing",
+    "description": "Read-only audit of marketing measurement \u2014 tracking, attribution model, data quality and reporting trust. Use when asked to \"audit our marketing attribution\", \"can we trust our marketing numbers\", \"review marketing measurement\".",
+    "path": "team/attrib/skills/attrib-recon/SKILL.md"
+  },
+  {
+    "name": "attrib-test",
+    "agent": "attrib",
+    "team": "Marketing",
+    "description": "Design incrementality tests \u2014 geo experiments, audience holdouts, lift studies \u2014 with power, duration and readout plan. Use when asked to \"run an incrementality test\", \"is our retargeting actually working\", \"design a geo holdout\".",
+    "path": "team/attrib/skills/attrib-test/SKILL.md"
+  },
+  {
     "name": "audit-controls",
     "agent": "audit",
     "team": "Legal",
@@ -161,6 +182,27 @@
     "path": "team/axe/skills/axe-recon/SKILL.md"
   },
   {
+    "name": "beacon-comms",
+    "agent": "beacon",
+    "team": "Support",
+    "description": "Build the incident communications plan \u2014 severity matrix, cadence, templates, roles, approval rules. Use when asked to \"set up incident comms\", \"write outage notification templates\", or \"define our status update cadence\".",
+    "path": "team/beacon/skills/beacon-comms/SKILL.md"
+  },
+  {
+    "name": "beacon-recon",
+    "agent": "beacon",
+    "team": "Support",
+    "description": "Audit incident communications readiness \u2014 status page, templates, cadence, subscriber coverage, timing of past incidents. Read-only. Use when asked to \"audit our incident comms\", \"are we ready for an outage\", or \"check our status page setup\".",
+    "path": "team/beacon/skills/beacon-recon/SKILL.md"
+  },
+  {
+    "name": "beacon-status",
+    "agent": "beacon",
+    "team": "Support",
+    "description": "Write live status page updates and the post-incident customer update for a specific incident. Use when asked to \"write a status update\", \"draft the outage notice\", or \"write the post-incident customer summary\".",
+    "path": "team/beacon/skills/beacon-status/SKILL.md"
+  },
+  {
     "name": "bench-compare",
     "agent": "bench",
     "team": "Developer Experience",
@@ -180,6 +222,27 @@
     "team": "Developer Experience",
     "description": "Audit existing performance testing \u2014 find missing benchmarks, stale baselines, and CI gaps. Use when asked \"do we have benchmarks\", \"audit our performance testing\", or \"are our baselines stale\".",
     "path": "team/bench/skills/bench-recon/SKILL.md"
+  },
+  {
+    "name": "bill-credit",
+    "agent": "bill",
+    "team": "Finance",
+    "description": "Set credit policy \u2014 new customer credit checks, payment terms by tier, credit limits, holds, deposits, and subscription billing operating standards. Use when asked to \"set a credit policy\", \"what payment terms should we offer\", or \"extend credit to this customer\".",
+    "path": "team/bill/skills/bill-credit/SKILL.md"
+  },
+  {
+    "name": "bill-dunning",
+    "agent": "bill",
+    "team": "Finance",
+    "description": "Design the dunning and collections playbook \u2014 pre-due reminders, timed escalation cadence, card retry logic, dispute handling, write-off policy. Use when asked to \"build a dunning process\", \"speed up collections\", or \"reduce failed payments\".",
+    "path": "team/bill/skills/bill-dunning/SKILL.md"
+  },
+  {
+    "name": "bill-recon",
+    "agent": "bill",
+    "team": "Finance",
+    "description": "Read-only audit of billing and receivables \u2014 DSO, aging, invoice timeliness and accuracy, dunning coverage, involuntary churn, unapplied cash. Use when asked to \"audit our AR\", \"why is DSO high\", or \"review our billing process\".",
+    "path": "team/bill/skills/bill-recon/SKILL.md"
   },
   {
     "name": "bind-gap",
@@ -224,60 +287,102 @@
     "path": "team/blue/skills/blue-recon/SKILL.md"
   },
   {
+    "name": "bond-investigate",
+    "agent": "bond",
+    "team": "People",
+    "description": "Plan and run a workplace investigation from intake to findings and action. Use when asked to \"investigate a complaint\", \"handle a harassment report\", or \"run an ER investigation\".",
+    "path": "team/bond/skills/bond-investigate/SKILL.md"
+  },
+  {
+    "name": "bond-pip",
+    "agent": "bond",
+    "team": "People",
+    "description": "Build a performance improvement plan or a defensible termination process. Use when asked to \"write a PIP\", \"prepare a termination\", or \"coach a manager through a performance exit\".",
+    "path": "team/bond/skills/bond-pip/SKILL.md"
+  },
+  {
+    "name": "bond-recon",
+    "agent": "bond",
+    "team": "People",
+    "description": "Read-only audit of employee relations cases, policies, PIPs, and termination practices. Use when asked to \"audit our ER process\", \"review our HR policies\", or \"how risky are our terminations\".",
+    "path": "team/bond/skills/bond-recon/SKILL.md"
+  },
+  {
     "name": "brace-escalate",
     "agent": "brace",
-    "team": "Operations",
+    "team": "Support",
     "description": "Design escalation path -- Tier 1 to Tier 2 to Engineering handoff, decision criteria, and communication templates. Use when asked to \"design our escalation process\", \"when should support escalate to engineering\", \"build an escalation runbook\", or \"reduce escalation rate\".",
     "path": "team/brace/skills/brace-escalate/SKILL.md"
   },
   {
     "name": "brace-kb",
     "agent": "brace",
-    "team": "Operations",
+    "team": "Support",
     "description": "Build or audit knowledge base -- article structure, coverage gaps, deflection rate, and maintenance process. Use when asked to \"build a knowledge base\", \"what docs are missing\", \"improve our self-serve rate\", or \"audit our help center\".",
     "path": "team/brace/skills/brace-kb/SKILL.md"
   },
   {
     "name": "brace-metrics",
     "agent": "brace",
-    "team": "Operations",
+    "team": "Support",
     "description": "Design support metrics dashboard -- CSAT, FRT, TTR, ticket deflection rate, volume trends, and agent efficiency. Use when asked to \"what metrics should support track\", \"build our support dashboard\", \"measure support quality\", or \"audit our support performance\".",
     "path": "team/brace/skills/brace-metrics/SKILL.md"
   },
   {
     "name": "brace-onboard",
     "agent": "brace",
-    "team": "Operations",
+    "team": "Support",
     "description": "Design customer support onboarding flow -- first-contact experience, proactive support touchpoints, and setup success checklist. Use when asked to \"design our onboarding support\", \"how do we support new customers during onboarding\", or \"reduce early churn from setup failures\".",
     "path": "team/brace/skills/brace-onboard/SKILL.md"
   },
   {
     "name": "brace-playbook",
     "agent": "brace",
-    "team": "Operations",
+    "team": "Support",
     "description": "Write support playbook -- response templates, issue-type runbooks, tone guide, and common resolution paths. Use when asked to \"write support templates\", \"build a support playbook\", \"train our support agents\", or \"standardize our support responses\".",
     "path": "team/brace/skills/brace-playbook/SKILL.md"
   },
   {
     "name": "brace-recon",
     "agent": "brace",
-    "team": "Operations",
+    "team": "Support",
     "description": "Support operations reconnaissance -- audit current ticket volume, SLA compliance, knowledge base coverage, escalation paths, and CSAT to understand where support is the constraint. Use when asked to \"audit our support\", \"why is our response time bad\", \"how healthy is our support operation\", or \"before designing a support system\".",
     "path": "team/brace/skills/brace-recon/SKILL.md"
   },
   {
     "name": "brace-sla",
     "agent": "brace",
-    "team": "Operations",
+    "team": "Support",
     "description": "Design SLA framework -- response time targets, resolution time targets, tier definitions, and breach escalation process. Use when asked to \"define our SLAs\", \"what response times should we commit to\", \"build a support tier structure\", or \"set up SLA monitoring\".",
     "path": "team/brace/skills/brace-sla/SKILL.md"
   },
   {
     "name": "brace-triage",
     "agent": "brace",
-    "team": "Operations",
+    "team": "Support",
     "description": "Design ticket triage system -- routing rules, priority tags, queue structure, and first-response automation. Use when asked to \"design our ticket routing\", \"how should we tag tickets\", \"set up our helpdesk\", or \"reduce time to first response\".",
     "path": "team/brace/skills/brace-triage/SKILL.md"
+  },
+  {
+    "name": "bridge-cosell",
+    "agent": "bridge",
+    "team": "Revenue",
+    "description": "Plan co-sell and marketplace motions \u2014 target partners, listing, joint pipeline. Use when asked to \"plan co-sell with AWS\", \"list us on a marketplace\", or \"build an alliance motion\".",
+    "path": "team/bridge/skills/bridge-cosell/SKILL.md"
+  },
+  {
+    "name": "bridge-program",
+    "agent": "bridge",
+    "team": "Revenue",
+    "description": "Design the partner program \u2014 types, tiers, economics, deal registration. Use when asked to \"design a partner program\", \"set reseller margins\", or \"build a referral program\".",
+    "path": "team/bridge/skills/bridge-program/SKILL.md"
+  },
+  {
+    "name": "bridge-recon",
+    "agent": "bridge",
+    "team": "Revenue",
+    "description": "Read-only audit of partnerships \u2014 partner roster, sourced pipeline, conflicts, program gaps. Use when asked to \"audit our partnerships\", \"how is our channel performing\", or \"review our partner program\".",
+    "path": "team/bridge/skills/bridge-recon/SKILL.md"
   },
   {
     "name": "brief-draft",
@@ -324,56 +429,56 @@
   {
     "name": "buzz-community",
     "agent": "buzz",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Build and manage open source community \u2014 Discord/Slack structure, contributor onboarding, ambassador program, community flywheel design, and GitHub community health. Use when asked to \"build a community\", \"grow our Discord\", \"improve contributor experience\", or \"design a developer ambassador program\".",
     "path": "team/buzz/skills/buzz-community/SKILL.md"
   },
   {
     "name": "buzz-devrel",
     "agent": "buzz",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Developer relations playbook builder \u2014 produces a DevRel program design covering community platform, contributor program tiers, ambassador criteria, event strategy, and success metrics. Use when asked to \"build a DevRel program\", \"design our developer community\", \"create a contributor program\", \"start a developer advocacy program\", or \"how do we grow our dev community\".",
     "path": "team/buzz/skills/buzz-devrel/SKILL.md"
   },
   {
     "name": "buzz-hn",
     "agent": "buzz",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Hacker News post crafter \u2014 given a product, feature, or story produces a ready-to-post HN submission (title \u226480 chars, no marketing), honest body text with technical depth, no outbound links, predicted reception analysis, and comment-response templates for likely pushback. Use when asked to \"write an HN post\", \"craft a Show HN\", \"prepare our Hacker News launch\", or \"help me post on HN\".",
     "path": "team/buzz/skills/buzz-hn/SKILL.md"
   },
   {
     "name": "buzz-launch",
     "agent": "buzz",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Design and execute a launch plan \u2014 Product Hunt, HN Show HN, newsletter coordination, social posts, and community launch moment. Use when asked to \"launch [feature/product]\", \"plan a launch\", \"help us do a Product Hunt launch\", or \"coordinate the announcement\".",
     "path": "team/buzz/skills/buzz-launch/SKILL.md"
   },
   {
     "name": "buzz-outreach",
     "agent": "buzz",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Media and podcast outreach personalizer \u2014 takes a story angle and target journalist or host list and produces personalized pitch emails per target. Use when asked to \"write media pitches\", \"pitch this story to journalists\", \"get us on podcasts\", \"write press outreach\", or \"personalize pitches for these contacts\".",
     "path": "team/buzz/skills/buzz-outreach/SKILL.md"
   },
   {
     "name": "buzz-pitch",
     "agent": "buzz",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Write media pitches and press releases \u2014 journalist outreach emails, podcast pitch scripts, newsletter sponsor pitches, and press release copy. Use when asked to \"pitch journalists\", \"write a press release\", \"reach out to podcasts\", or \"get media coverage\".",
     "path": "team/buzz/skills/buzz-pitch/SKILL.md"
   },
   {
     "name": "buzz-recon",
     "agent": "buzz",
-    "team": "Product",
+    "team": "Marketing",
     "description": "PR and community reconnaissance \u2014 audit current press coverage, social presence, community health, and competitor PR. Use when asked to \"audit our PR\", \"what's our community state\", \"how do we compare in press\", or before planning a launch or community initiative.",
     "path": "team/buzz/skills/buzz-recon/SKILL.md"
   },
   {
     "name": "buzz-social",
     "agent": "buzz",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Social media strategy and post drafting \u2014 HN posts, Twitter/X threads, LinkedIn posts, Reddit comments, and developer community content. Use when asked to \"write a HN post\", \"draft social posts\", \"help us post on Twitter\", or \"create a social launch plan\".",
     "path": "team/buzz/skills/buzz-social/SKILL.md"
   },
@@ -546,6 +651,27 @@
     "path": "team/clean/skills/clean-validate/SKILL.md"
   },
   {
+    "name": "coach-battlecard",
+    "agent": "coach",
+    "team": "Revenue",
+    "description": "Build battlecards and talk tracks from win/loss evidence. Use when asked to \"write a battlecard\", \"build a competitor card\", or \"create talk tracks for objections\".",
+    "path": "team/coach/skills/coach-battlecard/SKILL.md"
+  },
+  {
+    "name": "coach-ramp",
+    "agent": "coach",
+    "team": "Revenue",
+    "description": "Design the onboarding ramp \u2014 30/60/90 plan, certifications, quota ramp. Use when asked to \"build a sales onboarding plan\", \"design a ramp for new AEs\", or \"create a 30-60-90 plan\".",
+    "path": "team/coach/skills/coach-ramp/SKILL.md"
+  },
+  {
+    "name": "coach-recon",
+    "agent": "coach",
+    "team": "Revenue",
+    "description": "Read-only audit of enablement \u2014 ramp time, call quality, content usage, win/loss insight. Use when asked to \"audit our sales enablement\", \"why do new reps ramp slowly\", or \"review our sales training\".",
+    "path": "team/coach/skills/coach-recon/SKILL.md"
+  },
+  {
     "name": "compat-audit",
     "agent": "compat",
     "team": "Developer Experience",
@@ -681,65 +807,86 @@
   {
     "name": "deal-close",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Close a specific deal \u2014 diagnose why a deal is stalling, answer an objection reply, write a tailored proposal, design the closing sequence, or navigate procurement. Use when a specific deal is stuck, \"how do I close this\", \"write a proposal for this customer\", \"help me get to yes\", or \"how do I answer this objection\".",
     "path": "team/deal/skills/deal-close/SKILL.md"
   },
   {
     "name": "deal-outreach",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Cold outbound sequence builder \u2014 produces multi-touch email + LinkedIn sequences (5-7 touchpoints) personalized by persona type (technical buyer, economic buyer, champion). Use when asked to \"write cold emails\", \"build an outbound sequence\", \"create prospecting emails\", \"write my LinkedIn outreach\", or \"design a cold email campaign\".",
     "path": "team/deal/skills/deal-outreach/SKILL.md"
   },
   {
     "name": "deal-pipeline",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Design or audit B2B sales pipeline \u2014 define stage names, entry/exit criteria, qualification standards, and CRM field requirements. Use when asked to \"design our pipeline\", \"audit our CRM stages\", \"define what qualified means\", or \"build a sales process\".",
     "path": "team/deal/skills/deal-pipeline/SKILL.md"
   },
   {
     "name": "deal-playbook",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Write sales playbooks \u2014 outbound sequences, discovery call guides, objection handling scripts, and demo frameworks. Use when asked to \"write a sales playbook\", \"build an outbound sequence\", \"help me handle objections\", or \"design a discovery call\".",
     "path": "team/deal/skills/deal-playbook/SKILL.md"
   },
   {
     "name": "deal-pricing",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Design pricing strategy and packaging \u2014 tiers, value metrics, enterprise pricing, freemium design, and pricing page copy. Use when asked to \"design our pricing\", \"should we change our price\", \"how do we package the product\", or \"what should we charge enterprise\".",
     "path": "team/deal/skills/deal-pricing/SKILL.md"
   },
   {
     "name": "deal-proposal",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "B2B proposal generator \u2014 takes deal context (ICP, pain, pricing tier, timeline) and produces a complete proposal document with executive summary, problem statement, solution, pricing table, implementation timeline, ROI case, and next steps. Use when asked to \"write a proposal\", \"draft our deck for this deal\", \"build a proposal for this customer\", or \"generate a proposal\".",
     "path": "team/deal/skills/deal-proposal/SKILL.md"
   },
   {
     "name": "deal-qualify",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "MEDDPICC-based deal qualification worksheet \u2014 guide Deal through structured qualification of any opportunity and produce a filled card + recommended next action. Use when asked to \"qualify this deal\", \"run MEDDPICC on this opportunity\", \"should we pursue this\", or \"is this deal real\".",
     "path": "team/deal/skills/deal-qualify/SKILL.md"
   },
   {
     "name": "deal-recon",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Revenue reconnaissance \u2014 audit current sales pipeline, deal patterns, ICP definition, and revenue motion to understand what's working and where the constraint is. Use when asked to \"audit our sales\", \"where is revenue stuck\", \"what's our pipeline state\", \"before designing a playbook\".",
     "path": "team/deal/skills/deal-recon/SKILL.md"
   },
   {
     "name": "deal-signals",
     "agent": "deal",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Signal-based prospecting \u2014 read target companies' public websites for buying signals (ads running, incumbent agency, tech stack, hiring, stale content, missing booking) with evidence URLs, then build a cohort you can explain. Use when asked to \"find buying signals\", \"profile these companies\", \"which accounts should we target\", \"build a target list from these domains\", or \"what changed at these accounts\".",
     "path": "team/deal/skills/deal-signals/SKILL.md"
+  },
+  {
+    "name": "demo-poc",
+    "agent": "demo",
+    "team": "Revenue",
+    "description": "Run a POC or pilot \u2014 success criteria, timebox, plan, exit decision. Use when asked to \"scope a POC\", \"plan a pilot\", or \"set POC success criteria\".",
+    "path": "team/demo/skills/demo-poc/SKILL.md"
+  },
+  {
+    "name": "demo-recon",
+    "agent": "demo",
+    "team": "Revenue",
+    "description": "Read-only audit of SE readiness \u2014 demo assets, POC history, questionnaire bank, technical win rate. Use when asked to \"audit our sales engineering\", \"how good are our demos\", or \"review our POC process\".",
+    "path": "team/demo/skills/demo-recon/SKILL.md"
+  },
+  {
+    "name": "demo-script",
+    "agent": "demo",
+    "team": "Revenue",
+    "description": "Design a demo \u2014 discovery-driven narrative, flow, environment, failure handling. Use when asked to \"design a demo\", \"prepare for the technical demo\", or \"write a demo script\".",
+    "path": "team/demo/skills/demo-script/SKILL.md"
   },
   {
     "name": "deploy-canary",
@@ -761,6 +908,27 @@
     "team": "AI Operations",
     "description": "Design and configure model serving infrastructure \u2014 endpoint scaling, batching, GPU allocation. Use when asked to \"serve this model\", \"design an inference endpoint\", or \"size GPU allocation for serving\".",
     "path": "team/deploy/skills/deploy-serve/SKILL.md"
+  },
+  {
+    "name": "dock-event",
+    "agent": "dock",
+    "team": "Operations",
+    "description": "Run event logistics \u2014 budget, venue, travel, run-of-show, safety plan, accessibility, and post-event metrics. Use when asked to \"plan the company offsite\", \"organize an event\", \"build a run of show\".",
+    "path": "team/dock/skills/dock-event/SKILL.md"
+  },
+  {
+    "name": "dock-recon",
+    "agent": "dock",
+    "team": "Operations",
+    "description": "Read-only audit of workplace \u2014 utilization, cost per seat, equipment inventory, safety compliance, remote stipend coverage. Use when asked to \"audit our office usage\", \"check workplace safety compliance\", \"review our remote work setup\".",
+    "path": "team/dock/skills/dock-recon/SKILL.md"
+  },
+  {
+    "name": "dock-space",
+    "agent": "dock",
+    "team": "Operations",
+    "description": "Plan space \u2014 attendance model, seat ratio, lease decision, layout mix, cost scenarios for office or coworking. Use when asked to \"plan our office space\", \"should we renew the lease\", \"design a hybrid desk policy\".",
+    "path": "team/dock/skills/dock-space/SKILL.md"
   },
   {
     "name": "draft-flow",
@@ -838,6 +1006,27 @@
     "team": "Data Science",
     "description": "Audit existing ML monitoring \u2014 find gaps in drift coverage and missing alerts. Use when asked to \"audit our ML monitoring\", \"are our models monitored\", or \"find drift coverage gaps\".",
     "path": "team/drift/skills/drift-recon/SKILL.md"
+  },
+  {
+    "name": "drip-flow",
+    "agent": "drip",
+    "team": "Marketing",
+    "description": "Design lifecycle and nurture flows with triggers, timing, exit conditions, segmentation and success metrics. Use when asked to \"design an onboarding email flow\", \"build a nurture program\", \"set up a win-back campaign\".",
+    "path": "team/drip/skills/drip-flow/SKILL.md"
+  },
+  {
+    "name": "drip-inbox",
+    "agent": "drip",
+    "team": "Marketing",
+    "description": "Diagnose and fix email deliverability \u2014 authentication, warm-up, list hygiene, reputation recovery. Use when asked to \"fix our email deliverability\", \"warm up a new sending domain\", \"emails are landing in spam\".",
+    "path": "team/drip/skills/drip-inbox/SKILL.md"
+  },
+  {
+    "name": "drip-recon",
+    "agent": "drip",
+    "team": "Marketing",
+    "description": "Read-only audit of email and lifecycle programs \u2014 flows, authentication, list health, segmentation and performance. Use when asked to \"audit our email program\", \"why are our emails going to spam\", \"review our lifecycle marketing\".",
+    "path": "team/drip/skills/drip-recon/SKILL.md"
   },
   {
     "name": "echo-feedback",
@@ -1043,6 +1232,27 @@
     "path": "team/fit/skills/fit-tune/SKILL.md"
   },
   {
+    "name": "flow-build",
+    "agent": "flow",
+    "team": "Operations",
+    "description": "Build an automation spec and implementation \u2014 tool selection, trigger and steps, error handling, tests, ownership. Use when asked to \"automate this process\", \"build a workflow in n8n\", \"write an automation spec\".",
+    "path": "team/flow/skills/flow-build/SKILL.md"
+  },
+  {
+    "name": "flow-recon",
+    "agent": "flow",
+    "team": "Operations",
+    "description": "Read-only audit of manual work and existing automations \u2014 candidates, ROI, ownership, failure and cost hygiene. Use when asked to \"audit our automations\", \"find what we should automate\", \"review our Zapier and n8n workflows\".",
+    "path": "team/flow/skills/flow-recon/SKILL.md"
+  },
+  {
+    "name": "flow-runbook",
+    "agent": "flow",
+    "team": "Operations",
+    "description": "Convert a runbook into automation \u2014 classify each step, climb the automation ladder safely, and roll out in stages. Use when asked to \"turn this runbook into automation\", \"automate our SOP\", \"convert manual checklist to workflow\".",
+    "path": "team/flow/skills/flow-runbook/SKILL.md"
+  },
+  {
     "name": "flux-health",
     "agent": "flux",
     "team": "Engineering",
@@ -1087,56 +1297,56 @@
   {
     "name": "folk-comp",
     "agent": "folk",
-    "team": "Operations",
+    "team": "People",
     "description": "Design compensation framework - salary bands, equity philosophy, offer templates, and total comp benchmarking. Use when asked to \"design our comp bands\", \"how much equity should we give\", \"is our comp competitive\", or \"write an offer template\".",
     "path": "team/folk/skills/folk-comp/SKILL.md"
   },
   {
     "name": "folk-culture",
     "agent": "folk",
-    "team": "Operations",
+    "team": "People",
     "description": "Document and strengthen company culture - values articulation, team norms, communication protocols, and culture health diagnostics. Use when asked to \"define our values\", \"document how we work\", \"diagnose culture health\", or \"write team norms\".",
     "path": "team/folk/skills/folk-culture/SKILL.md"
   },
   {
     "name": "folk-hire",
     "agent": "folk",
-    "team": "Operations",
+    "team": "People",
     "description": "Build a hiring pipeline - job description, sourcing strategy, interview scorecard, and offer process. Use when asked to \"write a job description\", \"build an interview process\", \"design our hiring funnel\", or \"what should we look for in a [role]\".",
     "path": "team/folk/skills/folk-hire/SKILL.md"
   },
   {
     "name": "folk-migrate",
     "agent": "folk",
-    "team": "Operations",
+    "team": "People",
     "description": "Run human-to-agent migration - audit which roles can be agent-assisted or replaced, design the transition playbook, and manage the offboarding of displaced roles. Use when asked to \"which roles can agents replace\", \"how do we transition to AI-first ops\", or \"build our agent migration plan\".",
     "path": "team/folk/skills/folk-migrate/SKILL.md"
   },
   {
     "name": "folk-onboard",
     "agent": "folk",
-    "team": "Operations",
+    "team": "People",
     "description": "Build onboarding playbook - day 1 through week 4 checklist, access provisioning, context transfer, and success milestones. Use when asked to \"build an onboarding process\", \"how do we onboard new hires\", or \"reduce time to productivity for new joiners\".",
     "path": "team/folk/skills/folk-onboard/SKILL.md"
   },
   {
     "name": "folk-org",
     "agent": "folk",
-    "team": "Operations",
+    "team": "People",
     "description": "Design or review org structure - spans of control, reporting lines, role clarity, headcount plan, and team topology. Use when asked to \"design our org\", \"should we restructure\", \"what is the right team structure\", or \"plan headcount for next year\".",
     "path": "team/folk/skills/folk-org/SKILL.md"
   },
   {
     "name": "folk-perf",
     "agent": "folk",
-    "team": "Operations",
+    "team": "People",
     "description": "Design performance management system - review cycles, calibration process, career ladder, and PIP framework. Use when asked to \"build a performance review process\", \"design career levels\", \"how do we handle underperformers\", or \"run a review cycle\".",
     "path": "team/folk/skills/folk-perf/SKILL.md"
   },
   {
     "name": "folk-recon",
     "agent": "folk",
-    "team": "Operations",
+    "team": "People",
     "description": "People reconnaissance - audit org design, hiring pipeline, comp structure, onboarding, and performance systems to understand what is working and where the constraint is. Use when asked to \"audit our people ops\", \"what is broken in our hiring\", \"review our org structure\", or \"before designing a comp framework\".",
     "path": "team/folk/skills/folk-recon/SKILL.md"
   },
@@ -1344,6 +1554,27 @@
     "path": "team/gate/skills/gate-recon/SKILL.md"
   },
   {
+    "name": "gauge-plan",
+    "agent": "gauge",
+    "team": "Operations",
+    "description": "Design the annual and quarterly planning cycle \u2014 backward calendar, inputs, owners, targets, plan-vs-actual loop. Use when asked to \"design our planning process\", \"set up annual planning\", \"build the quarterly planning calendar\".",
+    "path": "team/gauge/skills/gauge-plan/SKILL.md"
+  },
+  {
+    "name": "gauge-recon",
+    "agent": "gauge",
+    "team": "Operations",
+    "description": "Read-only audit of the operating system \u2014 metric inventory, definition conflicts, planning calendar, review coverage. Use when asked to \"audit our operating metrics\", \"do we have a planning cycle\", \"find conflicting KPI definitions\".",
+    "path": "team/gauge/skills/gauge-recon/SKILL.md"
+  },
+  {
+    "name": "gauge-review",
+    "agent": "gauge",
+    "team": "Operations",
+    "description": "Build the MBR/QBR machine \u2014 metric tree, variance commentary rules, review template, attendee and rhythm design. Use when asked to \"set up the monthly business review\", \"build a QBR template\", \"create the metric tree\".",
+    "path": "team/gauge/skills/gauge-review/SKILL.md"
+  },
+  {
     "name": "glyph-pair",
     "agent": "glyph",
     "team": "Design",
@@ -1384,6 +1615,27 @@
     "team": "Design",
     "description": "Audit or redesign responsive behavior of a layout \u2014 breakpoints, reflow, and content priority. Use when asked to \"fix responsive behavior\", \"define breakpoints\", or \"how should this reflow on mobile\".",
     "path": "team/grid/skills/grid-responsive/SKILL.md"
+  },
+  {
+    "name": "grow-ladder",
+    "agent": "grow",
+    "team": "People",
+    "description": "Design career ladders, skills matrices, and promotion criteria. Use when asked to \"build a career ladder\", \"create a skills matrix\", or \"define promotion criteria\".",
+    "path": "team/grow/skills/grow-ladder/SKILL.md"
+  },
+  {
+    "name": "grow-manager",
+    "agent": "grow",
+    "team": "People",
+    "description": "Design first-time manager training, leadership programs, and coaching rhythms. Use when asked to \"train our managers\", \"build a leadership program\", or \"design a new manager bootcamp\".",
+    "path": "team/grow/skills/grow-manager/SKILL.md"
+  },
+  {
+    "name": "grow-recon",
+    "agent": "grow",
+    "team": "People",
+    "description": "Read-only audit of learning programs, career ladders, manager readiness, and internal mobility. Use when asked to \"audit our L&D\", \"how ready are our managers\", or \"review career ladders\".",
+    "path": "team/grow/skills/grow-recon/SKILL.md"
   },
   {
     "name": "guard-audit",
@@ -1428,6 +1680,27 @@
     "path": "team/guide/skills/guide-write/SKILL.md"
   },
   {
+    "name": "hedge-crisis",
+    "agent": "hedge",
+    "team": "Operations",
+    "description": "Build crisis playbooks \u2014 severity ladder, roles, decision triggers, comms templates, exercise scripts. Use when asked to \"build a crisis playbook\", \"prepare for a data breach or outage crisis\", \"run a tabletop exercise\".",
+    "path": "team/hedge/skills/hedge-crisis/SKILL.md"
+  },
+  {
+    "name": "hedge-plan",
+    "agent": "hedge",
+    "team": "Operations",
+    "description": "Write a business continuity plan \u2014 business impact analysis, RTO/RPO tiers, recovery strategies, test calendar. Use when asked to \"write our BCP\", \"define RTO and RPO\", \"build a disaster recovery plan\".",
+    "path": "team/hedge/skills/hedge-plan/SKILL.md"
+  },
+  {
+    "name": "hedge-recon",
+    "agent": "hedge",
+    "team": "Operations",
+    "description": "Read-only audit of risk posture \u2014 register quality, concentration exposure, continuity coverage, insurance gaps. Use when asked to \"audit our risk register\", \"where are we exposed\", \"check our business continuity readiness\".",
+    "path": "team/hedge/skills/hedge-recon/SKILL.md"
+  },
+  {
     "name": "helm-arbiter",
     "agent": "helm",
     "team": "Product",
@@ -1461,6 +1734,27 @@
     "team": "Product",
     "description": "Product landscape reconnaissance \u2014 survey existing briefs, research, strategy, and team output before writing new briefs or dispatching specialists. Use when asked to \"understand the product state\", \"what briefs exist\", \"what has the team produced\", \"orient me on this product\", or before starting a new product initiative.",
     "path": "team/helm/skills/helm-recon/SKILL.md"
+  },
+  {
+    "name": "hire-close",
+    "agent": "hire",
+    "team": "People",
+    "description": "Plan and run offer, negotiation, and close for a candidate, with pipeline velocity tracking. Use when asked to \"close this candidate\", \"plan the offer call\", or \"reduce offer declines\".",
+    "path": "team/hire/skills/hire-close/SKILL.md"
+  },
+  {
+    "name": "hire-recon",
+    "agent": "hire",
+    "team": "People",
+    "description": "Read-only audit of the current recruiting funnel, ATS data, scorecards, and interview process. Use when asked to \"audit our hiring funnel\", \"why is hiring slow\", or \"review our recruiting process\".",
+    "path": "team/hire/skills/hire-recon/SKILL.md"
+  },
+  {
+    "name": "hire-scorecard",
+    "agent": "hire",
+    "team": "People",
+    "description": "Design role scorecards, structured interview loops, question banks, and rating rubrics. Use when asked to \"write a scorecard\", \"design an interview loop\", or \"make our interviews structured\".",
+    "path": "team/hire/skills/hire-scorecard/SKILL.md"
   },
   {
     "name": "hue-palette",
@@ -1507,70 +1801,70 @@
   {
     "name": "ink-brief",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Content brief generator \u2014 takes a topic or keyword and produces a complete content brief with target keyword, search intent, recommended structure, internal link targets, word count, CTA, and competitive gap analysis. Use when asked to \"write a content brief\", \"brief this blog post\", \"plan this article\", or \"what should we cover for [keyword]\".",
     "path": "team/ink/skills/ink-brief/SKILL.md"
   },
   {
     "name": "ink-calendar",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Build a content calendar \u2014 editorial plan, publishing cadence, topic assignment, and distribution workflow. Use when asked to \"build a content calendar\", \"plan our content for the quarter\", \"how often should we publish\", or \"create an editorial schedule\".",
     "path": "team/ink/skills/ink-calendar/SKILL.md"
   },
   {
     "name": "ink-case",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Write customer case studies and success stories \u2014 interview guide, story structure, and publish-ready case study with metrics. Use when asked to \"write a case study\", \"document a customer success story\", \"create social proof content\", or \"write about how [customer] uses the product\".",
     "path": "team/ink/skills/ink-case/SKILL.md"
   },
   {
     "name": "ink-cluster",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Topic cluster and keyword-to-page mapping \u2014 group keywords by search intent (validated by SERP overlap, not word similarity), map each cluster to an existing or proposed page, flag cannibalization, and lay out pillar, supporting posts, and internal links. Use when asked to \"build a content cluster\", \"map our SEO cluster for [topic]\", \"which page should target these keywords\", \"create a topic cluster\", or \"what should our pillar page be about\".",
     "path": "team/ink/skills/ink-cluster/SKILL.md"
   },
   {
     "name": "ink-distribute",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Content distribution plan \u2014 takes a completed piece and produces a channel-by-channel plan covering HN, Reddit, LinkedIn, newsletter, and Twitter/X, with timing, per-channel framing, and a repurposing plan. Use when asked to \"distribute this post\", \"how do we promote this article\", \"write distribution copy for this piece\", or \"where should we share this\".",
     "path": "team/ink/skills/ink-distribute/SKILL.md"
   },
   {
     "name": "ink-links",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Link prospecting \u2014 pick the site's most linkable asset, find pages that plausibly link to it (resource pages, competitor linkers, unlinked mentions, broken links), verify real contact paths, and draft personalized outreach. Never invents contacts. Use when asked to \"find backlink opportunities\", \"who should link to us\", \"build links to this page\", \"link prospecting\", or \"draft outreach for backlinks\".",
     "path": "team/ink/skills/ink-links/SKILL.md"
   },
   {
     "name": "ink-local",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Local SEO audit \u2014 assess a location-based business's Google Business Profile against local competitors, check Maps and local-pack visibility for its main queries, and recommend the few fixes that win nearby searches. Use when asked to \"improve our local SEO\", \"why don't we show up on Google Maps\", \"audit our Google Business Profile\", \"rank in the local pack\", or \"local search for [city]\".",
     "path": "team/ink/skills/ink-local/SKILL.md"
   },
   {
     "name": "ink-post",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Write a blog post or article \u2014 research the keyword, draft the post, and produce publish-ready content with SEO optimization. Use when asked to \"write a blog post\", \"write about [topic]\", \"draft an article\", or \"write a tutorial\".",
     "path": "team/ink/skills/ink-post/SKILL.md"
   },
   {
     "name": "ink-recon",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "Content marketing reconnaissance \u2014 audit current content, SEO health, competitor content gaps, and content distribution. Use when asked to \"audit our content\", \"what's our SEO state\", \"where are the content gaps\", or before designing a content strategy.",
     "path": "team/ink/skills/ink-recon/SKILL.md"
   },
   {
     "name": "ink-seo",
     "agent": "ink",
-    "team": "Product",
+    "team": "Marketing",
     "description": "SEO audit and keyword strategy \u2014 investigate a site's real search opportunities, shortlist candidates, and recommend the one to three changes most likely to grow organic traffic that converts. Evidence-first \u2014 metrics come from a tool or are written as unknown. Use when asked to \"improve our SEO\", \"do keyword research\", \"audit our SEO\", \"why aren't we ranking\", or \"what should we fix first for search\".",
     "path": "team/ink/skills/ink-seo/SKILL.md"
   },
@@ -1633,58 +1927,79 @@
   {
     "name": "keep-churn",
     "agent": "keep",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Churn risk identification and intervention \u2014 scans health signals for at-risk accounts, classifies risk level (CRITICAL/HIGH/MEDIUM), and produces an intervention sequence per risk type. Use when asked to \"find at-risk accounts\", \"who might churn\", \"build a churn prevention plan\", \"identify churn signals\", or \"rescue this account\".",
     "path": "team/keep/skills/keep-churn/SKILL.md"
   },
   {
     "name": "keep-expand",
     "agent": "keep",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Design expansion revenue playbooks \u2014 upsell triggers, seat expansion sequences, tier upgrade paths, and cross-sell motions. Use when asked to \"grow existing customers\", \"increase NRR\", \"design upsell\", or \"how do we get customers to expand\".",
     "path": "team/keep/skills/keep-expand/SKILL.md"
   },
   {
     "name": "keep-health",
     "agent": "keep",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Design a customer health scoring model \u2014 define signals, weights, thresholds, and action triggers. Use when asked to \"build health scoring\", \"how do we predict churn\", \"what signals indicate a customer is at risk\", or \"design our health model\".",
     "path": "team/keep/skills/keep-health/SKILL.md"
   },
   {
     "name": "keep-onboard",
     "agent": "keep",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Optimize customer onboarding \u2014 map the activation sequence, identify drop-off points, design the aha moment, and produce the onboarding email sequence. Use when asked to \"fix onboarding\", \"improve activation\", \"time-to-value is too slow\", or \"customers aren't getting started\".",
     "path": "team/keep/skills/keep-onboard/SKILL.md"
   },
   {
     "name": "keep-playbook",
     "agent": "keep",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Write churn prevention and win-back playbooks \u2014 risk intervention sequences, save conversation guides, and win-back email campaigns. Use when asked to \"prevent churn\", \"save at-risk customers\", \"win back churned customers\", or \"build a save play\".",
     "path": "team/keep/skills/keep-playbook/SKILL.md"
   },
   {
     "name": "keep-qbr",
     "agent": "keep",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Quarterly Business Review template generator \u2014 takes account info (ARR tier, adoption metrics, goals) and produces a complete QBR deck outline and talking points. Use when asked to \"prepare a QBR\", \"build a quarterly review\", \"write our QBR agenda\", or \"create QBR talking points for this account\".",
     "path": "team/keep/skills/keep-qbr/SKILL.md"
   },
   {
     "name": "keep-recon",
     "agent": "keep",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Customer success reconnaissance \u2014 audit current onboarding completion, health signals, NRR, churn patterns, and CS motion. Use when asked to \"audit our customer success\", \"why are customers churning\", \"what's our NRR\", or before designing any CS playbook.",
     "path": "team/keep/skills/keep-recon/SKILL.md"
   },
   {
     "name": "keep-segment",
     "agent": "keep",
-    "team": "Product",
+    "team": "Revenue",
     "description": "Customer segmentation model builder \u2014 tiers customers by ARR, health, and expansion potential; defines CS motion per tier; maps resource allocation. Use when asked to \"segment our customers\", \"define our CS tiers\", \"how should we allocate CS resources\", \"build a customer segmentation model\", or \"who gets high-touch vs. digital\".",
     "path": "team/keep/skills/keep-segment/SKILL.md"
+  },
+  {
+    "name": "kit-access",
+    "agent": "kit",
+    "team": "Operations",
+    "description": "Run an access review \u2014 entitlement export, owner attestation, orphan and privilege cleanup, evidence for auditors. Use when asked to \"run an access review\", \"clean up user permissions\", \"prepare SOC2 access review evidence\".",
+    "path": "team/kit/skills/kit-access/SKILL.md"
+  },
+  {
+    "name": "kit-lifecycle",
+    "agent": "kit",
+    "team": "Operations",
+    "description": "Design joiner-mover-leaver automation \u2014 HRIS to IdP to SaaS, device kits, day-one SLA, offboarding runbook. Use when asked to \"automate onboarding and offboarding\", \"design joiner mover leaver\", \"set up day-one laptop and accounts\".",
+    "path": "team/kit/skills/kit-lifecycle/SKILL.md"
+  },
+  {
+    "name": "kit-recon",
+    "agent": "kit",
+    "team": "Operations",
+    "description": "Read-only audit of corporate IT \u2014 SSO coverage, device posture, SaaS inventory, joiner/leaver hygiene, helpdesk load. Use when asked to \"audit our IT setup\", \"what SaaS apps do we have\", \"check our onboarding and offboarding\".",
+    "path": "team/kit/skills/kit-recon/SKILL.md"
   },
   {
     "name": "kube-design",
@@ -1706,6 +2021,27 @@
     "team": "Infrastructure Specialist",
     "description": "Audit an existing Kubernetes cluster \u2014 find misconfigurations, security gaps, and resource issues. Use when asked to \"audit our Kubernetes cluster\", \"find K8s misconfigurations\", or \"check cluster security gaps\".",
     "path": "team/kube/skills/kube-recon/SKILL.md"
+  },
+  {
+    "name": "ledger-close",
+    "agent": "ledger",
+    "team": "Finance",
+    "description": "Design and run the month-end close \u2014 dated task checklist with owners, accrual standards, reconciliation schedule, flux review, lock procedure. Use when asked to \"run the month-end close\", \"build a close checklist\", or \"speed up our close\".",
+    "path": "team/ledger/skills/ledger-close/SKILL.md"
+  },
+  {
+    "name": "ledger-recon",
+    "agent": "ledger",
+    "team": "Finance",
+    "description": "Read-only audit of the current accounting state \u2014 close timeline, reconciliation coverage, journal entry controls, revenue recognition policy, audit readiness. Use when asked to \"audit our books\", \"how healthy is our close\", or \"review our accounting setup\".",
+    "path": "team/ledger/skills/ledger-recon/SKILL.md"
+  },
+  {
+    "name": "ledger-revrec",
+    "agent": "ledger",
+    "team": "Finance",
+    "description": "Apply ASC 606 to a revenue stream \u2014 contract identification, performance obligations, transaction price, allocation, recognition schedule, deferred revenue rollforward. Use when asked to \"recognize this revenue\", \"apply ASC 606\", or \"build a deferred revenue schedule\".",
+    "path": "team/ledger/skills/ledger-revrec/SKILL.md"
   },
   {
     "name": "lens-audit",
@@ -1748,6 +2084,27 @@
     "team": "Engineering",
     "description": "Build a reporting pipeline \u2014 scheduled reports with SQL queries, delivery via Slack or email, threshold alerts, and historical comparison. Use when asked for \"automated reports\", \"scheduled report\", \"email digest\", or \"Slack alerts for metrics\".",
     "path": "team/lens/skills/lens-report/SKILL.md"
+  },
+  {
+    "name": "levy-credits",
+    "agent": "levy",
+    "team": "Finance",
+    "description": "R&D tax credit and incentive capture \u2014 qualified activity scoping, QRE build, documentation standard, Section 174 treatment, payroll offset for startups. Use when asked to \"claim R&D credits\", \"estimate our R&D tax credit\", or \"set up tax credit documentation\".",
+    "path": "team/levy/skills/levy-credits/SKILL.md"
+  },
+  {
+    "name": "levy-nexus",
+    "agent": "levy",
+    "team": "Finance",
+    "description": "Nexus and indirect tax build \u2014 exposure by jurisdiction, product taxability, registration sequencing, tax engine setup, voluntary disclosure path. Use when asked to \"set up sales tax\", \"build a nexus plan\", or \"handle VAT for our SaaS\".",
+    "path": "team/levy/skills/levy-nexus/SKILL.md"
+  },
+  {
+    "name": "levy-recon",
+    "agent": "levy",
+    "team": "Finance",
+    "description": "Read-only audit of tax posture \u2014 entity map, nexus exposure, registration status, filing calendar, sales tax and VAT setup, credit capture. Use when asked to \"audit our tax exposure\", \"do we have nexus problems\", or \"review our tax compliance\".",
+    "path": "team/levy/skills/levy-recon/SKILL.md"
   },
   {
     "name": "lodge-dmca",
@@ -1850,58 +2207,79 @@
   {
     "name": "mint-board",
     "agent": "mint",
-    "team": "Operations",
+    "team": "Finance",
     "description": "Produce board financial package \u2014 monthly or quarterly financial update with P&L, cash position, key metrics, and variance vs plan. Use when asked to \"prepare board materials\", \"write the financial section of the board deck\", or \"what metrics does the board care about\".",
     "path": "team/mint/skills/mint-board/SKILL.md"
   },
   {
     "name": "mint-budget",
     "agent": "mint",
-    "team": "Operations",
+    "team": "Finance",
     "description": "Design or review annual operating budget \u2014 headcount plan, departmental spending, revenue targets, and variance tracking. Use when asked to \"build our budget\", \"plan headcount for next year\", or \"review our spending\".",
     "path": "team/mint/skills/mint-budget/SKILL.md"
   },
   {
     "name": "mint-model",
     "agent": "mint",
-    "team": "Operations",
+    "team": "Finance",
     "description": "Build or audit a financial model \u2014 3-statement model (P&L, cash flow, balance sheet), scenario analysis, and sensitivity tables. Use when asked to \"build a financial model\", \"model our growth scenarios\", or \"what happens to runway if we hire 5 people\".",
     "path": "team/mint/skills/mint-model/SKILL.md"
   },
   {
     "name": "mint-raise",
     "agent": "mint",
-    "team": "Operations",
+    "team": "Finance",
     "description": "Prepare fundraising financial materials \u2014 investor model, data room financial docs, cap table, and use-of-funds narrative. Use when asked to \"prepare for Series A\", \"build our investor model\", or \"what financials do investors want\".",
     "path": "team/mint/skills/mint-raise/SKILL.md"
   },
   {
     "name": "mint-recon",
     "agent": "mint",
-    "team": "Operations",
+    "team": "Finance",
     "description": "Financial reconnaissance \u2014 audit current P&L, burn rate, runway, unit economics, and financial health to understand where the constraint is. Use when asked to \"audit our finances\", \"what is our runway\", \"are our unit economics healthy\", or \"before building a financial model\".",
     "path": "team/mint/skills/mint-recon/SKILL.md"
   },
   {
     "name": "mint-report",
     "agent": "mint",
-    "team": "Operations",
+    "team": "Finance",
     "description": "Generate financial reports \u2014 monthly close package, variance analysis, and management reporting. Use when asked to \"generate monthly financials\", \"close the books\", or \"write variance commentary\".",
     "path": "team/mint/skills/mint-report/SKILL.md"
   },
   {
     "name": "mint-runway",
     "agent": "mint",
-    "team": "Operations",
+    "team": "Finance",
     "description": "Calculate and extend runway \u2014 current cash, burn rate, runway months, and the levers available to extend it. Use when asked to \"how long is our runway\", \"when do we run out of money\", or \"what cuts extend runway by 6 months\".",
     "path": "team/mint/skills/mint-runway/SKILL.md"
   },
   {
     "name": "mint-unit",
     "agent": "mint",
-    "team": "Operations",
+    "team": "Finance",
     "description": "Audit and improve unit economics \u2014 LTV, CAC, payback period, gross margin, contribution margin. Use when asked to \"are our unit economics good\", \"what is our LTV/CAC\", or \"how do we improve gross margin\".",
     "path": "team/mint/skills/mint-unit/SKILL.md"
+  },
+  {
+    "name": "mirror-coach",
+    "agent": "mirror",
+    "team": "Support",
+    "description": "Build agent coaching plans from QA review data \u2014 focus areas, practice, targets, check-ins. Use when asked to \"coach this agent\", \"write a coaching plan\", or \"help our new support hire improve\".",
+    "path": "team/mirror/skills/mirror-coach/SKILL.md"
+  },
+  {
+    "name": "mirror-recon",
+    "agent": "mirror",
+    "team": "Support",
+    "description": "Audit the support quality program \u2014 scorecard design, sampling coverage, calibration, coaching follow-through. Read-only. Use when asked to \"audit our support QA\", \"how good is our ticket review process\", or \"is our quality scoring reliable\".",
+    "path": "team/mirror/skills/mirror-recon/SKILL.md"
+  },
+  {
+    "name": "mirror-scorecard",
+    "agent": "mirror",
+    "team": "Support",
+    "description": "Design the support QA scorecard and ticket review sampling plan \u2014 weights, auto-fail rules, calibration protocol. Use when asked to \"build a QA scorecard\", \"design ticket reviews\", or \"set up calibration for support quality\".",
+    "path": "team/mirror/skills/mirror-scorecard/SKILL.md"
   },
   {
     "name": "mock-contract",
@@ -2058,6 +2436,27 @@
     "path": "team/pave/skills/pave-recon/SKILL.md"
   },
   {
+    "name": "perk-benefits",
+    "agent": "perk",
+    "team": "People",
+    "description": "Design a benefits package or run a benefits renewal. Use when asked to \"design our benefits\", \"prepare for renewal\", or \"should we change health plans\".",
+    "path": "team/perk/skills/perk-benefits/SKILL.md"
+  },
+  {
+    "name": "perk-payroll",
+    "agent": "perk",
+    "team": "People",
+    "description": "Design payroll controls, leave administration, HRIS hygiene, and an HR compliance calendar. Use when asked to \"fix our payroll process\", \"build an HR compliance calendar\", or \"clean up our HRIS\".",
+    "path": "team/perk/skills/perk-payroll/SKILL.md"
+  },
+  {
+    "name": "perk-recon",
+    "agent": "perk",
+    "team": "People",
+    "description": "Read-only audit of payroll, benefits, leave, HRIS data, and HR compliance deadlines. Use when asked to \"audit our HR ops\", \"check our payroll process\", or \"review our benefits setup\".",
+    "path": "team/perk/skills/perk-recon/SKILL.md"
+  },
+  {
     "name": "phish-assess",
     "agent": "phish",
     "team": "Security Operations",
@@ -2077,6 +2476,27 @@
     "team": "Security Operations",
     "description": "Design a security awareness training curriculum \u2014 topics, format, and effectiveness measurement. Use when asked to \"design security training\", \"build a security awareness curriculum\", or \"train our team on security\".",
     "path": "team/phish/skills/phish-train/SKILL.md"
+  },
+  {
+    "name": "pilot-charter",
+    "agent": "pilot",
+    "team": "Operations",
+    "description": "Write a program charter \u2014 outcome metric, scope, milestones, RACI, dependency map, RAID seed, exit criteria. Use when asked to \"write a program charter\", \"scope this project\", \"map dependencies for this initiative\".",
+    "path": "team/pilot/skills/pilot-charter/SKILL.md"
+  },
+  {
+    "name": "pilot-launch",
+    "agent": "pilot",
+    "team": "Operations",
+    "description": "Run launch coordination \u2014 T-minus plan, readiness gates, go/no-go checklist, rollback, comms sequence. Use when asked to \"coordinate the launch\", \"build a go/no-go checklist\", \"plan launch readiness\".",
+    "path": "team/pilot/skills/pilot-launch/SKILL.md"
+  },
+  {
+    "name": "pilot-recon",
+    "agent": "pilot",
+    "team": "Operations",
+    "description": "Read-only audit of delivery health \u2014 active programs, schedule slip, dependency exposure, RAID hygiene. Use when asked to \"audit our program health\", \"why do our projects slip\", \"review our delivery risks\".",
+    "path": "team/pilot/skills/pilot-recon/SKILL.md"
   },
   {
     "name": "pitch-copy",
@@ -2282,6 +2702,27 @@
     "path": "team/proof/skills/proof-strategy/SKILL.md"
   },
   {
+    "name": "pulse-attrition",
+    "agent": "pulse",
+    "team": "People",
+    "description": "Analyze and model employee attrition, regretted loss, and flight risk. Use when asked to \"analyze attrition\", \"who is at risk of leaving\", or \"why are people leaving\".",
+    "path": "team/pulse/skills/pulse-attrition/SKILL.md"
+  },
+  {
+    "name": "pulse-recon",
+    "agent": "pulse",
+    "team": "People",
+    "description": "Read-only audit of people metrics, HRIS data quality, survey history, and reporting. Use when asked to \"audit our people data\", \"what people metrics do we track\", or \"check our HR reporting\".",
+    "path": "team/pulse/skills/pulse-recon/SKILL.md"
+  },
+  {
+    "name": "pulse-survey",
+    "agent": "pulse",
+    "team": "People",
+    "description": "Design engagement surveys, eNPS pulses, and the action loop that follows. Use when asked to \"run an engagement survey\", \"measure eNPS\", or \"design a pulse survey\".",
+    "path": "team/pulse/skills/pulse-survey/SKILL.md"
+  },
+  {
     "name": "queue-design",
     "agent": "queue",
     "team": "Infrastructure Specialist",
@@ -2303,6 +2744,27 @@
     "path": "team/queue/skills/queue-scale/SKILL.md"
   },
   {
+    "name": "quota-forecast",
+    "agent": "quota",
+    "team": "Revenue",
+    "description": "Build the forecast \u2014 stage weights, commit/best-case/upside, accuracy tracking. Use when asked to \"build a sales forecast\", \"set up forecast categories\", or \"forecast this quarter\".",
+    "path": "team/quota/skills/quota-forecast/SKILL.md"
+  },
+  {
+    "name": "quota-recon",
+    "agent": "quota",
+    "team": "Revenue",
+    "description": "Read-only audit of the CRM and forecast process \u2014 data quality, stage integrity, forecast accuracy. Use when asked to \"audit our CRM\", \"why is our forecast off\", or \"check pipeline hygiene\".",
+    "path": "team/quota/skills/quota-recon/SKILL.md"
+  },
+  {
+    "name": "quota-territory",
+    "agent": "quota",
+    "team": "Revenue",
+    "description": "Design territories and quotas \u2014 account segmentation, fairness, assignment rules. Use when asked to \"design sales territories\", \"set quotas\", or \"rebalance territories\".",
+    "path": "team/quota/skills/quota-territory/SKILL.md"
+  },
+  {
     "name": "rank-design",
     "agent": "rank",
     "team": "AI Operations",
@@ -2322,6 +2784,27 @@
     "team": "AI Operations",
     "description": "Audit ranking quality \u2014 metric trends, failure modes, dataset coverage, reranker performance. Use when asked to \"audit our ranking quality\", \"find search relevance failures\", or \"review reranker performance\".",
     "path": "team/rank/skills/rank-recon/SKILL.md"
+  },
+  {
+    "name": "reach-creative",
+    "agent": "reach",
+    "team": "Marketing",
+    "description": "Design and run paid creative testing programs with hypotheses, test matrices, kill thresholds and a learning log. Use when asked to \"test our ad creative\", \"design a creative testing plan\", \"which ad concepts should we kill\".",
+    "path": "team/reach/skills/reach-creative/SKILL.md"
+  },
+  {
+    "name": "reach-model",
+    "agent": "reach",
+    "team": "Marketing",
+    "description": "Build CAC, payback and channel budget models with marginal returns and pipeline-sourced targets. Use when asked to \"model our CAC\", \"calculate payback by channel\", \"how much pipeline can paid generate\".",
+    "path": "team/reach/skills/reach-model/SKILL.md"
+  },
+  {
+    "name": "reach-recon",
+    "agent": "reach",
+    "team": "Marketing",
+    "description": "Read-only audit of paid acquisition and demand gen \u2014 channels, spend, CAC, tracking integrity, creative health. Use when asked to \"audit our paid campaigns\", \"why is our CAC rising\", \"review our demand gen programs\".",
+    "path": "team/reach/skills/reach-recon/SKILL.md"
   },
   {
     "name": "red-pentest",
@@ -2387,6 +2870,48 @@
     "path": "team/relay/skills/relay-ship/SKILL.md"
   },
   {
+    "name": "remit-onboard",
+    "agent": "remit",
+    "team": "Finance",
+    "description": "Design vendor onboarding and master data controls \u2014 intake form, tax documents, bank verification, risk tiering, approval matrix, offboarding. Use when asked to \"onboard a new vendor\", \"build a vendor intake process\", or \"set up an approval matrix\".",
+    "path": "team/remit/skills/remit-onboard/SKILL.md"
+  },
+  {
+    "name": "remit-payrun",
+    "agent": "remit",
+    "team": "Finance",
+    "description": "Prepare and control a payment run \u2014 invoice selection by terms, match status, duplicate check, cash availability, dual approval, release and remittance. Use when asked to \"prepare the payment run\", \"pay this week's bills\", or \"optimize payment timing\".",
+    "path": "team/remit/skills/remit-payrun/SKILL.md"
+  },
+  {
+    "name": "remit-recon",
+    "agent": "remit",
+    "team": "Finance",
+    "description": "Read-only audit of the AP and procure-to-pay process \u2014 aging, touchless rate, duplicate payments, vendor master hygiene, segregation of duties, bank-change controls. Use when asked to \"audit our AP process\", \"check for duplicate payments\", or \"review vendor payment controls\".",
+    "path": "team/remit/skills/remit-recon/SKILL.md"
+  },
+  {
+    "name": "reply-assist",
+    "agent": "reply",
+    "team": "Support",
+    "description": "Define AI draft-assist rules and guardrails for support replies \u2014 allowed topics, review gates, evaluation, rollback. Use when asked to \"set up AI draft replies for support\", \"write guardrails for AI support responses\", or \"can AI answer our tickets\".",
+    "path": "team/reply/skills/reply-assist/SKILL.md"
+  },
+  {
+    "name": "reply-macros",
+    "agent": "reply",
+    "team": "Support",
+    "description": "Build the support macro library and tone guide \u2014 structure, response templates, de-escalation scripts, multilingual rules, governance. Use when asked to \"write support macros\", \"create a tone guide for support\", or \"write de-escalation scripts\".",
+    "path": "team/reply/skills/reply-macros/SKILL.md"
+  },
+  {
+    "name": "reply-recon",
+    "agent": "reply",
+    "team": "Support",
+    "description": "Audit support reply quality \u2014 macro library health, tone consistency, language coverage, AI draft risk. Read-only. Use when asked to \"audit our support macros\", \"review how our replies sound\", or \"check our canned responses\".",
+    "path": "team/reply/skills/reply-recon/SKILL.md"
+  },
+  {
     "name": "resp-contain",
     "agent": "resp",
     "team": "Security Operations",
@@ -2406,6 +2931,27 @@
     "team": "Security Operations",
     "description": "Audit existing incident response capability \u2014 playbook coverage, tooling gaps, and readiness. Use when asked to \"audit our incident response\", \"assess IR readiness\", or \"find playbook coverage gaps\".",
     "path": "team/resp/skills/resp-recon/SKILL.md"
+  },
+  {
+    "name": "rev-board",
+    "agent": "rev",
+    "team": "Revenue",
+    "description": "Write the board revenue narrative \u2014 bookings, pipeline, forecast, risks, asks. Use when asked to \"prep the board revenue update\", \"write the revenue section of the board deck\", or \"explain the quarter to the board\".",
+    "path": "team/rev/skills/rev-board/SKILL.md"
+  },
+  {
+    "name": "rev-capacity",
+    "agent": "rev",
+    "team": "Revenue",
+    "description": "Build the bookings capacity model \u2014 ramped reps, quota, attainment, hiring plan. Use when asked to \"build a capacity plan\", \"how many reps do we need\", or \"set quotas for next year\".",
+    "path": "team/rev/skills/rev-capacity/SKILL.md"
+  },
+  {
+    "name": "rev-recon",
+    "agent": "rev",
+    "team": "Revenue",
+    "description": "Read-only audit of the revenue engine \u2014 coverage, capacity, conversion, org gaps. Use when asked to \"audit our revenue engine\", \"why are we missing the number\", or \"assess our GTM org\".",
+    "path": "team/rev/skills/rev-recon/SKILL.md"
   },
   {
     "name": "sample-recon",
@@ -2513,6 +3059,27 @@
     "path": "team/score/skills/score-recon/SKILL.md"
   },
   {
+    "name": "scout-list",
+    "agent": "scout",
+    "team": "Revenue",
+    "description": "Build the target list \u2014 ICP scoring, triggers, enrichment, suppression. Use when asked to \"build a prospect list\", \"define our ICP\", or \"find accounts to target\".",
+    "path": "team/scout/skills/scout-list/SKILL.md"
+  },
+  {
+    "name": "scout-recon",
+    "agent": "scout",
+    "team": "Revenue",
+    "description": "Read-only audit of the outbound engine \u2014 ICP, list quality, sequences, deliverability, handoff. Use when asked to \"audit our outbound\", \"why is our SDR team not booking meetings\", or \"review our prospecting\".",
+    "path": "team/scout/skills/scout-recon/SKILL.md"
+  },
+  {
+    "name": "scout-sequence",
+    "agent": "scout",
+    "team": "Revenue",
+    "description": "Write the outbound sequence \u2014 multi-touch cadence, copy, A/B plan, handoff rules. Use when asked to \"write an outbound sequence\", \"draft cold emails\", or \"build a cadence\".",
+    "path": "team/scout/skills/scout-sequence/SKILL.md"
+  },
+  {
     "name": "serv-cold",
     "agent": "serv",
     "team": "Infrastructure Specialist",
@@ -2555,6 +3122,27 @@
     "path": "team/shield/skills/shield-respond/SKILL.md"
   },
   {
+    "name": "shift-forecast",
+    "agent": "shift",
+    "team": "Support",
+    "description": "Forecast support ticket and contact volume by channel and interval with drivers and error bands. Use when asked to \"forecast ticket volume\", \"predict support load\", or \"plan for the launch spike\".",
+    "path": "team/shift/skills/shift-forecast/SKILL.md"
+  },
+  {
+    "name": "shift-recon",
+    "agent": "shift",
+    "team": "Support",
+    "description": "Audit the support workforce position \u2014 forecast accuracy, occupancy, shrinkage, schedule fit, coverage gaps. Read-only. Use when asked to \"audit our support staffing\", \"are we understaffed\", or \"check our capacity\".",
+    "path": "team/shift/skills/shift-recon/SKILL.md"
+  },
+  {
+    "name": "shift-staff",
+    "agent": "shift",
+    "team": "Support",
+    "description": "Build the support staffing and schedule model \u2014 Erlang requirements, shrinkage, shift patterns, hiring and BPO options. Use when asked to \"how many support agents do we need\", \"build a staffing model\", or \"should we outsource support\".",
+    "path": "team/shift/skills/shift-staff/SKILL.md"
+  },
+  {
     "name": "siem-alert",
     "agent": "siem",
     "team": "Security Operations",
@@ -2574,6 +3162,27 @@
     "team": "Security Operations",
     "description": "Write SIEM detection rules for a threat or TTP \u2014 SIGMA format, MITRE mapping, and test cases. Use when asked to \"write a SIGMA rule\", \"build a detection rule for this TTP\", or \"map a SIEM rule to MITRE\".",
     "path": "team/siem/skills/siem-rule/SKILL.md"
+  },
+  {
+    "name": "spend-policy",
+    "agent": "spend",
+    "team": "Finance",
+    "description": "Write the purchasing, card, and T&E policy \u2014 intake front door, approval limits, card controls, SaaS buying rules, expense policy, and vendor consolidation plan. Use when asked to \"write a purchasing policy\", \"set up spend approvals\", or \"create a T&E policy\".",
+    "path": "team/spend/skills/spend-policy/SKILL.md"
+  },
+  {
+    "name": "spend-recon",
+    "agent": "spend",
+    "team": "Finance",
+    "description": "Read-only audit of company spend \u2014 category and vendor map, SaaS license waste, renewal exposure, card and T&E policy, maverick spend, savings pipeline. Use when asked to \"audit our spend\", \"where are we overspending\", or \"find savings in our vendors\".",
+    "path": "team/spend/skills/spend-recon/SKILL.md"
+  },
+  {
+    "name": "spend-renewals",
+    "agent": "spend",
+    "team": "Finance",
+    "description": "Run contract renewals and negotiation \u2014 120-day calendar, usage and value review, leverage plan, target terms, savings capture, and consolidation decisions. Use when asked to \"prepare for this renewal\", \"negotiate this vendor contract\", or \"build a renewal calendar\".",
+    "path": "team/spend/skills/spend-renewals/SKILL.md"
   },
   {
     "name": "spine-api",
@@ -2625,6 +3234,69 @@
     "path": "team/spine/skills/spine-simplify/SKILL.md"
   },
   {
+    "name": "stack-clean",
+    "agent": "stack",
+    "team": "Marketing",
+    "description": "Plan CRM data hygiene and UTM governance \u2014 deduplication, naming taxonomy, validation rules and decay policy. Use when asked to \"clean up our CRM data\", \"fix our UTM tracking\", \"set up campaign naming conventions\".",
+    "path": "team/stack/skills/stack-clean/SKILL.md"
+  },
+  {
+    "name": "stack-recon",
+    "agent": "stack",
+    "team": "Marketing",
+    "description": "Read-only audit of the martech stack \u2014 tools, utilization, integrations, data quality, lead routing and definitions. Use when asked to \"audit our martech stack\", \"review our marketing ops setup\", \"why don't our marketing and CRM numbers match\".",
+    "path": "team/stack/skills/stack-recon/SKILL.md"
+  },
+  {
+    "name": "stack-route",
+    "agent": "stack",
+    "team": "Marketing",
+    "description": "Design lead scoring, routing rules and lifecycle stage definitions with SLAs and closed-won validation. Use when asked to \"design our lead scoring\", \"set up lead routing\", \"define MQL and SQL\".",
+    "path": "team/stack/skills/stack-route/SKILL.md"
+  },
+  {
+    "name": "staff-brief",
+    "agent": "staff",
+    "team": "Operations",
+    "description": "Prepare a board or leadership packet \u2014 ask-first structure, pre-read, risks, decision slate, rehearsal Q&A. Use when asked to \"prep the board meeting\", \"build the leadership offsite packet\", \"draft the board pre-read\".",
+    "path": "team/staff/skills/staff-brief/SKILL.md"
+  },
+  {
+    "name": "staff-decide",
+    "agent": "staff",
+    "team": "Operations",
+    "description": "Build a decision log and decision-rights map \u2014 DRI per decision class, reversibility tiers, review dates. Use when asked to \"set up a decision log\", \"who decides what\", \"stop us re-litigating decisions\".",
+    "path": "team/staff/skills/staff-decide/SKILL.md"
+  },
+  {
+    "name": "staff-recon",
+    "agent": "staff",
+    "team": "Operations",
+    "description": "Read-only audit of executive operating rhythm \u2014 calendar load, decision hygiene, open loops, follow-through rate. Use when asked to \"audit our exec cadence\", \"how healthy are our leadership meetings\", \"find our open loops\".",
+    "path": "team/staff/skills/staff-recon/SKILL.md"
+  },
+  {
+    "name": "stage-pick",
+    "agent": "stage",
+    "team": "Marketing",
+    "description": "Evaluate and select conferences and sponsorships with ICP density, true cost, expected pipeline and a go/no-go call. Use when asked to \"should we sponsor this conference\", \"pick which events to attend\", \"evaluate this sponsorship\".",
+    "path": "team/stage/skills/stage-pick/SKILL.md"
+  },
+  {
+    "name": "stage-recon",
+    "agent": "stage",
+    "team": "Marketing",
+    "description": "Read-only audit of the events and field marketing portfolio \u2014 spend, pipeline, follow-up speed and portfolio mix. Use when asked to \"audit our events\", \"which conferences are worth it\", \"review our event spend\".",
+    "path": "team/stage/skills/stage-recon/SKILL.md"
+  },
+  {
+    "name": "stage-run",
+    "agent": "stage",
+    "team": "Marketing",
+    "description": "Plan and execute an event or webinar end-to-end with pre-event outreach, on-site playbook, follow-up and ROI report. Use when asked to \"plan our conference presence\", \"run a webinar\", \"build an event follow-up plan\".",
+    "path": "team/stage/skills/stage-run/SKILL.md"
+  },
+  {
     "name": "surge-activation",
     "agent": "surge",
     "team": "Product",
@@ -2665,6 +3337,48 @@
     "team": "Product",
     "description": "Retention diagnosis + intervention plan \u2014 analyze the retention curve, identify the primary drop-off point, and produce a specific intervention plan with expected impact. Use when asked to \"improve retention\", \"why are users churning\", \"build a retention playbook\", \"reduce churn\", \"win-back campaign\", or \"users aren't coming back\".",
     "path": "team/surge/skills/surge-retention/SKILL.md"
+  },
+  {
+    "name": "swat-packet",
+    "agent": "swat",
+    "team": "Support",
+    "description": "Build the engineering escalation packet \u2014 repro steps, evidence, impact, workaround, severity, owner. Use when asked to \"escalate this to engineering\", \"write a bug report from this ticket\", or \"prepare a repro packet\".",
+    "path": "team/swat/skills/swat-packet/SKILL.md"
+  },
+  {
+    "name": "swat-recon",
+    "agent": "swat",
+    "team": "Support",
+    "description": "Audit the Tier-2/3 support engineering operation \u2014 repro rate, escalation quality, bug aging, bounce-backs. Read-only. Use when asked to \"audit our escalations\", \"how healthy is our Tier 2\", or \"why does engineering hate our tickets\".",
+    "path": "team/swat/skills/swat-recon/SKILL.md"
+  },
+  {
+    "name": "swat-repro",
+    "agent": "swat",
+    "team": "Support",
+    "description": "Reproduce a reported bug \u2014 environment matching, minimal failing case, log and trace diagnosis, bisection. Use when asked to \"reproduce this bug\", \"diagnose this ticket\", or \"figure out why the customer sees this error\".",
+    "path": "team/swat/skills/swat-repro/SKILL.md"
+  },
+  {
+    "name": "tally-plan",
+    "agent": "tally",
+    "team": "Finance",
+    "description": "Build the annual operating plan \u2014 revenue drivers, headcount plan, department budgets, base/upside/downside scenarios, and planning calendar. Use when asked to \"build the annual plan\", \"create next year's budget\", or \"build an operating plan\".",
+    "path": "team/tally/skills/tally-plan/SKILL.md"
+  },
+  {
+    "name": "tally-recon",
+    "agent": "tally",
+    "team": "Finance",
+    "description": "Read-only audit of planning and forecasting \u2014 plan existence, driver coverage, forecast accuracy, headcount-to-GL tie-out, budget owner cadence. Use when asked to \"audit our budget process\", \"how accurate is our forecast\", or \"review our planning model\".",
+    "path": "team/tally/skills/tally-recon/SKILL.md"
+  },
+  {
+    "name": "tally-variance",
+    "agent": "tally",
+    "team": "Finance",
+    "description": "Budget-vs-actual variance analysis \u2014 materiality filter, price/volume/mix decomposition, driver commentary, reforecast decision. Use when asked to \"explain the variance\", \"run budget vs actual\", or \"why did we miss plan\".",
+    "path": "team/tally/skills/tally-variance/SKILL.md"
   },
   {
     "name": "terms-privacy",
@@ -2842,6 +3556,27 @@
     "path": "team/tune/skills/tune-recon/SKILL.md"
   },
   {
+    "name": "vault-forecast",
+    "agent": "vault",
+    "team": "Finance",
+    "description": "Build the 13-week direct cash forecast and liquidity plan \u2014 receipts from AR, disbursements from AP and payroll, buffer, triggers, accuracy tracking. Use when asked to \"build a 13-week cash forecast\", \"forecast our liquidity\", or \"how much cash will we have in 90 days\".",
+    "path": "team/vault/skills/vault-forecast/SKILL.md"
+  },
+  {
+    "name": "vault-policy",
+    "agent": "vault",
+    "team": "Finance",
+    "description": "Write the treasury policy \u2014 bank structure and limits, investment policy statement, FX hedging rules, debt and facility review, payment controls. Use when asked to \"write a treasury policy\", \"set an investment policy\", or \"review this venture debt term sheet\".",
+    "path": "team/vault/skills/vault-policy/SKILL.md"
+  },
+  {
+    "name": "vault-recon",
+    "agent": "vault",
+    "team": "Finance",
+    "description": "Read-only audit of treasury \u2014 cash by institution, concentration, reach time, FX exposure, investment policy, debt covenants, payment controls. Use when asked to \"audit our treasury\", \"where is our cash held\", or \"check our bank concentration\".",
+    "path": "team/vault/skills/vault-recon/SKILL.md"
+  },
+  {
     "name": "vect-embed",
     "agent": "vect",
     "team": "Data Science",
@@ -2898,6 +3633,48 @@
     "path": "team/vigil/skills/vigil-recon/SKILL.md"
   },
   {
+    "name": "visa-expand",
+    "agent": "visa",
+    "team": "People",
+    "description": "Choose the employment vehicle for a new country and plan the first hire. Use when asked to \"hire in a new country\", \"should we use an EOR or open an entity\", or \"set up international payroll\".",
+    "path": "team/visa/skills/visa-expand/SKILL.md"
+  },
+  {
+    "name": "visa-recon",
+    "agent": "visa",
+    "team": "People",
+    "description": "Read-only audit of where employees and contractors work, how they are engaged, visa status, and cross-border tax risk. Use when asked to \"audit our global workforce\", \"where do our remote people live\", or \"check our visa and PE exposure\".",
+    "path": "team/visa/skills/visa-recon/SKILL.md"
+  },
+  {
+    "name": "visa-relocate",
+    "agent": "visa",
+    "team": "People",
+    "description": "Plan visa sponsorship, relocation, and cross-border remote work for an employee. Use when asked to \"sponsor a visa\", \"relocate an employee abroad\", or \"approve working from another country\".",
+    "path": "team/visa/skills/visa-relocate/SKILL.md"
+  },
+  {
+    "name": "voice-recon",
+    "agent": "voice",
+    "team": "Support",
+    "description": "Audit the voice-of-customer system \u2014 tag quality, survey coverage, reporting cadence, feedback loop closure. Read-only. Use when asked to \"audit our customer feedback process\", \"how good is our ticket tagging\", or \"do we have a VoC program\".",
+    "path": "team/voice/skills/voice-recon/SKILL.md"
+  },
+  {
+    "name": "voice-report",
+    "agent": "voice",
+    "team": "Support",
+    "description": "Produce the voice-of-customer report \u2014 CSAT/NPS/CES drivers, ranked themes, product asks with evidence. Use when asked to \"write the VoC report\", \"what are customers complaining about\", or \"summarize support feedback for product\".",
+    "path": "team/voice/skills/voice-report/SKILL.md"
+  },
+  {
+    "name": "voice-taxonomy",
+    "agent": "voice",
+    "team": "Support",
+    "description": "Design the ticket tagging taxonomy \u2014 contact drivers, product areas, sentiment, governance and tagging rules. Use when asked to \"design our ticket tags\", \"clean up our tagging\", or \"build a contact reason taxonomy\".",
+    "path": "team/voice/skills/voice-taxonomy/SKILL.md"
+  },
+  {
     "name": "volt-driver",
     "agent": "volt",
     "team": "Engineering",
@@ -2931,6 +3708,48 @@
     "team": "Engineering",
     "description": "Firmware reconnaissance for takeover \u2014 inventory the MCU, peripherals, RTOS, protocols, OTA, power management, and assess code quality with risk flags. Use when asked to \"understand this firmware\", \"device inventory\", or \"embedded assessment\".",
     "path": "team/volt/skills/volt-recon/SKILL.md"
+  },
+  {
+    "name": "vox-allocate",
+    "agent": "vox",
+    "team": "Marketing",
+    "description": "Build or rebalance the marketing budget across capture, create and brand with targets and kill criteria. Use when asked to \"allocate the marketing budget\", \"plan next quarter's marketing spend\", \"rebalance our channel mix\".",
+    "path": "team/vox/skills/vox-allocate/SKILL.md"
+  },
+  {
+    "name": "vox-org",
+    "agent": "vox",
+    "team": "Marketing",
+    "description": "Design the marketing team structure, hiring order, ownership map and agency/in-house split. Use when asked to \"design our marketing org\", \"who should we hire first in marketing\", \"set up the marketing team structure\".",
+    "path": "team/vox/skills/vox-org/SKILL.md"
+  },
+  {
+    "name": "vox-recon",
+    "agent": "vox",
+    "team": "Marketing",
+    "description": "Read-only audit of the current marketing function \u2014 spend, channel mix, org shape, metric ownership, plan quality. Use when asked to \"audit our marketing\", \"review our marketing strategy\", \"where does our marketing money go\".",
+    "path": "team/vox/skills/vox-recon/SKILL.md"
+  },
+  {
+    "name": "wage-bands",
+    "agent": "wage",
+    "team": "People",
+    "description": "Design or refresh pay bands, job levels, geo differentials, and market benchmarks. Use when asked to \"build pay bands\", \"benchmark these roles\", or \"set a geo pay policy\".",
+    "path": "team/wage/skills/wage-bands/SKILL.md"
+  },
+  {
+    "name": "wage-equity",
+    "agent": "wage",
+    "team": "People",
+    "description": "Run pay equity regression audits and design equity refresh programs. Use when asked to \"audit pay equity\", \"run a gender pay gap analysis\", or \"design an equity refresh\".",
+    "path": "team/wage/skills/wage-equity/SKILL.md"
+  },
+  {
+    "name": "wage-recon",
+    "agent": "wage",
+    "team": "People",
+    "description": "Read-only audit of current compensation structure, bands, compa-ratios, and exceptions. Use when asked to \"audit our comp\", \"are we paying fairly\", or \"review pay bands\".",
+    "path": "team/wage/skills/wage-recon/SKILL.md"
   },
   {
     "name": "warden-audit",
@@ -2973,6 +3792,27 @@
     "team": "Engineering",
     "description": "Produce a threat model \u2014 assets, ranked threats, mitigations, accepted risks. Use when asked to \"threat model this\", \"what could go wrong security-wise\", \"map our attack surface\", or before designing any security-sensitive feature.",
     "path": "team/warden/skills/warden-threat/SKILL.md"
+  },
+  {
+    "name": "wiki-audit",
+    "agent": "wiki",
+    "team": "Support",
+    "description": "Score KB articles for quality and freshness and decide keep, fix, merge, or retire with a prioritized work queue. Use when asked to \"audit these help articles\", \"clean up our knowledge base\", or \"find stale articles\".",
+    "path": "team/wiki/skills/wiki-audit/SKILL.md"
+  },
+  {
+    "name": "wiki-gaps",
+    "agent": "wiki",
+    "team": "Support",
+    "description": "Mine ticket and search data for knowledge base content gaps, rank by volume and deflectability, and brief writers. Use when asked to \"find KB content gaps\", \"what articles should we write next\", or \"which tickets could docs have prevented\".",
+    "path": "team/wiki/skills/wiki-gaps/SKILL.md"
+  },
+  {
+    "name": "wiki-recon",
+    "agent": "wiki",
+    "team": "Support",
+    "description": "Audit the knowledge base operation \u2014 article inventory, freshness, coverage, search health, deflection baseline. Read-only. Use when asked to \"audit our knowledge base\", \"how healthy is our help center\", or \"why is our KB not deflecting tickets\".",
+    "path": "team/wiki/skills/wiki-recon/SKILL.md"
   },
   {
     "name": "wire-prototype",
