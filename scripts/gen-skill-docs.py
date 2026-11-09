@@ -59,7 +59,7 @@ def render(tmpl_text, sections_dir):
     if not fm:
         errors.append("missing frontmatter")
         return text, errors
-    return text[: fm.end()] + MARKER + text[fm.end() :], errors
+    return text[: fm.end()] + "\n" + MARKER + text[fm.end() :], errors
 
 
 def run(team_dir=TEAM_DIR, sections_dir=SECTIONS_DIR, check=False):
