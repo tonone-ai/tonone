@@ -1,9 +1,9 @@
 ---
 name: form-critique
 description: |
-  Expert 5-dimension design critique, scored 0-10 with a punch list. Use when asked to "critique this design", "expert review", "score my design", "design feedback", or "review this UI". Unlike /form-audit (technical consistency QA), this judges craft. Say "as a report" for an HTML report.
+  Expert 5-dimension design critique, scored 0-10 with a punch list. Use when asked to "critique this design", "expert review", "score my design", "design feedback", or "review this UI". Unlike /form-audit (technical consistency QA), this judges craft. Isolated reviewer plus detector evidence. "as a report" for HTML.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.2.0
+version: 0.3.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -61,6 +61,34 @@ Ask if not provided: "What is this design trying to accomplish, and who is it fo
 
 ---
 
+## Phase 1b: Isolated-Reviewer Protocol
+
+Two independent assessments, reconciled. Prevents the detector or the reviewer's own priors from anchoring the verdict.
+
+**Assessment A: design review (taste).** Dispatch a subagent (Task/Agent) with ONLY the artifact (paths, screenshots, URL) plus the brief or DESIGN.md. Do NOT pass lint output or any prior findings. It runs Phases 2-3 (cold read, 5-dimension scoring) and returns scores, evidence, and a Keep/Fix/Quick-wins list.
+
+**Assessment B: detector evidence (mechanical).** A separate subagent runs the deterministic linter and summarizes hits by rule and severity (invocation per `team/form/skills/form-lint/SKILL.md`):
+
+```bash
+node "${CLAUDE_PLUGIN_ROOT}/team/form/scripts/design-lint/design-lint.js" <paths> --json --tier all
+```
+
+**Ordering rule:** A must finish before B's results are shown to anyone who will judge (including Form). B may run in parallel, but its output stays sealed until A returns.
+
+**Reconcile** (Form, after both are in):
+
+- Agreements: found by both. Highest confidence, fix first.
+- A-only: taste calls the detector cannot see (hierarchy, coherence, innovation). Keep, weigh by evidence.
+- B-only: mechanical misses A overlooked (contrast, token drift, slop patterns). Treat as defects.
+- Conflicts: A praises what B flags, or the reverse. State both, decide, give the reason.
+
+**Degraded modes (never fail):**
+
+- node missing, detector absent, or it errors: say so in the output, "detector unavailable - critique is assessment A only", and continue.
+- No subagent support: run A, then B, sequentially in-context; note "reduced isolation: same context". Still do not read B's output until A's scores are written down.
+
+---
+
 ## Phase 2: Cold Read
 
 Before scoring, write a 2–3 sentence cold read: what you see and feel before knowing anything about the intent. This surfaces what real users experience before context primes them.
@@ -68,6 +96,8 @@ Before scoring, write a 2–3 sentence cold read: what you see and feel before k
 ---
 
 ## Phase 3: 5-Dimension Scoring
+
+(Run inside assessment A; reconciled scores use B's evidence for Craft and Function.)
 
 Score each dimension 0–10. Be honest — scores above 8 must be earned, not given as encouragement.
 
@@ -201,12 +231,20 @@ Three sections — be specific, not generic:
 
 ---
 
+## Phase 7: Persist
+
+Write the final critique to `.tonone/critique/<slug>.md` (create the directory). Slug: target name plus date, e.g. `checkout-page-2026-11-09`. Contents: A (scores, cold read, punch list), B (detector summary or "unavailable"), reconciliation (agreements, A-only, B-only, conflicts), verdict (total/50, band), next steps (ordered). Mention the path in the CLI receipt.
+
+---
+
 ## Anti-Patterns
 
 - Scores 7–8 across the board with no explanation — that is not a critique, that is conflict avoidance
 - "The colors are nice" — name the palette relationship and why it works or doesn't
 - Generic fixes ("improve visual hierarchy") without specifying exactly what to change
 - Praising innovation for novelty alone — a bizarre design choice is not innovative unless it serves the work
+- Showing the detector output to the reviewer before assessment A is done
+- Silently dropping assessment B when the detector fails; say it is unavailable
 - Skipping the cold read — rationalization ruins honest first impressions
 
 ---

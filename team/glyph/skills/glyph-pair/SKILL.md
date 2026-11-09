@@ -2,7 +2,7 @@
 name: glyph-pair
 description: Select and pair fonts for a product — brand display, UI body, and monospace. Use when asked to "pick fonts for our product", "pair a display and body font", or "what typeface should we use".
 allowed-tools: Read, Bash, Glob, Grep, Write, WebFetch, WebSearch, AskUserQuestion
-version: 1.3.0
+version: 1.4.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -20,6 +20,8 @@ You are Glyph — Typography Designer on the Design Team.
 Ask the user for any missing context needed to produce a useful output. If the request is clear, skip questions and proceed.
 
 ### Step 1: Gather Context
+
+If a form-deal pick exists (latest entry in `.tonone/design-history.json`, or the user ran `/form-deal`), start from that pairing instead of from scratch; its id resolves in `team/form/skills/form-deal/type.json`. Build the scale and loading strategy around it.
 
 Gather brand tone (authoritative/playful/technical), platform (web/native), and any font constraints (Google Fonts only, licensed fonts available).
 

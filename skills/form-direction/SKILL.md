@@ -3,7 +3,7 @@ name: form-direction
 description: |
   Design direction advisor: generates 3 differentiated visual directions with live HTML demos. Use when the brief is vague ("make something nice", "pick a style", "explore directions") or no design system exists. Richer than /form-style: real demos, not just recommendations. Also "design direction", "give me options".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -31,6 +31,29 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 ---
 
+## Step 0: Cultural-world seeding
+
+Directions drawn from design-twitter references converge. Seed from the audience's own world instead. No network, no remote catalog.
+
+1. **List 7 cultural or visual systems the audience lives in** (not design references). One line each: name, plus the visual vocabulary it lends (type, color, texture, layout grammar). Example, freight-logistics tool:
+   - Shipping manifests: dense tabular grids, monospace stamps, carbon-copy tints
+   - Port and yard signage: high-contrast sans, hazard yellow/black, pictogram-first
+   - CB-radio culture: handle-based identity, callsign lettering, chunky dials
+   - Truck-stop diners: enamel menu boards, script plus slab pairing, checker and chrome
+   - IATA cargo labels: standardized codes, thick rule dividers, barcode rhythm
+   - Pallet and crate stencils: spray-stencil caps, bridge-cut letterforms, plywood tone
+   - Tide and route tables: tiny numerals, hairline rules, margin annotations
+2. **Name the rut**: one sentence on the look this category always ships (e.g. "navy sidebar, blue primary, rounded white cards"). Excluded unless the brief demands it.
+3. **Deal 3 of 7** so the choice is not model-preference-driven:
+   ```bash
+   python3 "${CLAUDE_PLUGIN_ROOT}/team/form/scripts/direction-roulette/roulette.py" --seed <S> --pick 3 "world 1" "world 2" ... "world 7"
+   ```
+   Omit `--seed` for a time-based seed; the script prints the seed used. Record it in the output so the deal is reproducible. Exit 2 means usage error (fewer items than picks); fix the list.
+4. **History**: if `.tonone/design-history.json` exists (written by `/form-deal`), read it. Do not reuse the last direction world; re-deal (new seed) if one of the 3 matches it.
+5. The 3 dealt worlds are the raw material for Phases 3-4: each direction develops one world into a coherent system. Still obey the one-school-per-direction rule; map each world to the school it fits best.
+
+---
+
 ## Phase 1: Extract the Brief (max 3 questions)
 
 Ask only if unclear:
@@ -51,7 +74,7 @@ Write a 100–200 word restatement of the core need: audience, context, emotiona
 
 ## Phase 3: Recommend 3 Design Directions
 
-**Hard rule:** each direction must come from a different school. No two directions from the same school.
+**Hard rule:** each direction develops one dealt world (Step 0) and comes from a different school. No two directions from the same school.
 
 ### The 5 Schools
 
@@ -214,6 +237,8 @@ Use specific visual traits, not style labels:
 - Writing descriptions without generating demos — users can't evaluate prose
 - Using Lorem ipsum instead of real content in demos — kills realism
 - Defaulting to the "safe SaaS blue + Inter" template for every direction
+- Picking the 3 worlds by taste instead of dealing them with the script
+- Shipping the rut because it feels safe
 - Generating demos without screenshotting — CLI receipt needs the image path
 
 ## Delivery

@@ -42,7 +42,7 @@ SHORT_FORM_SKILLS = {"apex-status"}
 # Root-level cross-agent skills — not tied to any single agent in team/.
 # Exempt from the agent-prefix rule and from output-kit/atlas-report refs
 # because they do not produce structured CLI output.
-SPECIAL_SKILLS = {"tonone-onboard", "contribute"}
+SPECIAL_SKILLS = {"tonone-onboard", "tonone-doctor", "contribute"}
 
 # Agent entry-point skills — single-word names (/apex, /helm, /forge, etc.).
 # These are intake routers: the user hands the agent a task and the skill
