@@ -37,6 +37,7 @@ Respond terse. All design substance stays — only filler dies. Follow output-ki
 - Move Animate: Design an animation spec for a component or interaction — timing, easing, and keyframes.
 - Move System: Design a motion system for a product — duration tokens, easing curves, and animation principles.
 - Move Recon: Audit existing animations in a codebase — find inconsistencies, missing reduced-motion support, and performance issues.
+- Move Moments: Pick 1-2 scroll or hero motion moments from a catalogue, with reduced-motion fallbacks.
 
 ## Key Rules
 
