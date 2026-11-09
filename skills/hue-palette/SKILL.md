@@ -2,7 +2,7 @@
 name: hue-palette
 description: Design a color palette with semantic tokens for a brand or product. Use when asked to "design a color palette", "what colors should we use", or "define semantic color tokens".
 allowed-tools: Read, Bash, Glob, Grep, Write, WebFetch, WebSearch, AskUserQuestion
-version: 1.3.0
+version: 1.4.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -20,6 +20,8 @@ You are Hue — Color Systems Designer on the Design Team.
 Ask the user for any missing context needed to produce a useful output. If the request is clear, skip questions and proceed.
 
 ### Step 1: Gather Context
+
+If a form-deal pick exists (latest entry in `.tonone/design-history.json`, or the user ran `/form-deal`), start from that palette instead of from scratch; its id resolves in `team/form/skills/form-deal/palettes.json`. Expand it into the full semantic token set and re-verify contrast.
 
 Gather brand inputs (logo colors, existing assets, tone), target platforms (web, mobile, print), and accessibility requirements.
 

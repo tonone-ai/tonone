@@ -3,7 +3,7 @@ name: form-brief
 description: |
   Translate a design brief (I-Lang or plain English) into a concrete DESIGN.md and optional HTML token preview, resolving palette, typography, layout, mood and density to CSS tokens. Use when asked to "create a design brief", "write a DESIGN.md", "design brief for X", or "I-Lang brief".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.1.0
+version: 0.2.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -158,6 +158,7 @@ Resolve symbolic values to concrete CSS tokens before writing DESIGN.md.
 
 ## Phase 1: Resolve dimensions
 
+0. If `PRODUCT.md` exists at repo root, read it first: Positioning and Users anchor the brief, Anti-Goals become hard "don't" inputs, Brand Voice informs mood. If missing, suggest `/helm-init` (do not block). If `DESIGN.md` already exists, start from its tokens rather than from defaults.
 1. Read the brief (I-Lang or natural language)
 2. Map every stated value to the closed vocabulary
 3. Apply defaults for unspecified dimensions
@@ -209,6 +210,34 @@ Dials must agree with the resolved `density` dimension (spacious ~1-3, balanced 
 
 ---
 
+## Phase 1d: Classify form-kind and visitor mode
+
+Two classifications, made once, written into the brief. Both are inputs to `/form-deal` and to every asset and motion choice downstream.
+
+**form_kind** — pick one: `software`, `gaming`, `tech`, `product` (physical goods), `service`, `place` (venue, hospitality, location).
+
+| form_kind | Allowed assets / effects                                            | Forbidden                                                   |
+| --------- | ------------------------------------------------------------------- | ----------------------------------------------------------- |
+| software  | Real UI screenshots, product diagrams, real data, quiet transitions | Stock people at laptops, 3D blobs as hero, fake logos wall  |
+| gaming    | Key art, characters, in-engine footage, bold motion, strong color   | Corporate SaaS card grids, stock photography                |
+| tech      | Hardware renders, spec tables, exploded diagrams, measured motion   | Generic circuit-board textures, glowing orbs                |
+| product   | Real product photography, material close-ups, scale and context     | Abstract gradients in place of the product, mockup-only art |
+| service   | Real people and work in progress, outcomes, process steps, pricing  | Handshake stock, vague "solutions" iconography              |
+| place     | Real photography of the place, maps, hours, entrances, menus        | Abstract gradients, fake dashboards, illustrated filler     |
+
+**visitor_mode** — pick one primary:
+
+| Mode       | What it changes                                                                                                |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
+| Persuade   | Convert or sell: moderate density, one dominant CTA, motion budget medium, large display type                  |
+| Operate    | Get a task done in an app: high density, motion for state feedback only, compact type, CTAs are plain controls |
+| Read       | Long-form or docs: low density, near-zero motion, body 17-19px at 60-75ch, CTA is navigation                   |
+| Experience | Immersive brand or game: variable density, highest motion budget, expressive type, CTA is a destination        |
+
+Write `form_kind` and `visitor_mode` into DESIGN.md (Visual Theme) and the CLI receipt. Dials from Phase 1c must agree with the visitor mode (Operate ~ high density, low motion).
+
+---
+
 ## Phase 2: Generate DESIGN.md
 
 Check if a DESIGN.md exists. If it does, ask: "A DESIGN.md already exists. Overwrite or skip?"
@@ -221,6 +250,8 @@ Write the file with all 9 sections. Every hex, font stack, and spacing value mus
 ## Visual Theme & Atmosphere
 
 - Mood: [resolved mood]
+- form_kind: [software | gaming | tech | product | service | place]
+- visitor_mode: [Persuade | Operate | Read | Experience]
 - Feel: [derived — professional_minimal → "Clean, confident, restrained"; playful → "Warm, approachable, energetic"; brutalist → "Exposed structure, typographic force"; editorial → "Curated, calm, authoritative"]
 - References: [mood-appropriate: editorial → "Monocle, Cereal, The Guardian"; brutalist → "Dazed, WIRED, Neue Grafik"]
 
@@ -338,6 +369,7 @@ CLI box first:
 │ Type:     [typography] / [display]                           │
 │ Mood:     [mood] · [density]                                 │
 │ Dials:    V[n] M[n] D[n]                                     │
+│ Kind:     [form_kind] · [visitor_mode]                       │
 │ Layout:   [layout]                                           │
 │ Exclude:  [list or "none"]                                   │
 │                                                              │
