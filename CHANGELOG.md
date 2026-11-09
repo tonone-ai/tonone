@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.20.0] - 2026-11-09
+
 ### Added
 
 - **`/form-deal`** — deterministic palette + type-pairing deal by trade, page kind and form-kind from 12 original palettes and 10 Google Fonts pairings (`team/form/skills/form-deal/*.json`), WCAG AA and attractor-basin checked by `deal.py --check`. Avoids the last N picks recorded in `.tonone/design-history.json`; feeds `/hue-palette` and `/glyph-pair`.
@@ -21,9 +23,19 @@ All notable changes to this project will be documented in this file.
 - **`scripts/measure-context.py`** — estimates the startup cost of the skill and agent listing (chars/4). Full bundle: ~37,500 tokens; `web-app` profile: ~3,300.
 - **`/form-lint`** — deterministic design lint, pure Node, no deps (`team/form/scripts/design-lint/`). 20 rules: 7 "immediate" (gradient-text, side-tab, bounce-easing, low-contrast, tiny-text, pure-black-white, DESIGN.md color drift), 13 advisory taste rules. CLI exits 0/1/2 with `--json` for CI. Suppress inline or via `.tonone/design.json` `ignoreRules`/`ignoreFiles` with a reason. Opt-in PostToolUse hook `team/form/hooks/form-design-lint.js` surfaces immediate findings on edited UI files only, deduped per session, capped at 5; inert unless `"hook": true` or `TONONE_DESIGN_LINT=on`; never blocks; fails open. Ships with a false-positive silence corpus.
 - **`/copy-slop`** — slop checks added to `lib/copy-gate/gate.py` (`--slop` flag or `slop` profile): AI-tell words and stock phrases, residue (always FAIL), capped devices (em-dash rate, two-fragment headings, contrast frames, -ing riders, triads, rhetorical openers), WARN/FAIL budgets, and waivers for client terms (`--waive`, `.tonone/copy-waivers.json`, reason required). Wired into `/copy-audit`, `/pitch-copy`, `/form-web`.
-- **`/apex-decisions`** — append-only `.tonone/decisions.jsonl` (supersede, redact) with a SessionStart hook that resurfaces active decisions (irreversible first, capped at 10 entries / ~1500 chars). Silent when the file is absent. ELEPHANT.md stays the narrative/learnings log; no separate learn store.
+- **`/apex-decisions`** — append-only `.tonone/decisions.jsonl` (supersede, redact) with a SessionStart hook that resurfaces active decisions (irreversible first, capped at 10 entries / ~1500 chars). Silent when the file is absent. ELEPHANT.md stays the narrative log; one-line learnings go in the same file via learn mode (see below).
 - **`scripts/gen-skill-docs.py`** — SKILL.md templating from `SKILL.md.tmpl` + shared `skills/_sections/` (`{{> name}}`), with `--check` drift mode in CI. Piloted on 6 skills (spine-recon, spine-design, flux-recon, vigil-recon, relay-recon, proof-recon); output byte-identical apart from the generated marker.
 - **`docs/agent-teams.md`** (subagents vs agent teams, and when Apex uses each) and **`docs/companions.md`** (recommended MCP/plugin companions and which agents use them; nothing bundled).
+- **`/apex-decisions` learn mode** — `learn` records one-line learnings (`kind:"learning"`) in `.tonone/decisions.jsonl`; `learnings [--query]` lists them, `confirm` re-validates one. The SessionStart hook resurfaces up to 3 learnings after decisions, inside the existing 10-entry / ~1500-char cap. Durable project-wide facts get promoted to ELEPHANT.md, then the jsonl entry is superseded. No separate store.
+- **`/apex-second-opinion`** — opt-in cross-model review of a diff or plan via `codex`, `gemini` or `llm` when on PATH. The payload is redacted with Warden's secret rules (`team/warden/hooks/rules.json`), written to `.tonone/second-opinion/` and hashed; `team/apex/scripts/second_opinion.py` refuses to send unless `--consent <sha256>` matches. Findings fold into the `/apex-review` schema as `source: "second-opinion"`, `verified: false`, and stay out of the verdict until verified.
+- **`/helm-autoplan`** — `/helm-brief`, then parallel Crest/Draft/Spine/Vigil reviews, then one decision brief. Routine findings are auto-decided by stated principles (security and compliance never are); taste calls (max 5) surface with a recommendation. GO/NO-GO, then `/helm-handoff`. Saved to `.tonone/briefs/`.
+- **`/prism-redesign`** — scan (`form-lint --json` + `/prism-audit`), diagnose, fix in batches, re-lint; max 3 loops. Direction changes route to `/form-direction`.
+- **`/cut-fetch`** — fetch licensed assets and icons by subject into the project with `CREDITS.md` + `credits.json`. Licence review for Wikimedia Commons, Unsplash, Lucide, Heroicons, Tabler and Simple Icons, with a trademark caution for brand marks. Never hotlinks; nothing is bundled in tonone.
+- **`/move-moments`** — catalogue of 10 scroll and hero moments, each with a `prefers-reduced-motion` fallback, gated by `MOTION_INTENSITY`, max 1-2 per page.
+- **`docs/design-md.md`** — one DESIGN.md format: `/form-brief` and `/form-document` write the same frontmatter and sections (brief-only data in `form_kind`, `visitor_mode`, `mood`, `direction` keys). Legacy `/form-brief` headings still parse and migrate on next write. `design-lint` also reads `rgb()`/`hsl()` colors.
+- **`docs/dogfood.md`** — one-week scorecard with keep/tune/cut thresholds and collection commands. Opt-in `TONONE_METRICS=on` writes counters to `.tonone/metrics.jsonl` (apex-guard ask/deny, form-lint hook, copy-slop runs, apex-review merge, apex-decisions resurfaced); `tonone-doctor --usage [--since 7d]` reads them. No network; off by default.
+- **`scripts/eval-select.py` + `tests/evals/`** — touchfile-based selection of deterministic behavioral evals (form-lint, copy-slop); `--run` executes those whose touchfiles changed.
+- **`bundle/UNBUNDLED.txt`** lists ROOT_ONLY and grandfathered skills; `sync-bundles.py --check` and `tests/test_structure.py` fail on any skill in no bundle. `sync-bundles.py` now syncs `bundle/<team>/scripts/`.
 
 ### Changed
 
@@ -32,6 +44,16 @@ All notable changes to this project will be documented in this file.
 - **`/apex-review` v2** — parallel lens fan-out (warden, spine, flux, proof) with a shared JSON findings schema (`findings.schema.json`), evidence-required merge via `team/apex/scripts/merge_findings.py`, and a red-team pass when the diff exceeds 200 lines, any CRITICAL survives, or `--red` is passed. Verdict: SHIP / FIX-FIRST / BLOCK.
 - **33 more descriptions brought under 320 characters** (e.g. `pave-golden`, `helm-arbiter`, `helm-recon`, `apex-diagnose`, `form-critique`).
 - **`/helm-office-hours` and `/helm-handoff`** now spell out the Helm-to-Apex brief field map.
+- **Bundles carry the 1.20 skills.** `engineering-team`, `product-team` and `full-team` include them plus the hooks and scripts they need (engineering: apex-guard, apex-decisions, apex-retro, apex-skillify, apex-second-opinion, tonone-doctor, prism-variants/harden/extract/redesign; product: form-deal/document/lint/bolder/quieter/distill/polish/critique/brief/direction, helm-init, helm-office-hours, helm-autoplan, copy-slop, cut-fetch, move-moments). Bundle `hooks.json` now registers the opt-in apex-guard, apex-decisions and form-design-lint hooks.
+- **`/apex-review` findings schema** gains optional `source` and `verified`; `merge_findings.py` lists unverified second-opinion findings separately.
+- **Helm brief fields unified with Apex's handoff schema** (`problem`, `target_user`, `success_criteria`, `constraints`, `feasibility_ask`, `out_of_scope`) in `helm.md`, `/helm-brief`, `/helm-office-hours` and `/helm-handoff`; `/helm-handoff` maps legacy field names on read.
+- **gen-skill-docs rollout** — output-kit line normalized in 136 skills (3 dash variants to one); 504 more skills templated (output-kit and delivery sections). Output byte-identical.
+- **CI** sets up Node explicitly and runs all of `tests/hooks/`, the root Node tests and the evals.
+- **Roster is 140 agents, 573 skills.**
+
+### Removed
+
+- **`tests/hooks/test-worktree-gate.js` and `test-worktree-close.js`** — they exercised hooks removed in #104.
 
 ## [1.19.0] - 2026-11-07
 

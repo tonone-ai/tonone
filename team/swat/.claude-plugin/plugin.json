@@ -1,6 +1,6 @@
 {
   "name": "swat",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Tier-2/3 support engineering — bug reproduction, log and trace diagnosis, engineering escalations with repro packets, workarounds, bug-to-fix feedback loop",
   "author": {
     "name": "tonone-ai",

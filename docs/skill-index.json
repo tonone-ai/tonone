@@ -3,7 +3,7 @@
     "name": "apex-decisions",
     "agent": "apex",
     "team": "Engineering",
-    "description": "Append-only log of settled project decisions, shown at session start. Use when asked to \"log this decision\", \"record that we decided\", \"supersede decision\", or \"what did we decide\".",
+    "description": "Append-only log of settled project decisions and learnings, shown at session start. Use when asked to \"log this decision\", \"record that we decided\", \"supersede decision\", \"what did we decide\", \"/learn\", \"remember this lesson\", or \"show learnings\".",
     "path": "team/apex/skills/apex-decisions/SKILL.md"
   },
   {
@@ -68,6 +68,13 @@
     "team": "Engineering",
     "description": "Reach ANY tonone specialist on demand, even ones not installed in this session's roster \u2014 no restart needed. Use when asked \"which agent handles this\", \"reach a specialist we didn't install\", \"route this to the right agent\", or whenever a scoped apex-profile roster is missing the right hat for the job.",
     "path": "team/apex/skills/apex-route/SKILL.md"
+  },
+  {
+    "name": "apex-second-opinion",
+    "agent": "apex",
+    "team": "Engineering",
+    "description": "Optional cross-model review of a diff or plan through an external CLI (codex, gemini, llm) already on PATH, with redaction and per-run consent. Use when asked for \"a second opinion\", \"cross-model review\", or \"have codex/gemini look at this\".",
+    "path": "team/apex/skills/apex-second-opinion/SKILL.md"
   },
   {
     "name": "apex-skillify",
@@ -817,6 +824,13 @@
     "team": "Product",
     "description": "Build a product roadmap with sequenced bets and explicit tradeoffs. Use when asked to \"build a roadmap\", \"prioritize the backlog strategically\", \"what do we build next quarter\", \"sequence our bets\", \"what should we focus on\", or \"product strategy for the next N months\".",
     "path": "team/crest/skills/crest-roadmap/SKILL.md"
+  },
+  {
+    "name": "cut-fetch",
+    "agent": "cut",
+    "team": "Design",
+    "description": "Fetch licensed real photos and icons by subject, with credits recorded. Use when asked to \"find a photo of\", \"get an icon for\", \"fetch stock imagery\", or \"source real assets\". Local files only, per-asset licence record, refuses unclear licences.",
+    "path": "team/cut/skills/cut-fetch/SKILL.md"
   },
   {
     "name": "cut-icon",
@@ -1792,6 +1806,13 @@
     "path": "team/helm/skills/helm-arbiter/SKILL.md"
   },
   {
+    "name": "helm-autoplan",
+    "agent": "helm",
+    "team": "Product",
+    "description": "Chained brief-to-decision pipeline. Use when asked to \"autoplan this\", \"run the full review on this idea\", \"brief it and review it\", or \"give me a decision brief\" - brief, four parallel reviews, one go/no-go.",
+    "path": "team/helm/skills/helm-autoplan/SKILL.md"
+  },
+  {
     "name": "helm-brief",
     "agent": "helm",
     "team": "Product",
@@ -2408,6 +2429,13 @@
     "path": "team/move/skills/move-animate/SKILL.md"
   },
   {
+    "name": "move-moments",
+    "agent": "move",
+    "team": "Design",
+    "description": "Catalogue of scroll and hero motion moments with implementation sketches and reduced-motion fallbacks. Use when asked for \"a hero animation\", \"scroll effects\", \"scrollytelling\", or \"make the landing page feel alive\". Picks at most 1-2 per page, scaled by MOTION_INTENSITY.",
+    "path": "team/move/skills/move-moments/SKILL.md"
+  },
+  {
     "name": "move-recon",
     "agent": "move",
     "team": "Design",
@@ -2728,6 +2756,13 @@
     "team": "Engineering",
     "description": "Frontend reconnaissance \u2014 map the component tree, routing, state management, build config, and assess quality. Use when asked to \"understand this frontend\", \"frontend assessment\", or \"what's the UI built with\".",
     "path": "team/prism/skills/prism-recon/SKILL.md"
+  },
+  {
+    "name": "prism-redesign",
+    "agent": "prism",
+    "team": "Engineering",
+    "description": "Fix an existing UI in a bounded scan, diagnose, fix, re-lint loop. Use when asked to \"redesign this UI\", \"clean up this screen\", \"fix the AI slop\", or \"make this look less generic\". Lint-driven, max 3 loops, never changes brand direction silently.",
+    "path": "team/prism/skills/prism-redesign/SKILL.md"
   },
   {
     "name": "prism-stack",

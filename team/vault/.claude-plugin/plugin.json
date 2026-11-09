@@ -1,6 +1,6 @@
 {
   "name": "vault",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Treasury and cash management — cash positioning, bank structure, FX exposure, investment policy, debt and credit facilities, liquidity forecasting",
   "author": {
     "name": "tonone-ai",

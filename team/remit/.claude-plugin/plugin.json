@@ -1,6 +1,6 @@
 {
   "name": "remit",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Accounts payable and procure-to-pay — vendor onboarding, three-way match, payment runs, approvals, duplicate and fraud controls",
   "author": {
     "name": "tonone-ai",

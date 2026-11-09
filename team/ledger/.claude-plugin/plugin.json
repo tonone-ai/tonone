@@ -1,6 +1,6 @@
 {
   "name": "ledger",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Controller and accounting — general ledger, month-end close, revenue recognition (ASC 606), reconciliations, audit readiness",
   "author": {
     "name": "tonone-ai",
