@@ -33,7 +33,7 @@ done
 python3 "$doc" --json
 ```
 
-Scope is auto-detected from the working directory: a user project (`.tonone/` files, DESIGN.md/PRODUCT.md, hooks, opt-in hook state) or the tonone plugin repo (also runs the `gen-skill-docs`, `sync-skills`, `sync-bundles` checks, skill-index staleness, headline counts). Use `--root DIR` to point elsewhere. Use the box output (drop `--json`) for a quick look.
+Scope is auto-detected from the working directory: a user project (`.tonone/` files, DESIGN.md/PRODUCT.md, hooks, opt-in hook state) or the tonone plugin repo (also runs the `gen-skill-docs`, `sync-skills`, `sync-bundles` checks, skill-index staleness, headline counts). Use `--root DIR` to point elsewhere. Use the box output (drop `--json`) for a quick look. `--usage [--since 7d]` summarizes the opt-in `.tonone/metrics.jsonl` counters (enable with `TONONE_METRICS=on`).
 
 ### Step 2: Interpret
 

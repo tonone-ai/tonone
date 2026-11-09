@@ -56,7 +56,7 @@ Classify changed files into lenses: **security** (auth, secrets, input handling,
 
 A finding needs `evidence`: quoted code or command output. Not an opinion.
 
-**Findings schema** (JSON Schema: `team/apex/skills/apex-review/findings.schema.json`):
+**Findings schema** (JSON Schema: `team/apex/skills/apex-review/findings.schema.json`; optional per-finding `source`, `verified`: `source:"second-opinion"` findings stay in `unverified` and out of the verdict until `verified:true`):
 
 ```json
 {

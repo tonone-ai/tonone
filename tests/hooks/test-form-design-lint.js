@@ -336,3 +336,31 @@ test("hook: finishes well under the time budget", () => {
   runHook(hookInput(dir, "a.tsx"));
   assert.ok(Date.now() - t < 1500);
 });
+
+// ── opt-in metrics ─────────────────────────────────────────────────────────
+test("metrics: on writes form-lint hook_shown; output unchanged; off writes nothing", () => {
+  const dirA = project({ "a.tsx": GRAD }, { hook: true });
+  const dirB = project({ "a.tsx": GRAD }, { hook: true });
+  const sid = "fixed-sid-" + Math.random();
+  const mk = (d) => ({
+    ...hookInput(d, "a.tsx"),
+    session_id: sid + path.basename(d),
+  });
+  const off = runHook(mk(dirA), { TONONE_METRICS: "" });
+  assert.ok(off.stdout.includes("design-lint"));
+  assert.ok(!fs.existsSync(path.join(dirA, ".tonone/metrics.jsonl")));
+  const on = runHook(mk(dirB), { TONONE_METRICS: "on" });
+  assert.strictEqual(
+    on.stdout.replace(/a\.tsx/g, ""),
+    off.stdout.replace(/a\.tsx/g, ""),
+  );
+  const lines = fs
+    .readFileSync(path.join(dirB, ".tonone/metrics.jsonl"), "utf8")
+    .trim()
+    .split("\n")
+    .map((l) => JSON.parse(l));
+  assert.strictEqual(lines.length, 1);
+  assert.strictEqual(lines[0].tool, "form-lint");
+  assert.strictEqual(lines[0].event, "hook_shown");
+  assert.ok(lines[0].shown >= 1 && Array.isArray(lines[0].rules));
+});

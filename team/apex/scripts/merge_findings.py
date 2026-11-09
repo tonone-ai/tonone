@@ -4,7 +4,9 @@
 Usage:
   merge_findings.py lens1.json lens2.json ... [--red red.json]
 
-Prints merged JSON: {"findings": [...], "dropped": [...], "verdict": "..."}.
+Prints merged JSON: {"findings": [...], "unverified": [...], "dropped": [...],
+"verdict": "..."}. Findings with source "second-opinion" and verified != true
+go to "unverified" and never count toward the verdict.
 Rules: drop findings without evidence or with bad severity; dedupe on
 file + line + normalized title; keep max severity; record agreeing lenses;
 red-team disputes (with evidence) mark a finding disputed.
@@ -12,7 +14,9 @@ Verdict: undisputed CRITICAL -> BLOCK; undisputed HIGH, or any disputed
 CRITICAL -> FIX-FIRST; else SHIP.
 """
 
+import datetime
 import json
+import os
 import re
 import sys
 
@@ -40,6 +44,10 @@ def _valid(f):
     return None
 
 
+def is_unverified(f):
+    return f.get("source") == "second-opinion" and f.get("verified") is not True
+
+
 def merge(docs):
     """docs: list of schema documents. Returns (findings, dropped)."""
     merged, dropped = {}, []
@@ -58,6 +66,10 @@ def merge(docs):
             if lens not in cur["lenses"]:
                 cur["lenses"].append(lens)
             cur["ids"].append(f["id"])
+            if is_unverified(cur) and not is_unverified(f):
+                # corroborated by a verified source: no longer unverified
+                for k in ("source", "verified"):
+                    cur.pop(k, None) if k not in f else cur.__setitem__(k, f[k])
             if SEV[f["severity"]] > SEV[cur["severity"]]:
                 for field in ("severity", "evidence", "impact", "fix"):
                     cur[field] = f[field]
@@ -101,6 +113,7 @@ def apply_red(findings, red_doc):
 
 
 def verdict(findings):
+    findings = [f for f in findings if not is_unverified(f)]
     live = [f for f in findings if not f.get("disputed")]
     if any(f["severity"] == "CRITICAL" for f in live):
         return "BLOCK"
@@ -109,6 +122,35 @@ def verdict(findings):
     ):
         return "FIX-FIRST"
     return "SHIP"
+
+
+def _metric(findings, dropped, red_doc):
+    """Opt-in counter (TONONE_METRICS=on): counts only, errors swallowed."""
+    try:
+        if os.environ.get("TONONE_METRICS") != "on":
+            return
+        d = os.path.join(os.environ.get("CLAUDE_PROJECT_DIR") or os.getcwd(), ".tonone")
+        os.makedirs(d, exist_ok=True)
+        line = {
+            "ts": datetime.datetime.now(datetime.timezone.utc).strftime(
+                "%Y-%m-%dT%H:%M:%SZ"
+            ),
+            "tool": "apex-review",
+            "event": "merge",
+            "kept": len(findings),
+            "dropped": len(dropped),
+            "disputed": sum(1 for f in findings if f.get("disputed")),
+            "red": bool(red_doc),
+            "red_new": sum(
+                1
+                for f in findings
+                if (red_doc or {}).get("lens", "red") in f.get("lenses", [])
+            ),
+        }
+        with open(os.path.join(d, "metrics.jsonl"), "a", encoding="utf-8") as fh:
+            fh.write(json.dumps(line) + "\n")
+    except Exception:
+        pass
 
 
 def main(argv):
@@ -121,15 +163,25 @@ def main(argv):
             paths.append(a)
     docs = [json.load(open(p)) for p in paths]
     findings, dropped = merge(docs)
+    red_doc = None
     if red_path:
-        findings, d2 = apply_red(findings, json.load(open(red_path)))
+        red_doc = json.load(open(red_path))
+        findings, d2 = apply_red(findings, red_doc)
         dropped += d2
+    unverified = [f for f in findings if is_unverified(f)]
+    findings = [f for f in findings if not is_unverified(f)]
     json.dump(
-        {"findings": findings, "dropped": dropped, "verdict": verdict(findings)},
+        {
+            "findings": findings,
+            "unverified": unverified,
+            "dropped": dropped,
+            "verdict": verdict(findings),
+        },
         sys.stdout,
         indent=2,
     )
     print()
+    _metric(findings, dropped, red_doc)
 
 
 if __name__ == "__main__":
