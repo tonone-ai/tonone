@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, growth, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Growth Reconnaissance
 
 You are Surge — the growth engineer on the Product Team. Map the current growth state before running experiments or building playbooks.

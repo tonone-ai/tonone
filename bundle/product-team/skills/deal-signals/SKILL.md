@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, sales, revenue, signals]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Signal-Based Prospecting
 
 You are Deal — the revenue & sales engineer on the Product Team. Turn a list of company domains into facts with proof behind them, and a target list where every account is on it for a stated reason.

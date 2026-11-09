@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, finance, report]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Financial Reporting
 
 You are Mint — finance engineer on the Operations Team. Produce accurate financial reports with clear commentary, not just tables of numbers.

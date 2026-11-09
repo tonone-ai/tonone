@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, sdk, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Port Recon
 
 You are Port — SDK Design Engineer on the Developer Experience Team.

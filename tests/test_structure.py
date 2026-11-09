@@ -331,6 +331,65 @@ def test_no_symlinks_and_bundles_in_sync():
     assert check.returncode == 0, check.stdout
 
 
+def _sync_bundles_module():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "sync_bundles", REPO / "scripts" / "sync-bundles.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_every_root_skill_is_bundled_or_exempt():
+    """A root skill in no bundle ships to nobody who installs a bundle.
+
+    New skills must get a bundle/<team>/skills/<name>/ entry (then run
+    scripts/sync-bundles.py) or, with a reason, a line in bundle/UNBUNDLED.txt.
+    """
+    mod = _sync_bundles_module()
+    listed = mod.load_unbundled()
+    exempt = set(listed["ROOT_ONLY"]) | set(listed["LEGACY_UNBUNDLED"])
+    orphans = sorted(mod.root_skills() - mod.bundled_skills() - exempt)
+    assert not orphans, (
+        "skills in no bundle (add bundle/<team>/skills/<name>/ and run "
+        "python3 scripts/sync-bundles.py, or list in bundle/UNBUNDLED.txt): "
+        f"{orphans}"
+    )
+
+
+def test_unbundled_list_is_honest():
+    """The exemption list names no bundled skill, no missing skill, no repeats."""
+    mod = _sync_bundles_module()
+    listed = mod.load_unbundled()
+    names = listed["ROOT_ONLY"] + listed["LEGACY_UNBUNDLED"]
+    dupes = sorted({n for n in names if names.count(n) > 1})
+    assert not dupes, f"listed twice in bundle/UNBUNDLED.txt: {dupes}"
+    stale = sorted(set(names) & mod.bundled_skills())
+    assert not stale, f"bundled now, remove from bundle/UNBUNDLED.txt: {stale}"
+    gone = sorted(set(names) - mod.root_skills())
+    assert not gone, f"no such root skill, remove from bundle/UNBUNDLED.txt: {gone}"
+    legacy = listed["LEGACY_UNBUNDLED"]
+    assert legacy == sorted(legacy), "LEGACY_UNBUNDLED must stay sorted"
+    assert listed["ROOT_ONLY"] == sorted(listed["ROOT_ONLY"])
+
+
+def test_bundle_hooks_reference_shipped_files():
+    """Every hook a bundle registers points at a file that bundle ships."""
+    import re
+
+    for hooks in sorted((REPO / "bundle").glob("*/hooks/hooks.json")):
+        bundle = hooks.parent.parent
+        for rel in re.findall(
+            r"\$\{CLAUDE_PLUGIN_ROOT\}/([^\"\s]+)",
+            json.dumps(json.loads(hooks.read_text())).replace('\\"', " "),
+        ):
+            assert (
+                bundle / rel
+            ).is_file(), f"{hooks.relative_to(REPO)}: {rel} not shipped"
+
+
 def test_bundle_omit_blocks():
     """<!-- bundle:omit X --> blocks drop for bundle X and unwrap elsewhere."""
     import importlib.util
@@ -352,7 +411,8 @@ def test_headline_counts_match_tree():
     directories, plugin browsers and awesome lists copy them verbatim. They
     drifted before (marketplace.json said 23 agents at 100). Only totals are
     checked: per-team counts are below 50 agents, and the skill total is the
-    only three-digit skill count, so both are ignored by the thresholds.
+    only three-digit skill count outside the per-team
+    "(N agents, M skills)" headers, so those are ignored.
     """
     import re
 
@@ -370,7 +430,9 @@ def test_headline_counts_match_tree():
         for m in re.finditer(r"\b(\d+) (?:agents|specialists)\b", text, re.I):
             if int(m.group(1)) >= 50 and int(m.group(1)) != agents:
                 wrong.append(f"{rel}: '{m.group(0)}' (tree has {agents} agents)")
-        for m in re.finditer(r"\b(\d{3}) skills\b", text, re.I):
+        # "(15 agents, 105 skills)" per-team headers in the README list are
+        # subtotals, not the headline total.
+        for m in re.finditer(r"(?<!agents, )\b(\d{3}) skills\b", text, re.I):
             if int(m.group(1)) != skills:
                 wrong.append(f"{rel}: '{m.group(0)}' (tree has {skills} skills)")
     assert not wrong, "\n".join(wrong)

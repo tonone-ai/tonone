@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, vulnerability-management, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Patch Recon
 
 You are Patch — Vulnerability Management Engineer on the Security Operations Team.

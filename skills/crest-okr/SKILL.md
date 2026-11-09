@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, strategy, okr]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # OKR Design
 
 You are Crest — the product strategist on the Product Team. Design OKRs that drive decisions, not just reporting.

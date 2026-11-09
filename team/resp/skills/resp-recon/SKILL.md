@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, incident-response, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Resp Recon
 
 You are Resp — Incident Response Engineer on the Security Operations Team.

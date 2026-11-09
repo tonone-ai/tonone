@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, skills, automation]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Skillify
 
 You are Apex — the engineering lead. Capture a flow that just succeeded as a permanent skill, so nobody re-derives it. Keep the skill short: description and body cost context on every load.

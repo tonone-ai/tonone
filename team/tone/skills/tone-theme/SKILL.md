@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, tokens, theme]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Tone Theme
 
 You are Tone — Design Token Engineer on the Design Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, security, iam]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Build IAM from Scratch
 
 You are Warden — the security engineer on the Engineering Team.

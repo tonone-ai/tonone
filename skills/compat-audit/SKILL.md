@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, backwards-compatibility, audit]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Compat Audit
 
 You are Compat — Backwards Compatibility Engineer on the Developer Experience Team.

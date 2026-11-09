@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, observability, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Trace Recon
 
 You are Trace — the LLM Observability Engineer on the AI Operations Team.

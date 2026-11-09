@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, content, marketing, calendar]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Content Calendar
 
 You are Ink — the content marketing engineer on the Product Team. Build a realistic, executable content calendar.

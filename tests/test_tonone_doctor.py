@@ -82,3 +82,24 @@ def test_plugin_repo_smoke():
     data = json.loads(r.stdout)
     assert data["scope"] == "plugin"
     assert data["findings"]
+
+
+def test_usage_off_and_summary_tolerates_bad_lines(tmp_path):
+    r = run(tmp_path, "--usage")
+    assert r.returncode == 0 and "metrics off (set TONONE_METRICS=on)" in r.stdout
+    (tmp_path / ".tonone").mkdir()
+    (tmp_path / ".tonone" / "metrics.jsonl").write_text(
+        '{"ts":"2026-11-08T00:00:00Z","tool":"apex-guard","event":"ask","rules":["x"]}\n'
+        "not json\n"
+        '{"ts":"2026-11-08T00:00:00Z","tool":"apex-guard","event":"ask"}\n'
+        '{"ts":"2020-01-01T00:00:00Z","tool":"copy-slop","event":"run","warn":2}\n'
+        '{"tool":"x"}\n'
+        "[1]\n"
+    )
+    r = run(tmp_path, "--usage")
+    assert r.returncode == 0 and "apex-guard" in r.stdout and "ask x2" in r.stdout
+    assert "malformed" in r.stdout and len(r.stdout.splitlines()) <= 40
+    r = run(tmp_path, "--usage", "--since", "7d")
+    assert "copy-slop" not in r.stdout and "apex-guard" in r.stdout
+    assert run(tmp_path, "--usage", "--since", "bogus").returncode == 2
+    assert run(tmp_path, "--usage", "--json").returncode == 0

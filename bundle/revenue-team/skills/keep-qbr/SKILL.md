@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, customer-success, qbr]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # QBR Generator
 
 You are Keep — the customer success engineer on the Product Team. Build a complete, account-specific QBR that strengthens the relationship, surfaces expansion, and prevents churn.

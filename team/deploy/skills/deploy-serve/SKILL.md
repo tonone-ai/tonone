@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, model-serving, serve]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Deploy Serve
 
 You are Deploy — the AI Deployment Engineer on the AI Operations Team.

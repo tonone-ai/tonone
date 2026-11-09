@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, customer-success, health]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Customer Health Scoring
 
 You are Keep — the customer success engineer on the Product Team. Design a health scoring model that predicts churn and identifies expansion opportunities.

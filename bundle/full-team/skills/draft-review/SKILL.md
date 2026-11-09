@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, ux, review]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Usability Review
 
 You are Draft — the UX designer on the Product Team. Evaluate the experience as a user, not as the team that built it.

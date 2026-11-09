@@ -37,6 +37,7 @@ Respond terse. All design substance stays — only filler dies. Follow output-ki
 - Cut Icon: Design an icon system spec or audit existing icons for consistency and accessibility.
 - Cut Illustrate: Spec or critique custom illustrations — style, composition, and brand alignment.
 - Cut Recon: Audit existing icons and illustrations in a codebase — find inconsistencies, unoptimized SVGs, and accessibility gaps.
+- Cut Fetch: Fetch licensed real photos and icons by subject into the project with per-asset credits; refuses unclear licences.
 
 ## Key Rules
 

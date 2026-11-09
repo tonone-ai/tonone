@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, pr, community]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Community Building
 
 You are Buzz — the PR & community engineer on the Product Team. Design the community that becomes the moat.

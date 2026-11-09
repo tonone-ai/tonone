@@ -15,6 +15,16 @@
 // path (bad stdin, corrupt lines, unreadable file, timeout) fails open: no
 // output, exit 0.
 //
+// Learnings share the file: {"kind":"learning","id":"L-YYYYMMDD-xxxx","ts",
+// "lesson","scope"?,"source"?,"confirmed":1,"by","supersedes"?}. Absent kind =
+// decision (legacy lines unchanged). {"op":"confirm","id","ts"} bumps the
+// confirmed count. Supersede/redact work the same. The hook shows learnings
+// after decisions (max 3, never ahead of irreversible decisions).
+//
+// Metrics (opt-in): TONONE_METRICS=on appends
+// {"tool":"apex-decisions","event":"resurfaced","n":<decisions>,"learnings":<n>}
+// to <project>/.tonone/metrics.jsonl. Counts only; errors swallowed.
+//
 // Disable: TONONE_DECISIONS=off (also 0, false, no).
 //
 // Records (one per line):
@@ -38,6 +48,10 @@
 //   node apex-decisions.js redact ID --reason R
 //   node apex-decisions.js list [--all] [--json]
 //   node apex-decisions.js show ID
+//   node apex-decisions.js learn --lesson L [--scope S] [--source S] [--by WHO]
+//   node apex-decisions.js learnings [--all] [--json] [--query WORDS]
+//   node apex-decisions.js confirm ID        (learning still holds; bumps count)
+//   (supersede/redact accept learning IDs; supersede takes --lesson there)
 
 const fs = require("fs");
 const path = require("path");
@@ -48,6 +62,7 @@ const MAX_WALK = 20;
 const MAX_READ_BYTES = 1024 * 1024; // larger files: read the tail only
 const MAX_ENTRIES = 10;
 const MAX_CHARS = 1500;
+const MAX_LEARNINGS = 3;
 const LIMITS = {
   title: 120,
   decision: 500,
@@ -55,6 +70,8 @@ const LIMITS = {
   scope: 200,
   reason: 200,
   by: 40,
+  lesson: 300,
+  source: 80,
 };
 
 // ── Location ─────────────────────────────────────────────────────────────────
@@ -132,13 +149,20 @@ function fold(records) {
   const decisions = new Map();
   const redacted = new Map();
   const supers = new Map(); // old id -> new id
+  const confirms = new Map(); // id -> extra confirmations
   for (const r of records) {
+    if (r.op === "confirm") {
+      confirms.set(r.id, (confirms.get(r.id) || 0) + 1);
+      continue;
+    }
     if (r.op === "redact") {
       if (!redacted.has(r.id)) redacted.set(r.id, str(r.reason));
       continue;
     }
     if (r.op !== undefined) continue; // unknown op: ignore
-    if (!str(r.title) && !str(r.decision)) continue;
+    if (r.kind === "learning") {
+      if (!str(r.lesson)) continue;
+    } else if (!str(r.title) && !str(r.decision)) continue;
     if (decisions.has(r.id)) continue; // first write wins; ids are unique
     decisions.set(r.id, r);
     if (typeof r.supersedes === "string" && r.supersedes)
@@ -151,18 +175,23 @@ function fold(records) {
         id: r.id,
         ts: r.ts,
         by: r.by,
+        ...(r.kind === "learning" ? { kind: "learning" } : {}),
         status: "redacted",
         redacted_reason: redacted.get(r.id),
       });
     } else {
       const sb = supers.get(r.id);
       const rec = { ...r, status: sb ? "superseded" : "active" };
+      if (r.kind === "learning")
+        rec.confirmed = (Number(r.confirmed) || 1) + (confirms.get(r.id) || 0);
       if (sb) rec.superseded_by = sb;
       out.push(rec);
     }
   }
   return out;
 }
+
+const isLearning = (r) => r.kind === "learning";
 
 function byRecency(a, b) {
   const ta = Date.parse(a.ts) || 0;
@@ -191,28 +220,99 @@ function formatEntry(r) {
   return `- ${r.id}${tag} ${oneLine(r.title)}: ${oneLine(r.decision)} — why: ${oneLine(r.why)}${scope}`;
 }
 
-function renderContext(active) {
-  if (!active.length) return "";
-  const header =
-    "Active project decisions (settled — do not re-litigate; supersede via /apex-decisions):";
-  const lines = [header];
-  let used = header.length;
-  let shown = 0;
-  for (const r of ordered(active)) {
-    if (shown >= MAX_ENTRIES) break;
-    let line = formatEntry(r);
+function formatLearning(r) {
+  const n = Number(r.confirmed) || 1;
+  const conf = n > 1 ? ` (x${n})` : "";
+  const scope = oneLine(r.scope) ? ` (scope: ${oneLine(r.scope)})` : "";
+  return `- ${r.id}${conf} ${oneLine(r.lesson)}${scope}`;
+}
+
+// Most confirmed first, then newest.
+function orderedLearnings(ls) {
+  return ls
+    .slice()
+    .sort(
+      (a, b) =>
+        (Number(b.confirmed) || 1) - (Number(a.confirmed) || 1) ||
+        byRecency(a, b),
+    );
+}
+
+// Returns {text, n, learnings} (counts = entries shown).
+function render(active) {
+  const decisions = active.filter((r) => !isLearning(r));
+  const learnings = active.filter(isLearning);
+  const empty = { text: "", n: 0, learnings: 0 };
+  if (!decisions.length && !learnings.length) return empty;
+  const lines = [];
+  let used = 0;
+  let nd = 0;
+  let nl = 0;
+  const push = (line, first) => {
     const room = MAX_CHARS - used - 1;
     if (line.length > room) {
-      if (shown > 0 || room < 80) break;
+      if (!first || room < 80) return false;
       line = line.slice(0, Math.max(room - 1, 0)) + "…"; // always show at least one
     }
     lines.push(line);
     used += line.length + 1;
-    shown++;
+    return true;
+  };
+  if (decisions.length) {
+    push(
+      "Active project decisions (settled — do not re-litigate; supersede via /apex-decisions):",
+      true,
+    );
+    // Keep up to 2 slots for learnings, but never more than exist.
+    const cap =
+      MAX_ENTRIES - Math.min(2, Math.min(learnings.length, MAX_LEARNINGS));
+    for (const r of ordered(decisions)) {
+      if (nd >= cap || !push(formatEntry(r), nd === 0)) break;
+      nd++;
+    }
+    if (decisions.length > nd)
+      push(`+${decisions.length - nd} more: /apex-decisions list`);
   }
-  const more = active.length - shown;
-  if (more > 0) lines.push(`+${more} more: /apex-decisions list`);
-  return lines.join("\n");
+  if (learnings.length) {
+    const first = !decisions.length;
+    const hdr =
+      "Project learnings (hints from past sessions — verify before relying; /apex-decisions learnings):";
+    const cap = Math.min(MAX_LEARNINGS, MAX_ENTRIES - nd);
+    if (cap > 0 && push(hdr, first)) {
+      for (const r of orderedLearnings(learnings)) {
+        if (nl >= cap || !push(formatLearning(r), first && nl === 0)) break;
+        nl++;
+      }
+      if (nl === 0)
+        lines.pop(); // header alone is noise
+      else if (learnings.length > nl)
+        push(`+${learnings.length - nl} more: /apex-decisions learnings`);
+    }
+  }
+  if (nd + nl === 0) return empty;
+  return { text: lines.join("\n"), n: nd, learnings: nl };
+}
+
+function renderContext(active) {
+  return render(active).text;
+}
+
+// Opt-in local counter (TONONE_METRICS=on). Never throws, never affects output.
+function metric(env, root, event, extra) {
+  try {
+    if (env.TONONE_METRICS !== "on") return;
+    const dir = path.join(root, ".tonone");
+    fs.mkdirSync(dir, { recursive: true });
+    fs.appendFileSync(
+      path.join(dir, "metrics.jsonl"),
+      JSON.stringify({
+        ts: new Date().toISOString(),
+        tool: "apex-decisions",
+        event,
+        ...extra,
+      }) + "\n",
+    );
+  } catch {}
 }
 
 function disabled(env) {
@@ -228,8 +328,13 @@ function hookOutput(input, env) {
   const file = findFile(env, cwd);
   if (!file) return "";
   const active = fold(readRecords(file)).filter((r) => r.status === "active");
-  const ctx = renderContext(active);
+  const r = render(active);
+  const ctx = r.text;
   if (!ctx) return "";
+  metric(env, path.dirname(path.dirname(file)), "resurfaced", {
+    n: r.n,
+    learnings: r.learnings,
+  });
   return JSON.stringify({
     hookSpecificOutput: {
       hookEventName: "SessionStart",
@@ -279,10 +384,10 @@ function check(k, v) {
   return v;
 }
 
-function newId(taken, now) {
+function newId(taken, now, prefix = "D") {
   const day = now.toISOString().slice(0, 10).replace(/-/g, "");
   for (let i = 0; i < 50; i++) {
-    const id = `D-${day}-${Math.floor(Math.random() * 0x10000)
+    const id = `${prefix}-${day}-${Math.floor(Math.random() * 0x10000)
       .toString(16)
       .padStart(4, "0")}`;
     if (!taken.has(id)) return id;
@@ -317,6 +422,7 @@ function publicView(r) {
         id: r.id,
         ts: r.ts,
         by: r.by,
+        ...(r.kind ? { kind: r.kind } : {}),
         status: "redacted",
         redacted_reason: r.redacted_reason,
       }
@@ -331,6 +437,20 @@ function describe(r, full) {
     r.status === "active"
       ? ""
       : ` (${r.status}${r.superseded_by ? " by " + r.superseded_by : ""})`;
+  if (isLearning(r)) {
+    const c = r.confirmed > 1 ? ` x${r.confirmed}` : "";
+    const head = `${r.id}${c}${st} ${oneLine(r.lesson)}`;
+    if (!full) return head;
+    return [
+      head,
+      r.scope ? `  scope:    ${oneLine(r.scope)}` : null,
+      r.source ? `  source:   ${oneLine(r.source)}` : null,
+      `  by:       ${r.by || "?"}  at ${r.ts || "?"}`,
+      r.supersedes ? `  supersedes: ${r.supersedes}` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+  }
   const head = `${r.id}${tag}${st} ${oneLine(r.title)}`;
   if (!full) return head;
   return [
@@ -352,6 +472,25 @@ function runCli(argv, env, cwd, now, out) {
   const exists = fs.existsSync(file);
   const folded = exists ? fold(readRecords(file)) : [];
   const byId = new Map(folded.map((r) => [r.id, r]));
+
+  const addLearning = (fields, supersedes) => {
+    const rec = {
+      id: newId(new Set(byId.keys()), now, "L"),
+      ts: now.toISOString(),
+      kind: "learning",
+      lesson: fields.lesson,
+    };
+    if (fields.scope) rec.scope = fields.scope;
+    if (fields.source) rec.source = fields.source;
+    rec.confirmed = 1;
+    rec.status = "active";
+    rec.by = opt(flags, "by") || env.TONONE_DECISION_BY || "apex";
+    if (supersedes) rec.supersedes = supersedes;
+    appendLine(file, rec);
+    out(
+      `${supersedes ? "superseded " + supersedes + " with " : "learned "}${rec.id}: ${rec.lesson}`,
+    );
+  };
 
   const addRecord = (fields, supersedes) => {
     const rec = {
@@ -382,7 +521,8 @@ function runCli(argv, env, cwd, now, out) {
   switch (cmd) {
     case "add": {
       let sup = opt(flags, "supersedes");
-      if (sup) requireTarget(sup);
+      if (sup && isLearning(requireTarget(sup)))
+        throw new CliError(`${sup} is a learning; use supersede`);
       return addRecord(
         {
           title: need(flags, "title"),
@@ -397,6 +537,15 @@ function runCli(argv, env, cwd, now, out) {
       const old = requireTarget(pos[0]);
       if (old.status === "redacted")
         throw new CliError(`${old.id} is redacted; add a new decision instead`);
+      if (isLearning(old))
+        return addLearning(
+          {
+            lesson: need(flags, "lesson"),
+            scope: opt(flags, "scope") || old.scope,
+            source: opt(flags, "source"),
+          },
+          old.id,
+        );
       return addRecord(
         {
           title: opt(flags, "title") || old.title,
@@ -420,10 +569,46 @@ function runCli(argv, env, cwd, now, out) {
         `redacted ${t.id} (text hidden; file still holds it — edit file + rewrite git history to truly remove)`,
       );
     }
+    case "learn":
+      return addLearning({
+        lesson: need(flags, "lesson"),
+        scope: opt(flags, "scope"),
+        source: opt(flags, "source") || now.toISOString().slice(0, 10),
+      });
+    case "confirm": {
+      const t = requireTarget(pos[0]);
+      if (!isLearning(t)) throw new CliError(`${t.id} is not a learning`);
+      if (t.status !== "active")
+        throw new CliError(`${t.id} is ${t.status}; cannot confirm`);
+      appendLine(file, { op: "confirm", id: t.id, ts: now.toISOString() });
+      return out(`confirmed ${t.id} (x${t.confirmed + 1})`);
+    }
+    case "learnings": {
+      const q = (opt(flags, "query") || "")
+        .toLowerCase()
+        .split(/\s+/)
+        .filter(Boolean);
+      const rows = folded
+        .filter((r) => isLearning(r) && (flags.all || r.status === "active"))
+        .filter(
+          (r) =>
+            !q.length ||
+            (r.status !== "redacted" &&
+              q.every((w) =>
+                `${r.lesson} ${r.scope || ""}`.toLowerCase().includes(w),
+              )),
+        );
+      rows.sort(byRecency);
+      if (flags.json) return out(JSON.stringify(rows.map(publicView), null, 2));
+      if (!rows.length) return out("no learnings");
+      return out(rows.map((r) => describe(r, false)).join("\n"));
+    }
     case "list": {
       const rows = (
         flags.all ? folded : folded.filter((r) => r.status === "active")
-      ).slice();
+      )
+        .filter((r) => !isLearning(r))
+        .slice();
       rows.sort(byRecency);
       if (flags.json) return out(JSON.stringify(rows.map(publicView), null, 2));
       if (!rows.length)
@@ -440,7 +625,7 @@ function runCli(argv, env, cwd, now, out) {
     }
     default:
       throw new CliError(
-        "usage: add|supersede|redact|list|show — see header of apex-decisions.js",
+        "usage: add|supersede|redact|list|show|learn|learnings|confirm — see header of apex-decisions.js",
       );
   }
 }

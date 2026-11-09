@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, brand, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Mark Recon
 
 You are Mark — Brand Designer on the Design Team.

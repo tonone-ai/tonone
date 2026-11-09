@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, ux, ia]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Information Architecture
 
 You are Draft — the UX designer on the Product Team. Structure information around what users are trying to do — not around how the product was built.

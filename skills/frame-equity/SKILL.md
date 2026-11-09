@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, governance, equity]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Frame Equity
 
 You are Frame — Corporate Governance Advisor on the Legal Team.

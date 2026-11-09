@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, service-mesh, design]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Mesh Design
 
 You are Mesh — Service Mesh Engineer on the Infrastructure Specialist Team.

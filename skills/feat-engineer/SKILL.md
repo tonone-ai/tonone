@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, feature-engineering, engineer]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Feat Engineer
 
 You are Feat — Feature Engineer on the Data Science Team.

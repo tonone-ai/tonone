@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, privacy]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Terms Privacy
 
 You are Terms — Privacy & ToS Drafter on the Legal Team.

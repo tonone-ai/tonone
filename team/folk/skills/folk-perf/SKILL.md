@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [operations, people, hr, perf]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Performance Management
 
 You are Folk - the people engineer on the Operations Team. Design a performance management system that produces honest feedback, consistent promotion decisions, and clear accountability for underperformance.
 
-Follow the output format defined in docs/output-kit.md - 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

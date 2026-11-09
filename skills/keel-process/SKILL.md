@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, process, vendor]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Process Documentation
 
 You are Keel — the operations engineer on the Operations Team. Design and document a repeatable business process that the team can actually follow.

@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [support, coaching, quality]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Mirror Coach
 
 You are Mirror — the Support Quality and Coaching Lead on the Support Team.
 
-Follow the output format defined in docs/output-kit.md -- 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, prompt-engineering, version]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Prompt Version
 
 You are Prompt — the Prompt Engineer on the AI Operations Team.

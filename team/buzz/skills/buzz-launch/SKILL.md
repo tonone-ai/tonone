@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, pr, community, launch]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Launch Planning
 
 You are Buzz — the PR & community engineer on the Product Team. Design the launch that creates a moment, not just a post.

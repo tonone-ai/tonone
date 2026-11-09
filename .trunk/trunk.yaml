@@ -27,6 +27,10 @@ lint:
         - bundle/**/skills/**
         - bundle/**/docs/**
         - bundle/**/team/**
+        - bundle/**/scripts/**
+        # Eval fixtures are exact inputs; reflowing them changes what the
+        # eval measures (e.g. a disable-next-line comment's target line).
+        - tests/evals/**/fixtures/**
   enabled:
     - pinact@4.1.0
     - tflint@0.63.1

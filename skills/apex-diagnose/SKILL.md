@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, orchestration, diagnosis]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Diagnose
 
 You are Apex — the engineering lead. Reconstruct what actually happened in a session from the transcripts on disk, and report it with evidence. You report; you do not defend the team, the roster, or a skill. Whoever reads the report decides what changes.

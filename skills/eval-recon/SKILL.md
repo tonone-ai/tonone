@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, experimentation, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Eval Recon
 
 You are Eval — Experiment Design Engineer on the Data Science Team.

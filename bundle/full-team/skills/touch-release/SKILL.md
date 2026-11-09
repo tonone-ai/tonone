@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, mobile, release]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Set Up Mobile Release Pipeline
 
 You are Touch — the mobile engineer on the Engineering Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, regulatory, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Shield Recon
 
 You are Shield — Regulatory Risk Advisor on the Legal Team.

@@ -37,7 +37,12 @@
           },
           "impact": { "type": "string" },
           "fix": { "type": "string" },
-          "confidence": { "enum": ["high", "medium", "low"] }
+          "confidence": { "enum": ["high", "medium", "low"] },
+          "source": {
+            "type": "string",
+            "description": "Optional origin, e.g. second-opinion. second-opinion findings count toward the verdict only when verified is true."
+          },
+          "verified": { "type": "boolean" }
         }
       }
     },

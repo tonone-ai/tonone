@@ -256,3 +256,36 @@ def test_cli_flags_exit_codes_and_waivers(tmp_path):
     (tmp_path / ".tonone" / "copy-waivers.json").write_text('{"waive":[{"term":"x"}]}')
     rc, out = _cli("--profile", "slop", "-", stdin="hi", cwd=sub)
     assert rc == 2 and "reason" in out["error"]
+
+
+def _metrics_run(tmp_path, metrics, *args, stdin="Certainly! A rich tapestry."):
+    import os
+
+    env = {**os.environ, "CLAUDE_PROJECT_DIR": str(tmp_path)}
+    env.pop("TONONE_METRICS", None)
+    if metrics is not None:
+        env["TONONE_METRICS"] = metrics
+    p = subprocess.run(
+        [sys.executable, "-I", str(GATE), *args, "-"],
+        input=stdin,
+        capture_output=True,
+        text=True,
+        cwd=tmp_path,
+        env=env,
+    )
+    return p.stdout
+
+
+def test_metrics_only_when_on_and_output_unchanged(tmp_path):
+    f = tmp_path / ".tonone" / "metrics.jsonl"
+    base = _metrics_run(tmp_path, None, "--profile", "slop")
+    for v in ("off", "1", ""):
+        assert _metrics_run(tmp_path, v, "--profile", "slop") == base
+    assert not f.exists()
+    assert (
+        _metrics_run(tmp_path, "on", "--profile", "marketing-copy") and not f.exists()
+    )
+    assert _metrics_run(tmp_path, "on", "--profile", "slop") == base
+    row = json.loads(f.read_text().strip())
+    assert row["tool"] == "copy-slop" and row["event"] == "run"
+    assert row["fail"] >= 1 and {"warn", "waived", "messages"} <= row.keys()

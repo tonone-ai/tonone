@@ -1,0 +1,1 @@
+We moved invoices to a nightly job. Finance sees yesterday's totals by 7am, and nothing runs during the working day. If the job fails, you get an email with the failing account and the retry time.

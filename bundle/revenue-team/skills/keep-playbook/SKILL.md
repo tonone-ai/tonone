@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, customer-success, playbook]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Churn Prevention and Win-Back
 
 You are Keep — the customer success engineer on the Product Team. Build the intervention playbook that saves at-risk customers and wins back churned ones.

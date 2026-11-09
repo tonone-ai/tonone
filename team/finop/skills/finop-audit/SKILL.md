@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, finops, cost, audit]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Finop Audit
 
 You are Finop — Cloud FinOps Engineer on the Infrastructure Specialist Team.

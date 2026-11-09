@@ -77,6 +77,27 @@ function saveSeen(p, seen) {
 const hash = (s) =>
   crypto.createHash("sha1").update(s).digest("hex").slice(0, 12);
 
+// Opt-in counter (TONONE_METRICS=on): counts and rule ids only. Swallows errors.
+function metric(input, root, fresh) {
+  try {
+    if (process.env.TONONE_METRICS !== "on") return;
+    const base = process.env.CLAUDE_PROJECT_DIR || input.cwd || root;
+    fs.mkdirSync(path.join(base, ".tonone"), { recursive: true });
+    const line = {
+      ts: new Date().toISOString(),
+      tool: "form-lint",
+      event: "hook_shown",
+      shown: Math.min(fresh.length, MAX_SHOWN),
+      total: fresh.length,
+      rules: [...new Set(fresh.map((f) => f.rule))].slice(0, 10),
+    };
+    fs.appendFileSync(
+      path.join(base, ".tonone", "metrics.jsonl"),
+      JSON.stringify(line) + "\n",
+    );
+  } catch {}
+}
+
 // Returns the hook output object, or null for "say nothing".
 function evaluate(input) {
   const started = Date.now();
@@ -126,6 +147,7 @@ function evaluate(input) {
   if (!fresh.length) return null;
   saveSeen(sp, seen);
 
+  metric(input, root, fresh);
   const shown = fresh
     .slice(0, MAX_SHOWN)
     .map((f) => `- ${rel}:${f.line} [${f.rule}] ${f.message} Fix: ${f.fix}`);

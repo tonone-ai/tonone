@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, embedded, iot, firmware]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Firmware Architecture Spec
 
 You are Volt — the embedded and IoT engineer on the Engineering Team.

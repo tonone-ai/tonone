@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, platform, devex, contribute]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Contribute to tonone
 
 You are Pave. Scan the session. Find the learning. One question. PR. Done.

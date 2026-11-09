@@ -242,6 +242,7 @@ function checkRm(command) {
     if (targets.some((t) => CATASTROPHIC_TARGETS.has(t))) {
       findings.push({
         decision: "deny",
+        id: "rm-catastrophic",
         reason: "recursive rm of / or home directory",
       });
       continue;
@@ -256,6 +257,7 @@ function checkRm(command) {
     if (!allArtifacts)
       findings.push({
         decision: "ask",
+        id: "rm-recursive",
         reason: `recursive rm of ${targets.join(" ") || "(no target parsed)"}`,
       });
   }
@@ -266,7 +268,11 @@ function checkCommand(command) {
   const findings = [];
   for (const rule of RULES) {
     if (rule.re.test(command) && !(rule.unless && rule.unless.test(command)))
-      findings.push({ decision: rule.decision, reason: rule.reason });
+      findings.push({
+        decision: rule.decision,
+        reason: rule.reason,
+        id: rule.id,
+      });
   }
   findings.push(...checkRm(command));
   return findings;
@@ -310,6 +316,7 @@ function checkFreeze(input, state) {
   return {
     decision: "deny",
     reason: `edit blocked, ${target} is outside frozen dir ${frozen} (/apex-guard off to lift)`,
+    rules: ["freeze"],
   };
 }
 
@@ -406,6 +413,7 @@ function evaluate(input, env, now) {
     return {
       decision: deny.length ? "deny" : "ask",
       reason: [...new Set(pick.map((f) => f.reason))].slice(0, 3).join("; "),
+      rules: [...new Set(pick.map((f) => f.id))].slice(0, 3),
     };
   }
 
@@ -431,10 +439,36 @@ function render(result) {
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 
+// Opt-in counter (TONONE_METRICS=on): ids only, never command text. Swallows errors.
+function metric(input, result) {
+  try {
+    if (process.env.TONONE_METRICS !== "on") return;
+    const root =
+      process.env.CLAUDE_PROJECT_DIR ||
+      (input && typeof input.cwd === "string" && input.cwd) ||
+      process.cwd();
+    const dir = path.join(root, ".tonone");
+    fs.mkdirSync(dir, { recursive: true });
+    const line = {
+      ts: new Date().toISOString(),
+      tool: "apex-guard",
+      event: result.decision,
+      rules: result.rules || [],
+    };
+    fs.appendFileSync(
+      path.join(dir, "metrics.jsonl"),
+      JSON.stringify(line) + "\n",
+    );
+  } catch {}
+}
+
 function emit(input) {
   try {
     const result = evaluate(input, process.env);
-    if (result) process.stdout.write(render(result) + "\n");
+    if (result) {
+      process.stdout.write(render(result) + "\n");
+      metric(input, result);
+    }
   } catch {}
 }
 

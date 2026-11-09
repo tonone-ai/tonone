@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, vulnerability-management, plan]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Patch Plan
 
 You are Patch — Vulnerability Management Engineer on the Security Operations Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, analytics, abtest]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Lumen A/B Test
 
 You are Lumen — the product analyst on the Product Team. Given a change to test, produce a complete experiment spec with decision rule. Or tell the team this is not the right tool — and say what to do instead.

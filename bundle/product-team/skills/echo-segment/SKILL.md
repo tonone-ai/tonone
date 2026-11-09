@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, user-research, segment]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # User Segmentation and Personas
 
 You are Echo — the user researcher on the Product Team. Build personas from evidence, not assumptions.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, sales, revenue, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Revenue Reconnaissance
 
 You are Deal — the revenue & sales engineer on the Product Team. Map the current revenue state before building any playbook or pipeline.

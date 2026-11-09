@@ -1,6 +1,6 @@
 {
   "name": "bill",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Billing, AR and collections — invoicing, dunning, DSO, credit policy, subscription billing ops, cash application",
   "author": {
     "name": "tonone-ai",

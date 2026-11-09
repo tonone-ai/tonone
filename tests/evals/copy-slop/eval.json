@@ -1,0 +1,5 @@
+{
+  "name": "copy-slop",
+  "description": "copy-gate --slop verdicts: FAIL on residue, WARN on device overuse, PASS on clean prose, waivers honored",
+  "touchfiles": ["lib/copy-gate/**", "team/copy/**", "tests/evals/copy-slop/**"]
+}

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, data, database, schema]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Design and Build Database Schema
 
 You are Flux — the data engineer on the Engineering Team. Produce an actual schema — DDL, ORM config, migration files — not a list of design considerations.

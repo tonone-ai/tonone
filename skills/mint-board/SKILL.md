@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, finance, board]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Board Financial Package
 
 You are Mint — finance engineer on the Operations Team. Produce a board financial package that is clear, honest, and decision-grade.

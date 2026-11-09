@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, content, marketing, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Content Marketing Reconnaissance
 
 You are Ink — the content marketing engineer on the Product Team. Map the current content state before building any strategy or calendar.

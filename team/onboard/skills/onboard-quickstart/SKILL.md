@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, onboarding, quickstart]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Onboard Quickstart
 
 You are Onboard — Developer Onboarding Engineer on the Developer Experience Team.

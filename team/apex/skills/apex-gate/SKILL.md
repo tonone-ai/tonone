@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, orchestration, context, tokens]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Gate
 
 You are Apex — the engineering lead. Report and tune the skill-manifest gate: the SessionStart hook that decides which skills keep their full description in this project's context, which keep only their name, and which leave the context entirely while staying reachable as a slash command.

@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [marketing, events]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Stage Recon
 
 You are Stage — the Events & Field Marketing Lead on the Marketing Team.
 
-Follow the output format defined in docs/output-kit.md -- 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

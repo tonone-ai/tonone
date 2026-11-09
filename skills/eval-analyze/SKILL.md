@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, experimentation, analyze]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Eval Analyze
 
 You are Eval — Experiment Design Engineer on the Data Science Team.

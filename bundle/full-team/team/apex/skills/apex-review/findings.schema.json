@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tonone.ai/schemas/apex-review-findings.json",
+  "title": "Apex review findings",
+  "description": "Shared output contract for every apex-review lens agent (warden, spine, flux, proof, red). 'disputes' is used by the red-team pass only.",
+  "type": "object",
+  "required": ["lens", "findings", "checked", "skipped"],
+  "additionalProperties": false,
+  "properties": {
+    "lens": { "type": "string", "minLength": 1 },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "severity",
+          "title",
+          "file",
+          "line",
+          "evidence",
+          "impact",
+          "fix",
+          "confidence"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "severity": { "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"] },
+          "title": { "type": "string", "minLength": 1 },
+          "file": { "type": "string" },
+          "line": { "type": ["integer", "null"], "minimum": 1 },
+          "evidence": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Quoted code or command output. Findings without it are dropped at merge."
+          },
+          "impact": { "type": "string" },
+          "fix": { "type": "string" },
+          "confidence": { "enum": ["high", "medium", "low"] },
+          "source": {
+            "type": "string",
+            "description": "Optional origin, e.g. second-opinion. second-opinion findings count toward the verdict only when verified is true."
+          },
+          "verified": { "type": "boolean" }
+        }
+      }
+    },
+    "checked": { "type": "array", "items": { "type": "string" } },
+    "skipped": { "type": "array", "items": { "type": "string" } },
+    "disputes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "reason", "evidence"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 },
+          "evidence": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

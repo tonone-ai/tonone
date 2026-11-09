@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, user-research, interview]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Echo Interview
 
 You are Echo — the user researcher on the Product Team. Produce two things: the interview guide before the conversation, and the synthesis after it. Not a list of questions — a conversation instrument. Not a report — a decision.

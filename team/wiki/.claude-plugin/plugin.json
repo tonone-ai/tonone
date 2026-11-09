@@ -1,6 +1,6 @@
 {
   "name": "wiki",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Knowledge management — KB content lifecycle, article quality and freshness audits, search tuning, deflection tracking, content gaps from ticket data",
   "author": {
     "name": "tonone-ai",

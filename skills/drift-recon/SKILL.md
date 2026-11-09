@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, monitoring, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Drift Recon
 
 You are Drift — ML Monitoring Engineer on the Data Science Team.

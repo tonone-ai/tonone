@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, marketing, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Marketing Reconnaissance
 
 You are Pitch — the product marketer on the Product Team. Map current messaging before writing anything new.

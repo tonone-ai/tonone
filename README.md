@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-140 specialist agents in 15 teams for Claude Code, plus 568 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
+140 specialist agents in 15 teams for Claude Code, plus 573 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
 
 ```bash
 claude plugin marketplace add tonone-ai/tonone
@@ -305,7 +305,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 140 agents and 568 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 140 agents and 573 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 
@@ -317,12 +317,12 @@ Every engineering agent detects your stack automatically:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-## All 568 Skills
+## All 573 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
 
-#### Engineering Team (15 agents, 92 skills)
+#### Engineering Team (15 agents, 105 skills)
 
 **Apex** (Engineering Lead)
 
@@ -336,8 +336,11 @@ Every engineering agent detects your stack automatically:
 - `/apex-decisions` — Append-only decision log, resurfaced at session start
 - `/apex-route` — Reach ANY tonone specialist on demand, even ones not installed in this session's roster
 - `/apex-stats` — Spawn-count analytics for the tonone roster
+- `/apex-diagnose` — Session postmortem from local transcripts: why a run was slow, repetitive or expensive
+- `/apex-gate` — Inspect and tune the skill-manifest gate: which skills keep their description in context
 - `/apex-status` — CTO-level project status from git and codebase state
 - `/apex-takeover` — System takeover
+- `/apex-second-opinion` — Opt-in cross-model review of a diff or plan (codex/gemini/llm), redacted and consent-gated
 
 **Forge** (Infrastructure)
 
@@ -364,6 +367,7 @@ Every engineering agent detects your stack automatically:
 - `/spine-perf` — Find and fix performance bottlenecks
 - `/spine-recon` — Backend reconnaissance
 - `/spine-review` — API and backend code review
+- `/spine-simplify` — Post-feature clarity pass: collapse indirection, delete dead code, behavior-preserving
 - `/spine-service` — Build a new production-ready service from scratch
 
 **Flux** (Data)
@@ -404,6 +408,7 @@ Every engineering agent detects your stack automatically:
 - `/prism-recon` — Frontend reconnaissance
 - `/prism-stack` — Framework-specific implementation guidelines (React/Vue/Svelte/Next.js)
 - `/prism-ui` — Implement a complete UI screen or feature from a Form visual spec
+- `/prism-redesign` — Scan, diagnose, fix in batches and re-lint an existing UI (max 3 loops)
 
 **Cortex** (ML/AI)
 
@@ -466,9 +471,10 @@ Every engineering agent detects your stack automatically:
 - `/pave-contribute` — Contribute a session learning back to the upstream tonone repo
 - `/pave-env` — Set up local development environments
 - `/pave-golden` — Define a golden path
+- `/pave-lsp` — Wire LSP and semantic-code plugins for the project's languages
 - `/pave-recon` — Platform reconnaissance
 
-#### Product Team (12 agents, 92 skills)
+#### Product Team (12 agents, 103 skills)
 
 **Helm** (Head of Product)
 
@@ -479,6 +485,7 @@ Every engineering agent detects your stack automatically:
 - `/helm-init` — Short interview that writes PRODUCT.md: platform, users, purpose, positioning
 - `/helm-plan` — Build a product roadmap and prioritize the backlog
 - `/helm-recon` — Product landscape reconnaissance
+- `/helm-autoplan` — Auto-review a brief with parallel crest/draft/spine/vigil lenses, one decision brief, GO/NO-GO
 
 **Echo** (User Research)
 
@@ -716,7 +723,7 @@ Every engineering agent detects your stack automatically:
 - `/terms-recon` — Survey existing privacy and legal docs for completeness and GDPR compliance
 - `/terms-tos` — Draft Terms of Service for the described product
 
-#### Design Team (10 agents, 30 skills)
+#### Design Team (10 agents, 33 skills)
 
 **Hue** (Color Systems Designer)
 
@@ -741,6 +748,7 @@ Every engineering agent detects your stack automatically:
 - `/move-animate` — Design an animation spec for a component or interaction
 - `/move-recon` — Audit existing animations in a codebase
 - `/move-system` — Design a motion system for a product
+- `/move-moments` — Catalogue of scroll and hero moments with reduced-motion fallbacks
 
 **Wire** (Prototyping Engineer)
 
@@ -759,6 +767,7 @@ Every engineering agent detects your stack automatically:
 - `/cut-icon` — Design an icon system spec or audit existing icons for consistency and accessibility
 - `/cut-illustrate` — Spec or critique custom illustrations
 - `/cut-recon` — Audit existing icons and illustrations in a codebase
+- `/cut-fetch` — Fetch licensed assets and icons into the project with CREDITS.md
 
 **Axe** (Accessibility Engineer)
 
@@ -1027,7 +1036,7 @@ Every engineering agent detects your stack automatically:
 - `/chaos-game` — Design a game day
 - `/chaos-recon` — Audit existing resilience
 
-#### AI Operations Team (9 agents, 29 skills)
+#### AI Operations Team (9 agents, 30 skills)
 
 **Deploy** (AI Deployment Engineer)
 
@@ -1065,6 +1074,7 @@ Every engineering agent detects your stack automatically:
 
 - `/token-budget` — Design token budgets
 - `/token-chunk` — Design chunking strategies
+- `/token-compact` — Plan a verbatim compaction of a Claude Code transcript
 - `/token-recon` — Audit token usage patterns
 
 **Prompt** (Prompt Engineer)

@@ -10,6 +10,8 @@ compatibility: Designed for Claude Code
 tags: [product, ux, flow]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Draft Flow
 
 You are Draft — the UX designer on the Product Team.

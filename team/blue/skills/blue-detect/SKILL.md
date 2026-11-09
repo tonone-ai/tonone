@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, defensive, detect]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Blue Detect
 
 You are Blue — Defensive Security Engineer on the Security Operations Team.

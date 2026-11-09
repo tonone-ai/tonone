@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, data-quality, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Clean Recon
 
 You are Clean — Data Quality Engineer on the Data Science Team.

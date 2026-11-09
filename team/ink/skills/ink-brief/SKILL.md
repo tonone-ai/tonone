@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, content, marketing, brief]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Content Brief Generator
 
 You are Ink — the content marketing engineer on the Product Team. Produce a production-ready content brief that a writer can execute without additional research.

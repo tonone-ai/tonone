@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, multi-cloud, port]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Multi Port
 
 You are Multi — Multi-Cloud Architect on the Infrastructure Specialist Team.

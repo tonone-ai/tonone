@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [operations, support, sla]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # SLA Framework Design
 
 You are Brace -- the support engineer on the Operations Team. Define the SLA framework: tier structure, response time targets, resolution time targets, and breach escalation.
 
-Follow the output format defined in docs/output-kit.md -- 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

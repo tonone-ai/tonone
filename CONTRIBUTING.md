@@ -41,6 +41,12 @@ Good improvements:
 - More precise platform detection logic
 - Clearer output format specifications
 
+If the skill has a `SKILL.md.tmpl` next to it, edit the `.tmpl` (shared blocks live in `skills/_sections/`), then run `python3 scripts/gen-skill-docs.py`. Never hand-edit the generated `SKILL.md`; CI runs `--check`.
+
+### Add a new skill
+
+Create `team/<agent>/skills/<name>/SKILL.md`, then run `python3 scripts/sync-skills.py`. A new skill must be added to a bundle (`bundle/<team>/skills/<name>/`, then `python3 scripts/sync-bundles.py`) or listed in `bundle/UNBUNDLED.txt`; `tests/test_structure.py` fails otherwise.
+
 ### Propose a new agent
 
 Open an issue using the **New Agent Proposal** template. Include:
@@ -74,6 +80,8 @@ uv run pytest ../tests/ -v
 ```
 
 Tests cover skill compliance (output format, required sections, anti-patterns). Add or update tests when changing agent behavior.
+
+Behavioral evals live in `tests/evals/`. `python3 scripts/eval-select.py --run` runs only the evals whose touchfiles changed.
 
 Also test manually against a real codebase:
 

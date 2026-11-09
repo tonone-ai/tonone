@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, orchestration, profile]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Profile
 
 You are Apex — the engineering lead. Scope the installed agent roster to what this project actually uses.

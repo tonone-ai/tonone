@@ -243,3 +243,146 @@ test("project discovery walks up from cwd when CLAUDE_PROJECT_DIR unset", () => 
   assert.match(ctx(r), /found by walk/);
   done(d);
 });
+
+// ── learnings ────────────────────────────────────────────────────────────────
+
+const learn = (dir, lesson, more = []) =>
+  cli(dir, ["learn", "--lesson", lesson, ...more]);
+const lidOf = (r) => /(L-\d{8}-[0-9a-f]{4})/.exec(r.stdout)[1];
+const metrics = (dir) => path.join(dir, ".tonone", "metrics.jsonl");
+
+test("learn writes kind:learning record; list stays decisions-only", () => {
+  const d = mk();
+  const r = learn(d, "jest hangs without --forceExit", ["--scope", "tests/"]);
+  assert.strictEqual(r.status, 0, r.stderr);
+  const rec = JSON.parse(fs.readFileSync(file(d), "utf8").trim());
+  assert.strictEqual(rec.kind, "learning");
+  assert.match(rec.id, /^L-\d{8}-[0-9a-f]{4}$/);
+  assert.strictEqual(rec.confirmed, 1);
+  assert.ok(rec.source);
+  assert.match(cli(d, ["learnings"]).stdout, /jest hangs/);
+  assert.doesNotMatch(cli(d, ["list"]).stdout, /jest hangs/);
+  assert.notStrictEqual(learn(d, "").status, 0);
+  done(d);
+});
+
+test("hook: decisions first (irreversible leading), then learnings, legacy lines ok", () => {
+  const d = mk();
+  fs.mkdirSync(path.dirname(file(d)), { recursive: true });
+  // legacy decision line, no kind
+  fs.writeFileSync(
+    file(d),
+    JSON.stringify({
+      id: "D-20250101-0001",
+      ts: "2025-01-01T00:00:00Z",
+      title: "legacy",
+      decision: "old shape",
+      why: "w",
+      reversible: true,
+      status: "active",
+    }) + "\n",
+  );
+  learn(d, "flaky port 5432 clash");
+  add(d, "locked one", ["--irreversible"]);
+  const t = ctx(hook(d, { cwd: d }));
+  const i = (s) => t.indexOf(s);
+  assert.ok(i("locked one") > -1 && i("legacy") > -1 && i("flaky port") > -1);
+  assert.ok(i("locked one") < i("legacy"));
+  assert.ok(i("legacy") < i("flaky port"));
+  assert.match(t, /Project learnings/);
+  done(d);
+});
+
+test("hook: learnings only; learnings capped at 3 with +N more", () => {
+  const d = mk();
+  for (let i = 0; i < 5; i++) learn(d, "lesson number " + i);
+  const t = ctx(hook(d, { cwd: d }));
+  assert.strictEqual(
+    t.split("\n").filter((l) => l.startsWith("- L-")).length,
+    3,
+  );
+  assert.match(t, /\+2 more: \/apex-decisions learnings/);
+  assert.doesNotMatch(t, /Active project decisions/);
+  done(d);
+});
+
+test("hook: total stays within 10 entries and ~1500 chars with both kinds", () => {
+  const d = mk();
+  for (let i = 0; i < 12; i++) add(d, "d" + i);
+  for (let i = 0; i < 4; i++) learn(d, "l" + i);
+  const t = ctx(hook(d, { cwd: d }));
+  const n = t.split("\n").filter((l) => l.startsWith("- ")).length;
+  assert.ok(n <= 10, "entries " + n);
+  assert.ok(t.length <= 1600, "len " + t.length);
+  assert.match(t, /- L-/); // learnings keep a reserved slot
+  assert.match(t, /\+\d+ more: \/apex-decisions list/);
+  done(d);
+});
+
+test("superseded and redacted learnings are hidden; confirm ranks first", () => {
+  const d = mk();
+  const a = lidOf(learn(d, "old belief"));
+  const b = lidOf(learn(d, "secret-ish belief"));
+  const c = lidOf(learn(d, "plain belief"));
+  const e = lidOf(learn(d, "popular belief"));
+  assert.strictEqual(
+    cli(d, ["supersede", a, "--lesson", "new belief"]).status,
+    0,
+  );
+  assert.strictEqual(cli(d, ["redact", b, "--reason", "oops"]).status, 0);
+  assert.strictEqual(cli(d, ["confirm", e]).status, 0);
+  assert.notStrictEqual(cli(d, ["confirm", b]).status, 0);
+  let t = ctx(hook(d, { cwd: d }));
+  assert.doesNotMatch(t, /old belief|secret-ish/);
+  assert.match(t, /new belief/);
+  assert.ok(t.indexOf("popular belief") < t.indexOf("plain belief"));
+  assert.match(t, /\(x2\)/);
+  assert.doesNotMatch(cli(d, ["learnings", "--json"]).stdout, /secret-ish/);
+  assert.doesNotMatch(cli(d, ["show", b]).stdout, /secret-ish/);
+  assert.match(cli(d, ["learnings", "--all"]).stdout, /old belief/);
+  assert.match(
+    cli(d, ["learnings", "--query", "plain"]).stdout,
+    /plain belief/,
+  );
+  assert.doesNotMatch(
+    cli(d, ["learnings", "--query", "plain"]).stdout,
+    /popular/,
+  );
+  assert.ok(c);
+  done(d);
+});
+
+test("hook silent when only superseded/redacted learnings remain", () => {
+  const d = mk();
+  const a = lidOf(learn(d, "gone"));
+  cli(d, ["redact", a, "--reason", "x"]);
+  assert.strictEqual(hook(d, { cwd: d }).stdout, "");
+  done(d);
+});
+
+test("metrics: written only when TONONE_METRICS=on, with counts", () => {
+  const d = mk();
+  add(d, "one");
+  learn(d, "lesson");
+  hook(d, { cwd: d });
+  hook(d, { cwd: d }, { TONONE_METRICS: "yes" });
+  assert.ok(!fs.existsSync(metrics(d)));
+  const r = hook(d, { cwd: d }, { TONONE_METRICS: "on" });
+  assert.ok(ctx(r).includes("lesson")); // output unchanged
+  const lines = fs.readFileSync(metrics(d), "utf8").trim().split("\n");
+  assert.strictEqual(lines.length, 1);
+  const m = JSON.parse(lines[0]);
+  assert.strictEqual(m.tool, "apex-decisions");
+  assert.strictEqual(m.event, "resurfaced");
+  assert.strictEqual(m.n, 1);
+  assert.strictEqual(m.learnings, 1);
+  assert.ok(Date.parse(m.ts));
+  done(d);
+});
+
+test("metrics: no file or nothing to show writes nothing", () => {
+  const d = mk();
+  hook(d, { cwd: d }, { TONONE_METRICS: "on" });
+  assert.ok(!fs.existsSync(metrics(d)));
+  done(d);
+});

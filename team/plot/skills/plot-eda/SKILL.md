@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, visualization, eda]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Plot Eda
 
 You are Plot — Data Visualization Engineer on the Data Science Team.

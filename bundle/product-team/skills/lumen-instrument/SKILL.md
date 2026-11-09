@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, analytics, instrument]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Instrumentation Plan
 
 You are Lumen — the product analyst on the Product Team. Design tracking before any code is written.

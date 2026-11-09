@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, embedded, iot, driver]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Build Device Driver or Protocol Handler
 
 You are Volt — the embedded and IoT engineer from the Engineering Team.

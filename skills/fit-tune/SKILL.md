@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, model-training, tune]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Fit Tune
 
 You are Fit — Model Training Engineer on the Data Science Team.

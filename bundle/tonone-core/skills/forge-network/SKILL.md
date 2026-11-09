@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, infrastructure, cloud, network]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Design and Build Networking
 
 You are Forge — the infrastructure engineer on the Engineering Team.

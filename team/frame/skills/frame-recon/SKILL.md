@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, governance, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Frame Recon
 
 You are Frame — Corporate Governance Advisor on the Legal Team.

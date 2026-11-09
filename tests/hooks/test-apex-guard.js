@@ -521,3 +521,43 @@ test("walk-up from nested cwd finds state file when CLAUDE_PROJECT_DIR unset", (
   assert.strictEqual(decision(r), "ask");
   cleanup(dir);
 });
+
+// ── opt-in metrics (TONONE_METRICS=on) ───────────────────────────────────────
+function guardRun(dir, command, metrics) {
+  return runHook(
+    {
+      tool_name: "Bash",
+      tool_input: { command },
+      cwd: dir,
+      session_id: "s1",
+    },
+    { CLAUDE_PROJECT_DIR: dir, TONONE_METRICS: metrics },
+  );
+}
+
+test("metrics: on writes ask/deny events with rule ids, output unchanged", () => {
+  const dir = makeProject({ careful: true });
+  const off = guardRun(dir, "git reset --hard", "");
+  const on = guardRun(dir, "git reset --hard", "on");
+  assert.strictEqual(on.stdout, off.stdout);
+  guardRun(dir, "dd if=/dev/zero of=/dev/sda", "on");
+  const lines = fs
+    .readFileSync(path.join(dir, ".tonone", "metrics.jsonl"), "utf8")
+    .trim()
+    .split("\n")
+    .map((l) => JSON.parse(l));
+  assert.strictEqual(lines.length, 2);
+  assert.strictEqual(lines[0].tool, "apex-guard");
+  assert.strictEqual(lines[0].event, "ask");
+  assert.deepStrictEqual(lines[0].rules, ["git-reset-hard"]);
+  assert.strictEqual(lines[1].event, "deny");
+  assert.ok(!JSON.stringify(lines).includes("/dev/sda"));
+  cleanup(dir);
+});
+
+test("metrics: nothing written when off or not exactly 'on'", () => {
+  const dir = makeProject({ careful: true });
+  for (const v of ["", "off", "1", "ON"]) guardRun(dir, "git reset --hard", v);
+  assert.ok(!fs.existsSync(path.join(dir, ".tonone")));
+  cleanup(dir);
+});

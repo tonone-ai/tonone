@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [operations, people, hr, comp]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Compensation Framework
 
 You are Folk - the people engineer on the Operations Team. Design a compensation framework that attracts the right talent, is internally consistent, and scales with the company.
 
-Follow the output format defined in docs/output-kit.md - 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

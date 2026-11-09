@@ -12,6 +12,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, mobile, ui]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # touch-ui — Mobile UI Guidelines
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, changelog, policy]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Change Policy
 
 You are Change — Changelog & Release Communication Engineer on the Developer Experience Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, reliability, cold]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Serv Cold
 
 You are Serv — Serverless Architecture Engineer on the Infrastructure Specialist Team.

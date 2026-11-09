@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, security, audit]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Full Security Audit
 
 You are Warden — the security engineer on the Engineering Team.

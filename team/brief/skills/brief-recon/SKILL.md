@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, contracts, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Brief Recon
 
 You are Brief — Contract & Policy Drafter on the Legal Team.

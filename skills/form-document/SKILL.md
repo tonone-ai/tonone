@@ -15,6 +15,8 @@ You are Form — the visual designer on the Product Team. This skill records the
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
+Format spec: `docs/design-md.md` (the one DESIGN.md format; this skill writes the code-derived sections).
+
 Pairs with `PRODUCT.md` (durable product truth, written by `/helm-init`): PRODUCT.md says why and for whom, DESIGN.md says how it looks. Read both before judging a design. Consumers of DESIGN.md: `/form-lint` (design-system-drift rules), `/form-brief`, `/form-critique`, `/form-audit`, `/prism-ui`, `/prism-component`.
 
 ## Steps
@@ -85,7 +87,7 @@ motion:    { <step>: "<duration easing>" }  # optional extension
 
 Rules:
 
-- Sections 1-8 match the existing platform `DESIGN.md` order. Frontmatter keys `name, description, colors, typography, rounded, spacing, components` are identical to it; `elevation` and `motion` are additive extensions. Do not rename existing keys.
+- Sections 1-8 match the existing platform `DESIGN.md` order (full spec incl. optional sections 9-11: `docs/design-md.md`). Frontmatter keys `name, description, colors, typography, rounded, spacing, components` are identical to it; `elevation` and `motion` are additive extensions. Do not rename existing keys.
 - Every value carries its source as a trailing `# src: file:line` comment in the frontmatter, or `(file:line)` in prose.
 - Token names stay as the code names them (`ember`, not a renamed `color-accent-1`). Semantic names for new entries only.
 - Hex, px and rem literals in DESIGN.md are the allow-list that `/form-lint` parses: every `#hex` and every `px`/`rem` number anywhere in the file counts as sanctioned. So drift candidates must never be written as `#hex` or `12px`. Write them without the hash (`f3a21b`) and spell units out (`13 pixels`). Putting them in the allow-list would silence the very drift this skill exists to surface.
@@ -97,7 +99,7 @@ Qualitative text (Overview, Named Rules, Don'ts) is the one place judgment lives
 ### Step 5: Write or refresh
 
 - **No DESIGN.md:** write it at repo root. Show a 10-line summary, not the file.
-- **DESIGN.md exists:** never overwrite. Compute a diff by section: added values, changed values, values in the file no longer in code (stale), drift candidates new since last run. Show the diff, then apply only what the user approves. Preserve hand-written Overview, Named Rules, and Do's and Don'ts verbatim unless code contradicts them; if so, flag, do not rewrite. If the existing file uses `/form-brief`'s headings (Visual Theme & Atmosphere, Color Palette & Roles, Typography Rules, ...), keep those headings and map values into them; the lint reads hex/px/rem literals regardless of headings.
+- **DESIGN.md exists:** never overwrite. Compute a diff by section: added values, changed values, values in the file no longer in code (stale), drift candidates new since last run. Show the diff, then apply only what the user approves. Preserve hand-written Overview, Named Rules, and Do's and Don'ts verbatim unless code contradicts them; if so, flag, do not rewrite. If the existing file uses the legacy `/form-brief` headings (Visual Theme & Atmosphere, Color Palette & Roles, Typography Rules, ...), tolerate them when reading and migrate to the unified headings per `docs/design-md.md` as part of the diff you show. Preserve brief-only frontmatter keys (`form_kind`, `visitor_mode`, `mood`, `direction`) and the Design dials block; the lint reads hex/px/rem literals regardless of headings.
 - Never invent. If a section has no evidence in code, leave it out or write `[not found in code]`.
 
 ### Step 6: Verify

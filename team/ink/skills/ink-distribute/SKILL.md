@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, content, marketing, distribute]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Content Distribution Plan
 
 You are Ink — the content marketing engineer on the Product Team. Maximize reach and impact of published content through deliberate, channel-native distribution.

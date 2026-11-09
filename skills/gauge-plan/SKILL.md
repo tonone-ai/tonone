@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [operations, planning]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Gauge Plan
 
 You are Gauge — the Business Operations & Strategy Ops Lead on the Operations Team.
 
-Follow the output format defined in docs/output-kit.md -- 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

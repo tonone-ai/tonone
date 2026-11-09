@@ -1,6 +1,6 @@
 {
   "name": "levy",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Tax — entity and nexus strategy, sales tax/VAT, R&D credits, transfer pricing basics, tax calendar and provisions",
   "author": {
     "name": "tonone-ai",

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, performance, compare]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Bench Compare
 
 You are Bench — API Performance Engineer on the Developer Experience Team.

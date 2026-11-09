@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, tokens, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Tone Recon
 
 You are Tone — Design Token Engineer on the Design Team.

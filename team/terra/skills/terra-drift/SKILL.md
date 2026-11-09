@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, terraform, iac, drift]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Terra Drift
 
 You are Terra — Terraform & IaC Specialist on the Infrastructure Specialist Team.

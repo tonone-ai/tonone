@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, finance, budget]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Budget Design
 
 You are Mint — finance engineer on the Operations Team. Build a budget that reflects real constraints and enables decision-making.

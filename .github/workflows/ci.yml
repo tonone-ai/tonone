@@ -42,8 +42,9 @@ jobs:
   # ---------------------------------------------------------------------------
   # Job 2: Hook tests
   # Validates JS syntax, exit-code contracts, and source-level invariants for
-  # all three worktree hooks and bump-version.py. Node.js is pre-installed on
-  # ubuntu-latest; no extra install needed.
+  # bump-version.py and every JS hook (tests/hooks/ runs as a whole directory, so
+  # new test files are picked up automatically). Worktree hooks were removed in
+  # #104; their tests were deleted with them. Node is pinned via setup-node.
   # ---------------------------------------------------------------------------
   test-hooks:
     name: Test hooks
@@ -57,8 +58,15 @@ jobs:
         run: pip install pytest
       - name: Run hook tests
         run: python -m pytest tests/test_hooks.py -v
-      - name: Run Node hook tests (design lint, decisions, guard)
-        run: node --test tests/hooks/test-form-design-lint.js tests/hooks/test-apex-decisions.js tests/hooks/test-apex-guard.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run Node hook tests (all of tests/hooks/)
+        run: node --test tests/hooks/
+      - name: Run root Node tests
+        run: node --test tests/test_compact.js tests/test_skill_gate.js tests/test_star_ask.js tests/test_jev.js tests/test_project_shape.js
+      - name: Run eval selection tests and evals
+        run: python -m pytest tests/test_eval_select.py tests/evals -v
 
   # ---------------------------------------------------------------------------
   # Job 3: Shell script linting

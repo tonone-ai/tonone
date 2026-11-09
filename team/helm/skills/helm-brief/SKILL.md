@@ -39,50 +39,50 @@ Fill all 6 fields now. Use the schema below.
 For fields lacking hard data, make an explicit inference — don't leave blank, don't ask. Label inferences: `[assumed: …]`. An inference with a label is more useful than a blank field.
 
 ```
-goal:
-  [One sentence: what user outcome does this create?
-   ✓ "Solo technical founders can set up their first deployment without a DevOps hire."
-   ✗ "Improve the deployment experience."]
-
-user_problem:
+problem:
   [What the user is trying to do and what's stopping them. One paragraph max.
    Must describe a user experience, not a product gap.
    ✓ "Founders with no ops background spend 2–4 hours configuring CI/CD for the first time,
       often abandoning mid-setup because the error messages don't map to their mental model."
    ✗ "Our CI/CD setup process is undocumented."]
 
-success_metrics:
+target_user:
+  [Specific role, company size, context. Not a category.
+   ✓ "Solo technical founder, pre-seed, no ops hire, first production deploy"
+   ✗ "Developers"]
+
+success_criteria:
   [Measurable outcomes. At least 2. Must be falsifiable.
    ✓ "80% of new users complete first deployment in < 30 minutes"
    ✓ "Support tickets tagged 'deployment setup' drop 40% in 30 days"
    ✗ "Better deployment experience" or "users are happier"]
 
-scope:
-  [What is being built in this iteration. Specific and bounded.
+constraints:
+  [What this iteration builds, bounded, plus timeline, budget, technical limits.
    State what the system does, not what it looks like.
-   ✓ "Guided setup wizard: 5-step flow, detects repo type, auto-generates config, shows inline docs"
+   ✓ "Guided setup wizard: 5-step flow, detects repo type, auto-generates config. Two weeks, existing infra only."
    ✗ "A better CI/CD setup page"]
+
+feasibility_ask:
+  [Optional. Specific feasibility asks for Apex only. Leave blank if none.
+   ✓ "Can we auto-detect repo type from GitHub API within the setup flow? Affects scope."
+   ✗ "What do users think about this feature?" — that's Echo's job, not a question for Apex]
 
 out_of_scope:
   [Explicit list. At least 2 items. Name what you are deliberately NOT solving.
    ✓ "Multi-team workflows and org-level settings"
    ✓ "Custom pipeline logic beyond the preset templates"
    ✓ "Mobile experience"]
-
-open_questions:
-  [Specific feasibility asks for Apex only. Leave blank if none.
-   ✓ "Can we auto-detect repo type from GitHub API within the setup flow? Affects scope."
-   ✗ "What do users think about this feature?" — that's Echo's job, not an open question for Apex]
 ```
 
 ### Step 3: Self-Review
 
 Before delivering, verify:
 
-- [ ] `goal` names a user outcome, not a product capability
-- [ ] `user_problem` describes a user experience — not "we need" or "the system lacks"
-- [ ] `success_metrics` has at least 2 falsifiable outcomes (could you answer yes/no after shipping?)
-- [ ] `scope` is bounded — fits in a sprint or two, not a quarter
+- [ ] `problem` describes a user experience — not "we need" or "the system lacks"
+- [ ] `target_user` is a specific role and context, not a category
+- [ ] `success_criteria` has at least 2 falsifiable outcomes (could you answer yes/no after shipping?)
+- [ ] `constraints` is bounded — fits in a sprint or two, not a quarter
 - [ ] `out_of_scope` has at least 2 explicit items a reasonable person might expect in scope
 - [ ] No field says "TBD" — only labeled assumptions (`[assumed: …]`)
 - [ ] Brief could be handed to Apex without a follow-up meeting

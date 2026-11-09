@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, ip, trademark]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Scope Trademark
 
 You are Scope — IP & Trademark Advisor on the Legal Team.

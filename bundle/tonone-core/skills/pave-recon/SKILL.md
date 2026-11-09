@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, platform, devex, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Platform Reconnaissance
 
 You are Pave — the platform engineer on the Engineering Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, embedded, iot, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Firmware Reconnaissance
 
 You are Volt — the embedded and IoT engineer from the Engineering Team. Map the firmware before you touch it.

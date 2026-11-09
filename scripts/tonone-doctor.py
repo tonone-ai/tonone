@@ -25,6 +25,7 @@ import re
 import subprocess
 import sys
 import time
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 CRITICAL, WARNING, INFO = "CRITICAL", "WARNING", "INFO"
@@ -592,6 +593,61 @@ def render(scope, root, findings):
     return "\n".join(lines)
 
 
+def usage_summary(root, since=None):
+    """Aggregate .tonone/metrics.jsonl per tool/event. Bad lines are skipped."""
+    f = Path(root) / ".tonone" / "metrics.jsonl"
+    if not f.is_file():
+        return None
+    cutoff = None
+    if since:
+        m = re.fullmatch(r"(\d+)([dh])", since)
+        if not m:
+            raise ValueError("--since expects Nd or Nh, e.g. 7d")
+        n = int(m.group(1))
+        cutoff = datetime.now(timezone.utc) - (
+            timedelta(days=n) if m.group(2) == "d" else timedelta(hours=n)
+        )
+    tools, bad = {}, 0
+    for line in f.read_text(encoding="utf-8", errors="replace").splitlines():
+        if not line.strip():
+            continue
+        try:
+            e = json.loads(line)
+            tool, ev = str(e["tool"]), str(e["event"])
+            if cutoff:
+                ts = datetime.fromisoformat(str(e["ts"]).replace("Z", "+00:00"))
+                if ts.tzinfo is None:
+                    ts = ts.replace(tzinfo=timezone.utc)
+                if ts < cutoff:
+                    continue
+        except (ValueError, KeyError, TypeError, AttributeError):
+            bad += 1
+            continue
+        t = tools.setdefault(tool, {}).setdefault(ev, {"n": 0, "sums": {}})
+        t["n"] += 1
+        for k, v in e.items():
+            if isinstance(v, (int, float)) and not isinstance(v, bool):
+                t["sums"][k] = t["sums"].get(k, 0) + v
+    return {"tools": tools, "skipped": bad, "since": since}
+
+
+def render_usage(u):
+    if u is None:
+        return "metrics off (set TONONE_METRICS=on)"
+    lines = ["╭─ TONONE ── usage ──────────────────────────────╮", ""]
+    if not u["tools"]:
+        lines.append("  ● no events" + (f" in last {u['since']}" if u["since"] else ""))
+    for tool in sorted(u["tools"]):
+        lines.append(f"  ### {tool}")
+        for ev, d in sorted(u["tools"][tool].items()):
+            sums = " ".join(f"{k}={v:g}" for k, v in sorted(d["sums"].items()))
+            lines.append(f"  - {ev} x{d['n']}" + (f"  {sums}" if sums else ""))
+    if u["skipped"]:
+        lines.append(f"  ▲ {u['skipped']} malformed line(s) skipped")
+    lines += ["", "╰─ Full data: .tonone/metrics.jsonl ─────────────╯"]
+    return "\n".join(lines)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Read-only tonone health report.")
     ap.add_argument(
@@ -601,8 +657,24 @@ def main(argv=None):
     ap.add_argument(
         "--strict", action="store_true", help="exit 1 on WARNING or CRITICAL"
     )
+    ap.add_argument(
+        "--usage", action="store_true", help="summarize .tonone/metrics.jsonl"
+    )
+    ap.add_argument("--since", help="with --usage: window, e.g. 7d or 12h")
     args = ap.parse_args(argv)
     root = Path(args.root).resolve()
+    if args.usage:
+        try:
+            u = usage_summary(root, args.since)
+        except ValueError as e:
+            print(f"error: {e}", file=sys.stderr)
+            return 2
+        print(
+            json.dumps(u or {"metrics": "off"}, indent=2)
+            if args.json
+            else render_usage(u)
+        )
+        return 0
     scope, findings = collect(root)
     bad = any(f["severity"] in (WARNING, CRITICAL) for f in findings)
     if args.json:

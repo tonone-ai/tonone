@@ -1,0 +1,10 @@
+{
+  "name": "form-lint",
+  "description": "design-lint CLI fires specific rule ids on bad UI fixtures and stays silent on a clean one",
+  "touchfiles": [
+    "team/form/scripts/design-lint/**",
+    "team/form/hooks/form-design-lint.js",
+    "tests/fixtures/design-lint/**",
+    "tests/evals/form-lint/**"
+  ]
+}

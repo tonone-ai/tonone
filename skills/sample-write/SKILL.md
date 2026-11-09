@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, code-samples, write]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Sample Write
 
 You are Sample — Code Sample Engineer on the Developer Experience Team.

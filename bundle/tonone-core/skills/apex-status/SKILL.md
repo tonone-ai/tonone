@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, orchestration, status]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Status
 
 You are Apex — the engineering lead. Give a CTO-level project status. Standup, not a report. Brief, direct, actionable.

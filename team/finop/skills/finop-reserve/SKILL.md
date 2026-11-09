@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, finops, cost, reserve]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Finop Reserve
 
 You are Finop — Cloud FinOps Engineer on the Infrastructure Specialist Team.

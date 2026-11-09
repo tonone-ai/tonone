@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, cost, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Budget Recon
 
 You are Budget — the AI Cost Engineer on the AI Operations Team.

@@ -1,0 +1,96 @@
+[
+  {
+    "id": "bricolage-figtree",
+    "display": "Bricolage Grotesque",
+    "body": "Figtree",
+    "mono": "JetBrains Mono",
+    "tags": ["saas", "devtool", "landing", "retail"],
+    "rationale": "Quirky optical-size grotesque for headlines, calm geometric body; reads confident without the default-SaaS look.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "fraunces-public",
+    "display": "Fraunces",
+    "body": "Public Sans",
+    "tags": ["hospitality", "food", "editorial", "landing", "retail"],
+    "rationale": "Soft-serif display with warmth, neutral civic sans for reading.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "familjen-plex",
+    "display": "Familjen Grotesk",
+    "body": "IBM Plex Sans",
+    "mono": "IBM Plex Mono",
+    "tags": ["devtool", "dashboard", "docs", "app", "saas"],
+    "rationale": "Tight technical display, workhorse body and matching mono for data.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "newsreader-source",
+    "display": "Newsreader",
+    "body": "Source Sans 3",
+    "tags": ["editorial", "docs", "portfolio", "civic"],
+    "rationale": "Text-first serif made for screens, humanist sans for UI and captions.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "chakra-barlow",
+    "display": "Chakra Petch",
+    "body": "Barlow",
+    "mono": "Share Tech Mono",
+    "tags": ["gaming", "landing", "portfolio"],
+    "rationale": "Squared, techy display with a condensed-friendly body; fits HUD-style UI.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "dmserif-dmsans",
+    "display": "DM Serif Display",
+    "body": "DM Sans",
+    "tags": ["hospitality", "food", "retail", "landing"],
+    "rationale": "High-contrast display serif for names and prices, low-contrast sans for everything else.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "literata-atkinson",
+    "display": "Literata",
+    "body": "Atkinson Hyperlegible",
+    "tags": ["civic", "health", "docs", "editorial", "app"],
+    "rationale": "Legibility-first: Atkinson was designed for low vision, Literata for long reading.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "unbounded-outfit",
+    "display": "Unbounded",
+    "body": "Outfit",
+    "tags": ["gaming", "retail", "landing", "portfolio"],
+    "rationale": "Wide, loud display for brand moments, clean geometric body to keep UI calm.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "redhat-family",
+    "display": "Red Hat Display",
+    "body": "Red Hat Text",
+    "mono": "Red Hat Mono",
+    "tags": ["fintech", "dashboard", "saas", "app", "landing"],
+    "rationale": "One superfamily, three roles; consistent numerals and tabular figures for money UI.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  },
+  {
+    "id": "syne-work",
+    "display": "Syne",
+    "body": "Work Sans",
+    "tags": ["portfolio", "editorial", "gaming", "landing"],
+    "rationale": "Expressive extra-bold display for a signature feel; plain body keeps work in front.",
+    "source": "fonts.google.com",
+    "license": "SIL OFL 1.1"
+  }
+]
