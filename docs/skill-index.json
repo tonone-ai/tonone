@@ -1477,6 +1477,13 @@
     "path": "team/form/skills/form-critique/SKILL.md"
   },
   {
+    "name": "form-deal",
+    "agent": "form",
+    "team": "Product",
+    "description": "Deal a pre-vetted palette and type pairing for a trade and page kind, avoiding recent picks. Use when asked to \"deal me a palette\", \"pick a starting palette and fonts\", \"re-deal\", or \"form-deal\". A starting deal, not a verdict.",
+    "path": "team/form/skills/form-deal/SKILL.md"
+  },
+  {
     "name": "form-deck",
     "agent": "form",
     "team": "Product",
@@ -1496,6 +1503,13 @@
     "team": "Product",
     "description": "Strip a design to its essence. Use when asked to \"simplify this\", \"distill it\", \"too cluttered\", or \"cut it down\".",
     "path": "team/form/skills/form-distill/SKILL.md"
+  },
+  {
+    "name": "form-document",
+    "agent": "form",
+    "team": "Product",
+    "description": "Derive or refresh DESIGN.md from shipped code and tokens, not intentions. Use when asked to \"document the design system\", \"write DESIGN.md\", or \"refresh DESIGN.md\". Frequency-ranks real values, flags one-offs as drift, diffs instead of overwriting.",
+    "path": "team/form/skills/form-document/SKILL.md"
   },
   {
     "name": "form-email",
@@ -1790,6 +1804,13 @@
     "team": "Product",
     "description": "|",
     "path": "team/helm/skills/helm-handoff/SKILL.md"
+  },
+  {
+    "name": "helm-init",
+    "agent": "helm",
+    "team": "Product",
+    "description": "Short interview that writes PRODUCT.md, the durable product truth other skills read. Use when asked to \"init product\", \"write PRODUCT.md\", or \"set up product context\". Prefills from README and repo, asks max 6 questions.",
+    "path": "team/helm/skills/helm-init/SKILL.md"
   },
   {
     "name": "helm-office-hours",
@@ -2721,6 +2742,13 @@
     "team": "Engineering",
     "description": "Implement a complete UI screen or feature from a Form visual spec. Use when asked to \"build a page\", \"implement this screen\", \"build the frontend for this feature\", or \"create this UI\".",
     "path": "team/prism/skills/prism-ui/SKILL.md"
+  },
+  {
+    "name": "prism-variants",
+    "agent": "prism",
+    "team": "Engineering",
+    "description": "Generate 3-5 side-by-side variants of one UI component, screenshot each, compare, fold the winner in. Use when asked to \"try variants\", \"explore options for this component\", \"show me alternatives\", or \"A/B this component visually\".",
+    "path": "team/prism/skills/prism-variants/SKILL.md"
   },
   {
     "name": "prompt-design",

@@ -2,7 +2,7 @@
 
 Fifteen AI teams. 140 agents total. Engineering executes. Product decides what to build and why. Revenue closes and grows accounts. Marketing builds demand and brand. Finance keeps the books and the runway. People hires and develops the team. Operations keeps the company running. Support keeps customers successful. Legal de-risks every move. Design makes it beautiful and accessible. Data Science turns data into decisions. Security Operations keeps everything safe. Developer Experience ensures developers succeed. Infrastructure Specialist runs the cloud. AI Operations ships models to production.
 
-**Read `docs/repomap.md` first** — this repo is too big to crawl by hand (140 agents, 564 skills). It points to `docs/agent-index.json` and `docs/skill-index.json` for lookups, and lists known content drift to watch for.
+**Read `docs/repomap.md` first** — this repo is too big to crawl by hand (140 agents, 568 skills). It points to `docs/agent-index.json` and `docs/skill-index.json` for lookups, and lists known content drift to watch for.
 
 ## Engineering Team — 15 agents
 

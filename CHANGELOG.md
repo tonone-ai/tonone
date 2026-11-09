@@ -6,6 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- **`/form-deal`** — deterministic palette + type-pairing deal by trade, page kind and form-kind from 12 original palettes and 10 Google Fonts pairings (`team/form/skills/form-deal/*.json`), WCAG AA and attractor-basin checked by `deal.py --check`. Avoids the last N picks recorded in `.tonone/design-history.json`; feeds `/hue-palette` and `/glyph-pair`.
+- **`/form-brief`** gains a form-kind step (software, gaming, tech, product, service, place: allowed and forbidden asset and effect families), a visitor mode (Persuade, Operate, Read, Experience), and reads `PRODUCT.md`.
+- **`/form-direction`** Step 0 cultural-world seeding: 7 worlds from the audience's culture, name the rut, deal 3 with a seeded `roulette.py`. No remote catalog.
+- **`/form-document`** derives DESIGN.md from shipped code and tokens (platform-compatible frontmatter, drift candidates written so the lint allow-list stays honest). **`/helm-init`** interviews for a durable PRODUCT.md.
+- **`/form-critique`** isolated-reviewer protocol: design review (A) finishes before detector evidence from form-lint (B) is shown, reconciled, persisted to `.tonone/critique/<slug>.md`, degraded mode when the detector is unavailable.
+- **`/prism-variants`** v1: N named variants of one component, a harness, Playwright screenshots, compare, fold in the winner. No overlay or live server.
+- **`/tonone-doctor`** (root skill, `scripts/tonone-doctor.py`): read-only health report for `.tonone/` context, hooks registered vs present, and, inside the plugin repo, gen-skill-docs/sync-skills/sync-bundles `--check`, skill-index staleness and headline counts.
 - **`/apex-guard`** — opt-in, session-scoped safety. `careful` asks before destructive shell commands (`rm -r`, force-push, `reset --hard`, `DROP`/`TRUNCATE`, `kubectl delete`, `terraform destroy`, ...) and denies a small catastrophic tier (`rm -rf /`, `~`, fork bomb, `mkfs`/`dd` onto disks). `freeze <dir>` denies Edit/Write outside one directory. `guard <dir>` does both. Backed by the PreToolUse hook `team/apex/hooks/apex-guard.js`, which does nothing unless `.claude/tonone-guard.json` exists, binds to the first session that sees it, expires after 24h, and fails open. It is advisory string matching, not a security boundary.
 - **Design dials** — `DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY` (1-10), derived per project by `/form-brief` and `/form-direction` and consumed by `/prism-ui` and `/move-animate`. No universal default.
 - **`team/form/reference/craft-floor.md`** — verify and refuse lists every UI ships against, with a "the brief wins" override. Referenced from Form, `/prism-ui`, `/prism-component`, `/form-web`, `/form-component`.

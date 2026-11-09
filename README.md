@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-140 specialist agents in 15 teams for Claude Code, plus 564 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
+140 specialist agents in 15 teams for Claude Code, plus 568 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
 
 ```bash
 claude plugin marketplace add tonone-ai/tonone
@@ -305,7 +305,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 140 agents and 564 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 140 agents and 568 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 
@@ -317,12 +317,12 @@ Every engineering agent detects your stack automatically:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-## All 564 Skills
+## All 568 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
 
-#### Engineering Team (15 agents, 91 skills)
+#### Engineering Team (15 agents, 92 skills)
 
 **Apex** (Engineering Lead)
 
@@ -399,6 +399,7 @@ Every engineering agent detects your stack automatically:
 - `/prism-component` — Implement a reusable, accessible, typed component from a design spec
 - `/prism-extract` — Pull repeated values and markup into tokens and components
 - `/prism-harden` — Make UI survive real data: overflow, i18n, empty, error and loading states
+- `/prism-variants` — Generate N named variants of one component, screenshot and compare, fold in the winner
 - `/prism-dashboard` — Build an internal dashboard with data tables, filters, detail views, and CRUD
 - `/prism-recon` — Frontend reconnaissance
 - `/prism-stack` — Framework-specific implementation guidelines (React/Vue/Svelte/Next.js)
@@ -467,7 +468,7 @@ Every engineering agent detects your stack automatically:
 - `/pave-golden` — Define a golden path
 - `/pave-recon` — Platform reconnaissance
 
-#### Product Team (12 agents, 89 skills)
+#### Product Team (12 agents, 92 skills)
 
 **Helm** (Head of Product)
 
@@ -475,6 +476,7 @@ Every engineering agent detects your stack automatically:
 - `/helm-brief` — Write a product brief and turn a feature idea into a spec
 - `/helm-handoff` — Hand a finalized product brief off to Apex to kick off engineering
 - `/helm-office-hours` — Challenge the framing, offer 3 approaches with effort, write the brief
+- `/helm-init` — Short interview that writes PRODUCT.md: platform, users, purpose, positioning
 - `/helm-plan` — Build a product roadmap and prioritize the backlog
 - `/helm-recon` — Product landscape reconnaissance
 
@@ -521,6 +523,8 @@ Every engineering agent detects your stack automatically:
 - `/form-quieter` — Tone down a loud design
 - `/form-polish` — Final craft pass against the craft floor
 - `/form-lint` — Deterministic design lint (CLI, CI, opt-in edit hook)
+- `/form-deal` — Deterministic palette + type-pairing deal by trade and page kind, WCAG-checked, avoids recent picks
+- `/form-document` — Derive DESIGN.md from shipped code and tokens, with drift candidates
 - `/form-email` — Design an email template or campaign asset
 - `/form-exam` — Theory-backed design audit citing the principle and source
 - `/form-logo` — Create a logo concept or brand mark

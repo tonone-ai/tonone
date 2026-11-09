@@ -1,6 +1,6 @@
 # Repomap
 
-Orientation map for this repo — 140 agents, 15 teams, 564 skills across `team/`. Read this first, then drill into the specific `agents/<name>.md` or `team/<agent>/skills/<skill>/SKILL.md` the task needs. Don't crawl the whole tree; use the indexes below.
+Orientation map for this repo — 140 agents, 15 teams, 568 skills across `team/`. Read this first, then drill into the specific `agents/<name>.md` or `team/<agent>/skills/<skill>/SKILL.md` the task needs. Don't crawl the whole tree; use the indexes below.
 
 This map exists because the [platform repo](https://github.com/tonone-ai/platform) (`~/repos/tn/platform`, the tonone.ai showcase site) reads its catalog content from this repo, and that sync has drifted badly — see **Known drift** below. This file is the map platform's sync should follow to catch up, and the one any agent working in this repo should read before exploring.
 
@@ -9,7 +9,7 @@ This map exists because the [platform repo](https://github.com/tonone-ai/platfor
 | File                    | What                                                     | Rows | Generator                                                                   |
 | ----------------------- | -------------------------------------------------------- | ---- | --------------------------------------------------------------------------- |
 | `docs/agent-index.json` | name, hat, team, owns, path — one row per agent          | 140  | `scripts/gen-agent-index.py` (reads `CLAUDE.md` team tables)                |
-| `docs/skill-index.json` | name, agent, team, description, path — one row per skill | 564  | `scripts/gen-skill-index.py` (reads `team/*/skills/*/SKILL.md` frontmatter) |
+| `docs/skill-index.json` | name, agent, team, description, path — one row per skill | 568  | `scripts/gen-skill-index.py` (reads `team/*/skills/*/SKILL.md` frontmatter) |
 
 Both are the "sitemap" — look a name up here, then open the one file it points to. Regenerate after adding/renaming an agent or skill (neither runs in CI yet).
 
