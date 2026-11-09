@@ -1,6 +1,6 @@
 ---
 name: apex-diagnose
-description: Session postmortem from local transcripts — why a run repeated work, ignored the plan, took too long, or cost more than expected. Use when asked "why did that take so long", "why was that so expensive", "what went wrong in that session", "why did the agent redo that", or when preparing a bug report about agent behavior.
+description: Session postmortem from local transcripts — why a run repeated work, ignored the plan, ran long, or cost too much. Use when asked "why did that take so long", "why was that so expensive", "what went wrong in that session", or "why did the agent redo that".
 allowed-tools: Read, Write, Bash, Glob, Grep
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

@@ -1,6 +1,6 @@
 ---
 name: keep-segment
-description: Customer segmentation model builder — tiers customers by ARR, health, and expansion potential; defines CS motion per tier; maps resource allocation. Use when asked to "segment our customers", "define our CS tiers", "how should we allocate CS resources", "build a customer segmentation model", or "who gets high-touch vs. digital".
+description: Customer segmentation model — tiers customers by ARR, health and expansion potential, defines CS motion per tier, maps resource allocation. Use when asked to "segment our customers", "define our CS tiers", "how should we allocate CS resources", or "who gets high-touch vs. digital".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

@@ -19,6 +19,8 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 Each tonone agent is registered as its own plugin (`<agent>@tonone-ai`) in `.claude-plugin/marketplace.json`, self-contained with its own skills, hooks, and scripts. Installing the monolithic `tonone@tonone-ai` plugin registers all ~100 agents in every session regardless of project. Toggling individual agent plugins on/off via `enabledPlugins` in `.claude/settings.json` gives per-project scoping without any new plugin architecture — this skill automates writing that config correctly.
 
+**Recommended default after install.** The full bundle lists ~37,500 tokens of skill/agent descriptions at every session start; the `web-app` preset lists ~3,300 (estimated chars/4, measured with `scripts/measure-context.py`).
+
 ## Steps
 
 1. **Read current state.** Check for an existing `.claude/settings.json` and `.claude/settings.local.json` in the project root. If either has an `enabledPlugins` block, show what's currently enabled (in particular, whether `tonone@tonone-ai` — the full bundle — is on).

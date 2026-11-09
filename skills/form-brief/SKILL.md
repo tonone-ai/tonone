@@ -1,11 +1,7 @@
 ---
 name: form-brief
 description: |
-  Translate a design brief — structured I-Lang or plain English — into a concrete DESIGN.md and
-  optional HTML token preview. Resolves 8 dimensions (palette, accent, typography, display font,
-  layout, mood, density, constraints) to specific CSS tokens. Use when asked to "create a design
-  brief", "write a DESIGN.md", "define the design system", "design brief for X", "what tokens
-  should we use", or "I-Lang brief".
+  Translate a design brief (I-Lang or plain English) into a concrete DESIGN.md and optional HTML token preview, resolving palette, typography, layout, mood and density to CSS tokens. Use when asked to "create a design brief", "write a DESIGN.md", "design brief for X", or "I-Lang brief".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>
@@ -183,6 +179,36 @@ Label every row's evidence as `observed` (you looked at the artifact), `provided
 
 Freeze one direction. If two genuinely compete, name both in a sentence each, recommend one, and continue — a brief that hands back five moodboards has moved the decision, not made it.
 
+## Phase 1c: Derive the design dials
+
+Three dials steer everything downstream. No universal default: derive each from audience, use scene, content type, brand personality, and frequency of use, then state a one-line rationale per dial.
+
+- `DESIGN_VARIANCE` 1-10: 1 = convention-faithful (symmetric grids, standard components); 10 = experimental (asymmetry, broken grid, unexpected type)
+- `MOTION_INTENSITY` 1-10: 1 = state feedback only; 10 = choreographed, scroll-driven. `prefers-reduced-motion` honored at every level
+- `VISUAL_DENSITY` 1-10: 1 = airy, one idea per view; 10 = cockpit, data-dense
+
+Derivation cues (illustrative, not defaults):
+
+| Brief                 | VARIANCE | MOTION | DENSITY | Why                                                       |
+| --------------------- | -------- | ------ | ------- | --------------------------------------------------------- |
+| Internal admin tool   | 2        | 1      | 8       | Daily use, speed over delight, learned conventions win    |
+| Marketing launch page | 7        | 7      | 3       | One visit, must be remembered, content is sparse          |
+| Consumer finance app  | 3        | 3      | 5       | Trust needs the familiar; motion confirms, never performs |
+| Portfolio             | 8        | 5      | 2       | The work is the product; composition is the signature     |
+
+Emit in the CLI receipt and write it into DESIGN.md under Visual Theme:
+
+```
+Design dials
+  DESIGN_VARIANCE   4  — <rationale>
+  MOTION_INTENSITY  3  — <rationale>
+  VISUAL_DENSITY    7  — <rationale>
+```
+
+Dials must agree with the resolved `density` dimension (spacious ~1-3, balanced ~4-6, compact ~7-10). Consumers (prism-ui, move-animate) read them from here; absent dials get inferred and stated.
+
+---
+
 ## Phase 2: Generate DESIGN.md
 
 Check if a DESIGN.md exists. If it does, ask: "A DESIGN.md already exists. Overwrite or skip?"
@@ -311,6 +337,7 @@ CLI box first:
 │ Palette:  [palette] + [accent]                               │
 │ Type:     [typography] / [display]                           │
 │ Mood:     [mood] · [density]                                 │
+│ Dials:    V[n] M[n] D[n]                                     │
 │ Layout:   [layout]                                           │
 │ Exclude:  [list or "none"]                                   │
 │                                                              │

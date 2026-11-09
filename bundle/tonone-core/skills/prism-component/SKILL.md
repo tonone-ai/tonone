@@ -241,6 +241,10 @@ describe('Button', () => {
 
 Cover: renders correctly, all states, keyboard interaction, accessibility assertions.
 
+### Step 4b: Craft Floor Check
+
+Before summarizing, check the component against `team/form/reference/craft-floor.md` (if not installed, use this short list): loading/error/empty states where data is shown; hover, focus-visible, active, disabled states; 44px touch targets; tabular numerals for figures; `text-wrap: balance`/`pretty` on headings and prose; no emoji as icons, placeholder as label, or layout shift. The brief wins on any conflict; note the deviation.
+
 ### Step 5: Summarize
 
 ```

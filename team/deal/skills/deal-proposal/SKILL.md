@@ -1,6 +1,6 @@
 ---
 name: deal-proposal
-description: B2B proposal generator — takes deal context (ICP, pain, pricing tier, timeline) and produces a complete proposal document with executive summary, problem statement, solution, pricing table, implementation timeline, ROI case, and next steps. Use when asked to "write a proposal", "draft our deck for this deal", "build a proposal for this customer", or "generate a proposal".
+description: B2B proposal generator — from deal context (ICP, pain, pricing, timeline) produces a full proposal (exec summary, solution, pricing, timeline, ROI, next steps). Use when asked to "write a proposal", "draft our deck for this deal", "build a proposal for this customer", or "generate a proposal".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

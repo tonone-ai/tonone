@@ -1,6 +1,6 @@
 ---
 name: pitch-copy
-description: Landing page and marketing copy — write hero section, problem/solution blocks, proof points, and CTAs. Use when asked to "write landing page copy", "write the homepage", "marketing copy for this feature", "product page copy", "write the hero section", or "write copy for [surface]".
+description: 'Write landing page and marketing copy: hero, problem/solution blocks, proof points, CTAs. Use when asked to "write landing page copy", "write the homepage", "marketing copy for this feature", "product page copy", or "write the hero section".'
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.7.0
 author: tonone-ai <hello@tonone.ai>
@@ -135,10 +135,12 @@ for c in "${CLAUDE_PLUGIN_ROOT:-/nonexistent}/lib/copy-gate/gate.py" \
 done
 [ -z "$gate" ] && gate=$(find "$HOME/.claude/plugins/cache" -maxdepth 6 \
   -path "*/lib/copy-gate/gate.py" 2>/dev/null | sort | tail -1)
-if [ -n "$gate" ]; then python3 "$gate" --profile marketing-copy .tonone/pitch/copy-drafts.md; else echo "copy-gate not found"; fi
+if [ -n "$gate" ]; then python3 "$gate" --profile marketing-copy --slop .tonone/pitch/copy-drafts.md; else echo "copy-gate not found"; fi
 ```
 
 Any `FAIL` (exit 1), such as an unfilled `[Customer X]` slot, a TODO, or a spam phrase: fix it and run again. `WARN` items (hype words like "seamless", em dashes) are edits, not blockers: cut them or keep them deliberately and say why. If the gate isn't found, check those by hand and say the gate didn't run.
+
+`--slop` adds the copy-slop floor (AI-tell words, residue, capped em dashes and "not X, but Y" frames; see `/copy-slop`). A word the client supplied, such as a product name, is waived with `--waive <term>` or `.tonone/copy-waivers.json`, with a reason. It's a floor, not taste: you still decide what stays.
 
 ### Step 9: Present Copy
 

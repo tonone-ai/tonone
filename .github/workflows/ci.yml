@@ -34,6 +34,10 @@ jobs:
         run: python -m pytest tests/test_agent_compliance.py -v
       - name: Run skill compliance tests
         run: python -m pytest tests/test_skill_compliance.py -v
+      - name: Check templated SKILL.md drift
+        run: python scripts/gen-skill-docs.py --check
+      - name: Run linter and gate tests
+        run: python -m pytest tests/test_gen_skill_docs.py tests/test_copy_gate.py tests/test_copy_slop.py team/apex/tests/test_merge_findings.py -v
 
   # ---------------------------------------------------------------------------
   # Job 2: Hook tests
@@ -53,6 +57,8 @@ jobs:
         run: pip install pytest
       - name: Run hook tests
         run: python -m pytest tests/test_hooks.py -v
+      - name: Run Node hook tests (design lint, decisions, guard)
+        run: node --test tests/hooks/test-form-design-lint.js tests/hooks/test-apex-decisions.js tests/hooks/test-apex-guard.js
 
   # ---------------------------------------------------------------------------
   # Job 3: Shell script linting

@@ -1,6 +1,6 @@
 ---
 name: ink-distribute
-description: Content distribution plan — takes a completed piece and produces a channel-by-channel plan covering HN, Reddit, LinkedIn, newsletter, and Twitter/X, with timing, per-channel framing, and a repurposing plan. Use when asked to "distribute this post", "how do we promote this article", "write distribution copy for this piece", or "where should we share this".
+description: Content distribution plan — channel-by-channel plan (HN, Reddit, LinkedIn, newsletter, Twitter/X) with timing, framing, and repurposing. Use when asked to "distribute this post", "how do we promote this article", "write distribution copy for this piece", or "where should we share this".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

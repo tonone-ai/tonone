@@ -1,11 +1,9 @@
 ---
 name: draft-proto
 description: |
-  Hi-fi interactive HTML prototype — single-file, double-click-to-open, Playwright-verified.
-  Use when asked to "make it clickable", "build a prototype", "hi-fi mockup", "interactive demo",
-  "iOS prototype", "app mockup", "ui demo", or "prototype this". Goes beyond wireframes into
-  visually finished, state-driven HTML with device frames and real images. Not production code —
-  a design artifact for testing flows and pitching ideas.
+  Hi-fi interactive HTML prototype — single-file, Playwright-verified, state-driven, with device
+  frames and real images. Use when asked to "make it clickable", "build a prototype", "hi-fi mockup",
+  or "prototype this". Design artifact for testing flows, not production code.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

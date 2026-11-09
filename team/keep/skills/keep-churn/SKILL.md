@@ -1,6 +1,6 @@
 ---
 name: keep-churn
-description: Churn risk identification and intervention — scans health signals for at-risk accounts, classifies risk level (CRITICAL/HIGH/MEDIUM), and produces an intervention sequence per risk type. Use when asked to "find at-risk accounts", "who might churn", "build a churn prevention plan", "identify churn signals", or "rescue this account".
+description: Churn risk identification and intervention — scans health signals for at-risk accounts, classifies risk (CRITICAL/HIGH/MEDIUM), and produces an intervention sequence per risk type. Use when asked to "find at-risk accounts", "who might churn", "build a churn prevention plan", or "rescue this account".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

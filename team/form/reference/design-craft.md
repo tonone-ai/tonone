@@ -1,5 +1,7 @@
 # Design Craft Reference
 
+For the non-negotiable ship floor (verify and refuse lists) see `craft-floor.md`.
+
 ## 5-Step Craft Flow
 
 The sequence matters. Skipping steps produces rework.

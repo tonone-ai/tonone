@@ -1,12 +1,7 @@
 ---
 name: form-direction
 description: |
-  Design direction advisor — generates 3 differentiated visual directions with live HTML demos
-  for selection. Use when the brief is vague ("make something nice", "pick a style", "explore
-  directions"), when no design system exists, or when the user wants to compare visual approaches
-  before committing. Richer than /form-style: produces actual visual demos, not just recommendations.
-  Trigger words: "design direction", "style exploration", "pick a direction", "what should this look like",
-  "give me options", "explore styles", "design philosophy".
+  Design direction advisor: generates 3 differentiated visual directions with live HTML demos. Use when the brief is vague ("make something nice", "pick a style", "explore directions") or no design system exists. Richer than /form-style: real demos, not just recommendations. Also "design direction", "give me options".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>
@@ -169,6 +164,34 @@ Body: [font] — [size/line-height]
 ```
 
 Hand this to `/form-brand` or `/form-component` for system build-out, or to `/draft-proto` for prototype execution.
+
+---
+
+## Phase 6b: Derive the design dials
+
+Every chosen direction carries three dials. No universal default: derive each from audience, use scene, content type, brand personality, and frequency of use; one-line rationale each.
+
+- `DESIGN_VARIANCE` 1-10: 1 = convention-faithful (symmetric grids, standard components); 10 = experimental (asymmetry, broken grid)
+- `MOTION_INTENSITY` 1-10: 1 = state feedback only; 10 = choreographed, scroll-driven. `prefers-reduced-motion` honored at every level
+- `VISUAL_DENSITY` 1-10: 1 = airy, one idea per view; 10 = cockpit, data-dense
+
+| Brief (illustrative, not defaults) | VARIANCE | MOTION | DENSITY |
+| ---------------------------------- | -------- | ------ | ------- |
+| Internal admin tool                | 2        | 1      | 8       |
+| Marketing launch page              | 7        | 7      | 3       |
+| Consumer finance app               | 3        | 3      | 5       |
+| Portfolio                          | 8        | 5      | 2       |
+
+Directions in one comparison should differ on at least one dial. Add this block to the style spec of the selected direction:
+
+```
+Design dials
+  DESIGN_VARIANCE   4  — <rationale>
+  MOTION_INTENSITY  3  — <rationale>
+  VISUAL_DENSITY    7  — <rationale>
+```
+
+Consumers (prism-ui, move-animate) read the dials from here; if absent they infer and state them.
 
 ---
 

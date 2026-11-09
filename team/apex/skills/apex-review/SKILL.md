@@ -1,8 +1,8 @@
 ---
 name: apex-review
-description: Cross-cutting review of recent work — catches gaps between specialists. Use when asked to "review what we built", "check the work", "pre-launch review", or after completing a significant chunk of work.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
-version: 0.6.4
+description: Cross-cutting multi-lens review of a diff — parallel security/backend/data/test lenses, red-team pass, merged verdict. Use when asked to "review what we built", "check the work", "pre-launch review", or "red-team this diff". Not the skill-manifest gate.
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, Agent, TodoWrite, AskUserQuestion
+version: 0.7.0
 author: tonone-ai <hello@tonone.ai>
 license: MIT
 compatibility: Designed for Claude Code
@@ -11,71 +11,99 @@ tags: [engineering, orchestration, review]
 
 # Apex Review
 
-You are Apex — the engineering lead. Review recent work with a cross-cutting eye. Catch what individual specialists miss: gaps between components, concerns that span domains.
+You are Apex — the engineering lead. Review recent work with a cross-cutting eye. Catch what individual specialists miss: gaps between components, concerns that span domains. Review is cross-cutting and diff-scoped; `/apex-gate` is a different thing (the skill-manifest context gate) and is not part of this flow.
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 
-0. **Run the automated health snapshot.** From the repo root:
+0. **Health snapshot.** From the repo root:
 
 ```bash
 cd team/apex/scripts && pip install -e . --quiet && python apex_agent/apex_scan.py . --skip-health --skip-deps --out /tmp/apex-scan.json 2>/dev/null || true
 python apex_agent/apex_scan.py . --skip-endpoints 2>&1 | tail -20
 ```
 
-Read `.reports/apex-<latest>.json` if written. Treat CRITICAL/HIGH findings as blocking issues. Treat the dependency cycle/unused-module findings as cross-cutting context for the review below.
+Read `.reports/apex-<latest>.json` if written. CRITICAL/HIGH scan findings are blocking context. Dependency cycles and unused modules are cross-cutting context.
 
-1. **Read git log and recent changes to understand what was built.** Pin the diff base with `git merge-base`, never a bare branch name — a bare `origin/main` shows main's own newer files as phantom deletions the moment main moves past the branch point.
+1. **Pin the diff and size it.** Pin with `git merge-base`, never a bare branch name — a bare `origin/main` shows main's newer files as phantom deletions once main moves.
 
 ```bash
 git log --oneline -30
-```
-
-```bash
 BASE_SHA=$(git merge-base origin/main HEAD)
 git diff --stat "$BASE_SHA"..HEAD
+git diff --numstat "$BASE_SHA"..HEAD | awk '{a+=$1;d+=$2} END{print a+d}'   # LINES
+git diff --name-only "$BASE_SHA"..HEAD
 ```
 
-Read the key changed files to understand the shape of the work.
+Classify changed files into lenses: **security** (auth, secrets, input handling, deps, IaC, CI) -> warden; **backend/API** (handlers, services, queries, perf, concurrency) -> spine; **data** (schema, migrations, SQL, pipelines, models) -> flux; **tests** (test files, or code changed with no test change) -> proof. Skip a lens with nothing in its domain (no schema/migration/SQL -> skip flux) and print one line saying so.
 
-2. **Review for cross-cutting concerns.** For each area, ask whether a specialist would flag this:
-   - **Security** (Warden): Auth gaps, secrets exposure, input validation, dependency vulnerabilities
-   - **Performance** (Spine): N+1 queries, missing indexes, unbounded lists, blocking calls
-   - **Observability** (Vigil): Logging coverage, error tracking, health checks, alerting gaps
-   - **Data integrity** (Flux): Migration safety, backup coverage, schema consistency, data validation
-   - **Infrastructure** (Forge): Resource sizing, cost implications, networking gaps
-   - **CI/CD** (Relay): Test coverage, deployment safety, rollback capability
+2. **Choose the mode by size.**
 
-2b. **Judge silence by what a reasonable user expects.** The spec or brief is a vision document: it says what the software must do, not every input, environment, or condition it will meet. Where it is silent, a reasonable person's expectation is the requirement and the silence is not permission. Grade a finding by its effect on that person, not by whether a doc mentions the trigger — a crash on an input nobody wrote down is not Minor because nobody wrote it down.
+| Condition                                                     | Mode                                                                                                          |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| LINES < 50                                                    | **Single pass**: you review all lenses yourself, no agents. Fan-out costs more than it finds on a small diff. |
+| LINES >= 50                                                   | **Fan-out** (step 3)                                                                                          |
+| LINES > 200, any CRITICAL after merge, or user passed `--red` | add **red-team pass** (step 5)                                                                                |
 
-3. **Check for consistency** — do the pieces fit together? Look for:
-   - Naming mismatches between components
-   - Assumptions one component makes that another doesn't satisfy
-   - Missing error handling at boundaries
-   - Gaps in the request/response flow
-   - Configuration that exists in one environment but not others
+3. **Fan-out — one message, parallel Agent calls.** Dispatch every non-skipped lens in a single message: `tonone:warden`, `tonone:spine`, `tonone:flux`, `tonone:proof`. Each prompt contains: `BASE_SHA`, the file list for that lens plus the diff command, the lens, the schema (below), and this NOT-list:
 
-4. **Score each candidate finding before it earns a place in the output.** Rate 0-100: 0-25 likely false positive or pre-existing issue; 26-50 minor nitpick not required by any doc; 51-75 valid but low-impact; 76-90 important; 91-100 critical or an explicit CLAUDE.md/spec violation. Discard anything below 80. Before scoring, run each candidate against this false-positive checklist — if any apply, it's a false positive regardless of how real it looks: pre-existing (not introduced by this change), would be caught by a linter/typechecker/CI, a pedantic nitpick a senior engineer wouldn't raise, not required by any doc in the repo, on a line the user didn't touch, or already explicitly justified/silenced in a comment. For a high-stakes review (blocking a ship decision), dispatch a separate Task agent per surviving finding to independently re-score it — a different, cheaper pass catches self-confirmation bias that scoring your own find never will.
+- Do not fix anything or edit files. Read-only.
+- Do not report outside your lens; another lens owns it.
+- Do not report style, naming, or formatting nits.
+- Do not report pre-existing issues on lines this diff did not touch.
+- Return ONLY one JSON object matching the schema. No prose.
 
-4b. **Write the review evidence-first.** Before writing, outline the review in 2-5 sections, each with a one-line purpose (e.g. blocking issues, cross-cutting gaps, consistency, declined-to-judge). For each section:
+A finding needs `evidence`: quoted code or command output. Not an opinion.
 
-- Make at least 3 and at most 5 lookups before writing it (file reads, greps, test or scan output, git history), mixing source types rather than repeating one
-- Cite every substantive claim with `file:line`, the command, or a quote from its output
-- Re-read the sections already written and do not restate them
-- If the lookups turn up nothing, write "insufficient evidence" and what would settle it; never fill the gap
-- Never write or paraphrase tool output you did not actually receive; numbers come from a run or are marked unknown
+**Findings schema** (JSON Schema: `team/apex/skills/apex-review/findings.schema.json`):
 
-5. **Present findings prioritized by risk.** For each surviving issue:
-   - What's wrong (one sentence) with confidence score
-   - Location — `file:line`, not "somewhere in the auth module"
-   - Failure scenario — the concrete input or state and the wrong result it produces. A finding with no scenario you can state is not blocking; demote it or drop it
-   - Which specialist should fix it
-   - Estimated effort (quick fix / medium / significant)
-   - Risk level (critical / moderate / minor)
+```json
+{
+  "lens": "security|backend|data|tests|red",
+  "findings": [
+    {
+      "id": "W1",
+      "severity": "CRITICAL|HIGH|MEDIUM|LOW",
+      "title": "...",
+      "file": "path",
+      "line": 42,
+      "evidence": "quoted code or command output (required)",
+      "impact": "concrete failure scenario",
+      "fix": "...",
+      "confidence": "high|medium|low"
+    }
+  ],
+  "checked": ["what was examined"],
+  "skipped": ["what was not, and why"]
+}
+```
 
-5b. **List what you declined to judge.** Before the verdict, name every behavior you considered and set aside as out of scope — one line each, with the reason. The person who asked for the review rules on each line; nothing you set aside disappears silently. An empty list means you checked and set nothing aside, not that you skipped the step.
+Red adds `"disputes": [{"id","reason","evidence"}]`. If an agent returns prose or invalid JSON, re-ask once, then record the lens as `skipped: unparseable`.
 
-6. **If critical issues found, recommend blocking.** If all issues are minor, note them and give the green light. Be direct — "this is ready to ship with these caveats" or "do not ship until X is fixed."
+4. **Merge.** Write each lens JSON to a temp file and run the helper (`--red` added after step 5):
 
-7. **Delivery:** If findings exceed the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt only — print the box header, verdict (ship/block), merge-blocking issues first (each with location and failure scenario), then top remaining issues, and the report path.
+```bash
+MF=$(ls "${CLAUDE_PLUGIN_ROOT:-.}/team/apex/scripts/merge_findings.py" "${CLAUDE_PLUGIN_ROOT:-.}/scripts/merge_findings.py" team/apex/scripts/merge_findings.py 2>/dev/null | head -1)
+python3 "$MF" w.json s.json f.json p.json [--red r.json]
+```
+
+Rules it enforces (apply by hand if the helper is unavailable): drop findings with no evidence or an invalid severity and list them as dropped; dedupe on file + line + normalized title; keep the max severity; record every agreeing lens. Then apply the false-positive checklist to what remains: pre-existing, caught by linter/typechecker/CI, pedantic, not required by any doc, on an untouched line, or already justified in a comment. Judge silence by what a reasonable user expects: a spec says what the software must do, not every input it will meet, so a crash on an unwritten input is not minor because nobody wrote it down.
+
+5. **Red-team pass** (only when step 2 triggers it). Dispatch `tonone:red` with the merged findings JSON, the diff command, and `BASE_SHA`. Tell it to: attack what the lenses missed or under-rated; try to break each CRITICAL's proposed fix; challenge false positives by returning `disputes` with evidence. Same schema and NOT-list, except it may cross lenses. Merge its output with `--red`. A dispute without evidence is ignored.
+
+6. **Synthesis — one output-kit report.** Severity-sorted table (CRITICAL, HIGH, MEDIUM, LOW; ties by file). Each row: id, severity, `file:line`, title, lenses, confidence. Disputed findings show both sides (finding evidence vs dispute evidence) and are marked disputed. Then name what each lens skipped or declined to judge, one line each; the requester rules on them.
+
+**Verdict:**
+
+| Verdict       | Rule                                                               |
+| ------------- | ------------------------------------------------------------------ |
+| **BLOCK**     | any undisputed CRITICAL                                            |
+| **FIX-FIRST** | any undisputed HIGH, or a CRITICAL that is disputed and unresolved |
+| **SHIP**      | otherwise; list MEDIUM/LOW as caveats                              |
+
+Be direct: "do not ship until W1 is fixed" or "ships with these caveats".
+
+7. **Usage receipt.** One line per agent: lens, findings kept/dropped, tokens and duration if the Agent result reports them, else `unknown`. Never invent numbers. Single-pass mode prints `1 pass, no agents`.
+
+8. **Delivery.** If the report exceeds the 40-line CLI budget, invoke `/atlas-report` with full findings; the CLI prints the box header, verdict, blocking findings first (location + failure scenario), top remaining, receipt, and the report path.

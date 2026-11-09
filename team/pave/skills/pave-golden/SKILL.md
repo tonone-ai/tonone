@@ -1,6 +1,6 @@
 ---
 name: pave-golden
-description: Define a golden path — the opinionated, supported way to do a common developer task (create a new service, set up an environment, deploy a feature). Produces concrete steps, templates, and tooling. Use when asked to "golden path", "create project template", "scaffold a new service", "how should we create services", or "standardize our setup".
+description: Define a golden path — the opinionated, supported way to do a common developer task (new service, environment, deploy), with concrete steps, templates and tooling. Use when asked for a "golden path", "create project template", "scaffold a new service", or "standardize our setup".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>

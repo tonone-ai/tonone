@@ -1,11 +1,9 @@
 ---
 name: draft-wireframe
 description: |
-  Wireframe a screen — text/ASCII by default, or hand-drawn HTML when the user says "sketch",
-  "hand-drawn", "lo-fi HTML", "whiteboard", "graph paper", or "visual wireframe". Text mode
-  produces a buildable ASCII spec Form and Prism can act on. HTML mode produces a single
-  self-contained file with graph-paper background, marker headlines, sticky-note annotations,
-  and hatched chart placeholders — looks like a designer's whiteboard, commits to nothing.
+  Wireframe a screen — buildable ASCII spec by default (Form and Prism can act on it), or a
+  hand-drawn single-file HTML whiteboard look when the user says "sketch", "hand-drawn",
+  "lo-fi HTML", or "visual wireframe".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.7.0
 author: tonone-ai <hello@tonone.ai>

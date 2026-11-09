@@ -23,6 +23,18 @@ Ask the user for any missing context needed to produce a useful output. If the r
 
 Gather the component/interaction to animate, target platform (CSS/Framer Motion/React Native Animated), and performance constraints.
 
+### Step 1b: Read MOTION_INTENSITY
+
+Read `MOTION_INTENSITY` (1-10) from Form's "Design dials" block (DESIGN.md or brief). If absent, infer it from audience, use frequency, and brand personality, state the inferred value with a one-line rationale, and proceed. `prefers-reduced-motion` is honored at every level.
+
+| Range | Allowed motion                                                                                                   |
+| ----- | ---------------------------------------------------------------------------------------------------------------- |
+| 1-3   | State feedback only: hover, press, focus, toggles, loading. 100-200ms, no choreography, no scroll-driven motion  |
+| 4-6   | Adds orientation: enter/exit, panel and route transitions, short staggers (max ~5 items), one signature moment   |
+| 7-10  | Choreographed sequences, scroll-driven reveals, expressive easing, hero motion; still compositor-only properties |
+
+Anything above the stated range is out of spec; flag it instead of adding it.
+
 ### Step 2: Produce Output
 
 Output a motion spec: timing, easing curve, keyframes (before/after states), reduced-motion fallback, and implementation notes.

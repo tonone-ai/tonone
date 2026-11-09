@@ -1,6 +1,6 @@
 ---
 name: helm-recon
-description: Product landscape reconnaissance — survey existing briefs, research, strategy, and team output before writing new briefs or dispatching specialists. Use when asked to "understand the product state", "what briefs exist", "what has the team produced", "orient me on this product", or before starting a new product initiative.
+description: Product landscape reconnaissance — survey existing briefs, research, strategy, and team output before writing briefs or dispatching specialists. Use when asked to "understand the product state", "what briefs exist", or "orient me on this product".
 allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>

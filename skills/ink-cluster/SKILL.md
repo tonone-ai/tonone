@@ -1,6 +1,6 @@
 ---
 name: ink-cluster
-description: Topic cluster and keyword-to-page mapping — group keywords by search intent (validated by SERP overlap, not word similarity), map each cluster to an existing or proposed page, flag cannibalization, and lay out pillar, supporting posts, and internal links. Use when asked to "build a content cluster", "map our SEO cluster for [topic]", "which page should target these keywords", "create a topic cluster", or "what should our pillar page be about".
+description: Topic cluster and keyword-to-page mapping — group keywords by intent, map clusters to pages, flag cannibalization, lay out pillar and supporting posts. Use when asked to "build a content cluster", "map our SEO cluster for [topic]", or "which page should target these keywords".
 allowed-tools: Read, Write, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.2.0
 author: tonone-ai <hello@tonone.ai>

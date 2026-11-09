@@ -86,7 +86,7 @@ Context for Apex:
 
 Use the Agent tool to dispatch this handoff to Apex. Pass full formatted package as context.
 
-Instruct Apex: "This is a Helm→Apex product brief handoff. Parse the 6-field schema. Map `success_metrics` to engineering acceptance criteria. Answer any `open_questions` before presenting S/M/L scope options. Use `out_of_scope` as your guard against scope creep."
+Instruct Apex: "This is a Helm→Apex product brief handoff. Parse the 6-field schema (field map: `goal`+`user_problem` → `problem`/`target_user`, `success_metrics` → `success_criteria`, `scope` → `constraints`, `open_questions` → `feasibility_ask`, `out_of_scope` unchanged). Map `success_metrics` to engineering acceptance criteria. Answer any `open_questions` before presenting S/M/L scope options. Use `out_of_scope` as your guard against scope creep."
 
 ### Step 4: Confirm and Close
 

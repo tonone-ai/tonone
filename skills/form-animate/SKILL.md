@@ -1,11 +1,7 @@
 ---
 name: form-animate
 description: |
-  Motion design — produce HTML animations and export MP4/GIF with optional BGM.
-  Use when asked to "animate this", "create a motion design", "make an intro animation",
-  "product launch animation", "promo video", "export MP4", "export GIF", "60fps animation",
-  "animated logo", or "motion graphics". Delivers a self-contained HTML animation plus
-  rendered video exports. Not for micro-interactions in production code — use /prism-ui for that.
+  Motion design: produce HTML animations and export MP4/GIF with optional BGM. Use when asked to "animate this", "make an intro animation", "promo video", "export MP4", "animated logo", or "motion graphics". Not for production micro-interactions; use /prism-ui for those.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

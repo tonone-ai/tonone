@@ -104,7 +104,7 @@ def test_all_skills_have_skill_md():
     """Every skill directory must contain a SKILL.md — without it the skill won't load."""
     skills_dir = REPO / "skills"
     for skill_dir in sorted(skills_dir.iterdir()):
-        if skill_dir.is_dir():
+        if skill_dir.is_dir() and not skill_dir.name.startswith("_"):
             skill_file = skill_dir / "SKILL.md"
             assert skill_file.exists(), f"skills/{skill_dir.name}: missing SKILL.md"
 

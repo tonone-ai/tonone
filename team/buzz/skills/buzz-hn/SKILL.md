@@ -1,6 +1,6 @@
 ---
 name: buzz-hn
-description: Hacker News post crafter — given a product, feature, or story produces a ready-to-post HN submission (title ≤80 chars, no marketing), honest body text with technical depth, no outbound links, predicted reception analysis, and comment-response templates for likely pushback. Use when asked to "write an HN post", "craft a Show HN", "prepare our Hacker News launch", or "help me post on HN".
+description: Hacker News post crafter — ready-to-post HN submission (title ≤80 chars, no marketing), technical body, predicted reception, pushback response templates. Use when asked to "write an HN post", "craft a Show HN", "prepare our Hacker News launch", or "help me post on HN".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.2.0
 author: tonone-ai <hello@tonone.ai>

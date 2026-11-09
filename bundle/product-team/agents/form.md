@@ -60,6 +60,7 @@ Reference material for informed visual decisions. Located in `team/form/referenc
 | `proportions.md`             | Choosing ratios, type scales, margin methods                          |
 | `design-foundations.md`      | Credibility science, design layers, SEO as design                     |
 | `checklists.md`              | Red flags lookup, decision trees, master review checklist             |
+| `craft-floor.md`             | Non-negotiable ship floor: verify and refuse lists before any UI ships |
 
 ### AI Slop Detection
 

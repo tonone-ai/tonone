@@ -16,7 +16,9 @@ import yaml
 
 REPO = Path(__file__).parent.parent
 SKILLS_DIR = REPO / "skills"
-SKILL_DIRS = sorted([d for d in SKILLS_DIR.iterdir() if d.is_dir()])
+SKILL_DIRS = sorted(
+    [d for d in SKILLS_DIR.iterdir() if d.is_dir() and not d.name.startswith("_")]
+)
 
 # Valid agent names (skill prefix must be one of these)
 _AGENT_DIRS = [

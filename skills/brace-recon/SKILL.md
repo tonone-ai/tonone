@@ -1,6 +1,6 @@
 ---
 name: brace-recon
-description: Support operations reconnaissance -- audit current ticket volume, SLA compliance, knowledge base coverage, escalation paths, and CSAT to understand where support is the constraint. Use when asked to "audit our support", "why is our response time bad", "how healthy is our support operation", or "before designing a support system".
+description: Support operations reconnaissance -- audit ticket volume, SLA compliance, KB coverage, escalation paths, and CSAT to find where support is the constraint. Use when asked to "audit our support", "why is our response time bad", or "how healthy is our support operation".
 allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>
