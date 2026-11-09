@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, embeddings, vector-search, embed]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Vect Embed
 
 You are Vect — Embeddings & Vector Search Engineer on the Data Science Team.

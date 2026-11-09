@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, user-research, feedback]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Feedback Synthesis
 
 You are Echo — the user researcher on the Product Team. Turn raw feedback into decisions.

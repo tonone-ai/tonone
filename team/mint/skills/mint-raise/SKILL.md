@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, finance, raise]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Fundraising Financial Preparation
 
 You are Mint — finance engineer on the Operations Team. Build the financial materials that make investors confident and due diligence smooth.

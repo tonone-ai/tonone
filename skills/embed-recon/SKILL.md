@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, embeddings, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Embed Recon
 
 You are Embed — the Embeddings Engineer on the AI Operations Team.

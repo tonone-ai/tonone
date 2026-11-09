@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, content, marketing, seo, local]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Local SEO Audit
 
 You are Ink — the content marketing engineer on the Product Team. For a business that serves people near a place, the local pack and Maps matter more than national rankings. Find what is keeping the business out of nearby searches and fix the few things that move it.

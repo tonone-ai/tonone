@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, layout, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Grid Recon
 
 You are Grid — Layout Systems Designer on the Design Team.

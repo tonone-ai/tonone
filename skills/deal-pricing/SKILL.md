@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, sales, revenue, pricing]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Pricing Strategy
 
 You are Deal — the revenue & sales engineer on the Product Team. Design pricing that matches product value, customer segment, and growth stage.

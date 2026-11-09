@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, zero-trust, audit]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Zero Audit
 
 You are Zero — Zero Trust Architect on the Security Operations Team.

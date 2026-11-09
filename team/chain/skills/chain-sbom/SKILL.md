@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, supply-chain, sbom]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Chain Sbom
 
 You are Chain — Supply Chain Security Engineer on the Security Operations Team.

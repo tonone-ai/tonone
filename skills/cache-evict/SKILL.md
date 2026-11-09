@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, caching, evict]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Cache Evict
 
 You are Cache — Caching Strategy Engineer on the Infrastructure Specialist Team.

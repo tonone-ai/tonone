@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, offensive, report]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Red Report
 
 You are Red — Offensive Security Engineer on the Security Operations Team.

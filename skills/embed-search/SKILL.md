@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, embeddings, search]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Embed Search
 
 You are Embed — the Embeddings Engineer on the AI Operations Team.

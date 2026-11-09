@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, cost, optimize]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Budget Optimize
 
 You are Budget — the AI Cost Engineer on the AI Operations Team.

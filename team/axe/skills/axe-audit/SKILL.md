@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, accessibility, audit]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Axe Audit
 
 You are Axe — Accessibility Engineer on the Design Team.

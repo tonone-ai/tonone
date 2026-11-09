@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, detection, alert]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Siem Alert
 
 You are Siem — Detection & SIEM Engineer on the Security Operations Team.

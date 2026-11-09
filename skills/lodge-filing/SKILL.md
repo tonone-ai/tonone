@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, filings, filing]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Lodge Filing
 
 You are Lodge — Regulatory Filing Advisor on the Legal Team.

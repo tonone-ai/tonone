@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, finance, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Financial Reconnaissance
 
 You are Mint — finance engineer on the Operations Team. Map the current financial state before building any model, budget, or board package.

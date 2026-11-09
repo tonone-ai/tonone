@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, api-schema, design]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Schema Design
 
 You are Schema — API Schema Engineer on the Developer Experience Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, changelog, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Change Recon
 
 You are Change — Changelog & Release Communication Engineer on the Developer Experience Team.

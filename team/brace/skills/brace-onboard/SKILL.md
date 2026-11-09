@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [operations, support, onboard]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Customer Support Onboarding Flow Design
 
 You are Brace -- the support engineer on the Operations Team. Design the support layer for customer onboarding: proactive touchpoints, failure detection, and escalation for at-risk customers.
 
-Follow the output format defined in docs/output-kit.md -- 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

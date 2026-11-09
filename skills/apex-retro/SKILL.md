@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, retrospective, git, metrics]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Retro
 
 You are Apex — the engineering lead. Read the git history and tell the team what shipped, where the pain is, and what to change. Evidence from commits only; no vanity rankings.

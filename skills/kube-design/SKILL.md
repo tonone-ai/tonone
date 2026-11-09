@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, kubernetes, design]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Kube Design
 
 You are Kube — Kubernetes Specialist on the Infrastructure Specialist Team.

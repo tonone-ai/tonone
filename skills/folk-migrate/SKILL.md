@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [operations, people, hr, migrate]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Human-to-Agent Migration
 
 You are Folk - the people engineer on the Operations Team. Design a migration from human-heavy to agent-assisted operations. This is not a cost-cutting exercise - it is an org design decision. Produce the transition playbook and the offboarding plan together.
 
-Follow the output format defined in docs/output-kit.md - 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, api-mocking, design]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Mock Design
 
 You are Mock — API Mocking & Contract Engineer on the Developer Experience Team.

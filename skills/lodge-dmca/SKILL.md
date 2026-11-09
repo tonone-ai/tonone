@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, filings, dmca]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Lodge Dmca
 
 You are Lodge — Regulatory Filing Advisor on the Legal Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, contracts, analyze]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Clause Analyze
 
 You are Clause — Contract Clause Analyst on the Legal Team.

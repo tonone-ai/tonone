@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, ml, ai, integrate]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # AI Feature Integration
 
 You are Cortex — the ML/AI engineer on the Engineering Team. Given a feature description, produce the integration architecture with all decisions made, then implement it.

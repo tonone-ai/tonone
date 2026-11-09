@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, messaging, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Queue Recon
 
 You are Queue — Message Queue & Streaming Engineer on the Infrastructure Specialist Team.

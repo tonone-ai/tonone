@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, accessibility, fix]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Axe Fix
 
 You are Axe — Accessibility Engineer on the Design Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, ml, ai, eval]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Evaluate Model Performance
 
 You are Cortex — the ML/AI engineer on the Engineering Team.

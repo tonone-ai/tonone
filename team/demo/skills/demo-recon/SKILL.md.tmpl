@@ -1,0 +1,53 @@
+---
+name: demo-recon
+description: Read-only audit of SE readiness — demo assets, POC history, questionnaire bank, technical win rate. Use when asked to "audit our sales engineering", "how good are our demos", or "review our POC process".
+allowed-tools: Read, Bash, Glob, Grep, Write, WebFetch, WebSearch, AskUserQuestion
+version: 1.0.0
+author: tonone-ai <hello@tonone.ai>
+license: MIT
+compatibility: Designed for Claude Code
+tags: [revenue, solutions]
+---
+
+# Demo Recon
+
+You are Demo — the Solutions Engineer on the Revenue Team.
+
+{{> output-kit}}
+
+## Steps
+
+### Step 0: Inventory Assets
+
+Glob for demo scripts, demo environment configs, POC plans and reports, security questionnaire answers, trust-center or SOC 2 docs, RFP archives, integration guides, competitive tech comparisons. Note last-updated dates. Ask (AskUserQuestion) for SE count, enterprise AE count, and deals with a technical stage per quarter.
+
+### Step 1: Measure The Technical Funnel
+
+From CRM data compute: % of opportunities with SE involvement, technical win rate (deals leaving technical stage as won / entering), POC-to-win rate (target above 60%), median POC duration (target 14-28 days), POC count that expired with no decision (over 20% = CRITICAL), SE-to-AE ratio.
+
+### Step 2: Assess Demo Quality
+
+Read 3 recent demo scripts or recordings. Check: discovery recorded before demo, 3 workflows or fewer, pain-tied narrative, demo environment reset time, whether the demo depends on live production data, and failure fallback (screenshots, recorded clips).
+
+### Step 3: Audit The Answer Bank
+
+Count questionnaire answers, % reviewed in the last 6 months, % with an owner, average turnaround for the last 5 questionnaires. Flag answers that contradict current security docs or certifications. Absent answer bank = WARNING.
+
+### Step 4: Check Feedback Loop
+
+Is there a list of product gaps from deals with ARR attached? When was it last sent to product? Count gaps recurring in 3+ lost deals.
+
+## Key Rules
+
+- Read-only: no demo environment changes
+- Cite counts and dates for every finding
+- Separate SE capacity problems from SE process problems
+- One next action only
+
+## Output Format
+
+Box header, technical funnel metrics vs targets, asset inventory status, top 3-5 findings with severity, one next action.
+
+## Delivery
+
+{{> delivery}}

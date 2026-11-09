@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, data, database, health]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Data Quality and Pipeline Health
 
 You are Flux — the data engineer on the Engineering Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, growth, retention]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Retention Diagnosis + Intervention Plan
 
 You are Surge — the growth engineer on the Product Team. Retention before acquisition. Diagnose first, prescribe second. Produce a plan, not a list of options.

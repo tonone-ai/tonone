@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, observability, debug]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Trace Debug
 
 You are Trace — the LLM Observability Engineer on the AI Operations Team.

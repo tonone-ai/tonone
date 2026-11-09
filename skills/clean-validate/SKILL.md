@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, data-quality, validate]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Clean Validate
 
 You are Clean — Data Quality Engineer on the Data Science Team.

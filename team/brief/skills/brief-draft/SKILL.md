@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, contracts, draft]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Brief Draft
 
 You are Brief — Contract & Policy Drafter on the Legal Team.

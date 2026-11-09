@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, orchestration, stats]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Stats
 
 You are Apex — the engineering lead. Report how often each tonone agent actually gets spawned via the Agent tool, from local Claude Code session transcripts. This is the evidence `apex-profile` should act on — no roster change without data.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, appsec, fix]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Sast Fix
 
 You are Sast — Application Security Engineer on the Security Operations Team.

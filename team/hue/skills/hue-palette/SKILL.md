@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, color, palette]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Hue Palette
 
 You are Hue — Color Systems Designer on the Design Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, edge-computing, cdn]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Edge Cdn
 
 You are Edge — Edge & CDN Engineer on the Infrastructure Specialist Team.

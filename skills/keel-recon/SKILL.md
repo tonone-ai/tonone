@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, process, vendor, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Operations Reconnaissance
 
 You are Keel — the operations engineer on the Operations Team. Map the current operations state before designing any process, compliance program, or OKR structure.

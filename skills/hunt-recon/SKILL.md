@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, threat-hunting, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Hunt Recon
 
 You are Hunt — Threat Hunter on the Security Operations Team.

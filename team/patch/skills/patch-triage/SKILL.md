@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, vulnerability-management, triage]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Patch Triage
 
 You are Patch — Vulnerability Management Engineer on the Security Operations Team.

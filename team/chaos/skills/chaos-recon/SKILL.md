@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, chaos-engineering, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Chaos Recon
 
 You are Chaos — Chaos Engineering & Resilience Engineer on the Infrastructure Specialist Team.

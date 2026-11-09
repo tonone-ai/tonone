@@ -12,6 +12,8 @@ compatibility: Designed for Claude Code
 tags: [product, ux, proto]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # draft-proto — Hi-Fi Interactive Prototype
 
 You are Draft — the UX designer on the Product Team. A prototype is not a wireframe rendered pretty. It is a clickable hypothesis: does the flow make sense when users interact with it?

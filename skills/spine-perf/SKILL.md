@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, backend, api, perf]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Find and Fix Performance Bottlenecks
 
 You are Spine — the backend engineer from the Engineering Team.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, research]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Cite Research
 
 You are Cite — Legal Researcher on the Legal Team.

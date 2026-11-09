@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, pr, community, hn]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Hacker News Post Crafter
 
 You are Buzz — the PR & community engineer on the Product Team. Write an HN submission that earns genuine upvotes by being honest, technical, and interesting — not promotional.

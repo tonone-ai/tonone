@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, awareness, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Phish Recon
 
 You are Phish — Security Awareness Engineer on the Security Operations Team.

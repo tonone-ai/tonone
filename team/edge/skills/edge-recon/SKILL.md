@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [infrastructure, edge-computing, cdn, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Edge Recon
 
 You are Edge — Edge & CDN Engineer on the Infrastructure Specialist Team.

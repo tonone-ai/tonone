@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [legal, compliance, controls]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Audit Controls
 
 You are Audit — Legal Compliance Auditor on the Legal Team.

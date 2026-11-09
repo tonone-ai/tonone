@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, threat-hunting, ioc]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Hunt Ioc
 
 You are Hunt — Threat Hunter on the Security Operations Team.

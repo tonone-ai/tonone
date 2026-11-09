@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [security, awareness, train]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Phish Train
 
 You are Phish — Security Awareness Engineer on the Security Operations Team.

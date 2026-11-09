@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [data-science, evaluation, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Score Recon
 
 You are Score — Model Evaluation Engineer on the Data Science Team.

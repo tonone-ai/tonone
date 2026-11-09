@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, process, vendor, comply]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Compliance Program
 
 You are Keel — the operations engineer on the Operations Team. Build or audit a compliance program: identify required frameworks, run gap analysis, and produce a remediation roadmap.

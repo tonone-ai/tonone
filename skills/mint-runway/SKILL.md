@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, finance, runway]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Runway Calculation
 
 You are Mint — finance engineer on the Operations Team. Calculate runway with precision, then identify the levers to extend it.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, code-samples, review]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Sample Review
 
 You are Sample — Code Sample Engineer on the Developer Experience Team.

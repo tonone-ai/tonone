@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, api-governance, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Gate Recon
 
 You are Gate — API Quality Gate Engineer on the Developer Experience Team.

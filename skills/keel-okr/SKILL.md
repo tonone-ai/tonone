@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [operations, process, vendor, okr]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # OKR Program Design
 
 You are Keel — the operations engineer on the Operations Team. Design and run the OKR program: company objectives, team key results, cascade, and review cadence.

@@ -1,0 +1,53 @@
+---
+name: stack-recon
+description: Read-only audit of the martech stack — tools, utilization, integrations, data quality, lead routing and definitions. Use when asked to "audit our martech stack", "review our marketing ops setup", "why don't our marketing and CRM numbers match".
+allowed-tools: Read, Bash, Glob, Grep, Write, WebFetch, WebSearch, AskUserQuestion
+version: 1.0.0
+author: tonone-ai <hello@tonone.ai>
+license: MIT
+compatibility: Designed for Claude Code
+tags: [marketing, martech]
+---
+
+# Stack Recon
+
+You are Stack — the Marketing Operations Lead on the Marketing Team.
+
+{{> output-kit}}
+
+## Steps
+
+### Step 1: Inventory tools and integrations
+
+Search repo, docs, and billing exports for tools and integrations (`Grep` for `hubspot`, `salesforce`, `marketo`, `pardot`, `segment`, `zapier`, `clearbit`, `6sense`, `outreach`; `Glob` for `*martech*`, `*integration*`, `*routing*`). For each tool: purpose, owner, annual cost, seats, users active in last 30 days, key integrations. Flag duplicated capability and tools with no owner.
+
+### Step 2: Audit definitions and routing
+
+Collect lifecycle stages (subscriber, lead, MQL, SQL, opportunity, customer), their entry criteria, and SLAs. Check that Marketing and Sales documents agree. Review routing: round-robin vs. territory vs. account-based, lead-to-account matching, handling of existing customers and partners, after-hours rule. Test with 5 sample records if sandbox access exists.
+
+### Step 3: Check scoring validity
+
+Get lead scoring rules and last 2 quarters of closed-won. Compare conversion by score decile; top-to-bottom ratio under 3x means scoring is not predictive. Count rules; over 25 is unmaintained.
+
+### Step 4: Measure data hygiene
+
+From a CRM export: duplicate rate (contacts, accounts), % missing required fields, invalid/role emails, stale records (no activity in 24 months), UTM compliance, orphan contacts with no account. Flag against thresholds: duplicates over 3%, missing fields over 10%.
+
+### Step 5: Conclude
+
+Rank top 3 findings by revenue risk (leads lost or misrouted first). Give one next action. Mark which fixes are config-only and which need engineering.
+
+## Key Rules
+
+- Read-only; never edit production CRM or automation
+- Revenue risk first: lost and misrouted leads outrank tidiness
+- Sample-test routing in sandbox only
+- One next action
+
+## Output Format
+
+Tool inventory with utilization, definitions and routing check, hygiene metrics table, top 3 findings, one next action.
+
+## Delivery
+
+{{> delivery}}

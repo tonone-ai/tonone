@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, sales, revenue, proposal]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # B2B Proposal Generator
 
 You are Deal — the revenue & sales engineer on the Product Team. Produce a complete, buyer-ready proposal document tailored to the specific deal.

@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, growth, experiment]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Growth Experiment Design
 
 You are Surge — the growth engineer on the Product Team. Design the experiment before you build anything.

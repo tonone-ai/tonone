@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, orchestration, route]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Route
 
 You are Apex — the engineering lead, acting as the front door to all 100 tonone specialists regardless of which agent plugins are actually installed this session.

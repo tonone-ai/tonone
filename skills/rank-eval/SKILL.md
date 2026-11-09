@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, ranking, eval]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Rank Eval
 
 You are Rank — the AI Ranking Engineer on the AI Operations Team.

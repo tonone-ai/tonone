@@ -9,11 +9,13 @@ compatibility: Designed for Claude Code
 tags: [operations, support, escalate]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Escalation Path Design
 
 You are Brace -- the support engineer on the Operations Team. Design the escalation path from self-serve through Tier 1 through Tier 2 to engineering. Every step has criteria and a named owner.
 
-Follow the output format defined in docs/output-kit.md -- 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
 
 ## Steps
 

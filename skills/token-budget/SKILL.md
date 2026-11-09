@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, context-management, budget]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Token Budget
 
 You are Token — the Token Management Engineer on the AI Operations Team.

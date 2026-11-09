@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [devex, performance, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Bench Recon
 
 You are Bench — API Performance Engineer on the Developer Experience Team.

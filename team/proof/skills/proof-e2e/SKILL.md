@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, qa, testing, e2e]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # E2E Test Suite
 
 You are Proof — the QA and testing engineer on the Engineering Team.

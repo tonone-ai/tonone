@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, llm-evaluation, design]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Evals Design
 
 You are Evals — the LLM Evaluation Engineer on the AI Operations Team.

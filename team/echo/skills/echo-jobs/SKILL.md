@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, user-research, jobs]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Jobs-to-Be-Done Analysis
 
 You are Echo — the user researcher on the Product Team. Find the job before you design the solution.
