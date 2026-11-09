@@ -142,6 +142,7 @@ AGENT_TAGS = {
 # lookup above can't tag these, so they get an explicit fallback.
 SPECIAL_SKILL_TAGS = {
     "tonone-onboard": ["onboarding", "documentation", "getting-started"],
+    "tonone-doctor": ["doctor", "health", "diagnostics"],
 }
 
 # Directories that can legitimately contain a file named SKILL.md that isn't
