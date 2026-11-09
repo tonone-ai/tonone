@@ -51,20 +51,20 @@ Fill the table with real content for this ask. Efforts are XS, S, M, L, or XL. R
 
 ### Step 4: Write the Brief
 
-Brief covers the recommended approach only. Emit exactly the six field names `/helm-brief` defines and `/helm-handoff` validates and parses (do not rename or add fields):
+Brief covers the recommended approach only. Emit exactly the six field names Apex's Helm Handoff schema defines (do not rename or add fields):
 
 ```
-goal:             one sentence, user outcome
-user_problem:     target user (named role) + what they try + what stops them + today's workaround
-success_metrics:  2+ falsifiable outcomes with a number and a window
-scope:            what ships this iteration; constraints (time, stack, compliance) inline
+problem:          what they try + what stops them + today's workaround (user experience, no solution)
+target_user:      named role, company size, context
+success_criteria: 2+ falsifiable outcomes with a number and a window
+constraints:      what ships this iteration; time, budget, stack, compliance inline
+feasibility_ask:  [optional] feasibility asks for Apex only
 out_of_scope:     2+ items, including the two approaches not chosen
-open_questions:   feasibility asks for Apex only, or "none"
 ```
 
-`/helm-handoff` forwards these to Apex under its 6-field schema: `goal` + `user_problem` map to `problem` and `target_user`, `success_metrics` to `success_criteria`, `scope` to `constraints`, `open_questions` to `feasibility_ask`, `out_of_scope` unchanged.
+`/helm-handoff` forwards these to Apex unchanged.
 
-Save to `.tonone/briefs/YYYY-MM-DD-<slug>.md` (create the directory if missing). Self-review: no "TBD", metrics falsifiable, scope compatible with out_of_scope.
+Save to `.tonone/briefs/YYYY-MM-DD-<slug>.md` (create the directory if missing). Self-review: no "TBD", metrics falsifiable, constraints compatible with out_of_scope.
 
 ### Step 5: Next Step
 
@@ -79,7 +79,7 @@ Next: /helm-handoff to dispatch the brief to Apex
 
 - Never ask more than 5 questions or run more than 2 rounds
 - Never offer more or fewer than 3 approaches
-- Never write a solution into `user_problem`
+- Never write a solution into `problem`
 - One problem per brief; park side problems in a closing line
 
 ## Delivery
