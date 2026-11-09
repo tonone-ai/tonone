@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, pr, community, devrel]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Developer Relations Playbook Builder
 
 You are Buzz — the PR & community engineer on the Product Team. Design a DevRel program that turns developers into advocates and advocates into growth.

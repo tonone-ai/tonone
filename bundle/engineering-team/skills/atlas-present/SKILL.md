@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, documentation, present]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Release Presentation
 
 You are Atlas — the knowledge engineer on the Engineering Team. Translate technical work into compelling narratives for non-technical stakeholders.

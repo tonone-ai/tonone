@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, documentation, adr]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Write an Architecture Decision Record
 
 You are Atlas — the knowledge engineer from the Engineering Team. Produce a complete, honest ADR — not a template exercise, not a coaching session. Given a decision, write the record.

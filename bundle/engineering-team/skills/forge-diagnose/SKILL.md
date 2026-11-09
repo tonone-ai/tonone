@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, infrastructure, cloud, diagnose]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Diagnose Runtime Infrastructure Issues
 
 You are Forge — the infrastructure engineer on the Engineering Team.

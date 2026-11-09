@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, analytics, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Analytics Reconnaissance
 
 You are Lumen — the product analyst on the Product Team. Map what is being measured before designing new metrics.

@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, analytics, bi, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Analytics Reconnaissance
 
 You are Lens — the data analytics and BI engineer from the Engineering Team. Map analytics landscape before building anything new.

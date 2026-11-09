@@ -1,0 +1,302 @@
+[
+  {
+    "id": "harbor-ink",
+    "name": "Harbor Ink",
+    "tags": ["saas", "devtool", "docs", "app", "landing"],
+    "mode": "light",
+    "roles": {
+      "bg": "#F5F8FA",
+      "surface": "#FFFFFF",
+      "text": "#13202B",
+      "muted": "#4F5E6B",
+      "accent": "#0E6B73",
+      "on-accent": "#FFFFFF",
+      "border": "#D3DCE3",
+      "status": {
+        "ok": "#1B7F4B",
+        "warn": "#8A5A00",
+        "error": "#B42318"
+      }
+    },
+    "contrast": {
+      "text-bg": 15.51,
+      "muted-bg": 6.26,
+      "on-accent-accent": 6.23
+    }
+  },
+  {
+    "id": "tidewater-night",
+    "name": "Tidewater Night",
+    "tags": ["devtool", "saas", "app", "dashboard", "docs"],
+    "mode": "dark",
+    "roles": {
+      "bg": "#0F1A24",
+      "surface": "#172430",
+      "text": "#E8EFF5",
+      "muted": "#9DB0C0",
+      "accent": "#5CC8E8",
+      "on-accent": "#05222C",
+      "border": "#2A3B4A",
+      "status": {
+        "ok": "#4ADE9A",
+        "warn": "#F2B84B",
+        "error": "#FF8A80"
+      }
+    },
+    "contrast": {
+      "text-bg": 15.16,
+      "muted-bg": 7.88,
+      "on-accent-accent": 8.56
+    }
+  },
+  {
+    "id": "ledger-green",
+    "name": "Ledger Green",
+    "tags": ["fintech", "saas", "landing", "app", "dashboard"],
+    "mode": "light",
+    "roles": {
+      "bg": "#F6F9F7",
+      "surface": "#FFFFFF",
+      "text": "#15251D",
+      "muted": "#4D6157",
+      "accent": "#1F6B4A",
+      "on-accent": "#FFFFFF",
+      "border": "#D2DDD6",
+      "status": {
+        "ok": "#1F6B4A",
+        "warn": "#8A5A00",
+        "error": "#B42318"
+      }
+    },
+    "contrast": {
+      "text-bg": 15.07,
+      "muted-bg": 6.26,
+      "on-accent-accent": 6.44
+    }
+  },
+  {
+    "id": "clinic-blue",
+    "name": "Clinic Blue",
+    "tags": ["health", "civic", "landing", "app"],
+    "mode": "light",
+    "roles": {
+      "bg": "#F3F9FC",
+      "surface": "#FFFFFF",
+      "text": "#10303C",
+      "muted": "#45636F",
+      "accent": "#0B6F91",
+      "on-accent": "#FFFFFF",
+      "border": "#D0E0E8",
+      "status": {
+        "ok": "#1B7F4B",
+        "warn": "#8A5A00",
+        "error": "#B42318"
+      }
+    },
+    "contrast": {
+      "text-bg": 13.09,
+      "muted-bg": 6.05,
+      "on-accent-accent": 5.68
+    }
+  },
+  {
+    "id": "raspberry-table",
+    "name": "Raspberry Table",
+    "tags": ["food", "hospitality", "retail", "landing"],
+    "mode": "light",
+    "roles": {
+      "bg": "#FBF3F7",
+      "surface": "#FFFFFF",
+      "text": "#3A1418",
+      "muted": "#6B4549",
+      "accent": "#B3243B",
+      "on-accent": "#FFFFFF",
+      "border": "#EBD2D5",
+      "status": {
+        "ok": "#1B7F4B",
+        "warn": "#8A5A00",
+        "error": "#B3243B"
+      }
+    },
+    "contrast": {
+      "text-bg": 14.9,
+      "muted-bg": 7.49,
+      "on-accent-accent": 6.5
+    }
+  },
+  {
+    "id": "tavern-amber",
+    "name": "Tavern Amber",
+    "tags": ["hospitality", "food", "landing", "editorial"],
+    "mode": "dark",
+    "roles": {
+      "bg": "#1A2420",
+      "surface": "#24312B",
+      "text": "#EDF3EF",
+      "muted": "#A8BBB0",
+      "accent": "#E8B04A",
+      "on-accent": "#2A1D00",
+      "border": "#374840",
+      "status": {
+        "ok": "#6FD39A",
+        "warn": "#E8B04A",
+        "error": "#FF8A80"
+      }
+    },
+    "contrast": {
+      "text-bg": 14.17,
+      "muted-bg": 7.9,
+      "on-accent-accent": 8.43
+    }
+  },
+  {
+    "id": "market-magenta",
+    "name": "Market Magenta",
+    "tags": ["retail", "food", "landing", "app"],
+    "mode": "light",
+    "roles": {
+      "bg": "#FBFBFD",
+      "surface": "#FFFFFF",
+      "text": "#1A1D24",
+      "muted": "#555B68",
+      "accent": "#C2255C",
+      "on-accent": "#FFFFFF",
+      "border": "#DEE1E8",
+      "status": {
+        "ok": "#1B7F4B",
+        "warn": "#8A5A00",
+        "error": "#B42318"
+      }
+    },
+    "contrast": {
+      "text-bg": 16.32,
+      "muted-bg": 6.59,
+      "on-accent-accent": 5.66
+    }
+  },
+  {
+    "id": "press-slate",
+    "name": "Press Slate",
+    "tags": ["editorial", "portfolio", "docs", "landing"],
+    "mode": "light",
+    "roles": {
+      "bg": "#F1F4F6",
+      "surface": "#FFFFFF",
+      "text": "#1B1F23",
+      "muted": "#565F67",
+      "accent": "#8C2F1B",
+      "on-accent": "#FFFFFF",
+      "border": "#D6DCE1",
+      "status": {
+        "ok": "#1B7F4B",
+        "warn": "#8A5A00",
+        "error": "#8C2F1B"
+      }
+    },
+    "contrast": {
+      "text-bg": 15.01,
+      "muted-bg": 5.89,
+      "on-accent-accent": 8.28
+    }
+  },
+  {
+    "id": "arcade-rose",
+    "name": "Arcade Rose",
+    "tags": ["gaming", "landing", "portfolio"],
+    "mode": "dark",
+    "roles": {
+      "bg": "#0E1B2C",
+      "surface": "#162A40",
+      "text": "#EAF1F9",
+      "muted": "#A3B5C9",
+      "accent": "#FF5CA8",
+      "on-accent": "#2A0016",
+      "border": "#27405C",
+      "status": {
+        "ok": "#4ADE9A",
+        "warn": "#F2B84B",
+        "error": "#FF8A80"
+      }
+    },
+    "contrast": {
+      "text-bg": 15.22,
+      "muted-bg": 8.26,
+      "on-accent-accent": 6.62
+    }
+  },
+  {
+    "id": "civic-navy",
+    "name": "Civic Navy",
+    "tags": ["civic", "health", "docs", "app", "landing"],
+    "mode": "light",
+    "roles": {
+      "bg": "#F4F6FA",
+      "surface": "#FFFFFF",
+      "text": "#1A2433",
+      "muted": "#4A5668",
+      "accent": "#1D4E89",
+      "on-accent": "#FFFFFF",
+      "border": "#D3D9E3",
+      "status": {
+        "ok": "#1B7F4B",
+        "warn": "#8A5A00",
+        "error": "#B42318"
+      }
+    },
+    "contrast": {
+      "text-bg": 14.44,
+      "muted-bg": 6.88,
+      "on-accent-accent": 8.39
+    }
+  },
+  {
+    "id": "studio-rust",
+    "name": "Studio Rust",
+    "tags": ["portfolio", "editorial", "gaming", "landing"],
+    "mode": "light",
+    "roles": {
+      "bg": "#EBEEF1",
+      "surface": "#F8F9FA",
+      "text": "#101418",
+      "muted": "#4A525B",
+      "accent": "#C2410C",
+      "on-accent": "#FFFFFF",
+      "border": "#CDD3D9",
+      "status": {
+        "ok": "#1B7F4B",
+        "warn": "#8A5A00",
+        "error": "#B42318"
+      }
+    },
+    "contrast": {
+      "text-bg": 15.88,
+      "muted-bg": 6.81,
+      "on-accent-accent": 5.18
+    }
+  },
+  {
+    "id": "dashboard-mint",
+    "name": "Dashboard Mint",
+    "tags": ["dashboard", "saas", "devtool", "fintech", "app"],
+    "mode": "dark",
+    "roles": {
+      "bg": "#121A22",
+      "surface": "#1A2530",
+      "text": "#E6EEF2",
+      "muted": "#9AAEBB",
+      "accent": "#2DD4A7",
+      "on-accent": "#00251C",
+      "border": "#2B3A47",
+      "status": {
+        "ok": "#2DD4A7",
+        "warn": "#F2B84B",
+        "error": "#FF8A80"
+      }
+    },
+    "contrast": {
+      "text-bg": 14.94,
+      "muted-bg": 7.64,
+      "on-accent-accent": 8.65
+    }
+  }
+]

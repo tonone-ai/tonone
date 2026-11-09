@@ -24,12 +24,14 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 Check all required fields are present, filled, and internally consistent:
 
-- [ ] `goal` — one sentence, names a user outcome
-- [ ] `user_problem` — describes a user experience, not a product gap
-- [ ] `success_metrics` — at least 2 measurable, falsifiable outcomes
-- [ ] `scope` — specific and bounded; compatible with `out_of_scope`
+- [ ] `problem` — describes a user experience, not a product gap
+- [ ] `target_user` — specific role and context, not a category
+- [ ] `success_criteria` — at least 2 measurable, falsifiable outcomes
+- [ ] `constraints` — specific and bounded; compatible with `out_of_scope`
 - [ ] `out_of_scope` — at least 2 explicit items
-- [ ] `open_questions` — if non-empty, determine whether Apex needs to answer before scoping or can answer during scoping
+- [ ] `feasibility_ask` — optional; if set, determine whether Apex must answer before scoping or can answer during scoping
+
+Legacy briefs using old names (`goal`, `user_problem`, `success_metrics`, `scope`, `open_questions`) are mapped on read: `goal` + `user_problem` -> `problem` + `target_user`, `success_metrics` -> `success_criteria`, `scope` -> `constraints`, `open_questions` -> `feasibility_ask`. Always emit the canonical names.
 
 If any required field is missing: stop. Return to `/helm-brief` to complete it. Do not hand off a partial brief.
 
@@ -43,25 +45,25 @@ Produce full handoff in this format:
 HELM → APEX HANDOFF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-goal:
+problem:
   [value]
 
-user_problem:
+target_user:
   [value]
 
-success_metrics:
-  - [metric 1]
-  - [metric 2]
+success_criteria:
+  - [criterion 1]
+  - [criterion 2]
 
-scope:
+constraints:
   [value]
+
+feasibility_ask:
+  [value or "none"]
 
 out_of_scope:
   - [item 1]
   - [item 2]
-
-open_questions:
-  [value or "none"]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Context for Apex:
@@ -86,14 +88,14 @@ Context for Apex:
 
 Use the Agent tool to dispatch this handoff to Apex. Pass full formatted package as context.
 
-Instruct Apex: "This is a Helm→Apex product brief handoff. Parse the 6-field schema (field map: `goal`+`user_problem` → `problem`/`target_user`, `success_metrics` → `success_criteria`, `scope` → `constraints`, `open_questions` → `feasibility_ask`, `out_of_scope` unchanged). Map `success_metrics` to engineering acceptance criteria. Answer any `open_questions` before presenting S/M/L scope options. Use `out_of_scope` as your guard against scope creep."
+Instruct Apex: "This is a Helm→Apex product brief handoff. Parse the 6-field schema. Map `success_criteria` to engineering acceptance criteria. Answer any `feasibility_ask` before presenting S/M/L scope options. Use `out_of_scope` as your guard against scope creep."
 
 ### Step 4: Confirm and Close
 
 After Apex presents S/M/L options:
 
-- Confirm Apex's interpretation of `goal` and `user_problem` matches brief intent
-- Confirm chosen scope level is compatible with any timeline in `scope` or constraints
+- Confirm Apex's interpretation of `problem` and `target_user` matches brief intent
+- Confirm chosen scope level is compatible with any timeline in `constraints`
 - If Apex surfaces a feasibility conflict: resolve in one exchange or escalate to founder
 - Once scope level is picked, handoff is complete — Helm's job here is done
 

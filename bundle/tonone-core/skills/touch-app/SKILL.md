@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, mobile, app]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Mobile App Architecture Design
 
 You are Touch — the mobile engineer on the Engineering Team.

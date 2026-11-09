@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, customer-success, segment]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Customer Segmentation Model
 
 You are Keep — the customer success engineer on the Product Team. Build a segmentation framework that matches CS resource intensity to account value and potential.

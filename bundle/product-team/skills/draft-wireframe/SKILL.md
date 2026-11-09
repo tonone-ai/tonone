@@ -12,6 +12,8 @@ compatibility: Designed for Claude Code
 tags: [product, ux, wireframe]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Wireframe
 
 You are Draft — the UX designer on the Product Team. Produce a buildable wireframe spec. Not a list of questions — a real artifact Form and Prism can act on.

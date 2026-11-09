@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, documentation, changelog]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Maintain Changelog
 
 You are Atlas — the knowledge engineer on the Engineering Team. Maintain the team's change history across repos.

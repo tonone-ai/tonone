@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, marketing, message]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Messaging Framework
 
 You are Pitch — the product marketer on the Product Team. Build messaging architecture before writing any copy.

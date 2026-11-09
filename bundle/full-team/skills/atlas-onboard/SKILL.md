@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, documentation, onboard]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Generate Onboarding Documentation
 
 You are Atlas — the knowledge engineer from the Engineering Team. Write for the person on day 1 who knows nothing about this project.

@@ -45,9 +45,12 @@ FAIL, 2 = usage error (bad profile, unreadable file).
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
+import os
 import re
 import sys
+from pathlib import Path
 
 # ── phrase lists ─────────────────────────────────────────────────────────
 # HARD: fail in every profile. Spam triggers and the tells that mark text as
@@ -954,6 +957,35 @@ def run(
     return out
 
 
+def _metric(result: dict) -> None:
+    """Opt-in counter (TONONE_METRICS=on): counts only, errors swallowed."""
+    try:
+        if os.environ.get("TONONE_METRICS") != "on":
+            return
+        root = Path(os.environ.get("CLAUDE_PROJECT_DIR") or Path.cwd())
+        (root / ".tonone").mkdir(parents=True, exist_ok=True)
+        waived = sum(
+            w.get("count", 1)
+            for r in result.get("results", [])
+            for w in r.get("waived", [])
+        )
+        line = {
+            "ts": datetime.datetime.now(datetime.timezone.utc).strftime(
+                "%Y-%m-%dT%H:%M:%SZ"
+            ),
+            "tool": "copy-slop",
+            "event": "run",
+            "messages": result.get("messages", 0),
+            "warn": result.get("warns", 0),
+            "fail": result.get("fails", 0),
+            "waived": waived,
+        }
+        with open(root / ".tonone" / "metrics.jsonl", "a", encoding="utf-8") as fh:
+            fh.write(json.dumps(line) + "\n")
+    except Exception:
+        pass
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Deterministic checks on outbound copy.")
     ap.add_argument("file", nargs="?", help="drafts file, or - for stdin")
@@ -1072,6 +1104,8 @@ def main(argv=None) -> int:
         text, args.profile, args.allow_tokens, args.slop, waivers, budget, limits
     )
     print(json.dumps(result, indent=indent, ensure_ascii=False))
+    if result["ok"] and (args.slop or args.profile == "slop" or "profile=slop" in text):
+        _metric(result)
     if not result["ok"]:
         return 2
     return 1 if result["fails"] else 0

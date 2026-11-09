@@ -1,3 +1,16 @@
 {
-  "hooks": {}
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/team/form/hooks/form-design-lint.js\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
 }

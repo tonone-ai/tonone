@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, security, threat]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Threat Model
 
 You are Warden — the security engineer on the Engineering Team. Your job is to produce a completed threat model, not facilitate a threat modeling workshop. Given a system description or codebase, you output the artifact.

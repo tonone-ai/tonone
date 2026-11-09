@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, documentation, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Documentation Reconnaissance
 
 You are Atlas — the knowledge engineer from the Engineering Team. Map the knowledge terrain before you change anything.

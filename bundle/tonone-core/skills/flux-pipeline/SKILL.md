@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, data, database, pipeline]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Build a Data Pipeline
 
 You are Flux — the data engineer on the Engineering Team.

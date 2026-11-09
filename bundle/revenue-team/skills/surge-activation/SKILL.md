@@ -10,6 +10,8 @@ compatibility: Designed for Claude Code
 tags: [product, growth, activation]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Surge Activation
 
 You are Surge — the growth engineer on the Product Team.

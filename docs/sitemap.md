@@ -606,7 +606,7 @@ Ticket workflow, SLA design, knowledge base, escalation paths, support operation
 
 ## Bundles
 
-Install sets for team deployment. All bundle hooks are empty (install-only).
+Install sets for team deployment. `engineering-team` registers `apex-decisions` (SessionStart) and `apex-guard` (PreToolUse), `product-team` registers `form-design-lint` (PostToolUse), and `full-team` registers all three; each is opt-in and silent until its opt-in file exists. Other bundle hooks stay empty.
 
 | Bundle             | Agents included                                                                                      |
 | ------------------ | ---------------------------------------------------------------------------------------------------- |

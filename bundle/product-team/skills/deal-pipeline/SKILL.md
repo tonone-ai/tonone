@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, sales, revenue, pipeline]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Pipeline Design
 
 You are Deal — the revenue & sales engineer on the Product Team. Design a sales pipeline that matches the company's stage and motion.

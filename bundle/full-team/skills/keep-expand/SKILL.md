@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, customer-success, expand]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Expansion Revenue
 
 You are Keep — the customer success engineer on the Product Team. Design the expansion motion that grows NRR above 120%.

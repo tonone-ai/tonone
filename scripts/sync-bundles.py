@@ -12,8 +12,16 @@ plain copies and this script keeps them in step with the root.
 Membership is whatever is already in the bundle: bundle/<team>/agents/<name>.md
 is refreshed from agents/<name>.md, bundle/<team>/skills/<name>/ from
 skills/<name>/, and any file under bundle/<team>/docs/ or bundle/<team>/team/
-from the same path at the root. Add or remove a member by adding or removing it in the bundle,
-then run this script. Any symlink still in a bundle is replaced by a copy.
+from the same path at the root. bundle/<team>/scripts/<file> is refreshed from
+scripts/<file> (a script a skill runs from ${CLAUDE_PLUGIN_ROOT}/scripts, such
+as tonone-doctor.py), except the bundle-owned installers in BUNDLE_OWNED_SCRIPTS.
+Add or remove a member by adding or removing it in the bundle, then run this
+script. Any symlink still in a bundle is replaced by a copy.
+
+Every root skill must be in at least one bundle or be listed in
+bundle/UNBUNDLED.txt (see below). --check reports "skill X is in no bundle"
+for any that is neither, so a new skill cannot silently ship to nobody who
+installs a bundle.
 
 Usage:
     python scripts/sync-bundles.py            # write the copies
@@ -36,6 +44,74 @@ BUNDLE_DIR = REPO_ROOT / "bundle"
 # WebFetch. Without the key the tools still work; Claude Code simply asks.
 STRIP_FRONTMATTER = {"tonone-core": ("allowed-tools",)}
 
+# bundle/<team>/scripts/ files that belong to the bundle and have no root twin.
+BUNDLE_OWNED_SCRIPTS = {"install-all.sh"}
+
+# Skills deliberately in no bundle. Two sections, one name per line, '#' comments:
+#   [ROOT_ONLY]         skills that only make sense in the full `tonone` root plugin
+#   [LEGACY_UNBUNDLED]  skills that predate the guard, grandfathered (sorted)
+# New skills must join a bundle (create bundle/<team>/skills/<name>/ and run this
+# script) or, with a stated reason, be added here.
+UNBUNDLED_FILE = BUNDLE_DIR / "UNBUNDLED.txt"
+SECTIONS = ("ROOT_ONLY", "LEGACY_UNBUNDLED")
+
+
+def load_unbundled(path=None):
+    """Return {section: [names in file order]} from bundle/UNBUNDLED.txt."""
+    path = path or UNBUNDLED_FILE
+    out = {name: [] for name in SECTIONS}
+    section = None
+    for raw in path.read_text().splitlines():
+        line = raw.split("#", 1)[0].strip()
+        if not line:
+            continue
+        if line.startswith("[") and line.endswith("]"):
+            section = line[1:-1]
+            if section not in out:
+                raise ValueError(f"{path.name}: unknown section [{section}]")
+        elif section is None:
+            raise ValueError(f"{path.name}: '{line}' before any [SECTION]")
+        else:
+            out[section].append(line)
+    return out
+
+
+def root_skills():
+    return {
+        p.name
+        for p in (REPO_ROOT / "skills").iterdir()
+        if p.is_dir() and not p.name.startswith("_")
+    }
+
+
+def bundled_skills():
+    names = set()
+    for bundle in BUNDLE_DIR.iterdir():
+        if (bundle / "skills").is_dir():
+            names |= {p.name for p in (bundle / "skills").iterdir() if p.is_dir()}
+    return names
+
+
+def coverage_problems():
+    """Lines describing skills in no bundle and an exemption list out of step."""
+    listed = load_unbundled()
+    exempt = set(listed["ROOT_ONLY"]) | set(listed["LEGACY_UNBUNDLED"])
+    roots, bundled = root_skills(), bundled_skills()
+    out = [
+        f"skill {n} is in no bundle (add bundle/<team>/skills/{n}/ and run "
+        f"sync-bundles.py, or list it in bundle/UNBUNDLED.txt)"
+        for n in sorted(roots - bundled - exempt)
+    ]
+    out += [
+        f"UNBUNDLED.txt lists {n}, which is bundled: remove it from the list"
+        for n in sorted(exempt & bundled)
+    ]
+    out += [
+        f"UNBUNDLED.txt lists {n}, which is not a root skill: remove it"
+        for n in sorted(exempt - roots)
+    ]
+    return out
+
 
 def members(bundle):
     """Yield (bundle_path, source_path) for every agent and skill in a bundle."""
@@ -53,6 +129,13 @@ def members(bundle):
         for entry in sorted((bundle / sub).rglob("*")):
             if entry.is_file():
                 yield entry, REPO_ROOT / entry.relative_to(bundle)
+    # scripts/ files skills run from ${CLAUDE_PLUGIN_ROOT}/scripts. The
+    # bundle-owned installers have no root counterpart and are left alone.
+    scripts = bundle / "scripts"
+    if scripts.is_dir():
+        for entry in sorted(scripts.iterdir()):
+            if entry.is_file() and entry.name not in BUNDLE_OWNED_SCRIPTS:
+                yield entry, REPO_ROOT / "scripts" / entry.name
     # lib/ membership is by directory: a bundle that ships lib/<name> gets
     # every file in it, so a file added to lib/<name> later is not skipped.
     lib = bundle / "lib"
@@ -175,19 +258,22 @@ def main():
             if not args.check:
                 copy(bundle, dest, src)
 
+    uncovered = coverage_problems()
     for line in missing:
         print(f"missing source: {line}")
+    for line in uncovered:
+        print(line)
     if args.check:
         for line in drift:
             print(f"out of sync: {line}")
-        if drift or missing:
+        if drift or missing or uncovered:
             print("Run: python scripts/sync-bundles.py")
             return 1
         print("Bundles in sync.")
         return 0
 
     print(f"Refreshed {len(drift)} bundle entries.")
-    return 1 if missing else 0
+    return 1 if missing or uncovered else 0
 
 
 if __name__ == "__main__":

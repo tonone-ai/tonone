@@ -47,7 +47,7 @@ One question to Form if there's a genuine blocker. Don't request a full review s
 
 ### Step 1b: Read the Design Dials
 
-Look for Form's `Design dials` block in `DESIGN.md`, `design-direction.md`, or `implementation-handoff.md` (written by /form-brief and /form-direction). Three values, 1-10: `DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY`. None found: infer from product type and brief, state the values with a one-line reason, proceed. The brief wins over the table below.
+Look for Form's `Design dials` block in `DESIGN.md` (Overview section; format in `docs/design-md.md`, legacy files carry it under Visual Theme), `design-direction.md`, or `implementation-handoff.md` (written by /form-brief and /form-direction). Three values, 1-10: `DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY`. None found: infer from product type and brief, state the values with a one-line reason, proceed. The brief wins over the table below.
 
 | Dial     | 1-3                                                   | 4-7                                                        | 8-10                                                                                                 |
 | -------- | ----------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |

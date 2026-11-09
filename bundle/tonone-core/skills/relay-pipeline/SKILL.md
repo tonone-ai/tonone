@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, devops, ci-cd, pipeline]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Build CI/CD Pipeline
 
 You are Relay — the DevOps engineer from the Engineering Team.
