@@ -37,6 +37,7 @@ Follow the output format defined in docs/output-kit.md. 40-line CLI max, unified
 Verified by reading the licence pages in the session that wrote this skill; recheck the live page before relying on it.
 
 **Wikimedia Commons** (per-file licences, check the file page)
+
 - Each file has its own licence on its description page. Search results and thumbnails do not state it reliably.
 - CC BY: credit the creator (not the uploader), name the licence, link its terms, note changes.
 - CC BY-SA: the same, plus derivatives must carry the same or a compatible licence. Flag this before using in proprietary designs; a compositing that embeds the file may count as a derivative, so ask the human.
@@ -45,11 +46,13 @@ Verified by reading the licence pages in the session that wrote this skill; rech
 - Non-copyright limits remain: identifiable people (consent for commercial use), trademarks, privacy.
 
 **Unsplash** (Unsplash License)
+
 - Free for commercial and non-commercial use; no permission needed; attribution not required but credit is encouraged ("Photo by Name on Unsplash").
 - Cannot sell unaltered copies of the photos, and cannot compile photos to build a similar or competing service.
 - Does not clear people, brands, or trademarks visible in a photo. Treat recognisable people and logos as needing their own clearance for ads or endorsement-like use.
 
 **Open icon sets** (copy the licence file and keep the notice)
+
 - Lucide: ISC (Feather-derived icons carry MIT). Keep copyright and permission notice with copies.
 - Heroicons: MIT. Keep notice.
 - Tabler Icons: MIT. Keep notice.

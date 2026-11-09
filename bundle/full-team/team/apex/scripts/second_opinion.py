@@ -22,7 +22,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-RULES_PATH = Path(__file__).resolve().parent.parent.parent / "warden" / "hooks" / "rules.json"
+RULES_PATH = (
+    Path(__file__).resolve().parent.parent.parent / "warden" / "hooks" / "rules.json"
+)
 MARK = "[REDACTED]"
 INSTRUCTION = (
     "You are a second reviewer. Review the following diff or plan for correctness, "
@@ -41,14 +43,18 @@ CLIS = {
 
 def _compile(pattern, macros):
     for _ in range(4):
-        nxt = re.sub(r"\{\{([A-Z0-9_]+)\}\}", lambda m: macros.get(m.group(1), m.group(0)), pattern)
+        nxt = re.sub(
+            r"\{\{([A-Z0-9_]+)\}\}",
+            lambda m: macros.get(m.group(1), m.group(0)),
+            pattern,
+        )
         if nxt == pattern:
             break
         pattern = nxt
     flags = 0
     m = re.match(r"\(\?(-?)i\)", pattern)
     if m:
-        pattern = pattern[m.end():]
+        pattern = pattern[m.end() :]
         flags = 0 if m.group(1) else re.I
     # Python rejects inline (?-i)/(?i) mid-pattern; scope them as groups.
     pattern = re.sub(r"\(\?-i\)(.*)", r"(?-i:\1)", pattern)
@@ -104,7 +110,7 @@ def redact(text, rules=None):
                     val = m.group(group)
                     if val == MARK or any(r.search(val) for r in reject):
                         continue
-                    line = line[: m.start(group)] + MARK + line[m.end(group):]
+                    line = line[: m.start(group)] + MARK + line[m.end(group) :]
                     count += 1
         lines[i] = line
     return "\n".join(lines), count
@@ -126,7 +132,13 @@ def prepare(raw, cli, out_dir, now=None):
     out.mkdir(parents=True, exist_ok=True)
     path = out / f"{ts}.payload.txt"
     path.write_bytes(data)
-    return {"cli": cli, "path": str(path), "bytes": len(data), "sha256": sha256(data), "redactions": count}
+    return {
+        "cli": cli,
+        "path": str(path),
+        "bytes": len(data),
+        "sha256": sha256(data),
+        "redactions": count,
+    }
 
 
 def send(cli, payload_path, consent, path=None):
@@ -134,7 +146,9 @@ def send(cli, payload_path, consent, path=None):
     data = p.read_bytes()
     digest = sha256(data)
     if not consent or consent.lower() != digest:
-        raise PermissionError(f"consent {consent!r} does not match payload sha256 {digest}")
+        raise PermissionError(
+            f"consent {consent!r} does not match payload sha256 {digest}"
+        )
     exe = shutil.which(cli, path=path)
     if cli not in CLIS or not exe:
         raise FileNotFoundError(f"{cli} not on PATH or unsupported")
@@ -143,8 +157,13 @@ def send(cli, payload_path, consent, path=None):
     proc = subprocess.run(argv, input=data, capture_output=True, timeout=600)
     resp = p.with_name(p.name.replace(".payload.txt", ".response.txt"))
     resp.write_bytes(proc.stdout)
-    return {"cli": cli, "response": str(resp), "bytes": len(proc.stdout), "exit": proc.returncode,
-            "stderr": proc.stderr.decode("utf-8", "replace")[:500]}
+    return {
+        "cli": cli,
+        "response": str(resp),
+        "bytes": len(proc.stdout),
+        "exit": proc.returncode,
+        "stderr": proc.stderr.decode("utf-8", "replace")[:500],
+    }
 
 
 def main(argv=None):
@@ -165,7 +184,11 @@ def main(argv=None):
         print(json.dumps({"found": found}))
         return 0 if found else 3
     if a.cmd == "prepare":
-        raw = sys.stdin.read() if a.input == "-" else Path(a.input).read_text(errors="replace")
+        raw = (
+            sys.stdin.read()
+            if a.input == "-"
+            else Path(a.input).read_text(errors="replace")
+        )
         print(json.dumps(prepare(raw, a.cli, a.out_dir)))
         return 0
     try:

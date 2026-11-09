@@ -38,12 +38,12 @@ Run the `/helm-brief` flow on the input (at most one clarifying question, per th
 
 Send four Agent calls in ONE message (subagent types `tonone:crest`, `tonone:draft`, `tonone:spine`, `tonone:vigil`). Each prompt carries the full draft brief plus its lens below. Reviewers get no other reviewer's output and are told so. Each is read-only: no files written, no code changed.
 
-| Reviewer | Lens |
-| -------- | ---- |
-| crest | Strategy: is this the right problem now? Competitive and roadmap fit, sequencing, a narrower wedge. |
-| draft | UX: flow complexity, empty/error states, where the target_user gets stuck, what is missing from the journey. |
-| spine | Engineering feasibility: can `constraints` hold? Hidden dependencies, data/API gaps, cost, riskiest unknown. Answer `feasibility_ask`. |
-| vigil | Operability: SLO impact, failure modes, alerting and rollback needs, what breaks at 10x. |
+| Reviewer | Lens                                                                                                                                   |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| crest    | Strategy: is this the right problem now? Competitive and roadmap fit, sequencing, a narrower wedge.                                    |
+| draft    | UX: flow complexity, empty/error states, where the target_user gets stuck, what is missing from the journey.                           |
+| spine    | Engineering feasibility: can `constraints` hold? Hidden dependencies, data/API gaps, cost, riskiest unknown. Answer `feasibility_ask`. |
+| vigil    | Operability: SLO impact, failure modes, alerting and rollback needs, what breaks at 10x.                                               |
 
 Prompt template (fill lens):
 

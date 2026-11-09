@@ -137,7 +137,8 @@ function loadDesignMd(root) {
   for (const m of text.matchAll(/\b(?:rgba?|hsla?)\([^)]{5,60}\)/gi)) {
     const c = parseColor(m[0]);
     if (c) {
-      const h = (v) => Math.max(0, Math.min(255, v)).toString(16).padStart(2, "0");
+      const h = (v) =>
+        Math.max(0, Math.min(255, v)).toString(16).padStart(2, "0");
       hex.add(h(c.r) + h(c.g) + h(c.b));
     }
   }

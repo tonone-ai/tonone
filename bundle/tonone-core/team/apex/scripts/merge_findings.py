@@ -132,7 +132,9 @@ def _metric(findings, dropped, red_doc):
         d = os.path.join(os.environ.get("CLAUDE_PROJECT_DIR") or os.getcwd(), ".tonone")
         os.makedirs(d, exist_ok=True)
         line = {
-            "ts": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "ts": datetime.datetime.now(datetime.timezone.utc).strftime(
+                "%Y-%m-%dT%H:%M:%SZ"
+            ),
             "tool": "apex-review",
             "event": "merge",
             "kept": len(findings),

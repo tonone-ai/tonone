@@ -264,7 +264,8 @@ function render(active) {
       true,
     );
     // Keep up to 2 slots for learnings, but never more than exist.
-    const cap = MAX_ENTRIES - Math.min(2, Math.min(learnings.length, MAX_LEARNINGS));
+    const cap =
+      MAX_ENTRIES - Math.min(2, Math.min(learnings.length, MAX_LEARNINGS));
     for (const r of ordered(decisions)) {
       if (nd >= cap || !push(formatEntry(r), nd === 0)) break;
       nd++;
@@ -282,7 +283,8 @@ function render(active) {
         if (nl >= cap || !push(formatLearning(r), first && nl === 0)) break;
         nl++;
       }
-      if (nl === 0) lines.pop(); // header alone is noise
+      if (nl === 0)
+        lines.pop(); // header alone is noise
       else if (learnings.length > nl)
         push(`+${learnings.length - nl} more: /apex-decisions learnings`);
     }
@@ -582,7 +584,10 @@ function runCli(argv, env, cwd, now, out) {
       return out(`confirmed ${t.id} (x${t.confirmed + 1})`);
     }
     case "learnings": {
-      const q = (opt(flags, "query") || "").toLowerCase().split(/\s+/).filter(Boolean);
+      const q = (opt(flags, "query") || "")
+        .toLowerCase()
+        .split(/\s+/)
+        .filter(Boolean);
       const rows = folded
         .filter((r) => isLearning(r) && (flags.all || r.status === "active"))
         .filter(

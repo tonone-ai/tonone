@@ -131,7 +131,7 @@ When project uses Obsidian for product management, produce briefs and decisions 
 
 | Artifact            | Obsidian Format                                                                       | When                            |
 | ------------------- | ------------------------------------------------------------------------------------- | ------------------------------- |
-| Product briefs      | Obsidian Markdown — 6-field Helm Handoff schema as YAML properties + body                          | Vault-based product management  |
+| Product briefs      | Obsidian Markdown — 6-field Helm Handoff schema as YAML properties + body             | Vault-based product management  |
 | Roadmap board       | JSON Canvas (`.canvas`) — briefs as file nodes, dependency edges, scope groups        | Visual roadmap                  |
 | Brief tracker       | Obsidian Bases (`.base`) — table filtered by status, team, quarter                    | Managing multiple active briefs |
 | Scope decisions     | Obsidian Markdown — `decision`, `date`, `brief` properties, `[[wikilinks]]` to briefs | Decision log                    |

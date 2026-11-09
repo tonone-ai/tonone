@@ -268,7 +268,11 @@ function checkCommand(command) {
   const findings = [];
   for (const rule of RULES) {
     if (rule.re.test(command) && !(rule.unless && rule.unless.test(command)))
-      findings.push({ decision: rule.decision, reason: rule.reason, id: rule.id });
+      findings.push({
+        decision: rule.decision,
+        reason: rule.reason,
+        id: rule.id,
+      });
   }
   findings.push(...checkRm(command));
   return findings;
@@ -451,7 +455,10 @@ function metric(input, result) {
       event: result.decision,
       rules: result.rules || [],
     };
-    fs.appendFileSync(path.join(dir, "metrics.jsonl"), JSON.stringify(line) + "\n");
+    fs.appendFileSync(
+      path.join(dir, "metrics.jsonl"),
+      JSON.stringify(line) + "\n",
+    );
   } catch {}
 }
 
