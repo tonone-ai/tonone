@@ -44,7 +44,7 @@ def test_render_and_marker_after_frontmatter(tmp_path):
     problems, written, _ = gen.run(team, sections, check=False)
     assert not problems and written == 1
     out = (skill / "SKILL.md").read_text()
-    assert out.startswith(FM + gen.MARKER)
+    assert out.startswith(FM + "\n" + gen.MARKER)
     assert "\nhello section\n" in out
     assert "keep {{> hello}} inline and {{x}}" in out
 
