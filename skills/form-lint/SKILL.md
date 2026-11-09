@@ -17,7 +17,7 @@ Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-
 
 ## Two tiers
 
-- **immediate** — mechanical, high precision: `gradient-text`, `side-tab`, `bounce-easing`, `low-contrast`, `tiny-text` (<10px), `pure-black-white`, `design-system-drift` (needs token-bearing `DESIGN.md`). Fix these or suppress with a reason. Exit code 1.
+- **immediate** — mechanical, high precision: `gradient-text`, `side-tab`, `bounce-easing`, `low-contrast`, `tiny-text` (<10px), `pure-black-white`, `design-system-drift` (needs token-bearing `DESIGN.md` in the format of `docs/design-md.md`; legacy `/form-brief` headings parse too). Fix these or suppress with a reason. Exit code 1.
 - **advisory** — taste: `nested-cards`, `icon-tile-stack`, `hero-eyebrow-chip`, `dark-glow`, `overused-font`, `gray-on-color`, `tiny-text-body`, `line-length`, `skipped-heading`, `cramped-padding`, `all-caps-body`, `emoji-as-icon`, `design-system-drift-scale`. These are advisory. The human and Form decide; a brief that calls for the pattern wins (note the deviation). Never exit non-zero.
 
 ## Step 1: Run it

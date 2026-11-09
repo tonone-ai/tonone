@@ -197,7 +197,7 @@ Derivation cues (illustrative, not defaults):
 | Consumer finance app  | 3        | 3      | 5       | Trust needs the familiar; motion confirms, never performs |
 | Portfolio             | 8        | 5      | 2       | The work is the product; composition is the signature     |
 
-Emit in the CLI receipt and write it into DESIGN.md under Visual Theme:
+Emit in the CLI receipt and write it into DESIGN.md under Overview:
 
 ```
 Design dials
@@ -234,84 +234,25 @@ Two classifications, made once, written into the brief. Both are inputs to `/for
 | Read       | Long-form or docs: low density, near-zero motion, body 17-19px at 60-75ch, CTA is navigation                   |
 | Experience | Immersive brand or game: variable density, highest motion budget, expressive type, CTA is a destination        |
 
-Write `form_kind` and `visitor_mode` into DESIGN.md (Visual Theme) and the CLI receipt. Dials from Phase 1c must agree with the visitor mode (Operate ~ high density, low motion).
+Write `form_kind` and `visitor_mode` into DESIGN.md (frontmatter keys `form_kind`, `visitor_mode`) and the CLI receipt. Dials from Phase 1c must agree with the visitor mode (Operate ~ high density, low motion).
 
 ---
 
 ## Phase 2: Generate DESIGN.md
 
-Check if a DESIGN.md exists. If it does, ask: "A DESIGN.md already exists. Overwrite or skip?"
+Format spec: `docs/design-md.md` (single DESIGN.md format shared with `/form-document` and `/form-lint`). Read it before writing.
 
-Write the file with all 9 sections. Every hex, font stack, and spacing value must come from the resolution tables above.
+Check if a DESIGN.md exists. If it does, ask: "A DESIGN.md already exists. Overwrite or skip?" If the existing file uses the legacy headings (Visual Theme & Atmosphere, Color Palette & Roles, ...), offer to migrate it to the unified headings on this write.
 
-```markdown
-# [Project Name] Design System
+Write the unified layout. Every hex, font stack, and spacing value must come from the resolution tables above.
 
-## Visual Theme & Atmosphere
-
-- Mood: [resolved mood]
-- form_kind: [software | gaming | tech | product | service | place]
-- visitor_mode: [Persuade | Operate | Read | Experience]
-- Feel: [derived — professional_minimal → "Clean, confident, restrained"; playful → "Warm, approachable, energetic"; brutalist → "Exposed structure, typographic force"; editorial → "Curated, calm, authoritative"]
-- References: [mood-appropriate: editorial → "Monocle, Cereal, The Guardian"; brutalist → "Dazed, WIRED, Neue Grafik"]
-
-## Color Palette & Roles
-
-- Background: [from palette table]
-- Surface: [from palette table]
-- Text primary: [from palette table]
-- Text secondary: [from palette table]
-- Accent: [from accent table]
-- Accent hover: [from accent table]
-
-## Typography Rules
-
-- Display: [from display table — family, weight, size]
-- Body: [from typography table — family, weight, size/lh]
-- Mono: JetBrains Mono, 400, 0.875rem (utility only — code, data, labels)
-
-## Component Stylings
-
-- Buttons: [playful → rounded-full; professional_minimal → rounded-md; brutalist → sharp corners], accent bg, contrast text
-- Cards: surface bg, 1px border, 12px radius (sharp if brutalist)
-- Inputs: [brutalist → thick 2px border; others → subtle border, transparent bg]
-
-## Layout Principles
-
-- Max width: 1200px, centered
-- Grid: [from layout value]
-- Section spacing: [from density table]
-- Content padding: [from density table]
-
-## Depth & Elevation
-
-- Shadows: [brutalist → hard 4px offset; professional_minimal → none; others → subtle sm shadow]
-- Borders: 1px solid [text color at 8% opacity]
-
-## Do's and Don'ts
-
-- DO use only the tokens declared above
-- DO maintain consistent section spacing from the density scale
-- DO ensure all text meets WCAG AA contrast
-- DON'T invent hex values outside the palette
-- DON'T exceed 2 display/body typefaces (mono is utility, doesn't count)
-  [if exclude has items → "DON'T use [item]." for each]
-
-## Responsive Behavior
-
-- Breakpoints: 640px (sm), 768px (md), 1024px (lg), 1280px (xl)
-- Mobile: single column, stack all sections
-- Tablet: 2-column feature grids allowed
-- Desktop: full layout with max-width
-
-## Agent Prompt Guide
-
-- Do NOT invent colors outside this palette
-- Do NOT add box-shadows unless specified above
-- Accent appears maximum 3× per viewport
-- All interactive elements need :focus-visible outline
-  [if exclude has items → "Do NOT use [item]." for each]
-```
+- **Frontmatter:** `name`, `description`, `form_kind`, `visitor_mode`, `mood`, `direction` (if chosen), `colors` (background, surface, text, text-secondary, accent, accent-hover as `{ value: "#hex" }`), `typography` (display, body, mono), `rounded`, `spacing`, `components`.
+- **Overview:** feel (professional_minimal "Clean, confident, restrained"; playful "Warm, approachable, energetic"; brutalist "Exposed structure, typographic force"; editorial "Curated, calm, authoritative"), references, the Design dials block from Phase 1c, evidence labels.
+- **Colors / Typography / Layout:** roles and use rules from the tables (mono is utility only; max width 1200px; grid and spacing from layout and density).
+- **Elevation & Depth / Shapes / Components:** brutalist = hard 4px offset shadow and sharp corners; professional_minimal = no shadow, rounded-md; playful = rounded-full buttons; cards 1px border, 12px radius.
+- **Do's and Don'ts:** use only declared tokens; consistent density spacing; WCAG AA; no invented hex; max 2 display/body typefaces; one "DON'T use X" per `exclude` item.
+- **Responsive Behavior:** 640px (sm), 768px (md), 1024px (lg), 1280px (xl); single column mobile, 2-column feature grids tablet.
+- **Agent Prompt Guide:** no colors outside the palette; no box-shadow unless specified; accent max 3x per viewport; `:focus-visible` on interactive elements; "Do NOT use X" per `exclude` item.
 
 ---
 

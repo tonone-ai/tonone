@@ -150,7 +150,7 @@ User options:
 
 ## Phase 6: Generate Style Spec
 
-Once direction is selected, write `design-direction.md`:
+Once direction is selected, write `design-direction.md`. When DESIGN.md is next written (`/form-brief`, `/form-document`), the chosen direction name goes in its `direction` frontmatter key (`docs/design-md.md`).
 
 ```markdown
 # Design Direction: [Name]

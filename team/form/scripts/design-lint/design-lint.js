@@ -11,7 +11,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { EXTS, buildContext } = require("./parse");
+const { EXTS, buildContext, parseColor } = require("./parse");
 const { rules } = require("./rules");
 
 const SKIP_DIRS = new Set([
@@ -133,7 +133,23 @@ function loadDesignMd(root) {
       Math.round(parseFloat(m[1]) * (m[2] === "rem" ? 16 : 1) * 100) / 100,
     );
   }
-  return { text: text.toLowerCase(), hex, scale };
+  // rgb()/hsl() literals count as sanctioned colors too (docs/design-md.md).
+  for (const m of text.matchAll(/\b(?:rgba?|hsla?)\([^)]{5,60}\)/gi)) {
+    const c = parseColor(m[0]);
+    if (c) {
+      const h = (v) =>
+        Math.max(0, Math.min(255, v)).toString(16).padStart(2, "0");
+      hex.add(h(c.r) + h(c.g) + h(c.b));
+    }
+  }
+  // Format sniff: "unified" = frontmatter + platform sections; "legacy" =
+  // pre-unification /form-brief headings. Both parse identically (headings are ignored).
+  const format = /^---\r?\n[\s\S]*?\r?\n---/.test(text)
+    ? "unified"
+    : /^##\s+(Visual Theme|Color Palette)/im.test(text)
+      ? "legacy"
+      : "unified";
+  return { text: text.toLowerCase(), hex, scale, format };
 }
 
 // ── core ──────────────────────────────────────────────────────────────────────
