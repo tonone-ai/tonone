@@ -1,14 +1,7 @@
 ---
 name: form-critique
 description: |
-  Expert 5-dimension design critique — philosophical, scored, actionable. Use when asked to
-  "critique this design", "expert review", "score my design", "how does this look", "is this
-  good design", "design feedback", or "review this UI". Different from /form-audit (which is
-  technical QA for consistency/compliance) — form-critique evaluates design as a craft object:
-  philosophy, hierarchy, execution, function, and innovation each scored 0–10 with a punch list.
-  Add "as a report" or "give me a visual report" to produce an HTML file with SVG radar chart,
-  evidence cards, and Keep/Fix/Quick-wins action lists — useful for design reviews and stakeholder
-  presentations instead of CLI output.
+  Expert 5-dimension design critique, scored 0-10 with a punch list. Use when asked to "critique this design", "expert review", "score my design", "design feedback", or "review this UI". Unlike /form-audit (technical consistency QA), this judges craft. Say "as a report" for an HTML report.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.2.0
 author: tonone-ai <hello@tonone.ai>

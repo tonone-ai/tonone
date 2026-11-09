@@ -1,7 +1,6 @@
 ---
 name: form-web
-description: |
-  Use when asked to design a landing page, marketing website, or any web presence intended to convert or inform. Examples: "design a landing page for X", "create a marketing site", "we need a homepage", "design our website", "build a page for our launch".
+description: Design a landing page or marketing website that converts or informs. Use when asked to "design a landing page for X", "create a marketing site", "we need a homepage", "design our website", or "build a page for our launch".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
@@ -250,6 +249,10 @@ Flag any component that does not exist in the current design system. Prism needs
 - **Skipping the mobile layout.** Writing only the 1280px spec and noting "scales down gracefully" is not a spec. Specify both.
 - **Treating social proof as decoration.** Social proof is a conversion mechanism. It must appear in a defined position, with a defined job, before the second CTA.
 - **Above-the-fold clutter.** The Hook section has one job: earn the scroll. Every element that does not directly serve the value prop or the primary CTA should be moved lower or removed.
+
+Before delivering the spec, run the copy-slop check on the headlines, CTA labels and body copy in it: put them in `.tonone/copy/slop-drafts.md` (one `=== <section>` block each) and run `/copy-slop` (`--profile marketing-copy --slop`). Fix FAILs; client-supplied terms get a waiver with a reason, not a rewrite.
+
+Then verify the page against `team/form/reference/craft-floor.md` (empty/error/loading states, `svh`, tabular numerals, focus-visible).
 
 ## Delivery
 

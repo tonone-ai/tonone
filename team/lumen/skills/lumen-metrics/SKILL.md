@@ -1,6 +1,6 @@
 ---
 name: lumen-metrics
-description: Metrics architecture — produce a complete metrics plan given a product description. North Star, input metrics tree, instrumentation spec, action triggers, and counter-metrics. Use when asked to "design a metrics framework", "what should we measure", "build a metrics system", "define our KPIs", "what are our success metrics", "metrics strategy", or "what do we track".
+description: Metrics architecture — North Star, input metrics tree, instrumentation spec, action triggers, counter-metrics for a product. Use when asked to "design a metrics framework", "what should we measure", "define our KPIs", "metrics strategy", or "what do we track".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>

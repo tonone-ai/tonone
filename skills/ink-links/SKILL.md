@@ -1,6 +1,6 @@
 ---
 name: ink-links
-description: Link prospecting — pick the site's most linkable asset, find pages that plausibly link to it (resource pages, competitor linkers, unlinked mentions, broken links), verify real contact paths, and draft personalized outreach. Never invents contacts. Use when asked to "find backlink opportunities", "who should link to us", "build links to this page", "link prospecting", or "draft outreach for backlinks".
+description: Link prospecting — pick the most linkable asset, find likely linking pages (resource pages, competitor linkers, unlinked mentions, broken links), verify contacts, draft outreach. Never invents contacts. Use when asked to "find backlink opportunities", "who should link to us", or "link prospecting".
 allowed-tools: Read, Write, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

@@ -1,0 +1,30 @@
+:root {
+  --ink: #1a1d29;
+  --paper: #f7f6f3;
+  --accent: #2f5bea;
+}
+body {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 16px;
+}
+.cta {
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: 8px;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 24px rgba(47, 91, 234, 0.18);
+}
+.hero {
+  background-image: linear-gradient(120deg, #f7f6f3, #d9d6cf);
+}
+.disabled-btn:disabled {
+  color: #aaaaaa;
+  background: #ffffff;
+}
+.lede {
+  max-width: 62ch;
+  font-size: 20px;
+  text-transform: none;
+}

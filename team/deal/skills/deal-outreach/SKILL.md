@@ -1,6 +1,6 @@
 ---
 name: deal-outreach
-description: Cold outbound sequence builder — produces multi-touch email + LinkedIn sequences (5-7 touchpoints) personalized by persona type (technical buyer, economic buyer, champion). Use when asked to "write cold emails", "build an outbound sequence", "create prospecting emails", "write my LinkedIn outreach", or "design a cold email campaign".
+description: Cold outbound sequence builder — multi-touch email + LinkedIn sequences (5-7 touchpoints) personalized by persona (technical buyer, economic buyer, champion). Use when asked to "write cold emails", "build an outbound sequence", or "write my LinkedIn outreach".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.2.0
 author: tonone-ai <hello@tonone.ai>

@@ -1,6 +1,6 @@
 ---
 name: ink-brief
-description: Content brief generator — takes a topic or keyword and produces a complete content brief with target keyword, search intent, recommended structure, internal link targets, word count, CTA, and competitive gap analysis. Use when asked to "write a content brief", "brief this blog post", "plan this article", or "what should we cover for [keyword]".
+description: Content brief generator — topic or keyword in, complete brief out (target keyword, search intent, structure, internal links, word count, CTA, competitive gaps). Use when asked to "write a content brief", "brief this blog post", "plan this article", or "what should we cover for [keyword]".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

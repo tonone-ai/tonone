@@ -4,7 +4,7 @@
 
 **Founder + Tonone = whole company.**
 
-140 specialist agents in 15 teams for Claude Code, plus 551 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
+140 specialist agents in 15 teams for Claude Code, plus 564 skills. Tell the lead what you're building. It scopes the work into depth tiers, shows which specialists each tier uses and what it costs, then runs the one you pick. MIT licensed.
 
 ```bash
 claude plugin marketplace add tonone-ai/tonone
@@ -41,7 +41,8 @@ Or inside an active Claude Code session:
 /plugin install tonone@tonone-ai
 ```
 
-Installing the full roster pulls in all 140 agents. If that's more than a given project needs, run `/apex-profile` after install to scope the roster down to a curated subset (e.g. just the engineering core).
+Installing the full roster pulls in all 140 agents, and every skill and agent description is listed at session start: ~37,500 tokens (estimated chars/4 via `scripts/measure-context.py`).
+**Recommended next step: run `/apex-profile`** to scope the roster to what the project needs. The `web-app` preset (7 agents) costs ~3,300 tokens, about 11x less.
 
 ### Codex CLI
 
@@ -304,7 +305,7 @@ Phase 3 — Takeover report:
 
 ## How it works
 
-Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 140 agents and 551 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
+Each agent is a system prompt (a markdown file in `agents/`) paired with a set of skills (markdown workflow documents in `team/<agent>/skills/<name>/SKILL.md`, mirrored to `skills/<name>/SKILL.md` at the repo root). The Claude Code plugin system installs all 140 agents and 564 skills in a single command. When you invoke a skill, Claude loads the workflow document and follows it — no code runs, no build step, no configuration.
 
 Every engineering agent detects your stack automatically:
 
@@ -316,7 +317,7 @@ Every engineering agent detects your stack automatically:
 - **Mobile:** Swift/SwiftUI, Kotlin/Compose, React Native, Flutter
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
-## All 551 Skills
+## All 564 Skills
 
 <details>
 <summary>Click to expand full skill list</summary>
@@ -327,8 +328,12 @@ Every engineering agent detects your stack automatically:
 
 - `/apex-plan` — Plan and scope a project
 - `/apex-profile` — Scope the tonone agent roster for this project
+- `/apex-guard` — Opt-in session guard: confirm destructive commands, freeze edits to one directory
+- `/apex-retro` — Weekly engineering retrospective from git history
+- `/apex-skillify` — Turn a flow that just worked into a permanent skill
 - `/apex-recon` — Engineering lead reconnaissance
-- `/apex-review` — Cross-cutting review of recent work
+- `/apex-review` — Cross-cutting review: parallel lens fan-out plus red-team pass
+- `/apex-decisions` — Append-only decision log, resurfaced at session start
 - `/apex-route` — Reach ANY tonone specialist on demand, even ones not installed in this session's roster
 - `/apex-stats` — Spawn-count analytics for the tonone roster
 - `/apex-status` — CTO-level project status from git and codebase state
@@ -392,6 +397,8 @@ Every engineering agent detects your stack automatically:
 - `/prism-audit` — Frontend audit
 - `/prism-chart` — Select and implement a data visualization component
 - `/prism-component` — Implement a reusable, accessible, typed component from a design spec
+- `/prism-extract` — Pull repeated values and markup into tokens and components
+- `/prism-harden` — Make UI survive real data: overflow, i18n, empty, error and loading states
 - `/prism-dashboard` — Build an internal dashboard with data tables, filters, detail views, and CRUD
 - `/prism-recon` — Frontend reconnaissance
 - `/prism-stack` — Framework-specific implementation guidelines (React/Vue/Svelte/Next.js)
@@ -467,6 +474,7 @@ Every engineering agent detects your stack automatically:
 - `/helm-arbiter` — Scope arbitration
 - `/helm-brief` — Write a product brief and turn a feature idea into a spec
 - `/helm-handoff` — Hand a finalized product brief off to Apex to kick off engineering
+- `/helm-office-hours` — Challenge the framing, offer 3 approaches with effort, write the brief
 - `/helm-plan` — Build a product roadmap and prioritize the backlog
 - `/helm-recon` — Product landscape reconnaissance
 
@@ -506,8 +514,13 @@ Every engineering agent detects your stack automatically:
 - `/form-brief` — Translate a design brief into a concrete DESIGN.md
 - `/form-component` — Design a UI component spec — button, input, card, modal
 - `/form-critique` — Expert 5-dimension design critique, scored and actionable
+- `/form-distill` — Strip a design to its essence
 - `/form-deck` — Design a pitch deck or presentation
 - `/form-direction` — Generate 3 differentiated visual directions with live HTML demos
+- `/form-bolder` — Push a too-safe design further
+- `/form-quieter` — Tone down a loud design
+- `/form-polish` — Final craft pass against the craft floor
+- `/form-lint` — Deterministic design lint (CLI, CI, opt-in edit hook)
 - `/form-email` — Design an email template or campaign asset
 - `/form-exam` — Theory-backed design audit citing the principle and source
 - `/form-logo` — Create a logo concept or brand mark
@@ -759,6 +772,7 @@ Every engineering agent detects your stack automatically:
 
 - `/copy-audit` — Audit UX copy in a product or codebase
 - `/copy-recon` — Survey all user-facing strings in a codebase
+- `/copy-slop` — Deterministic AI-slop check with budgets and waivers
 - `/copy-write` — Write UX copy for a feature, flow, or component
 
 #### Data Science Team (10 agents, 30 skills)

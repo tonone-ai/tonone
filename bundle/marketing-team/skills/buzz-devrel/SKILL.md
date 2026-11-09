@@ -1,6 +1,6 @@
 ---
 name: buzz-devrel
-description: Developer relations playbook builder — produces a DevRel program design covering community platform, contributor program tiers, ambassador criteria, event strategy, and success metrics. Use when asked to "build a DevRel program", "design our developer community", "create a contributor program", "start a developer advocacy program", or "how do we grow our dev community".
+description: Developer relations playbook — community platform, contributor tiers, ambassador criteria, event strategy, success metrics. Use when asked to "build a DevRel program", "design our developer community", "create a contributor program", or "start a developer advocacy program".
 allowed-tools: Read, Bash, Glob, Grep, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

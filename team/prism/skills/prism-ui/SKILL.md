@@ -45,6 +45,18 @@ Form's visual spec is the contract. Before writing a line, extract:
 
 One question to Form if there's a genuine blocker. Don't request a full review session — implement with reasonable assumptions and flag them in the summary.
 
+### Step 1b: Read the Design Dials
+
+Look for Form's `Design dials` block in `DESIGN.md`, `design-direction.md`, or `implementation-handoff.md` (written by /form-brief and /form-direction). Three values, 1-10: `DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY`. None found: infer from product type and brief, state the values with a one-line reason, proceed. The brief wins over the table below.
+
+| Dial     | 1-3                                                   | 4-7                                                        | 8-10                                                                                                 |
+| -------- | ----------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| VARIANCE | Symmetric grid, stock components, one pattern per job | Standard grid, one deliberate asymmetric moment per view   | Broken grid, overlap, unexpected type scale; keep reading order and focus order intact               |
+| MOTION   | State feedback only (hover, focus, press), 100-200ms  | Plus route/enter transitions, staggered reveals, 200-300ms | Scroll-driven, choreographed sequences; hand to /move-animate with the value                         |
+| DENSITY  | 1 idea per view, large spacing steps, 3-5 components  | Standard app rhythm, 6-10 components, mid spacing steps    | Tables, small type steps, tight spacing, 10+ components; keep 44px touch targets and row focus rings |
+
+Motion budget: use CSS transitions on transform/opacity; anything above 4 needs `prefers-reduced-motion` fallbacks tested, at every level. Spacing and type steps come from Form's tokens; density picks which steps, never new values.
+
 ### Step 2: Plan the Component Structure
 
 Before writing the page, map the component tree:
@@ -215,7 +227,11 @@ export function SettingsForm({ initialValues, userId }: Props) {
 
 Write all files the feature needs. Don't stop at the page file.
 
-### Step 4: Summarize
+### Step 4: Verify the Craft Floor
+
+Before declaring done, check against `team/form/reference/craft-floor.md` (if not installed, check these): empty/error/loading state on every data view; `dvh`/`svh` not `vh`; tabular numerals on figures; `text-wrap: balance`/`pretty`; focus-visible and 44px touch targets; no emoji icons, placeholder-as-label, lorem ipsum, or layout shift. Report the dial values used and any floor item skipped with its reason.
+
+### Step 5: Summarize
 
 ```
 ┌─ UI: [Screen/Feature Name] ─────────────────────────────────┐

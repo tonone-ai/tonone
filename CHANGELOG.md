@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- **`/apex-guard`** — opt-in, session-scoped safety. `careful` asks before destructive shell commands (`rm -r`, force-push, `reset --hard`, `DROP`/`TRUNCATE`, `kubectl delete`, `terraform destroy`, ...) and denies a small catastrophic tier (`rm -rf /`, `~`, fork bomb, `mkfs`/`dd` onto disks). `freeze <dir>` denies Edit/Write outside one directory. `guard <dir>` does both. Backed by the PreToolUse hook `team/apex/hooks/apex-guard.js`, which does nothing unless `.claude/tonone-guard.json` exists, binds to the first session that sees it, expires after 24h, and fails open. It is advisory string matching, not a security boundary.
+- **Design dials** — `DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY` (1-10), derived per project by `/form-brief` and `/form-direction` and consumed by `/prism-ui` and `/move-animate`. No universal default.
+- **`team/form/reference/craft-floor.md`** — verify and refuse lists every UI ships against, with a "the brief wins" override. Referenced from Form, `/prism-ui`, `/prism-component`, `/form-web`, `/form-component`.
+- **Steering skills:** `/form-bolder`, `/form-quieter`, `/form-distill`, `/form-polish`, `/prism-harden`, `/prism-extract`.
+- **`/apex-retro`** (weekly retrospective from git history), **`/apex-skillify`** (turn a working flow into a skill), **`/helm-office-hours`** (challenge the framing, 3 approaches with effort, write the brief).
+- **`scripts/measure-context.py`** — estimates the startup cost of the skill and agent listing (chars/4). Full bundle: ~37,500 tokens; `web-app` profile: ~3,300.
+- **`/form-lint`** — deterministic design lint, pure Node, no deps (`team/form/scripts/design-lint/`). 20 rules: 7 "immediate" (gradient-text, side-tab, bounce-easing, low-contrast, tiny-text, pure-black-white, DESIGN.md color drift), 13 advisory taste rules. CLI exits 0/1/2 with `--json` for CI. Suppress inline or via `.tonone/design.json` `ignoreRules`/`ignoreFiles` with a reason. Opt-in PostToolUse hook `team/form/hooks/form-design-lint.js` surfaces immediate findings on edited UI files only, deduped per session, capped at 5; inert unless `"hook": true` or `TONONE_DESIGN_LINT=on`; never blocks; fails open. Ships with a false-positive silence corpus.
+- **`/copy-slop`** — slop checks added to `lib/copy-gate/gate.py` (`--slop` flag or `slop` profile): AI-tell words and stock phrases, residue (always FAIL), capped devices (em-dash rate, two-fragment headings, contrast frames, -ing riders, triads, rhetorical openers), WARN/FAIL budgets, and waivers for client terms (`--waive`, `.tonone/copy-waivers.json`, reason required). Wired into `/copy-audit`, `/pitch-copy`, `/form-web`.
+- **`/apex-decisions`** — append-only `.tonone/decisions.jsonl` (supersede, redact) with a SessionStart hook that resurfaces active decisions (irreversible first, capped at 10 entries / ~1500 chars). Silent when the file is absent. ELEPHANT.md stays the narrative/learnings log; no separate learn store.
+- **`scripts/gen-skill-docs.py`** — SKILL.md templating from `SKILL.md.tmpl` + shared `skills/_sections/` (`{{> name}}`), with `--check` drift mode in CI. Piloted on 6 skills (spine-recon, spine-design, flux-recon, vigil-recon, relay-recon, proof-recon); output byte-identical apart from the generated marker.
+- **`docs/agent-teams.md`** (subagents vs agent teams, and when Apex uses each) and **`docs/companions.md`** (recommended MCP/plugin companions and which agents use them; nothing bundled).
+
+### Changed
+
+- **`/apex-profile` is the recommended step after install**, with the measured listing cost in README.
+- **18 overlong skill descriptions shortened** (the 300-450 character outliers, e.g. `ink-cluster`, `echo-panel`, `deal-signals`, `pave-lsp`). Trigger phrases kept.
+- **`/apex-review` v2** — parallel lens fan-out (warden, spine, flux, proof) with a shared JSON findings schema (`findings.schema.json`), evidence-required merge via `team/apex/scripts/merge_findings.py`, and a red-team pass when the diff exceeds 200 lines, any CRITICAL survives, or `--red` is passed. Verdict: SHIP / FIX-FIRST / BLOCK.
+- **33 more descriptions brought under 320 characters** (e.g. `pave-golden`, `helm-arbiter`, `helm-recon`, `apex-diagnose`, `form-critique`).
+- **`/helm-office-hours` and `/helm-handoff`** now spell out the Helm-to-Apex brief field map.
+
 ## [1.19.0] - 2026-11-07
 
 ### Added

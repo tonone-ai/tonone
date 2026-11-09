@@ -205,3 +205,15 @@ When adding a new skill, decide which category it falls into. Build skills are t
 - **No output format**: The agent rambles instead of producing structured results
 - **Missing Step 0**: Agent assumes a stack instead of detecting it
 - **Over-long descriptions**: Keep frontmatter `description` to one line
+
+## Templated skills
+
+Boilerplate repeated across skills (output-kit line, Delivery block) can live in one place.
+
+- Shared sections: `skills/_sections/<name>.md` (the `_` prefix keeps it out of skill discovery and tests).
+- Template: `team/<agent>/skills/<skill>/SKILL.md.tmpl`. A line containing only `{{> section-name}}` is replaced by that section. Any other `{{...}}` is left alone.
+- Render: `python3 scripts/gen-skill-docs.py` writes the sibling `SKILL.md` (adds a GENERATED comment after the frontmatter). Then run `scripts/sync-skills.py` as usual; only `SKILL.md` is mirrored, never `.tmpl`.
+- Drift check: `python3 scripts/gen-skill-docs.py --check` exits 1 on stale/missing output or an unknown section. Covered by `tests/test_gen_skill_docs.py`.
+- Never edit a generated `SKILL.md` by hand. Edit the `.tmpl` (frontmatter included) or the section, then re-render.
+
+Sections today: `output-kit`, `delivery`. Pilot: spine-recon, spine-design, flux-recon, vigil-recon, relay-recon, proof-recon.

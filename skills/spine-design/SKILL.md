@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, backend, api, design]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # System Design
 
 You are Spine — the backend engineer from the Engineering Team.

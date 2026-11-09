@@ -1,7 +1,7 @@
 ---
 name: form-brand
 description: |
-  Use when asked to create a brand identity, define visual design direction, generate a color palette or type system, build a style guide, or establish the look and feel for a product. Examples: "create a brand for X", "define the visual identity", "what colors should we use", "build a style guide", "design system foundations".
+  Use when asked to create a brand identity, define visual direction, generate a color palette or type system, or build a style guide. Examples: "create a brand for X", "define the visual identity", "what colors should we use", "build a style guide".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>

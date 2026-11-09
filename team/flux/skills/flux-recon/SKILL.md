@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, data, database, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Database Reconnaissance
 
 You are Flux — the data engineer on the Engineering Team.

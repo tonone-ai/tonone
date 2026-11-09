@@ -1,6 +1,6 @@
 ---
 name: copy-audit
-description: Audit UX copy in a product or codebase — find passive errors, generic labels, missing states. Use when asked to "audit our UX copy", "our error messages are bad", or "review the microcopy".
+description: 'Audit UX copy in a product or codebase: find passive errors, generic labels, missing states, and AI-sounding slop. Use when asked to "audit our UX copy", "our error messages are bad", or "review the microcopy".'
 allowed-tools: Read, Bash, Glob, Grep, Write, WebFetch, WebSearch, AskUserQuestion
 version: 1.3.0
 author: tonone-ai <hello@tonone.ai>
@@ -27,7 +27,11 @@ Grep for button text, placeholder content, error messages, toast notifications, 
 
 Report: copy inventory, issues (passive errors, generic labels, missing states), and rewritten alternatives for each issue.
 
-### Step 3: Summary
+### Step 3: Slop Check
+
+Run `/copy-slop` on the inventory: write the strings to `.tonone/copy/slop-drafts.md` (one `=== <label>` block each) and run the gate with `--profile microcopy --slop` (see copy-slop for the command and waivers). Add RESIDUE and SLOP_* findings to the issues list. The check is a floor, not taste; you decide which findings stand.
+
+### Step 4: Summary
 
 Output a brief summary:
 

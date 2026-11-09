@@ -1,7 +1,7 @@
 ---
 name: form-tokens
 description: |
-  Use when asked to define a design token system, create tokens, document tokens, set up CSS custom properties, build a Tailwind token config, establish a spacing scale, define color semantics, or bridge design decisions to code. Examples: "set up design tokens", "define our token system", "create CSS variables for the design system", "document our color tokens", "establish a spacing scale".
+  Use when asked to define a design token system, create or document tokens, set up CSS custom properties, build a Tailwind token config, or establish a spacing scale. Examples: "set up design tokens", "define our token system", "create CSS variables", "document our color tokens".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>

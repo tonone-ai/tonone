@@ -94,7 +94,10 @@ def sync(check_only: bool) -> int:
     orphans = sorted(
         d.name
         for d in SKILLS_DIR.iterdir()
-        if d.is_dir() and d.name not in skills and (d / "SKILL.md").exists()
+        if d.is_dir()
+        and not d.name.startswith("_")
+        and d.name not in skills
+        and (d / "SKILL.md").exists()
     )
 
     verb = "would create" if check_only else "created"

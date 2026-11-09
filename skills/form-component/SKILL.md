@@ -331,6 +331,8 @@ All transitions must respect `prefers-reduced-motion`. For every transition spec
 - **Forgetting `focus-visible`.** Focus rings hidden on mouse interaction, visible on keyboard — always use `:focus-visible`, never `:focus` alone.
 - **Assuming Prism knows the context.** The spec is the contract. Everything Prism needs to implement the component without a single follow-up question must be in this document.
 
+Verify the finished component against `team/form/reference/craft-floor.md` before handoff.
+
 ## Delivery
 
 If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt — box header, one-line verdict, top 3 findings, and the report path. Never dump analysis to CLI.

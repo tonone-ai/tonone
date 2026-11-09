@@ -1,7 +1,7 @@
 ---
 name: form-audit
 description: |
-  Use when asked to audit UI for visual quality, check design consistency, review brand alignment, evaluate design system compliance, or find visual issues before a launch. Examples: "audit our UI", "check visual consistency", "review the design for issues", "is our UI on-brand", "find visual bugs", "design QA before launch".
+  Use when asked to audit UI for visual quality, design consistency, brand alignment, or design system compliance before launch. Examples: "audit our UI", "check visual consistency", "is our UI on-brand", "design QA before launch".
 allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>

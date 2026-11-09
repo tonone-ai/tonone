@@ -28,7 +28,15 @@ A marker may override the profile for that one message:
 Usage:
     python3 gate.py --profile cold-email drafts.md
     python3 gate.py --profile marketing-copy --allow-tokens - < drafts.md
+    python3 gate.py --profile marketing-copy --slop drafts.md
+    python3 gate.py --profile slop --waive seamless drafts.md
     python3 gate.py --list-profiles
+
+`--slop` (or the `slop` profile) adds the copy-slop floor: AI-tell words and
+stock phrases, residue, and capped devices (em dashes, "Fast. Simple.",
+"not X, but Y", trailing -ing riders, rule-of-three, rhetorical openers) with
+a per-message score budget. Client-supplied words go in `--waive` or
+`.tonone/copy-waivers.json`; each needs a reason. See README.md.
 
 Prints exactly one JSON object. Exit 0 = no FAIL findings, 1 = at least one
 FAIL, 2 = usage error (bad profile, unreadable file).
@@ -250,6 +258,12 @@ PROFILES = {
         "soft": "WARN",
         "extra": (),
     },
+    "slop": {
+        "about": "Slop floor only (copy-slop): AI-tell words, residue, capped devices, score budget.",
+        "slop": True,
+        "soft": "WARN",
+        "extra": (),
+    },
     "microcopy": {
         "about": "UI strings (copy-write): buttons, errors, empty states. Each block is one string.",
         "max_chars": 160,
@@ -260,6 +274,373 @@ PROFILES = {
         "single_brace_tokens": True,  # i18n: "Welcome back, {name}"
     },
 }
+
+
+# ── slop lists (copy-slop floor) ─────────────────────────────────────────
+# Only words NOT already in HARD_PHRASES / SOFT_PHRASES live here; the slop
+# score reuses those lists, so nothing is counted twice. Stems match any
+# suffix: "leverag" covers leverage, leverages, leveraging.
+SLOP_STEMS = (
+    "tapestry",
+    "leverag",
+    "robust",
+    "elevat",
+    "unlock",
+    "empower",
+    "testament",
+    "multifaceted",
+    "pivotal",
+    "embark",
+    "foster",
+    "bolster",
+    "underscor",
+    "paradigm",
+    "transformative",
+    "groundbreaking",
+    "meticulous",
+    "vibrant",
+    "myriad",
+    "plethora",
+    "unparalleled",
+    "unwavering",
+    "holistic",
+    "spearhead",
+    "unleash",
+    "realm of",
+)
+
+STOCK_PHRASES = (
+    "look no further",
+    "in the world of",
+    "in the realm of",
+    "when it comes to",
+    "at the end of the day",
+    "navigate the complexities",
+    "a testament to",
+    "plays a crucial role",
+    "plays a vital role",
+    "it's important to note",
+    "it is important to note",
+    "it's worth noting",
+    "it is worth noting",
+    "ever-changing landscape",
+    "digital landscape",
+    "rapidly evolving",
+    "dive into",
+    "dive deep into",
+    "whether you're a",
+    "the power of",
+    "your one-stop",
+    "tailored to your needs",
+    "take your",
+)
+
+# Residue: text that proves a model or a template wrote it and nobody read it.
+# Always FAIL under slop. Merge tokens stay legal under --allow-tokens unless
+# the token name itself is a placeholder.
+RESIDUE_PHRASES = (
+    "i hope this helps",
+    "hope that helps",
+    "let me know if you'd like me to",
+    "let me know if you need any further",
+    "great question",
+    "knowledge cutoff",
+    "i cannot assist",
+    "i can't assist with",
+    "here's a draft",
+    "here is a draft",
+    "here's the revised",
+    "dolor sit amet",
+)
+RESIDUE_OPENER_RE = re.compile(
+    r"^\W*(certainly|absolutely|of course|sure thing|sure)\s*!", re.I
+)
+RESIDUE_SLOT_RE = re.compile(
+    r"(?:\{\{|\[\[|\[|<)\s*(?:[\w ]*(?:placeholder|insert|your[ _]name|your[ _]company"
+    r"|company[ _]name here|name here)[\w ]*)\s*(?:\}\}|\]\]|\]|>)",
+    re.I,
+)
+
+# device -> (warn, fail). em_dash is a rate per 100 words; the rest are counts
+# per message. Ceilings, like profile limits: they block, they are not targets.
+DEVICES = {
+    "em_dash": (1.0, 2.0),
+    "fragment_heading": (1, 3),
+    "contrast": (2, 4),
+    "ing_rider": (2, 4),
+    "triad": (3, 5),
+    "rhetorical_opener": (1, 3),
+}
+DEVICE_ABOUT = {
+    "em_dash": "em dashes per 100 words",
+    "fragment_heading": 'two-fragment lines ("Fast. Simple.")',
+    "contrast": 'contrast frames ("not X, but Y"; "It\'s not X. It\'s Y." counts double)',
+    "ing_rider": 'trailing -ing riders (", making it easier")',
+    "triad": "rule-of-three lists (A, B, and C)",
+    "rhetorical_opener": "paragraphs opening on a rhetorical question",
+}
+DEFAULT_BUDGET = {"warn": 3, "fail": 6}  # slop points per message
+
+FRAG_LINE_RE = re.compile(r"^(?:[A-Z][\w'-]*(?:\s+[\w'-]+){0,2}[.!]\s*){2,}$")
+_SEP = r"(?:[.;:]|,|\s*[—–]|\s-{1,2}\s)\s*"
+STRONG_CONTRAST_RE = re.compile(
+    r"\b(?:it'?s\s+not|it\s+is\s+not|it\s+isn'?t|this\s+is\s+not|this\s+isn'?t"
+    r"|that'?s\s+not|that\s+isn'?t)\s+(?:just\s+|only\s+|merely\s+|simply\s+|about\s+)?"
+    r"[^.!?;\n]{1,60}?" + _SEP + r"(?:it'?s|it\s+is|this\s+is|that'?s|but)\b",
+    re.I,
+)
+# "not X, but Y". "not only ... but also" is ordinary prose and exempt.
+WEAK_CONTRAST_RE = re.compile(
+    r"\bnot\s+(?!only\b)(?:just\s+|merely\s+|simply\s+)?[^.!?;,\n]{1,40}?,\s*but\s+(?!also\b)",
+    re.I,
+)
+ING_RIDER_RE = re.compile(
+    r",\s+(?:making|ensuring|enabling|allowing|empowering|providing|delivering|creating"
+    r"|driving|fostering|streamlining|unlocking|giving|offering|boosting|elevating|enhancing)"
+    r"\s+(?:it|that|this|you|your|teams?|users?|them|everyone|sure|a|an|the|more|better"
+    r"|businesses|organizations|customers)\b",
+    re.I,
+)
+_TRIAD_STOP = {
+    "the",
+    "a",
+    "an",
+    "we",
+    "you",
+    "i",
+    "it",
+    "they",
+    "he",
+    "she",
+    "this",
+    "that",
+    "so",
+    "but",
+    "and",
+    "or",
+    "if",
+    "as",
+    "then",
+    "when",
+    "yes",
+    "no",
+    "hi",
+    "hello",
+}
+TRIAD_RE = re.compile(
+    r"\b([A-Za-z][A-Za-z'-]*),\s+([A-Za-z][A-Za-z'-]*),\s+(?:and|or)\s+([A-Za-z][A-Za-z'-]*)\b"
+)
+RHETORICAL_RE = re.compile(
+    r"^(?:what if|ever wonder|have you ever|are you tired|are you still|tired of|sick of"
+    r"|why settle|what would you|what's stopping|isn't it time|wouldn't it be|do you ever"
+    r"|struggling with|looking for a|imagine)\b[^?\n]*\?",
+    re.I,
+)
+
+
+def load_waivers(path) -> list[dict]:
+    """Read a waiver file: {"waive": [{"term": "...", "reason": "..."}]}.
+    Raises ValueError when the file is malformed or an entry has no reason."""
+    try:
+        with open(path, encoding="utf-8") as fh:
+            data = json.load(fh)
+    except (OSError, json.JSONDecodeError) as e:
+        raise ValueError(f"cannot read waivers {path}: {e}")
+    items = data.get("waive") if isinstance(data, dict) else None
+    if not isinstance(items, list):
+        raise ValueError(f'{path}: expected {{"waive": [{{"term", "reason"}}]}}')
+    out = []
+    for i, item in enumerate(items):
+        term = str(item.get("term", "")).strip() if isinstance(item, dict) else ""
+        reason = str(item.get("reason", "")).strip() if isinstance(item, dict) else ""
+        if not term or not reason:
+            raise ValueError(f"{path}: waive[{i}] needs both a term and a reason")
+        out.append({"term": term, "reason": reason, "source": str(path)})
+    return out
+
+
+def discover_waivers(start=None):
+    """Walk up from `start` (default cwd) to the first .tonone/copy-waivers.json."""
+    from pathlib import Path
+
+    here = Path(start or ".").resolve()
+    for d in (here, *here.parents):
+        cand = d / ".tonone" / "copy-waivers.json"
+        if cand.is_file():
+            return cand
+    return None
+
+
+def _waiver_re(term: str):
+    parts = [re.escape(t).replace("'", "['’]") for t in term.split()]
+    body = r"\s+".join(parts)
+    # a single word also covers its inflections: seamless -> seamlessly
+    return re.compile(
+        r"(?<!\w)" + body + (r"\w*" if len(parts) == 1 else r"(?!\w)"), re.I
+    )
+
+
+def apply_waivers(msg: dict, waivers) -> tuple[dict, list[dict]]:
+    """Mask waived terms so no check sees them; report what was waived."""
+    masked = dict(msg)
+    report = []
+    for w in waivers:
+        rx = _waiver_re(w["term"])
+        n = 0
+        for key in ("subject", "title", "body"):
+            if masked.get(key):
+                masked[key], k = rx.subn("waivedterm", masked[key])
+                n += k
+        if n:
+            report.append({"term": w["term"], "reason": w["reason"], "count": n})
+    return masked, report
+
+
+def _stem_hits(low: str) -> list[tuple[str, str]]:
+    """(stem, matched word) for each slop stem present."""
+    out = []
+    for st in SLOP_STEMS:
+        m = re.search(r"(?<![\w])" + re.escape(st) + r"\w*", low)
+        if m:
+            out.append((st, m.group(0)))
+    return out
+
+
+def slop_scan(whole, hard, soft, legacy_dash, budget, limits):
+    """Return (findings, info). `hard`/`soft` are the existing list hits."""
+    findings = []
+    text = normalize(whole)
+    low = text.lower()
+    words = max(len(whole.split()), 1)
+    points = 0.0
+    scored: list[str] = []
+
+    # residue: always FAIL, never scored
+    residue = [p for p in RESIDUE_PHRASES if re.search(r"(?<!\w)" + re.escape(p), low)]
+    first = whole.strip()
+    if RESIDUE_OPENER_RE.match(first):
+        residue.append(first.split("!")[0].strip() + "!")
+    residue += sorted({m.group(0) for m in RESIDUE_SLOT_RE.finditer(whole)})
+    if residue:
+        findings.append(
+            {
+                "severity": "FAIL",
+                "code": "RESIDUE",
+                "message": f"model or template residue: {residue[:4]}",
+            }
+        )
+
+    # words and stock phrases (existing list hits count once, here)
+    existing = list(hard) + list(soft)
+    new_words = [
+        word for st, word in _stem_hits(low) if not any(st in p for p in existing)
+    ]
+    stock = _phrase_hits(whole, STOCK_PHRASES)
+    stock = [p for p in stock if p not in existing]
+    points += 2 * len(hard) + len(soft) + len(new_words) + 2 * len(stock)
+    scored = [*hard, *soft, *new_words, *stock]
+    if new_words:
+        findings.append(
+            {
+                "severity": "WARN",
+                "code": "SLOP_WORD",
+                "message": f"AI-tell words: {new_words[:6]}",
+            }
+        )
+    if stock:
+        findings.append(
+            {
+                "severity": "WARN",
+                "code": "SLOP_PHRASE",
+                "message": f"stock phrases: {stock[:4]}",
+            }
+        )
+
+    # devices
+    counts = {}
+    counts["em_dash"] = len(DASH_RE.findall(whole))
+    counts["fragment_heading"] = sum(
+        1
+        for ln in whole.splitlines()
+        if FRAG_LINE_RE.match(ln.strip().lstrip("#").strip().strip("*_ "))
+        and len(ln.split()) <= 9
+    )
+    strong = list(STRONG_CONTRAST_RE.finditer(text))
+    rest = STRONG_CONTRAST_RE.sub(" ", text)
+    counts["contrast"] = 2 * len(strong) + len(WEAK_CONTRAST_RE.findall(rest))
+    counts["ing_rider"] = len(ING_RIDER_RE.findall(text))
+    counts["triad"] = sum(
+        1
+        for m in TRIAD_RE.finditer(text)
+        if not any(g.lower() in _TRIAD_STOP for g in m.groups())
+    )
+    counts["rhetorical_opener"] = sum(
+        1
+        for para in re.split(r"\n\s*\n", normalize_keep(whole))
+        if RHETORICAL_RE.match(
+            re.sub(r"^(?:\{\{[^}]*\}\}\s*,?\s*)", "", para.strip().lstrip("#*_- "))
+        )
+    )
+
+    devices = {}
+    for name, count in counts.items():
+        warn, fail = limits[name]
+        if name == "em_dash":
+            value = round(count * 100 / max(words, 50), 2)
+            level = (
+                "FAIL"
+                if count >= 2 and value > fail
+                else "WARN" if value > warn else None
+            )
+            shown = f"{count} em dash(es), {value} per 100 words (warn >{warn}, fail >{fail})"
+            if legacy_dash:  # profile already bans them outright; do not double up
+                level = None
+        else:
+            value = count
+            level = "FAIL" if count >= fail else "WARN" if count >= warn else None
+            shown = f"{count} {DEVICE_ABOUT[name]} (warn {warn}, fail {fail})"
+        devices[name] = {
+            "count": count,
+            "value": value,
+            "warn": warn,
+            "fail": fail,
+            "level": level,
+        }
+        if level:
+            points += count
+            findings.append(
+                {"severity": level, "code": "SLOP_" + name.upper(), "message": shown}
+            )
+
+    score = round(points, 1)
+    level = (
+        "FAIL"
+        if score >= budget["fail"]
+        else "WARN" if score >= budget["warn"] else None
+    )
+    if level:
+        findings.append(
+            {
+                "severity": level,
+                "code": "SLOP_BUDGET",
+                "message": f"slop score {score} (warn {budget['warn']}, fail {budget['fail']}): {scored[:6]}",
+            }
+        )
+    info = {
+        "score": score,
+        "warn": budget["warn"],
+        "fail": budget["fail"],
+        "devices": devices,
+    }
+    return findings, info
+
+
+def normalize_keep(text: str) -> str:
+    """Quote normalisation only; keeps line breaks for paragraph checks."""
+    for curly, straight in (("’", "'"), ("‘", "'")):
+        text = text.replace(curly, straight)
+    return text
+
 
 MARKER_RE = re.compile(r"^===\s*(.*?)\s*(?:\[profile=([\w\-]+)\])?\s*$")
 
@@ -339,8 +720,22 @@ def _phrase_hits(text: str, phrases) -> list[str]:
     return hits
 
 
-def check_message(msg: dict, profile: dict, allow_tokens: bool) -> list[dict]:
+def check_message(
+    msg: dict,
+    profile: dict,
+    allow_tokens: bool,
+    slop: bool = False,
+    waivers=(),
+    budget=None,
+    limits=None,
+    report=None,
+) -> list[dict]:
     findings: list[dict] = []
+    slop_on = bool(slop or profile.get("slop"))
+    if waivers:
+        msg, waived = apply_waivers(msg, waivers)
+        if report is not None:
+            report["waived"] = waived
 
     def add(sev, code, message):
         findings.append({"severity": sev, "code": code, "message": message})
@@ -389,7 +784,11 @@ def check_message(msg: dict, profile: dict, allow_tokens: bool) -> list[dict]:
 
     # Punctuation tells
     dashes = DASH_RE.findall(whole)
-    if dashes and profile.get("em_dash"):
+    # Under slop, a WARN-level em-dash profile defers to the per-100-word budget.
+    legacy_dash = profile.get("em_dash") == "FAIL" or (
+        profile.get("em_dash") and not slop_on
+    )
+    if dashes and legacy_dash:
         add(
             profile["em_dash"],
             "EM_DASH",
@@ -485,10 +884,31 @@ def check_message(msg: dict, profile: dict, allow_tokens: bool) -> list[dict]:
         if re.match(r"(?i)^(i|we|i'm|we're|my name)\b", first):
             add("WARN", "OPENER", "opens with I/We; lead with them, not you")
 
+    if slop_on:
+        extra, info = slop_scan(
+            whole,
+            hard,
+            soft,
+            legacy_dash,
+            {**DEFAULT_BUDGET, **(budget or {})},
+            {**DEVICES, **(limits or {})},
+        )
+        findings.extend(extra)
+        if report is not None:
+            report["slop"] = info
+
     return findings
 
 
-def run(text: str, profile_name: str, allow_tokens: bool) -> dict:
+def run(
+    text: str,
+    profile_name: str,
+    allow_tokens: bool,
+    slop: bool = False,
+    waivers=None,
+    budget=None,
+    limits=None,
+) -> dict:
     messages = parse_messages(text)
     results = []
     fails = warns = 0
@@ -496,7 +916,17 @@ def run(text: str, profile_name: str, allow_tokens: bool) -> dict:
         name = msg["profile"] or profile_name
         if name not in PROFILES:
             return {"ok": False, "error": f"unknown profile '{name}' on {msg['label']}"}
-        findings = check_message(msg, PROFILES[name], allow_tokens)
+        extra: dict = {}
+        findings = check_message(
+            msg,
+            PROFILES[name],
+            allow_tokens,
+            slop,
+            waivers or (),
+            budget,
+            limits,
+            extra,
+        )
         f = sum(1 for x in findings if x["severity"] == "FAIL")
         w = sum(1 for x in findings if x["severity"] == "WARN")
         fails += f
@@ -508,9 +938,10 @@ def run(text: str, profile_name: str, allow_tokens: bool) -> dict:
                 "words": len(msg["body"].split()),
                 "verdict": "FAIL" if f else ("WARN" if w else "PASS"),
                 "findings": findings,
+                **extra,
             }
         )
-    return {
+    out = {
         "ok": True,
         "verdict": "FAIL" if fails else ("WARN" if warns else "PASS"),
         "messages": len(results),
@@ -518,6 +949,9 @@ def run(text: str, profile_name: str, allow_tokens: bool) -> dict:
         "warns": warns,
         "results": results,
     }
+    if waivers:
+        out["waivers"] = [{"term": w["term"], "reason": w["reason"]} for w in waivers]
+    return out
 
 
 def main(argv=None) -> int:
@@ -528,6 +962,30 @@ def main(argv=None) -> int:
         "--allow-tokens",
         action="store_true",
         help="permit {{token}} / [[token]] merge tags (templates for a sequencer)",
+    )
+    ap.add_argument(
+        "--slop",
+        action="store_true",
+        help="add the copy-slop floor to any profile (the `slop` profile always has it)",
+    )
+    ap.add_argument("--slop-warn", type=float, help="slop score that warns (default 3)")
+    ap.add_argument("--slop-fail", type=float, help="slop score that fails (default 6)")
+    ap.add_argument(
+        "--device",
+        action="append",
+        default=[],
+        metavar="NAME=WARN:FAIL",
+        help="override one device limit, e.g. em_dash=2:4 or triad=4:8 (repeatable)",
+    )
+    ap.add_argument(
+        "--waive",
+        default="",
+        help="comma-separated client-supplied terms to leave alone (reported as waived)",
+    )
+    ap.add_argument(
+        "--waivers",
+        metavar="PATH",
+        help="waiver JSON; default: .tonone/copy-waivers.json found walking up from cwd",
     )
     ap.add_argument("--list-profiles", action="store_true")
     ap.add_argument("--pretty", action="store_true")
@@ -573,7 +1031,46 @@ def main(argv=None) -> int:
         )
         return 2
 
-    result = run(text, args.profile, args.allow_tokens)
+    def usage(msg):
+        print(json.dumps({"ok": False, "error": msg}, indent=indent))
+        return 2
+
+    waivers: list[dict] = []
+    try:
+        wpath = args.waivers
+        if not wpath and (
+            args.slop or args.profile == "slop" or "profile=slop" in text
+        ):
+            found = discover_waivers()
+            wpath = str(found) if found else None
+        if wpath:
+            waivers += load_waivers(wpath)
+    except ValueError as e:
+        return usage(str(e))
+    for term in (t.strip() for t in args.waive.split(",")):
+        if term:
+            waivers.append({"term": term, "reason": "--waive flag", "source": "cli"})
+
+    budget = {}
+    if args.slop_warn is not None:
+        budget["warn"] = args.slop_warn
+    if args.slop_fail is not None:
+        budget["fail"] = args.slop_fail
+    b = {**DEFAULT_BUDGET, **budget}
+    if b["warn"] > b["fail"]:
+        return usage("--slop-warn must be <= --slop-fail")
+    limits = {}
+    for spec in args.device:
+        m = re.fullmatch(r"(\w+)=([\d.]+):([\d.]+)", spec)
+        if not m or m.group(1) not in DEVICES or float(m.group(2)) > float(m.group(3)):
+            return usage(
+                f"bad --device '{spec}'; use NAME=WARN:FAIL with NAME in {sorted(DEVICES)}"
+            )
+        limits[m.group(1)] = (float(m.group(2)), float(m.group(3)))
+
+    result = run(
+        text, args.profile, args.allow_tokens, args.slop, waivers, budget, limits
+    )
     print(json.dumps(result, indent=indent, ensure_ascii=False))
     if not result["ok"]:
         return 2

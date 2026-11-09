@@ -1,9 +1,16 @@
 [
   {
+    "name": "apex-decisions",
+    "agent": "apex",
+    "team": "Engineering",
+    "description": "Append-only log of settled project decisions, shown at session start. Use when asked to \"log this decision\", \"record that we decided\", \"supersede decision\", or \"what did we decide\".",
+    "path": "team/apex/skills/apex-decisions/SKILL.md"
+  },
+  {
     "name": "apex-diagnose",
     "agent": "apex",
     "team": "Engineering",
-    "description": "Session postmortem from local transcripts \u2014 why a run repeated work, ignored the plan, took too long, or cost more than expected. Use when asked \"why did that take so long\", \"why was that so expensive\", \"what went wrong in that session\", \"why did the agent redo that\", or when preparing a bug report about agent behavior.",
+    "description": "Session postmortem from local transcripts \u2014 why a run repeated work, ignored the plan, ran long, or cost too much. Use when asked \"why did that take so long\", \"why was that so expensive\", \"what went wrong in that session\", or \"why did the agent redo that\".",
     "path": "team/apex/skills/apex-diagnose/SKILL.md"
   },
   {
@@ -12,6 +19,13 @@
     "team": "Engineering",
     "description": "Inspect and tune the skill-manifest gate \u2014 which of the 421 tonone skills keep their description in this project's context, and what that costs in tokens. Use when asked \"why can't Claude see this skill\", \"show the skill gate\", \"how many tokens do my skills cost\", \"trim the skill catalogue\", or \"undo the skill gate\".",
     "path": "team/apex/skills/apex-gate/SKILL.md"
+  },
+  {
+    "name": "apex-guard",
+    "agent": "apex",
+    "team": "Engineering",
+    "description": "Opt-in session guard that confirms destructive commands and freezes edits to one directory. Use when asked to \"be careful\", \"freeze edits to src/\", or \"guard this session\".",
+    "path": "team/apex/skills/apex-guard/SKILL.md"
   },
   {
     "name": "apex-plan",
@@ -35,10 +49,17 @@
     "path": "team/apex/skills/apex-recon/SKILL.md"
   },
   {
+    "name": "apex-retro",
+    "agent": "apex",
+    "team": "Engineering",
+    "description": "Weekly engineering retrospective from git history. Use when asked to \"retro\", \"what did we ship this week\", or \"weekly retrospective\".",
+    "path": "team/apex/skills/apex-retro/SKILL.md"
+  },
+  {
     "name": "apex-review",
     "agent": "apex",
     "team": "Engineering",
-    "description": "Cross-cutting review of recent work \u2014 catches gaps between specialists. Use when asked to \"review what we built\", \"check the work\", \"pre-launch review\", or after completing a significant chunk of work.",
+    "description": "Cross-cutting multi-lens review of a diff \u2014 parallel security/backend/data/test lenses, red-team pass, merged verdict. Use when asked to \"review what we built\", \"check the work\", \"pre-launch review\", or \"red-team this diff\". Not the skill-manifest gate.",
     "path": "team/apex/skills/apex-review/SKILL.md"
   },
   {
@@ -47,6 +68,13 @@
     "team": "Engineering",
     "description": "Reach ANY tonone specialist on demand, even ones not installed in this session's roster \u2014 no restart needed. Use when asked \"which agent handles this\", \"reach a specialist we didn't install\", \"route this to the right agent\", or whenever a scoped apex-profile roster is missing the right hat for the job.",
     "path": "team/apex/skills/apex-route/SKILL.md"
+  },
+  {
+    "name": "apex-skillify",
+    "agent": "apex",
+    "team": "Engineering",
+    "description": "Turn a flow that just worked in this session into a reusable skill. Use when asked to \"skillify this\", \"make this a skill\", or \"save this workflow\".",
+    "path": "team/apex/skills/apex-skillify/SKILL.md"
   },
   {
     "name": "apex-stats",
@@ -346,7 +374,7 @@
     "name": "brace-recon",
     "agent": "brace",
     "team": "Support",
-    "description": "Support operations reconnaissance -- audit current ticket volume, SLA compliance, knowledge base coverage, escalation paths, and CSAT to understand where support is the constraint. Use when asked to \"audit our support\", \"why is our response time bad\", \"how healthy is our support operation\", or \"before designing a support system\".",
+    "description": "Support operations reconnaissance -- audit ticket volume, SLA compliance, KB coverage, escalation paths, and CSAT to find where support is the constraint. Use when asked to \"audit our support\", \"why is our response time bad\", or \"how healthy is our support operation\".",
     "path": "team/brace/skills/brace-recon/SKILL.md"
   },
   {
@@ -437,14 +465,14 @@
     "name": "buzz-devrel",
     "agent": "buzz",
     "team": "Marketing",
-    "description": "Developer relations playbook builder \u2014 produces a DevRel program design covering community platform, contributor program tiers, ambassador criteria, event strategy, and success metrics. Use when asked to \"build a DevRel program\", \"design our developer community\", \"create a contributor program\", \"start a developer advocacy program\", or \"how do we grow our dev community\".",
+    "description": "Developer relations playbook \u2014 community platform, contributor tiers, ambassador criteria, event strategy, success metrics. Use when asked to \"build a DevRel program\", \"design our developer community\", \"create a contributor program\", or \"start a developer advocacy program\".",
     "path": "team/buzz/skills/buzz-devrel/SKILL.md"
   },
   {
     "name": "buzz-hn",
     "agent": "buzz",
     "team": "Marketing",
-    "description": "Hacker News post crafter \u2014 given a product, feature, or story produces a ready-to-post HN submission (title \u226480 chars, no marketing), honest body text with technical depth, no outbound links, predicted reception analysis, and comment-response templates for likely pushback. Use when asked to \"write an HN post\", \"craft a Show HN\", \"prepare our Hacker News launch\", or \"help me post on HN\".",
+    "description": "Hacker News post crafter \u2014 ready-to-post HN submission (title \u226480 chars, no marketing), technical body, predicted reception, pushback response templates. Use when asked to \"write an HN post\", \"craft a Show HN\", \"prepare our Hacker News launch\", or \"help me post on HN\".",
     "path": "team/buzz/skills/buzz-hn/SKILL.md"
   },
   {
@@ -696,7 +724,7 @@
     "name": "copy-audit",
     "agent": "copy",
     "team": "Design",
-    "description": "Audit UX copy in a product or codebase \u2014 find passive errors, generic labels, missing states. Use when asked to \"audit our UX copy\", \"our error messages are bad\", or \"review the microcopy\".",
+    "description": "'Audit UX copy in a product or codebase: find passive errors, generic labels, missing states, and AI-sounding slop. Use when asked to \"audit our UX copy\", \"our error messages are bad\", or \"review the microcopy\".'",
     "path": "team/copy/skills/copy-audit/SKILL.md"
   },
   {
@@ -705,6 +733,13 @@
     "team": "Design",
     "description": "Survey all user-facing strings in a codebase \u2014 map coverage and find gaps. Use when asked \"what user-facing strings do we have\", \"map our copy coverage\", or \"find hardcoded strings\".",
     "path": "team/copy/skills/copy-recon/SKILL.md"
+  },
+  {
+    "name": "copy-slop",
+    "agent": "copy",
+    "team": "Design",
+    "description": "'Run the deterministic copy-slop check on drafts or UI strings: AI-tell words, residue, em-dash and contrast-frame overuse, with waivers for client terms. Use when asked to \"check for AI slop\", \"does this sound like AI\", \"run the slop check\", or \"lint this copy\".'",
+    "path": "team/copy/skills/copy-slop/SKILL.md"
   },
   {
     "name": "copy-write",
@@ -815,7 +850,7 @@
     "name": "deal-outreach",
     "agent": "deal",
     "team": "Revenue",
-    "description": "Cold outbound sequence builder \u2014 produces multi-touch email + LinkedIn sequences (5-7 touchpoints) personalized by persona type (technical buyer, economic buyer, champion). Use when asked to \"write cold emails\", \"build an outbound sequence\", \"create prospecting emails\", \"write my LinkedIn outreach\", or \"design a cold email campaign\".",
+    "description": "Cold outbound sequence builder \u2014 multi-touch email + LinkedIn sequences (5-7 touchpoints) personalized by persona (technical buyer, economic buyer, champion). Use when asked to \"write cold emails\", \"build an outbound sequence\", or \"write my LinkedIn outreach\".",
     "path": "team/deal/skills/deal-outreach/SKILL.md"
   },
   {
@@ -843,7 +878,7 @@
     "name": "deal-proposal",
     "agent": "deal",
     "team": "Revenue",
-    "description": "B2B proposal generator \u2014 takes deal context (ICP, pain, pricing tier, timeline) and produces a complete proposal document with executive summary, problem statement, solution, pricing table, implementation timeline, ROI case, and next steps. Use when asked to \"write a proposal\", \"draft our deck for this deal\", \"build a proposal for this customer\", or \"generate a proposal\".",
+    "description": "B2B proposal generator \u2014 from deal context (ICP, pain, pricing, timeline) produces a full proposal (exec summary, solution, pricing, timeline, ROI, next steps). Use when asked to \"write a proposal\", \"draft our deck for this deal\", \"build a proposal for this customer\", or \"generate a proposal\".",
     "path": "team/deal/skills/deal-proposal/SKILL.md"
   },
   {
@@ -864,7 +899,7 @@
     "name": "deal-signals",
     "agent": "deal",
     "team": "Revenue",
-    "description": "Signal-based prospecting \u2014 read target companies' public websites for buying signals (ads running, incumbent agency, tech stack, hiring, stale content, missing booking) with evidence URLs, then build a cohort you can explain. Use when asked to \"find buying signals\", \"profile these companies\", \"which accounts should we target\", \"build a target list from these domains\", or \"what changed at these accounts\".",
+    "description": "Signal-based prospecting \u2014 read target companies' public sites for buying signals (ads, incumbent agency, tech stack, hiring) with evidence URLs, then build a cohort. Use when asked to \"find buying signals\", \"profile these companies\", \"which accounts should we target\", or \"build a target list from these domains\".",
     "path": "team/deal/skills/deal-signals/SKILL.md"
   },
   {
@@ -1032,28 +1067,28 @@
     "name": "echo-feedback",
     "agent": "echo",
     "team": "Product",
-    "description": "Feedback synthesis \u2014 cluster support tickets, NPS verbatims, app store reviews, and churn surveys by theme, separate signal from noise, and produce an actionable insight report. Use when asked to \"synthesize this feedback\", \"analyze support tickets\", \"what are users complaining about\", \"NPS analysis\", \"churn feedback synthesis\", or \"what's the feedback telling us\".",
+    "description": "Feedback synthesis \u2014 cluster support tickets, NPS verbatims, app reviews, and churn surveys by theme into an actionable insight report. Use when asked to \"synthesize this feedback\", \"analyze support tickets\", \"what are users complaining about\", or \"NPS analysis\".",
     "path": "team/echo/skills/echo-feedback/SKILL.md"
   },
   {
     "name": "echo-interview",
     "agent": "echo",
     "team": "Product",
-    "description": "Run a user interview \u2014 produce an interview guide and synthesize the output into an actionable insight report. Use when asked to \"run a user interview\", \"synthesize these interview notes\", \"what do users actually want\", \"build a persona from this feedback\", \"find the JTBD in these transcripts\", or \"analyze this interview data\".",
+    "description": "Run a user interview \u2014 produce an interview guide and synthesize output into an actionable insight report. Use when asked to \"run a user interview\", \"synthesize these interview notes\", \"what do users actually want\", or \"build a persona from this feedback\".",
     "path": "team/echo/skills/echo-interview/SKILL.md"
   },
   {
     "name": "echo-jobs",
     "agent": "echo",
     "team": "Product",
-    "description": "Jobs-to-Be-Done analysis \u2014 given a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces analysis and opportunity ranking. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", \"job mapping\", \"what are users really trying to do\", \"JTBD framework\", or \"why are users switching\".",
+    "description": "Jobs-to-Be-Done analysis \u2014 from a product, user descriptions, transcripts, or tickets, produce a JTBD job map with switching forces and opportunity ranking. Use when asked to \"find the JTBD\", \"what jobs are users hiring us for\", or \"why are users switching\".",
     "path": "team/echo/skills/echo-jobs/SKILL.md"
   },
   {
     "name": "echo-panel",
     "agent": "echo",
     "team": "Product",
-    "description": "Synthetic stakeholder panel \u2014 build a mixed panel of grounded personas, run independent and cross-reaction rounds against a launch, pricing change, PRD, or message, and return ranked objections and messages to test. Use when asked to \"simulate how users will react\", \"test this launch with a synthetic panel\", \"focus group this\", \"how will people react to this pricing change\", or \"pressure-test this message\".",
+    "description": "Synthetic stakeholder panel \u2014 grounded personas react to a launch, pricing change, PRD, or message; returns ranked objections and messages to test. Use when asked to \"simulate how users will react\", \"test this launch with a synthetic panel\", \"focus group this\", or \"pressure-test this message\".",
     "path": "team/echo/skills/echo-panel/SKILL.md"
   },
   {
@@ -1407,6 +1442,13 @@
     "path": "team/form/skills/form-audit/SKILL.md"
   },
   {
+    "name": "form-bolder",
+    "agent": "form",
+    "team": "Product",
+    "description": "Make a timid design bolder. Use when asked to \"make it bolder\", \"more punch\", \"too safe\", or \"it looks generic\".",
+    "path": "team/form/skills/form-bolder/SKILL.md"
+  },
+  {
     "name": "form-brand",
     "agent": "form",
     "team": "Product",
@@ -1449,6 +1491,13 @@
     "path": "team/form/skills/form-direction/SKILL.md"
   },
   {
+    "name": "form-distill",
+    "agent": "form",
+    "team": "Product",
+    "description": "Strip a design to its essence. Use when asked to \"simplify this\", \"distill it\", \"too cluttered\", or \"cut it down\".",
+    "path": "team/form/skills/form-distill/SKILL.md"
+  },
+  {
     "name": "form-email",
     "agent": "form",
     "team": "Product",
@@ -1461,6 +1510,13 @@
     "team": "Product",
     "description": "|",
     "path": "team/form/skills/form-exam/SKILL.md"
+  },
+  {
+    "name": "form-lint",
+    "agent": "form",
+    "team": "Product",
+    "description": "Deterministic design lint for UI code \u2014 mechanical checks for AI-slop patterns, contrast, tiny text, token drift. Use when asked to \"lint the design\", \"design lint\", \"check for AI slop\", or \"run form-lint\". Taste rules are advisory; Form and the human decide.",
+    "path": "team/form/skills/form-lint/SKILL.md"
   },
   {
     "name": "form-logo",
@@ -1482,6 +1538,20 @@
     "team": "Product",
     "description": "|",
     "path": "team/form/skills/form-palette/SKILL.md"
+  },
+  {
+    "name": "form-polish",
+    "agent": "form",
+    "team": "Product",
+    "description": "Final polish pass on a finished UI. Use when asked to \"polish this\", \"final pass\", \"tighten it up\", or \"last details before ship\".",
+    "path": "team/form/skills/form-polish/SKILL.md"
+  },
+  {
+    "name": "form-quieter",
+    "agent": "form",
+    "team": "Product",
+    "description": "Tone down a loud, noisy design. Use when asked to \"make it quieter\", \"too busy\", \"calm it down\", or \"it feels overwhelming\".",
+    "path": "team/form/skills/form-quieter/SKILL.md"
   },
   {
     "name": "form-social",
@@ -1508,7 +1578,7 @@
     "name": "form-web",
     "agent": "form",
     "team": "Product",
-    "description": "|",
+    "description": "Design a landing page or marketing website that converts or informs. Use when asked to \"design a landing page for X\", \"create a marketing site\", \"we need a homepage\", \"design our website\", or \"build a page for our launch\".",
     "path": "team/form/skills/form-web/SKILL.md"
   },
   {
@@ -1704,7 +1774,7 @@
     "name": "helm-arbiter",
     "agent": "helm",
     "team": "Product",
-    "description": "Scope arbitration \u2014 resolve disagreements between product and engineering on what is in or out of scope, with a decision log and escalation path. Use when asked to \"resolve this scope disagreement\", \"arbitrate between product and eng\", \"scope is creeping\", \"we can't agree on what's in scope\", or \"help us decide what to cut\".",
+    "description": "Scope arbitration \u2014 resolve product-vs-engineering disagreements on what is in or out of scope, with a decision log and escalation path. Use when asked to \"resolve this scope disagreement\", \"scope is creeping\", or \"help us decide what to cut\".",
     "path": "team/helm/skills/helm-arbiter/SKILL.md"
   },
   {
@@ -1722,6 +1792,13 @@
     "path": "team/helm/skills/helm-handoff/SKILL.md"
   },
   {
+    "name": "helm-office-hours",
+    "agent": "helm",
+    "team": "Product",
+    "description": "Forcing-function intake before any brief. Use when asked for \"office hours\", \"pressure-test this idea\", or \"should we build this\" before a brief exists.",
+    "path": "team/helm/skills/helm-office-hours/SKILL.md"
+  },
+  {
     "name": "helm-plan",
     "agent": "helm",
     "team": "Product",
@@ -1732,7 +1809,7 @@
     "name": "helm-recon",
     "agent": "helm",
     "team": "Product",
-    "description": "Product landscape reconnaissance \u2014 survey existing briefs, research, strategy, and team output before writing new briefs or dispatching specialists. Use when asked to \"understand the product state\", \"what briefs exist\", \"what has the team produced\", \"orient me on this product\", or before starting a new product initiative.",
+    "description": "Product landscape reconnaissance \u2014 survey existing briefs, research, strategy, and team output before writing briefs or dispatching specialists. Use when asked to \"understand the product state\", \"what briefs exist\", or \"orient me on this product\".",
     "path": "team/helm/skills/helm-recon/SKILL.md"
   },
   {
@@ -1802,7 +1879,7 @@
     "name": "ink-brief",
     "agent": "ink",
     "team": "Marketing",
-    "description": "Content brief generator \u2014 takes a topic or keyword and produces a complete content brief with target keyword, search intent, recommended structure, internal link targets, word count, CTA, and competitive gap analysis. Use when asked to \"write a content brief\", \"brief this blog post\", \"plan this article\", or \"what should we cover for [keyword]\".",
+    "description": "Content brief generator \u2014 topic or keyword in, complete brief out (target keyword, search intent, structure, internal links, word count, CTA, competitive gaps). Use when asked to \"write a content brief\", \"brief this blog post\", \"plan this article\", or \"what should we cover for [keyword]\".",
     "path": "team/ink/skills/ink-brief/SKILL.md"
   },
   {
@@ -1823,28 +1900,28 @@
     "name": "ink-cluster",
     "agent": "ink",
     "team": "Marketing",
-    "description": "Topic cluster and keyword-to-page mapping \u2014 group keywords by search intent (validated by SERP overlap, not word similarity), map each cluster to an existing or proposed page, flag cannibalization, and lay out pillar, supporting posts, and internal links. Use when asked to \"build a content cluster\", \"map our SEO cluster for [topic]\", \"which page should target these keywords\", \"create a topic cluster\", or \"what should our pillar page be about\".",
+    "description": "Topic cluster and keyword-to-page mapping \u2014 group keywords by intent, map clusters to pages, flag cannibalization, lay out pillar and supporting posts. Use when asked to \"build a content cluster\", \"map our SEO cluster for [topic]\", or \"which page should target these keywords\".",
     "path": "team/ink/skills/ink-cluster/SKILL.md"
   },
   {
     "name": "ink-distribute",
     "agent": "ink",
     "team": "Marketing",
-    "description": "Content distribution plan \u2014 takes a completed piece and produces a channel-by-channel plan covering HN, Reddit, LinkedIn, newsletter, and Twitter/X, with timing, per-channel framing, and a repurposing plan. Use when asked to \"distribute this post\", \"how do we promote this article\", \"write distribution copy for this piece\", or \"where should we share this\".",
+    "description": "Content distribution plan \u2014 channel-by-channel plan (HN, Reddit, LinkedIn, newsletter, Twitter/X) with timing, framing, and repurposing. Use when asked to \"distribute this post\", \"how do we promote this article\", \"write distribution copy for this piece\", or \"where should we share this\".",
     "path": "team/ink/skills/ink-distribute/SKILL.md"
   },
   {
     "name": "ink-links",
     "agent": "ink",
     "team": "Marketing",
-    "description": "Link prospecting \u2014 pick the site's most linkable asset, find pages that plausibly link to it (resource pages, competitor linkers, unlinked mentions, broken links), verify real contact paths, and draft personalized outreach. Never invents contacts. Use when asked to \"find backlink opportunities\", \"who should link to us\", \"build links to this page\", \"link prospecting\", or \"draft outreach for backlinks\".",
+    "description": "Link prospecting \u2014 pick the most linkable asset, find likely linking pages (resource pages, competitor linkers, unlinked mentions, broken links), verify contacts, draft outreach. Never invents contacts. Use when asked to \"find backlink opportunities\", \"who should link to us\", or \"link prospecting\".",
     "path": "team/ink/skills/ink-links/SKILL.md"
   },
   {
     "name": "ink-local",
     "agent": "ink",
     "team": "Marketing",
-    "description": "Local SEO audit \u2014 assess a location-based business's Google Business Profile against local competitors, check Maps and local-pack visibility for its main queries, and recommend the few fixes that win nearby searches. Use when asked to \"improve our local SEO\", \"why don't we show up on Google Maps\", \"audit our Google Business Profile\", \"rank in the local pack\", or \"local search for [city]\".",
+    "description": "Local SEO audit \u2014 assess Google Business Profile vs. local competitors, check Maps and local-pack visibility, recommend the few fixes that win nearby searches. Use when asked to \"improve our local SEO\", \"why don't we show up on Google Maps\", \"audit our Google Business Profile\", or \"rank in the local pack\".",
     "path": "team/ink/skills/ink-local/SKILL.md"
   },
   {
@@ -1865,7 +1942,7 @@
     "name": "ink-seo",
     "agent": "ink",
     "team": "Marketing",
-    "description": "SEO audit and keyword strategy \u2014 investigate a site's real search opportunities, shortlist candidates, and recommend the one to three changes most likely to grow organic traffic that converts. Evidence-first \u2014 metrics come from a tool or are written as unknown. Use when asked to \"improve our SEO\", \"do keyword research\", \"audit our SEO\", \"why aren't we ranking\", or \"what should we fix first for search\".",
+    "description": "SEO audit and keyword strategy \u2014 find real search opportunities and recommend the 1-3 changes most likely to grow converting organic traffic. Evidence-first; unknown metrics stay unknown. Use when asked to \"improve our SEO\", \"do keyword research\", \"audit our SEO\", or \"why aren't we ranking\".",
     "path": "team/ink/skills/ink-seo/SKILL.md"
   },
   {
@@ -1914,7 +1991,7 @@
     "name": "keel-recon",
     "agent": "keel",
     "team": "Operations",
-    "description": "Operations reconnaissance \u2014 audit process documentation, vendor contracts, compliance posture, OKR health, and cross-functional friction points to understand where operations is the bottleneck. Use when asked to \"audit our operations\", \"where are we slow\", \"what processes are broken\", or \"before designing a compliance program\".",
+    "description": "Operations reconnaissance \u2014 audit process docs, vendor contracts, compliance posture, OKR health and cross-functional friction to find where operations is the bottleneck. Use when asked to \"audit our operations\", \"where are we slow\", \"what processes are broken\", or before designing a compliance program.",
     "path": "team/keel/skills/keel-recon/SKILL.md"
   },
   {
@@ -1928,7 +2005,7 @@
     "name": "keep-churn",
     "agent": "keep",
     "team": "Revenue",
-    "description": "Churn risk identification and intervention \u2014 scans health signals for at-risk accounts, classifies risk level (CRITICAL/HIGH/MEDIUM), and produces an intervention sequence per risk type. Use when asked to \"find at-risk accounts\", \"who might churn\", \"build a churn prevention plan\", \"identify churn signals\", or \"rescue this account\".",
+    "description": "Churn risk identification and intervention \u2014 scans health signals for at-risk accounts, classifies risk (CRITICAL/HIGH/MEDIUM), and produces an intervention sequence per risk type. Use when asked to \"find at-risk accounts\", \"who might churn\", \"build a churn prevention plan\", or \"rescue this account\".",
     "path": "team/keep/skills/keep-churn/SKILL.md"
   },
   {
@@ -1977,7 +2054,7 @@
     "name": "keep-segment",
     "agent": "keep",
     "team": "Revenue",
-    "description": "Customer segmentation model builder \u2014 tiers customers by ARR, health, and expansion potential; defines CS motion per tier; maps resource allocation. Use when asked to \"segment our customers\", \"define our CS tiers\", \"how should we allocate CS resources\", \"build a customer segmentation model\", or \"who gets high-touch vs. digital\".",
+    "description": "Customer segmentation model \u2014 tiers customers by ARR, health and expansion potential, defines CS motion per tier, maps resource allocation. Use when asked to \"segment our customers\", \"define our CS tiers\", \"how should we allocate CS resources\", or \"who gets high-touch vs. digital\".",
     "path": "team/keep/skills/keep-segment/SKILL.md"
   },
   {
@@ -2061,14 +2138,14 @@
     "name": "lens-dashboard",
     "agent": "lens",
     "team": "Engineering",
-    "description": "Design and spec an analytical dashboard \u2014 define the question each chart answers, write the SQL queries, spec the layout and refresh cadence. Produces a complete dashboard spec ready to implement. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", \"weekly product health\", or \"visualize this data\".",
+    "description": "Design and spec an analytical dashboard \u2014 the question each chart answers, SQL queries, layout and refresh cadence, ready to implement. Use when asked to \"build a dashboard\", \"analytics dashboard\", \"BI dashboard\", \"weekly product health\", or \"visualize this data\".",
     "path": "team/lens/skills/lens-dashboard/SKILL.md"
   },
   {
     "name": "lens-metrics",
     "agent": "lens",
     "team": "Engineering",
-    "description": "Produce a complete metrics definition doc \u2014 metric name, formula, data source, segmentation, SQL or event tracking spec, and what good/bad looks like. Given a product area, outputs the full metrics spec. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", \"north star metric\", or \"instrument this feature\".",
+    "description": "Produce a metrics definition doc \u2014 name, formula, data source, segmentation, SQL or event tracking spec, and what good/bad looks like, for a product area. Use when asked to \"define KPIs\", \"metrics framework\", \"what should we measure\", \"north star metric\", or \"instrument this feature\".",
     "path": "team/lens/skills/lens-metrics/SKILL.md"
   },
   {
@@ -2131,7 +2208,7 @@
     "name": "lumen-abtest",
     "agent": "lumen",
     "team": "Product",
-    "description": "A/B test design \u2014 produce an experiment spec with hypothesis, primary metric, MDE, sample size, run time, and decision rule. Also determines when NOT to A/B test and what to do instead. Use when asked to \"design an A/B test\", \"should we test this\", \"experiment design\", \"how do we know if this works\", \"what's the sample size\", or \"set up an experiment\".",
+    "description": "A/B test design \u2014 experiment spec with hypothesis, primary metric, MDE, sample size, run time, decision rule; also says when NOT to A/B test. Use when asked to \"design an A/B test\", \"should we test this\", \"experiment design\", or \"what's the sample size\".",
     "path": "team/lumen/skills/lumen-abtest/SKILL.md"
   },
   {
@@ -2152,14 +2229,14 @@
     "name": "lumen-metrics",
     "agent": "lumen",
     "team": "Product",
-    "description": "Metrics architecture \u2014 produce a complete metrics plan given a product description. North Star, input metrics tree, instrumentation spec, action triggers, and counter-metrics. Use when asked to \"design a metrics framework\", \"what should we measure\", \"build a metrics system\", \"define our KPIs\", \"what are our success metrics\", \"metrics strategy\", or \"what do we track\".",
+    "description": "Metrics architecture \u2014 North Star, input metrics tree, instrumentation spec, action triggers, counter-metrics for a product. Use when asked to \"design a metrics framework\", \"what should we measure\", \"define our KPIs\", \"metrics strategy\", or \"what do we track\".",
     "path": "team/lumen/skills/lumen-metrics/SKILL.md"
   },
   {
     "name": "lumen-recon",
     "agent": "lumen",
     "team": "Product",
-    "description": "Analytics reconnaissance \u2014 scan existing event tracking, metric definitions, dashboards, and analytics configuration to understand what is currently being measured. Use when asked to \"what are we tracking\", \"audit our analytics\", \"what metrics exist\", \"analytics inventory\", or before designing new metrics or instrumentation.",
+    "description": "Analytics reconnaissance \u2014 scan event tracking, metric definitions, dashboards and analytics config to see what is currently measured. Use when asked \"what are we tracking\", \"audit our analytics\", \"what metrics exist\", \"analytics inventory\", or before designing new metrics or instrumentation.",
     "path": "team/lumen/skills/lumen-recon/SKILL.md"
   },
   {
@@ -2418,14 +2495,14 @@
     "name": "pave-golden",
     "agent": "pave",
     "team": "Engineering",
-    "description": "Define a golden path \u2014 the opinionated, supported way to do a common developer task (create a new service, set up an environment, deploy a feature). Produces concrete steps, templates, and tooling. Use when asked to \"golden path\", \"create project template\", \"scaffold a new service\", \"how should we create services\", or \"standardize our setup\".",
+    "description": "Define a golden path \u2014 the opinionated, supported way to do a common developer task (new service, environment, deploy), with concrete steps, templates and tooling. Use when asked for a \"golden path\", \"create project template\", \"scaffold a new service\", or \"standardize our setup\".",
     "path": "team/pave/skills/pave-golden/SKILL.md"
   },
   {
     "name": "pave-lsp",
     "agent": "pave",
     "team": "Engineering",
-    "description": "Detect which languages a project actually uses and wire the matching LSP and semantic-code plugins into the developer's Claude Code setup, so the agent gets go-to-definition, find-references, rename-symbol and real type errors instead of grep. Use when asked to \"set up LSP\", \"wire up language servers\", \"install typescript-lsp\", \"give Claude type awareness\", \"add Serena\", or \"why is Claude grepping instead of using types\".",
+    "description": "Wire LSP and semantic-code plugins for the project's languages so Claude gets go-to-definition, references and type errors instead of grep. Use when asked to \"set up LSP\", \"wire up language servers\", \"install typescript-lsp\", \"add Serena\", or \"give Claude type awareness\".",
     "path": "team/pave/skills/pave-lsp/SKILL.md"
   },
   {
@@ -2502,7 +2579,7 @@
     "name": "pitch-copy",
     "agent": "pitch",
     "team": "Product",
-    "description": "Landing page and marketing copy \u2014 write hero section, problem/solution blocks, proof points, and CTAs. Use when asked to \"write landing page copy\", \"write the homepage\", \"marketing copy for this feature\", \"product page copy\", \"write the hero section\", or \"write copy for [surface]\".",
+    "description": "'Write landing page and marketing copy: hero, problem/solution blocks, proof points, CTAs. Use when asked to \"write landing page copy\", \"write the homepage\", \"marketing copy for this feature\", \"product page copy\", or \"write the hero section\".'",
     "path": "team/pitch/skills/pitch-copy/SKILL.md"
   },
   {
@@ -2530,14 +2607,14 @@
     "name": "pitch-position",
     "agent": "pitch",
     "team": "Product",
-    "description": "Produce a complete positioning document using the Dunford framework \u2014 competitive alternatives, unique attributes, value, best-fit customer, market category, positioning statement, and tagline. Use when asked to \"write our positioning\", \"define our value prop\", \"positioning statement\", \"what market are we in\", \"how do we position against X\", \"what's our tagline\", or \"write our messaging foundation\".",
+    "description": "Complete positioning document using the Dunford framework \u2014 alternatives, unique attributes, value, best-fit customer, category, statement, tagline. Use when asked to \"write our positioning\", \"define our value prop\", \"positioning statement\", \"how do we position against X\", or \"write our messaging foundation\".",
     "path": "team/pitch/skills/pitch-position/SKILL.md"
   },
   {
     "name": "pitch-recon",
     "agent": "pitch",
     "team": "Product",
-    "description": "Marketing and messaging reconnaissance \u2014 read existing landing pages, copy, positioning docs, and marketing materials to understand the current messaging state. Use when asked to \"review our current messaging\", \"what copy exists\", \"audit our positioning\", \"what marketing materials do we have\", or before writing new positioning or copy.",
+    "description": "Marketing and messaging reconnaissance \u2014 read existing landing pages, copy, positioning docs and marketing materials to understand current messaging. Use when asked to \"review our current messaging\", \"what copy exists\", \"audit our positioning\", or before writing new positioning or copy.",
     "path": "team/pitch/skills/pitch-recon/SKILL.md"
   },
   {
@@ -2609,6 +2686,20 @@
     "team": "Engineering",
     "description": "Build an internal dashboard with data tables, filters, detail views, and CRUD. Use when asked to build an \"admin panel\", \"internal dashboard\", \"back office\", or \"data dashboard UI\".",
     "path": "team/prism/skills/prism-dashboard/SKILL.md"
+  },
+  {
+    "name": "prism-extract",
+    "agent": "prism",
+    "team": "Engineering",
+    "description": "Extract repeated values and markup into design tokens and components. Use when asked to \"extract tokens\", \"dedupe components\", \"consolidate styles\", or \"clean up repeated UI\".",
+    "path": "team/prism/skills/prism-extract/SKILL.md"
+  },
+  {
+    "name": "prism-harden",
+    "agent": "prism",
+    "team": "Engineering",
+    "description": "Make UI survive real data \u2014 overflow, i18n, empty/error/loading states, extreme values. Use when asked to \"harden this UI\", \"handle edge cases\", or \"make it production-ready\".",
+    "path": "team/prism/skills/prism-harden/SKILL.md"
   },
   {
     "name": "prism-recon",
@@ -3321,21 +3412,21 @@
     "name": "surge-plg",
     "agent": "surge",
     "team": "Product",
-    "description": "PLG motion design \u2014 free tier definition, activation sequence, expansion trigger points, viral mechanic assessment. Given a product, output the PLG architecture and make the calls. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", \"how do we add a free tier\", \"upgrade triggers\", or \"viral loop design\".",
+    "description": "PLG motion design \u2014 free tier, activation sequence, expansion triggers, viral mechanic assessment; makes the calls. Use when asked to \"PLG strategy\", \"freemium model\", \"product-led growth plan\", \"self-serve motion\", or \"upgrade triggers\".",
     "path": "team/surge/skills/surge-plg/SKILL.md"
   },
   {
     "name": "surge-recon",
     "agent": "surge",
     "team": "Product",
-    "description": "Growth state reconnaissance \u2014 scan existing onboarding flows, acquisition channels, conversion funnels, and growth experiment logs to understand current growth state. Use when asked to \"what's our growth state\", \"audit the funnel\", \"what growth experiments have we run\", \"acquisition channel inventory\", or before designing new growth experiments.",
+    "description": "Growth state reconnaissance \u2014 scan onboarding flows, acquisition channels, funnels, and experiment logs for current growth state. Use when asked to \"what's our growth state\", \"audit the funnel\", \"what growth experiments have we run\", or before designing new growth experiments.",
     "path": "team/surge/skills/surge-recon/SKILL.md"
   },
   {
     "name": "surge-retention",
     "agent": "surge",
     "team": "Product",
-    "description": "Retention diagnosis + intervention plan \u2014 analyze the retention curve, identify the primary drop-off point, and produce a specific intervention plan with expected impact. Use when asked to \"improve retention\", \"why are users churning\", \"build a retention playbook\", \"reduce churn\", \"win-back campaign\", or \"users aren't coming back\".",
+    "description": "Retention diagnosis and intervention plan \u2014 analyze the retention curve, find the primary drop-off, and produce a specific intervention plan with expected impact. Use when asked to \"improve retention\", \"why are users churning\", \"reduce churn\", \"win-back campaign\", or \"users aren't coming back\".",
     "path": "team/surge/skills/surge-retention/SKILL.md"
   },
   {
@@ -3685,14 +3776,14 @@
     "name": "volt-firmware",
     "agent": "volt",
     "team": "Engineering",
-    "description": "Produce a complete firmware architecture spec for a described device \u2014 layer diagram, module responsibilities, HAL interface definitions, key state machines, RTOS decision. Use when asked to \"design firmware architecture\", \"plan embedded firmware\", \"architect an IoT device\", \"how should I structure this firmware\", or given a device description and asked what the firmware should look like.",
+    "description": "Firmware architecture spec for a described device \u2014 layer diagram, module responsibilities, HAL interfaces, state machines, RTOS decision. Use when asked to \"design firmware architecture\", \"plan embedded firmware\", \"architect an IoT device\", or \"how should I structure this firmware\".",
     "path": "team/volt/skills/volt-firmware/SKILL.md"
   },
   {
     "name": "volt-ota",
     "agent": "volt",
     "team": "Engineering",
-    "description": "Produce a complete OTA update system design \u2014 partition layout, update flow, rollback conditions, validation checks, fleet management approach, failure modes and recovery. Use when asked about \"OTA updates\", \"firmware updates over the air\", \"how do I update devices in the field\", \"OTA strategy\", or \"remote firmware update design\".",
+    "description": "Complete OTA update system design \u2014 partition layout, update flow, rollback conditions, validation, fleet management, failure modes. Use when asked about \"OTA updates\", \"firmware updates over the air\", \"how do I update devices in the field\", or \"remote firmware update design\".",
     "path": "team/volt/skills/volt-ota/SKILL.md"
   },
   {

@@ -1,6 +1,6 @@
 ---
 name: ink-seo
-description: SEO audit and keyword strategy — investigate a site's real search opportunities, shortlist candidates, and recommend the one to three changes most likely to grow organic traffic that converts. Evidence-first — metrics come from a tool or are written as unknown. Use when asked to "improve our SEO", "do keyword research", "audit our SEO", "why aren't we ranking", or "what should we fix first for search".
+description: SEO audit and keyword strategy — find real search opportunities and recommend the 1-3 changes most likely to grow converting organic traffic. Evidence-first; unknown metrics stay unknown. Use when asked to "improve our SEO", "do keyword research", "audit our SEO", or "why aren't we ranking".
 allowed-tools: Read, Write, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.2.0
 author: tonone-ai <hello@tonone.ai>

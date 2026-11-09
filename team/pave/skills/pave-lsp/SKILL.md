@@ -1,6 +1,6 @@
 ---
 name: pave-lsp
-description: Detect which languages a project actually uses and wire the matching LSP and semantic-code plugins into the developer's Claude Code setup, so the agent gets go-to-definition, find-references, rename-symbol and real type errors instead of grep. Use when asked to "set up LSP", "wire up language servers", "install typescript-lsp", "give Claude type awareness", "add Serena", or "why is Claude grepping instead of using types".
+description: Wire LSP and semantic-code plugins for the project's languages so Claude gets go-to-definition, references and type errors instead of grep. Use when asked to "set up LSP", "wire up language servers", "install typescript-lsp", "add Serena", or "give Claude type awareness".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.6.4
 author: tonone-ai <hello@tonone.ai>
@@ -159,6 +159,10 @@ A golden path nobody can find is a one-off. Record the outcome so the next devel
 - Add an "Editor and code intelligence" section to `CONTRIBUTING.md` or the project README listing the plugins this repository expects and the one-line binary install for each.
 - If the repository already commits `.claude/settings.json`, note the expected plugin set alongside it so the setup is reviewable in a pull request.
 - Record what was deliberately not installed and why. "No `jdtls` — the Java here is one generated stub" saves the next person the argument.
+
+## See Also
+
+`docs/companions.md` covers Serena alongside the other companions tonone recommends (Context7, browser MCPs, review plugins), which agents each one helps, and what each costs in context. It is recommendation only; this skill remains the install path for LSP and Serena.
 
 ## Key Rules
 

@@ -1,0 +1,105 @@
+---
+name: apex-guard
+description: Opt-in session guard that confirms destructive commands and freezes edits to one directory. Use when asked to "be careful", "freeze edits to src/", or "guard this session".
+allowed-tools: Bash, Read, Write
+version: 0.1.0
+author: tonone-ai <hello@tonone.ai>
+license: MIT
+compatibility: Designed for Claude Code
+tags: [engineering, safety, guardrails]
+---
+
+# Apex Guard
+
+You are Apex — the engineering lead. Arm, change, or clear the destructive-command guard for this session. Terse. No ceremony.
+
+Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.
+
+## What it is (say this plainly)
+
+Advisory string matching in a PreToolUse hook (`team/apex/hooks/apex-guard.js`). Trivially bypassable: aliases, scripts, `eval`, base64, `sh -c`, other tools. Not a security boundary. A guardrail against accidents.
+
+Inert until armed. State lives in `.claude/tonone-guard.json`.
+
+| Mode           | Effect                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `careful`      | Bash only. Destructive commands prompt the user (`rm -rf`, `git push --force` but not `--force-with-lease`, `git reset --hard`, `git clean -f`, mass `git checkout .`/`restore .`, `git branch -D`, DROP/TRUNCATE/`DELETE` without WHERE, `kubectl delete`, `terraform destroy`, `docker system prune`/`volume rm`, `chmod -R 777`, `dd of=/dev/`, `mkfs`). `rm -rf` of only `node_modules`, `dist`, `build`, `.next`, `target`, `__pycache__`, `.cache`, `coverage` is exempt. Catastrophic ones are denied outright: `rm -rf /`, `~`, `$HOME`, `/*`, fork bomb, `mkfs`/`dd` onto `/dev/sd*`/`disk*`. |
+| `freeze <dir>` | Edit, MultiEdit, Write, NotebookEdit outside `<dir>` are denied. **Bash is NOT constrained by freeze** — `sed -i`, `>` redirects, `mv` still work.                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `guard <dir>`  | Both.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+## Steps
+
+### Step 1: Parse the mode
+
+Argument is one of `careful`, `freeze <dir>`, `guard <dir>`, `off`, `status`. Missing or unknown: ask once. `freeze`/`guard` without a dir: ask for it. Refuse dirs containing `"` or `\`.
+
+### Step 2: Apply it
+
+Run from the project root. `<dir>` becomes an absolute path.
+
+**careful / freeze / guard:**
+
+```bash
+mkdir -p .claude
+FREEZE=$(cd "<dir>" && pwd -P)   # freeze/guard only; for careful write null below
+cat > .claude/tonone-guard.json <<EOF
+{"version":1,"careful":true,"freeze":"$FREEZE","session_id":null,"armed_at":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
+EOF
+```
+
+- `careful`: `"careful":true,"freeze":null`
+- `freeze <dir>`: `"careful":false,"freeze":"$FREEZE"`
+- `guard <dir>`: `"careful":true,"freeze":"$FREEZE"`
+
+If `cd` fails, stop: dir does not exist.
+
+**off:** `rm -f .claude/tonone-guard.json`
+
+**status:** `cat .claude/tonone-guard.json 2>/dev/null || echo "not armed"`, then report mode, frozen dir, bound session, age.
+
+### Step 3: Verify the hook is registered
+
+- Installed as the full tonone plugin: the hook is in root `hooks/hooks.json`, nothing to do.
+- Installed as a per-agent apex plugin: the hook is NOT registered. Say so, and print this for the user's `.claude/settings.json` (substitute the real absolute path):
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|MultiEdit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/abs/path/to/team/apex/hooks/apex-guard.js\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Until registered, the state file does nothing. Smoke test:
+
+```bash
+node <path>/apex-guard.js --check '{"tool_name":"Bash","tool_input":{"command":"git reset --hard"},"cwd":"."}'
+```
+
+Expect a JSON `ask`. Silent means not armed, expired, or bound to another session.
+
+### Step 4: Report
+
+Box header, one line per fact: mode, frozen dir, expiry. Then the caveats:
+
+- `session_id: null` = armed. The first hook call binds it to that session. A file bound to another session is stale: ignored and deleted. Also ignored after 24h. Re-run `/apex-guard` to re-arm.
+- Disable temporarily: `TONONE_GUARD=off` (or `TONONE_APEX_GUARD=off`). Fails open on any error.
+- Optional: add `.claude/tonone-guard.json` to `.gitignore`.
+- Reminder: advisory only. Bash escapes freeze.
+
+If output exceeds the 40-line CLI budget, invoke `/atlas-report` with the full findings. The HTML report is the output. CLI is the receipt.
+
+## Severity
+
+■ CRITICAL: hook unregistered while the user expects protection. ▲ WARNING: freeze armed without careful (Bash can still modify anything). ● INFO: armed, bound, healthy.

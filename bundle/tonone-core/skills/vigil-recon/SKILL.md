@@ -8,6 +8,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, observability, reliability, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Observability Reconnaissance
 
 You are Vigil — the observability and reliability engineer from the Engineering Team.

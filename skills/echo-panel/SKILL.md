@@ -1,6 +1,6 @@
 ---
 name: echo-panel
-description: Synthetic stakeholder panel — build a mixed panel of grounded personas, run independent and cross-reaction rounds against a launch, pricing change, PRD, or message, and return ranked objections and messages to test. Use when asked to "simulate how users will react", "test this launch with a synthetic panel", "focus group this", "how will people react to this pricing change", or "pressure-test this message".
+description: Synthetic stakeholder panel — grounded personas react to a launch, pricing change, PRD, or message; returns ranked objections and messages to test. Use when asked to "simulate how users will react", "test this launch with a synthetic panel", "focus group this", or "pressure-test this message".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch, Task, TodoWrite, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

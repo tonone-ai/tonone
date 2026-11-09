@@ -1,6 +1,6 @@
 ---
 name: ink-local
-description: Local SEO audit — assess a location-based business's Google Business Profile against local competitors, check Maps and local-pack visibility for its main queries, and recommend the few fixes that win nearby searches. Use when asked to "improve our local SEO", "why don't we show up on Google Maps", "audit our Google Business Profile", "rank in the local pack", or "local search for [city]".
+description: Local SEO audit — assess Google Business Profile vs. local competitors, check Maps and local-pack visibility, recommend the few fixes that win nearby searches. Use when asked to "improve our local SEO", "why don't we show up on Google Maps", "audit our Google Business Profile", or "rank in the local pack".
 allowed-tools: Read, Write, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

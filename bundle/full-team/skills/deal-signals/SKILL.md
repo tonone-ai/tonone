@@ -1,6 +1,6 @@
 ---
 name: deal-signals
-description: Signal-based prospecting — read target companies' public websites for buying signals (ads running, incumbent agency, tech stack, hiring, stale content, missing booking) with evidence URLs, then build a cohort you can explain. Use when asked to "find buying signals", "profile these companies", "which accounts should we target", "build a target list from these domains", or "what changed at these accounts".
+description: Signal-based prospecting — read target companies' public sites for buying signals (ads, incumbent agency, tech stack, hiring) with evidence URLs, then build a cohort. Use when asked to "find buying signals", "profile these companies", "which accounts should we target", or "build a target list from these domains".
 allowed-tools: Read, Write, Bash, Glob, Grep, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

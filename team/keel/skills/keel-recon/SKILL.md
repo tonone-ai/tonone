@@ -1,6 +1,6 @@
 ---
 name: keel-recon
-description: Operations reconnaissance — audit process documentation, vendor contracts, compliance posture, OKR health, and cross-functional friction points to understand where operations is the bottleneck. Use when asked to "audit our operations", "where are we slow", "what processes are broken", or "before designing a compliance program".
+description: Operations reconnaissance — audit process docs, vendor contracts, compliance posture, OKR health and cross-functional friction to find where operations is the bottleneck. Use when asked to "audit our operations", "where are we slow", "what processes are broken", or before designing a compliance program.
 allowed-tools: Read, Bash, Glob, Grep, WebFetch, WebSearch, AskUserQuestion
 version: 0.1.0
 author: tonone-ai <hello@tonone.ai>

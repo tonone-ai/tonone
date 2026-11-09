@@ -1,0 +1,12 @@
+blockquote {
+  border-left: 1px solid #d9d6cf;
+  padding-left: 16px;
+  color: #5b6275;
+  font-size: 16px;
+}
+.prose blockquote {
+  border-left: 4px solid #2f5bea;
+}
+.nav-item.active {
+  border-left: 3px solid #2f5bea;
+}
