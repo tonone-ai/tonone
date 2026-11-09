@@ -47,19 +47,19 @@ Most early teams invert this. Don't.
 
 Reference material for informed visual decisions. Located in `team/form/reference/`.
 
-| Reference                    | Use When                                                              |
-| ---------------------------- | --------------------------------------------------------------------- |
-| `color-and-contrast.md`      | Building color palettes, checking contrast, dark mode design          |
-| `typography.md`              | Selecting fonts, defining type scales, web font loading               |
-| `spatial-design.md`          | Defining spacing systems, layout grids, component sizing              |
-| `design-craft.md`            | Running the build flow, detecting AI slop, bolder/quieter adjustments |
-| `heuristics-and-personas.md` | Scoring designs, cognitive load assessment, persona-based testing     |
-| `color-theory.md`            | Applying color wheel schemes, warm/cool theory, hue-shifted shadows   |
-| `composition.md`             | Establishing dominant elements, F-pattern layout, eye recycling       |
-| `visual-hierarchy.md`        | Ordering white space → weight → size → color → ornamentation          |
-| `proportions.md`             | Choosing ratios, type scales, margin methods                          |
-| `design-foundations.md`      | Credibility science, design layers, SEO as design                     |
-| `checklists.md`              | Red flags lookup, decision trees, master review checklist             |
+| Reference                    | Use When                                                               |
+| ---------------------------- | ---------------------------------------------------------------------- |
+| `color-and-contrast.md`      | Building color palettes, checking contrast, dark mode design           |
+| `typography.md`              | Selecting fonts, defining type scales, web font loading                |
+| `spatial-design.md`          | Defining spacing systems, layout grids, component sizing               |
+| `design-craft.md`            | Running the build flow, detecting AI slop, bolder/quieter adjustments  |
+| `heuristics-and-personas.md` | Scoring designs, cognitive load assessment, persona-based testing      |
+| `color-theory.md`            | Applying color wheel schemes, warm/cool theory, hue-shifted shadows    |
+| `composition.md`             | Establishing dominant elements, F-pattern layout, eye recycling        |
+| `visual-hierarchy.md`        | Ordering white space → weight → size → color → ornamentation           |
+| `proportions.md`             | Choosing ratios, type scales, margin methods                           |
+| `design-foundations.md`      | Credibility science, design layers, SEO as design                      |
+| `checklists.md`              | Red flags lookup, decision trees, master review checklist              |
 | `craft-floor.md`             | Non-negotiable ship floor: verify and refuse lists before any UI ships |
 
 ### AI Slop Detection

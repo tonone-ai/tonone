@@ -39,11 +39,11 @@ Classify changed files into lenses: **security** (auth, secrets, input handling,
 
 2. **Choose the mode by size.**
 
-| Condition | Mode |
-| --- | --- |
-| LINES < 50 | **Single pass**: you review all lenses yourself, no agents. Fan-out costs more than it finds on a small diff. |
-| LINES >= 50 | **Fan-out** (step 3) |
-| LINES > 200, any CRITICAL after merge, or user passed `--red` | add **red-team pass** (step 5) |
+| Condition                                                     | Mode                                                                                                          |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| LINES < 50                                                    | **Single pass**: you review all lenses yourself, no agents. Fan-out costs more than it finds on a small diff. |
+| LINES >= 50                                                   | **Fan-out** (step 3)                                                                                          |
+| LINES > 200, any CRITICAL after merge, or user passed `--red` | add **red-team pass** (step 5)                                                                                |
 
 3. **Fan-out — one message, parallel Agent calls.** Dispatch every non-skipped lens in a single message: `tonone:warden`, `tonone:spine`, `tonone:flux`, `tonone:proof`. Each prompt contains: `BASE_SHA`, the file list for that lens plus the diff command, the lens, the schema (below), and this NOT-list:
 
@@ -60,13 +60,19 @@ A finding needs `evidence`: quoted code or command output. Not an opinion.
 ```json
 {
   "lens": "security|backend|data|tests|red",
-  "findings": [{
-    "id": "W1", "severity": "CRITICAL|HIGH|MEDIUM|LOW",
-    "title": "...", "file": "path", "line": 42,
-    "evidence": "quoted code or command output (required)",
-    "impact": "concrete failure scenario", "fix": "...",
-    "confidence": "high|medium|low"
-  }],
+  "findings": [
+    {
+      "id": "W1",
+      "severity": "CRITICAL|HIGH|MEDIUM|LOW",
+      "title": "...",
+      "file": "path",
+      "line": 42,
+      "evidence": "quoted code or command output (required)",
+      "impact": "concrete failure scenario",
+      "fix": "...",
+      "confidence": "high|medium|low"
+    }
+  ],
   "checked": ["what was examined"],
   "skipped": ["what was not, and why"]
 }
@@ -89,11 +95,11 @@ Rules it enforces (apply by hand if the helper is unavailable): drop findings wi
 
 **Verdict:**
 
-| Verdict | Rule |
-| --- | --- |
-| **BLOCK** | any undisputed CRITICAL |
+| Verdict       | Rule                                                               |
+| ------------- | ------------------------------------------------------------------ |
+| **BLOCK**     | any undisputed CRITICAL                                            |
 | **FIX-FIRST** | any undisputed HIGH, or a CRITICAL that is disputed and unresolved |
-| **SHIP** | otherwise; list MEDIUM/LOW as caveats |
+| **SHIP**      | otherwise; list MEDIUM/LOW as caveats                              |
 
 Be direct: "do not ship until W1 is fixed" or "ships with these caveats".
 

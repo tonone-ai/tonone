@@ -49,11 +49,11 @@ One question to Form if there's a genuine blocker. Don't request a full review s
 
 Look for Form's `Design dials` block in `DESIGN.md`, `design-direction.md`, or `implementation-handoff.md` (written by /form-brief and /form-direction). Three values, 1-10: `DESIGN_VARIANCE`, `MOTION_INTENSITY`, `VISUAL_DENSITY`. None found: infer from product type and brief, state the values with a one-line reason, proceed. The brief wins over the table below.
 
-| Dial | 1-3 | 4-7 | 8-10 |
-| ---- | --- | --- | ---- |
-| VARIANCE | Symmetric grid, stock components, one pattern per job | Standard grid, one deliberate asymmetric moment per view | Broken grid, overlap, unexpected type scale; keep reading order and focus order intact |
-| MOTION | State feedback only (hover, focus, press), 100-200ms | Plus route/enter transitions, staggered reveals, 200-300ms | Scroll-driven, choreographed sequences; hand to /move-animate with the value |
-| DENSITY | 1 idea per view, large spacing steps, 3-5 components | Standard app rhythm, 6-10 components, mid spacing steps | Tables, small type steps, tight spacing, 10+ components; keep 44px touch targets and row focus rings |
+| Dial     | 1-3                                                   | 4-7                                                        | 8-10                                                                                                 |
+| -------- | ----------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| VARIANCE | Symmetric grid, stock components, one pattern per job | Standard grid, one deliberate asymmetric moment per view   | Broken grid, overlap, unexpected type scale; keep reading order and focus order intact               |
+| MOTION   | State feedback only (hover, focus, press), 100-200ms  | Plus route/enter transitions, staggered reveals, 200-300ms | Scroll-driven, choreographed sequences; hand to /move-animate with the value                         |
+| DENSITY  | 1 idea per view, large spacing steps, 3-5 components  | Standard app rhythm, 6-10 components, mid spacing steps    | Tables, small type steps, tight spacing, 10+ components; keep 44px touch targets and row focus rings |
 
 Motion budget: use CSS transitions on transform/opacity; anything above 4 needs `prefers-reduced-motion` fallbacks tested, at every level. Spacing and type steps come from Form's tokens; density picks which steps, never new values.
 
