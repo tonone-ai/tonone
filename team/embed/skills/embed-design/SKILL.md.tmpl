@@ -29,7 +29,7 @@ Decide how the index stays current — full rebuild, incremental upsert, or a hy
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Match embedding model to domain — don't default to a general-purpose model without checking it fits the content
 - Normalize consistently between indexing and query time — a mismatch here silently breaks retrieval quality
 - State the index refresh latency explicitly — stakeholders need to know how stale results can get

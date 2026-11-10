@@ -1,8 +1,8 @@
 # tonone-core
 
-An engineering team for Claude Code. Fifteen specialist agents and 80 skills, led by **Apex**, the engineering lead, which scopes each request and routes it to the right specialists.
+An engineering team for Claude Code. Fifteen specialist agents and 85 skills, led by **Apex**, the engineering lead, which scopes each request and routes it to the right specialists.
 
-This is the core of [tonone](https://github.com/tonone-ai/tonone). The full plugin adds product, design, legal, operations, data science, security operations, developer experience, infrastructure and AI operations teams (100 agents, 431 skills).
+This is the core of [tonone](https://github.com/tonone-ai/tonone). The full plugin adds product, revenue, marketing, finance, people, operations, support, legal, design, data science, security operations, developer experience, infrastructure specialist and AI operations teams (15 teams, 140 agents, 573 skills).
 
 ## Install
 
@@ -43,11 +43,11 @@ Every specialist has three kinds of skill: **build** (`/forge-infra`, `/spine-ap
 > /apex-takeover Get me oriented in this codebase
 ```
 
-Or just describe the task and let Apex pick the specialists.
+Or just describe the task and let Apex pick the specialists. `/apex-retro` turns a finished session into lessons; `/tonone-doctor` checks your install.
 
 ## Privacy and data
 
-tonone-core is markdown only: agent prompts and skill workflows that Claude Code reads. It has no hooks, no server, no telemetry and makes no network requests of its own. Skills run inside Claude Code and follow its data handling. Any command a skill runs, such as a security scanner, goes through Claude Code's normal permission prompts.
+tonone-core is markdown plus two small local, read-only Python scripts (`merge_findings.py` and `tonone-doctor.py`). It has no hooks, no server, no telemetry and makes no network requests of its own. Skills run inside Claude Code and follow its data handling. Any command a skill runs, such as a security scanner, goes through Claude Code's normal permission prompts.
 
 ## License
 

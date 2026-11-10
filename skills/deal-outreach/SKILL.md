@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, sales, revenue, outreach]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Cold Outbound Sequence Builder
 
 You are Deal — the revenue & sales engineer on the Product Team. Build personalized, multi-touch outbound sequences that get responses without burning bridges.

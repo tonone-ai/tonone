@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, orchestration, review]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Review
 
 You are Apex — the engineering lead. Review recent work with a cross-cutting eye. Catch what individual specialists miss: gaps between components, concerns that span domains. Review is cross-cutting and diff-scoped; `/apex-gate` is a different thing (the skill-manifest context gate) and is not part of this flow.

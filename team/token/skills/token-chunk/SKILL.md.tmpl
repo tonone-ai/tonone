@@ -29,7 +29,7 @@ Size chunks to the retrieval/embedding model's sweet spot, and set overlap large
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Semantic splitting beats fixed-length splitting whenever the content has real structure — don't default to fixed-length out of convenience
 - Chunk size should be justified by the downstream embedding/retrieval model's known behavior, not an arbitrary round number
 - Test chunking against real queries — a chunking strategy that looks fine on paper can still split answers across boundaries

@@ -29,7 +29,7 @@ Pull p50/p95/p99 latency per model and flag any outliers against the product's l
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Report the actual deployed version, not the version in a config file that may not match what's live
 - Flag any model with no autoscaling or no timeout configured as a finding
 - Recon only — don't redesign the serving setup here

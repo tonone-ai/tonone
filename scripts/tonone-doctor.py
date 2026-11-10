@@ -478,7 +478,9 @@ def check_headline_counts(repo):
         for m in re.finditer(r"\b(\d+) (?:agents|specialists)\b", text, re.I):
             if int(m.group(1)) >= 50 and int(m.group(1)) != agents:
                 wrong.append(f"{rel}: '{m.group(0)}' (tree {agents})")
-        for m in re.finditer(r"\b(\d{3}) skills\b", text, re.I):
+        # "(15 agents, 105 skills)" per-team headers are subtotals (same rule
+        # as tests/test_structure.py::test_headline_counts_match_tree).
+        for m in re.finditer(r"(?<!agents, )\b(\d{3}) skills\b", text, re.I):
             if int(m.group(1)) != skills:
                 wrong.append(f"{rel}: '{m.group(0)}' (tree {skills})")
     if not wrong:

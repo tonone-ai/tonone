@@ -29,7 +29,7 @@ Pin the root cause to a specific stage — retrieval, prompt construction, model
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Always reconstruct the exact prompt from the trace — don't debug against what the prompt template 'should' produce
 - Distinguish a model failure from a data/retrieval failure before proposing a fix — they need different owners
 - Cite the specific trace span or field as evidence for the root cause, not just a description of the symptom

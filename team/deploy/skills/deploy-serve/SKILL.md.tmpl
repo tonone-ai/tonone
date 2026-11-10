@@ -29,7 +29,7 @@ Define health checks, timeout behavior, and fallback (queue, reject, or route to
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Size for the traffic profile that exists, not a guess — ask for real numbers if they're not available
 - Every serving design needs an explicit behavior for the overload case, not just the happy path
 - Don't over-provision GPUs without a scaling policy that can actually release them

@@ -29,7 +29,7 @@ For each lever, estimate the cost reduction against the quality or latency cost.
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Never propose a cheaper model for a task without checking it meets the existing quality bar
 - Caching is only safe where responses are deterministic enough to reuse — flag anywhere that assumption is shaky
 - Batch inference only where the product doesn't need synchronous responses

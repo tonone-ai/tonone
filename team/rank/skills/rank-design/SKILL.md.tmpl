@@ -29,7 +29,7 @@ If combining multiple signals (vector similarity, lexical match, recency, busine
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Reranking latency compounds with retrieval latency — check the combined budget, not each in isolation
 - Score fusion weights should be justified by an eval, not picked by feel
 - Cross-encoder rerankers only scale to a limited candidate set — confirm the candidate count fits before recommending one

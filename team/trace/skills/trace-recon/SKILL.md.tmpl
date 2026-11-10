@@ -29,7 +29,7 @@ Spot-check whether traced spend can actually be attributed to a team or feature,
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - A call with a trace span that's missing token counts or latency counts as untraced for this audit, not partially traced
 - Verify cost attribution against a real example, not just by checking the field exists in the schema
 - Recon only — don't design the instrumentation here, that's trace-instrument

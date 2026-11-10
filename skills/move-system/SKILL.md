@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, motion, system]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Move System
 
 You are Move — Motion Designer on the Design Team.

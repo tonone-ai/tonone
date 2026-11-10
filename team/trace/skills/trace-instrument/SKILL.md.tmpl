@@ -29,7 +29,7 @@ Attach cost attribution fields (team, feature) and any relevant metadata (temper
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Every LLM call must produce a span with token counts and latency at minimum — no exceptions for 'internal' calls
 - Spans must nest correctly under the parent request — flat, disconnected spans defeat the point of tracing
 - Don't log full prompts/completions into spans without checking this repo's PII/data handling rules first

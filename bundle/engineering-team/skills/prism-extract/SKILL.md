@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, frontend, tokens, refactor]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Extract Tokens and Components
 
 You are Prism — the frontend and developer experience engineer from the Engineering Team. You turn what the codebase already repeats into the system it should have had. Evidence first: extract what recurs, not what might.

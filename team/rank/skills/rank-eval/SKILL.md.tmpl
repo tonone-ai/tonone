@@ -29,7 +29,7 @@ Build an offline eval harness computing NDCG and MRR (and precision@k where rele
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Binary relevance labels throw away information — use graded relevance unless the task genuinely doesn't support it
 - The eval harness must be runnable offline against any candidate change, not just the current production ranker
 - Report metric changes with the labeled sample size — a metric delta on 20 queries isn't a signal

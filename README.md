@@ -13,7 +13,7 @@ claude plugin install tonone@tonone-ai
 
 <p align="center"><img src="assets/demo-apex-plan.svg" alt="Apex, the engineering lead, answering /apex-plan for user authentication with S, M, L and XL options, each listing the specialists involved, the token budget and the cost" width="640"></p>
 
-<p align="center"><sub>Real <code>/apex-plan</code> output. Engineering, product, operations, legal, design, data science, security operations, developer experience, infrastructure and AI operations each have their own team.</sub></p>
+<p align="center"><sub>Real <code>/apex-plan</code> output. Engineering, product, revenue, marketing, finance, people, operations, support, legal, design, data science, security operations, developer experience, infrastructure and AI operations each have their own team.</sub></p>
 
 ## The idea
 
@@ -21,7 +21,7 @@ A solo founder used to have one choice: stay small, or hire. Now there's a third
 
 Tonone is an open-source AI team you install into Claude Code. Not a generalist assistant — specialists. Each agent owns one domain deeply: infrastructure, security, user research, product strategy, growth, legal, brand, ML, IAM, API design. They share context, hand off cleanly, and produce work you can ship.
 
-The engineering team (15 agents) builds and ships. The product team (12 agents) decides what to build and why. The operations team (4 agents) keeps the company running. The legal team (10 agents) de-risks every move. The design team (10 agents) makes it beautiful and accessible. The data science team (10 agents) turns data into decisions. The security operations team (10 agents) keeps everything safe. The developer experience team (10 agents) ensures external developers succeed. The infrastructure specialist team (10 agents) runs the cloud in depth. The AI operations team (9 agents) ships models to production. Together, one founder can run what used to take a company.
+The engineering team (15 agents) builds and ships. The product team (8 agents) decides what to build and why. The revenue team (8 agents) sells and retains. The marketing team (8 agents) brings in demand. The finance team (8 agents) keeps the books and the runway. The people team (8 agents) hires and grows the team. The operations team (8 agents) keeps the company running. The support team (8 agents) looks after customers. The legal team (10 agents) de-risks every move. The design team (10 agents) makes it beautiful and accessible. The data science team (10 agents) turns data into decisions. The security operations team (10 agents) keeps everything safe. The developer experience team (10 agents) ensures external developers succeed. The infrastructure specialist team (10 agents) runs the cloud in depth. The AI operations team (9 agents) ships models to production. Together, one founder can run what used to take a company.
 
 ## Install
 
@@ -190,31 +190,96 @@ Phase 3 — Takeover report:
 | **Proof**  | QA & Testing                | Test strategy, E2E suites, integration testing, flaky triage  |
 | **Pave**   | Platform Engineering        | Developer experience, golden paths, service catalogs          |
 
-### Product — 12 agents
+### Product — 8 agents
 
-| Agent     | Hat               | What They Do                                                                 |
-| --------- | ----------------- | ---------------------------------------------------------------------------- |
-| **Helm**  | Head of Product   | Orchestrates the product team, writes briefs, hands off to Apex              |
-| **Echo**  | User Research     | User interviews, personas, Jobs-to-Be-Done, feedback synthesis               |
-| **Lumen** | Product Analytics | Metrics frameworks, funnel analysis, OKRs, A/B test design                   |
-| **Draft** | UX Design         | User flows, information architecture, wireframes                             |
-| **Form**  | Visual Design     | Brand identity, color systems, typography, design system                     |
-| **Crest** | Product Strategy  | Roadmap planning, prioritization, competitive analysis                       |
-| **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy                         |
-| **Surge** | Growth            | Acquisition channels, activation funnels, retention playbooks                |
-| **Deal**  | Revenue & Sales   | B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing    |
-| **Keep**  | Customer Success  | Onboarding optimization, health scoring, expansion revenue, churn prevention |
-| **Ink**   | Content Marketing | Blog strategy, SEO, thought leadership, developer content, content calendar  |
-| **Buzz**  | PR & Community    | Press pitches, social media, open source community, DevRel, launch moments   |
+| Agent     | Hat               | What They Do                                                    |
+| --------- | ----------------- | --------------------------------------------------------------- |
+| **Helm**  | Head of Product   | Orchestrates the product team, writes briefs, hands off to Apex |
+| **Echo**  | User Research     | User interviews, personas, Jobs-to-Be-Done, feedback synthesis  |
+| **Lumen** | Product Analytics | Metrics frameworks, funnel analysis, OKRs, A/B test design      |
+| **Draft** | UX Design         | User flows, information architecture, wireframes                |
+| **Form**  | Visual Design     | Brand identity, color systems, typography, design system        |
+| **Crest** | Product Strategy  | Roadmap planning, prioritization, competitive analysis          |
+| **Pitch** | Product Marketing | Positioning, messaging, value prop, GTM, launch copy            |
+| **Surge** | Growth            | Acquisition channels, activation funnels, retention playbooks   |
 
-### Operations — 4 agents
+### Revenue — 8 agents
 
-| Agent     | Hat        | What They Do                                                                                     |
-| --------- | ---------- | ------------------------------------------------------------------------------------------------ |
-| **Mint**  | Finance    | P&L, runway, unit economics, fundraising, board reporting, cap table                             |
-| **Folk**  | People     | Org design, hiring pipelines, comp frameworks, onboarding, performance, human-to-agent migration |
-| **Keel**  | Operations | Process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution              |
-| **Brace** | Support    | Ticket workflow, SLA design, knowledge base, escalation paths, support operations                |
+| Agent      | Hat                              | What They Do                                                                                                 |
+| ---------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Deal**   | Revenue & Sales                  | B2B pipeline, deal strategy, pricing, sales playbooks, enterprise closing                                    |
+| **Keep**   | Customer Success                 | Onboarding optimization, health scoring, expansion revenue, churn prevention                                 |
+| **Rev**    | Chief Revenue Officer            | Revenue strategy, GTM org design, quota and capacity planning, board revenue narrative, team orchestration   |
+| **Quota**  | Revenue Operations               | Forecasting, pipeline hygiene, CRM architecture, territory and quota design, sales-to-finance reconciliation |
+| **Scout**  | Sales Development Representative | ICP and persona definition, prospect lists, outbound sequences, lead qualification, SDR-to-AE handoff        |
+| **Demo**   | Solutions Engineer               | Technical discovery, demo design, POCs and pilots, security questionnaires, RFP technical responses          |
+| **Coach**  | Sales Enablement                 | Onboarding ramps, call coaching, battlecards, talk tracks, win/loss analysis, sales training                 |
+| **Bridge** | Partnerships & Channel           | Partner program design, reseller/referral/alliance deals, co-sell motions, marketplace listings              |
+
+### Marketing — 8 agents
+
+| Agent      | Hat                                       | What They Do                                                                                             |
+| ---------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Ink**    | Content Marketing                         | Blog strategy, SEO, thought leadership, developer content, content calendar                              |
+| **Buzz**   | PR & Community                            | Press pitches, social media, open source community, DevRel, launch moments                               |
+| **Vox**    | Chief Marketing Officer                   | Marketing strategy, budget allocation, brand-vs-demand balance, marketing org design, team orchestration |
+| **Reach**  | Demand Generation & Paid Acquisition Lead | Paid search, paid social, ABM, CAC and payback modeling, budget pacing, creative testing                 |
+| **Drip**   | Lifecycle & Email Marketing Lead          | Nurture programs, onboarding and lifecycle flows, deliverability, segmentation, win-back                 |
+| **Stage**  | Events & Field Marketing Lead             | Conferences, webinars, roadshows, event ROI, speaker programs, sponsorship selection                     |
+| **Attrib** | Marketing Analytics & Attribution Lead    | Multi-touch and MMM attribution, channel ROI, campaign reporting, incrementality tests                   |
+| **Stack**  | Marketing Operations Lead                 | Martech stack, lead routing and scoring, CRM-automation integration, data hygiene, UTM governance        |
+
+### Finance — 8 agents
+
+| Agent      | Hat                                 | What They Do                                                                                                |
+| ---------- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Mint**   | Finance                             | P&L, runway, unit economics, fundraising, board reporting, cap table                                        |
+| **Ledger** | Controller                          | General ledger, month-end close, revenue recognition (ASC 606), reconciliations, accruals, audit readiness  |
+| **Tally**  | FP&A Lead                           | Annual operating plan, driver-based forecast, variance analysis, headcount plan, scenario models            |
+| **Levy**   | Tax Lead                            | Entity and nexus strategy, sales tax/VAT, R&D credits, transfer pricing basics, tax calendar, provisions    |
+| **Remit**  | AP & Procure-to-Pay Lead            | Vendor onboarding, three-way match, payment runs, approval matrices, duplicate and fraud controls, AP aging |
+| **Bill**   | Billing, AR & Collections Lead      | Invoicing, dunning, DSO and aging, credit policy, subscription billing ops, cash application                |
+| **Vault**  | Treasurer                           | Cash positioning, bank structure, FX exposure, investment policy, debt facilities, liquidity forecasting    |
+| **Spend**  | Spend Management & Procurement Lead | Purchasing policy, contract renewals, vendor consolidation, approval workflows, SaaS and T&E spend control  |
+
+### People — 8 agents
+
+| Agent     | Hat                                      | What They Do                                                                                              |
+| --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Folk**  | People                                   | Org design, hiring pipelines, comp frameworks, onboarding, performance, human-to-agent migration          |
+| **Hire**  | Talent Acquisition Lead                  | Sourcing, structured interviews, scorecards, offer and close, pipeline metrics, employer brand            |
+| **Wage**  | Compensation & Total Rewards Lead        | Pay bands, market benchmarking, equity refresh, pay equity audits, offer approvals, comp cycles           |
+| **Grow**  | Learning & Development Lead              | Skills matrices, career ladders, leadership programs, manager training, internal mobility                 |
+| **Pulse** | People Analytics Lead                    | Attrition modeling, engagement surveys, eNPS, headcount reporting, workforce planning data                |
+| **Bond**  | Employee Relations & HR Business Partner | Investigations, conflict resolution, PIPs, policy interpretation, manager coaching, terminations          |
+| **Perk**  | Benefits, Payroll & HR Operations Lead   | Benefits design and renewal, payroll accuracy, leave administration, HRIS hygiene, HR compliance calendar |
+| **Visa**  | Global Mobility & Remote Hiring Lead     | Immigration and visas, EOR vs entity decisions, international payroll, relocation, remote-work tax risk   |
+
+### Operations — 8 agents
+
+| Agent     | Hat                                            | What They Do                                                                                                  |
+| --------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **Keel**  | Operations                                     | Process design, vendor management, legal ops, compliance (SOC2/GDPR), OKR execution                           |
+| **Staff** | Chief of Staff                                 | Executive agenda, decision logs, cross-functional initiatives, board prep, meeting systems                    |
+| **Gauge** | Business Operations & Strategy Ops Lead        | Operating metrics, planning cycles, QBR/MBR machinery, strategic project analysis, org-wide dashboards        |
+| **Pilot** | Program & Project Manager                      | Program charters, dependency maps, RAID logs, milestone tracking, launch coordination, delivery risk          |
+| **Hedge** | Enterprise Risk & Business Continuity Lead     | Risk register, BCP/DR planning, vendor concentration risk, insurance, crisis playbooks                        |
+| **Kit**   | IT & Internal Systems Lead                     | Device/SSO/SaaS provisioning, access reviews, onboarding/offboarding automation, SaaS inventory, helpdesk     |
+| **Dock**  | Workplace & Facilities Lead                    | Workplace policy, space planning, equipment logistics, events logistics, safety compliance                    |
+| **Flow**  | Process Automation & Internal Tooling Ops Lead | Workflow automation (Zapier/n8n/scripts), no-code ops tools, automation ROI, runbook-to-automation conversion |
+
+### Support — 8 agents
+
+| Agent      | Hat                             | What They Do                                                                                              |
+| ---------- | ------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| **Brace**  | Support                         | Ticket workflow, SLA design, knowledge base, escalation paths, support operations                         |
+| **Swat**   | Tier-2/3 Support Engineer       | Bug reproduction, log/trace diagnosis, engineering escalation packets, workarounds, bug-to-fix loop       |
+| **Wiki**   | Knowledge Manager               | KB content lifecycle, freshness audits, search tuning, deflection tracking, content gaps                  |
+| **Voice**  | Voice of Customer & CX Insights | Ticket tagging taxonomy, CSAT/NPS/CES analysis, theme mining, product feedback reporting                  |
+| **Mirror** | Support Quality & Coaching      | QA scorecards, review sampling, calibration, coaching plans, tone and accuracy standards                  |
+| **Shift**  | Workforce Management            | Volume forecasting, staffing models, scheduling, capacity planning, occupancy, shrinkage, BPO             |
+| **Beacon** | Incident Communications Lead    | Status page, incident comms templates, outage notifications, comms cadence, post-incident updates         |
+| **Reply**  | Customer Communication & Macros | Response templates, macros, tone guides, de-escalation scripts, multilingual replies, AI draft guardrails |
 
 ### Legal — 10 agents
 
@@ -335,6 +400,8 @@ Every engineering agent detects your stack automatically:
 - **ML:** PyTorch, scikit-learn, Vertex AI, SageMaker, OpenAI, Anthropic
 
 ## All 573 Skills
+
+Machine-readable list: [`docs/skill-index.json`](docs/skill-index.json) (name, agent, team, description for every skill).
 
 <details>
 <summary>Click to expand full skill list</summary>
@@ -491,7 +558,7 @@ Every engineering agent detects your stack automatically:
 - `/pave-lsp` — Wire LSP and semantic-code plugins for the project's languages
 - `/pave-recon` — Platform reconnaissance
 
-#### Product Team (12 agents, 103 skills)
+#### Product Team (8 agents, 68 skills)
 
 **Helm** (Head of Product)
 
@@ -585,6 +652,8 @@ Every engineering agent detects your stack automatically:
 - `/surge-recon` — Growth state reconnaissance
 - `/surge-retention` — Retention diagnosis + intervention plan
 
+#### Revenue Team (8 agents, 35 skills)
+
 **Deal** (Revenue & Sales)
 
 - `/deal-close` — Close a specific deal
@@ -607,6 +676,44 @@ Every engineering agent detects your stack automatically:
 - `/keep-qbr` — Quarterly Business Review template generator
 - `/keep-recon` — Customer success reconnaissance
 - `/keep-segment` — Customer segmentation model builder
+
+**Rev** (Chief Revenue Officer)
+
+- `/rev-board` — Write the board revenue narrative
+- `/rev-capacity` — Build the bookings capacity model
+- `/rev-recon` — Read-only audit of the revenue engine
+
+**Quota** (Revenue Operations)
+
+- `/quota-forecast` — Build the forecast with stage weights and accuracy tracking
+- `/quota-recon` — Read-only audit of the CRM and forecast process
+- `/quota-territory` — Design territories and quotas
+
+**Scout** (Sales Development Representative)
+
+- `/scout-list` — Build the target list
+- `/scout-recon` — Read-only audit of the outbound engine
+- `/scout-sequence` — Write the outbound sequence
+
+**Demo** (Solutions Engineer)
+
+- `/demo-poc` — Run a POC or pilot
+- `/demo-recon` — Read-only audit of SE readiness
+- `/demo-script` — Design a discovery-driven demo
+
+**Coach** (Sales Enablement)
+
+- `/coach-battlecard` — Build battlecards and talk tracks from win/loss evidence
+- `/coach-ramp` — Design the onboarding ramp
+- `/coach-recon` — Read-only audit of enablement
+
+**Bridge** (Partnerships & Channel)
+
+- `/bridge-cosell` — Plan co-sell and marketplace motions
+- `/bridge-program` — Design the partner program
+- `/bridge-recon` — Read-only audit of partnerships
+
+#### Marketing Team (8 agents, 36 skills)
 
 **Ink** (Content Marketing)
 
@@ -632,7 +739,43 @@ Every engineering agent detects your stack automatically:
 - `/buzz-recon` — PR and community reconnaissance
 - `/buzz-social` — Social media strategy and post drafting
 
-#### Operations Team (4 agents, 32 skills)
+**Vox** (Chief Marketing Officer)
+
+- `/vox-allocate` — Build or rebalance the marketing budget
+- `/vox-org` — Design the marketing team structure and hiring order
+- `/vox-recon` — Read-only audit of the current marketing function
+
+**Reach** (Demand Generation & Paid Acquisition Lead)
+
+- `/reach-creative` — Design paid creative testing programs
+- `/reach-model` — Build CAC, payback and channel budget models
+- `/reach-recon` — Read-only audit of paid acquisition and demand gen
+
+**Drip** (Lifecycle & Email Marketing Lead)
+
+- `/drip-flow` — Design lifecycle and nurture flows
+- `/drip-inbox` — Diagnose and fix email deliverability
+- `/drip-recon` — Read-only audit of email and lifecycle programs
+
+**Stage** (Events & Field Marketing Lead)
+
+- `/stage-pick` — Evaluate and select conferences and sponsorships
+- `/stage-recon` — Read-only audit of the events and field marketing portfolio
+- `/stage-run` — Plan and execute an event or webinar end-to-end
+
+**Attrib** (Marketing Analytics & Attribution Lead)
+
+- `/attrib-model` — Build multi-touch attribution and channel ROI models
+- `/attrib-recon` — Read-only audit of marketing measurement
+- `/attrib-test` — Design incrementality tests: geo, holdout, lift
+
+**Stack** (Marketing Operations Lead)
+
+- `/stack-clean` — Plan CRM data hygiene and UTM governance
+- `/stack-recon` — Read-only audit of the martech stack
+- `/stack-route` — Design lead scoring, routing rules and lifecycle stages
+
+#### Finance Team (8 agents, 29 skills)
 
 **Mint** (Finance)
 
@@ -645,6 +788,50 @@ Every engineering agent detects your stack automatically:
 - `/mint-runway` — Calculate and extend runway
 - `/mint-unit` — Audit and improve unit economics
 
+**Ledger** (Controller)
+
+- `/ledger-close` — Design and run the month-end close
+- `/ledger-recon` — Read-only audit of the current accounting state
+- `/ledger-revrec` — Apply ASC 606 to a revenue stream
+
+**Tally** (FP&A Lead)
+
+- `/tally-plan` — Build the annual operating plan
+- `/tally-recon` — Read-only audit of planning and forecasting
+- `/tally-variance` — Budget-vs-actual variance analysis and reforecast
+
+**Levy** (Tax Lead)
+
+- `/levy-credits` — R&D tax credit and incentive capture
+- `/levy-nexus` — Nexus and indirect tax build
+- `/levy-recon` — Read-only audit of tax posture
+
+**Remit** (AP & Procure-to-Pay Lead)
+
+- `/remit-onboard` — Design vendor onboarding and master data controls
+- `/remit-payrun` — Prepare and control a payment run
+- `/remit-recon` — Read-only audit of the AP and procure-to-pay process
+
+**Bill** (Billing, AR & Collections Lead)
+
+- `/bill-credit` — Set credit policy and payment terms by tier
+- `/bill-dunning` — Design the dunning and collections playbook
+- `/bill-recon` — Read-only audit of billing and receivables
+
+**Vault** (Treasurer)
+
+- `/vault-forecast` — Build the 13-week cash forecast and liquidity plan
+- `/vault-policy` — Write the treasury policy
+- `/vault-recon` — Read-only audit of treasury
+
+**Spend** (Spend Management & Procurement Lead)
+
+- `/spend-policy` — Write the purchasing, card, and T&E policy
+- `/spend-recon` — Read-only audit of company spend
+- `/spend-renewals` — Run contract renewals and negotiation
+
+#### People Team (8 agents, 29 skills)
+
 **Folk** (People)
 
 - `/folk-comp` — Design compensation framework - salary bands, equity philosophy, offer templates, and total comp benchmarking
@@ -655,6 +842,50 @@ Every engineering agent detects your stack automatically:
 - `/folk-org` — Design or review org structure - spans of control, reporting lines, role clarity, headcount plan, and team topology
 - `/folk-perf` — Design performance management system - review cycles, calibration process, career ladder, and PIP framework
 - `/folk-recon` — People reconnaissance - audit org design, hiring pipeline, comp structure, onboarding, and performance systems to understand what is working and where the constraint is
+
+**Hire** (Talent Acquisition Lead)
+
+- `/hire-close` — Plan offer, negotiation, and close for a candidate
+- `/hire-recon` — Read-only audit of the recruiting funnel and scorecards
+- `/hire-scorecard` — Design role scorecards and structured interview loops
+
+**Wage** (Compensation & Total Rewards Lead)
+
+- `/wage-bands` — Design or refresh pay bands, levels, and benchmarks
+- `/wage-equity` — Run pay equity audits and design equity refresh
+- `/wage-recon` — Read-only audit of compensation bands and exceptions
+
+**Grow** (Learning & Development Lead)
+
+- `/grow-ladder` — Design career ladders, skills matrices, and promotion criteria
+- `/grow-manager` — Design first-time manager training and coaching rhythms
+- `/grow-recon` — Read-only audit of learning programs and career ladders
+
+**Pulse** (People Analytics Lead)
+
+- `/pulse-attrition` — Analyze and model employee attrition, regretted loss, and flight risk
+- `/pulse-recon` — Read-only audit of people metrics and survey history
+- `/pulse-survey` — Design engagement surveys and eNPS pulses
+
+**Bond** (Employee Relations & HR Business Partner)
+
+- `/bond-investigate` — Plan and run a workplace investigation
+- `/bond-pip` — Build a performance improvement plan or termination process
+- `/bond-recon` — Read-only audit of employee relations cases and policies
+
+**Perk** (Benefits, Payroll & HR Operations Lead)
+
+- `/perk-benefits` — Design a benefits package or run a benefits renewal
+- `/perk-payroll` — Design payroll controls, leave administration and HRIS hygiene
+- `/perk-recon` — Read-only audit of payroll, benefits, leave and HR compliance
+
+**Visa** (Global Mobility & Remote Hiring Lead)
+
+- `/visa-expand` — Choose the employment vehicle for a new country
+- `/visa-recon` — Read-only audit of where employees and contractors work
+- `/visa-relocate` — Plan visa sponsorship, relocation, and cross-border remote work for an employee
+
+#### Operations Team (8 agents, 29 skills)
 
 **Keel** (Operations)
 
@@ -667,6 +898,50 @@ Every engineering agent detects your stack automatically:
 - `/keel-recon` — Operations reconnaissance
 - `/keel-vendor` — Manage vendor relationships
 
+**Staff** (Chief of Staff)
+
+- `/staff-brief` — Prepare a board or leadership packet
+- `/staff-decide` — Build a decision log and decision-rights map
+- `/staff-recon` — Read-only audit of executive operating rhythm
+
+**Gauge** (Business Operations & Strategy Ops Lead)
+
+- `/gauge-plan` — Design the annual and quarterly planning cycle
+- `/gauge-recon` — Read-only audit of the operating system
+- `/gauge-review` — Build the MBR/QBR machine
+
+**Pilot** (Program & Project Manager)
+
+- `/pilot-charter` — Write a program charter
+- `/pilot-launch` — Run launch coordination with readiness gates and go/no-go
+- `/pilot-recon` — Read-only audit of delivery health
+
+**Hedge** (Enterprise Risk & Business Continuity Lead)
+
+- `/hedge-crisis` — Build crisis playbooks with severity ladder and roles
+- `/hedge-plan` — Write a business continuity plan
+- `/hedge-recon` — Read-only audit of risk posture
+
+**Kit** (IT & Internal Systems Lead)
+
+- `/kit-access` — Run an access review
+- `/kit-lifecycle` — Design joiner-mover-leaver automation
+- `/kit-recon` — Read-only audit of corporate IT
+
+**Dock** (Workplace & Facilities Lead)
+
+- `/dock-event` — Run event logistics: budget, venue, run-of-show, safety
+- `/dock-recon` — Read-only audit of workplace
+- `/dock-space` — Plan space: attendance model, seat ratio, layout
+
+**Flow** (Process Automation & Internal Tooling Ops Lead)
+
+- `/flow-build` — Build an automation spec and implementation
+- `/flow-recon` — Read-only audit of manual work and existing automations
+- `/flow-runbook` — Convert a runbook into automation
+
+#### Support Team (8 agents, 29 skills)
+
 **Brace** (Support)
 
 - `/brace-escalate` — Design escalation path -- Tier 1 to Tier 2 to Engineering handoff, decision criteria, and communication templates
@@ -677,6 +952,48 @@ Every engineering agent detects your stack automatically:
 - `/brace-recon` — Support operations reconnaissance -- audit current ticket volume, SLA compliance, knowledge base coverage, escalation paths, and CSAT to understand where support is the constraint
 - `/brace-sla` — Design SLA framework -- response time targets, resolution time targets, tier definitions, and breach escalation process
 - `/brace-triage` — Design ticket triage system -- routing rules, priority tags, queue structure, and first-response automation
+
+**Swat** (Tier-2/3 Support Engineer)
+
+- `/swat-packet` — Build the engineering escalation packet
+- `/swat-recon` — Audit the Tier-2/3 support engineering operation
+- `/swat-repro` — Reproduce a reported bug
+
+**Wiki** (Knowledge Manager)
+
+- `/wiki-audit` — Score KB articles for quality and freshness
+- `/wiki-gaps` — Mine ticket and search data for KB content gaps
+- `/wiki-recon` — Audit the knowledge base operation
+
+**Voice** (Voice of Customer & CX Insights)
+
+- `/voice-recon` — Audit the voice-of-customer system
+- `/voice-report` — Produce the voice-of-customer report
+- `/voice-taxonomy` — Design the ticket tagging taxonomy
+
+**Mirror** (Support Quality & Coaching)
+
+- `/mirror-coach` — Build agent coaching plans from QA review data
+- `/mirror-recon` — Audit the support quality program
+- `/mirror-scorecard` — Design the support QA scorecard and ticket review sampling plan
+
+**Shift** (Workforce Management)
+
+- `/shift-forecast` — Forecast support contact volume by channel and interval
+- `/shift-recon` — Audit the support workforce position
+- `/shift-staff` — Build the support staffing and schedule model
+
+**Beacon** (Incident Communications Lead)
+
+- `/beacon-comms` — Build the incident communications plan
+- `/beacon-recon` — Audit incident communications readiness
+- `/beacon-status` — Write status page updates and post-incident customer update
+
+**Reply** (Customer Communication & Macros)
+
+- `/reply-assist` — Define AI draft-assist rules and guardrails for support replies
+- `/reply-macros` — Build the support macro library and tone guide
+- `/reply-recon` — Audit support reply quality
 
 #### Legal Team (10 agents, 30 skills)
 
@@ -1119,8 +1436,13 @@ Every engineering agent detects your stack automatically:
 | Phase                                     | Status | What it covers                                      |
 | ----------------------------------------- | ------ | --------------------------------------------------- |
 | **Engineering** (15 agents)               | Done   | Build, ship, operate                                |
-| **Product** (12 agents)                   | Done   | Research, strategy, design, growth                  |
-| **Operations** (4 agents)                 | Done   | Finance, people, ops, support                       |
+| **Product** (8 agents)                    | Done   | Research, strategy, design, growth                  |
+| **Revenue** (8 agents)                    | Done   | Sales, customer success, RevOps, partnerships       |
+| **Marketing** (8 agents)                  | Done   | Content, paid, lifecycle, events, attribution       |
+| **Finance** (8 agents)                    | Done   | Accounting, FP&A, tax, AP/AR, treasury              |
+| **People** (8 agents)                     | Done   | Hiring, comp, L&D, employee relations, mobility     |
+| **Operations** (8 agents)                 | Done   | Chief of staff, risk, IT, facilities, automation    |
+| **Support** (8 agents)                    | Done   | Tier-2/3, knowledge, QA, workforce, incident comms  |
 | **Legal** (10 agents)                     | Done   | Contracts, compliance, governance, IP, filings      |
 | **Design** (10 agents)                    | Done   | Color, layout, typography, motion, accessibility    |
 | **Data Science** (10 agents)              | Done   | Forecasting, feature engineering, evaluation, drift |

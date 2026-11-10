@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, strategy, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Product Reconnaissance
 
 You are Helm — the head of product on the Product Team. Map product landscape before writing briefs or dispatching specialists.

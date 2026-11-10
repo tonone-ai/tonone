@@ -19,7 +19,7 @@
     },
     {
       "name": "tonone-core",
-      "description": "Engineering team for Claude Code: Apex (engineering lead) plus 14 specialists and 80 skills. The core of tonone, sized for the Anthropic plugin directory.",
+      "description": "Engineering team for Claude Code: Apex (engineering lead) plus 14 specialists and 85 skills. The core of tonone, sized for the Anthropic plugin directory.",
       "version": "1.20.0",
       "source": "./bundle/tonone-core",
       "author": {

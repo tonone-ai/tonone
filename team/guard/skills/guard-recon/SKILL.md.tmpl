@@ -29,7 +29,7 @@ Measure the latency each guardrail call adds, and review any past incidents wher
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Map coverage against the actual request path, including tool calls and retrieved content — not just the initial user prompt
 - Report guardrail latency as its own line item — it's often invisible until it's the bottleneck
 - Recon only — don't propose new guardrails here, that's guard-design

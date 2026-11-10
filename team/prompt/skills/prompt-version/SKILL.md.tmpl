@@ -29,7 +29,7 @@ Specify how each new version is checked against the existing eval suite before p
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Every prompt version needs a rollback path that doesn't require a code deploy
 - No version ships to 100% traffic without a regression check against the eval suite
 - Version identifiers must be traceable from a live response back to the exact prompt text used

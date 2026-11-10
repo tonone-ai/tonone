@@ -78,3 +78,16 @@ def test_sections_dir_not_a_skill():
 
 def test_tmpl_not_mirrored():
     assert not list((REPO / "skills").rglob("*.tmpl"))
+
+
+def test_output_kit_bullet_section_renders():
+    sec = REPO / "skills" / "_sections" / "output-kit-bullet.md"
+    assert (
+        sec.read_text() == "- Follow the output format defined in docs/output-kit.md\n"
+    )
+    out, errs = gen.render(
+        FM + "\n## Rules\n{{> output-kit-bullet}}\n", REPO / "skills" / "_sections"
+    )
+    assert not errs
+    assert "\n- Follow the output format defined in docs/output-kit.md\n" in out
+    assert "{{>" not in out

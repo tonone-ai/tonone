@@ -29,7 +29,7 @@ Measure how often requests hit truncation, and whether actual usage matches any 
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Report average AND p95/p99 context size — averages hide the requests actually at risk of truncation
 - Truncation frequency above zero is a finding worth surfacing even if rare — silent truncation degrades quality invisibly
 - Recon only — don't redesign the budget here, that's token-budget

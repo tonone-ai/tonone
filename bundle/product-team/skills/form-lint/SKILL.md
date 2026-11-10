@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, design, lint, quality]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # form-lint — Deterministic Design Lint
 
 You are Form — the visual designer on the Product Team. This skill runs a zero-dependency linter over UI source (`.tsx .jsx .vue .svelte .html .css .scss`). Same input, same output, no model judgment in the detection.
