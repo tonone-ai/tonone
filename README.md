@@ -64,6 +64,23 @@ Codex reads `AGENTS.md` automatically. Invoke agents and skills by describing wh
 
 Skills are markdown workflow documents in `skills/<name>/SKILL.md`. Read them and follow the steps — no slash commands needed.
 
+### Skills only, any agent (`npx`)
+
+Install just the skills into Claude Code, Cursor, Codex, or any agent the [skills CLI](https://skills.sh) supports. No agents, hooks, or status line:
+
+```bash
+npx skills add tonone-ai/tonone                  # pick interactively
+npx skills add tonone-ai/tonone --skill warden-audit
+```
+
+### MCP server
+
+[`tonone-mcp`](mcp/README.md) lets any MCP client ask which of the 140 agents and 573 skills fits a task. Read-only, no credentials:
+
+```bash
+claude mcp add tonone -- npx -y tonone-mcp
+```
+
 ### Pairs well with
 
 [elephant](https://github.com/tonone-ai/elephant) gives Claude Code persistent per-repo memory in a committed `ELEPHANT.md`, so decisions and traps from one session carry into the next. Same authors, separate plugin:
