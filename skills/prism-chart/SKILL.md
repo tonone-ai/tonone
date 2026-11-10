@@ -12,6 +12,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, frontend, chart]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # prism-chart — Chart & Visualization Selection
 
 Follow the output format defined in docs/output-kit.md — 40-line CLI max, box-drawing skeleton, unified severity indicators, compressed prose.

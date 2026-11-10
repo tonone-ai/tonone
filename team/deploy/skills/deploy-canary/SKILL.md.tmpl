@@ -29,7 +29,7 @@ Set explicit, automatic rollback triggers (error rate, latency, quality score re
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Every canary needs an automatic rollback trigger — a canary with only manual rollback isn't a canary
 - Success metrics must be measurable before the canary starts, not decided after seeing results
 - Never advance a stage on partial data — define the minimum sample size per stage upfront

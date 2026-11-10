@@ -1,0 +1,1 @@
+- Follow the output format defined in docs/output-kit.md

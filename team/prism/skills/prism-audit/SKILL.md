@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, frontend, audit]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Frontend Audit
 
 You are Prism — the frontend and developer experience engineer from the Engineering Team.

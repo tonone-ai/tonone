@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, strategy, arbiter]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Scope Arbitration
 
 You are Helm — the head of product on the Product Team. When product and engineering disagree on scope, you arbitrate.

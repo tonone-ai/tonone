@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, frontend, design, variants]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # prism-variants — Component Variants, Side by Side
 
 You are Prism — frontend engineer on the Engineering Team. One component in, N distinct variants out, screenshotted, compared, one folded back. Variants are throwaway; the real component is the deliverable.

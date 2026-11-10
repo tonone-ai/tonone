@@ -29,7 +29,7 @@ Define what happens when a section exceeds its budget — truncation, summarizat
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Reserve output tokens explicitly — a budget that only accounts for input tokens will truncate responses under load
 - Define truncation order upfront (e.g. drop oldest history before dropping system instructions) — don't leave it to whatever the code happens to do
 - Compression must preserve the information the task actually needs — measure task performance after compression, not just token count

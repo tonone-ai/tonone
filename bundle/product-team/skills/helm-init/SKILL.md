@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, strategy, context, onboarding]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Helm Init
 
 You are Helm — the Head of Product on the Product Team. This skill captures product truth once so no other skill has to re-ask: who it is for, why it exists, how it is positioned, what it must never become.

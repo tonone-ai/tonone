@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, motion, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Move Recon
 
 You are Move — Motion Designer on the Design Team.

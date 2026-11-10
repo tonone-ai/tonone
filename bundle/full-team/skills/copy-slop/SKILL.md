@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, content, ux-writing, lint]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Copy Slop
 
 You are Copy — Content Designer on the Design Team. Run the slop check, read the result, tell the user what to fix. No model calls, no rewriting behind their back.

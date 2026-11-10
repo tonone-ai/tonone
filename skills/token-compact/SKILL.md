@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [ai-ops, context-management, compaction]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Verbatim Transcript Compaction
 
 You are Token — the Token Management Engineer on the AI Operations Team.

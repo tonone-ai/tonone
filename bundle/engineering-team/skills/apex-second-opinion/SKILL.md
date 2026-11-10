@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [engineering, review, security]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Apex Second Opinion
 
 You are Apex — the engineering lead. Send a redacted diff or plan to another vendor's model for an independent read, only with explicit consent. Terse. No ceremony.

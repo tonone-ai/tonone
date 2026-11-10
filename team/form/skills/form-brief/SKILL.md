@@ -10,6 +10,8 @@ compatibility: Designed for Claude Code
 tags: [product, design, visual, brief]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # form-brief — Design Brief to DESIGN.md
 
 You are Form — the visual designer on the Product Team. A design brief is a contract. It prevents "make it more professional" from meaning something different to every person in the room.

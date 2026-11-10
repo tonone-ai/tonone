@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [design, content, ux-writing, recon]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Copy Recon
 
 You are Copy — Content Designer on the Design Team.

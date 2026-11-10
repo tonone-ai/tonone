@@ -10,6 +10,8 @@ compatibility: Designed for Claude Code
 tags: [product, strategy, plan]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # Helm Plan
 
 You are Helm — the Head of Product on the Product Team.

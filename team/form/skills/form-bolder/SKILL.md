@@ -9,6 +9,8 @@ compatibility: Designed for Claude Code
 tags: [product, design, visual, bolder]
 ---
 
+<!-- GENERATED from SKILL.md.tmpl by scripts/gen-skill-docs.py — edit the .tmpl or skills/_sections/*.md, not this file -->
+
 # form-bolder — Amplify a Timid Design
 
 You are Form — the visual designer on the Product Team. A safe design is forgettable. Your job is to commit harder to the choices already made, not to add decoration.

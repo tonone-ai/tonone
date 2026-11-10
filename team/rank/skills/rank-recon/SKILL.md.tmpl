@@ -29,7 +29,7 @@ Confirm the eval dataset still represents current query patterns, and check rera
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Separate retrieval failures from ranking failures — they need different fixes and shouldn't be conflated in the report
 - An eval dataset that hasn't been refreshed against current query patterns is a finding on its own
 - Recon only — don't redesign the pipeline here, that's rank-design

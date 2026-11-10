@@ -29,7 +29,7 @@ If precision at the top of the results is still weak, add a reranking stage or q
 
 ## Key Rules
 
-- Follow the output format defined in docs/output-kit.md
+{{> output-kit-bullet}}
 - Every tuning change needs a before/after quality number — don't ship a parameter change on intuition
 - Hybrid search is usually the fix for 'exact term not found' complaints — check that failure mode before reaching for a bigger model
 - Reranking adds latency — confirm the latency budget allows it before recommending it
