@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- **README** lists all 15 teams and all 573 skills (the six 1.19 teams were missing) and points to `docs/skill-index.json`.
+- **tonone-core** gains `/apex-retro`, `/apex-skillify`, `/tonone-doctor` (with `scripts/tonone-doctor.py`), `/prism-harden` and `/prism-extract`, plus files its skills cite (`findings.schema.json`, `craft-floor.md`, `design-md.md`, naming and skill guides). 85 skills. Hook-backed and network-sending skills (`apex-guard`, `apex-decisions`, `apex-second-opinion`) and the Form-toolchain ones (`prism-redesign`, `prism-variants`) stay out, with reasons in `bundle/CORE_EXCLUDED.txt`.
+- **gen-skill-docs rollout finished** — new `output-kit-bullet` section in 210 skills; 59 more skills templated (569 of 573). Output byte-identical apart from the generated marker. `cut-fetch`, `move-moments`, `prism-redesign` and `warden-scan` keep near-variant lines and stay hand-written.
+
+### Fixed
+
+- **tonone-core drift guard** — `sync-bundles.py --check` and `tests/test_structure.py` fail when an engineering-team skill is in neither tonone-core nor `CORE_EXCLUDED.txt`, when core ships `hooks/` or `lib/`, or when a core skill cites a repo path core does not ship.
+- `marketplace.json` tonone-core description said 80 skills.
+
+### Removed
+
+- `bundle/UNBUNDLED.txt-E`, a stray `sed -i` backup committed in 1.20.
+
 ## [1.20.0] - 2026-11-09
 
 ### Added
