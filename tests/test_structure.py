@@ -375,6 +375,59 @@ def test_unbundled_list_is_honest():
     assert listed["ROOT_ONLY"] == sorted(listed["ROOT_ONLY"])
 
 
+def test_core_excluded_list_is_honest_and_core_is_complete():
+    """tonone-core vs engineering-team drift guard (mirrors sync-bundles --check).
+
+    Every engineering skill is in core or in CORE_EXCLUDED [SKILLS]; core ships
+    no hooks/ or lib/; every repo path a core skill cites that exists at the
+    root is shipped by core or listed in [REFS], and [REFS] cannot go stale.
+    """
+    mod = _sync_bundles_module()
+    listed = mod.load_core_excluded()
+    for sec in ("SKILLS", "REFS"):
+        assert listed[sec] == sorted(set(listed[sec])), f"[{sec}] sorted, no repeats"
+    problems = mod.core_problems()
+    assert not problems, "\n".join(problems)
+    assert not (REPO / "bundle" / "tonone-core" / "hooks").exists()
+    assert not (REPO / "bundle" / "tonone-core" / "lib").exists()
+
+
+def test_core_drift_guard_reports_missing_skill(tmp_path):
+    """A new engineering skill absent from core and the exclusion list is reported."""
+    mod = _sync_bundles_module()
+    for team, skills in (
+        ("engineering-team", ["a-one", "a-new"]),
+        ("tonone-core", ["a-one"]),
+    ):
+        for name in skills:
+            d = tmp_path / team / "skills" / name
+            d.mkdir(parents=True)
+            (d / "SKILL.md").write_text(
+                "see team/apex/reference/x.md and docs/gone.md\n"
+            )
+    root = tmp_path / "root"
+    (root / "docs").mkdir(parents=True)
+    (root / "docs" / "gone.md").write_text("x")
+    excl = {"SKILLS": [], "REFS": []}
+    out = mod.core_problems(tmp_path, excl, root)
+    assert any("a-new" in line for line in out)
+    assert any("docs/gone.md" in line for line in out)  # exists at root, not shipped
+    assert not any("team/apex/reference/x.md" in line for line in out)  # not at root
+    # Listing the skill and the ref, and shipping hooks/, changes the report.
+    excl = {"SKILLS": ["a-new"], "REFS": ["docs/gone.md"]}
+    (tmp_path / "tonone-core" / "hooks").mkdir()
+    out = mod.core_problems(tmp_path, excl, root)
+    assert not any("a-new" in line for line in out)
+    assert any("hooks/" in line for line in out)
+    # A stale [REFS] entry (shipped now) and a stale [SKILLS] entry are reported.
+    (tmp_path / "tonone-core" / "docs").mkdir()
+    (tmp_path / "tonone-core" / "docs" / "gone.md").write_text("x")
+    excl = {"SKILLS": ["a-one"], "REFS": ["docs/gone.md"]}
+    out = mod.core_problems(tmp_path, excl, root)
+    assert any("a-one" in line and "remove" in line for line in out)
+    assert any("docs/gone.md" in line and "ships" in line for line in out)
+
+
 def test_bundle_hooks_reference_shipped_files():
     """Every hook a bundle registers points at a file that bundle ships."""
     import re

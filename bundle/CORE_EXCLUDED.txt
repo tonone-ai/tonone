@@ -1,0 +1,21 @@
+# What the lean tonone-core plugin deliberately leaves out. Read by
+# scripts/sync-bundles.py (--check) and tests/test_structure.py. One entry per
+# line; '#' starts a comment. tonone-core promises: no hooks, no server, no
+# telemetry, no network, so anything that needs those stays out.
+#
+# A new engineering-team skill goes into bundle/tonone-core/skills/ (then run
+# `python3 scripts/sync-bundles.py`) or is listed here with a reason.
+
+[SKILLS]
+# Engineering-team skills not in tonone-core.
+apex-decisions        # SessionStart hook, which core does not ship
+apex-guard            # PreToolUse hook, which core does not ship
+apex-second-opinion   # sends code to third-party model CLIs (outside Claude Code's data handling)
+prism-redesign        # needs Form's design-lint toolchain and /form-direction
+prism-variants        # needs lib/jev and a Playwright harness
+
+[REFS]
+# Repo paths core skills mention that core does not ship. Each must still be
+# cited by a core skill and still be absent from core.
+team/cortex/scripts/cortex_agent/eval_scan.py   # per-agent analyzer with its own venv
+team/spine/scripts/spine_agent/perf_scan.py     # per-agent analyzer with its own venv
