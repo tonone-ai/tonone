@@ -80,8 +80,10 @@ function fetchLatestVersion(cb) {
 function notify(current, latest) {
   const body = `Update available: v${current} \u2192 v${latest}`;
   const hint = "claude plugin update tonone";
+  // `latest` comes from a remote response; escape it before it enters AppleScript.
+  const esc = (s) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
   const script = [
-    `display notification "${body}"`,
+    `display notification "${esc(body)}"`,
     `with title "tonone"`,
     `subtitle "${hint}"`,
   ].join(" ");
