@@ -1,6 +1,6 @@
 {
   "name": "tonone-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server that tells an AI agent which of tonone's 140 specialist agents and 573 skills to use for a task.",
   "mcpName": "io.github.tonone-ai/tonone",
   "type": "module",
