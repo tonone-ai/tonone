@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 
 - **tonone-core drift guard** — `sync-bundles.py --check` and `tests/test_structure.py` fail when an engineering-team skill is in neither tonone-core nor `CORE_EXCLUDED.txt`, when core ships `hooks/` or `lib/`, or when a core skill cites a repo path core does not ship.
 - `marketplace.json` tonone-core description said 80 skills.
+- `tonone-doctor` headline check flagged the README's per-team `(N agents, M skills)` subtotals; it now ignores them, as the test does.
 
 ### Removed
 
