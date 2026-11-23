@@ -11,6 +11,12 @@ claude plugin marketplace add tonone-ai/tonone
 claude plugin install tonone@tonone-ai
 ```
 
+Want it lean? `tonone-core` is the 15-agent engineering team with 85 skills, about 5,600 tokens of startup context versus about 37,500 for the full roster:
+
+```bash
+claude plugin install tonone-core@tonone-ai
+```
+
 <p align="center"><img src="assets/demo-apex-plan.svg" alt="Apex, the engineering lead, answering /apex-plan for user authentication with S, M, L and XL options, each listing the specialists involved, the token budget and the cost" width="640"></p>
 
 <p align="center"><sub>Real <code>/apex-plan</code> output. Engineering, product, revenue, marketing, finance, people, operations, support, legal, design, data science, security operations, developer experience, infrastructure and AI operations each have their own team.</sub></p>
