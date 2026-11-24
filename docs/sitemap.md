@@ -8,13 +8,13 @@
 
 Fires on Claude Code lifecycle events for all installs.
 
-| Event                | Hook                      | What it does                                             |
-| -------------------- | ------------------------- | -------------------------------------------------------- |
-| `SessionStart`       | `install-statusline.sh`   | Opt-in (TONONE_STATUSLINE=1): installs tonone status bar |
-| `SessionStart`       | `tonone-update-check.js`  | Checks for plugin updates (8s timeout)                   |
-| `PostToolUse[Agent]` | `tonone-agent-tracker.js` | Tracks agent invocations across the session (5s timeout) |
-| `Stop`               | `tonone-notify.js`        | Sends completion notification (5s timeout)               |
-| `Notification`       | `tonone-notify.js`        | Relays Claude notifications (5s timeout)                 |
+| Event                | Hook                         | What it does                                             |
+| -------------------- | ---------------------------- | -------------------------------------------------------- |
+| `SessionStart`       | `tonone-statusline-setup.js` | Offers the status bar once, installs only on yes         |
+| `SessionStart`       | `tonone-update-check.js`     | Checks for plugin updates (8s timeout)                   |
+| `PostToolUse[Agent]` | `tonone-agent-tracker.js`    | Tracks agent invocations across the session (5s timeout) |
+| `Stop`               | `tonone-notify.js`           | Sends completion notification (5s timeout)               |
+| `Notification`       | `tonone-notify.js`           | Relays Claude notifications (5s timeout)                 |
 
 ---
 

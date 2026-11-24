@@ -12,7 +12,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- **Statusline hook is opt-in.** `hooks/install-statusline.sh` no longer edits `~/.claude/settings.json` by default. Set `TONONE_STATUSLINE=1` to install it, and it never replaces a `statusLine` you already have (it used to swap it and keep a backup). Invalid or unreadable settings are left untouched.
+- **Statusline is an ask, not a silent edit.** `hooks/install-statusline.sh` is replaced by `hooks/tonone-statusline-setup.js`. The first session offers the status bar once (Claude asks you) and installs it only on yes. It never replaces a `statusLine` you already have, never asks about replacing one, and leaves unreadable settings untouched. `TONONE_STATUSLINE=1` installs without asking, `=0` turns the offer off.
+- **Update check asks before updating.** `tonone-update-check.js` still checks once a day, but now asks once per new version whether to update, and runs `claude plugin update <plugin>@tonone-ai` only on yes (restart applies it). Only plain `x.y.z` versions from the remote response reach the prompt. The desktop notification is gone. `TONONE_NO_UPDATE_CHECK=1` turns it off.
 - **tonone-core drift guard** — `sync-bundles.py --check` and `tests/test_structure.py` fail when an engineering-team skill is in neither tonone-core nor `CORE_EXCLUDED.txt`, when core ships `hooks/` or `lib/`, or when a core skill cites a repo path core does not ship.
 - `marketplace.json` tonone-core description said 80 skills.
 - `tonone-doctor` headline check flagged the README's per-team `(N agents, M skills)` subtotals; it now ignores them, as the test does.
