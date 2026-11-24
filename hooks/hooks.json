@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/install-statusline.sh\""
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/tonone-statusline-setup.js\""
           },
           {
             "type": "command",
