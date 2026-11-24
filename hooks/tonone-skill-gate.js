@@ -1451,14 +1451,81 @@ const HELP = [
   "              has been lost",
   "  --cwd DIR   score DIR instead of the current directory",
   "",
-  "  TONONE_GATE=off disables the hook.",
+  "  --yes       allow the gate to write overrides (remembered)",
+  "  --never     never write overrides (remembered)",
+  "",
+  "  The gate asks once before it writes. TONONE_GATE=on applies without",
+  "  asking. TONONE_GATE=off disables the hook.",
   "  TONONE_GATE_JEV=1 opts this hook in to the hosted decision model. Without",
   "  it the gate scores locally and performs no network I/O, whatever API keys",
   "  happen to be exported in the environment.",
 ].join("\n");
 
+// ── Consent ───────────────────────────────────────────────────────────────────
+// The gate edits `.claude/settings.local.json`, so it asks first. A hook cannot
+// prompt, so the first eligible session hands Claude a one-time instruction to
+// ask; the answer comes back through --yes / --never. State lives in
+// ~/.config/tonone/skill-gate as on | never | asked. TONONE_GATE=on applies
+// without asking. Nothing is written to settings until the answer is "on".
+
+function consentFile() {
+  const dir =
+    process.env.TONONE_CONFIG_DIR ||
+    path.join(os.homedir(), ".config", "tonone");
+  return path.join(dir, "skill-gate");
+}
+
+function readConsent() {
+  try {
+    return fs.readFileSync(consentFile(), "utf8").trim();
+  } catch {
+    return "";
+  }
+}
+
+function writeConsent(value) {
+  try {
+    fs.mkdirSync(path.dirname(consentFile()), { recursive: true });
+    fs.writeFileSync(consentFile(), value + "\n");
+  } catch {}
+}
+
+function askText(accounting) {
+  const a = accounting;
+  return (
+    "tonone offer (once): the skill gate can move skills this project does not " +
+    "need out of context (" +
+    a.before.skills +
+    " skills, " +
+    a.after.skills +
+    " kept, about " +
+    fmt(a.saved.tokens) +
+    " tokens saved per session). It works by writing skillOverrides into this " +
+    "project's .claude/settings.local.json, and node " +
+    JSON.stringify(__filename) +
+    " --reset undoes it. Ask the user with AskUserQuestion whether to turn it " +
+    'on, options "Turn it on" and "No thanks". If they pick "Turn it on" run: ' +
+    "node " +
+    JSON.stringify(__filename) +
+    ' --yes . If they pick "No thanks" run: node ' +
+    JSON.stringify(__filename) +
+    " --never . Then carry on with their request. Do not mention this offer otherwise."
+  );
+}
+
 async function run(argv, hookInput) {
-  const args = parseArgs(argv);
+  const consentFlags = argv.filter((a) => a === "--yes" || a === "--never");
+  const args = parseArgs(argv.filter((a) => !consentFlags.includes(a)));
+
+  if (consentFlags.includes("--never")) {
+    writeConsent("never");
+    process.stdout.write(
+      "skill gate: off. Nothing will be written to your settings. " +
+        "Turn it on later with: node hooks/tonone-skill-gate.js --yes\n",
+    );
+    return 0;
+  }
+  if (consentFlags.includes("--yes")) writeConsent("on");
 
   if (args.help) {
     process.stdout.write(HELP + "\n");
@@ -1553,6 +1620,29 @@ async function run(argv, hookInput) {
 
   if (decision.degraded) {
     if (args.json) process.stdout.write(JSON.stringify(result) + "\n");
+    return 0;
+  }
+
+  const consent =
+    String(process.env.TONONE_GATE || "").toLowerCase() === "on"
+      ? "on"
+      : readConsent();
+  if (consent !== "on") {
+    // Undecided: offer once. Declined or already offered: stay out of settings.
+    if (consent === "") {
+      writeConsent("asked");
+      process.stdout.write(
+        JSON.stringify({
+          hookSpecificOutput: {
+            hookEventName: "SessionStart",
+            additionalContext: askText(result.accounting),
+          },
+        }),
+      );
+    } else if (args.json) {
+      result.applied = { ok: false, reason: "consent not given" };
+      process.stdout.write(JSON.stringify(result) + "\n");
+    }
     return 0;
   }
 

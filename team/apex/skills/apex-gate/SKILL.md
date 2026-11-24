@@ -50,14 +50,16 @@ Turn the numbers into three or four findings the user can act on:
 
 Apply exactly what the user asked for, and nothing more:
 
-| Intent                                         | Action                                                 |
-| ---------------------------------------------- | ------------------------------------------------------ |
-| Undo everything                                | `node hooks/tonone-skill-gate.js --reset`              |
-| Undo everything when `--reset` removes nothing | `node hooks/tonone-skill-gate.js --reset --all`        |
-| Re-decide now                                  | `node hooks/tonone-skill-gate.js --force`              |
-| Disable for this shell                         | `export TONONE_GATE=off`                               |
-| Score with the hosted model instead of locally | `export TONONE_GATE_JEV=1`                             |
-| Pin one skill                                  | Add `"<skill-name>": "on"` to `skillOverrides` by hand |
+| Intent                                          | Action                                                 |
+| ----------------------------------------------- | ------------------------------------------------------ |
+| Undo everything                                 | `node hooks/tonone-skill-gate.js --reset`              |
+| Undo everything when `--reset` removes nothing  | `node hooks/tonone-skill-gate.js --reset --all`        |
+| Re-decide now                                   | `node hooks/tonone-skill-gate.js --force`              |
+| Allow the gate to write overrides (remembered)  | `node hooks/tonone-skill-gate.js --yes`                |
+| Never let the gate write overrides (remembered) | `node hooks/tonone-skill-gate.js --never`              |
+| Disable for this shell                          | `export TONONE_GATE=off`                               |
+| Score with the hosted model instead of locally  | `export TONONE_GATE_JEV=1`                             |
+| Pin one skill                                   | Add `"<skill-name>": "on"` to `skillOverrides` by hand |
 
 A hand-written override outranks the gate permanently: the hook never touches an entry whose value it did not write itself.
 
