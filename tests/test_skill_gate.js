@@ -82,6 +82,11 @@ function runGate(args, options) {
     TONONE_JEV_CACHE_DIR: opts.cacheDir || tmpdir("cache"),
     TONONE_GATE_STATE_DIR: opts.stateDir || tmpdir("state"),
     TONONE_JEV_OFFLINE: "1",
+    // Consent state is isolated too, so a test never reads or writes the real
+    // ~/.config/tonone. Tests that exercise the write path opt in explicitly;
+    // `opts.asking` leaves the consent question open.
+    TONONE_CONFIG_DIR: opts.configDir || tmpdir("cfg"),
+    TONONE_GATE: opts.asking ? "" : "on",
   });
   if (opts.index !== undefined) env.TONONE_GATE_INDEX = opts.index;
   if (opts.ttlMs !== undefined) env.TONONE_GATE_TTL_MS = String(opts.ttlMs);
@@ -893,6 +898,8 @@ test("a hook payload is honoured even when the pipe stays open", () => {
     TONONE_GATE_STATE_DIR: tmpdir("state"),
     TONONE_JEV_OFFLINE: "1",
     TONONE_GATE_STDIN_MS: "300",
+    TONONE_CONFIG_DIR: tmpdir("cfg"),
+    TONONE_GATE: "on",
   });
 
   // The payload arrives at once; the writer then holds the pipe open well past
@@ -932,4 +939,77 @@ test("a hook payload is honoured even when the pipe stays open", () => {
     1,
     "the gate ran twice: " + JSON.stringify(result.stdout),
   );
+});
+
+// ── Consent: the gate asks before it writes ──────────────────────────────────
+
+function consentState(configDir) {
+  try {
+    return fs.readFileSync(path.join(configDir, "skill-gate"), "utf8").trim();
+  } catch {
+    return "";
+  }
+}
+
+test("first session asks once and writes nothing to settings", () => {
+  const dir = makeProject("frontend");
+  const configDir = tmpdir("cfg");
+  const payload = JSON.stringify({
+    hook_event_name: "SessionStart",
+    cwd: dir,
+    session_id: "t",
+  });
+  const first = runGate([], { input: payload, asking: true, configDir });
+  assert.strictEqual(first.status, 0);
+  const ctx = JSON.parse(first.stdout).hookSpecificOutput.additionalContext;
+  assert.match(ctx, /AskUserQuestion/);
+  assert.match(ctx, /--yes/);
+  assert.match(ctx, /--never/);
+  assert.match(ctx, /settings\.local\.json/);
+  assert.strictEqual(readSettings(dir), null, "no settings before consent");
+  assert.strictEqual(consentState(configDir), "asked");
+
+  const second = runGate([], { input: payload, asking: true, configDir });
+  assert.strictEqual(second.stdout, "", "must not ask twice");
+  assert.strictEqual(readSettings(dir), null);
+});
+
+test("--yes records consent and applies; later sessions write without asking", () => {
+  const dir = makeProject("frontend");
+  const configDir = tmpdir("cfg");
+  const yes = runGate(["--cwd", dir, "--yes"], { asking: true, configDir });
+  assert.strictEqual(yes.status, 0);
+  assert.strictEqual(consentState(configDir), "on");
+  const settings = readSettings(dir);
+  assert.ok(settings && settings.skillOverrides, "overrides written after yes");
+});
+
+test("--never records the refusal and nothing is ever written", () => {
+  const dir = makeProject("frontend");
+  const configDir = tmpdir("cfg");
+  const never = runGate(["--never"], { asking: true, configDir });
+  assert.strictEqual(never.status, 0);
+  assert.strictEqual(consentState(configDir), "never");
+  const hook = runGate([], {
+    asking: true,
+    configDir,
+    input: JSON.stringify({ hook_event_name: "SessionStart", cwd: dir }),
+  });
+  assert.strictEqual(hook.stdout, "");
+  assert.strictEqual(readSettings(dir), null);
+});
+
+test("--dry-run and --reset never need consent", () => {
+  const dir = makeProject("frontend");
+  const configDir = tmpdir("cfg");
+  const dry = runGate(["--cwd", dir, "--dry-run", "--json"], {
+    asking: true,
+    configDir,
+  });
+  assert.strictEqual(dry.status, 0);
+  assert.strictEqual(JSON.parse(dry.stdout).ok, true);
+  assert.strictEqual(consentState(configDir), "", "dry run asks nothing");
+  assert.strictEqual(readSettings(dir), null);
+  const reset = runGate(["--cwd", dir, "--reset"], { asking: true, configDir });
+  assert.strictEqual(reset.status, 0);
 });

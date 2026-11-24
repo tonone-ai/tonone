@@ -1505,6 +1505,8 @@ Tonone is markdown prompts plus a few local hooks. It has no server, no account,
 | PR attribution (`hooks/tonone-pr-attribution.js`)           | Only with `TONONE_PR_ATTRIBUTION=1`                  | After `gh pr create`, appends a one-line credit to that PR's description through your own `gh` login.                                                                                                                                               |
 | Browser exploration (`lib/jev-ultrafast`, `/proof-explore`) | Only with `TONONE_JEV_ULTRAFAST=1` and your own keys | Descriptions of the pages it visits go to TypeSafe. Limited to `localhost` unless you add hosts.                                                                                                                                                    |
 
+**Nothing edits your settings without asking.** The status bar (`~/.claude/settings.json`) and the skill gate (`.claude/settings.local.json`) each offer once, in your first session, and write only if you say yes; `TONONE_STATUSLINE=1` and `TONONE_GATE=on` say yes in advance, and an existing `statusLine` is never replaced. The update check asks before it updates anything. Opt out of any of them: `TONONE_STATUSLINE=0`, `TONONE_GATE=off`, `TONONE_NO_UPDATE_CHECK=1`.
+
 Local state lives in `~/.config/tonone/` (update cache, onboarding and star-prompt markers), `.claude/` in your project (skill-gate overrides, session agent list), and your temp directory. Delete those to reset. Skills themselves run inside Claude Code and follow its data handling.
 
 ## License
