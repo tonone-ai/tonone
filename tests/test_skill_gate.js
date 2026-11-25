@@ -961,11 +961,12 @@ test("first session asks once and writes nothing to settings", () => {
   });
   const first = runGate([], { input: payload, asking: true, configDir });
   assert.strictEqual(first.status, 0);
-  const ctx = JSON.parse(first.stdout).hookSpecificOutput.additionalContext;
-  assert.match(ctx, /AskUserQuestion/);
-  assert.match(ctx, /--yes/);
-  assert.match(ctx, /--never/);
-  assert.match(ctx, /settings\.local\.json/);
+  const out = JSON.parse(first.stdout);
+  assert.deepStrictEqual(Object.keys(out), ["systemMessage"]);
+  assert.match(out.systemMessage, /! node .*--yes/);
+  assert.match(out.systemMessage, /! node .*--never/);
+  assert.match(out.systemMessage, /settings\.local\.json/);
+  assert.doesNotMatch(out.systemMessage, /AskUserQuestion|do not mention/i);
   assert.strictEqual(readSettings(dir), null, "no settings before consent");
   assert.strictEqual(consentState(configDir), "asked");
 

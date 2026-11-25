@@ -2,12 +2,12 @@
 "use strict";
 
 // tonone-update-check — SessionStart hook
-// Checks for plugin updates once per 24 h. When a newer version exists it asks
-// once per version whether to update. Exits silently if offline, rate-limited,
+// Checks for plugin updates once per 24 h. When a newer version exists it tells
+// the user once per version how to update. Exits silently if offline, rate-limited,
 // or up to date.
 //
-// A hook cannot prompt, so the ask goes to Claude as SessionStart context:
-// Claude asks the user, and runs `claude plugin update` only on "Update now".
+// The message is shown to the user, who runs the update command themselves.
+// Nothing here instructs the model or runs a command.
 // Opt out: TONONE_NO_UPDATE_CHECK=1. Skipped when CI is set.
 
 const https = require("https");
@@ -89,14 +89,11 @@ function fetchLatestVersion(cb) {
 }
 
 function askText(name, current, latest) {
-  const cmd = `claude plugin update ${name}@${MARKETPLACE}`;
   return (
-    `tonone update (ask once): ${name} v${latest} is available, the user has ` +
-    `v${current}. Ask the user with AskUserQuestion whether to update now, ` +
-    `options "Update now" and "Not now". If they pick "Update now" run: ` +
-    `${cmd} , then tell them to restart Claude Code to apply it. If they pick ` +
-    `"Not now" do nothing; they will not be asked again for v${latest}. ` +
-    `Do not mention this otherwise.`
+    `tonone: ${name} v${latest} is available (you have v${current}). ` +
+    `To update, type:  ! claude plugin update ${name}@${MARKETPLACE}  ` +
+    `then restart Claude Code. (Shown once per version. ` +
+    `TONONE_NO_UPDATE_CHECK=1 turns this off.)`
   );
 }
 
@@ -110,12 +107,7 @@ function decide(manifest, cache, env) {
   if (!NAME_RE.test(name || "")) return "";
   if (semverCmp(current, latest) >= 0) return "";
   if (cache.askedVersion === latest) return "";
-  return JSON.stringify({
-    hookSpecificOutput: {
-      hookEventName: "SessionStart",
-      additionalContext: askText(name, current, latest),
-    },
-  });
+  return JSON.stringify({ systemMessage: askText(name, current, latest) });
 }
 
 function emit(cache) {

@@ -42,14 +42,14 @@ const state = (s) => {
 };
 const cleanup = (s) => fs.rmSync(s.root, { recursive: true, force: true });
 
-test("first session: asks once and changes nothing", () => {
+test("first session: tells the user once and changes nothing", () => {
   const s = setup("{}");
   try {
-    const out = run(s).stdout;
-    const ctx = JSON.parse(out).hookSpecificOutput.additionalContext;
-    assert.match(ctx, /AskUserQuestion/);
-    assert.match(ctx, /--yes/);
-    assert.match(ctx, /--never/);
+    const out = JSON.parse(run(s).stdout);
+    assert.deepStrictEqual(Object.keys(out), ["systemMessage"]);
+    assert.match(out.systemMessage, /! node .*--yes/);
+    assert.match(out.systemMessage, /! node .*--never/);
+    assert.doesNotMatch(out.systemMessage, /AskUserQuestion|do not mention/i);
     assert.strictEqual(settings(s), "{}");
     assert.strictEqual(state(s), "asked");
     assert.strictEqual(run(s).stdout, "", "must not ask twice");

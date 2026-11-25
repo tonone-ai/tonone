@@ -7,12 +7,13 @@ const path = require("path");
 
 const HOOK = path.join(__dirname, "../../hooks/tonone-session-tracker.js");
 
-function runHook(input, cwd) {
+function runHook(input, cwd, env = { TONONE_PR_ATTRIBUTION: "1" }) {
   return spawnSync("node", [HOOK], {
     input: JSON.stringify(input),
     encoding: "utf8",
     cwd,
     timeout: 5000,
+    env: { ...process.env, TONONE_PR_ATTRIBUTION: "", ...env },
   });
 }
 
@@ -130,4 +131,21 @@ test("malformed JSON input — exits 0 silently", () => {
     timeout: 5000,
   });
   assert.strictEqual(result.status, 0);
+});
+
+test("nothing is written unless PR attribution is enabled", () => {
+  const dir = makeTempDir();
+  try {
+    runHook(
+      { tool_name: "Skill", tool_input: { skill: "spine-api" } },
+      dir,
+      {},
+    );
+    assert.strictEqual(
+      fs.existsSync(path.join(dir, ".claude", "session-agents")),
+      false,
+    );
+  } finally {
+    cleanup(dir);
+  }
 });

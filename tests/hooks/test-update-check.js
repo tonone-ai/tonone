@@ -41,18 +41,14 @@ function run(s, env = {}) {
 
 const cleanup = (s) => fs.rmSync(s.root, { recursive: true, force: true });
 
-test("newer version: asks once, with the update command", () => {
+test("newer version: tells the user once, with the update command to type", () => {
   const s = setup({ cache: { latestVersion: "1.2.0" } });
   try {
-    const first = run(s);
-    const ctx = JSON.parse(first.stdout).hookSpecificOutput;
-    assert.strictEqual(ctx.hookEventName, "SessionStart");
-    assert.match(ctx.additionalContext, /v1\.2\.0 is available/);
-    assert.match(
-      ctx.additionalContext,
-      /claude plugin update tonone@tonone-ai/,
-    );
-    assert.match(ctx.additionalContext, /AskUserQuestion/);
+    const out = JSON.parse(run(s).stdout);
+    assert.deepStrictEqual(Object.keys(out), ["systemMessage"]);
+    assert.match(out.systemMessage, /v1\.2\.0 is available/);
+    assert.match(out.systemMessage, /! claude plugin update tonone@tonone-ai/);
+    assert.doesNotMatch(out.systemMessage, /AskUserQuestion|do not mention/i);
     assert.strictEqual(run(s).stdout, "", "second session must stay silent");
   } finally {
     cleanup(s);

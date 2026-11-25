@@ -4,8 +4,9 @@
 // tonone-statusline-setup — SessionStart hook
 // Offers the tonone status bar once, and installs it only if the user says yes.
 //
-// A hook cannot prompt, so the first eligible session hands Claude a one-time
-// instruction to ask. The answer comes back through this script:
+// A hook cannot prompt, so the first eligible session shows the user a one-time
+// message with two commands to type. Nothing runs until the user does. The
+// answer comes back through this script:
 //   node tonone-statusline-setup.js --yes     install, remember "on"
 //   node tonone-statusline-setup.js --never   remember "never"
 //
@@ -76,12 +77,12 @@ function install() {
 }
 
 const ASK =
-  "tonone offer (once): tonone has an optional status bar (git branch, active " +
-  "agents, context use). Ask the user with AskUserQuestion whether to install " +
-  'it, options "Install it" and "No thanks". If they pick "Install it" run: ' +
-  `node "${__filename}" --yes . If they pick "No thanks" run: ` +
-  `node "${__filename}" --never . Then carry on with their request. ` +
-  "Do not mention this offer otherwise.";
+  "tonone: optional status bar (git branch, active agents, context use). " +
+  "To install, type:  ! node " +
+  JSON.stringify(__filename) +
+  " --yes   To decline:  ! node " +
+  JSON.stringify(__filename) +
+  " --never   (Shown once. Nothing is changed until you run one.)";
 
 function main(argv, env) {
   if (argv.includes("--never")) {
@@ -121,14 +122,7 @@ function main(argv, env) {
     return;
   }
   writeState("asked");
-  process.stdout.write(
-    JSON.stringify({
-      hookSpecificOutput: {
-        hookEventName: "SessionStart",
-        additionalContext: ASK,
-      },
-    }),
-  );
+  process.stdout.write(JSON.stringify({ systemMessage: ASK }));
 }
 
 if (require.main === module) {
