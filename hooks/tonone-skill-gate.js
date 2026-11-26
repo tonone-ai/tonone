@@ -1463,8 +1463,8 @@ const HELP = [
 
 // ── Consent ───────────────────────────────────────────────────────────────────
 // The gate edits `.claude/settings.local.json`, so it asks first. A hook cannot
-// prompt, so the first eligible session hands Claude a one-time instruction to
-// ask; the answer comes back through --yes / --never. State lives in
+// prompt, so the first eligible session shows the user a one-time message with
+// commands to type; the answer comes back through --yes / --never. State lives in
 // ~/.config/tonone/skill-gate as on | never | asked. TONONE_GATE=on applies
 // without asking. Nothing is written to settings until the answer is "on".
 
@@ -1493,23 +1493,21 @@ function writeConsent(value) {
 function askText(accounting) {
   const a = accounting;
   return (
-    "tonone offer (once): the skill gate can move skills this project does not " +
-    "need out of context (" +
+    "tonone: the skill gate can move skills this project does not need out of " +
+    "context (" +
     a.before.skills +
     " skills, " +
     a.after.skills +
     " kept, about " +
     fmt(a.saved.tokens) +
-    " tokens saved per session). It works by writing skillOverrides into this " +
-    "project's .claude/settings.local.json, and node " +
+    " tokens saved per session) by writing skillOverrides into this project's " +
+    ".claude/settings.local.json. To turn it on, type:  ! node " +
     JSON.stringify(__filename) +
-    " --reset undoes it. Ask the user with AskUserQuestion whether to turn it " +
-    'on, options "Turn it on" and "No thanks". If they pick "Turn it on" run: ' +
-    "node " +
+    " --yes   To decline:  ! node " +
     JSON.stringify(__filename) +
-    ' --yes . If they pick "No thanks" run: node ' +
+    " --never   Undo any time:  ! node " +
     JSON.stringify(__filename) +
-    " --never . Then carry on with their request. Do not mention this offer otherwise."
+    " --reset   (Shown once. Nothing is written until you run --yes.)"
   );
 }
 
@@ -1632,12 +1630,7 @@ async function run(argv, hookInput) {
     if (consent === "") {
       writeConsent("asked");
       process.stdout.write(
-        JSON.stringify({
-          hookSpecificOutput: {
-            hookEventName: "SessionStart",
-            additionalContext: askText(result.accounting),
-          },
-        }),
+        JSON.stringify({ systemMessage: askText(result.accounting) }),
       );
     } else if (args.json) {
       result.applied = { ok: false, reason: "consent not given" };

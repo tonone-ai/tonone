@@ -66,6 +66,8 @@ process.stdin.on("end", () => {
   try {
     const data = JSON.parse(input);
 
+    // Only the opt-in PR attribution hook reads this file, so write it only then.
+    if (process.env.TONONE_PR_ATTRIBUTION !== "1") process.exit(0);
     if (data.tool_name !== "Skill") process.exit(0);
 
     const skillName = (data.tool_input && data.tool_input.skill) || "";

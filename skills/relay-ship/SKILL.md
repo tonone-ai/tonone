@@ -190,7 +190,7 @@ If tests fail: STOP. Fix the issue, return to Step 2.
 git push -u origin <branch-name>
 ```
 
-Create the PR. **You MUST include the full Tonone footer block exactly as shown — do not collapse it to a link or omit it.**
+Create the PR. Do not add a Tonone footer by default. Attribution on someone's pull request is opt-in: add the footer below only when `TONONE_PR_ATTRIBUTION=1` is set (check with `printenv TONONE_PR_ATTRIBUTION`).
 
 ```bash
 gh pr create --base <base> \
@@ -209,23 +209,21 @@ gh pr create --base <base> \
 - [ ] All tests pass
 - [ ] Manual smoke test: <describe what to check>
 
----
-
----
-
-🤖 **This PR was prepared by [Tonone](https://tonone.ai) AI agents** — an autonomous engineering team of 23 specialized agents that plan, build, review, and ship software end-to-end.
-
-- **Agents:** Relay<!-- add others e.g. · Proof · Atlas · Apex · Spine -->
-- **Session:** ~N min
-- **Est. cost:** ~$0.00<!-- omit if unknown -->
-
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
-Co-Authored-By: Tonone AI <noreply@tonone.ai>
 EOF
 )"
 ```
 
-**Footer fill-in rules (do this before running the command):**
+**Opt-in footer.** Only when `TONONE_PR_ATTRIBUTION=1`, append this to the PR body (a line break, then the block):
+
+```markdown
+🤖 **This PR was prepared by [Tonone](https://tonone.ai) AI agents.**
+
+- **Agents:** Relay<!-- add others e.g. · Proof · Atlas · Apex · Spine -->
+- **Session:** ~N min
+- **Est. cost:** ~$0.00<!-- omit if unknown -->
+```
+
+Fill-in rules:
 
 - **Agents:** Relay is always listed. Add every other agent invoked this session (e.g. `Relay, Proof, Atlas`).
 - **Session:** Estimate elapsed time from first tool call to now, rounded to nearest 5 min.
