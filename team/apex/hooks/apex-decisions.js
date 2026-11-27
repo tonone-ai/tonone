@@ -37,8 +37,9 @@
 // hook, --json). Redaction hides; it does NOT delete. Real removal of an
 // accidental secret needs a manual edit of the file plus a git history rewrite.
 //
-// Project dir: CLAUDE_PROJECT_DIR, else walk up from cwd (max 20 levels, never
-// past the repository root) to the nearest `.tonone/decisions.jsonl`. `add` with no existing file creates
+// Project dir: CLAUDE_PROJECT_DIR, else walk up from cwd to the nearest
+// `.tonone/decisions.jsonl`, never past the repository root (nearest `.git`).
+// Outside a repository only cwd is checked. `add` with no existing file creates
 // `.tonone/decisions.jsonl` under CLAUDE_PROJECT_DIR or cwd.
 //
 // CLI:
@@ -81,15 +82,27 @@ function findFile(env, cwd) {
     const f = path.join(env.CLAUDE_PROJECT_DIR, REL);
     return fs.existsSync(f) ? f : null;
   }
-  let dir = path.resolve(cwd || process.cwd());
-  for (let i = 0; i < MAX_WALK; i++) {
-    const f = path.join(dir, REL);
+  const start = path.resolve(cwd || process.cwd());
+  // Walk up only inside a repository: find the nearest ancestor holding .git
+  // and never look above it. Outside a repository only `start` is checked, so a
+  // log in an unrelated parent folder is never picked up.
+  let root = null;
+  for (let d = start, i = 0; i < MAX_WALK; i++) {
+    if (fs.existsSync(path.join(d, ".git"))) {
+      root = d;
+      break;
+    }
+    const parent = path.dirname(d);
+    if (parent === d) break;
+    d = parent;
+  }
+  for (let d = start, i = 0; i < MAX_WALK; i++) {
+    const f = path.join(d, REL);
     if (fs.existsSync(f)) return f;
-    // Stop at the repository root: never read a log from a folder above it.
-    if (fs.existsSync(path.join(dir, ".git"))) break;
-    const parent = path.dirname(dir);
-    if (parent === dir) break;
-    dir = parent;
+    if (!root || d === root) break;
+    const parent = path.dirname(d);
+    if (parent === d) break;
+    d = parent;
   }
   return null;
 }

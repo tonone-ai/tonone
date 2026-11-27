@@ -116,7 +116,7 @@ PR_URL=$(gh pr create \
 
 ---
 *Via \`/contribute\` — auto-extracted from a tonone session*" \
-  --json url --jq .url)
+  | tail -n 1)
 
 rm -rf "$TONONE_TMP"
 ```
