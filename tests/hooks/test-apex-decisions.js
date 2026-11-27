@@ -229,9 +229,10 @@ test("oversize file: tail only, no crash", () => {
   done(d);
 });
 
-test("project discovery walks up from cwd when CLAUDE_PROJECT_DIR unset", () => {
+test("project discovery walks up from cwd inside a repository", () => {
   const d = mk();
   add(d, "found by walk");
+  fs.mkdirSync(path.join(d, ".git"));
   const sub = path.join(d, "a", "b");
   fs.mkdirSync(sub, { recursive: true });
   const r = spawnSync("node", [HOOK], {
@@ -242,6 +243,35 @@ test("project discovery walks up from cwd when CLAUDE_PROJECT_DIR unset", () => 
   });
   assert.match(ctx(r), /found by walk/);
   done(d);
+});
+
+const runFrom = (cwd) =>
+  spawnSync("node", [HOOK], {
+    input: JSON.stringify({ cwd }),
+    encoding: "utf8",
+    cwd,
+    env: { ...process.env, TONONE_DECISIONS: "", CLAUDE_PROJECT_DIR: "" },
+  });
+
+test("outside a repository only cwd is checked, never parent folders", () => {
+  const d = mk();
+  add(d, "log in an unrelated parent");
+  const sub = path.join(d, "a", "b");
+  fs.mkdirSync(sub, { recursive: true });
+  assert.strictEqual(runFrom(sub).stdout, "");
+  assert.match(ctx(runFrom(d)), /log in an unrelated parent/);
+  done(d);
+});
+
+test("a log above the repository root is never read", () => {
+  const outer = mk();
+  add(outer, "outer log");
+  const repo = path.join(outer, "repo");
+  fs.mkdirSync(path.join(repo, ".git"), { recursive: true });
+  const sub = path.join(repo, "x", "y");
+  fs.mkdirSync(sub, { recursive: true });
+  assert.strictEqual(runFrom(sub).stdout, "");
+  done(outer);
 });
 
 // ── learnings ────────────────────────────────────────────────────────────────
